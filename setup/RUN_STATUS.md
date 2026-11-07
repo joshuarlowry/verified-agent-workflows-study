@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:12:41 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:19:01 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 04:12:41 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 04:19:01 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-worker-harness | openai/gpt-6.1-terra | running | Nov 07, 2026 at 04:12:41 PM EST (UTC-0500) | — |
+| terra-worker-harness | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 04:12:41 PM EST (UTC-0500) | Nov 07, 2026 at 04:19:01 PM EST (UTC-0500) |
 
 Fresh common worker adapter/broker and generic role prompts. Synthetic tests only; no paid nested probes, cross-review and actual seven-role qualification still required.
 
