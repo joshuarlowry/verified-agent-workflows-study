@@ -1,0 +1,25 @@
+{
+  "recorded_at_utc": "2026-11-07T21:58:28.139521+00:00",
+  "run_id": "clean-20261107T122746Z-c1-independent-evaluator-glm-20261107T211533Z",
+  "author_model": "z-ai/glm-5.3-flash",
+  "status": "first_return_frozen_pending_different_model_review_and_actual_positive_negative_replays",
+  "captured_calls": 104,
+  "stream_integrity": "All104calls passed native endpoint/request inventory/paired semantic fidelity/terminal/usage capture checks",
+  "source_inventory_files": 28,
+  "source_inventory_sha256": "8bfddac9a97ddf156787e35ce95de2eaf7df34f5ce5fa4edc55fb122cfc8e802",
+  "reported_suite_counts": {
+    "public": 24,
+    "sealed": 11
+  },
+  "suite_count_meaning": "Coverage inventory only, not a model-quality score or proof of task qualification.",
+  "author_inputs": "Immutable baseline/source, public C1contract/baseline/FAQ and protocol only. No reference, alternate, prior evaluator/control code or other-model conversation supplied.",
+  "first_return_frozen_before_positive_reference_or_alternate_exposure": true,
+  "remaining": [
+    "Different-authorized-model source/contract review; no self-approval.",
+    "Actual reference and materially different alternative must pass applicable full acceptance gates.",
+    "Critical negative controls and three-clean-image qualification.",
+    "Global native worker/Context/resource/endpoint qualification before calibration."
+  ],
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

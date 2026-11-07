@@ -313,8 +313,9 @@
     "acceptance_suite_sha256": null,
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
-    "independent_C1_evaluator_status": "Fresh GLM construction queued from baseline/contract only; original coauthored suite is diagnostic, not final independent acceptance.",
-    "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json"
+    "independent_C1_evaluator_status": "Independent GLM first-return checker frozen before positive-candidate exposure; different-model source review and actual reference/alternate/negative/clean replays pending.",
+    "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json",
+    "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json"
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
@@ -807,7 +808,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "C1_reference_and_partial_harness_first_returns_preserved_docs_extraction_review_active_independent_C1_roles_queued",
+    "status": "Independent_C1_checker_first_return_frozen_Gemma_alternate_active_native_worker_probe_and_setup_repairs_queued",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,
