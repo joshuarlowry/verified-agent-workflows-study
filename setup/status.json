@@ -33,10 +33,10 @@
   "passive_artifact_backup": {
     "repository": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
     "visibility": "private",
-    "latest_checkpoint": "checkpoints/preparation-20261107T202452209957Z.tar.gz",
+    "latest_checkpoint": "checkpoints/preparation-20261107T223713870404Z.tar.gz",
     "scope": "Sanitized passive preparation checkpoint; active files can be partial; not atomic endpoint. Later automatic endpoint backups may exist.",
     "credential_values_removed": true,
-    "sha256": "612456200c3af876ad4b80921485e03a31365de23a8d56a461b1f9e0a8b2f83e",
+    "sha256": "b2429534c4af7944d4e6bbc70444f8ddc07998ffbd1a3081eb4290f5f0f65719",
     "published_private": true
   },
   "aggregate_two_role_boundary": {
@@ -50,5 +50,6 @@
   "cohort_id": "clean-20261107T122746Z",
   "contamination_audit": "setup/contamination-audit.json",
   "updated_at_eastern": "Nov 07, 2026 at 05:34:42 PM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 07, 2026 at 05:34:42 PM EST (UTC-0500)"
+  "last_workflow_event_eastern": "Nov 07, 2026 at 05:34:42 PM EST (UTC-0500)",
+  "dependency_image_recovery": "setup/dependency-image-preservation.json"
 }

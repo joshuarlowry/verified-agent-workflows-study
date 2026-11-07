@@ -24,7 +24,21 @@
     "passed": true
   },
   "model_calls": 0,
-  "published_private": false,
-  "publication_status": "Private recovery upload in progress; verify final receipt before treating remote image as preserved.",
-  "original_failure": "Initial upload could not read the local files through a root-owned 0700 parent. Parent access was repaired; original failed receipt retained. No model API calls."
+  "published_private": true,
+  "release_url": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts/releases/tag/dependency-image-3005436d2c76",
+  "ended_at_utc": "2026-11-07T22:45:37.986319+00:00",
+  "remote_verification": "Asset inventory and size; local SHA256 and independent-storage restore. Remote download not yet performed.",
+  "restore_instructions": "Download assets; verify listed SHA256. Concatenate listed parts in order if split, gunzip to OCI tar, verify OCI SHA256, podman load -i TAR, verify image ID.",
+  "remote_digest_crosscheck": {
+    "checked_at_utc": "2026-11-07T22:47:46.002195+00:00",
+    "asset": "study2-dependencies.oci.tar.gz",
+    "remote_digest": "sha256:e9c9e04978de26250a8f95cb390ba3ecc970c6136901c74742a424ee8be50dd0",
+    "local_digest": "sha256:e9c9e04978de26250a8f95cb390ba3ecc970c6136901c74742a424ee8be50dd0",
+    "bytes": 1346596143,
+    "state": "uploaded",
+    "passed": true,
+    "scope": "GitHub reported digest agrees with local compressed archive. Independent-storage restore validated uncompressed OCI archive; no remote download rerun."
+  },
+  "publication_status": "published_private_verified_digest",
+  "original_failure": "Initial upload unreadable through root-owned 0700 parent; original failure preserved and parent access repaired."
 }
