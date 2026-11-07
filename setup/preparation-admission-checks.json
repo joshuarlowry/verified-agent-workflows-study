@@ -1,0 +1,13 @@
+{
+  "kind": "synthetic_global_stop_propagation_not_model_calls",
+  "checks": {
+    "initial_allowed": true,
+    "other_cohort_ignored": true,
+    "raw_budget_blocks_before_manifest_update": true,
+    "global_latch_persists": true,
+    "manifest_budget_blocks": true,
+    "malformed_record_fails_closed": true
+  },
+  "all_passed": true,
+  "models_called": 0
+}
