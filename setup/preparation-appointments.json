@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T20:11:55.484580+00:00",
+  "recorded_at_utc": "2026-11-07T20:17:54.564473+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -405,6 +405,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
       "qualification": "Appointment is not approval or dispatch; wrapper requires accepted source review. Extraction staging needs different-model review before Context indexing."
+    },
+    {
+      "launch_id": "c1-reference-checks-20261107T201734Z",
+      "role": "terra-c1-reference-checks",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-c1-reference-checks-terra-20261107T201734Z",
+      "manifest_created_at_utc": "2026-11-07T20:17:34.139326+00:00",
+      "prompt_sha256": "5ced5e8e1aea1cc6df38df1cb1d5c226b8c4371b5adb54f47b47c1026895b968",
+      "controller_sha256": "59f5d4039b1635e1e091d9cbef842b73e008eb47107d45e74863477bc80e9011",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
+      "qualification": "C1 preparation only; accepted baseline/bindings and three clean public replays required before dispatch. Reference/checks/negative controls still require alternate, different-model review and clean qualification."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
