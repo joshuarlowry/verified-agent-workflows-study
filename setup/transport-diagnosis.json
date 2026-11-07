@@ -1,0 +1,73 @@
+{
+  "kind": "preparation_transport_diagnostics_not_model_quality_scores",
+  "observed_at_utc": "2026-11-07T11:52:50.069913+00:00",
+  "original_failure": "provider.invalid-output: content received after finish reason",
+  "original_endpoint_preserved": true,
+  "root_cause_status": "not_reproduced_not_fixed",
+  "probes": [
+    {
+      "route": "direct_openrouter",
+      "http_status": 200,
+      "error": null,
+      "api_budget_exhausted": false,
+      "wall_seconds": 14.010744454019004,
+      "first_bytes_seconds": 1.1152622190129478,
+      "frames": 278,
+      "finish_reasons": {
+        "0": "tool_calls"
+      },
+      "late_data_frames": [],
+      "tool_argument_bytes": [
+        13612
+      ],
+      "tool_arguments_valid": [
+        true
+      ],
+      "response_ids": [
+        "gen-1794052141-rG38JVLluVG0vtD7kQYn"
+      ],
+      "resolved_models": [
+        "openai/gpt-6.1-terra"
+      ]
+    },
+    {
+      "route": "through_litellm",
+      "http_status": 200,
+      "error": null,
+      "api_budget_exhausted": false,
+      "wall_seconds": 17.287251319008647,
+      "first_bytes_seconds": 4.833928027015645,
+      "frames": 184,
+      "finish_reasons": {
+        "0": "tool_calls"
+      },
+      "late_data_frames": [],
+      "tool_argument_bytes": [
+        14862
+      ],
+      "tool_arguments_valid": [
+        true
+      ],
+      "response_ids": [
+        "gen-1794052178-zmzOC8AdhJ1nodDeMzjA"
+      ],
+      "resolved_models": [
+        "terra-diagnostic"
+      ]
+    }
+  ],
+  "native_probe": {
+    "exit_code": 0,
+    "wall_seconds": 23.00356943102088,
+    "calls": 3,
+    "native_finish_reasons": [
+      "tool-calls",
+      "tool-calls",
+      "stop"
+    ],
+    "final_text": "- `/workspace/fixture-a.txt`: 100 lines\n- `/workspace/fixture-b.txt`: 100 lines\n- `/workspace/fixture-c.txt`: 100 lines",
+    "api_budget_exhausted": false,
+    "raw_streams_retained_privately": true
+  },
+  "next_action": "One explicitly recorded identical-prompt harness-construction retry with raw upstream stream capture; no automatic rescues or scored dispatch."
+}

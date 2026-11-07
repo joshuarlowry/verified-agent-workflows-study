@@ -1,0 +1,17 @@
+{
+  "kind": "C1_evaluator_cross_review_not_task_qualification",
+  "reviewer_model": "google/gemma-4-31b-it",
+  "provider_tag": "crusoe/bf16",
+  "author_model": "z-ai/glm-5.3-flash",
+  "reviewer_verdict": "accept",
+  "original_report_sha256": "4724474662926b5f90d3794eecd6ec75205abef0e7fd60b10ef3a546b52b46e1",
+  "review_report_location": "private artifacts; raw suite not published",
+  "limitations": [
+    "Reviewer relied largely on source inspection; no passing complete reference or alternate was demonstrated.",
+    "Reviewer accepted formatting-sensitive migration audits; contract-compliant alternative implementations must still test this risk.",
+    "Reviewer claims about tamper prevention are not executed isolation evidence; copy/hash/subprocess execution does not establish a sandbox.",
+    "No reference/alternate, full negative-control execution or three-clean task qualification yet."
+  ],
+  "status": "draft_review_received_task_not_qualified",
+  "next_action": "Build independent reference/alternate from public contract, run against external evaluator, and resolve observed false positives/negatives before acceptance freeze."
+}

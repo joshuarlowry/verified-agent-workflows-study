@@ -26,7 +26,7 @@ def snapshot(manifest, service):
             raise ValueError('Invalid role identifier')
         rows.append({k: role[k] for k in ('role', 'run_id', 'model', 'status', 'dispatch_utc', 'ended_at_utc', 'agent_exit_code', 'controller_exit_code', 'api_budget_exhausted', 'prompt_sha256', 'controller_sha256') if k in role})
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    return {'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
+    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy') if k in manifest}, 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
 
 def main():
     parser = argparse.ArgumentParser()
