@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:35:24 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:35:26 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:35:24 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:35:26 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-provenance-delta-review | google/gemma-4-31b-it | returned requires cross review | Nov 07, 2026 at 01:31:46 PM EST (UTC-0500) | Nov 07, 2026 at 01:35:24 PM EST (UTC-0500) |
+| terra-clean-baseline-builder | openai/gpt-6.1-terra | running | Nov 07, 2026 at 01:35:26 PM EST (UTC-0500) | — |
 
-Gemma verifies only the exact provenance hash correction. Original GLM verdict and all normative bytes remain preserved; no full study qualification implied.
+Draft baseline follows full semantic review with only XR-06, plus separately accepted exact provenance correction. Original verdict preserved; no product text changed. All freeze and runtime qualification gates remain pending.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
