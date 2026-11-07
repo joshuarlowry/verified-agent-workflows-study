@@ -60,7 +60,15 @@ def main():
   except ValueError:pass
  steps=[e['part'] for e in events if e.get('type')=='step_finish']
  non_step_calls=verified_non_step_calls(run,record,steps)
- checks={'process_exit_zero':record.get('exit_code')==0,'budget_not_exhausted':not record.get('api_budget_exhausted',False),'startup_identity_recorded':(run/'startup-verified.json').exists(),'all_calls_paired':bool(provider) and len(provider)==len(gateway)==len(steps)+non_step_calls==len(record.get('requests',[])),'native_final_stop':bool(steps) and steps[-1].get('reason')=='stop'}
+ def index(path):return int(path.stem.rsplit('-',1)[1])
+ success_ids={index(p) for p in provider};gateway_ids={index(p) for p in gateway}
+ errors=[]
+ for path in sorted(run.glob('provider-http-error-*.json'),key=index):
+  error=json.loads(path.read_text()).get('error',{})
+  errors.append({'request':index(path),'provider_error_code':error.get('code'),'capture_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'usage_status':'unavailable; not assumed zero'})
+ error_ids={row['request'] for row in errors}
+ expected_ids=set(range(1,len(record.get('requests',[]))+1))
+ checks={'process_exit_zero':record.get('exit_code')==0,'budget_not_exhausted':not record.get('api_budget_exhausted',False),'startup_identity_recorded':(run/'startup-verified.json').exists(),'all_stream_calls_paired':bool(provider) and success_ids==gateway_ids and len(provider)==len(steps)+non_step_calls,'all_requests_accounted':success_ids.isdisjoint(error_ids) and success_ids|error_ids==expected_ids and {index(p) for p in run.glob('provider-request-*.json')}==expected_ids and {index(p) for p in run.glob('native-request-*.json')}==expected_ids,'recognized_http_failures':all(row['provider_error_code']==429 for row in errors),'native_final_stop':bool(steps) and steps[-1].get('reason')=='stop'}
  pairs=[]
  for a,b in zip(provider,gateway):
   x,y=parse(a),parse(b)
@@ -68,7 +76,7 @@ def main():
   pairs.append({'response_ids':x['response_ids'],'fidelity_and_terminal_order':match,'provider_usage_present':bool(x['usage']),'gateway_usage_present':bool(y['usage']),'payload_sha256':hashlib.sha256(json.dumps(x['semantic'],sort_keys=True).encode()).hexdigest()})
  checks['all_streams_preserved']=bool(pairs) and all(x['fidelity_and_terminal_order'] for x in pairs)
  checks['usage_captured']=bool(pairs) and all(x['provider_usage_present'] and x['gateway_usage_present'] for x in pairs)
- report={'kind':'transport_integrity_not_feature_acceptance','all_passed':all(checks.values()),'checks':checks,'calls':len(provider),'verified_non_step_calls':non_step_calls,'pairs':pairs}
+ report={'kind':'transport_integrity_not_feature_acceptance','all_passed':all(checks.values()),'checks':checks,'calls':len(provider),'requests':len(expected_ids),'failed_http_calls':errors,'failed_call_billing_complete':not errors,'scope':'Successful generation stream fidelity and request inventory only; HTTP errors lack complete gateway error-wire capture and billable usage. Not full adapter qualification.','verified_non_step_calls':non_step_calls,'pairs':pairs}
  (run/'stream-integrity.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps({'all_passed':report['all_passed'],'calls':len(provider),'checks':checks}))
  raise SystemExit(0 if report['all_passed'] else 1)

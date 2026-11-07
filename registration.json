@@ -360,7 +360,7 @@
     "warmup_policy": "prestart_and_healthcheck_before_dispatch_for_all_arms",
     "runtime_retrieval_counts_toward_deadline": true,
     "post_freeze_change_requires_amendment": true,
-    "existing_local_server_check": "Historical generic Context/Next smoke passed; rebuilt Vite/Hono corpus source/extraction reviewed, actual network-disabled seven-role integration pending"
+    "existing_local_server_check": "Historical generic transport only; pre-fix model corpus selection and extraction approvals excluded"
   },
   "documentation_corpus": {
     "adapter_candidate": "Context MCP (@neuledge/context) only",
@@ -378,14 +378,14 @@
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
     "coverage_gaps": [
-      "declared release-line/moving-source versus pinned API differences in SOURCE_SELECTION_OMISSIONS.md",
-      "actual network-disabled OpenCode integration with the 22-archive corpus and seven roles pending",
-      "public redistribution/attribution review remains open; raw materials withheld"
+      "Fresh source selection, omissions and version/API coverage review pending",
+      "Clean corpus build and seven-role offline retrieval qualification pending",
+      "Public attribution/redistribution review pending; raw upstream material withheld"
     ],
     "preparation_plan": "STUDY_PLAN.md",
     "candidate_corpus_plan": "registration.json#/application_preparation",
     "context_storage_isolation": "dedicated container or OS identity with approved ~/.context/packages; no undocumented directory override",
-    "existing_local_server_check": "Context startup/catalog/Next retrieval passed; new Vite/Hono corpus not built",
+    "existing_local_server_check": "Historical generic smoke is reference only; clean corpus and actual final role integration unqualified",
     "required_role_count": 7,
     "required_role_matrix": "registration.json#/core_configurations",
     "generic_query_suite_frozen_before_model_runs": true,
@@ -393,10 +393,11 @@
     "source_version_coverage_review_signoff": null,
     "runtime_compatibility_verified": false,
     "curator": {
-      "model": "google/gemma-4-31b-it",
-      "session": "gemma-docs-corpus-builder",
-      "provider_tag": "crusoe/bf16",
-      "status": "first_draft_reviewed_changes_required",
+      "model": "openai/gpt-6.1-terra",
+      "session": "pending: clean docs-selection-20261107T180550Z",
+      "provider_tag": "azure",
+      "reasoning_effort": "high",
+      "status": "fresh_source_selection_queued_after_full_scope_review",
       "independence_claim": false
     },
     "review_scope": [
@@ -414,13 +415,6 @@
       "status": "pending_clean_rerun"
     },
     "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence",
-    "revision_curator": {
-      "model": "openai/gpt-6.1-terra",
-      "session": "terra-docs-repair-r1",
-      "provider_tag": "azure",
-      "reasoning_effort": "high",
-      "status": "returned_cross_review_recommends_runtime_progression"
-    },
     "snapshot_hash_definition": "SHA256 of the frozen SHA256SUMS artifact listing; raw files/archives are retained privately with listed hashes",
     "generic_native_smoke": "setup/opencode-context-preliminary.json; generic archive and synthetic responses only, explicit runtime add/healthcheck required in observed setup",
     "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public"
@@ -791,7 +785,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "fresh_public_scope_construction_in_progress",
+    "status": "revised_scope_delivered_full_review_running_docs_selection_queued",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,

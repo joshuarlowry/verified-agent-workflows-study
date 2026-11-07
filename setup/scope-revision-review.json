@@ -1,0 +1,75 @@
+{
+  "updated_at_utc": "2026-11-07T18:06:22.626947+00:00",
+  "scope_candidate": {
+    "run_id": "clean-20261107T122746Z-terra-revision-20261107T171430Z",
+    "status": "delivered; not frozen",
+    "files_sha256": {
+      "baseline-spec.md": "2bbbdb02cbf53e6dd159384458a92535e328c1752c61555304c7f9706c8c1e60",
+      "FAQ.md": "b1da332829ec9abe9f6b77ba8765da67b32980f7a360c66d0ebbcd815bdd8cbd",
+      "SHA256SUMS": "55fd8df867a076ef5ed8eec85d8eab8234c9c27a0f0fa98540165c1a0d3a8af1",
+      "requirements.json": "e514be2467b0597ec499f558dcc53fc84e8624fe1369e6ec23c8cf32d779d761",
+      "QUESTIONS.json": "a7f862a5d39dc12790fa1a0c0cc65ca4c7101ac9a96c7e2ebfc1d1043c70a2fe",
+      "PROVENANCE.json": "3c60a02902c57c9328f91185df08e5f3afa03f105c168cf60d70819d317bee1e",
+      "CHANGES.json": "4795a15d6e3c462b0c1e3ead7612ba16d723ed2a14e7fc0e0ac055838e0f1235",
+      "DECISION-PACKET.json": "cdb15657a4135e4446014318a6e96471f77b1119c574476901f5504c7c4336b7",
+      "archive/original-constructor-PROVENANCE.json": "9af4d0f244bb904ea6f5f6b76f0f9cc363474f72dfe939810a56f2bde9923037",
+      "archive/README.md": "e338faedee27329d7351051ac6308e427a776e4c5722fdbd38243fdbd35f3c9c",
+      "contracts/C4-remember-last-workspace.md": "00144aac3148df30cffef3e3dd33859f104aa736d6d3cd4d213f1e9264bbb9e8",
+      "contracts/S13-membership-management.md": "8b5919496955189cb0f3c3df61f0bca71aab0c971dc2f908d7f823e440b2033b",
+      "contracts/S12-item-activity-history.md": "749309f007f4c0caad2be06a120caabb65132948b97ad307086c0289487e7b6a",
+      "contracts/S09-optimistic-concurrency.md": "071b033e1ac02cd9ce49a2ca0ed8ef5798be806a2ba68755b46a6d3376d4f39b",
+      "contracts/C2-item-list-sort-toggle.md": "51fa20665d9081a3a94af152c1ddeba56cb681b4ec80087380250e99a63d4055",
+      "contracts/S10-workspace-switch-guard.md": "48c895a44fc32db5ce1bc4e5981034c4d2793ba389b1656bd7cd5836120c62f2",
+      "contracts/S11-bulk-status-update.md": "980f85e18dac180be8ea30fa92432fd58557d53695724cbc8b7a5433f07c95d2",
+      "contracts/C1-workspace-item-counts.md": "71fe5a570b7e3e9993b1c11e1e489b0fdff0b4c122199b5ac2823144e0bd1df8",
+      "contracts/S08-due-date-semantics.md": "282e7a53dd19db0b27a70f41917653c0d34df48409901d17293738949ec5e602",
+      "contracts/S14-workspace-overview-summary.md": "a37e43a59cb4d8d18b37f66cd1002210c880c757069366905fef9b5d83270bda",
+      "contracts/S05-export-fidelity.md": "9c6aef00cb9859c3468c1f66bf24c37413548376b913523a235cc746d4692583",
+      "contracts/S15-keyboard-quick-add-focus.md": "77220d3e7c61ebf63b62cad91b81cda99fb87109001de465550254e7481de246",
+      "contracts/S06-destructive-permissions.md": "779c96ca063d731b054ef35a24598c3ccb617385f49b226e935ceb9845843f6d",
+      "contracts/S07-failure-safe-editing.md": "26b8960d1f5fde8e0c236e52fd5c8da9a09349d96755af0fbf0fb3afe08ce9d1",
+      "contracts/README.md": "afe70d2d44bf3c4a8ee97c5a11764ea3bb8916e265474ed6156563a079dc756c",
+      "contracts/C3-item-share-link.md": "d223a9c9232d052922cda8667682ec22a0414baad8f7f3f63cecac1edcf1950c",
+      "contracts/S02-archive-restore.md": "ccbdcffcf85287b852952fe2e350bf13feca02de3e9e92b67882342ac13173c9",
+      "contracts/S04-transactional-import.md": "c03c58a2788ead9a89f484ef7669dc511c5fa081f03c6f0108e6d8485643378a",
+      "contracts/S01-input-validation-hardening.md": "bb07c481462a919e855eb1bd4bef27f7b47bc80c8ec6cef664782da2e8571acf",
+      "contracts/S03-stable-cursor-pagination.md": "c06ec85005ea7c51900ffe08f43c18104a10668ef02cadad9f9432c1a321402e"
+    },
+    "successful_calls": 34,
+    "stream_capture_audit": "passed"
+  },
+  "gemma_review": {
+    "run_id": "clean-20261107T122746Z-gemma-cross-review-20261107T171430Z",
+    "reported_verdict": "accepted",
+    "actual_review_scope": "sampled six contracts, baseline, FAQ, decisions and coordinator findings; hashing all files does not establish textual review",
+    "contracts_read": [
+      "S05",
+      "S13",
+      "S15",
+      "S03",
+      "S04",
+      "S09"
+    ],
+    "registered_full_review_satisfied": false,
+    "successful_calls": 19,
+    "captured_provider_http_429_failures": 24,
+    "successful_stream_fidelity": "all paired streams preserved",
+    "failed_call_usage": "unavailable, not assumed zero",
+    "failure_wire_scope": "provider HTTP error payloads retained; complete gateway HTTP error wire not captured",
+    "self_reported_provenance_timestamp": "not used; controller UTC timestamps authoritative"
+  },
+  "next_review": {
+    "model": "z-ai/glm-5.3-flash",
+    "launch_id": "full-scope-review-20261107T180439Z",
+    "scope": "all nineteen contracts, per-file hash/coverage and baseline/FAQ/decision/provenance analysis"
+  },
+  "next_independent_preparation": {
+    "model": "openai/gpt-6.1-terra",
+    "launch_id": "docs-selection-20261107T180550Z",
+    "dispatch": "sequentially after review endpoint and passing capture audit; stops on API exhaustion/interruption",
+    "scope": "fresh official documentation source selection only; content review required before corpus construction"
+  },
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "scope_freeze_approved": false
+}
