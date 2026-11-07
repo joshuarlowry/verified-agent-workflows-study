@@ -1,6 +1,8 @@
-# MCP and documentation setup — draft revision 3
+# MCP and documentation setup — draft revision 4
 
 Configure and qualify one common MCP bundle before calibration. Every direct agent, supervisor and Gemma worker receives the same relevant capabilities and documentation corpus. Setup is an explicit study milestone with evidence; an installed server is only a candidate until its isolation and harness adapters pass.
+
+The [application and documentation plan](APPLICATION_AND_DOCS_PLAN.md) supplies candidate stack pins, the source/topic inventory, ordered work packages, ownership and a seven-role parity checklist. [docs/corpus-plan.json](docs/corpus-plan.json) records verified package availability and unresolved corpus evidence; it is not the final corpus manifest.
 
 ## Available candidates
 

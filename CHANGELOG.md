@@ -1,5 +1,9 @@
 # Protocol revision notes
 
+## Revision 4 — application stack and actionable Context work plan
+
+Propose a compact Next.js/React/TypeScript, Better Auth and SQLite stack, with candidate package versions verified against npm metadata. Add APPLICATION_AND_DOCS_PLAN.md and docs/corpus-plan.json covering source/version coverage, missing documentation, Context's OS-home storage constraint, isolated packaging, ordered owners/deliverables, seven role adapters and concrete setup completion criteria. Record the successful local Context startup/catalog/retrieval check while leaving study isolation, source review and role parity unqualified. No candidate dependency was installed and no fixture or evaluator was constructed by this revision.
+
 ## Revision 3 — common MCP and documentation setup
 
 At the user's request, add configuration and qualification of available relevant MCP servers to the core preparation plan. Context MCP supplies a scoped, exact-version documentation corpus; the installed local-docs, Serena, GitNexus and Lightpanda servers are inventoried candidates requiring explicit inclusion decisions and parity/isolation checks. Add MCP_SETUP.md, registration evidence gates and per-task MCP provenance/measurement fields. Global project indexes and live unpinned documentation are excluded from the common corpus. No MCP effectiveness comparison or scored run has occurred.

@@ -1,4 +1,4 @@
-# Task contract and qualification template — draft revision 3
+# Task contract and qualification template — draft revision 4
 
 Fill and freeze the contract before scored dispatch. Complete qualification before this task's stage begins. Empty fields are launch dependencies, not implied approvals.
 

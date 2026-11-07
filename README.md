@@ -1,6 +1,6 @@
 # Verified Agent Workflows — Study 2
 
-**Draft revision 3. No scored experiments have started.**
+**Draft revision 4. No scored experiments have started.**
 
 ## Hypothesis and decision
 
@@ -24,7 +24,7 @@ The exact three model IDs are retained. These compare **whole systems**, includi
 
 ## Workload and limits
 
-Use a new small application with real UI, API and a disposable local database.
+Use a new small work-item tracker with Next.js/React, a real HTTP API, Better Auth and disposable SQLite. The [application and documentation plan](APPLICATION_AND_DOCS_PLAN.md) proposes exact dependency versions and the qualification work needed before freezing them.
 
 - **Calibration:** four tasks × five systems × two repetitions = 40 unscored runs, beginning with a ten-run smoke pilot included in that total.
 - **Core:** fifteen tasks × five systems × two repetitions = 150 scored runs.
@@ -44,6 +44,8 @@ Analyze matched task clusters. Calibration informs precision simulations; fiftee
 ## Next step and documents
 
 Configure and qualify the [common MCP bundle and Context documentation corpus](MCP_SETUP.md) before calibration. Evaluate the installed Context/local-docs, Serena, GitNexus and Lightpanda servers, then freeze relevant tools and exact-version docs with equal access for direct agents, supervisors and Gemma workers.
+
+Follow the [ordered application/docs work plan](APPLICATION_AND_DOCS_PLAN.md): qualify the stack, review documentation sources, build an isolated Context corpus, configure all role adapters, verify retrieval and isolation, then freeze manifests. The existing local Context server works; its current library set needs updating for this proposed application.
 
 Appoint independent fixture builders and reviewers. Subject models **and their families** are excluded from building the app, reference solutions and acceptance checks. This AI coordinator drafted the plan; that does not qualify it to construct the benchmark.
 

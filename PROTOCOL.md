@@ -1,4 +1,4 @@
-# Study 2 protocol — revision 3
+# Study 2 protocol — revision 4
 
 **Draft for registration. No application or study runs have been produced under this protocol.** Revision 2 incorporates external design feedback. The [one-page overview](README.md) gives the decision question; [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) defines thresholds and analysis. The user chose a new small application with a real UI, API and local test database.
 
@@ -15,6 +15,8 @@ Completion is a gate. Partial-work scores explain failures; they cannot turn an 
 ## 2. Application and independent construction
 
 Use a small work-item tracker, provisionally `Workboard Lab`: TypeScript, a React UI, real HTTP API, local SQLite persistence, users/workspaces, session authentication and basic CRUD. Freeze exact framework versions, baseline commit, lockfile, runtime image and fixtures before scored collection. Hosted services and production deployment are outside this fixture.
+
+The [application and documentation plan](APPLICATION_AND_DOCS_PLAN.md) proposes Next.js/React, Better Auth, better-sqlite3, Vitest and Playwright, with registry-verified candidate pins in [docs/corpus-plan.json](docs/corpus-plan.json). Candidate availability is not runtime qualification. Eligible builders validate the stack and freeze the actual lockfile/image; documentation setup follows those versions and records any release-family coverage gaps. That plan also defines the seven session-role adapters and concrete corpus acceptance evidence.
 
 Separate the subject application from a restricted control environment containing sealed tests, reference solutions, raw logs and the evaluator. Subjects receive only the task's baseline, contract, public checks and permitted documentation. Containers or equivalent identities/mounts enforce separation; worktrees alone are insufficient. Each task/run starts from the same baseline with isolated writable dependencies, caches, ports and database.
 

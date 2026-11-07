@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "protocol_revision": 4,
+  "status": "candidate_stack_and_corpus_not_frozen",
+  "metadata_checked_at_utc": "2026-11-07T02:25:18.865822+00:00",
+  "runtime_candidate": {
+    "node": "24.19.0",
+    "npm": "10.9.0",
+    "basis": "observed development tools; build replay and image digest still required",
+    "image_digest": null
+  },
+  "application": "Workboard Lab: small work-item tracker with UI, HTTP API, SQLite and session authentication",
+  "packages": [
+    {
+      "package": "next",
+      "candidate_version": "16.4.5",
+      "role": "framework",
+      "registry_metadata_url": "https://registry.npmjs.org/next/16.4.5",
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "peer_dependencies": {
+        "sass": "^1.3.0",
+        "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+        "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+        "@playwright/test": "^1.51.1",
+        "@opentelemetry/api": "^1.1.0",
+        "babel-plugin-react-compiler": "*"
+      },
+      "package_integrity": "sha512-rmdfsWosjTUO+6R0S3KokoIk6Kj0sWDRTe86tZHdqaWH/oXq/udX3/4xb+YQi7aWbyEFoglDU54kaifLCdXbBw==",
+      "documentation_entry_url": "https://nextjs.org/docs",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "react",
+      "candidate_version": "19.3.1",
+      "role": "ui",
+      "registry_metadata_url": "https://registry.npmjs.org/react/19.3.1",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "peer_dependencies": {},
+      "package_integrity": "sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==",
+      "documentation_entry_url": "https://react.dev/reference/react",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "react-dom",
+      "candidate_version": "19.3.1",
+      "role": "ui_runtime",
+      "registry_metadata_url": "https://registry.npmjs.org/react-dom/19.3.1",
+      "engines": {},
+      "peer_dependencies": {
+        "react": "^19.3.1"
+      },
+      "package_integrity": "sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==",
+      "documentation_entry_url": "https://react.dev/reference/react-dom",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "typescript",
+      "candidate_version": "5.9.3",
+      "role": "language",
+      "registry_metadata_url": "https://registry.npmjs.org/typescript/5.9.3",
+      "engines": {
+        "node": ">=14.17"
+      },
+      "peer_dependencies": {},
+      "package_integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+      "documentation_entry_url": "https://www.typescriptlang.org/docs/",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "better-auth",
+      "candidate_version": "1.7.18",
+      "role": "authentication",
+      "registry_metadata_url": "https://registry.npmjs.org/better-auth/1.7.18",
+      "engines": {},
+      "peer_dependencies": {
+        "pg": "^8.0.0",
+        "vue": "^3.0.0",
+        "next": "^14.0.0 || ^15.0.0 || ^16.0.0",
+        "react": "^18.0.0 || ^19.0.0",
+        "mysql2": "^3.0.0",
+        "prisma": "^5.0.0 || ^6.0.0 || ^7.0.0",
+        "svelte": "^4.0.0 || ^5.0.0",
+        "vitest": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
+        "mongodb": "^6.0.0 || ^7.0.0",
+        "solid-js": "^1.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0",
+        "drizzle-kit": ">=0.31.4 || >=1.0.0-beta.1",
+        "drizzle-orm": "^0.45.2 || >=1.0.0-rc.1 <2.0.0",
+        "@sveltejs/kit": "^2.0.0 || ^3.0.0",
+        "@lynx-js/react": "*",
+        "@prisma/client": "^5.0.0 || ^6.0.0 || ^7.0.0",
+        "@tanstack/react-start": "^1.0.0",
+        "@tanstack/solid-start": "^1.0.0"
+      },
+      "package_integrity": "sha512-VmPc441MZhOKYaRHLgJTXl3T4H7tWZiiYJoMSTl0ZhsEKyAjGm1UdJfghZmFMpzNe+1NLCTUoTAARhi58vcd0g==",
+      "documentation_entry_url": "https://better-auth.com/docs",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "better-sqlite3",
+      "candidate_version": "13.0.3",
+      "role": "database_driver",
+      "registry_metadata_url": "https://registry.npmjs.org/better-sqlite3/13.0.3",
+      "engines": {
+        "node": ">=22"
+      },
+      "peer_dependencies": {},
+      "package_integrity": "sha512-RbOBxmLBG8uvFUc15X9+9SFemKcQ0WBuISBVkpuiaUB2qblC8UWlHEjdWVoZ8AdhSwmoEgsiXKfopX0CQxaACQ==",
+      "documentation_entry_url": "https://github.com/WiseLibs/better-sqlite3/blob/master/docs/api.md",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "vitest",
+      "candidate_version": "5.1.0",
+      "role": "unit_tests",
+      "registry_metadata_url": "https://registry.npmjs.org/vitest/5.1.0",
+      "engines": {
+        "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+      },
+      "peer_dependencies": {
+        "vite": "^6.4.0 || ^7.0.0 || ^8.0.0",
+        "jsdom": "*",
+        "happy-dom": "*",
+        "@vitest/ui": "5.1.0",
+        "@types/node": "^22.0.0 || >=24.0.0",
+        "@edge-runtime/vm": "*",
+        "@opentelemetry/api": "^1.9.0",
+        "@vitest/coverage-v8": "5.1.0",
+        "@vitest/browser-preview": "5.1.0",
+        "@vitest/coverage-istanbul": "5.1.0",
+        "@vitest/browser-playwright": "5.1.0",
+        "@vitest/browser-webdriverio": "^5.0.0-beta.5 || >=5.0.0"
+      },
+      "package_integrity": "sha512-MzmNFnrwa8v8lF1bLxw3UJ4EREwVOVb75VqJZmUDRjJ6EluK/x9th7qTbaeDk41WxE1GxWqmTXcdsfobfH5sOA==",
+      "documentation_entry_url": "https://vitest.dev/guide/",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "@playwright/test",
+      "candidate_version": "1.65.0",
+      "role": "browser_and_http_tests",
+      "registry_metadata_url": "https://registry.npmjs.org/%40playwright%2Ftest/1.65.0",
+      "engines": {
+        "node": ">=20"
+      },
+      "peer_dependencies": {},
+      "package_integrity": "sha512-iGURLGuKDLakSEl7Pgfv8h7f+XLT+V861Wfhz0zlEl5nyFuKUopdkFBPKqTllTUp06aOwPuH8iuUEb3yp3MpbQ==",
+      "documentation_entry_url": "https://playwright.dev/docs/intro",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "eslint",
+      "candidate_version": "10.14.0",
+      "role": "lint",
+      "registry_metadata_url": "https://registry.npmjs.org/eslint/10.14.0",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "peer_dependencies": {
+        "jiti": "*"
+      },
+      "package_integrity": "sha512-T0pNsxkb9IKmtQjhpK3d7nWOpFv+YHuMbTJnSVMoQblF0onvXfErrtp4V1jHtsQPan7dKaGVD0q1WCXnzMF31A==",
+      "documentation_entry_url": "https://eslint.org/docs/latest/",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    },
+    {
+      "package": "eslint-config-next",
+      "candidate_version": "16.4.5",
+      "role": "framework_lint",
+      "registry_metadata_url": "https://registry.npmjs.org/eslint-config-next/16.4.5",
+      "engines": {},
+      "peer_dependencies": {
+        "eslint": ">=9.0.0",
+        "typescript": ">=3.3.1"
+      },
+      "package_integrity": "sha512-mvh39zYLoNjpT5tVmf8xZu7i5lEOb5jN5cW6qD9OpeCp4GEEOeYta0Z2XyKiD0pYdlvm5/Td6Bi890maPRlIjg==",
+      "documentation_entry_url": "https://nextjs.org/docs/app/api-reference/config/eslint",
+      "documentation_snapshot_sha256": null,
+      "context_library_id": null,
+      "context_archive_sha256": null,
+      "qualification": "planned_not_installed_or_qualified"
+    }
+  ],
+  "additional_sources": [
+    {
+      "name": "Node.js",
+      "version": "24.19.0",
+      "source": "https://nodejs.org/docs/v24.19.0/api/",
+      "snapshot_sha256": null
+    },
+    {
+      "name": "SQLite",
+      "version": null,
+      "version_rule": "read actual linked engine from qualified better-sqlite3 build",
+      "source": "https://sqlite.org/docs.html",
+      "snapshot_sha256": null
+    },
+    {
+      "name": "Public repository instructions and API/schema references",
+      "version": null,
+      "version_rule": "eligible builder baseline commit; exclude sealed tests and solutions",
+      "snapshot_sha256": null
+    }
+  ],
+  "existing_context_docs": {
+    "next@16.4.0": "replace_with_candidate_version",
+    "better-auth@1.7.7": "replace_with_candidate_version",
+    "vitest@5.0.4": "replace_with_candidate_version",
+    "python-stdlib@3.14": "exclude_from_typescript_application_corpus",
+    "ecmascript-number@2025": "exclude_unless_explicit_relevant_coverage_review"
+  },
+  "required_query_categories": [
+    "framework_route_handler",
+    "react_controlled_input",
+    "typescript_narrowing",
+    "auth_server_session",
+    "sqlite_parameter_binding",
+    "sqlite_transaction_rollback",
+    "vitest_setup_and_mocks",
+    "playwright_role_locator",
+    "playwright_http_request",
+    "eslint_flat_config",
+    "node_runtime_api",
+    "public_repository_instructions"
+  ],
+  "negative_query_categories": [
+    "unlisted_library",
+    "wrong_library_version",
+    "outside_corpus_path",
+    "unrelated_previous_repository"
+  ],
+  "required_roles": [
+    "gemma_direct",
+    "glm_direct",
+    "terra_direct",
+    "terra_supervisor",
+    "glm_supervisor",
+    "gemma_worker_under_terra",
+    "gemma_worker_under_glm"
+  ],
+  "qualification_evidence_sha256": null,
+  "frozen_corpus_manifest_sha256": null,
+  "known_limitations": [
+    "Package registry availability and peer ranges do not establish runtime compatibility",
+    "Context library IDs and exact-version packages require resolution or source builds",
+    "Official live docs need dated/versioned provenance rather than assumed patch-specific coverage",
+    "No application, lockfile, docs corpus or harness parity qualification has been constructed by this planning change"
+  ]
+}

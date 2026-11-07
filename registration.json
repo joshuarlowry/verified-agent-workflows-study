@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "protocol_revision": 3,
+  "protocol_revision": 4,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -308,6 +308,24 @@
     "retrieval_model_if_any": null,
     "retrieval_usage_recorded_as": "separate disclosed harness overhead",
     "generative_answers_or_unregistered_delegation_allowed": false,
-    "coverage_gaps": null
+    "coverage_gaps": null,
+    "preparation_plan": "APPLICATION_AND_DOCS_PLAN.md",
+    "candidate_corpus_plan": "docs/corpus-plan.json",
+    "context_storage_isolation": "dedicated container or OS identity with approved ~/.context/packages; no undocumented directory override",
+    "existing_local_server_check": "initialize, exact-version catalog and Next route-handler retrieval passed; cross-role/offline isolation not yet qualified",
+    "required_role_count": 7,
+    "required_role_matrix": "APPLICATION_AND_DOCS_PLAN.md",
+    "generic_query_suite_frozen_before_model_runs": true,
+    "exact_queries_and_expected_sources_sha256": null,
+    "source_version_coverage_review_signoff": null,
+    "runtime_compatibility_verified": false
+  },
+  "application_preparation": {
+    "plan": "APPLICATION_AND_DOCS_PLAN.md",
+    "candidate_stack_manifest": "docs/corpus-plan.json",
+    "status": "proposed_not_runtime_qualified",
+    "eligible_builder_signoff": null,
+    "independent_qualification_signoff": null,
+    "changes_before_calibration_require_recorded_reason": true
   }
 }
