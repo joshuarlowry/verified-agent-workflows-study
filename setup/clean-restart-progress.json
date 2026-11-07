@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T15:07:11.416559+00:00",
+  "updated_at_utc": "2026-11-07T15:33:40.662562+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -38,6 +38,8 @@
     "run_id": "clean-20261107T122746Z-scope-revision-terra-20261107T144032Z",
     "dispatch_gate": "GLM review final return, no budget exhaustion, all review streams preserved, structured proposals available",
     "endpoint_policy": "Fresh session; no automatic calibration/scored dispatch; revised scope still requires different-model approval",
-    "status": "Resumed after mechanical accounting-gate repair; original pre-dispatch failure preserved; no duplicate model calls."
-  }
+    "status": "Blocked endpoint preserved: no revised scope produced; required GLM review inputs were root-only. No agent currently running."
+  },
+  "supplemental_coordinator_review": "setup/scope-review.json",
+  "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff"
 }

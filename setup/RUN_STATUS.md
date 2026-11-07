@@ -1,14 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 10:20:05 AM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 10:33:54 AM EST (UTC-0500)
 
-**Latest workflow event:** Nov 07, 2026 at 10:07:33 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 10:33:40 AM EST (UTC-0500)
 
-**construction returned not qualified**
+**stopped preserving state**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-clean-public-scope-revision | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 10:06:50 AM EST (UTC-0500) | Nov 07, 2026 at 10:07:33 AM EST (UTC-0500) |
+| terra-clean-public-scope-revision | openai/gpt-6.1-terra | blocked preserved | Nov 07, 2026 at 10:06:50 AM EST (UTC-0500) | Nov 07, 2026 at 10:07:33 AM EST (UTC-0500) |
+
+No agent is running. Terra produced no revised scope because the GLM review inputs were unreadable. Coordinator review: changes required; see scope-review.json. A fresh rewrite and fresh-session review remain necessary.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 

@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-07T15:33:40.662562+00:00",
+  "reviewed_at_eastern": "Nov 07, 2026 at 10:33:40 AM EST (UTC-0500)",
+  "cohort_id": "clean-20261107T122746Z",
+  "verdict": "changes_required",
+  "freeze_approved": false,
+  "reviewer": {
+    "role": "Interactive Codex coordinator, explicitly requested by user to review",
+    "exact_backend_model_id": "not independently exposed in current session; no invented resolution",
+    "harness": "Codex interactive",
+    "authority": "User: You are a different model. Review please. Limited to this supplemental review; no new models launched.",
+    "independence": "Coordinator-context review, not blinded or fresh-session independent qualification. Earlier coordination and GLM findings were visible.",
+    "counts_as_registered_fresh_model_signoff": false,
+    "fixture_or_test_edits": false
+  },
+  "actual_scope": "Review of original clean Terra public-scope draft and GLM decision proposals. No revised Terra artifact exists; blocked revision endpoint audited. Contract feature/acceptance sections, complete FAQ and decision proposals, registration/protocol, input and output provenance checked. No application/runtime/evaluator qualification claimed.",
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "blocking",
+      "title": "The claimed revised scope does not exist",
+      "evidence": {
+        "run_id": "clean-20261107T122746Z-scope-revision-terra-20261107T144032Z",
+        "endpoint_excerpt": "Blocked: /workspace/inputs/glm-review is not readable or traversable by the current user.",
+        "application_output_files": 0,
+        "input_modes": {
+          "glm-review": "root:root 0700",
+          "REVIEW.json": "root:root 0600",
+          "DECISION-PROPOSALS.json": "root:root 0600"
+        }
+      },
+      "impact": "Exit code zero and a transport pass establish a captured final return, not delivery. This is a setup failure, not a Terra quality failure.",
+      "required_action": "Preserve the blocked endpoint; repair ownership/read/traverse access and verify the complete mounted input tree as the subject UID before a fresh preparation session. Do not overwrite or resume this endpoint as if it delivered a revision."
+    },
+    {
+      "id": "R2",
+      "severity": "high",
+      "title": "GLM export-filename proposal contradicts the disclosed API/UI distinction",
+      "evidence": {
+        "proposal": "Q-S05",
+        "proposal_excerpt": "the browser filename follows the Content-Disposition header",
+        "contract": "contracts/S05-export-fidelity.md:72-78",
+        "specified_API_filename": "workspace-<id>-export.json",
+        "specified_browser_example": "apollo-launch-export.json"
+      },
+      "impact": "Adopting the proposal makes the API-header rule and browser-download rule disagree. The proposed ordinary-name normalization also does not explicitly append the required -export.json suffix.",
+      "required_action": "Keep the API header filename and UI download filename as distinct disclosed outputs; resolve normalization and suffix explicitly in one revised contract and FAQ. Do not accept Q-S05 unchanged."
+    },
+    {
+      "id": "R3",
+      "severity": "high",
+      "title": "The owner-removal proposal overrides authentication and anti-enumeration",
+      "evidence": {
+        "proposal": "Q-S13",
+        "proposal_excerpt": "sole-owner removal always 409 regardless of any other condition",
+        "contract": "contracts/S13-membership-management.md:54-59",
+        "related_proposal": "Q-PRECEDENCE"
+      },
+      "impact": "An unconditional conflict can contradict 401/404/403 and expose an owner/membership state to unauthorized callers. Q-PRECEDENCE itself makes task-specific exceptions to its nominal uniform ladder.",
+      "required_action": "Limit the sole-owner conflict check to an authenticated, authorized workspace owner acting on a visible target. Publish explicit per-route precedence, including mixed failures; do not use a contradictory global always rule."
+    },
+    {
+      "id": "R4",
+      "severity": "high",
+      "title": "Proposed structural acceptance constraints would reject equivalent valid solutions without an outcome-based justification",
+      "evidence": {
+        "proposal": "Q-SCOPE",
+        "examples": [
+          "exact db.transaction wrapper in S04/S12",
+          "single prescribed SQL form in S09",
+          "data-page attribute in S03",
+          "p.keyboard-hint element in S15",
+          "exact JSON object-key order in S05"
+        ]
+      },
+      "impact": "The study promises materially different valid implementations and semantic UI checks. These prescriptions add implementation-style gates and qualification work; they do not by themselves demonstrate atomicity, race safety or correct UI behavior. Explicit disclosure alone does not justify the measurement choice.",
+      "required_action": "Before freeze, justify each structural requirement against a named study objective or make it nonbinding. Keep behavioral guarantees such as atomic rollback, concurrent version safety, timezone stability and accessible UI. Do not approve Q-SCOPE wholesale. Any genuine retained exception must be preregistered and accept alternative valid paths."
+    },
+    {
+      "id": "R5",
+      "severity": "major",
+      "title": "The draft still has unresolved product decisions and a contradictory pagination example",
+      "evidence": {
+        "files": [
+          "QUESTIONS.json",
+          "contracts/S03-stable-cursor-pagination.md:152",
+          "contracts/S04-transactional-import.md:54-79",
+          "baseline-spec.md seed and field-message sections"
+        ],
+        "verified_question_count": 19
+      },
+      "impact": "Missing seed creators/timestamps and baseline validation messages prevent deterministic task expectations. The 21st-item example can imply the newly inserted newest item appears on the next page, contrary to the strict descending keyset rule.",
+      "required_action": "Resolve each product question explicitly in a single decision packet, rewrite the affected normative contracts, and check examples against complete seed data. Separate pending runtime qualification from unresolved product semantics; no hidden expectation may fill a gap."
+    },
+    {
+      "id": "R6",
+      "severity": "major",
+      "title": "Escape during an in-flight save must not imply cancellation of a committed write",
+      "evidence": {
+        "proposal": "Q-S15",
+        "proposal_excerpt": "Escape while a save is pending closes without saving",
+        "contract": "contracts/S15-keyboard-quick-add-focus.md:55-63",
+        "baseline": "baseline-spec.md:317-326"
+      },
+      "impact": "The baseline explicitly preserves successful writes even when stale UI completions are ignored. A request already dispatched may commit; closing the form cannot promise that it was not saved.",
+      "required_action": "Specify the pending-save UI behavior and announcements consistently with persistent writes and lifetime isolation. Do not use absence of a write as an undisclosed Escape oracle."
+    },
+    {
+      "id": "R7",
+      "severity": "moderate",
+      "title": "The local-storage exception proposal conflates a failed write with initial restore failure",
+      "evidence": {
+        "proposal": "Q-C4",
+        "proposal_excerpt": "if localStorage access itself throws (write or read) ... fall back to baseline first-workspace selection"
+      },
+      "impact": "Applied literally after a user selection, a failed preference write could reset the active workspace. Requiring a write for reselecting the same value is also an extra internal behavior with no stated user outcome.",
+      "required_action": "Distinguish restore failure from persistence failure and decide observable behavior explicitly; avoid requiring invisible write events unless that is a justified task objective."
+    },
+    {
+      "id": "R8",
+      "severity": "moderate",
+      "title": "Provisional appendices remain a second competing specification",
+      "evidence": {
+        "files": [
+          "baseline-spec.md:43 onward",
+          "contracts/* common reading rule and original provisional appendices"
+        ],
+        "examples": [
+          "old frozen/verified claims",
+          "retired paths and exhaustive assertion migrations",
+          "partly amended exact mechanisms"
+        ]
+      },
+      "impact": "A long disclaimer plus retained legacy normative language leaves implementers and evaluator builders to reconcile precedence. That repeats the completion-criteria problem the new study is meant to solve.",
+      "required_action": "Provide one concise normative contract per task before freeze. Keep old wording and traceability in a separate provenance artifact outside subject input; bind actual fresh paths later. References, controls and checks must target only the final contract."
+    }
+  ],
+  "adjudication_of_glm_review": {
+    "F1": "Confirmed: missing seed bindings block seed-dependent acceptance freeze.",
+    "F2": "Confirmed as later baseline-qualification gate; not a reason to invent library facts now.",
+    "F3": "Not substantiated as author hash corruption: all 25 author input hashes match their actual immutable constructor inputs. The reviewer received a later registration snapshot. Preserve both hashes and explain the version boundary; do not replace historical hashes.",
+    "F4": "Confirmed: rewrite the 21st-item example unambiguously.",
+    "F5": "Confirmed: pin messages before exact-string acceptance.",
+    "F6": "Confirmed: exact limit-message checks require a disclosed message, or field-presence-only checks.",
+    "F7": "Not reproduced: the inspected S01 hint has one ordinary space after Required.; do not invent an exact-spacing defect.",
+    "F8_F9_F10": "Valid editorial/traceability cleanup; lower priority than product contradictions.",
+    "F11": "Historical author-workspace paths are not inherently incorrect after packaging relocation. Add an explicit delivery path map; do not rewrite original-path provenance as though it were the author environment.",
+    "F12": "Consistent with a broader review of all structural candidates; do not automatically retain them."
+  },
+  "mechanical_checks": [
+    {
+      "artifact": "clean-scope",
+      "manifest_entries": 27,
+      "all_match": true
+    },
+    {
+      "artifact": "scope-review",
+      "manifest_entries": 4,
+      "all_match": true
+    },
+    {
+      "artifact": "Terra constructor inputs",
+      "entries": 25,
+      "all_hashes_match": true
+    }
+  ],
+  "input_sha256": {
+    "terra_scope/CHANGES.json": "5ee62f9681cc5bb7f628a5f722395e0d936a6dcfe9adc6bb8a231de0d290b6cd",
+    "terra_scope/FAQ.md": "dc6e872b67aa3345c688f007afcccdeb21faf7b03a4b10b9645709e8fd44d03d",
+    "terra_scope/PROVENANCE.json": "9af4d0f244bb904ea6f5f6b76f0f9cc363474f72dfe939810a56f2bde9923037",
+    "terra_scope/QUESTIONS.json": "4b9bf99a63ef318d2001d710b507f127683faabc85e9f763ab5916092a3f7a2e",
+    "terra_scope/SCOPE-REVIEW.md": "45fb3a94132d316c13baf2a55e571a734555d97578519ff6f968da04f43be07c",
+    "terra_scope/SHA256SUMS": "4b27bd7358ee22e3a4391dfa312459a7dc1f46065abb39961f36bed4c4e022a3",
+    "terra_scope/baseline-spec.md": "1f070967a89e217258fad6100de1732f3d5087cc5ed8e2a2bce872bb4a7c37cc",
+    "terra_scope/contracts/C1-workspace-item-counts.md": "241c93be4191b13b8175d85382cc74831195a7d14dc1e4d2982e198f1aa521fa",
+    "terra_scope/contracts/C2-item-list-sort-toggle.md": "235ea4c934e8ff89b97bc24d8c5824628351ab5cf3b879343b2202dd258f7643",
+    "terra_scope/contracts/C3-item-share-link.md": "f67174413809e227614a0f35a0009b498c911f8182b21e9f176ab729933df0d3",
+    "terra_scope/contracts/C4-remember-last-workspace.md": "eb1442f712a22937f0376190b4fb75c16e60219dcbd6a7f44940cb005dc0d808",
+    "terra_scope/contracts/README.md": "26e0576205faff1fca9d3127c3192ab08baa15b44a375d863402bafff8ce0f8d",
+    "terra_scope/contracts/S01-input-validation-hardening.md": "de3670e00488ff5d9fc032d1137e367c89da7a177b454b7d830d2f691b5aabbc",
+    "terra_scope/contracts/S02-archive-restore.md": "decff232b93e0a4900b3ba722555051de7ce08b8d746dc50acf53a99dba9927d",
+    "terra_scope/contracts/S03-stable-cursor-pagination.md": "289911faa7f43e42582a5f9c29191049ede4a33cc8171fdb124bdff88128a1f7",
+    "terra_scope/contracts/S04-transactional-import.md": "672416c63a27f80603d380989e380be8a9271f6ab676608213d738743177b749",
+    "terra_scope/contracts/S05-export-fidelity.md": "c37610f4faaa35df366926e96bae56091c065e279a937748d635a046f379bd48",
+    "terra_scope/contracts/S06-destructive-permissions.md": "aa855c57e0b7d5946cf496524f9851bae8fec7deb9ac41da9d7d81154bbf1337",
+    "terra_scope/contracts/S07-failure-safe-editing.md": "5010a699a09215b52968307f6147defd94eb34c78eff4f9c94e6b20a9cb401f9",
+    "terra_scope/contracts/S08-due-date-semantics.md": "01d2fe3659bb8bec0063fe7f1e47806507ceefdb95d7ea174239625755f922eb",
+    "terra_scope/contracts/S09-optimistic-concurrency.md": "1baf3a3dac6905c11655dbcde985dda971c029438404c331f034129d82ce5d9a",
+    "terra_scope/contracts/S10-workspace-switch-guard.md": "2020189a194df90ac4d9bd72e8e46d163e1baac9a66996e25aa34eb8a66efcc5",
+    "terra_scope/contracts/S11-bulk-status-update.md": "0656837722667938d69e9cfbe69531a532f9fa6c44bc0feec3a3591d504df53e",
+    "terra_scope/contracts/S12-item-activity-history.md": "62843a75aeecf6058d6e8a6f74ff8905b1c115d7a59b68e82b32548ece6e0a42",
+    "terra_scope/contracts/S13-membership-management.md": "747b9fde101a7a75986a4cca6376ee2b8a4b65e71a2ba0cd620db8f12648eb07",
+    "terra_scope/contracts/S14-workspace-overview-summary.md": "2fe33b7307c68c70286c6bd1e7b8bafabf25d7bc787e5f0453dd56ce6ba39a74",
+    "terra_scope/contracts/S15-keyboard-quick-add-focus.md": "bbf675b767f2a4d5cb5bdb93b034c48a6c9f2ed824de512d1b2dbfe4899842d9",
+    "terra_scope/requirements.json": "07f78cd81e50a9fb17546cc0b1cb232d34656a99857dc75740edc29e0dd415ed",
+    "glm_review/DECISION-PROPOSALS.json": "a2dc88861f88d98c6d9f09d1bf2a0bbabbe9c878c98851318e8540ac28b170be",
+    "glm_review/PROVENANCE.json": "c047a2e0bea32308960d6673a00fd3e8162b1706b86d7198635acdf217f9a52a",
+    "glm_review/REVIEW.json": "1689ee47585a63a640a27e13c14b5df25e0a81b8529e80eeb2777227c582e6d3",
+    "glm_review/REVIEW.md": "cc14227c595d969b2774b05b05a8ce8910ececf1e876d99e3442f364f9357ed2",
+    "glm_review/SHA256SUMS": "f5c4d0e3d3513aff711c003ea64d35f7bd6b242ce8eea55b97dfe7df7f7c89fe",
+    "blocked_revision/controller.json": "dcb6638977ff0eb6259d7daefc4d5ed5f9d35d3415382955f6e1ab2f850896da"
+  },
+  "unchanged_study_design": [
+    "Five registered workflows",
+    "4 calibration plus 15 scored tasks and fixed sample/deadlines",
+    "Completion remains a hard machine-acceptance gate",
+    "No calibration or scored runs started"
+  ],
+  "next_actions": [
+    "Classify the zero-output Terra endpoint as blocked and correct public status.",
+    "Repair and preflight complete input readability before any new model dispatch; preserve the failed endpoint.",
+    "Fresh allowed-model revision should incorporate adjudicated findings, not copy GLM proposals wholesale.",
+    "Different allowlisted model in a fresh session must review the actual revised artifacts.",
+    "After product-scope approval, construct and qualify the baseline, docs, evaluator, reference/alternative paths and controls under remaining gates."
+  ],
+  "mechanical_repair": {
+    "action": "Copied GLM review inputs made readable/traversable by subject UID, read-only modes retained",
+    "file_count": 5,
+    "verified_as_subject_uid": 1000,
+    "input_bytes_unchanged": true,
+    "original_blocked_endpoint_preserved": true,
+    "new_model_calls": 0,
+    "fresh_workspace_preflight_still_required": true
+  }
+}

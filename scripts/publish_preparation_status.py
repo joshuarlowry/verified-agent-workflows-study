@@ -45,10 +45,10 @@ def snapshot(manifest, service):
             if row.get(field):
                 row[field.replace('_utc', '_eastern')] = eastern_time(row[field])
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    stamps=[manifest.get(k) for k in ('created_at_utc','started_at_utc','ended_at_utc')]
+    stamps=[manifest.get(k) for k in ('created_at_utc','started_at_utc','ended_at_utc','disposition_at_utc')]
     stamps += [row.get(k) for row in rows for k in ('dispatch_utc','ended_at_utc')]
     event_at=max((x for x in stamps if x),default=now)
-    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy', 'mechanical_recovery') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'snapshot_at_eastern': eastern_time(now), 'event_at_utc': event_at, 'event_at_eastern': eastern_time(event_at), 'display_timezone': 'America/New_York', 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
+    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy', 'mechanical_recovery', 'workflow_outcome', 'status_note') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'snapshot_at_eastern': eastern_time(now), 'event_at_utc': event_at, 'event_at_eastern': eastern_time(event_at), 'display_timezone': 'America/New_York', 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
 
 def main():
     parser = argparse.ArgumentParser()
@@ -74,8 +74,10 @@ def main():
     status_path = ROOT/'setup/status.json'
     status = json.loads(status_path.read_text())
     status.update(updated_at_utc=data['snapshot_at_utc'], updated_at_eastern=data['snapshot_at_eastern'], last_workflow_event_eastern=data['event_at_eastern'], status='preparation_'+data['status'], active_launch='setup/launch.json', launch_snapshot_note='See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.')
-    lines = ['# Current run status', '', '**Status checked/published:** '+data['snapshot_at_eastern'], '', '**Latest workflow event:** '+data['event_at_eastern'], '', '**'+data['status'].replace('_', ' ')+'**', '', '| Job | Model | State | Started (Eastern) | Ended (Eastern) |', '|---|---|---|---|---|']
+    lines = ['# Current run status', '', '**Status checked/published:** '+data['snapshot_at_eastern'], '', '**Latest workflow or disposition event:** '+data['event_at_eastern'], '', '**'+data['status'].replace('_', ' ')+'**', '', '| Job | Model | State | Started (Eastern) | Ended (Eastern) |', '|---|---|---|---|---|']
     lines += [f"| {r['role']} | {r['model']} | {r['status'].replace('_', ' ')} | {r.get('dispatch_eastern', '—')} | {r.get('ended_at_eastern', '—')} |" for r in data['roles']]
+    if data.get('status_note'):
+        lines += ['', data['status_note']]
     lines += ['', 'A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.', '', 'All displayed times use America/New_York, automatically switching between EST and EDT. UTC timestamps remain in the machine-readable record. This page updates automatically at job transitions and on explicit status refreshes. A newer status-check timestamp does not imply new agent work. It is not a live heartbeat. No chat/push/email notification is configured. [Machine-readable status](launch.json).', '']
     for path, text in [(ROOT/FILES[0], json.dumps(data,indent=2)+'\n'), (status_path, json.dumps(status,indent=2)+'\n'), (ROOT/FILES[2], '\n'.join(lines))]:
         path.write_text(text)
