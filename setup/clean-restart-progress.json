@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T19:37:53.390241+00:00",
+  "updated_at_utc": "2026-11-07T20:04:28.866381+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -22,12 +22,11 @@
     ]
   },
   "remaining": [
-    "Freeze revalidated scope and common decisions after review",
-    "Fresh baseline and baseline tests",
-    "Fresh corpus selection/build/review",
-    "Fresh role prompts, worker broker and evaluator",
-    "References, alternate solutions, negative controls and clean replay qualification",
-    "Actual full-role isolation and equal-resource qualification before calibration"
+    "Review narrow baseline contract/native-auth binding amendment and freeze qualified scope",
+    "Build/review generic documentation corpus from approved amended source selection",
+    "Construct/review role prompts, worker broker and evaluator",
+    "Build task reference/alternate solutions and negative controls; qualify five tasks first",
+    "Three clean replay, actual role isolation/equal resource and deadline/cancellation qualification before calibration"
   ],
   "scored_runs": 0,
   "calibration_runs": 0,
@@ -43,12 +42,12 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "baseline-review-20261107T193523Z",
+    "active_launch": "baseline-binding-amendment-20261107T200246Z",
     "queued_in_order": [
-      "docs-source-repair-20261107T193704Z"
+      "docs-amendment-review-20261107T200337Z"
     ],
-    "data_dependencies": "Baseline review uses only the verified frozen baseline, not documentation-review output. Source repair uses its own selection/review and dependency evidence.",
-    "order": "sequential model execution; all original endpoints and independent qualification gates preserved",
+    "data_dependencies": "Native-auth/contract amendment uses frozen app and baseline review. Documentation review uses completed amended source selection, official evidence and exact registration snapshots.",
+    "order": "Sequential external model execution; all original endpoints preserved",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
@@ -69,5 +68,7 @@
   "draft_baseline_admission": "setup/draft-baseline-admission.json",
   "baseline_candidate": "setup/baseline-candidate.json",
   "relay_timeout_repair": "setup/relay-timeout-repair.json",
-  "docs_source_review": "setup/docs-source-review.json"
+  "docs_source_review": "setup/docs-source-review.json",
+  "baseline_review": "setup/baseline-review.json",
+  "docs_source_repair": "setup/docs-source-repair.json"
 }

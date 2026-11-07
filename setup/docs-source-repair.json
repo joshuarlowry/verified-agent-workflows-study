@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-11-07T20:04:28.866381+00:00",
+  "run_id": "clean-20261107T122746Z-docs-source-repair-terra-20261107T193704Z",
+  "status": "delivered_pending_different_model_review",
+  "stream_integrity": "65 calls, all paired-stream, terminal, inventory and captured-usage checks passed",
+  "output_manifest_sha256": "e51f43102caf5b8e011ed812d8494aa775144824b608be5d81afcaaf2aae37df",
+  "controller_verified_manifest_entries": 112,
+  "manifest_mismatches": [],
+  "repair_summary": [
+    {
+      "id": "F-001",
+      "decision": "bind exact candidate key and verify representative selected content; do not declare whole moving pages release-specific"
+    },
+    {
+      "id": "F-002",
+      "decision": "add minimal release-local typescript-eslint source and query; explicitly omit each direct @types package"
+    },
+    {
+      "id": "F-003",
+      "decision": "preserve historical bytes and record three distinct snapshot boundaries without inventing the missing intermediate bytes"
+    },
+    {
+      "id": "F-004",
+      "decision": "remove unsupported generic errors topic instead of including a misleading index"
+    }
+  ],
+  "review_launch": "docs-amendment-review-20261107T200337Z",
+  "additional_controller_evidence": "Exact curator, baseline, original-reviewer, repair and current registration snapshots supplied to fresh reviewer. No historical author metadata rewritten.",
+  "corpus_built": false,
+  "final_freeze": false
+}

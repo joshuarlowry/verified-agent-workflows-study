@@ -1,0 +1,56 @@
+{
+  "recorded_at_utc": "2026-11-07T20:04:28.866381+00:00",
+  "run_id": "clean-20261107T122746Z-baseline-review-glm-20261107T193523Z",
+  "model": "z-ai/glm-5.3-flash",
+  "verdict": "changes_required",
+  "review_sha256": "42ee72d219a5b240c6fcf330e321177e093c90b2685b0a4ebf204e80ebdb4693",
+  "stream_integrity": "90 captured calls; successful native final return and all capture checks passed",
+  "source_integrity": {
+    "checked_at_utc": "2026-11-07T20:01:59.047272+00:00",
+    "checked_files": 21,
+    "changed_or_missing": [],
+    "meaning": "Reviewed source matches controller input hashes after runtime checks; not a qualification claim."
+  },
+  "reported_reproduced_checks": {
+    "fresh_install": true,
+    "build": "pass",
+    "typecheck": "pass",
+    "lint": "pass",
+    "unit_api": "7 passed",
+    "browser": "10 passed",
+    "reset_start": "pass"
+  },
+  "check_limit": "Independent constructor review on preparation host; not three-image replay, task qualification or evaluator acceptance. Native-auth test-mode observations require conditional bindings.",
+  "findings": [
+    {
+      "id": "R1",
+      "title": "Native-auth bindings are NODE_ENV=test-conditioned; production-like Better Auth 1.7.18 origin/CSRF enforcement not recorded",
+      "severity": "binding_gap_must_resolve_before_freeze"
+    },
+    {
+      "id": "R2",
+      "title": "Workspace summary field set contradictory in normative spec; candidate omits updatedAt from summaries",
+      "severity": "spec_ambiguity_must_resolve_before_freeze"
+    },
+    {
+      "id": "N1",
+      "title": "Public regression suite does not exercise several verified-conforming behaviors",
+      "severity": "informational"
+    },
+    {
+      "id": "N2",
+      "title": "Reload over-invalidation across unrelated lifetimes",
+      "severity": "informational"
+    },
+    {
+      "id": "N3",
+      "title": "Development-dependency audit advisories",
+      "severity": "informational"
+    }
+  ],
+  "next_amendment": "baseline-binding-amendment-20261107T200246Z",
+  "application_commit": "ac96364336be35f0d8d7dadb2717b951cd3c9ac4",
+  "final_freeze": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

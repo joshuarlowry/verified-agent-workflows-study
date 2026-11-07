@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "Clean scope/contract/FAQ cross-review and uniform decision packet; then fresh baseline, documentation corpus, worker harness and evaluator construction and qualification. No calibration or scored runs yet.",
+  "next_dependency": "Resolve and cross-review baseline native-auth bindings and API shape clarification; approve documentation source amendment, then build corpus, worker harness and evaluator; references, clean replays and actual isolation qualification precede calibration. No calibration/scored runs yet.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
