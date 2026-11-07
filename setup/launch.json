@@ -1,8 +1,8 @@
 {
   "launch_id": "litellm-patch-review-20261107T123827Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T12:39:38.775458+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T12:51:07.716050+00:00",
+  "status": "construction_returned_not_qualified",
   "background_service": "study2-litellm-review-20261107t123827z",
   "automatic_restart": false,
   "roles": [
@@ -10,8 +10,11 @@
       "role": "glm-litellm-patch-review",
       "run_id": "glm-litellm-patch-review-20261107T123827Z",
       "model": "z-ai/glm-5.3-flash",
-      "status": "running",
+      "status": "returned_requires_cross_review",
       "dispatch_utc": "2026-11-07T12:39:38.722841+00:00",
+      "ended_at_utc": "2026-11-07T12:51:07.666932+00:00",
+      "agent_exit_code": 0,
+      "controller_exit_code": 0,
       "prompt_sha256": "8b5bf2a86204cac1b1809f88abaaea395dec2111ca25a16f02fca8bce4720356",
       "controller_sha256": "2769f529d4609079e80df7eef5c146531bc158e3c7807d0362fb4a9ff36fe3d6"
     }
