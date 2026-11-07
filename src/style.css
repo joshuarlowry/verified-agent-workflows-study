@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f3f6f8; color: #162837; font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 900px; padding: 1rem; margin: auto; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+h1 { color: #163f59; }
+.panel, .item { background: white; border: 1px solid #cad6df; border-radius: .5rem; padding: 1rem; margin: 1rem 0; }
+label { display: block; font-weight: 600; margin: .75rem 0; }
+input, textarea, select { display: block; width: 100%; max-width: 32rem; font: inherit; color: inherit; background: white; padding: .5rem; border: 1px solid #758b9a; border-radius: .25rem; }
+textarea { min-height: 6rem; }
+button { font: inherit; cursor: pointer; background: #174e70; color: white; border: 1px solid #174e70; border-radius: .3rem; padding: .45rem .75rem; margin: .2rem 0; }
+button:disabled { cursor: wait; opacity: .6; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #e9950f; outline-offset: 2px; }
+.link { background: transparent; color: #174e70; border: 0; text-decoration: underline; padding-left: 0; }
+[role=alert], [aria-invalid=true] { color: #a11414; }
+.notes { white-space: pre-wrap; overflow-wrap: anywhere; }
+h3 { overflow-wrap: anywhere; }
