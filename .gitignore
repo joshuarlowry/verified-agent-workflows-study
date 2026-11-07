@@ -1,0 +1,12 @@
+# Credentials and private evaluation material
+.env
+.env.*
+!.env.example
+private/
+raw-logs/
+# Local dependencies and disposable test databases
+node_modules/
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
