@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 05:19:12 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 05:26:56 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 05:19:12 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 05:26:56 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-native-harness-completion | openai/gpt-6.1-terra | running | Nov 07, 2026 at 05:19:12 PM EST (UTC-0500) | — |
+| terra-native-harness-completion | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 05:19:12 PM EST (UTC-0500) | Nov 07, 2026 at 05:26:56 PM EST (UTC-0500) |
 
 Implement actual native driver/worker interface after partial prototype review. Primary admission stays blocked; no nested paid calls; new source review and live seven-role qualification required.
 
