@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-11-07T18:07:01.188933+00:00",
+  "kind": "capture_inventory_regression_checks_not_model_quality",
+  "cases": [
+    {
+      "case": "complete successful streams plus captured 429 inventory",
+      "expected_pass": true,
+      "observed_exit": 0
+    },
+    {
+      "case": "missing HTTP failure record is rejected",
+      "expected_pass": false,
+      "observed_exit": 1
+    },
+    {
+      "case": "missing successful gateway stream is rejected",
+      "expected_pass": false,
+      "observed_exit": 1
+    }
+  ],
+  "paid_model_calls": 0,
+  "original_evidence_unmodified": true
+}
