@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 05:03:36 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 05:04:02 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 05:03:36 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 05:04:02 PM EST (UTC-0500)
 
-**running**
+**stopped preserving state**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-native-worker-continuation-probe | google/gemma-4-31b-it | running | Nov 07, 2026 at 05:03:36 PM EST (UTC-0500) | — |
+| gemma-native-worker-continuation-probe | google/gemma-4-31b-it | blocked preserved | Nov 07, 2026 at 05:03:36 PM EST (UTC-0500) | Nov 07, 2026 at 05:04:02 PM EST (UTC-0500) |
 
 Two prewritten transport handoffs in one isolated Gemma session. No application feature, supervisor, Context or study acceptance; not primary workflow continuation/rescue.
 
