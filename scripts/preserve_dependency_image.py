@@ -27,6 +27,8 @@ def main():
     if os.geteuid() != 0:
         raise SystemExit('Requires the authorized preparation controller identity')
     ROOT.mkdir(exist_ok=True, mode=0o700)
+    os.chown(ROOT, 1000, 1000)
+    os.chmod(ROOT, 0o700)
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     job = ROOT / stamp
     job.mkdir(mode=0o700)
@@ -118,6 +120,8 @@ def main():
         notes = job / 'RELEASE_NOTES.md'
         notes.write_text('Exact preparation dependency image. Private recovery artifact; not a benchmark result or launch qualification.\n\nImage ID: `' + IMAGE + '`. See receipt.json for hashes, independent-storage restore evidence and restoration instructions. No application source, task solutions or corpus is part of the image.\n')
         os.chown(notes, 1000, 1000)
+        for path in assets + [notes, job / 'receipt.json']:
+            run(['/usr/sbin/runuser', '-u', 'josh', '--', 'test', '-r', str(path)])
         run(gh + ['release', 'create', receipt['release_tag'], '--repo', REPOSITORY,
                   '--prerelease', '--title', 'Study 2 dependency image ' + IMAGE[:12],
                   '--notes-file', str(notes), *map(str, assets), str(job / 'receipt.json')])

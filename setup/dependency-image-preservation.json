@@ -1,0 +1,30 @@
+{
+  "started_at_utc": "2026-11-07T22:44:11.765654+00:00",
+  "kind": "mechanical_artifact_publication_repair_no_model_call",
+  "original_failure_preserved": true,
+  "observed_cause": "Root-owned 0700 preservation parent blocked the host josh gh process from reading assets/notes. test -r failed; release absent. No export or restore rerun.",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "original_oci_archive": {
+    "sha256": "c122cbe0f629db9cf7fae65e01fb3e85805eb3fca23f34e31f5f7f6f4444f6b8",
+    "bytes": 1361766400
+  },
+  "compressed_archive": {
+    "sha256": "e9c9e04978de26250a8f95cb390ba3ecc970c6136901c74742a424ee8be50dd0",
+    "bytes": 1346596143
+  },
+  "assets": [
+    {
+      "name": "study2-dependencies.oci.tar.gz",
+      "sha256": "e9c9e04978de26250a8f95cb390ba3ecc970c6136901c74742a424ee8be50dd0",
+      "bytes": 1346596143
+    }
+  ],
+  "independent_storage_restore": {
+    "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+    "passed": true
+  },
+  "model_calls": 0,
+  "published_private": false,
+  "publication_status": "Private recovery upload in progress; verify final receipt before treating remote image as preserved.",
+  "original_failure": "Initial upload could not read the local files through a root-owned 0700 parent. Parent access was repaired; original failed receipt retained. No model API calls."
+}
