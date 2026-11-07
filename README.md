@@ -1,6 +1,6 @@
 # Verified Agent Workflows — Study 2
 
-**Draft revision 2. No experiments have started.**
+**Draft revision 3. No scored experiments have started.**
 
 ## Hypothesis and decision
 
@@ -42,6 +42,8 @@ Primary economics use frozen **uncached API-equivalent prices**, not subscriptio
 Analyze matched task clusters. Calibration informs precision simulations; fifteen tasks may not establish a ten-point margin. Inconclusive is valid. All other comparisons are secondary.
 
 ## Next step and documents
+
+Configure and qualify the [common MCP bundle and Context documentation corpus](MCP_SETUP.md) before calibration. Evaluate the installed Context/local-docs, Serena, GitNexus and Lightpanda servers, then freeze relevant tools and exact-version docs with equal access for direct agents, supervisors and Gemma workers.
 
 Appoint independent fixture builders and reviewers. Subject models **and their families** are excluded from building the app, reference solutions and acceptance checks. This AI coordinator drafted the plan; that does not qualify it to construct the benchmark.
 

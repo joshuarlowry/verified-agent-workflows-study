@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "protocol_revision": 2,
+  "protocol_revision": 3,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -237,5 +237,77 @@
   "primary_acceptance_rule": "All applicable frozen behavioral, regression, integration, build, typecheck, lint, integrity and critical-review gates pass",
   "post_return_repair_extension_registered": false,
   "public_report": "Observed results and hypothetical pricing remain separate",
-  "registration_approved_at_utc": null
+  "registration_approved_at_utc": null,
+  "mcp_setup": {
+    "plan": "MCP_SETUP.md",
+    "status": "planned_not_qualified",
+    "core_common_bundle_required": true,
+    "same_capabilities_for": [
+      "direct_agents",
+      "supervisors",
+      "gemma_workers"
+    ],
+    "available_candidates": [
+      {
+        "name": "library-docs",
+        "implementation": "@neuledge/context",
+        "observed_version": "1.3.3",
+        "role": "required_documentation_adapter_candidate"
+      },
+      {
+        "name": "local-docs",
+        "implementation": "mcp-local-rag",
+        "observed_version": "0.21.3",
+        "role": "local_corpus_adapter_candidate"
+      },
+      {
+        "name": "serena",
+        "observed_version": null,
+        "role": "repository_navigation_candidate"
+      },
+      {
+        "name": "gitnexus",
+        "observed_version": "1.6.12",
+        "role": "repository_graph_candidate"
+      },
+      {
+        "name": "lightpanda",
+        "observed_version": null,
+        "role": "local_browser_candidate"
+      }
+    ],
+    "selected_servers": null,
+    "selection_frozen_before_calibration": true,
+    "inventory_sha256": null,
+    "manifest_sha256": null,
+    "role_tool_matrix_sha256": null,
+    "qualification_sha256": null,
+    "qualification_signoff": null,
+    "global_catalogs_inherited": false,
+    "prior_project_indexes_allowed": false,
+    "independent_writable_run_state": true,
+    "warmup_policy": "prestart_and_healthcheck_before_dispatch_for_all_arms",
+    "runtime_retrieval_and_refresh_count_toward_deadline": true,
+    "setup_and_index_overhead_reported_separately": true,
+    "tool_latency_retries_and_failures_logged": true,
+    "post_freeze_change_requires_amendment": true
+  },
+  "documentation_corpus": {
+    "adapter_candidate": "Context MCP (@neuledge/context), existing library-docs name",
+    "versions_derived_from": "benchmark lockfile and runtime versions after baseline selection",
+    "exact_version_allowlist_required": true,
+    "context_serve_policy": "prefetch approved packages; serve --libs with exact name@version entries; verify registry search/download tools hidden",
+    "live_registry_and_unapproved_downloads": false,
+    "official_version_local_sources_preferred": true,
+    "community_package_source_version_coverage_review_required": true,
+    "same_readonly_file_corpus_for_all_arms": true,
+    "source_manifest_sha256": null,
+    "snapshot_sha256": null,
+    "index_settings_sha256": null,
+    "offline_retrieval_smoke_sha256": null,
+    "retrieval_model_if_any": null,
+    "retrieval_usage_recorded_as": "separate disclosed harness overhead",
+    "generative_answers_or_unregistered_delegation_allowed": false,
+    "coverage_gaps": null
+  }
 }

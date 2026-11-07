@@ -1,4 +1,4 @@
-# Task contract and qualification template — draft revision 2
+# Task contract and qualification template — draft revision 3
 
 Fill and freeze the contract before scored dispatch. Complete qualification before this task's stage begins. Empty fields are launch dependencies, not implied approvals.
 
@@ -6,6 +6,7 @@ Fill and freeze the contract before scored dispatch. Complete qualification befo
 
 - Task ID/revision/hash; category; independent difficulty stratum; frozen stage/order.
 - Baseline commit, image digest, lockfile, database fixture and local documentation hashes.
+- Common MCP manifest and documentation corpus hashes; exact library versions, tool/role matrix, isolated index/cache identities and qualification signoff under [MCP_SETUP.md](MCP_SETUP.md).
 - One user outcome, baseline reproduction, requested behavior and explicit non-goals.
 - Actors/authentication/ownership, data boundaries, null/zero/empty/error behavior.
 - Persistence/reload, compatibility, permitted edit scope and legitimate regression expectation changes.
@@ -41,6 +42,7 @@ All requirements are public. Public checks are representative examples; sealed c
 - Source/public-check/acceptance hashes and per-criterion accepted/rejected/unverified evidence.
 - Public-check predicate result released separately from sealed results.
 - Native input/output/cache/reasoning/write provenance and missing usage.
+- MCP calls, errors/retries, latency, corpus/index revisions and retrieval service overhead; effective tool/corpus parity across supervisor and worker sessions.
 - Human operational activity separated from blinded patch-review timing.
 - For machine-eligible patches: both blinded reviewers' active minutes, merge/change/cannot-assess verdicts, critical reproductions and adjudication.
 - For Gemma portfolio candidates: preregistered position and public-only selection manifest committed before sealed outcome disclosure to selector/analyst.

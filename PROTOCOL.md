@@ -1,4 +1,4 @@
-# Study 2 protocol — revision 2
+# Study 2 protocol — revision 3
 
 **Draft for registration. No application or study runs have been produced under this protocol.** Revision 2 incorporates external design feedback. The [one-page overview](README.md) gives the decision question; [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) defines thresholds and analysis. The user chose a new small application with a real UI, API and local test database.
 
@@ -83,11 +83,13 @@ The core systems are Gemma alone, GLM alone, Terra alone, Terra supervising Gemm
 
 The supervisor can select work, inspect quality, interpret public diagnostics and request repairs. Gemma performs all application/test edits. Both supervisors use the same deterministic Gemma broker, with separate sessions and usage. A supervisor cannot supply a complete replacement implementation. Terra alone is one complete Codex agent, not an agent plus a second operator.
 
-**Harness interpretation:** Terra remains in Codex. “Terra supervisor versus GLM supervisor” always means **Codex/Terra/Gemma versus OpenCode/GLM/Gemma**, not an isolated supervisor-model effect. No shared-harness Terra route has been established by this draft. A direct-provider Terra/OpenCode experiment would need a separate verified capability check and new treatment; changing the primary route would break continuity with the stated system of interest.
+**Harness interpretation:** The proposed core still places Terra in Codex. “Terra supervisor versus GLM supervisor” therefore means **Codex/Terra/Gemma versus OpenCode/GLM/Gemma**, not an isolated supervisor-model effect. A separate [Terra/OpenRouter readiness check](readiness/terra-openrouter-20261107.md) now establishes basic OpenCode transport/tool capability. Adopting that common harness requires an explicit registration revision and full common-harness qualification.
 
 ## 7. Controlled conditions
 
 Freeze baseline/task hashes, role prompts, relevant skills, version-local documentation, explicit checking protocol, allowed tools, sandbox permissions, host resources, context/output settings, sampling, compaction and retry policy. Use equivalent shell/read/search/edit/test capabilities and remove unrelated MCP/global skills. Keep supported-setting differences visible rather than pretending all harnesses are identical.
+
+Configure and qualify the available relevant MCP servers under [MCP_SETUP.md](MCP_SETUP.md). The common bundle includes a required documentation capability, starting with the installed Context MCP (`@neuledge/context`, currently `library-docs`) and exact-version docs selected from the new application's lockfile. Evaluate the available local-docs, Serena, GitNexus and Lightpanda servers for relevant coverage, isolation and harness parity; record inclusion/exclusion before calibration. Every direct agent, supervisor and worker receives the same approved corpus and capabilities. Freeze versions, tool schemas, role permissions, source/index hashes, network policy and timeout/retry behavior. Global catalogs and prior-project indexes are not the study configuration. MCP and corpus qualification hashes are launch dependencies; installation alone does not satisfy them.
 
 Install dependencies before timing. Execute sequentially with fresh sessions, task-only Git history, independent writable state and logged access. Keep credentials in the controller/broker, restrict network to required inference/transport, and isolate private evaluations and other runs. Record provider cache counters; fresh local caches do not guarantee a cold remote cache.
 
@@ -161,7 +163,7 @@ Report all scheduled/dispatched attempts, endpoint statuses, accepted counts, de
 
 A first final return is frozen before grading. Any later acceptance-guided repair is a new registered extension with uniform feedback and its own time/usage; sealed-test feedback makes those tests no longer held out. Fixture changes, provider/model drift and hardware changes are versioned rather than pooled silently.
 
-Potential later treatments include GLM supervising Terra, reciprocal reviewer roles, Beads/MCP additions, self-hosted serving and a new repository. Published plan/economic scenarios do not constitute those experiments.
+Potential later treatments include GLM supervising Terra, reciprocal reviewer roles, Beads, alternate MCP bundles, self-hosted serving and another repository. The qualified common MCP bundle is now part of the proposed core setup; comparing bundles would be a separate treatment. Published plan/economic scenarios do not constitute those experiments.
 
 The immediate milestone is appointing eligible fixture builders, qualifying calibration and validating the measurement/deadline method. Publication does not start collection or select a winner.
 

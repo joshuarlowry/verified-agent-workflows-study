@@ -1,5 +1,11 @@
 # Protocol revision notes
 
+## Revision 3 — common MCP and documentation setup
+
+At the user's request, add configuration and qualification of available relevant MCP servers to the core preparation plan. Context MCP supplies a scoped, exact-version documentation corpus; the installed local-docs, Serena, GitNexus and Lightpanda servers are inventoried candidates requiring explicit inclusion decisions and parity/isolation checks. Add MCP_SETUP.md, registration evidence gates and per-task MCP provenance/measurement fields. Global project indexes and live unpinned documentation are excluded from the common corpus. No MCP effectiveness comparison or scored run has occurred.
+
+Also reconcile the harness caveat with the separately published Terra/OpenRouter readiness result. The proposed Terra/Codex treatment remains pending an explicit common-harness design revision.
+
 ## Revision 2 — response to design review
 
 Status remains draft. These edits change the proposed experiment, not any observed results.
