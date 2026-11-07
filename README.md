@@ -38,7 +38,7 @@ Assumptions, not measurements: 205 runs, 120.25 aggregate subject hours plus 51.
 
 Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus cross-review and qualification, outages, provider requalification and optional human review. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
-[Study execution plan](STUDY_PLAN.md) · [Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
+[Run status](setup/RUN_STATUS.md) · [Study execution plan](STUDY_PLAN.md) · [Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
 
 ## Blocking dependencies
 
