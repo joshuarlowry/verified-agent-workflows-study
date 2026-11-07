@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 03:31:26 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 03:35:40 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 03:31:25 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 03:35:40 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-docs-extraction | openai/gpt-6.1-terra | running | Nov 07, 2026 at 03:31:25 PM EST (UTC-0500) | — |
+| terra-docs-extraction | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 03:31:25 PM EST (UTC-0500) | Nov 07, 2026 at 03:35:40 PM EST (UTC-0500) |
 
 After accepted docs-source review and sequential container endpoint, stage only approved generic docs with reproducible extraction. Expanded-content review required before Context package build.
 
