@@ -1,0 +1,83 @@
+{
+  "recorded_at_utc": "2026-11-07T22:13:36.862573+00:00",
+  "run_id": "clean-20261107T122746Z-c1-alternate-gemma-20261107T211533Z",
+  "author_model": "google/gemma-4-31b-it",
+  "status": "first_return_frozen_not_task_qualified",
+  "total_requests": 61,
+  "successful_captured_calls": 52,
+  "failed_http_requests": [
+    {
+      "request": 34,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 35,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 49,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 50,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 53,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 54,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 55,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 57,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 60,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    }
+  ],
+  "failed_call_billing_complete": false,
+  "usage_note": "Recognized429failures are preserved; unavailable failed-call billing is not assumed zero. Native/provider views are cross-checks, not added.",
+  "stream_integrity": "Successful stream pairs and request/error inventory passed the current auditor; not complete paid-failure/native-role qualification.",
+  "commit": "eb7d00f932f15522d3647197455b9c80eb1b6f3b",
+  "tree": "501ad9b10c80305b3ba4be924659bbe938fc73ff",
+  "git_status": "",
+  "git_bundle": {
+    "sha256": "bed3807b162576e3302c41c8d4b546887b3d219515684bcead13afef6c05c200",
+    "verify_exit": 0
+  },
+  "candidate_source_style": "Queries open item rows and filters/reduces in application code, structurally distinct from reference SQL correlated count. This is not independent functional acceptance.",
+  "author_claimed_checks": "API/unit, browser, typecheck/lint pass in rationale; independent verification pending.",
+  "remaining": [
+    "Independent checker source review, actual positive/negative and full regression gates.",
+    "Materially different valid-alternative review and three-clean-image replay.",
+    "Native worker/Context/resource/endpoint qualification."
+  ],
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T22:03:59.173127+00:00",
+  "recorded_at_utc": "2026-11-07T22:13:36.862573+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -553,6 +553,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/checker cross-review waiver and independent evaluator construction protocol",
       "qualification": "Terra reviews GLM checker only from baseline/contract. No reference/alternate implementation supplied and no self-approval of Terra reference. Actual positive/negative/clean-image task qualification remains separate."
+    },
+    {
+      "launch_id": "native-worker-short-socket-20261107T220933Z",
+      "role": "gemma-native-worker-short-socket-probe",
+      "requested_model": "google/gemma-4-31b-it",
+      "run_id": "clean-20261107T122746Z-native-worker-short-socket-gemma-20261107T220933Z",
+      "manifest_created_at_utc": "2026-11-07T22:09:33.850196+00:00",
+      "prompt_sha256": "8a91b224fc1e3236a3b4e6299321bca9d885c775ca1345dc6939d37e4b3418a2",
+      "controller_sha256": "cb31449e06993a6d8a2eb06c66bb6dc7264469befb2610818a998bc163ed9d8a",
+      "phase": "mechanical_preflight_retry",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Registered native worker mechanics and mechanical repair after zero-call AF_UNIX path failure",
+      "qualification": "Two identical fixed handoffs; short socket only; actual owning service is docs-completion via mechanical_recovery metadata. No new model/treatment or app task."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",

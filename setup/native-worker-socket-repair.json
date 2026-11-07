@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-11-07T22:13:36.862573+00:00",
+  "original_launch": "native-worker-probe-20261107T213237Z",
+  "original_status": "stopped_preserving_state",
+  "original_paid_model_requests": 0,
+  "failure": "AF_UNIX path too long while binding host relay socket, before container/native launch",
+  "repair_launch": "native-worker-short-socket-20261107T220933Z",
+  "repair": "Short owned temporary socket directory; same two fixed prompt bytes, model/provider/settings/overlay/image. Fresh run/workspace/home/container identities.",
+  "execution_owner": "study2-docs-extraction-completion-20261107t213919z",
+  "execution_order": "Nested sequential preflight after source review retry and before Terra docs constructor. Post-probe global API-exhaustion guard prevents later paid dispatch.",
+  "original_failure_preserved": true,
+  "not_primary_workflow_rescue": true,
+  "qualification": "Preflight only; no benchmark, supervisor interface, Context or full isolation qualification claimed."
+}
