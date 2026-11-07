@@ -1,6 +1,6 @@
-# Task contract and qualification template — draft revision 4
+# Task contract and qualification template — canonical task template
 
-Fill and freeze the contract before scored dispatch. Complete qualification before this task's stage begins. Empty fields are launch dependencies, not implied approvals.
+Read current settings from [registration.json](registration.json); do not copy harness, cutoff, package or sample defaults into this template. Fill and freeze the contract before scored dispatch. Complete qualification before this task's stage begins. Empty fields are launch dependencies, not implied approvals.
 
 ## Contract and provenance
 

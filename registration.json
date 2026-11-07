@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "protocol_revision": 4,
+  "schema_version": 3,
+  "protocol_revision": 5,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -13,25 +13,47 @@
       "name": "Gemma 4",
       "requested_id": "google/gemma-4-31b-it",
       "harness": "OpenCode -> LiteLLM -> OpenRouter",
-      "resolved_id": null,
-      "provider": null,
-      "settings_sha256": null
+      "resolved_id": "google/gemma-4-31b-it-20260402",
+      "provider": "CoreWeave",
+      "settings_sha256": null,
+      "provider_tag": "coreweave/fp4",
+      "quantization": "fp4",
+      "readiness": "direct_ZDR_plain_and_forced_tool_passed",
+      "zdr_required": true,
+      "allow_fallbacks": false,
+      "provider_pin_applied_to_study": false,
+      "full_harness_qualification_sha256": null
     },
     {
       "name": "GLM",
       "requested_id": "z-ai/glm-5.3-flash",
       "harness": "OpenCode -> LiteLLM -> OpenRouter",
-      "resolved_id": null,
-      "provider": null,
-      "settings_sha256": null
+      "resolved_id": "z-ai/glm-5.3-flash-20260826",
+      "provider": "Relace",
+      "settings_sha256": null,
+      "provider_tag": "relace/fp4",
+      "quantization": "fp4",
+      "readiness": "direct_ZDR_plain_and_auto_tool_passed_forced_tool_unsupported_usage_mapping_unresolved",
+      "zdr_required": true,
+      "allow_fallbacks": false,
+      "provider_pin_applied_to_study": false,
+      "full_harness_qualification_sha256": null
     },
     {
       "name": "Terra",
-      "requested_id": "gpt-6.1-terra",
-      "harness": "Codex",
+      "requested_id": "openai/gpt-6.1-terra",
+      "harness": "OpenCode -> LiteLLM -> OpenRouter",
       "reasoning": "high",
-      "resolved_id": null,
-      "settings_sha256": null
+      "resolved_id": "openai/gpt-6.1-terra-20261026",
+      "settings_sha256": null,
+      "provider": "Azure",
+      "provider_tag": "azure",
+      "quantization": "not_disclosed",
+      "readiness": "transport_tools_passed_not_full_study_qualified",
+      "zdr_required": true,
+      "allow_fallbacks": false,
+      "provider_pin_applied_to_study": false,
+      "full_harness_qualification_sha256": null
     }
   ],
   "core_configurations": [
@@ -47,26 +69,23 @@
       {
         "candidate": "Terra supervising Gemma",
         "reference": "Terra alone"
-      },
-      {
-        "candidate": "GLM supervising Gemma",
-        "reference": "Terra alone"
       }
     ],
     "completion_difference_margin": -0.1,
     "maximum_cost_per_acceptance_ratio": 0.5,
-    "required_joint_targets": true,
     "readiness_observed_completion_floor_candidate_and_reference": 0.8,
     "business_margins_approved_at_utc": null,
-    "point_targets_only_label": "promising_inconclusive",
+    "point_targets_only_label": "candidate_for_larger_replication",
     "zero_acceptance_cost_per_acceptance": "undefined",
     "secondary_comparisons": [
-      "direct model-plus-harness systems",
-      "whole supervisor systems",
+      "GLM supervising Gemma versus Terra alone",
+      "GLM supervising Gemma versus GLM alone",
+      "direct model systems",
       "supervised Gemma versus Gemma alone",
       "public-selected Gemma three-run portfolio",
       "human review and time tradeoffs"
-    ]
+    ],
+    "targets_are": "descriptive_business_targets_not_noninferiority_claims"
   },
   "sample": {
     "scored_tasks": [],
@@ -92,32 +111,24 @@
     "document_sha256": null,
     "cluster_unit": "task",
     "paired_core_trial_count_per_task": 2,
-    "proposed_interval_method": "paired task-cluster bootstrap, subject to independent simulation/coverage validation",
+    "interval_method": "paired task-cluster percentile bootstrap, descriptive only; boundary and undefined draws explicitly reported",
     "bootstrap_draws": 20000,
+    "interval_confidence": 0.95,
     "analysis_seed": null,
-    "familywise_alpha": 0.05,
-    "primary_one_sided_bound_count": 4,
-    "one_sided_bound_confidence": 0.9875,
     "confirmatory_claims_enabled": false,
-    "simulation_scenarios_sha256": null,
-    "coverage_acceptance_criteria": null,
-    "precision_report_sha256": null,
-    "independent_method_review": null,
-    "target_power": 0.8,
-    "target_useful_alternative": {
-      "completion_difference": 0.0,
-      "cost_per_acceptance_ratio": 0.4
-    },
-    "degenerate_or_unvalidated_intervals": "no_confirmatory_claim",
-    "incomplete_planned_sample": "feasibility_and_missingness_sensitivity_only",
-    "capped_delivery_time": "accepted submission time, otherwise T; separate from actual consumed wall time"
+    "confirmatory_upgrade_in_this_cohort": false,
+    "familywise_hypothesis_testing": false,
+    "precision_position": "sample is for feasibility and estimates; not designed to establish the ten-point completion margin or joint economic target",
+    "method_review": null,
+    "degenerate_intervals": "report uninformative and show paired task outcomes; no precision certificate",
+    "zero_acceptance_resamples": "cost ratio undefined/unbounded; report proportion, never discard silently",
+    "incomplete_planned_sample": "report stage-specific feasibility estimates and missingness sensitivity",
+    "capped_delivery_time": "accepted submission time, otherwise registered T"
   },
   "stopping_rule": {
     "calibration_workflow_deadline_minutes": 120,
-    "scored_deadline_formula": "min(120, max(30, ceil(5 * median(verified accepted calibration subject minutes))))",
-    "scored_deadline_minutes": null,
-    "calibration_minimum_distinct_systems_with_acceptance": 2,
-    "calibration_minimum_distinct_tasks_with_acceptance": 3,
+    "scored_deadline_formula": null,
+    "scored_deadline_minutes": 120,
     "scope": "entire agent/supervisor workflow including tools, waits, retries and worker handoffs",
     "reset_on_handoff": false,
     "deadline_outcome": "not_delivered_by_deadline",
@@ -132,7 +143,20 @@
     "account_exhaustion_action": "stop new dispatch globally; preserve active attempts, incomplete blocks and missingness",
     "dollar_cap": null,
     "token_cap": null,
-    "approved_at_utc": null
+    "approved_at_utc": null,
+    "deadline_basis": "fixed uniform practical cutoff selected before calibration; no pooled accepted-runtime median",
+    "deadline_sensitivity_minutes": [
+      30,
+      60,
+      120
+    ],
+    "deadline_hit_rates_reported_per_arm": true,
+    "calibration_timeout_review": {
+      "flag_if_any_arm_rate_at_least": 0.25,
+      "flag_if_supervised_minus_reference_rate_at_least": 0.25,
+      "action": "pause before scoring; review scope/cutoff validity and preregister new calibration if redesigned; never extend selected arms or erase failures",
+      "report_denominators_and_uncertainty": true
+    }
   },
   "staged_continuation": {
     "outcome_blinded": true,
@@ -172,12 +196,10 @@
     "rate_card_sha256": null,
     "formula": "sum(inclusive_input/1e6 * list_input_price + billable_output/1e6 * list_output_price) across all components and paid retries",
     "cache_discounts_in_primary": false,
-    "codex_subscription_in_primary": false,
     "billable_output_mapping_sha256": null,
     "secondary": [
-      "observed invoices",
+      "observed OpenRouter invoices",
       "cache-aware API pricing with explicit write uncertainty",
-      "Codex subscription/access allocation",
       "hosting and labor scenarios"
     ],
     "missing_usage_policy": "unresolved unless decision-valid bounds are available"
@@ -214,7 +236,26 @@
     "time_recording": "active inspection and reproduction until verdict; queues and familiarization separate",
     "reviewer_edits_in_measurement": false,
     "critical_defects": "reproduce and adjudicate before final acceptance",
-    "include_review_rejected_patches_in_effort_total": true
+    "include_review_rejected_patches_in_effort_total": true,
+    "blinded_reviewers_must_be_named_before_calibration": true,
+    "operators_and_outcome_exposed_people_eligible_as_blinded_reviewers": false,
+    "capacity_plan": {
+      "minutes_per_review_assumption": 15,
+      "reviews_per_patch": 2,
+      "example_100_patches_hours": 50,
+      "maximum_scored_unique_patches": 165,
+      "maximum_scored_review_hours": 82.5,
+      "maximum_calibration_review_hours": 20,
+      "first_scored_stage_max_review_hours": 27.5,
+      "basis": "planning assumptions, not measurements; no duplicate review charge for portfolio reuse",
+      "confirmed_hours": null
+    },
+    "reviewer_1": null,
+    "reviewer_2": null,
+    "capacity_confirmed": false,
+    "recruitment_status": "owner_has_no_candidates; reviewer brief prepared; no outreach sent",
+    "recruitment_brief": "REVIEWER_BRIEF.md",
+    "initial_calibration_block_max_hours_per_reviewer": 2.5
   },
   "checks": {
     "requirements_public": true,
@@ -241,59 +282,41 @@
   "mcp_setup": {
     "plan": "MCP_SETUP.md",
     "status": "planned_not_qualified",
-    "core_common_bundle_required": true,
+    "selected_servers": [
+      {
+        "name": "context",
+        "implementation": "@neuledge/context",
+        "version_candidate": "1.3.3",
+        "tools": [
+          "get_docs"
+        ]
+      }
+    ],
+    "excluded_servers": [
+      "serena",
+      "gitnexus",
+      "lightpanda",
+      "local-docs/local_RAG"
+    ],
+    "navigation": "shell/file/search including rg",
+    "browser_checks": "public Playwright via shell; evaluator runs separately",
     "same_capabilities_for": [
       "direct_agents",
       "supervisors",
       "gemma_workers"
     ],
-    "available_candidates": [
-      {
-        "name": "library-docs",
-        "implementation": "@neuledge/context",
-        "observed_version": "1.3.3",
-        "role": "required_documentation_adapter_candidate"
-      },
-      {
-        "name": "local-docs",
-        "implementation": "mcp-local-rag",
-        "observed_version": "0.21.3",
-        "role": "local_corpus_adapter_candidate"
-      },
-      {
-        "name": "serena",
-        "observed_version": null,
-        "role": "repository_navigation_candidate"
-      },
-      {
-        "name": "gitnexus",
-        "observed_version": "1.6.12",
-        "role": "repository_graph_candidate"
-      },
-      {
-        "name": "lightpanda",
-        "observed_version": null,
-        "role": "local_browser_candidate"
-      }
-    ],
-    "selected_servers": null,
-    "selection_frozen_before_calibration": true,
-    "inventory_sha256": null,
+    "single_OpenCode_adapter": true,
+    "global_catalogs_inherited": false,
     "manifest_sha256": null,
-    "role_tool_matrix_sha256": null,
     "qualification_sha256": null,
     "qualification_signoff": null,
-    "global_catalogs_inherited": false,
-    "prior_project_indexes_allowed": false,
     "independent_writable_run_state": true,
     "warmup_policy": "prestart_and_healthcheck_before_dispatch_for_all_arms",
-    "runtime_retrieval_and_refresh_count_toward_deadline": true,
-    "setup_and_index_overhead_reported_separately": true,
-    "tool_latency_retries_and_failures_logged": true,
+    "runtime_retrieval_counts_toward_deadline": true,
     "post_freeze_change_requires_amendment": true
   },
   "documentation_corpus": {
-    "adapter_candidate": "Context MCP (@neuledge/context), existing library-docs name",
+    "adapter_candidate": "Context MCP (@neuledge/context) only",
     "versions_derived_from": "benchmark lockfile and runtime versions after baseline selection",
     "exact_version_allowlist_required": true,
     "context_serve_policy": "prefetch approved packages; serve --libs with exact name@version entries; verify registry search/download tools hidden",
@@ -303,29 +326,193 @@
     "same_readonly_file_corpus_for_all_arms": true,
     "source_manifest_sha256": null,
     "snapshot_sha256": null,
-    "index_settings_sha256": null,
     "offline_retrieval_smoke_sha256": null,
     "retrieval_model_if_any": null,
-    "retrieval_usage_recorded_as": "separate disclosed harness overhead",
+    "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
-    "coverage_gaps": null,
+    "coverage_gaps": [
+      "Vite/Hono and associated adapter docs not yet built/reviewed"
+    ],
     "preparation_plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "candidate_corpus_plan": "docs/corpus-plan.json",
+    "candidate_corpus_plan": "registration.json#/application_preparation",
     "context_storage_isolation": "dedicated container or OS identity with approved ~/.context/packages; no undocumented directory override",
-    "existing_local_server_check": "initialize, exact-version catalog and Next route-handler retrieval passed; cross-role/offline isolation not yet qualified",
+    "existing_local_server_check": "Context startup/catalog/Next retrieval passed; new Vite/Hono corpus not built",
     "required_role_count": 7,
-    "required_role_matrix": "APPLICATION_AND_DOCS_PLAN.md",
+    "required_role_matrix": "registration.json#/core_configurations",
     "generic_query_suite_frozen_before_model_runs": true,
     "exact_queries_and_expected_sources_sha256": null,
     "source_version_coverage_review_signoff": null,
-    "runtime_compatibility_verified": false
+    "runtime_compatibility_verified": false,
+    "independent_content_review_required_before_calibration": true,
+    "curator": null,
+    "independent_reviewer": null,
+    "independent_reviewer_excludes_subject_families": true,
+    "review_scope": [
+      "source selection and omissions",
+      "version/API coverage",
+      "extraction completeness",
+      "absence of task-specific solutions/hints",
+      "licenses and source/index hashes"
+    ],
+    "coordinator_role": "OpenAI GPT-family coordinator may propose sources and run approved mechanical packaging; cannot independently sign content suitability",
+    "corpus_plan": "APPLICATION_AND_DOCS_PLAN.md"
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "candidate_stack_manifest": "docs/corpus-plan.json",
-    "status": "proposed_not_runtime_qualified",
+    "status": "candidate_stack_not_runtime_qualified",
+    "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
+    "excluded_framework": "Next.js",
+    "runtime_candidate": {
+      "node": "24.19.0",
+      "npm": "10.9.0"
+    },
+    "candidate_packages": [
+      {
+        "package": "vite",
+        "candidate_version": "8.3.6",
+        "metadata_url": "https://registry.npmjs.org/vite/8.3.6",
+        "docs_entry": "https://vite.dev/guide/"
+      },
+      {
+        "package": "@vitejs/plugin-react",
+        "candidate_version": "6.2.1",
+        "metadata_url": "https://registry.npmjs.org/%40vitejs%2Fplugin-react/6.2.1",
+        "docs_entry": "https://github.com/vitejs/vite-plugin-react"
+      },
+      {
+        "package": "react",
+        "candidate_version": "19.3.1",
+        "metadata_url": "https://registry.npmjs.org/react/19.3.1",
+        "docs_entry": "https://react.dev/reference/react"
+      },
+      {
+        "package": "react-dom",
+        "candidate_version": "19.3.1",
+        "metadata_url": "https://registry.npmjs.org/react-dom/19.3.1",
+        "docs_entry": "https://react.dev/reference/react-dom"
+      },
+      {
+        "package": "hono",
+        "candidate_version": "4.13.16",
+        "metadata_url": "https://registry.npmjs.org/hono/4.13.16",
+        "docs_entry": "https://hono.dev/docs/"
+      },
+      {
+        "package": "@hono/node-server",
+        "candidate_version": "2.1.6",
+        "metadata_url": "https://registry.npmjs.org/%40hono%2Fnode-server/2.1.6",
+        "docs_entry": "https://hono.dev/docs/getting-started/nodejs"
+      },
+      {
+        "package": "typescript",
+        "candidate_version": "5.9.3",
+        "metadata_url": "https://registry.npmjs.org/typescript/5.9.3",
+        "docs_entry": "https://www.typescriptlang.org/docs/"
+      },
+      {
+        "package": "better-auth",
+        "candidate_version": "1.7.18",
+        "metadata_url": "https://registry.npmjs.org/better-auth/1.7.18",
+        "docs_entry": "https://better-auth.com/docs"
+      },
+      {
+        "package": "better-sqlite3",
+        "candidate_version": "13.0.3",
+        "metadata_url": "https://registry.npmjs.org/better-sqlite3/13.0.3",
+        "docs_entry": "https://github.com/WiseLibs/better-sqlite3"
+      },
+      {
+        "package": "vitest",
+        "candidate_version": "5.1.0",
+        "metadata_url": "https://registry.npmjs.org/vitest/5.1.0",
+        "docs_entry": "https://vitest.dev/guide/"
+      },
+      {
+        "package": "@playwright/test",
+        "candidate_version": "1.65.0",
+        "metadata_url": "https://registry.npmjs.org/%40playwright%2Ftest/1.65.0",
+        "docs_entry": "https://playwright.dev/docs/intro"
+      },
+      {
+        "package": "eslint",
+        "candidate_version": "10.14.0",
+        "metadata_url": "https://registry.npmjs.org/eslint/10.14.0",
+        "docs_entry": "https://eslint.org/docs/latest/"
+      },
+      {
+        "package": "tsx",
+        "candidate_version": "4.23.15",
+        "metadata_url": "https://registry.npmjs.org/tsx/4.23.15",
+        "docs_entry": "https://tsx.is/"
+      }
+    ],
+    "metadata_verified_at_utc": "2026-11-07T02:32:29.867139+00:00",
+    "sqlite_engine_version": null,
+    "lockfile_and_image_qualification_required": true,
     "eligible_builder_signoff": null,
-    "independent_qualification_signoff": null,
-    "changes_before_calibration_require_recorded_reason": true
+    "independent_qualification_signoff": null
+  },
+  "study_kind": "feasibility_and_estimation_only",
+  "canonical_configuration": true,
+  "harness_decision": {
+    "selected": "common_OpenCode",
+    "version_candidate": "2.2.5",
+    "reason": "reduce harness confounding and duplicate adapter work",
+    "codex_subject_or_supervisor_arms": false,
+    "all_roles_share_adapter": true,
+    "readiness_evidence": [
+      "readiness/terra-openrouter-20261107.md",
+      "readiness/gemma-glm-zdr-20261107.md"
+    ],
+    "residual_variation": [
+      "model-specific reasoning/settings support",
+      "provider serving stack and quantization",
+      "supervisor/worker role behavior"
+    ]
+  },
+  "launch_blockers": [
+    {
+      "id": "reviewers",
+      "phase": "before_calibration",
+      "detail": "name two independent humans, verify blinding, confirm calibration and staged scored-review hours",
+      "resolved": false
+    },
+    {
+      "id": "corpus_reviewer",
+      "phase": "before_calibration",
+      "detail": "name independent corpus content reviewer outside subject families; curator/source omissions reviewed",
+      "resolved": false
+    },
+    {
+      "id": "fixture_builders",
+      "phase": "before_fixture_construction",
+      "detail": "appoint eligible baseline/reference/check builders and qualifiers outside subject families",
+      "resolved": false
+    },
+    {
+      "id": "glm_accounting",
+      "phase": "before_calibration",
+      "detail": "Relace reports reasoning greater than completion; establish actual native/billable mapping or register a provider revision with requalification",
+      "resolved": false
+    },
+    {
+      "id": "common_adapter",
+      "phase": "before_calibration",
+      "detail": "pin all provider routes and qualify full OpenCode tool/usage/Context/broker path",
+      "resolved": false
+    },
+    {
+      "id": "fixture_and_corpus",
+      "phase": "before_calibration",
+      "detail": "qualify baseline, calibration tasks, source corpus, evaluator and isolated DB authorization",
+      "resolved": false
+    }
+  ],
+  "pre_recruitment_work": {
+    "allowed": "generic mechanical transport, usage capture and documentation-adapter probes only",
+    "study_calibration_or_acceptance": false,
+    "human_effort_or_merge_readiness_claims": false,
+    "fixture_family_and_corpus_review_restrictions_remain": true,
+    "automation_only_study_requires_new_amendment": true
   }
 }
