@@ -2,9 +2,9 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "scope-review-20261107T143832Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T14:38:37.056144+00:00",
-  "event_at_utc": "2026-11-07T14:38:36.999652+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T14:48:10.769815+00:00",
+  "event_at_utc": "2026-11-07T14:48:10.722554+00:00",
+  "status": "construction_returned_not_qualified",
   "background_service": "study2-clean-scope-review-20261107t143832z",
   "automatic_restart": false,
   "roles": [
@@ -12,8 +12,12 @@
       "role": "glm-clean-public-scope-cross-review",
       "run_id": "clean-20261107T122746Z-scope-review-glm-20261107T143832Z",
       "model": "z-ai/glm-5.3-flash",
-      "status": "running",
+      "status": "returned_requires_cross_review",
       "dispatch_utc": "2026-11-07T14:38:36.999652+00:00",
+      "ended_at_utc": "2026-11-07T14:48:10.722543+00:00",
+      "agent_exit_code": 0,
+      "controller_exit_code": 0,
+      "api_budget_exhausted": false,
       "prompt_sha256": "3428c3bca08087a7384401b0b2c0e2ece246180f6b185bd9dbeaaa67bc467ee4",
       "controller_sha256": "1c0759095dd0280988961c5d7735f8c03797c7126d46fc703185854502a6a041"
     }
