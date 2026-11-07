@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:05:41 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:12:39 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 03:36:00 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 04:12:39 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-c1-reference-checks | openai/gpt-6.1-terra | running | Nov 07, 2026 at 03:36:00 PM EST (UTC-0500) | — |
+| terra-c1-reference-checks | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 03:36:00 PM EST (UTC-0500) | Nov 07, 2026 at 04:12:39 PM EST (UTC-0500) |
 
 First calibration-task qualification packet: fresh reference and external checks/negative controls. Separate alternate, cross-review and actual clean-image qualification required; no scored study dispatch.
 
