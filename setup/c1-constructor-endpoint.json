@@ -1,0 +1,36 @@
+{
+  "recorded_at_utc": "2026-11-07T21:17:05.190189+00:00",
+  "run_id": "clean-20261107T122746Z-c1-reference-checks-terra-20261107T201734Z",
+  "status": "first_constructor_return_preserved_not_task_qualified",
+  "model": "openai/gpt-6.1-terra",
+  "native_exit_code": 0,
+  "captured_calls": 106,
+  "stream_integrity": "All106calls passed native endpoint, request inventory, paired semantic fidelity, terminal and usage capture checks.",
+  "reference_commit": "4d610cb01c838f924566fd43159939d495965197",
+  "reference_tree": "6e53ab004e17fabfe1c9da17343125abefc677ca",
+  "reference_git_status": "",
+  "bundle_sha256": "fe22c0057a895a2d71fc331b7620af448b212de2b8e15d113b18f40020a3b8b2",
+  "bundle_verify_exit": 0,
+  "patch_sha256": "c8e395f57d7845bc95d8f81b49507184ab683b7c1fe78223991c1c1195ced2bb",
+  "reported_host_results": {
+    "baseline_regressions": "pass",
+    "baseline_C1_expected_failure": "missing count field, preflight passed",
+    "reference_public_and_sealed": "pass (coauthored suites, diagnostic only)",
+    "negative_controls": "six rejected (coauthored predicate, diagnostic only)"
+  },
+  "remaining_limits": [
+    "Host browser fallback; final task gate needs actual clean-image evaluator/alternate/control runs.",
+    "Reference and original evaluator coauthored by coordinator appointment error; original suites are diagnostic only, not final independent acceptance.",
+    "Independent GLM evaluator and separate Gemma alternative are queued; no reference/checker/other-model conversation supplied to either.",
+    "Different-model review and positive/negative/three-clean replay qualification required."
+  ],
+  "coordinator_correction": {
+    "responsibility": "Coordinator bundled reference and evaluator construction in one prompt contrary to independent-check authoring in STUDY_PLAN.md.",
+    "action": "Preserve original packet and all failures/retries. Build final evaluator independently from public contract/baseline only in a fresh GLM session; no protocol waiver or silent approval.",
+    "independent_evaluator_launch": "c1-independent-evaluator-20261107T211533Z",
+    "alternate_launch": "c1-alternate-20261107T211533Z",
+    "alternate_construction_constraint": "Application-layer reduction rather than reference correlated SQL count; fixture-only diversity constraint, never a subject/evaluator requirement."
+  },
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

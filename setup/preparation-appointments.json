@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T21:05:39.920845+00:00",
+  "recorded_at_utc": "2026-11-07T21:17:05.190189+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -457,6 +457,32 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
       "qualification": "Fresh source/prompt/synthetic-test review only. Real seven-role/native worker/Context/resource/endpoint qualification remains separate. No paid nested probes or implementation edits."
+    },
+    {
+      "launch_id": "c1-independent-evaluator-20261107T211533Z",
+      "role": "glm-c1-independent-evaluator",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-c1-independent-evaluator-glm-20261107T211533Z",
+      "manifest_created_at_utc": "2026-11-07T21:15:33.038331+00:00",
+      "prompt_sha256": "b99a6ef77834caa1f9ab1df2bb2a83a2ba9116e215c2d76e9f65d5aae2140eb6",
+      "controller_sha256": "91bc99e9b92e5df1d265d85fee9f095988b163d46d6f56ceebb2b0b2335505c9",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
+      "qualification": "Baseline/contract/FAQ inputs only; no reference, evaluator, controls, conversations or results. Later joint positive/negative/clean-image qualification and different-model review required."
+    },
+    {
+      "launch_id": "c1-alternate-20261107T211533Z",
+      "role": "gemma-c1-alternate",
+      "requested_model": "google/gemma-4-31b-it",
+      "run_id": "clean-20261107T122746Z-c1-alternate-gemma-20261107T211533Z",
+      "manifest_created_at_utc": "2026-11-07T21:15:33.052990+00:00",
+      "prompt_sha256": "4dac70b4a56832843849492b238ec2a2c8524693801ec520b0b1c358b5b86d91",
+      "controller_sha256": "bab4433f568b2663b6a44be3920b2128624cd4f79255a80a54b4cc883926bbfa",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
+      "qualification": "Baseline/contract/FAQ inputs only; no reference, evaluator, controls, conversations or results. Later joint positive/negative/clean-image qualification and different-model review required."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
