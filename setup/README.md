@@ -7,7 +7,7 @@ Use [registration.json](../registration.json) for the study design and launch ga
 - **Documentation:** the rebuilt corpus passed source/extraction cross-review with conditions. Actual seven-role Context integration and redistribution review remain open. Raw source material stays private.
 - **Harness:** synthetic transport/Context and physical isolation checks have passed within their stated limits. Actual supervisor-worker integration, complete usage/endpoint handling and concurrent-lane qualification remain open.
 
-**Preparation construction has launched:** GLM is building the C1 external evaluator; Terra is queued to build the real harness adapter. See the timestamped [launch snapshot](launch.json). The background queue runs these two construction jobs sequentially and cannot dispatch calibration/scored runs. Each endpoint still requires cross-review and qualification.
+**Preparation queue stopped:** GLM returned the C1 evaluator, which still requires cross-review. Terra harness construction failed with `provider.invalid-output` (stream content after a finish reason); the original endpoint is preserved. See the timestamped [launch status](launch.json). This is not successful completion or API budget exhaustion.
 
 **No calibration or scored run has started.** Current materials are not launch-qualified.
 

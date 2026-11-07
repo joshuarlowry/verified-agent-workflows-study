@@ -11,8 +11,8 @@
   "qualification_status": "not_qualified",
   "limits": "No dollar/token cap; model per-call limits inherited from recorded construction harness. No scored run may be dispatched by this queue.",
   "isolation": "bwrap read-only inputs and private home/workspace; construction network for official docs/packages, weaker than scored network-none; no sibling filesystem mounts",
-  "snapshot_at_utc": "2026-11-07T11:09:26.957765+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T11:44:57.194393+00:00",
+  "status": "stopped_preserving_state",
   "background_service": "study2-preparation-20261107t110750z.service",
   "automatic_restart": false,
   "roles": [
@@ -22,7 +22,9 @@
       "model": "z-ai/glm-5.3-flash",
       "prompt_sha256": "727e6161758ae6c782869ca0b9b294bd28f03eb807239684003dd69a87a24927",
       "controller_sha256": "e000e124a39d2ec8a738b578b42c953170e848afb51f93906a6c37ad816165df",
-      "status": "running"
+      "status": "returned_requires_cross_review",
+      "ended_at_utc": "2026-11-07T11:38:03.688422+00:00",
+      "agent_exit_code": 0
     },
     {
       "role": "terra-harness-adapter",
@@ -30,7 +32,12 @@
       "model": "openai/gpt-6.1-terra",
       "prompt_sha256": "b6aefc7079f927e6c972c66232eb370cc2d34257f2950af5f4c18a222ba253a1",
       "controller_sha256": "c7c91bc67d998753eaa1041b01d389a4f063185130b0130ab3e47c24968da8ac",
-      "status": "queued"
+      "status": "blocked_preserved",
+      "ended_at_utc": "2026-11-07T11:39:26.482457+00:00",
+      "agent_exit_code": 1,
+      "error_type": "provider.invalid-output",
+      "error_message": "OpenAI Chat received content after the finish reason",
+      "api_budget_exhausted": false
     }
   ],
   "provider_catalog_preflight": {
@@ -40,5 +47,7 @@
     "Terra": "openai/gpt-6.1-terra-20261026 / azure / undisclosed precision",
     "all_registered_endpoints_listed_healthy": true,
     "generation_resolution": "captured in private provider/native streams; endpoint review still required"
-  }
+  },
+  "ended_at_utc": "2026-11-07T11:39:26.482601+00:00",
+  "completion_note": "Construction queue stopped; GLM output unqualified, Terra transport failure preserved. No calibration/scored run launched. No automatic user notification was configured."
 }

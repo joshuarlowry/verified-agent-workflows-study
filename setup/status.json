@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-11-07T11:09:26.957765+00:00",
-  "status": "preparation_construction_running_not_calibration_or_scoring",
+  "updated_at_utc": "2026-11-07T11:44:57.194393+00:00",
+  "status": "preparation_queue_stopped_transport_failure_preserved",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
   "resource_preflight": {
@@ -64,5 +64,5 @@
   "historical_preparation_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/status.json",
   "historical_qualification_note": "Latest reports retain their original session and revision identifiers for provenance; they are evidence, not alternative plans.",
   "active_launch": "setup/launch.json",
-  "launch_snapshot_note": "GLM C1 evaluator running; Terra real harness adapter queued sequentially. This is a dispatch snapshot, not live status or qualification."
+  "launch_snapshot_note": "GLM C1 evaluator returned and needs cross-review; Terra harness construction stopped on provider.invalid-output. No calibration or scored run started."
 }
