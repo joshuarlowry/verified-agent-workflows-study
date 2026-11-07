@@ -3,6 +3,7 @@
 Image ID and package manifest freeze the result; apt repositories are moving,
 so the Containerfile alone is not claimed to be a reproducible image snapshot.
 """
+import argparse
 import datetime
 import hashlib
 import json
@@ -12,8 +13,20 @@ import subprocess
 import tempfile
 import time
 ROOT=Path(__file__).resolve().parents[1]
-reg=json.loads((ROOT/'registration.json').read_text())
-source=ROOT/reg['application_preparation']['current_candidate_path']/'baseline'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--source-baseline',required=True,type=Path)
+parser.add_argument('--record',required=True,type=Path)
+parser.add_argument('--versions-record',required=True,type=Path)
+args=parser.parse_args()
+source=args.source_baseline.resolve()
+private_root=Path('/home/josh/.local/state/study2-setup').resolve()
+if not (source.is_relative_to(private_root) or source.is_relative_to(ROOT)):
+    raise ValueError('Source must be a local study candidate')
+output=(ROOT/args.record).resolve();versions_output=(ROOT/args.versions_record).resolve()
+if not output.is_relative_to(ROOT/'setup') or not versions_output.is_relative_to(ROOT/'setup'):
+    raise ValueError('Public records must be under setup')
+if output.exists() or versions_output.exists():
+    raise ValueError('Use new record paths; preserve previous build endpoints')
 modules=Path('/home/josh/.local/share/neuledge-context/1.3.3/lib/node_modules')
 cli=Path('/home/josh/.opencode/bin/opencode')
 inputs={'application_lock_sha256':hashlib.sha256((source/'package-lock.json').read_bytes()).hexdigest(),'application_package_sha256':hashlib.sha256((source/'package.json').read_bytes()).hexdigest(),'containerfile_sha256':hashlib.sha256((ROOT/'harness/Study.Containerfile').read_bytes()).hexdigest(),'opencode_binary_sha256':hashlib.sha256(cli.read_bytes()).hexdigest()}
@@ -44,8 +57,8 @@ if process.returncode==0:
     report['version_manifest_exit_code']=probe.returncode
     (record/'package-versions.txt').write_text(probe.stdout)
     report['version_manifest_sha256']=hashlib.sha256(probe.stdout.encode()).hexdigest()
-    (ROOT/'setup/image-package-versions.txt').write_text(probe.stdout)
+    versions_output.write_text(probe.stdout)
 (record/'controller.json').write_text(json.dumps(report,indent=2)+'\n')
-(ROOT/'setup/image-build-preliminary.json').write_text(json.dumps(report,indent=2)+'\n')
+output.write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report))
 if process.returncode:raise SystemExit(process.returncode)
