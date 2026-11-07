@@ -1,0 +1,165 @@
+{
+  "name": "workboard-lab-source-inventory",
+  "prepared_by": "z-ai/glm-5.3-flash fixture builder (preparation phase)",
+  "date": "2026-11-07",
+  "runtime": {
+    "node": "24.19.0",
+    "verified": "node -v == v24.19.0 in the build environment; engines field pins 24.19.0"
+  },
+  "packages": [
+    {
+      "name": "vite",
+      "installed_version": "8.3.6",
+      "pinned": "8.3.6 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://vite.dev/guide/",
+      "relevant_topics": ["dev server + proxy /api", "production build to dist/", "plugin-react integration"],
+      "doc_omissions": []
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "installed_version": "6.2.1",
+      "pinned": "6.2.1 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react",
+      "relevant_topics": ["React 19 fast refresh", "peer range vite ^8.0.0 verified"],
+      "doc_omissions": [
+        "Optional peers (oxc-transform-react, @rolldown/plugin-babel, babel-plugin-react-compiler) are not clearly documented as optional; npm install resolved cleanly without them."
+      ]
+    },
+    {
+      "name": "react / react-dom",
+      "installed_version": "19.3.1 / 19.3.1",
+      "pinned": "19.3.1 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://react.dev/reference/react",
+      "relevant_topics": ["createRoot", "StrictMode double-effect behavior", "controlled form state", "aria-* props"]
+    },
+    {
+      "name": "hono",
+      "installed_version": "4.13.16",
+      "pinned": "4.13.16 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://hono.dev/docs/",
+      "relevant_topics": ["Hono app factory", "app.request() test harness", "routing order & app.notFound", "context json/body helpers", "error mapping via app.onError"]
+    },
+    {
+      "name": "@hono/node-server",
+      "installed_version": "2.1.6",
+      "pinned": "2.1.6 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://hono.dev/docs/getting-started/nodejs",
+      "relevant_topics": ["serve({ fetch, port })", "serveStatic from '@hono/node-server/serve-static' for the built SPA"],
+      "doc_omissions": [
+        "serveStatic root is resolved relative to process.cwd(); the docs do not emphasize this, which matters because db:reset/e2e scripts assume the package root as cwd."
+      ]
+    },
+    {
+      "name": "typescript",
+      "installed_version": "5.9.3",
+      "pinned": "5.9.3 (candidate pin kept)",
+      "license": "Apache-2.0",
+      "official_docs": "https://www.typescriptlang.org/docs/",
+      "relevant_topics": ["strict + noUncheckedIndexedAccess", "verbatimModuleSyntax", "two-config split (DOM vs Node)"]
+    },
+    {
+      "name": "better-auth",
+      "installed_version": "1.7.18",
+      "pinned": "1.7.18 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://www.better-auth.com/docs",
+      "relevant_topics": [
+        "emailAndPassword enabled",
+        "passing a better-sqlite3 Database instance as `database`",
+        "auth.handler(c.req.raw) inside Hono",
+        "auth.api.getSession({ headers })",
+        "programmatic schema migration via better-auth/db/migration getMigrations(...).runMigrations()",
+        "server-side auth.api.* returning plain objects (not Response)",
+        "client: better-auth/react createAuthClient + useSession",
+        "trustedOrigins + CSRF origin checks on cookie POSTs"
+      ],
+      "doc_omissions": [
+        "1.7.18 does NOT auto-create its tables when given a database connection: first use throws SchemaMismatchError (SCHEMA_MISMATCH) telling you to run the CLI. The programmatic path (better-auth/db/migration -> getMigrations(auth.options) -> runMigrations()) is under-documented.",
+        "During first-time table creation runMigrations() logs a transient 'Database schema mismatch ... Missing tables' ERROR even though creation then succeeds; subsequent boots are clean. Not documented.",
+        "Server-side auth.api.signUpEmail returns the created user object directly, while the HTTP endpoint returns { token, user }; docs do not call this asymmetry out.",
+        "POST /api/auth/sign-out with a JSON content-type but empty body returns 400; docs do not mention that a body is expected.",
+        "createAuthClient() origin inference: docs describe an explicit baseURL pattern; same-origin inference works but the default-host behavior is easy to misconfigure silently.",
+        "Docs present Kysely as the custom-database path; passing a better-sqlite3 instance directly also works in 1.7.18 (verified) but is thinly documented."
+      ]
+    },
+    {
+      "name": "better-sqlite3",
+      "installed_version": "13.0.3",
+      "pinned": "13.0.3 (candidate pin kept)",
+      "license": "MIT (bundled SQLite engine is public domain)",
+      "official_docs": "https://github.com/WiseLibs/better-sqlite3/blob/master/docs/api.md",
+      "relevant_topics": ["prepared statements", "transactions", "pragma journal_mode=WAL / foreign_keys", "SQLite 3.53.4 bundled"],
+      "doc_omissions": []
+    },
+    {
+      "name": "@types/better-sqlite3",
+      "installed_version": "9.6.0",
+      "pinned": "9.6.0 (latest available; runtime is 13.0.3)",
+      "license": "MIT",
+      "official_docs": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/better-sqlite3",
+      "relevant_topics": ["Database/Statement/RunResult typings"],
+      "doc_omissions": [
+        "Types release lags the runtime major (9.6.0 vs 13.0.3); the used API surface type-checks cleanly under skipLibCheck, but this is a known type/runtime version gap."
+      ]
+    },
+    {
+      "name": "vitest",
+      "installed_version": "5.1.0",
+      "pinned": "5.1.0 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://vitest.dev/guide/",
+      "relevant_topics": ["vitest run (CI mode) for reliable exit codes", "pool: forks", "environment: node", "per-file timeout config"]
+    },
+    {
+      "name": "@playwright/test",
+      "installed_version": "1.65.0",
+      "pinned": "1.65.0 (candidate pin kept)",
+      "license": "Apache-2.0",
+      "official_docs": "https://playwright.dev/docs/intro",
+      "relevant_topics": ["webServer with env + health URL", "getByRole/getByLabel semantic queries (substring vs exact)", "strict mode violations", "test.describe.serial", "chromium headless shell install"]
+    },
+    {
+      "name": "eslint",
+      "installed_version": "10.14.0",
+      "pinned": "10.14.0 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://eslint.org/docs/latest/",
+      "relevant_topics": ["flat config", "no-useless-assignment core rule", "exit codes"]
+    },
+    {
+      "name": "eslint toolchain",
+      "installed_version": "@eslint/js 10.0.1, typescript-eslint 8.72.1, eslint-plugin-react-hooks 7.1.1, globals 17.14.0",
+      "pinned": "exact",
+      "license": "MIT (all)",
+      "official_docs": "https://typescript-eslint.io/getting-started , https://www.npmjs.com/package/eslint-plugin-react-hooks",
+      "relevant_topics": ["tseslint.config helper", "react-hooks rules on src only", "ESLint 10 peer ranges verified (typescript-eslint ^10.0.0, react-hooks ^10.0.0)"]
+    },
+    {
+      "name": "tsx",
+      "installed_version": "4.23.15",
+      "pinned": "4.23.15 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://tsx.is/",
+      "relevant_topics": ["running server/main.ts and scripts/db-reset.ts directly under Node 24"]
+    }
+  ],
+  "candidate_pin_verdict": {
+    "summary": "All 13 candidate pins exist on the npm registry and work together; zero version changes were required.",
+    "verified_by": [
+      "npm view <pkg>@<version> for each pin (all present)",
+      "peer ranges checked: @vitejs/plugin-react 6.2.1 -> vite ^8.0.0; vitest 5.1.0 -> vite ^6.4.0||^7||^8; typescript-eslint 8.72.1 -> eslint ^10.0.0; eslint-plugin-react-hooks 7.1.1 -> eslint ^10.0.0; @hono/node-server 2.1.6 -> hono ^4",
+      "npm install clean (206 packages), better-sqlite3 native build OK on Node 24.19.0",
+      "package-lock.json committed; all 21 tracked packages consistent between lockfile and node_modules"
+    ]
+  },
+  "context_archives": {
+    "status": "NOT BUILT and NOT independently reviewed",
+    "note": "This inventory lists official upstream documentation only. No curated Context archives exist yet and none have been reviewed; do not assume their content."
+  },
+  "out_of_scope_note": "No Next.js or Python stack is used by this fixture; no corpus for those was gathered."
+}

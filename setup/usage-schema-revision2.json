@@ -1,0 +1,24 @@
+{
+  "kind": "mechanical_adversarial_usage_probe_not_model_evaluation",
+  "model_calls": 0,
+  "checks": {
+    "reasoning_not_added": true,
+    "equal_write_alias_once": true,
+    "alias_conflict_rejected": true,
+    "bad_nested_types_rejected": true,
+    "negative_and_nonfinite_cost_rejected": true,
+    "metadata_and_mapping_rejected": true,
+    "tuple_ids_unambiguous": true,
+    "cross_session_same_response_not_double_charged": true,
+    "identical_duplicate_once": true,
+    "incomplete_duplicate_retains_known_and_raw": true,
+    "conflicting_final_counter_rejected": true,
+    "missing_stays_null": true,
+    "invalid_metadata_type_rejected": true,
+    "invalid_unused_alias_type_rejected": true,
+    "unregistered_source_rejected": true,
+    "input_not_mutated": true
+  },
+  "all_passed": true,
+  "remaining": "different-model review, all-model mappings and full broker/capture/ancestry integration"
+}

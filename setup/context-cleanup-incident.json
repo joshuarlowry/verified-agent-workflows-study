@@ -1,0 +1,9 @@
+{
+  "kind": "mechanical_probe_measurement_correction",
+  "recorded_at_utc": "2026-11-07T03:34:18.189410+00:00",
+  "original_result": "setup/context-preliminary-initial.json",
+  "finding": "original elapsed_seconds was sampled before a blocked stderr.read; it excludes the later cleanup wait and must not be interpreted as total process runtime",
+  "functional_MCP_checks": "passed in initial record",
+  "cleanup": "container explicitly removed after verifying its command; no other containers targeted",
+  "repair": "assign unique container name, explicitly remove that container before draining stderr, capture monotonic duration after all cleanup; validate retrieved library and nonempty results"
+}

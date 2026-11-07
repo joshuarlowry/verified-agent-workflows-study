@@ -23,3 +23,11 @@ Gemma returned its first cross-review endpoint: the three subject prompts were l
 ## Usage format follow-up
 
 The coordinator added a [draft final-provider usage schema](../schemas/provider-usage-record.schema.json) and [normalizer](../harness/normalize_usage.py) in response to Gemma's broker-schema finding. The mechanical probe preserves the observed GLM completion/reasoning mismatch without overbilling, does not double cache-write aliases or repeated snapshots, and retains missing counters as null. [Probe result](usage-schema-preliminary.json). Different-model review and broker integration remain pending; this does not silently close Gemma's original finding.
+
+## First fixture and cross-review
+
+GLM returned its [first source-only fixture endpoint](../fixture-draft/README.md), including the baseline and 19 draft task contracts. [Source manifest](glm-builder-first-endpoint.json) preserves all 68 source paths/hashes; generated dependencies, caches, databases and browser outputs are excluded from the public export. The controller independently replayed the builder-authored public full-check command with exit 0; this is not an independent task acceptance suite or three-clean-container qualification.
+
+[Terra's fixture cross-review](reviews/terra-fixture-cross-review/FIXTURE_CROSS_REVIEW.json) reproduces test/bootstrap behavior and identifies a stale cross-workspace data bug, contradictory examples/policies and usage-normalizer edge cases. The first builder tree is unchanged. A new GLM preparation revision is repairing application/contract/FAQ/source issues. No reference/sealed tests or scored runs exist yet. Normalizer revision 2 addresses collision, incomplete-snapshot, alias and validation findings; its adversarial mechanical tests pass, but cross-review and full integration remain pending.
+
+[Context mechanics](context-preliminary.json) now pass in a network-disabled container with a read-only generic archive. [The initial cleanup/timing issue](context-cleanup-incident.json) is preserved separately. This does not qualify the application-version documentation corpus. CPU preflight assigns equal CPU masks; it does not reserve exclusive host cores or complete app/inference contention qualification.

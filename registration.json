@@ -249,10 +249,24 @@
         "family": "OpenAI GPT",
         "harness": "Codex",
         "sha256_by_file": {
+          "setup/prompts/gemma-cross-review.txt": "95e5c22a0acaa8833100b79eb85f03027d771ccf018a41cac9a2f5d39aff7b64",
           "setup/prompts/glm-fixture-builder.txt": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0",
+          "setup/prompts/glm-fixture-repair-r1.txt": "c7e54088432ce3ea632c03006f5b6b0bb102ff99bbe1976ef66180c41a69f097",
+          "setup/prompts/glm-usage-cross-review.txt": "5e2562da2afbf194ce1920df9413eb6e0d467da6b4eb214a1ec23fdaf62d2f6e",
+          "setup/prompts/terra-fixture-cross-review.txt": "ea6a8c7aa1272899fa5f845045a5e8ab4830bc7e644778ecd208a9baf83d3c27",
           "setup/prompts/terra-preparation-review.txt": "1a79756409c7db9f5d48fd62dd521591450189f01f1f97f29003ccc97d6462fb"
         },
-        "independent_review_status": "Terra fresh-session cross-review in progress; new Terra-authored prompts need different-model review"
+        "independent_review_status": "first protocol prompts reviewed by Terra; later preparation repair/review prompts retain coordinator attribution and are not independent-family approved"
+      },
+      {
+        "artifact": "fixture-draft/",
+        "author_model": "z-ai/glm-5.3-flash",
+        "author_session": "glm-fixture-builder",
+        "provider_tag": "relace/fp4",
+        "tree_manifest": "setup/glm-builder-first-endpoint.json",
+        "cross_reviewer_model": "openai/gpt-6.1-terra",
+        "review": "setup/reviews/terra-fixture-cross-review/FIXTURE_CROSS_REVIEW.json",
+        "status": "changes_required; first endpoint preserved; no study qualification"
       }
     ],
     "family_decisions": {
@@ -315,7 +329,8 @@
     ],
     "cross_review_evidence": [
       "setup/reviews/terra-protocol-review/",
-      "setup/reviews/gemma-cross-review/"
+      "setup/reviews/gemma-cross-review/",
+      "setup/reviews/terra-fixture-cross-review/"
     ]
   },
   "checks": {
@@ -421,7 +436,7 @@
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "status": "candidate_stack_not_runtime_qualified",
+    "status": "first_GLM_fixture_draft_exported_public_checks_replayed_changes_required",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
@@ -512,7 +527,9 @@
     "sqlite_engine_version": null,
     "lockfile_and_image_qualification_required": true,
     "eligible_builder_signoff": null,
-    "cross_review_signoff": null
+    "cross_review_signoff": null,
+    "first_candidate_manifest": "setup/glm-builder-first-endpoint.json",
+    "candidate_source_path": "fixture-draft/"
   },
   "study_kind": "feasibility_and_estimation_only",
   "canonical_configuration": true,
@@ -673,11 +690,12 @@
     "mode": "two_equal_isolated_lanes_after_resource_qualification",
     "max_parallel_workflows": 2,
     "lane_resources": {
-      "dedicated_cpu_cores": 2,
       "memory_gib": 8,
       "node_test_workers": 1,
       "playwright_workers": 1,
-      "independent_container_database_dependencies_cache_ports_and_context": true
+      "independent_container_database_dependencies_cache_ports_and_context": true,
+      "assigned_cpu_cores": 2,
+      "exclusive_host_cpu_reservation": false
     },
     "host_observation": {
       "logical_cpus": 6,

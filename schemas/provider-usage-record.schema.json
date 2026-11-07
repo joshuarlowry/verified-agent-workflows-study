@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Provider request usage snapshot - draft requiring cross-review",
+  "title": "Draft final provider usage record revision 2 - observed GLM mapping only",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": 1
+      "const": 2
     },
     "record_id": {
       "type": "string",
@@ -47,8 +47,7 @@
       ]
     },
     "requested_model": {
-      "type": "string",
-      "minLength": 1
+      "const": "z-ai/glm-5.3-flash"
     },
     "resolved_model": {
       "type": [
@@ -67,14 +66,13 @@
       "minLength": 1
     },
     "source": {
-      "const": "gateway_preserved_provider_usage"
+      "const": "captured_gateway_usage"
     },
     "counter_semantics": {
-      "const": "request_total_snapshot"
+      "const": "final_request_total_observation"
     },
     "mapping_id": {
-      "type": "string",
-      "minLength": 1
+      "const": "glm-relace-completion-only-r7"
     },
     "billing_counters": {
       "type": "object",
@@ -134,9 +132,6 @@
     "reasoning_rule": {
       "const": "preserve_diagnostic_counter_do_not_add_to_completion"
     },
-    "raw_provider_usage": {
-      "type": "object"
-    },
     "native_usage": {
       "type": [
         "object",
@@ -144,12 +139,27 @@
       ]
     },
     "reconciliation": {
-      "enum": [
-        "provider_counters_only_native_join_and_resolution_unverified",
-        "crosschecked",
-        "missing",
-        "inconsistent"
-      ]
+      "const": "provider_counters_only_native_join_and_resolution_unverified"
+    },
+    "expected_provider_tag": {
+      "const": "relace/fp4"
+    },
+    "mapping_evidence": {
+      "const": "readiness/revision7-provider-and-accounting.json"
+    },
+    "raw_provider_usage_snapshots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "normalization_warnings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [
@@ -170,8 +180,11 @@
     "billing_counters",
     "reported_cost_usd",
     "reasoning_rule",
-    "raw_provider_usage",
     "native_usage",
-    "reconciliation"
+    "reconciliation",
+    "expected_provider_tag",
+    "mapping_evidence",
+    "raw_provider_usage_snapshots",
+    "normalization_warnings"
   ]
 }

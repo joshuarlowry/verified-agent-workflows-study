@@ -1,0 +1,33 @@
+{
+  "kind": "offline_generic_context_mechanical_probe_not_application_corpus_qualification",
+  "utc": "2026-11-07T03:34:18.234560+00:00",
+  "model_calls": 0,
+  "server_version_candidate": "1.3.3",
+  "exposed_library": "ecmascript-number@2025",
+  "network": "none",
+  "corpus_mount": "read_only",
+  "server": {
+    "name": "context",
+    "version": "1.3.3"
+  },
+  "tools": [
+    "get_docs"
+  ],
+  "checks": {
+    "initialize": true,
+    "only_scoped_docs_tool": true,
+    "retrieval": true,
+    "unlisted_library_rejected": true
+  },
+  "retrieved_characters": 1610,
+  "all_passed": true,
+  "cleanup_exit_code": 0,
+  "stderr_tail": "Context MCP Server starting...\nRestricted to 1 packages: ecmascript-number@2025\n",
+  "elapsed_seconds_including_cleanup": 0.803983032994438,
+  "still_required": [
+    "actual app-version corpus/source review",
+    "exact source/archive hashes and extraction coverage",
+    "all role/session adapters and worker inheritance",
+    "full study isolation and event capture"
+  ]
+}
