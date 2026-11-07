@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 03:07:25 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 03:07:27 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 03:07:25 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 03:07:27 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-baseline-binding-amendment | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 03:02:56 PM EST (UTC-0500) | Nov 07, 2026 at 03:07:25 PM EST (UTC-0500) |
+| glm-docs-source-selection-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 03:07:27 PM EST (UTC-0500) | — |
 
-Narrow R1/R2 amendment with non-test native-auth probes. App/test source remains unchanged. Different-model delta review required before freeze.
+GLM reviews new documentation sources against actual baseline dependency evidence. This gate precedes corpus construction; final extraction/runtime approval remains separate.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
