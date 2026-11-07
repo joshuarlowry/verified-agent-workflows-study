@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T20:41:58.419771+00:00",
+  "recorded_at_utc": "2026-11-07T21:05:39.920845+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -444,6 +444,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
       "qualification": "Review partial extraction and constructor-proposed pinned Vitest include. Not approval of partial corpus; no indexes or study dispatch."
+    },
+    {
+      "launch_id": "worker-harness-review-20261107T210437Z",
+      "role": "glm-worker-harness-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-worker-harness-review-glm-20261107T210437Z",
+      "manifest_created_at_utc": "2026-11-07T21:04:37.432711+00:00",
+      "prompt_sha256": "059ec0b4ee9b4e043f93e9f1b6fef360c149d3e570c73a644d22e88084f50916",
+      "controller_sha256": "8ee2c6e09d7c02f5f3689ef5da4d6b4f6e7e31717d5f9385a98af40a66ca776e",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
+      "qualification": "Fresh source/prompt/synthetic-test review only. Real seven-role/native worker/Context/resource/endpoint qualification remains separate. No paid nested probes or implementation edits."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
