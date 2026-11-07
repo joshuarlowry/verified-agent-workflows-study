@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T22:37:12.455086+00:00",
+  "updated_at_utc": "2026-11-07T23:46:08.076579+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -41,9 +41,8 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "c1-checker-repair-20261107T223442Z",
+    "active_launch": "docs-final-extraction-review-20261107T223442Z",
     "queued_in_order": [
-      "docs-final-extraction-review-20261107T223442Z",
       "native-controller-integration-20261107T223522Z",
       "c1-implementation-review-20261107T223656Z",
       "c1-repaired-checker-review-20261107T225348Z"
@@ -94,5 +93,7 @@
   "external_evaluator_plumbing": "setup/external-evaluator-plumbing.json",
   "dependency_image_recovery": "setup/dependency-image-preservation.json",
   "native_session_export_preflight": "setup/native-session-export-preflight.json",
-  "C1_fixture_runtime_triage": "setup/c1-fixture-runtime-triage.json"
+  "C1_fixture_runtime_triage": "setup/c1-fixture-runtime-triage.json",
+  "independent_C1_checker_repair_endpoint": "setup/c1-checker-repair-endpoint.json",
+  "capture_audit_repair": "setup/capture-audit-repair.json"
 }

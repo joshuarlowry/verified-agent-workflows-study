@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "GLM repairs reviewed C1 evaluator without positive-source exposure; fresh GLM docs-content review and Terra executable native-controller integration follow sequentially. Baseline source/binding and three public/native-auth image replays passed; no task/corpus/full-harness qualification or calibration/scored run yet.",
+  "next_dependency": "Fresh GLM docs extraction review running. Native-controller integration, C1 implementation cross-review and repaired-checker cross-review queued sequentially. Reference passed three public regression replays; alternative untested after exact-lock preflight. No task/full-harness/corpus qualification or calibration/scoring yet.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",

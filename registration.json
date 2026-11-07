@@ -313,10 +313,13 @@
     "acceptance_suite_sha256": null,
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
-    "independent_C1_evaluator_status": "First-return GLM checker frozen before positive exposure; Terra source review changes_required. Separate GLM repair underway without positive-source exposure; actual reference/alternate/negative/clean replays pending.",
+    "independent_C1_evaluator_status": "GLM repair first-return frozen before positive-source exposure; 221 physical requests reconciled (217 native steps, 2 summaries, 2 failed attempts with unavailable billing). Fresh checker-only re-review queued; actual positive/alternate/negative/clean qualification pending.",
     "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json",
     "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json",
-    "independent_C1_checker_review": "setup/c1-checker-review.json"
+    "independent_C1_checker_review": "setup/c1-checker-review.json",
+    "independent_C1_checker_repair_evidence": "setup/c1-checker-repair-endpoint.json",
+    "C1_reference_public_regression_evidence": "setup/c1-reference-public-replays-20261107T232728Z.json",
+    "C1_alternative_runtime_status": "Not tested: exact-lock preflight rejected one generated install-script metadata flag; original source/patch preserved for cross-review, setup/c1-fixture-runtime-triage.json."
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,

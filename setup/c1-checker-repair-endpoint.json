@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-11-07T23:46:08.076579+00:00",
+  "launch_id": "c1-checker-repair-20261107T223442Z",
+  "run_id": "clean-20261107T122746Z-c1-checker-repair-glm-20261107T223442Z",
+  "model": "z-ai/glm-5.3-flash",
+  "dispatch_utc": "2026-11-07T22:35:06.188543+00:00",
+  "elapsed_seconds": 3465.4733956739947,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "prompt_sha256": "e36b810b716b2da0388715f99524bcc6330dd5c716f949622a651b06ac00be62",
+  "controller_sha256": "760ff0020665656ae10bf4df102a19e18306969b67783262795c57d5887a9036",
+  "frozen_files": 67,
+  "freeze_sha256": "5836087bf526a5b327a0b9e2af77190ff96db97e5a37cb266f0f669789cdee2e",
+  "native_step_count": 217,
+  "native_summary_calls": 2,
+  "physical_requests": 221,
+  "successful_paired_generations": 219,
+  "failed_calls": [
+    {
+      "request": 203,
+      "provider_error_code": 504,
+      "code_provenance": "explicit_provider_SSE_error",
+      "http_status_independently_captured": false,
+      "capture_sha256": "0cf04fff1b848dff848fde6231f8144a108770147d7480faedfda85a5b1755db",
+      "usage_status": "unavailable; not assumed zero",
+      "kind": "failed_provider_stream",
+      "gateway_stream_absent": true
+    },
+    {
+      "request": 52,
+      "provider_error_code": 500,
+      "code_provenance": "canonical_plain_error_body",
+      "http_status_independently_captured": false,
+      "capture_sha256": "aea8f930f6b3ace87cfcad809e6b1684ce0ee39990f7576a7a223967b4199d58",
+      "usage_status": "unavailable; not assumed zero",
+      "kind": "failed_http_response_body"
+    }
+  ],
+  "failed_call_billing_complete": false,
+  "scoped_capture_audit_passed": true,
+  "source_review": "fresh Terra re-review queued; no self-approval",
+  "task_acceptance": "pending positive/alternate/negative/three-clean qualification",
+  "capture_audit_repair": "setup/capture-audit-repair.json",
+  "source_oracle_edited_by_operator": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

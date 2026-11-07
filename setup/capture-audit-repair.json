@@ -1,0 +1,51 @@
+{
+  "recorded_at_utc": "2026-11-07T23:46:08.076579+00:00",
+  "kind": "mechanical_capture_audit_repair_not_model_rerun",
+  "original_failure_preserved": "Private capture-audit-revision-20261107T233824Z/original_parser_failure.log and previous source; Git history retains old auditor.",
+  "cause": "Historical auditor assumed every failed response file was JSON and refused native compaction when any HTTP failure existed. Real capture contains canonical plain error body and explicit failed SSE, plus initial and refresh native summaries.",
+  "changes": [
+    "Parse exact known failed-body forms with provenance; do not infer an independently captured HTTP status.",
+    "Separate explicit failed provider SSE with no gateway success stream from successful paired generations.",
+    "Reconcile native steps and both native summary forms by physical request ID and stable response ID across failed attempts.",
+    "Validate normalized usage counters against raw provider counters, retaining provider-only metadata and known zero normalization separately."
+  ],
+  "synthetic_controls": {
+    "tests": 14,
+    "passed": 14,
+    "model_calls": 0,
+    "source": "scripts/check_capture_reconciliation.py"
+  },
+  "real_capture_regression_checks": [
+    {
+      "run_id": "clean-20261107T122746Z-c1-checker-repair-glm-20261107T223442Z",
+      "physical_requests": 221,
+      "successful_paired_generations": 219,
+      "native_steps": 217,
+      "verified_summary_calls": 2,
+      "failed_calls": 2,
+      "all_scoped_checks_passed": true
+    },
+    {
+      "run_id": "clean-20261107T122746Z-c1-alternate-gemma-20261107T211533Z",
+      "physical_requests": 61,
+      "successful_paired_generations": 52,
+      "all_scoped_checks_passed": true
+    },
+    {
+      "run_id": "clean-20261107T122746Z-baseline-review-glm-20261107T193523Z",
+      "physical_requests": 90,
+      "all_scoped_checks_passed": true
+    },
+    {
+      "run_id": "clean-20261107T122746Z-docs-extraction-completion-terra-20261107T213919Z",
+      "physical_requests": 58,
+      "all_scoped_checks_passed": true
+    }
+  ],
+  "limits": [
+    "Failed-call billing and complete gateway error-wire/HTTP-status capture unavailable; not assumed zero.",
+    "Failed generation billing lookup returned 404; cost remains unavailable.",
+    "Source/contract review and full adapter qualification remain pending. No subject was restarted or supplied a corrective prompt."
+  ],
+  "auditor_sha256": "f996c176e214ca8ca3ecf9063abd1874a02b82d1db4c9c158c62f218290052ca"
+}

@@ -129,6 +129,7 @@ def main():
         for argv in [['npm', 'run', 'build'], ['npm', 'run', 'reset']]: exec_in(app_name, *argv)
         names.append(eval_name)
         _, eval_id = command(['podman', 'run', '--name', eval_name, '--network', 'container:'+app_name, *common,
+                  '-e', 'PLAYWRIGHT_BROWSERS_PATH=/evaluator/browsers',
                   '-v', f'{checker}:/evaluator:ro', '-v', f'{checker / "node_modules"}:/evaluator/node_modules:rw',
                   '-v', f'{eval_state}:/state:rw', '-v', f'{results}:/results:rw', '--workdir', '/evaluator', IMAGE,
                   'node', '-e', 'setInterval(()=>{},10000)'])
