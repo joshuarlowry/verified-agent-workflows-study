@@ -1,5 +1,9 @@
 # Protocol revision notes
 
+## Revision 8 — restrict setup and study models
+
+User confirms Gemma 4, GLM and Terra only. No external builder appointments or construction sessions were launched. Preserve the two already-completed external availability probes as excluded setup overhead, never study evaluations. Future model calls are restricted to the canonical three unless explicitly revised. The independent-family fixture-construction rule is not silently waived; its authorship method remains unresolved. Record preliminary container CPU/memory enforcement evidence and the rootless cpuset failure in setup/status.json; full lane qualification remains incomplete.
+
 ## Revision 7 — family decisions, treatment provenance, precision and schedule
 
 Group Gemini with Gemma for independent-builder/qualifier eligibility, citing Google's declared lineage without asserting identical model weights. Extend provenance to task contracts, FAQ, role/system/user prompts, handoff templates and corpus content. Coordinator role-prompt drafts require explicit authorship and independent review; authoritative task-specific contracts/FAQ use eligible construction authors.

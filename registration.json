@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 7,
+  "protocol_revision": 8,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -257,7 +257,8 @@
       "historical_drafts": "preserve known provenance; unavailable historical model IDs/settings explicitly unknown, never inferred from thread nickname",
       "all_artifacts": "record authors/contributors, exact known models/families/providers/harness/settings or unknown, timestamps, source lineage, hashes, reviewer identity and independent signoff"
     },
-    "authoritative_prompt_FAQ_contract_review_required_before_calibration": true
+    "authoritative_prompt_FAQ_contract_review_required_before_calibration": true,
+    "appointment_status": "No outside model appointed; only three study models authorized for future calls. Independent-family construction remains unresolved; no automatic waiver."
   },
   "checks": {
     "requirements_public": true,
@@ -653,5 +654,17 @@
     "excludes": "fixture/reference/negative-control/corpus construction, independent qualification, outages, provider requalification and optional human review",
     "reforecast": "after first technical block and calibration using actual endpoint runtimes, timeout rates and setup/evaluation overhead; preserve forecast history; no outcome-based sample changes",
     "report_generator": "scripts/estimate_collection.py"
+  },
+  "setup_model_policy": {
+    "allowed_requested_ids": [
+      "google/gemma-4-31b-it",
+      "z-ai/glm-5.3-flash",
+      "openai/gpt-6.1-terra"
+    ],
+    "scope": "all future study and setup model calls unless user explicitly revises this restriction",
+    "other_model_evaluation_or_builder_launches": false,
+    "external_builder_appointments": [],
+    "prior_unscored_availability_probes": "setup/status.json; excluded from study results, recorded as setup overhead",
+    "construction_exclusion_rule_waived": false
   }
 }
