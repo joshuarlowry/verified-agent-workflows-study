@@ -642,7 +642,18 @@
       "phase": "checker_delta_cross_review",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized clean fixture/evaluator construction and cross-review",
-      "qualification": "Fresh checker-only review from baseline/public scope. Revised evaluator first-return freeze required; no positive app source/conversation supplied. No self-approval of Terra reference; real task qualification remains separate."
+      "qualification": "Fresh checker-only review from baseline/public scope. Revised evaluator first-return freeze required; no positive app source/conversation supplied. No self-approval of Terra reference; real task qualification remains separate.",
+      "pre_dispatch_provenance_input_additions": [
+        {
+          "recorded_at_utc": "2026-11-07T23:18:16.532330+00:00",
+          "kind": "pre_dispatch_constructor_input_provenance_completion",
+          "file": "CONTROLLER_CONSTRUCTOR_INPUT_MAP.json",
+          "sha256": "b57bf78a264366646af0f35f1bf7d858357bfb62572056bd376ca4cf61bcd4ba",
+          "files": 65,
+          "scope": "Provide complete immutable author inputs and explicit path mapping so reviewer can verify original hashes; no positive source, conversation or changed prompt/controller.",
+          "subject_dispatch_started": false
+        }
+      ]
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
