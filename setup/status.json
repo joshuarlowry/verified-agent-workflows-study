@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "Resolve and cross-review baseline native-auth bindings and API shape clarification; approve documentation source amendment, then build corpus, worker harness and evaluator; references, clean replays and actual isolation qualification precede calibration. No calibration/scored runs yet.",
+  "next_dependency": "Accepted baseline delta and documentation source selection. Fresh image, three isolated public regression replays and three accepted native-auth probe replays pending; extraction, first C1 packet and common worker harness follow their recorded gates. No calibration/scored runs yet.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
@@ -33,10 +33,10 @@
   "passive_artifact_backup": {
     "repository": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
     "visibility": "private",
-    "latest_checkpoint": "checkpoints/preparation-20261107T121402Z.tar.gz",
-    "scope": "sanitized passive preparation checkpoint; active files can be partial; not atomic endpoint",
+    "latest_checkpoint": "checkpoints/preparation-20261107T202452209957Z.tar.gz",
+    "scope": "Sanitized passive preparation checkpoint; active files can be partial; not atomic endpoint. Later automatic endpoint backups may exist.",
     "credential_values_removed": true,
-    "sha256": "682ae7ded70492cc8cad0687aad4241155158a9207f6f1ca62c3a00c4a8d92bb",
+    "sha256": "612456200c3af876ad4b80921485e03a31365de23a8d56a461b1f9e0a8b2f83e",
     "published_private": true
   },
   "aggregate_two_role_boundary": {

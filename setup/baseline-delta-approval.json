@@ -1,0 +1,61 @@
+{
+  "recorded_at_utc": "2026-11-07T20:32:44.173365+00:00",
+  "run_id": "clean-20261107T122746Z-baseline-delta-review-glm-20261107T200558Z",
+  "model": "z-ai/glm-5.3-flash",
+  "verdict": "accepted",
+  "review_sha256": "c9c18fdfdb7a7295602e17789be506b8f79b52235c8bfea7d635e92e6e0614e0",
+  "scope": "This acceptance covers exactly the narrow amended source/contract binding delivered under /workspace/inputs/amended-scope (amended baseline-spec.md plus unchanged FAQ.md, requirements.json, 19 contracts and contracts/README.md, and the proposed BASELINE_BINDINGS.json amendment). It is preparation-only acceptance of the R1/R2 delta closure. It is NOT baseline final freeze, NOT corpus/evaluator/calibration approval, NOT a runtime/image qualification, and NOT a claim that listed pending gates are met.",
+  "r1_status": "closed_for_this_amendment",
+  "r2_status": "closed_for_this_amendment",
+  "controller_verified_preservation": "All19contracts, FAQ and requirements index byte-identical; only baseline-spec changed. App/test source remains original21file baseline.",
+  "stream_integrity": "46calls; all paired-stream, native endpoint, request inventory and captured usage checks passed",
+  "informational_observations": [
+    {
+      "id": "D1",
+      "title": "Probe mode label 'actual npm start server' vs direct entry invocation",
+      "required_repair": "none"
+    },
+    {
+      "id": "D2",
+      "title": "Trusted Referer without Origin is accepted in non-test mode (new independent observation)",
+      "required_repair": "none"
+    },
+    {
+      "id": "D3",
+      "title": "TEST variable alone disables the origin check (supports the amended wording)",
+      "required_repair": "none"
+    }
+  ],
+  "registration_snapshot_boundary": {
+    "original_author_input_sha256": "488617ab9a9ead60f0e8b54a1f74f7ad44ae4a345b2ab1c0898e0d5c1f7e2ad0",
+    "reviewer_input_sha256": "cec00cc9760a34685eed3b379205ac4e19c984cef60f75eac5f7b4502eeba1d1",
+    "complete_json_leaf_differences": [
+      {
+        "path": "/application_preparation/current_candidate_manifest",
+        "original": null,
+        "review_snapshot": "setup/baseline-candidate.json"
+      },
+      {
+        "path": "/application_preparation/current_candidate_path",
+        "original": "fixtures/",
+        "review_snapshot": "Private frozen endpoint; final public baseline not promoted"
+      },
+      {
+        "path": "/application_preparation/status",
+        "original": "clean_reconstruction_pending_no_eligible_baseline",
+        "review_snapshot": "fresh_constructor_candidate_delivered_pending_independent_review_and_clean_qualification"
+      },
+      {
+        "path": "/clean_restart/status",
+        "original": "revised_scope_delivered_full_review_running_docs_selection_queued",
+        "review_snapshot": "baseline_candidate_delivered_documentation_and_runtime_reviews_in_progress"
+      }
+    ],
+    "adjudication": "All differences are preparation-status/candidate-location metadata. Complete structural comparison found no other changes; models, stack, treatments, contracts, sample, deadlines and analysis are unchanged. Original input hashes remain preserved; original author is not claimed to have seen later bytes.",
+    "authority": "Controller mechanical comparison, not retroactive author provenance or a new model signoff."
+  },
+  "remaining_runtime_gate": "Fresh image/public regression replays plus three repetitions of accepted non-test authentication probe, and all other task/harness/Context/resource qualification gates.",
+  "final_freeze": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

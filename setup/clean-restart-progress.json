@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T20:21:59.680859+00:00",
+  "updated_at_utc": "2026-11-07T20:32:44.173365+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -42,10 +42,10 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "baseline-delta-review-20261107T200558Z",
+    "active_launch": "baseline-container-replay-20261107T200937Z",
     "queued_in_order": [
-      "baseline-container-replay-20261107T200937Z",
       "docs-extraction-20261107T201115Z",
+      "native-auth-container-replay-20261107T200937Z (before C1 model dispatch)",
       "c1-reference-checks-20261107T201734Z",
       "worker-harness-20261107T202114Z"
     ],
@@ -75,5 +75,6 @@
   "baseline_review": "setup/baseline-review.json",
   "docs_source_repair": "setup/docs-source-repair.json",
   "baseline_binding_amendment": "setup/baseline-binding-amendment.json",
-  "docs_source_approval": "setup/docs-source-approval.json"
+  "docs_source_approval": "setup/docs-source-approval.json",
+  "baseline_delta_approval": "setup/baseline-delta-approval.json"
 }
