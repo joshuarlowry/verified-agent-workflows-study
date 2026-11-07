@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T21:37:48.684634+00:00",
+  "recorded_at_utc": "2026-11-07T21:45:04.013329+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -495,7 +495,12 @@
       "phase": "mechanical_preflight",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model clean study setup and deterministic native worker-launch preflight; no new treatment or models",
-      "qualification": "Native probe: two fixed transport handoffs, no benchmark/Context/supervisor qualification. Retry: identical zero-call startup-failure retry; review and actual qualifications remain separate."
+      "qualification": "Native probe: two fixed transport handoffs, no benchmark/Context/supervisor qualification. Retry: identical zero-call startup-failure retry; review and actual qualifications remain separate.",
+      "pre_dispatch_controller_revision": {
+        "at_utc": "2026-11-07T21:43:53.779462+00:00",
+        "latest_controller_sha256": "574db2a7761be5f0e1fdc04e9e9d9d170c17cc7f4837ace6f78466b85a420eb1",
+        "reason": "Frozen mechanical proof failure must fail controller exit; original hash above retained."
+      }
     },
     {
       "launch_id": "worker-harness-review-retry-20261107T213519Z",
@@ -509,6 +514,32 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model clean study setup and deterministic native worker-launch preflight; no new treatment or models",
       "qualification": "Native probe: two fixed transport handoffs, no benchmark/Context/supervisor qualification. Retry: identical zero-call startup-failure retry; review and actual qualifications remain separate."
+    },
+    {
+      "launch_id": "docs-extraction-completion-20261107T213919Z",
+      "role": "terra-docs-extraction-completion",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-docs-extraction-completion-terra-20261107T213919Z",
+      "manifest_created_at_utc": "2026-11-07T21:39:20.019109+00:00",
+      "prompt_sha256": "6cc7dbfddec89b1f0c999e0ced15d037ebbf7ce49d01446f8fbb6a0dd3bafca5",
+      "controller_sha256": "f8bc6a14990c8d552f9c9b5092986f394aa863588d51abbc93a6034cb847f79d",
+      "phase": "preparation_extension",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model clean construction/cross-review and completion of recorded incomplete setup artifacts",
+      "qualification": "New recorded extension, never replacement of first endpoint. Docs require fresh extraction review before indexing; native code requires fresh source review and actual seven-role/resource/Context/endpoint qualification. No nested paid model calls or application feature input."
+    },
+    {
+      "launch_id": "native-harness-completion-20261107T214216Z",
+      "role": "terra-native-harness-completion",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-native-harness-completion-terra-20261107T214216Z",
+      "manifest_created_at_utc": "2026-11-07T21:42:16.879716+00:00",
+      "prompt_sha256": "c0d57334b3148728c6ddf1f099884988658ba063d3aa182bd98c54e12eba82ef",
+      "controller_sha256": "967522ac1a4cde916df3aac21940c31a36e7fe1acd5a80d1728cf15f6edbaea3",
+      "phase": "preparation_extension",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model clean construction/cross-review and completion of recorded incomplete setup artifacts",
+      "qualification": "New recorded extension, never replacement of first endpoint. Docs require fresh extraction review before indexing; native code requires fresh source review and actual seven-role/resource/Context/endpoint qualification. No nested paid model calls or application feature input."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
