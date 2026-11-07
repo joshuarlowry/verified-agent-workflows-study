@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:19:03 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:27:44 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:19:03 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:27:44 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-scope-amendment-cross-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 01:19:03 PM EST (UTC-0500) | — |
+| glm-scope-amendment-cross-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 01:19:03 PM EST (UTC-0500) | Nov 07, 2026 at 01:27:44 PM EST (UTC-0500) |
 
 GLM checks five boundary amendments and full contract preservation. Scope acceptance is separate from runtime qualification; no calibration/scoring enabled.
 
