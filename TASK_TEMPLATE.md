@@ -1,60 +1,58 @@
-# Task contract template — draft
+# Task contract and qualification template — draft revision 2
 
-No field marked required may remain unresolved at registration. This template is not itself a qualified task.
+Fill and freeze the contract before scored dispatch. Complete qualification before this task's stage begins. Empty fields are launch dependencies, not implied approvals.
 
-- **Task ID / revision / hash:** required
-- **Baseline commit / image digest / lockfile hash:** required
-- **Task category:** required
-- **One-sentence user outcome:** required
-- **Observed baseline behavior and reproducible example:** required
-- **Requested behavior:** required; describe public behavior, not a reference implementation
-- **Non-goals:** required
-- **Actors, ownership and authentication rules:** required
-- **Input/domain boundaries, null/zero/empty/error behavior:** required
-- **Persistence, reload and compatibility behavior:** required
-- **UI interaction and accessibility requirements, if applicable:** required
-- **Permitted edit scope / legitimate baseline expectation changes:** required
-- **Frozen FAQ:** required; no individualized product coaching
+## Contract and provenance
 
-## Acceptance map
+- Task ID/revision/hash; category; independent difficulty stratum; frozen stage/order.
+- Baseline commit, image digest, lockfile, database fixture and local documentation hashes.
+- One user outcome, baseline reproduction, requested behavior and explicit non-goals.
+- Actors/authentication/ownership, data boundaries, null/zero/empty/error behavior.
+- Persistence/reload, compatibility, permitted edit scope and legitimate regression expectation changes.
+- UI requirements including accessible roles/names/labels and keyboard behavior where applicable.
+- Frozen FAQ and documented assumptions, identical for all systems.
+- Author record for the baseline, reference patch, alternate valid path and each check: human identity/role, exact model/family/provider if used, date and artifact hash.
+- Subject-family exclusion verified; independent qualifier identified and signed off.
+- For later-stage tasks, evidence of builder blinding to earlier scored outcomes.
 
-| Requirement ID | Observable criterion | Public examples/checks | Independent acceptance check | Negative control rejected | Evidence artifact |
+## Requirements, examples and sealed verification
+
+| Requirement | Observable behavior | Public example/check | Sealed boundary/integration case | Negative control caught | Semantic UI locator or API contract |
 |---|---|---|---|---|---|
-| AC-01 | Required | Required | Required | Required | Required |
+| AC-01 | Required | Required where applicable | Required | Required for critical behavior | Required |
 
-Every requirement must map to a check or a predeclared review procedure. A sealed check may use different data, but not an undisclosed behavioral requirement. Use public API/UI contracts rather than undocumented helper names.
+All requirements are public. Public checks are representative examples; sealed checks use new inputs or combinations from the same disclosed contract. The task measures generalization beyond visible examples, not compliance with secret requirements. Map every sealed assertion to its requirement. UI checks use `getByRole`, `getByLabel` or equivalent semantic locators; record and justify exceptions before registration.
 
-## Trusted commands and environment
+## Environment and qualification evidence
 
-- Dependency installation before timing: required
-- Start app/API/database and reset fixtures: required
-- Public targeted checks: required
-- Existing regressions, build, typecheck, lint: required
-- External independent evaluator: required
-- Seeds, ports, locale/timezone and test database identity: required
-- Which failures mean rejected, unverified, infrastructure interruption or protocol violation: required
-- Evaluator outputs: criterion ID, status, exit code, source/evaluator hash and evidence location
+- Dependency installation before timing; start/reset commands and isolated test database identity.
+- Public targeted checks and trusted public selector predicate; regressions/build/typecheck/lint commands with reliable exit codes.
+- External sealed evaluator, seeds, timezone/locale and evidence format.
+- Baseline regressions pass and task acceptance fails for the expected reason.
+- Complete reference passes all gates; materially different valid path also passes relevant checks.
+- Negative controls demonstrate rejection of each critical omission/error.
+- Baseline/reference replay in three clean instances of the frozen environment is consistent.
+- Independent contract/check review and author-family provenance are signed off.
+- No unresolved oracle defect, missing adapter or known flake.
 
-## Qualification evidence
+## Run and review records
 
-- Baseline regression checks pass; task acceptance fails for the intended reason.
-- Complete reference solution passes every gate on three fresh environments.
-- Independently reviewed alternate valid implementation passes relevant checks.
-- Negative controls catch each critical missing/incorrect behavior.
-- Contract, checks and behavior reviewed independently of their author.
-- Reviewer identity/role, human versus AI contribution, timestamp and signoff recorded.
-- No unresolved oracle defect, missing adapter, unknown critical behavior or known flake.
+- Frozen workflow deadline T; first-return/deadline/blocked endpoint and timestamp.
+- Source/public-check/acceptance hashes and per-criterion accepted/rejected/unverified evidence.
+- Public-check predicate result released separately from sealed results.
+- Native input/output/cache/reasoning/write provenance and missing usage.
+- Human operational activity separated from blinded patch-review timing.
+- For machine-eligible patches: both blinded reviewers' active minutes, merge/change/cannot-assess verdicts, critical reproductions and adjudication.
+- For Gemma portfolio candidates: preregistered position and public-only selection manifest committed before sealed outcome disclosure to selector/analyst.
 
 ## Subject prompt skeleton
 
-> You are the complete implementation agent for RUN_ID, or the registered supervisor if this configuration explicitly assigns that role.
+> Implement the single frozen task for RUN_ID against BASELINE_ID. All behavioral requirements and representative public checks are included. Plan, implement, self-review and verify the complete outcome. Sealed checks use new cases from the same requirements.
 >
-> Implement the single task in the attached frozen contract against BASELINE_ID. All behavioral requirements and public checks are included. Plan the work, implement, self-review and verify the complete requested outcome. No other task or run is in scope.
+> You have T_MINUTES of total workflow time from dispatch. Tool/inference waits, retries and any registered worker handoffs use that same deadline. Your first complete-agent or supervisor final return freezes the endpoint. A deadline hit is not delivered; an early return passes only if independent verification accepts the artifact.
 >
-> Run the targeted checks and the frozen final regression/build/typecheck/lint commands. Keep reliable exit codes. Do not remove regression guarantees, weaken checks, access other runs or change the evaluator. Use only the registered models, tools and writable paths.
+> Run targeted public checks and the frozen regression/build/typecheck/lint commands. Preserve regression guarantees, evaluator integrity and the registered edit scope. Use only the declared models, tools and writable paths. Report exact evidence and remaining or unverified requirements honestly.
 >
-> Continue through your own verification and repair work until the contract is satisfied or you reach a concrete blocker. Your first final return is a recorded endpoint; it is not a request for an operator to choose the next step. Report exact evidence and any remaining or unverified requirements honestly.
->
-> A supervisor may review and direct its pinned worker but may not edit application/test code or supply a complete replacement implementation. Only the worker edits application code and tests. Worker handoffs are not supervisor final returns. All supervisor/worker prompts and responses are logged separately.
+> If you are the registered supervisor, you may inspect and direct the pinned Gemma worker. Gemma performs all application/test edits; you own task direction and review. Your prompts and responses are recorded separately. A worker return is a handoff within your original deadline, not a workflow endpoint.
 
-Role-specific launch mechanics, allowed paths and database authorization must be filled and hashed before use. This skeleton is not a dispatched prompt.
+Fill role mechanics, permissions, deadline and hashes before use. This template has not been dispatched.

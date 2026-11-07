@@ -1,5 +1,6 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "protocol_revision": 2,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -8,20 +9,223 @@
   "image_digest": null,
   "lockfile_sha256": null,
   "models": [
-    {"name": "Gemma 4", "requested_id": "google/gemma-4-31b-it", "harness": "OpenCode -> LiteLLM -> OpenRouter", "resolved_id": null, "provider": null, "settings_sha256": null},
-    {"name": "GLM", "requested_id": "z-ai/glm-5.3-flash", "harness": "OpenCode -> LiteLLM -> OpenRouter", "resolved_id": null, "provider": null, "settings_sha256": null},
-    {"name": "Terra", "requested_id": "gpt-6.1-terra", "harness": "Codex", "reasoning": "high", "resolved_id": null, "settings_sha256": null}
+    {
+      "name": "Gemma 4",
+      "requested_id": "google/gemma-4-31b-it",
+      "harness": "OpenCode -> LiteLLM -> OpenRouter",
+      "resolved_id": null,
+      "provider": null,
+      "settings_sha256": null
+    },
+    {
+      "name": "GLM",
+      "requested_id": "z-ai/glm-5.3-flash",
+      "harness": "OpenCode -> LiteLLM -> OpenRouter",
+      "resolved_id": null,
+      "provider": null,
+      "settings_sha256": null
+    },
+    {
+      "name": "Terra",
+      "requested_id": "gpt-6.1-terra",
+      "harness": "Codex",
+      "reasoning": "high",
+      "resolved_id": null,
+      "settings_sha256": null
+    }
   ],
-  "core_configurations": ["Gemma alone", "GLM alone", "Terra alone", "Terra supervising Gemma", "GLM supervising Gemma"],
-  "scored_tasks": [],
-  "scored_task_count_proposed": 10,
-  "repetitions_per_task_configuration_proposed": 3,
-  "scored_run_count_proposed": 150,
-  "calibration_task_count_proposed": 2,
-  "calibration_run_count_proposed": 10,
-  "acceptance_suite_sha256": null,
-  "task_qualification_signoffs": [],
-  "reviewer_assignments": [],
+  "core_configurations": [
+    "Gemma alone",
+    "GLM alone",
+    "Terra alone",
+    "Terra supervising Gemma",
+    "GLM supervising Gemma"
+  ],
+  "hypotheses": {
+    "working_expectation": "Supervision improves Gemma delivery enough to approach Terra reliability at substantially lower standardized model cost; this may be false.",
+    "primary_comparisons": [
+      {
+        "candidate": "Terra supervising Gemma",
+        "reference": "Terra alone"
+      },
+      {
+        "candidate": "GLM supervising Gemma",
+        "reference": "Terra alone"
+      }
+    ],
+    "completion_difference_margin": -0.1,
+    "maximum_cost_per_acceptance_ratio": 0.5,
+    "required_joint_targets": true,
+    "readiness_observed_completion_floor_candidate_and_reference": 0.8,
+    "business_margins_approved_at_utc": null,
+    "point_targets_only_label": "promising_inconclusive",
+    "zero_acceptance_cost_per_acceptance": "undefined",
+    "secondary_comparisons": [
+      "direct model-plus-harness systems",
+      "whole supervisor systems",
+      "supervised Gemma versus Gemma alone",
+      "public-selected Gemma three-run portfolio",
+      "human review and time tradeoffs"
+    ]
+  },
+  "sample": {
+    "scored_tasks": [],
+    "scored_task_count_proposed": 15,
+    "core_repetitions_per_task_configuration": 2,
+    "core_run_count": 150,
+    "extra_gemma_runs_per_task": 1,
+    "extra_gemma_run_count": 15,
+    "total_scored_generation_runs": 165,
+    "calibration_task_count": 4,
+    "calibration_repetitions_per_task_configuration": 2,
+    "calibration_total_runs": 40,
+    "calibration_initial_smoke_runs_included": 10,
+    "stage_1_task_count": 5,
+    "stage_1_generation_runs": 55,
+    "stage_2_task_count": 10,
+    "stage_2_generation_runs": 110,
+    "task_contracts_frozen_before_stage_1": true,
+    "later_task_builders_blind_to_stage_1_outcomes": true
+  },
+  "analysis_plan": {
+    "document": "ANALYSIS_PLAN.md",
+    "document_sha256": null,
+    "cluster_unit": "task",
+    "paired_core_trial_count_per_task": 2,
+    "proposed_interval_method": "paired task-cluster bootstrap, subject to independent simulation/coverage validation",
+    "bootstrap_draws": 20000,
+    "analysis_seed": null,
+    "familywise_alpha": 0.05,
+    "primary_one_sided_bound_count": 4,
+    "one_sided_bound_confidence": 0.9875,
+    "confirmatory_claims_enabled": false,
+    "simulation_scenarios_sha256": null,
+    "coverage_acceptance_criteria": null,
+    "precision_report_sha256": null,
+    "independent_method_review": null,
+    "target_power": 0.8,
+    "target_useful_alternative": {
+      "completion_difference": 0.0,
+      "cost_per_acceptance_ratio": 0.4
+    },
+    "degenerate_or_unvalidated_intervals": "no_confirmatory_claim",
+    "incomplete_planned_sample": "feasibility_and_missingness_sensitivity_only",
+    "capped_delivery_time": "accepted submission time, otherwise T; separate from actual consumed wall time"
+  },
+  "stopping_rule": {
+    "calibration_workflow_deadline_minutes": 120,
+    "scored_deadline_formula": "min(120, max(30, ceil(5 * median(verified accepted calibration subject minutes))))",
+    "scored_deadline_minutes": null,
+    "calibration_minimum_distinct_systems_with_acceptance": 2,
+    "calibration_minimum_distinct_tasks_with_acceptance": 3,
+    "scope": "entire agent/supervisor workflow including tools, waits, retries and worker handoffs",
+    "reset_on_handoff": false,
+    "deadline_outcome": "not_delivered_by_deadline",
+    "early_failed_return_outcome": "not_delivered",
+    "external_stop_events": [
+      "explicit user stop",
+      "API account exhaustion",
+      "account-level outage",
+      "unrecoverable infrastructure failure",
+      "safety/protocol violation"
+    ],
+    "account_exhaustion_action": "stop new dispatch globally; preserve active attempts, incomplete blocks and missingness",
+    "dollar_cap": null,
+    "token_cap": null,
+    "approved_at_utc": null
+  },
+  "staged_continuation": {
+    "outcome_blinded": true,
+    "relative_performance_used": false,
+    "criteria": [
+      "all dispatched model/baseline resolutions correct",
+      "all endpoint snapshots/statuses captured",
+      "no unresolved evaluator/integrity defect",
+      "native usage captured for at least 95 percent of completed calls with all missing calls listed",
+      "required review timing complete",
+      "remaining tasks can be qualified without access to prior outcomes"
+    ],
+    "checkpoint_decision": null,
+    "checkpoint_evidence_sha256": null
+  },
+  "retry_control": {
+    "name": "public-selected Gemma three-run fixed-batch portfolio",
+    "candidates_per_task": 3,
+    "selection": "first trusted-public-passing eligible candidate in preregistered order",
+    "selection_order_sha256": null,
+    "hidden_results_available_to_selector": false,
+    "all_candidate_generation_costs_counted": true,
+    "public_predicate_sha256": null,
+    "observations_per_task": 1,
+    "core_uses_only_gemma_repetitions": [
+      1,
+      2
+    ],
+    "aggregate_subject_deadline_multiple": 3,
+    "same_time_budget_as_core": false,
+    "oracle_any_hidden_pass": "secondary_upper_bound_only",
+    "physical_calls_counted_once_in_study_totals": true
+  },
+  "pricing_rule": {
+    "primary": "frozen uncached API-equivalent input/output list prices",
+    "rate_card": null,
+    "rate_card_sha256": null,
+    "formula": "sum(inclusive_input/1e6 * list_input_price + billable_output/1e6 * list_output_price) across all components and paid retries",
+    "cache_discounts_in_primary": false,
+    "codex_subscription_in_primary": false,
+    "billable_output_mapping_sha256": null,
+    "secondary": [
+      "observed invoices",
+      "cache-aware API pricing with explicit write uncertainty",
+      "Codex subscription/access allocation",
+      "hosting and labor scenarios"
+    ],
+    "missing_usage_policy": "unresolved unless decision-valid bounds are available"
+  },
+  "construction_provenance": {
+    "subject_models_may_author_fixture": false,
+    "excluded_families": [
+      "Gemma family",
+      "GLM family",
+      "OpenAI GPT family including Terra"
+    ],
+    "applies_to": [
+      "application baseline",
+      "reference solutions",
+      "alternative implementations",
+      "acceptance checks"
+    ],
+    "protocol_author_role": "AI coordinator under human direction; not fixture-builder eligibility",
+    "eligible_builders": [],
+    "artifact_author_records": [],
+    "independent_qualifiers": []
+  },
+  "review_measurement": {
+    "reviewers_per_machine_eligible_patch": 2,
+    "reviewer_assignments": [],
+    "rubric_sha256": null,
+    "blinding_assignment_sha256": null,
+    "prompt": "Would I merge this patch for the declared contract?",
+    "verdicts": [
+      "merge",
+      "changes_requested",
+      "cannot_assess"
+    ],
+    "time_recording": "active inspection and reproduction until verdict; queues and familiarization separate",
+    "reviewer_edits_in_measurement": false,
+    "critical_defects": "reproduce and adjudicate before final acceptance",
+    "include_review_rejected_patches_in_effort_total": true
+  },
+  "checks": {
+    "requirements_public": true,
+    "public_suite": "representative examples and baseline regressions; not exhaustive final acceptance",
+    "sealed_suite": "new cases and combinations of disclosed requirements",
+    "hidden_feedback_during_primary": false,
+    "ui_locator_policy": "accessible roles/names/labels; justified preregistered exceptions only",
+    "acceptance_suite_sha256": null,
+    "task_qualification_signoffs": [],
+    "positive_negative_control_records": []
+  },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
   "usage_capture_smoke_results_sha256": null,
@@ -29,8 +233,7 @@
   "randomization_seed": null,
   "randomized_schedule_sha256": null,
   "disposable_database_execution_authorized": false,
-  "budget_policy": "No imposed dollar or token budget; actual API exhaustion is an endpoint",
-  "primary_endpoint": "First complete-agent or supervisor final return, or recorded external interruption",
+  "primary_endpoint": "first complete-agent/supervisor final return, uniform deadline, or recorded external interruption",
   "primary_acceptance_rule": "All applicable frozen behavioral, regression, integration, build, typecheck, lint, integrity and critical-review gates pass",
   "post_return_repair_extension_registered": false,
   "public_report": "Observed results and hypothetical pricing remain separate",

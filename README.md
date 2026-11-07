@@ -1,41 +1,48 @@
 # Verified Agent Workflows — Study 2
 
-**A draft study plan. No experimental runs or results yet.**
+**Draft revision 2. No experiments have started.**
 
-We want to learn which coding workflow reliably delivers an accepted software change, and what that delivery costs in model usage, elapsed time and human effort. Verified completion is the gate; a fast, cheap, incomplete return is not successful delivery.
+## Hypothesis and decision
 
-This is the public home for the follow-up to the [Minutes Agent Workflow Study](https://joshuarlowry.github.io/minutes-agent-workflow-study/). The earlier study remains a separate exploratory pilot.
+**Can Gemma with a strong supervisor deliver nearly as reliably as Terra alone for substantially less money?** We expect supervision may improve Gemma enough to make this tradeoff useful; the previous pilot did not establish it.
 
-## Read the plan
+The proposed target is **within 10 percentage points of Terra's completion rate, at no more than half its standardized model cost per accepted result**. Both conditions must hold. Favorable point estimates mean “promising, inconclusive”; sufficiently precise bounds and independent review could support a separate deployment validation. Completion is a gate, not a weighted score.
 
-- **[Study protocol](PROTOCOL.md)** — research question, configurations, task design, acceptance gates, controls, measurement and reporting.
-- **[Task contract template](TASK_TEMPLATE.md)** — the requirements and validation evidence each task needs before registration.
-- **[Draft registration](registration.json)** — explicit unresolved fields; currently marked `draft_not_launchable`.
+## Configurations
 
-## Proposed experiment
+| System | Implements | Plans/reviews |
+|---|---|---|
+| Gemma alone | Gemma | Gemma |
+| GLM alone | GLM | GLM |
+| Terra alone | Terra/Codex | Terra/Codex |
+| Terra supervising Gemma | Gemma | Terra/Codex |
+| GLM supervising Gemma | Gemma | GLM/OpenCode |
 
-| Item | Proposal |
-|---|---|
-| Application | New small application with real UI, HTTP API and local test database |
-| Models | Gemma 4, GLM and Terra through their registered harnesses |
-| Configurations | Gemma alone; GLM alone; Terra alone; Terra supervising Gemma; GLM supervising Gemma |
-| Calibration | Two separate tasks across all five configurations: 10 unscored runs |
-| Scored collection | Ten tasks × three repetitions × five configurations: 150 proposed runs |
-| Completion | All applicable frozen acceptance, integration, regression and integrity gates pass |
-| Spending policy | No imposed dollar or token budget |
+The exact three model IDs are retained. These compare **whole systems**, including harnesses. Terra stays in Codex.
 
-These are proposed design choices, not a claim that the fixture, model availability or acceptance system has been verified. The application baseline, test packs, reviewers and run schedule must be qualified and frozen before registration. The sample size is not a spending cap or a statistical power claim.
+## Workload and limits
 
-## Next milestone
+Use a new small application with real UI, API and a disposable local database.
 
-Prepare and independently qualify the application fixture and two calibration tasks. Prove that the evaluator rejects unchanged or incomplete implementations and accepts valid solutions. Verify capture, isolation and model routing before considering scored dispatch.
+- **Calibration:** four tasks × five systems × two repetitions = 40 unscored runs, beginning with a ten-run smoke pilot included in that total.
+- **Core:** fifteen tasks × five systems × two repetitions = 150 scored runs.
+- **Retry control:** fifteen extra Gemma runs enable public-check-selected best-of-three: **165 scored generations total**. All three candidates incur cost; the portfolio has up to three times the core deadline.
+- **Deadline:** five times accepted calibration median runtime, bounded between 30 and 120 minutes, then frozen uniformly. Calibration has a 120-minute cap. No dollar/token cap.
 
-GLM supervising Terra and reciprocal reviewer arrangements are possible later treatments, not part of the five-configuration core.
+Qualify five scored tasks first, collect 55 runs, then apply an outcome-blinded feasibility checkpoint before the remaining ten. Freeze all contracts/order upfront; rankings cannot steer later construction.
 
-## Public and private materials
+## Outcomes and analysis
 
-This repository holds the public protocol, registration history and eventual sanitized reports. Keep credentials, raw private logs, unreleased reference solutions and sealed acceptance implementations in a separate restricted control environment. Publication of a plan does not authorize production access or start experiments.
+The two primary comparisons are each supervised Gemma system versus Terra alone. Measure verified completion, cost per acceptance including failures, delivery time and timed blinded **“would I merge this?” review**.
 
-## Provenance
+Primary economics use frozen **uncached API-equivalent prices**, not subscription invoices. Actual bills, cache discounts and subscription allocations remain separate scenarios. Public checks are examples; sealed checks cover new cases of disclosed requirements.
 
-The plan was drafted by an AI coordinator under human direction. The human selected a new application as the study base. This draft has not yet received the independent task/acceptance review required by its protocol. The original draft was recorded in the [first study repository](https://github.com/joshuarlowry/minutes-agent-workflow-study/tree/6dc7946/docs/study-2); this repository is the active home for Study 2.
+Analyze matched task clusters. Calibration informs precision simulations; fifteen tasks may not establish a ten-point margin. Inconclusive is valid. All other comparisons are secondary.
+
+## Next step and documents
+
+Appoint independent fixture builders and reviewers. Subject models **and their families** are excluded from building the app, reference solutions and acceptance checks. This AI coordinator drafted the plan; that does not qualify it to construct the benchmark.
+
+[Protocol](PROTOCOL.md) · [Analysis plan](ANALYSIS_PLAN.md) · [Task template](TASK_TEMPLATE.md) · [Registration](registration.json) · [Revision notes](CHANGELOG.md)
+
+This is the public planning record following the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/). AI roles are disclosed; sealed tests, credentials and unreleased solutions remain private. Registration is incomplete and not launchable.
