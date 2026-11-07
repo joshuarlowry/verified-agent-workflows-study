@@ -1,0 +1,79 @@
+{
+  "created_at_utc": "2026-11-07T18:30:14.780235+00:00",
+  "action": "Deterministic non-normative provenance transcription correction in a fresh copy",
+  "author": "Coordinator mechanical repair; no application/test/contract/FAQ edits",
+  "source_scope_manifest_sha256": "c89847336c64c26c231e153c50c6a92ac76aeebb7602cc24c71b1a05153191e7",
+  "corrected_scope_manifest_sha256": "28a5218b37fb7c13249e13d893f9aadc419eae8402e85a4f7cae5d0ea8b39dee",
+  "wrong_hash": "f67ffeb07c940a5563956b14a53c87e5157149c05f36da174c9b906ca0030554",
+  "correct_hash_from_immutable_prior_review_bytes": "f67ffeb07c940a5563956b07b23c87e5157149c05f36da174c9b906ca0030554",
+  "only_changed_files": [
+    "SHA256SUMS",
+    "PROVENANCE.json"
+  ],
+  "json_change": "input_snapshot.full_review_review_json_sha256 only",
+  "manifest_change": "PROVENANCE.json entry only",
+  "normative_files_byte_identical": true,
+  "full_glm_review_verdict_preserved": "changes_required",
+  "full_glm_review_sha256": "e15d88d9fcae5184d9b294e75ab1b43480508ee26c2ce370ad7bc1cbf7dfa6df",
+  "all_19_normative_hashes_match_full_review": true,
+  "corrected_manifest_all_entries_verified": true,
+  "governance_reconciliation": [
+    {
+      "from_sha256": "87cda1ebc057abda180fbfa818928018b811530cc8e6c4ffbf05cf8db4fb8e69",
+      "to_sha256": "4d9c6ac05afee67110af23abc8ade58250fcfd50c23255a4d561b9f4fa4a56cd",
+      "changed_paths": [
+        "/clean_restart/status",
+        "/clean_restart/transport_preflight",
+        "/clean_restart/usage_preflight",
+        "/harness_decision/transport_compatibility/review_evidence",
+        "/harness_decision/transport_compatibility/review_status",
+        "/harness_decision/transport_compatibility/status",
+        "/launch_blockers"
+      ]
+    },
+    {
+      "from_sha256": "4d9c6ac05afee67110af23abc8ade58250fcfd50c23255a4d561b9f4fa4a56cd",
+      "to_sha256": "45def0c9340195488b76c9025c33f6c275e268a2aff3ec08fd225b7bcaaf1ed9",
+      "changed_paths": [
+        "/clean_restart/status",
+        "/documentation_corpus/coverage_gaps",
+        "/documentation_corpus/curator/model",
+        "/documentation_corpus/curator/provider_tag",
+        "/documentation_corpus/curator/reasoning_effort",
+        "/documentation_corpus/curator/session",
+        "/documentation_corpus/curator/status",
+        "/documentation_corpus/existing_local_server_check",
+        "/documentation_corpus/revision_curator",
+        "/mcp_setup/existing_local_server_check"
+      ]
+    },
+    {
+      "from_sha256": "45def0c9340195488b76c9025c33f6c275e268a2aff3ec08fd225b7bcaaf1ed9",
+      "to_sha256": "488617ab9a9ead60f0e8b54a1f74f7ad44ae4a345b2ab1c0898e0d5c1f7e2ad0",
+      "changed_paths": [
+        "/construction_provenance/appointment_status",
+        "/construction_provenance/clean_appointment_records",
+        "/documentation_corpus/curator/session",
+        "/documentation_corpus/curator/status",
+        "/documentation_corpus/selection_evidence",
+        "/setup_model_policy/external_builder_appointments"
+      ]
+    }
+  ],
+  "hard_design_parameters_unchanged": true,
+  "scope_freeze_approved": false,
+  "qualification_status": "pending bounded different-model mechanical-delta review; all runtime/core gates remain pending",
+  "review_outcome": {
+    "original_glm_verdict": "changes_required, preserved",
+    "normative_review": "all earlier R1-R8 and XR-01..XR-05 closed; only XR-06 provenance transcription remained",
+    "new_delta_review_launch": "provenance-delta-review-20261107T183055Z",
+    "scope": "one provenance field plus its manifest line; different-model mechanical review required",
+    "no_substantive_scope_or_acceptance_edits": true
+  },
+  "draft_baseline_gate": {
+    "launch_id": "baseline-construction-20261107T183146Z",
+    "basis": "full GLM review of every exact normative contract plus separate accepted mechanical-delta review and deterministic byte/hash/governance checks",
+    "original_unstarted_slots_preserved": true,
+    "final_scope_freeze_and_runtime_qualification": false
+  }
+}
