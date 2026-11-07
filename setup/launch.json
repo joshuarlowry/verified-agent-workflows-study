@@ -2,8 +2,8 @@
   "cohort_id": null,
   "launch_id": "litellm-patch-review-20261107T130038Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T13:03:44.159505+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T13:07:28.975689+00:00",
+  "status": "construction_returned_not_qualified",
   "background_service": "study2-litellm-review-20261107t130038z",
   "automatic_restart": false,
   "roles": [
@@ -11,8 +11,11 @@
       "role": "glm-litellm-patch-review",
       "run_id": "terra-litellm-final-review-20261107T130038Z",
       "model": "openai/gpt-6.1-terra",
-      "status": "running",
+      "status": "returned_requires_cross_review",
       "dispatch_utc": "2026-11-07T13:03:44.108650+00:00",
+      "ended_at_utc": "2026-11-07T13:07:28.924891+00:00",
+      "agent_exit_code": 0,
+      "controller_exit_code": 0,
       "prompt_sha256": "731f5ba017079a98ac2c2d3230016f7a6a3e7454d39cd33d1d5916b5ab0e8f1c",
       "controller_sha256": "92280aa02c597bb23742f1bcfa05ad7948db3993dc7a0ae5782114fb27c89d01"
     }
