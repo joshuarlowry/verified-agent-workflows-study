@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:54:52 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:54:54 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 04:54:52 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 04:54:53 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-c1-independent-evaluator | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 04:28:29 PM EST (UTC-0500) | Nov 07, 2026 at 04:54:52 PM EST (UTC-0500) |
+| gemma-c1-alternate | google/gemma-4-31b-it | running | Nov 07, 2026 at 04:54:53 PM EST (UTC-0500) | — |
 
-Independent C1 independent-evaluator authoring. No references/checks/conversations/outcomes supplied; cross-review and actual positive/negative/clean qualification remain separate.
+Independent C1 alternate authoring. No references/checks/conversations/outcomes supplied; cross-review and actual positive/negative/clean qualification remain separate.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
