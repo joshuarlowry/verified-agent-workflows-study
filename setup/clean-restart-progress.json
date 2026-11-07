@@ -25,5 +25,11 @@
   "scored_runs": 0,
   "calibration_runs": 0,
   "old_evidence_policy": "Excluded from clean approval; preserved in Git history and private raw artifacts. Historical overhead remains separate.",
-  "known_metadata_difference": "Scope-review controller inherited a legacy session display title. Explicit prompt, run/session/workspace IDs and inputs are new; no legacy conversation/source was supplied. Title is metadata only; correct in future controllers."
+  "known_metadata_difference": "Scope-review controller inherited a legacy session display title. Explicit prompt, run/session/workspace IDs and inputs are new; no legacy conversation/source was supplied. Title is metadata only; correct in future controllers.",
+  "queued_followup": {
+    "role": "Terra clean scope revision",
+    "run_id": "clean-20261107T122746Z-scope-revision-terra-20261107T144032Z",
+    "dispatch_gate": "GLM review final return, no budget exhaustion, all review streams preserved, structured proposals available",
+    "endpoint_policy": "Fresh session; no automatic calibration/scored dispatch; revised scope still requires different-model approval"
+  }
 }
