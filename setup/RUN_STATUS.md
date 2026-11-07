@@ -1,12 +1,12 @@
 # Current run status
 
-Updated: 2026-11-07T14:12:23.876320+00:00
+Updated: 2026-11-07T14:12:55.210002+00:00
 
 **running**
 
 | Job | Model | State |
 |---|---|---|
-| gemma-clean-transport-check | google/gemma-4-31b-it | running |
+| gemma-clean-transport-check | google/gemma-4-31b-it | returned requires cross review |
 | glm-clean-transport-check | z-ai/glm-5.3-flash | queued |
 | terra-clean-transport-check | openai/gpt-6.1-terra | queued |
 
