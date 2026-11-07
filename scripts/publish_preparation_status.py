@@ -4,6 +4,7 @@ The queue invokes this at dispatch and every endpoint. Git publication failure
 is recorded locally and does not turn an unqualified construction into success.
 """
 import argparse
+import fcntl
 import datetime
 import json
 import os
@@ -26,7 +27,7 @@ def snapshot(manifest, service):
             raise ValueError('Invalid role identifier')
         rows.append({k: role[k] for k in ('role', 'run_id', 'model', 'status', 'dispatch_utc', 'ended_at_utc', 'agent_exit_code', 'controller_exit_code', 'api_budget_exhausted', 'prompt_sha256', 'controller_sha256') if k in role})
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy') if k in manifest}, 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
+    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
 
 def main():
     parser = argparse.ArgumentParser()
@@ -65,4 +66,8 @@ def main():
         git('push','origin','HEAD')
     print('Preparation status saved'+(' and pushed' if args.publish else ''))
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    with (ROOT/'.git/study-status.lock').open('a') as lock:
+        if os.geteuid()==0:os.chown(lock.name,1000,1000)
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        main()

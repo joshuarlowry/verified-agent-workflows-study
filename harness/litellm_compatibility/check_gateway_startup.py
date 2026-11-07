@@ -16,6 +16,10 @@ check('missing_flag_refused',dict(base,PYTHONPATH=str(HERE))),
 check('mistyped_flag_refused',dict(base,PYTHONPATH=str(HERE),STUDY_LITELLM_DONE_FIX='true')),
 check('missing_overlay_import_refused',dict(base,STUDY_LITELLM_DONE_FIX='1')),
 check('changed_patch_refused',valid,sha='0'*64)]
+driver="import sys,runpy;sys.modules.pop('sitecustomize',None);sys.argv="+repr([str(launcher),'--patch-sha256',digest,'--verify-only'])+";runpy.run_path("+repr(str(launcher))+",run_name='__main__')"
+probe=subprocess.run([sys.executable,'-c',driver],env=valid,capture_output=True,text=True,timeout=60)
+assert probe.returncode==78 and 'study_gateway_verified' not in probe.stderr,(probe.returncode,probe.stderr)
+checks.append('absent_startup_module_refused_without_self_import')
 with tempfile.TemporaryDirectory(prefix='study2-source-guard-') as d:
  directory=Path(d);source=patch.read_text();old=source.split('EXPECTED_SOURCE_SHA256 = "')[1].split('"')[0]
  altered=source.replace(old,'0'*64,1);(directory/'sitecustomize.py').write_text(altered)

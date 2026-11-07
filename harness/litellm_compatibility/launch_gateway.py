@@ -21,7 +21,9 @@ def main():
     patch=Path(__file__).with_name('sitecustomize.py').resolve()
     if hashlib.sha256(patch.read_bytes()).hexdigest()!=args.patch_sha256:
         refuse('Overlay differs from frozen hash')
-    import sitecustomize
+    sitecustomize=sys.modules.get("sitecustomize")
+    if sitecustomize is None:
+        refuse("Overlay was not imported at Python startup")
     if Path(sitecustomize.__file__).resolve()!=patch:
         refuse('Unexpected Python startup module')
     import litellm.llms.base_llm.base_model_iterator as module

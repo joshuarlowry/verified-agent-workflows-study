@@ -1,5 +1,6 @@
 """Back up private preparation at a batch endpoint, without exposing contents."""
 import hashlib
+import fcntl
 import json
 import os
 from pathlib import Path
@@ -45,4 +46,8 @@ def main():
     git('push','origin','HEAD')
     print(json.dumps({'checkpoint':row['archive'],'sha256':row['sha256'],'bytes':row['bytes'],'published_private':True}))
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    with (REPO/'.git/study-checkpoint.lock').open('a') as lock:
+        if os.geteuid()==0:os.chown(lock.name,1000,1000)
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        main()

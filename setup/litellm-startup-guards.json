@@ -7,8 +7,9 @@
     "mistyped_flag_refused",
     "missing_overlay_import_refused",
     "changed_patch_refused",
+    "absent_startup_module_refused_without_self_import",
     "changed_upstream_refused"
   ],
   "patch_sha256": "6f0d6a420be9a193a15fa313dbd8015ca81e771b7180464651cbd3032dab57a9",
-  "gateway_launcher_sha256": "24c43d5b51cd79c2795a1990d5b32b4172d75805412c316f5659a8a25e67856a"
+  "gateway_launcher_sha256": "dc29d521bae9a3ce06a359c1893f8f51329ab195d5f4f613d1540bfe8d034577"
 }
