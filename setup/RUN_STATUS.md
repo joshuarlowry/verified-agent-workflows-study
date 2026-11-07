@@ -1,15 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 03:31:25 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 03:31:26 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 03:31:24 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 03:31:25 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
+| terra-docs-extraction | openai/gpt-6.1-terra | running | Nov 07, 2026 at 03:31:25 PM EST (UTC-0500) | — |
 
-After accepted baseline delta review, build fresh exact-lockfile dependency image and replay public checks in three independent offline containers. Not task acceptance or final study qualification.
+After accepted docs-source review and sequential container endpoint, stage only approved generic docs with reproducible extraction. Expanded-content review required before Context package build.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 

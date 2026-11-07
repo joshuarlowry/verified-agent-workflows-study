@@ -1,18 +1,28 @@
 {
-  "workflow_outcome": "Three public-check replays finished. Task controls, evaluator, full roles, resources and current final-runtime review remain pending.",
-  "status_note": "After accepted baseline delta review, build fresh exact-lockfile dependency image and replay public checks in three independent offline containers. Not task acceptance or final study qualification.",
+  "status_note": "After accepted docs-source review and sequential container endpoint, stage only approved generic docs with reproducible extraction. Expanded-content review required before Context package build.",
   "cohort_id": "clean-20261107T122746Z",
-  "launch_id": "baseline-container-replay-20261107T200937Z",
+  "launch_id": "docs-extraction-20261107T201115Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T20:31:25.550553+00:00",
-  "snapshot_at_eastern": "Nov 07, 2026 at 03:31:25 PM EST (UTC-0500)",
-  "event_at_utc": "2026-11-07T20:31:24.422450+00:00",
-  "event_at_eastern": "Nov 07, 2026 at 03:31:24 PM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-07T20:31:26.611033+00:00",
+  "snapshot_at_eastern": "Nov 07, 2026 at 03:31:26 PM EST (UTC-0500)",
+  "event_at_utc": "2026-11-07T20:31:25.527082+00:00",
+  "event_at_eastern": "Nov 07, 2026 at 03:31:25 PM EST (UTC-0500)",
   "display_timezone": "America/New_York",
-  "status": "construction_returned_not_qualified",
-  "background_service": "study2-clean-container-replay-20261107t200937z",
+  "status": "running",
+  "background_service": "study2-clean-docs-extraction-20261107t201115z",
   "automatic_restart": false,
-  "roles": [],
+  "roles": [
+    {
+      "role": "terra-docs-extraction",
+      "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z",
+      "model": "openai/gpt-6.1-terra",
+      "status": "running",
+      "dispatch_utc": "2026-11-07T20:31:25.527082+00:00",
+      "prompt_sha256": "181fed13e94dd8a78596eb3ecaefe03b1a45aa7aa196a8884ac39f5f0d3da79d",
+      "controller_sha256": "0eefc3fe6aaca65ebb6b96533ed445773d22d259c097b2435890caa09550e3a4",
+      "dispatch_eastern": "Nov 07, 2026 at 03:31:25 PM EST (UTC-0500)"
+    }
+  ],
   "qualification_status": "not_qualified",
   "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
   "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
