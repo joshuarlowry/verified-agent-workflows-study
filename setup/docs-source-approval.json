@@ -1,0 +1,69 @@
+{
+  "recorded_at_utc": "2026-11-07T20:16:22.540586+00:00",
+  "run_id": "clean-20261107T122746Z-docs-amendment-review-glm-20261107T200337Z",
+  "model": "z-ai/glm-5.3-flash",
+  "verdict": "accepted",
+  "review_sha256": "bf9a4fada4d846d3dcd41cc1c74ef162b44dbbb9e94f13244f1913da983cdc9c",
+  "approval_scope": "Minimal source selection only. Expanded extracted content, version passage applicability, redistribution, Context retrieval, role parity and final runtime qualification remain separate.",
+  "finding_closures": [
+    {
+      "id": "F-001",
+      "original_severity": "must_fix_before_freeze",
+      "title": "sqlite-engine placeholder blocks sqlite-sql scenario",
+      "status": "closed_verified",
+      "verification": [
+        "SOURCE_SELECTION sqlite entry now binds sqlite-engine@3.53.4; package_to_docs and proposed allowlist carry the exact key; sqlite-sql scenario uses the bound key",
+        "BUILD_REPORT environment records 'sqlite 3.53.4 via better-sqlite3' for better-sqlite3@13.0.3",
+        "Fresh isolated install lock (sqlite-local-install-lock.json) matches baseline package-lock on driver version 13.0.3, resolved URL and integrity",
+        "Fresh probe (sqlite-local-probe.json, Node v24.19.0 / npm 10.9.0) reports sqlite_version() 3.53.4 and sqlite_source_id() '2026-07-24 19:02:57 bf7c7f30...59bcc', exactly matching the official release log (sqlite-release-3_53_4.html, 'SQLite Release 3.53.4 On 2026-07-24')",
+        "Representative page checks verified at cited locations: lang_select.html #the_order_by_clause (line 15909 ff., last modified 2026-10-09), lang_createtable.html #the_default_clause (line 5882) and #not_null_constraints (line 6013, last modified 2025-04-30), foreignkeys.html #fk_enable (lines 361-362 ff., last modified 2026-10-25), lang_transaction.html BEGIN/COMMIT/ROLLBACK (lines 263-286, last modified 2026-02-18); probe behaviors (ordered select 1,2; NOT NULL and FK rejections; rollback/commit row counts; DEFAULT_FOREIGN_KEYS with initial foreign_keys=1) match the claimed checks"
+      ],
+      "retained_gates": "Representative checks only: whole moving pages are NOT exact-release manuals (SELECT and foreign-keys pages postdate the 2026-07-24 release); every retained passage needs version-specific review; trusted baseline lockfile/image/source-ID/build-option verification, HTML extraction review, and offline retrieval qualification remain pre-freeze gates. Registration sqlite_engine_version remains null pending trusted verification."
+    },
+    {
+      "id": "F-002",
+      "original_severity": "must_resolve_before_freeze",
+      "title": "Lockfile-derived direct devDependencies unmapped",
+      "status": "closed_verified",
+      "verification": [
+        "Lockfile confirms typescript-eslint@8.72.1 plus @types/better-sqlite3@9.6.0, @types/node@24.19.2, @types/react@19.3.0, @types/react-dom@19.3.0 as the only lockfile-derived direct deps beyond the 13 registered candidates; 18 direct deps now fully accounted",
+        "typescript-eslint@8.72.1 added as source with include docs/users/Shared_Configurations.mdx; path exists in the untruncated 4ad6b755 tree; fetched bytes are blob-hash-identical to the pinned commit",
+        "Peeled tag v8.72.1^{} = 4ad6b7553781fa3c93fc26642d7219d2e6624504 verified in typescript-eslint-git-refs.json; npm metadata license MIT, peer eslint ^8.57.0 || ^9.0.0 || ^10.0.0 (covers 10.14.0), typescript >=4.8.4 <6.1.0 (covers 5.9.3), engines cover 24.19.0; lock integrity equals registry dist.integrity",
+        "Page content read in full: genuine MDX with @theme/Tabs imports, flat-vs-legacy TabItem pairs, :::note/tip/warning directives and relative links; matches the review_note's conversion warning; generic shared-config reference only, no authored app recipe",
+        "Proposed generic scenario typescript-eslint-config added with matching expected source; allowlist and package_to_docs updated",
+        "All four @types packages carry explicit declaration-only omission entries with API mappings and type/runtime compatibility caveats"
+      ],
+      "retained_gates": "MDX tabs/imports and legacy-vs-flat conversion fidelity, FTS retrieval behavior, per-file attribution/license finalization, npm-to-tag byte reproducibility (not established, disclosed), clean qualification and fresh cross-review of built output remain pending."
+    },
+    {
+      "id": "F-003",
+      "original_severity": "provenance-clarity",
+      "title": "Curator provenance bound a superseded registration revision",
+      "status": "closed_verified_with_controller_evidence",
+      "verification": [
+        "Historical archive byte-exact: curator-original-registration.json = 4d9c6ac0... (equals the hash the original curator recorded); current-registration.json = cec00cc9... (equals supplied inputs/registration.json); both byte-compare equal to controller-supplied snapshots",
+        "Controller-supplied exact intermediate bytes (controller-registration-boundary/baseline.json) hash to 488617ab9a9ead60f0e8b54a1f74f7ad44ae4a345b2ab1c0898e0d5c1f7e2ad0, exactly matching the hashes recorded by BUILD_REPORT, BASELINE_BINDINGS and the original reviewer; the recorded intermediate hash is therefore verified, not corruption",
+        "Mechanical diffs: original->intermediate differs in 18 flat JSON keys (curator reassignment to Terra, coverage_gaps, revision_curator removal, selection_evidence, appointment bookkeeping, existing-check wording); intermediate->current differs in 4 keys (application_preparation manifest/path/status, clean_restart/status - baseline-delivery bookkeeping); documentation_corpus is identical between the intermediate and current registration, so the original review and the amendment bind the same documentation_corpus content",
+        "The repair's historical/registration-original-to-current-diff.json was recomputed independently and is accurate (its whole-object 'revision_curator removed' entry corresponds to five removed leaf keys); original curator provenance interpreted as referring to the original bytes, not an error"
+      ],
+      "retained_gates": "None for the boundary itself: controller exact-byte evidence resolves it. Historical author limitations are preserved as recorded: the repair author's PROVENANCE correctly states at its authoring time that intermediate bytes were unavailable; controller snapshots were supplied to this reviewer and do not imply the repair author saw them. No author-only metadata rewrite is demanded. Original->intermediate and intermediate->current diffs are recorded in this review; revision timeline/cause beyond the observable byte boundaries remains unknowable from supplied evidence."
+    },
+    {
+      "id": "F-004",
+      "original_severity": "minor",
+      "title": "better-auth 'errors' topic claimed without mapped content",
+      "status": "closed_verified",
+      "verification": [
+        "Amended better-auth topics no longer contain 'errors'; include list and all other source fields unchanged",
+        "Pinned errors index (docs/content/docs/reference/errors/index.mdx at 38f43e39) fetched, blob-hash-verified to the pinned commit, and read: it is a link list of codes that 'cause you to be redirected to the /api/auth/error page', predominantly OAuth/session-redirect codes; not a general auth API error reference",
+        "Removal rather than inclusion is the correct repair; the review_note explains the decision and retains the requirement to verify error-related API behavior of the retained pages if used"
+      ],
+      "retained_gates": "No generic errors-index coverage is promised; MDX resolution and relevant auth API passage/runtime review of retained pages remain required where those passages are used."
+    }
+  ],
+  "stream_integrity": "90 calls; all paired-stream, native endpoint, request inventory and captured usage checks passed",
+  "approved_source_manifest_sha256": "e51f43102caf5b8e011ed812d8494aa775144824b608be5d81afcaaf2aae37df",
+  "next_stage": "docs-extraction-20261107T201115Z; contingent sequential execution; no Context archive construction in extraction stage",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
