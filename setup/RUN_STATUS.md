@@ -1,12 +1,14 @@
 # Current run status
 
-Updated: 2026-11-07T14:12:22.002403+00:00
+Updated: 2026-11-07T14:12:23.876320+00:00
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State |
 |---|---|---|
-| glm-litellm-patch-review | z-ai/glm-5.3-flash | returned requires cross review |
+| gemma-clean-transport-check | google/gemma-4-31b-it | running |
+| glm-clean-transport-check | z-ai/glm-5.3-flash | queued |
+| terra-clean-transport-check | openai/gpt-6.1-terra | queued |
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
