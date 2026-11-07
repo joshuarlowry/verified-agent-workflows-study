@@ -1,12 +1,12 @@
 # Current run status
 
-Updated: 2026-11-07T14:24:59.460708+00:00
+Updated: 2026-11-07T14:38:37.056144+00:00
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State |
 |---|---|---|
-| terra-clean-public-scope | openai/gpt-6.1-terra | returned requires cross review |
+| glm-clean-public-scope-cross-review | z-ai/glm-5.3-flash | running |
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
