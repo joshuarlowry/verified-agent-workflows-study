@@ -1,0 +1,23 @@
+{
+  "kind": "local_preparation_dependency_image_not_execution_qualification",
+  "dispatch_utc": "2026-11-07T04:35:59.870489+00:00",
+  "elapsed_seconds": 178.74092559699784,
+  "exit_code": 0,
+  "model_calls": 0,
+  "input_hashes": {
+    "application_lock_sha256": "2fa59272fde383011374d769e06b419946b197aedf42887b7d6860faee471246",
+    "application_package_sha256": "0723e897581bfbf190500dd0b6eba34e13525a105afef29aaf73c0f36204413d",
+    "containerfile_sha256": "46c3c55d69247a2d56b1e4341acddd51f967b688079801c0f45bfc3cf6d76b4c",
+    "opencode_binary_sha256": "8d060e1d2fbb9bb44cf09ae6ed1f3f6a7cff070b5227e2f90970132b23a92050",
+    "context_modules_tree_sha256": "a4a7817f7cd61a9e47ae9e1bffeccf14c4bd92276d883560cd23a9f9d17f90c3"
+  },
+  "tag": "localhost/study2-preparation:1f0691fbee72fc29",
+  "image_id": "9f5eb85cf09bb66ea8ea5d916db2c3bbda5559f5f0daf1daec89d744a3d0c1d6",
+  "limitations": [
+    "moving apt repositories; retain final image ID/package manifest rather than claiming source-only reproducibility",
+    "no application source, corpus archives, broker or acceptance evaluator in image",
+    "full clean-instance app and containment checks remain pending"
+  ],
+  "version_manifest_exit_code": 0,
+  "version_manifest_sha256": "5ae3cbd00b4efa391ea8eb1eee84bb9e4864cf7f7f3907db895ea230fbada2cf"
+}

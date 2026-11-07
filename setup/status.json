@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-07T04:33:44.810446+00:00",
+  "updated_at_utc": "2026-11-07T04:44:28.103813+00:00",
   "status": "preparation_started_cross_review_method_authorized",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": false,
@@ -82,7 +82,7 @@
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
   "other_preparation": "Node image imported into local rootful Podman store; existing experiments/images preserved",
-  "next_dependency": "complete GLM repair and different-model cross-review; references/sealed controls, study image, corpus and broker still pending",
+  "next_dependency": "finish R2/corpus/broker preparation and different-model cross-review; acceptance references/alternate paths/negative controls remain unbuilt",
   "preparation_runs": [
     {
       "run_id": "glm-fixture-builder",
@@ -206,14 +206,42 @@
       "provider_tag": "azure",
       "reasoning_effort": "high",
       "role": "fresh cross-review of GLM fixture repair R1",
-      "status": "running",
-      "qualified": false
+      "status": "returned_changes_required_cross_workspace_UI_race_and_contract_inconsistencies",
+      "qualified": false,
+      "public_artifacts": "setup/reviews/terra-fixture-r1-cross-review/"
     },
     {
       "run_id": "gemma-docs-corpus-builder",
       "model": "google/gemma-4-31b-it",
       "provider_tag": "crusoe/bf16",
       "role": "official documentation snapshot and Context archive construction",
+      "status": "returned_draft_corpus_review_pending",
+      "qualified": false,
+      "public_artifacts": "setup/gemma-docs-first-endpoint/",
+      "raw_snapshots_and_archives": "private; redistribution/version/content equivalence not qualified"
+    },
+    {
+      "run_id": "glm-fixture-repair-r2",
+      "model": "z-ai/glm-5.3-flash",
+      "provider_tag": "relace/fp4",
+      "role": "repair nine R1 cross-review findings",
+      "status": "running",
+      "qualified": false
+    },
+    {
+      "run_id": "terra-broker-construction",
+      "model": "openai/gpt-6.1-terra",
+      "provider_tag": "azure",
+      "reasoning_effort": "high",
+      "role": "fixed worker-launch broker construction with synthetic child tests only",
+      "status": "running",
+      "qualified": false
+    },
+    {
+      "run_id": "glm-docs-cross-review",
+      "model": "z-ai/glm-5.3-flash",
+      "provider_tag": "relace/fp4",
+      "role": "different-model review of Gemma documentation corpus",
       "status": "running",
       "qualified": false
     }
@@ -231,5 +259,10 @@
       "setup/context-cleanup-incident.json"
     ],
     "application_corpus": "Gemma construction running; different-model review pending"
+  },
+  "dependency_image": {
+    "candidate_build": "setup/image-build-preliminary.json",
+    "package_versions": "setup/image-package-versions.txt",
+    "status": "built; clean application/evaluator/isolation qualification pending"
   }
 }

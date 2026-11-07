@@ -251,9 +251,12 @@
         "sha256_by_file": {
           "setup/prompts/gemma-cross-review.txt": "95e5c22a0acaa8833100b79eb85f03027d771ccf018a41cac9a2f5d39aff7b64",
           "setup/prompts/gemma-docs-corpus-builder.txt": "d7c6f500a5f18c8f94fc872e2ee8f41045ba710b5ec11e1e2cf33654d8ea7797",
+          "setup/prompts/glm-docs-cross-review.txt": "0cfd9fdc0c966ed7ac67536b4bec6feb38f6b45fa89adf28a1b8ef9f06c87654",
           "setup/prompts/glm-fixture-builder.txt": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0",
           "setup/prompts/glm-fixture-repair-r1.txt": "c7e54088432ce3ea632c03006f5b6b0bb102ff99bbe1976ef66180c41a69f097",
+          "setup/prompts/glm-fixture-repair-r2.txt": "89c1d05b64b45947dfb1c98817f3a9bcb693eb7ca4ef5250a49f24196ad2ac7e",
           "setup/prompts/glm-usage-cross-review.txt": "5e2562da2afbf194ce1920df9413eb6e0d467da6b4eb214a1ec23fdaf62d2f6e",
+          "setup/prompts/terra-broker-construction.txt": "e3e48214bfa3e32767fe92b216d9bc68f69ab0cb04cd6e75a772c5f9da385330",
           "setup/prompts/terra-fixture-cross-review.txt": "ea6a8c7aa1272899fa5f845045a5e8ab4830bc7e644778ecd208a9baf83d3c27",
           "setup/prompts/terra-fixture-r1-cross-review.txt": "604a1e32880b7b9bdb3e2c7121c5b9f978a6a0674511ae4f2fb960ce6f17f3a2",
           "setup/prompts/terra-preparation-review.txt": "1a79756409c7db9f5d48fd62dd521591450189f01f1f97f29003ccc97d6462fb"
@@ -277,9 +280,10 @@
         "provider_tag": "relace/fp4",
         "tree_manifest": "setup/glm-repair-r1-endpoint.json",
         "cross_reviewer_model": "openai/gpt-6.1-terra",
-        "review_status": "fresh_session_running_not_approved",
+        "review_status": "returned_changes_required",
         "previous_endpoint": "fixture-draft/",
-        "status": "unqualified_preparation_revision"
+        "status": "unqualified_preparation_revision",
+        "review": "setup/reviews/terra-fixture-r1-cross-review/FIXTURE_R1_CROSS_REVIEW.json"
       }
     ],
     "family_decisions": {
@@ -344,7 +348,8 @@
       "setup/reviews/terra-protocol-review/",
       "setup/reviews/gemma-cross-review/",
       "setup/reviews/terra-fixture-cross-review/",
-      "setup/reviews/glm-usage-cross-review/"
+      "setup/reviews/glm-usage-cross-review/",
+      "setup/reviews/terra-fixture-r1-cross-review/"
     ]
   },
   "checks": {
@@ -437,7 +442,7 @@
       "model": "google/gemma-4-31b-it",
       "session": "gemma-docs-corpus-builder",
       "provider_tag": "crusoe/bf16",
-      "status": "construction_running_not_qualified",
+      "status": "first_draft_returned_not_qualified",
       "independence_claim": false
     },
     "review_scope": [
@@ -451,12 +456,16 @@
     "corpus_plan": "APPLICATION_AND_DOCS_PLAN.md",
     "human_review_required": false,
     "different_model_cross_review_required_before_calibration": true,
-    "cross_reviewer": null,
+    "cross_reviewer": {
+      "model": "z-ai/glm-5.3-flash",
+      "session": "glm-docs-cross-review",
+      "status": "running_not_signoff"
+    },
     "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence"
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "status": "GLM_R1_fixture_revision_exported_public_checks_clean_fresh_Terra_review_running",
+    "status": "R1_fresh_review_found_changes_required_GLM_R2_repair_running",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
