@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:35:26 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:46:09 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:35:26 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:46:09 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-clean-baseline-builder | openai/gpt-6.1-terra | running | Nov 07, 2026 at 01:35:26 PM EST (UTC-0500) | — |
+| terra-clean-baseline-builder | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 01:35:26 PM EST (UTC-0500) | Nov 07, 2026 at 01:46:09 PM EST (UTC-0500) |
 
 Draft baseline follows full semantic review with only XR-06, plus separately accepted exact provenance correction. Original verdict preserved; no product text changed. All freeze and runtime qualification gates remain pending.
 
