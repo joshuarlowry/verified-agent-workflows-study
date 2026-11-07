@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 02:49:30 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 02:55:18 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 02:35:43 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 02:55:18 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-clean-baseline-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 02:35:43 PM EST (UTC-0500) | — |
+| glm-clean-baseline-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 02:35:43 PM EST (UTC-0500) | Nov 07, 2026 at 02:55:18 PM EST (UTC-0500) |
 
 GLM cross-reviews all fresh baseline source and real behavior in an independent dependency/DB workspace. Original source is read-only; no fixes or study qualification implied.
 
