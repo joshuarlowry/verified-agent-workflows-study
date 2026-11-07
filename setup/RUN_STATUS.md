@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:28:13 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:28:14 PM EST (UTC-0500)
 
 **Latest workflow or disposition event:** Nov 07, 2026 at 04:28:13 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-docs-extraction-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 04:19:02 PM EST (UTC-0500) | Nov 07, 2026 at 04:28:13 PM EST (UTC-0500) |
+| glm-worker-harness-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 04:28:13 PM EST (UTC-0500) | — |
 
-GLM reviews honestly partial docs staging and one proposed pinned Vitest include. No corpus approval, indexing or study dispatch implied.
+Fresh GLM source/synthetic review of common worker harness and generic prompts. Actual seven-role/native/Context/resource qualification remains separate.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
