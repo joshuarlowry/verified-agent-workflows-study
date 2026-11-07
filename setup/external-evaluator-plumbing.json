@@ -1,0 +1,67 @@
+{
+  "recorded_at_utc": "2026-11-07T22:52:47.082038+00:00",
+  "kind": "external_evaluator_plumbing_diagnostic_not_task_acceptance",
+  "model_calls": 0,
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "first_attempt": {
+    "run_id": "replay-47df6b8ad3ec",
+    "controller_sha256": "9c7606ffebf29e87c3659959bdd23f17929c77f3affbe5e48e31fc7c39733505",
+    "plumbing_completed": false,
+    "reason": "Coordinator supplied full WORKBOARD_DB path; baseline requires local .sqlite filename. Failed before evaluator launch; source untouched.",
+    "elapsed_seconds": 3.6297866539971437,
+    "original_controller_bytes_reconstructed_and_sha256_verified": true
+  },
+  "mechanical_retry": {
+    "run_id": "replay-ef89a42409e8",
+    "controller_sha256": "08cd4801d491a5a6efe967107c37654fad4961ac378f8a9857072f031455cf7f",
+    "change": "WORKBOARD_DB=external-replay.sqlite only",
+    "same_frozen_target_inventory": true,
+    "same_frozen_evaluator_inventory": true,
+    "plumbing_completed": true,
+    "elapsed_seconds": 11.705530054023257,
+    "evaluator_exit_code": 1,
+    "evaluator_report_sha256": "100cc8a852c1e677191669f7ba7df63945686572f7f0fdd32e7df595e2dc2da1",
+    "source_unchanged": true,
+    "cleanup": [
+      {
+        "container": "study2-evaluator-f44479e2e4",
+        "exit_code": 0
+      },
+      {
+        "container": "study2-target-28b8d82c34",
+        "exit_code": 0
+      }
+    ]
+  },
+  "visibility_probe": {
+    "targetVisible": false,
+    "node": "v24.19.0",
+    "playwright": "1.65.0",
+    "nodeEnv": null,
+    "testEnv": null
+  },
+  "isolation": {
+    "target_container_id": "f4a49d956582e0fecc2efc368b5a53ff8bf45bc437ef630e15071cd3caefb56f",
+    "evaluator_container_id": "4091212360a08de717667c7432dea53c20ef033e821b75f8669b0b5a138ca7ea",
+    "network": "Fresh target network namespace with no external interface; evaluator joins exact target namespace.",
+    "target_mounts": [
+      "/target",
+      "/state"
+    ],
+    "evaluator_mounts": [
+      "/evaluator:ro",
+      "/evaluator/node_modules:rw",
+      "/state",
+      "/results"
+    ],
+    "resource_policy": "Two CPUs/eight GiB separately for this post-endpoint diagnostic; not supervisor/worker aggregate qualification."
+  },
+  "limits": [
+    "Known-invalid first-return evaluator used for transport/plumbing only; repaired evaluator still requires source review and fresh replays.",
+    "No positive reference/alternative or final negative-control gate performed.",
+    "No claim of complete isolation from one mount visibility check; hostile escape/role matrix/resource qualification pending.",
+    "Not calibration/scoring/task acceptance."
+  ],
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
