@@ -4,8 +4,8 @@
   "retry_policy": "One identical-prompt fresh-session transport retry; no model/harness settings substitution, no corrective implementation hints. Added raw upstream capture only. Failure remains in preparation accounting.",
   "launch_id": "harness-retry-20261107T115222Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T11:52:51.269349+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T11:54:57.448471+00:00",
+  "status": "stopped_preserving_state",
   "background_service": "study2-harness-retry-20261107t115222z",
   "automatic_restart": false,
   "roles": [
@@ -13,8 +13,11 @@
       "role": "terra-harness-adapter-retry",
       "run_id": "terra-harness-retry-20261107T115222Z",
       "model": "openai/gpt-6.1-terra",
-      "status": "running",
+      "status": "blocked_preserved",
       "dispatch_utc": "2026-11-07T11:52:51.220475+00:00",
+      "ended_at_utc": "2026-11-07T11:54:57.398449+00:00",
+      "agent_exit_code": 1,
+      "controller_exit_code": 0,
       "prompt_sha256": "b6aefc7079f927e6c972c66232eb370cc2d34257f2950af5f4c18a222ba253a1",
       "controller_sha256": "f603515cdf31628f380c13113a7586ca6f40b25e4dc712bd7d449466a859b87c"
     }
