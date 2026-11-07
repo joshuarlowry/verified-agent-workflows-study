@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:27:44 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:31:46 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:27:44 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:31:46 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-scope-amendment-cross-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 01:19:03 PM EST (UTC-0500) | Nov 07, 2026 at 01:27:44 PM EST (UTC-0500) |
+| gemma-provenance-delta-review | google/gemma-4-31b-it | running | Nov 07, 2026 at 01:31:46 PM EST (UTC-0500) | — |
 
-GLM checks five boundary amendments and full contract preservation. Scope acceptance is separate from runtime qualification; no calibration/scoring enabled.
+Gemma verifies only the exact provenance hash correction. Original GLM verdict and all normative bytes remain preserved; no full study qualification implied.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
