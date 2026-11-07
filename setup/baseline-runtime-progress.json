@@ -15,7 +15,9 @@
         "nodeEnv": null,
         "testEnv": null
       },
-      "unit_api_test_count": [],
+      "unit_api_test_count": [
+        "7"
+      ],
       "browser_test_count": [
         "10"
       ],
@@ -33,7 +35,9 @@
         "nodeEnv": null,
         "testEnv": null
       },
-      "unit_api_test_count": [],
+      "unit_api_test_count": [
+        "7"
+      ],
       "browser_test_count": [
         "10"
       ],
@@ -51,7 +55,9 @@
         "nodeEnv": null,
         "testEnv": null
       },
-      "unit_api_test_count": [],
+      "unit_api_test_count": [
+        "7"
+      ],
       "browser_test_count": [
         "10"
       ],
