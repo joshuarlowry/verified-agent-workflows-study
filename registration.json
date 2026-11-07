@@ -275,7 +275,7 @@
       "all_artifacts": "log author and reviewer model/session/provider/settings, input/output hashes, substantive revisions and checks; no self-approval"
     },
     "authoritative_prompt_FAQ_contract_review_required_before_calibration": true,
-    "appointment_status": "Clean cohort appointments pending qualified transport; prior fixture/model review signoffs excluded",
+    "appointment_status": "Clean preparation appointments recorded in setup/preparation-appointments.json; prior pre-fix signoffs remain excluded; actual reviews/qualification are separate.",
     "former_exclusion_groups": [
       "Gemma/Gemini",
       "GLM",
@@ -301,7 +301,8 @@
     "qualifier_label": "cross-reviewer, not independent model-family qualifier",
     "cross_reviewers": [],
     "cross_review_evidence": [],
-    "historical_authorship_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd/registration.json"
+    "historical_authorship_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd/registration.json",
+    "clean_appointment_records": "setup/preparation-appointments.json"
   },
   "checks": {
     "requirements_public": true,
@@ -756,7 +757,12 @@
     ],
     "scope": "all future study and setup model calls unless user explicitly revises this restriction",
     "other_model_evaluation_or_builder_launches": false,
-    "external_builder_appointments": [],
+    "external_builder_appointments": [
+      {
+        "record": "setup/preparation-appointments.json",
+        "scope": "clean preparation only; three registered models; endpoint and artifact qualification not implied"
+      }
+    ],
     "prior_unscored_availability_probes": "setup/status.json; excluded from study results, recorded as setup overhead",
     "construction_exclusion_rule_waived": true,
     "interactive_coordinator": "existing chat is coordination only; launched builder/reviewer/subject models restricted to the three allowlisted IDs"
