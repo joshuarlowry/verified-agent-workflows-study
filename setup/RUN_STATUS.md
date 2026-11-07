@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:31:46 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:35:24 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:31:46 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:35:24 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-provenance-delta-review | google/gemma-4-31b-it | running | Nov 07, 2026 at 01:31:46 PM EST (UTC-0500) | — |
+| gemma-provenance-delta-review | google/gemma-4-31b-it | returned requires cross review | Nov 07, 2026 at 01:31:46 PM EST (UTC-0500) | Nov 07, 2026 at 01:35:24 PM EST (UTC-0500) |
 
 Gemma verifies only the exact provenance hash correction. Original GLM verdict and all normative bytes remain preserved; no full study qualification implied.
 
