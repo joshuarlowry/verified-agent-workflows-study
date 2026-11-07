@@ -63,5 +63,13 @@
     "Not calibration/scoring/task acceptance."
   ],
   "calibration_runs": 0,
-  "scored_runs": 0
+  "scored_runs": 0,
+  "repaired_checker_followup": {
+    "kind": "automatic_first_endpoint_freeze_then_external_baseline_diagnostic",
+    "service": "study2-c1-repair-endpoint-and-replay",
+    "controller_sha256": "147148684ba7bb898c10ae2a5a5f8a5013b38e8581beb65047a39f984909e54d",
+    "model_calls": 0,
+    "gate": "Author final return without exhaustion and passed capture audit; no acceptance/source approval implied.",
+    "scope": "Freeze revised evaluator before positive-source exposure and rerun same isolated plumbing against unchanged baseline."
+  }
 }

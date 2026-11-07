@@ -1,0 +1,15 @@
+{
+  "kind": "passive_preparation_checkpoint_no_model_steering",
+  "checked_at_utc": "2026-11-07T23:04:16.172258+00:00",
+  "run_id": "clean-20261107T122746Z-c1-checker-repair-glm-20261107T223442Z",
+  "dispatch_utc": "2026-11-07T22:34:42.418871+00:00",
+  "observed_wall_since_dispatch_seconds": 1773.753387,
+  "service_state": "ActiveState=active\nSubState=running\nMainPID=1711795\n",
+  "gateway_capture_files": 98,
+  "latest_capture_utc": "2026-11-07T23:04:14.715153+00:00",
+  "native_endpoint_present": false,
+  "agent_prompt_sent": false,
+  "inference_time_claim": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
