@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-11-07T20:10:10.887811+00:00",
+  "run_id": "clean-20261107T122746Z-baseline-binding-amendment-terra-20261107T200246Z",
+  "status": "delivered_pending_fresh_GLM_delta_review",
+  "stream_integrity": "All32pairedcalls, terminal, inventory and usage-capture checks passed",
+  "controller_normative_difference": {
+    "changed_files": [
+      "baseline-spec.md"
+    ],
+    "contracts_checked_unchanged": 20,
+    "FAQ_and_requirement_index_unchanged": true
+  },
+  "amendments": [
+    "Native-auth scripted checks use actual non-test server with configured trusted Origin, retaining CSRF/origin protections; test-mode API evidence explicitly conditional.",
+    "General persisted workspace fields clarified separately from /api/me summary wire fields, matching existing endpoint table and candidate behavior."
+  ],
+  "response_sha256": "ad1217471329663ee13b86a4aa56d14cb29a01738891c4703b3bddf6a352c5bb",
+  "bindings_sha256": "d7f7ee657f823f231367d41ee9cbeceb2cbabffde232ba0eeb59c87f638b3f87",
+  "source_change_policy": "No application/test edits authorized in amendment. Fresh reviewer independently checks copy hashes and probes.",
+  "next_review": "baseline-delta-review-20261107T200558Z",
+  "final_freeze": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

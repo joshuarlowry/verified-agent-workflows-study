@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T20:06:44.332558+00:00",
+  "updated_at_utc": "2026-11-07T20:10:10.888296+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -42,13 +42,13 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "baseline-binding-amendment-20261107T200246Z",
+    "active_launch": "docs-amendment-review-20261107T200337Z",
     "queued_in_order": [
-      "docs-amendment-review-20261107T200337Z",
-      "baseline-delta-review-20261107T200558Z"
+      "baseline-delta-review-20261107T200558Z",
+      "baseline-container-replay-20261107T200937Z"
     ],
-    "data_dependencies": "Native-auth/contract amendment uses frozen app and baseline review. Documentation review uses completed amended source selection, official evidence and exact registration snapshots.",
-    "order": "Sequential external model execution; all original endpoints preserved",
+    "data_dependencies": "Documentation review uses its amended source plan, not baseline amendment. Baseline delta review uses baseline amendment, not docs findings. Three offline public replays require accepted baseline delta review and a fresh exact-lockfile image.",
+    "order": "Sequential external model execution; heavy container build/replays wait for review endpoints. All originals preserved.",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
@@ -71,5 +71,6 @@
   "relay_timeout_repair": "setup/relay-timeout-repair.json",
   "docs_source_review": "setup/docs-source-review.json",
   "baseline_review": "setup/baseline-review.json",
-  "docs_source_repair": "setup/docs-source-repair.json"
+  "docs_source_repair": "setup/docs-source-repair.json",
+  "baseline_binding_amendment": "setup/baseline-binding-amendment.json"
 }
