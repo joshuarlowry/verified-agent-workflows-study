@@ -618,9 +618,22 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized fixture construction and different-model review",
       "qualification": "Tracked positive source only, no evaluator/sealed tests. Independent repaired checker first-return frozen before this separate-session positive exposure; no shared native home/conversation. Full task qualification remains pending."
+    },
+    {
+      "launch_id": "c1-repaired-checker-review-20261107T225348Z",
+      "role": "terra-c1-repaired-checker-review",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-c1-repaired-checker-review-terra-20261107T225348Z",
+      "manifest_created_at_utc": "2026-11-07T22:53:48.767648+00:00",
+      "prompt_sha256": "c519b698dc529b7e457c1ca86fa231d88ffdf58ae418dacab977db2f1651b562",
+      "controller_sha256": "91583bde67248411182f03235f6aee1417356e358f042205a2d98b01ae335dfa",
+      "phase": "checker_delta_cross_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized clean fixture/evaluator construction and cross-review",
+      "qualification": "Fresh checker-only review from baseline/public scope. Revised evaluator first-return freeze required; no positive app source/conversation supplied. No self-approval of Terra reference; real task qualification remains separate."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-07T22:36:05.109809+00:00"
+  "updated_at_utc": "2026-11-07T22:55:47.496576+00:00"
 }

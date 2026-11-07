@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-11-07T22:55:47.497611+00:00",
+  "kind": "pre_dispatch_controller_source_load_race_prevention",
+  "scored_runs_affected": 0,
+  "calibration_runs_affected": 0,
+  "model_calls_affected": 0,
+  "reason": "Additional input/provenance checks were appended just after launching queued wrappers. Stop only confirmed zero-call wait processes and restart from finalized hashed source before dispatch, eliminating uncertainty about which Python source was loaded.",
+  "repairs": [
+    {
+      "launch_id": "c1-implementation-review-20261107T223656Z",
+      "recovery_service": "study2-c1-implementation-review-20261107t223656z-wrapper-qualified",
+      "reason": "Queued wrapper had received additional provenance/input checks immediately after original unit launch. To eliminate a possible Python source-load race, stop zero-call wait process and start the finalized persisted wrapper. No prompt/controller/model/input content changed.",
+      "recorded_at_utc": "2026-11-07T22:54:54.894738+00:00",
+      "original_service_state": "ActiveState=active\nSubState=running\nMainPID=1713067\n",
+      "pre_dispatch_wrapper_sha256": "4be974fb5804148a70a68c2e0fa95c5ec4ce91027a22c4037527d299fe4eef62",
+      "native_dispatch_before_repair": false,
+      "model_calls_before_repair": 0
+    },
+    {
+      "launch_id": "c1-repaired-checker-review-20261107T225348Z",
+      "recovery_service": "study2-c1-repaired-checker-review-20261107t225348z-wrapper-qualified",
+      "reason": "Queued wrapper had received additional provenance/input checks immediately after original unit launch. To eliminate a possible Python source-load race, stop zero-call wait process and start the finalized persisted wrapper. No prompt/controller/model/input content changed.",
+      "recorded_at_utc": "2026-11-07T22:54:54.927718+00:00",
+      "original_service_state": "ActiveState=active\nSubState=running\nMainPID=1721856\n",
+      "pre_dispatch_wrapper_sha256": "a115d48f3814054cf7fd997917d6bad55ffa72fae35d9bf7e7393ff6d832e6b3",
+      "native_dispatch_before_repair": false,
+      "model_calls_before_repair": 0
+    }
+  ],
+  "subject_prompts_controllers_models_and_input_content_changed": false
+}

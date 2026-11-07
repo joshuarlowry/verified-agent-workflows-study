@@ -45,7 +45,8 @@
     "queued_in_order": [
       "docs-final-extraction-review-20261107T223442Z",
       "native-controller-integration-20261107T223522Z",
-      "c1-implementation-review-20261107T223656Z"
+      "c1-implementation-review-20261107T223656Z",
+      "c1-repaired-checker-review-20261107T225348Z"
     ],
     "data_dependencies": "Documentation review uses its amended source plan, not baseline amendment. Baseline delta review uses baseline amendment, not docs findings. Three offline public replays require accepted baseline delta review and a fresh exact-lockfile image. Documentation extraction separately requires accepted source selection and preserved streams; staging review precedes Context archive build.",
     "order": "Sequential external model execution; heavy container build/replays wait for review endpoints. All originals preserved.",
@@ -89,5 +90,7 @@
   "worker_harness_review": "setup/worker-harness-review.json",
   "docs_completion_endpoint": "setup/docs-completion-endpoint.json",
   "native_harness_extension_endpoint": "setup/native-harness-extension-endpoint.json",
-  "C1_checker_review": "setup/c1-checker-review.json"
+  "C1_checker_review": "setup/c1-checker-review.json",
+  "external_evaluator_plumbing": "setup/external-evaluator-plumbing.json",
+  "dependency_image_recovery": "setup/dependency-image-preservation.json"
 }
