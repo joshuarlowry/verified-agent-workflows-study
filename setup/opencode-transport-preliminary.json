@@ -1,0 +1,88 @@
+{
+  "kind": "synthetic_native_adapter_mechanics_not_model_evaluation",
+  "model_calls": 0,
+  "checks": {
+    "cli_exit_zero": true,
+    "two_upstream_calls": true,
+    "shell_completed": true,
+    "final_text": true,
+    "native_final_stop": true,
+    "two_usage_records": true,
+    "auto_tool_choice_not_forced": true,
+    "no_secret_sent_by_cli": true
+  },
+  "all_passed": true,
+  "cli_exit_code": 0,
+  "native_session_ids": [
+    "ses_e4bbb9362ffeZhh6pxxJVfkfgo"
+  ],
+  "native_diagnostic_events": [],
+  "upstream_finish_reasons": [
+    "user",
+    "tool"
+  ],
+  "native_step_count": 2,
+  "tool_names_offered": [
+    "edit",
+    "execute",
+    "glob",
+    "grep",
+    "question",
+    "read",
+    "shell",
+    "skill",
+    "subagent",
+    "webfetch",
+    "websearch",
+    "write"
+  ],
+  "subagent_tool_schema": {
+    "type": "object",
+    "properties": {
+      "agent": {
+        "type": "string",
+        "description": "The type of specialized agent to use for this task. If the user asks for a subagent by a name that is not one of the available subagents, they most likely mean a model: pick a suitable agent and pass the name through the model parameter instead."
+      },
+      "description": {
+        "type": "string",
+        "description": "A short 3-5 word label for the task, displayed to the user"
+      },
+      "prompt": {
+        "type": "string",
+        "description": "The task for the subagent to perform"
+      },
+      "model": {
+        "type": "string",
+        "description": "NEVER set this unless the user explicitly asks for a particular model or variant. It must be a chat model; image and decision models can't run subagents. The value is written as \"providerID/modelID\", or \"providerID/modelID#variant\" to include a variant. Do not guess the ID: look the model up with the models tool, filtering to your own provider first."
+      },
+      "sessionID": {
+        "type": "string",
+        "pattern": "^ses",
+        "description": "Send a follow-up to an existing subagent, running or finished. Omit to start a new one."
+      },
+      "background": {
+        "type": "boolean",
+        "description": "Run the subagent in the background and return immediately. You will be notified when it completes. DO NOT sleep, poll, or proactively check on its progress."
+      }
+    },
+    "required": [
+      "agent",
+      "description",
+      "prompt"
+    ],
+    "additionalProperties": false
+  },
+  "stderr": "",
+  "source_sha256": {
+    "harness/container_http_bridge.mjs": "1b6b4bc53918081ef4132aeb1d9ee704827450b34e7762357b76e4b27daaa500",
+    "harness/unix_inference_proxy.py": "b7a0fbef4c07106c264967e4abf4086f3c611b319c5508f374dc60670d026987",
+    "scripts/opencode_transport_preflight.py": "c8a9b50b4629d7a5dbad7733498521b6a5fb17da6469842e229d828e404b50f6"
+  },
+  "qualification_limits": [
+    "synthetic responses only",
+    "no real provider/counter mapping qualification",
+    "no Context corpus or worker broker",
+    "ephemeral synthetic socket world-accessible inside isolated probe; actual roles require scoped ownership"
+  ],
+  "elapsed_seconds_including_cleanup": 2.335215450002579
+}

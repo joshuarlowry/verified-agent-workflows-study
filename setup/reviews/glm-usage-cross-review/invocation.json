@@ -1,0 +1,42 @@
+{
+  "run_id": "glm-usage-cross-review",
+  "requested_model": "z-ai/glm-5.3-flash",
+  "provider_tag": "relace/fp4",
+  "generation_crosschecks_first_last": [
+    {
+      "model": "z-ai/glm-5.3-flash-20260826",
+      "provider_name": "Relace",
+      "total_cost": 0.00017152,
+      "native_tokens_prompt": 5203,
+      "native_tokens_completion": 293,
+      "native_tokens_reasoning": 318
+    },
+    {
+      "model": "z-ai/glm-5.3-flash-20260826",
+      "provider_name": "Relace",
+      "total_cost": 0.001890388,
+      "native_tokens_prompt": 64621,
+      "native_tokens_completion": 614,
+      "native_tokens_reasoning": 26
+    }
+  ],
+  "dispatch_utc": "2026-11-07T04:22:52.642467+00:00",
+  "elapsed_seconds": 542.9508421040082,
+  "exit_code": 0,
+  "native_steps": 27,
+  "provider_usage_calls": 27,
+  "session_id": "ses_e4bc14041ffeLryq5Y11EK7fce",
+  "reported_model_cost_usd": 0.0351112296,
+  "raw_usage_prompt_tokens_inclusive_cache": 1120377,
+  "raw_usage_completion_tokens_do_not_add_reasoning": 40107,
+  "prompt_sha256": "5e2562da2afbf194ce1920df9413eb6e0d467da6b4eb214a1ec23fdaf62d2f6e",
+  "raw_events_sha256": "927be741cd604c46a68671424cc2eac7ecca4de39ca5c95ccccedae22ba4ccd9",
+  "observed_tool_call_counts": {
+    "edit": 6,
+    "glob": 1,
+    "read": 6,
+    "shell": 15,
+    "write": 3
+  },
+  "evidence_scope": "preparation only; raw observed usage deduplicated by response id, native counters are cross-checks, first/last generation resolution only; no full capture qualification"
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-07T04:25:41.907611+00:00",
+  "updated_at_utc": "2026-11-07T04:33:44.810446+00:00",
   "status": "preparation_started_cross_review_method_authorized",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": false,
@@ -77,7 +77,9 @@
     },
     "two_lane_contention_and_full_isolation_qualification": "generic probe passed; actual app/inference/full isolation still pending",
     "generic_probe_evidence": "setup/resource-preliminary.json",
-    "transport_mechanical_evidence": "setup/transport-preliminary.json"
+    "transport_mechanical_evidence": "setup/transport-preliminary.json",
+    "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
+    "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
   "other_preparation": "Node image imported into local rootful Podman store; existing experiments/images preserved",
   "next_dependency": "complete GLM repair and different-model cross-review; references/sealed controls, study image, corpus and broker still pending",
@@ -166,15 +168,52 @@
       "model": "z-ai/glm-5.3-flash",
       "provider_tag": "relace/fp4",
       "role": "repair unintended baseline bug and contract/FAQ/source inconsistencies identified by Terra",
-      "status": "running",
+      "status": "returned_revision_full_public_check_clean_pending_different_model_review",
       "previous_endpoint_preserved": true,
-      "qualified": false
+      "qualified": false,
+      "dispatch_utc": "2026-11-07T04:06:54.498259+00:00",
+      "elapsed_seconds": 1182.441355336021,
+      "exit_code": 0,
+      "session_id": "ses_e4bcfe0ffffeUvQvRlQJk9hdDJ",
+      "prompt_sha256": "c7e54088432ce3ea632c03006f5b6b0bb102ff99bbe1976ef66180c41a69f097",
+      "raw_events_sha256": "17ea6c2c4c43f2b4dd83472548e1d65d7d0008db60358edb3f62faf4dd94a948",
+      "reported_cost_usd": 0.3737275669,
+      "completed_model_steps": 134,
+      "provider_usage_calls": 135,
+      "public_artifacts": "fixture-revision-r1/"
     },
     {
       "run_id": "glm-usage-cross-review",
       "model": "z-ai/glm-5.3-flash",
       "provider_tag": "relace/fp4",
       "role": "different-model review of coordinator-authored limited GLM usage normalizer revision 2",
+      "status": "returned_acceptable_limited_draft_minor_findings_U4_U5_not_broker_signoff",
+      "qualified": false,
+      "dispatch_utc": "2026-11-07T04:22:52.642467+00:00",
+      "elapsed_seconds": 542.9508421040082,
+      "exit_code": 0,
+      "session_id": "ses_e4bc14041ffeLryq5Y11EK7fce",
+      "prompt_sha256": "5e2562da2afbf194ce1920df9413eb6e0d467da6b4eb214a1ec23fdaf62d2f6e",
+      "raw_events_sha256": "927be741cd604c46a68671424cc2eac7ecca4de39ca5c95ccccedae22ba4ccd9",
+      "reported_cost_usd": 0.0351112296,
+      "completed_model_steps": 27,
+      "provider_usage_calls": 27,
+      "public_artifacts": "setup/reviews/glm-usage-cross-review/"
+    },
+    {
+      "run_id": "terra-fixture-r1-cross-review",
+      "model": "openai/gpt-6.1-terra",
+      "provider_tag": "azure",
+      "reasoning_effort": "high",
+      "role": "fresh cross-review of GLM fixture repair R1",
+      "status": "running",
+      "qualified": false
+    },
+    {
+      "run_id": "gemma-docs-corpus-builder",
+      "model": "google/gemma-4-31b-it",
+      "provider_tag": "crusoe/bf16",
+      "role": "official documentation snapshot and Context archive construction",
       "status": "running",
       "qualified": false
     }
@@ -182,7 +221,7 @@
   "usage_schema_followup": {
     "schema": "schemas/provider-usage-record.schema.json",
     "mechanical_result": "setup/usage-schema-revision2.json",
-    "cross_review": "GLM separate-session review running; original Terra findings preserved",
+    "cross_review": "GLM acceptable draft for limited revision 2; U4 warning retention and U5 pathological-input exceptions remain; no all-model/broker/provenance signoff",
     "broker_integration": "pending"
   },
   "context_preflight": {
@@ -191,6 +230,6 @@
       "setup/context-preliminary-initial.json",
       "setup/context-cleanup-incident.json"
     ],
-    "application_corpus": "not_built_or_qualified"
+    "application_corpus": "Gemma construction running; different-model review pending"
   }
 }

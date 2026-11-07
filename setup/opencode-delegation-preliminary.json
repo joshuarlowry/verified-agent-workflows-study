@@ -1,0 +1,86 @@
+{
+  "kind": "synthetic_native_adapter_mechanics_not_model_evaluation",
+  "model_calls": 0,
+  "checks": {
+    "cli_exit_zero": true,
+    "two_upstream_calls": true,
+    "delegation_denied": true,
+    "subagent_absent_from_catalog": true,
+    "one_native_session_only": true,
+    "final_text": true,
+    "native_final_stop": true,
+    "two_usage_records": true,
+    "auto_tool_choice_not_forced": true,
+    "no_secret_sent_by_cli": true
+  },
+  "all_passed": true,
+  "cli_exit_code": 0,
+  "native_session_ids": [
+    "ses_e4bba78adffeLWbeOjQ6lnTjV2"
+  ],
+  "tool_result_evidence": [
+    {
+      "partID": "prt_1b4458888001tl8hAy1VHaNR37",
+      "sessionID": "ses_e4bba78adffeLWbeOjQ6lnTjV2",
+      "messageID": "msg_1b4458846001xoGhJ2Tvw9r8wG",
+      "type": "tool",
+      "id": "synthetic-shell-call",
+      "tool": "subagent",
+      "state": {
+        "status": "error",
+        "input": {
+          "agent": "explore",
+          "description": "Synthetic forbidden delegation",
+          "prompt": "Return SYNTHETIC_CHILD_SHOULD_NOT_RUN"
+        },
+        "error": "No tool named \"subagent\" is currently available. Please use a tool from the available tool list.",
+        "metadata": {
+          "providerCall": {
+            "executed": false
+          },
+          "providerResult": {
+            "executed": false
+          },
+          "rawInput": "{\"agent\": \"explore\", \"description\": \"Synthetic forbidden delegation\", \"prompt\": \"Return SYNTHETIC_CHILD_SHOULD_NOT_RUN\"}"
+        },
+        "time": {
+          "start": 1794025818248,
+          "end": 1794025818264
+        }
+      }
+    }
+  ],
+  "native_diagnostic_events": [],
+  "upstream_finish_reasons": [
+    "user",
+    "tool"
+  ],
+  "native_step_count": 2,
+  "tool_names_offered": [
+    "edit",
+    "execute",
+    "glob",
+    "grep",
+    "question",
+    "read",
+    "shell",
+    "skill",
+    "webfetch",
+    "websearch",
+    "write"
+  ],
+  "subagent_tool_schema": null,
+  "stderr": "",
+  "source_sha256": {
+    "harness/container_http_bridge.mjs": "1b6b4bc53918081ef4132aeb1d9ee704827450b34e7762357b76e4b27daaa500",
+    "harness/unix_inference_proxy.py": "b7a0fbef4c07106c264967e4abf4086f3c611b319c5508f374dc60670d026987",
+    "scripts/opencode_delegation_preflight.py": "ec75ba882fb8b76a1911f1959f494a14fa3d1179f66ec994afef12ba146ef3e8"
+  },
+  "qualification_limits": [
+    "synthetic responses only",
+    "no real provider/counter mapping qualification",
+    "no Context corpus or worker broker",
+    "ephemeral synthetic socket world-accessible inside isolated probe; actual roles require scoped ownership"
+  ],
+  "elapsed_seconds_including_cleanup": 2.918597748997854
+}

@@ -1,0 +1,83 @@
+PASS r7[0] counters completion-only
+PASS r7[0] usage not mutated
+PASS r7[0] resolved/provider/native null (declared gap)
+PASS r7[0] reasoning_rule + reconciliation consts
+PASS r7[1] counters completion-only
+PASS r7[1] usage not mutated
+PASS r7[1] resolved/provider/native null (declared gap)
+PASS r7[1] reasoning_rule + reconciliation consts
+PASS r7[2] counters completion-only
+PASS r7[2] usage not mutated
+PASS r7[2] resolved/provider/native null (declared gap)
+PASS r7[2] reasoning_rule + reconciliation consts
+PASS hist completion-only == provider-reported
+PASS hist completion+reasoning differs (not billed)
+PASS hist completion+reasoning arithmetic
+PASS r7 recomputation[0] reported==completion_only
+PASS r7 recomputation[0] adding reasoning would overbill
+PASS r7 recomputation[1] reported==completion_only
+PASS r7 recomputation[2] reported==completion_only
+PASS hist 89/104 kept separate, cost verbatim
+PASS colon-join collision now distinct ids
+PASS exotic identity distinct[0]
+PASS exotic identity distinct[1]
+PASS exotic identity distinct[2]
+PASS cross-session same response conflicts (not dropped, not double charge)
+PASS same identity different mapping conflicts
+PASS tampered record_id rejected
+PASS deduplicate does not mutate inputs
+PASS incomplete duplicate retains known counters
+PASS both raw snapshots retained + warning
+PASS incomplete duplicate warnings deduped+sorted
+PASS changed known counter rejected
+PASS changed known cost rejected
+PASS identical duplicates collapse to one
+PASS identical duplicates add no warnings
+PASS chain merges keep counters + deduped warnings
+PASS later known counter fills null without warning
+PASS distinct raw snapshots both retained on equal counters
+FAIL incoming warnings from later duplicate preserved?  expected=False actual=True
+PASS later-position merge still keeps counters/cost
+PASS later-position merge still retains raw snapshots
+PASS incoming warnings from first duplicate preserved (order asymmetry)
+PASS unequal aliases rejected
+PASS reversed unequal aliases rejected
+PASS bool alias rejected
+PASS negative alias rejected
+PASS float alias rejected
+PASS list details rejected (not AttributeError)
+PASS string details rejected
+PASS int details rejected
+PASS null details -> null counters
+PASS neg cost -1 rejected
+PASS nan cost rejected
+PASS inf cost rejected
+PASS bool cost rejected
+PASS str cost rejected
+PASS zero cost accepted
+PASS negative counter rejected
+PASS bool counter rejected
+PASS float counter rejected
+PASS nested nan rejected
+PASS nested negative reasoning rejected
+PASS metadata rejected: invented role
+PASS metadata rejected: invented phase
+PASS metadata rejected: invented mapping
+PASS metadata rejected: other provider_tag
+PASS metadata rejected: other model
+PASS metadata rejected: empty run_id
+PASS metadata rejected: blank run_id
+PASS metadata rejected: int run_id
+PASS usage type rejected: usage list
+PASS usage type rejected: usage string
+PASS usage type rejected: usage None
+PASS nonfinite nested anywhere rejected
+PASS huge-int cost escapes ValueError contract (overflow)
+PASS lone-surrogate run_id stays within ValueError contract (UnicodeError subclass)
+PASS UnicodeEncodeError subclasses ValueError
+PASS missing run_id in deduplicate escapes contract
+PASS normalizer output keys == schema properties
+schema meta-validation OK
+PASS mapping registry has exactly the observed mapping
+checks=80 failed=1
+FAILED: ['incoming warnings from later duplicate preserved?']
