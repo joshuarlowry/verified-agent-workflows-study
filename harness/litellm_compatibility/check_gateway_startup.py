@@ -1,5 +1,5 @@
 """Exercise startup refusal before any API/model call."""
-import hashlib,json,os,subprocess,sys,tempfile
+import hashlib,json,os,subprocess,sys,tempfile,ast
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 patch=HERE/'sitecustomize.py';launcher=HERE/'launch_gateway.py'
@@ -20,8 +20,13 @@ driver="import sys,runpy;sys.modules.pop('sitecustomize',None);sys.argv="+repr([
 probe=subprocess.run([sys.executable,'-c',driver],env=valid,capture_output=True,text=True,timeout=60)
 assert probe.returncode==78 and 'study_gateway_verified' not in probe.stderr,(probe.returncode,probe.stderr)
 checks.append('absent_startup_module_refused_without_self_import')
+driver="import runpy;from litellm.llms.openrouter.chat.transformation import OpenRouterChatCompletionStreamingHandler as C;from litellm.llms.base_llm.base_model_iterator import BaseModelResponseIterator as B;C._handle_string_chunk=B._handle_string_chunk;import sys;sys.argv="+repr([str(launcher),'--patch-sha256',digest,'--verify-only'])+";runpy.run_path("+repr(str(launcher))+",run_name='__main__')"
+stale=subprocess.run([sys.executable,'-c',driver],env=valid,capture_output=True,text=True,timeout=60)
+assert stale.returncode==78 and 'study_gateway_verified' not in stale.stderr,(stale.returncode,stale.stderr)
+checks.append('restored_defective_method_refused_despite_legacy_flag')
+
 with tempfile.TemporaryDirectory(prefix='study2-source-guard-') as d:
- directory=Path(d);source=patch.read_text();old=source.split('EXPECTED_SOURCE_SHA256 = "')[1].split('"')[0]
+ directory=Path(d);source=patch.read_text();old=next(iter(ast.literal_eval(next(n.value for n in ast.parse(source).body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='UPSTREAM_GUARDS' for t in n.targets))).values()))
  altered=source.replace(old,'0'*64,1);(directory/'sitecustomize.py').write_text(altered)
  (directory/'launch_gateway.py').write_text(launcher.read_text())
  checks.append(check('changed_upstream_refused',dict(base,PYTHONPATH=d,STUDY_LITELLM_DONE_FIX='1'),sha=hashlib.sha256(altered.encode()).hexdigest(),path=directory/'launch_gateway.py'))

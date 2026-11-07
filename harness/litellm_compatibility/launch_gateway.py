@@ -27,7 +27,7 @@ def main():
     if Path(sitecustomize.__file__).resolve()!=patch:
         refuse('Unexpected Python startup module')
     import litellm.llms.base_llm.base_model_iterator as module
-    if getattr(module,'_study_done_fix_applied',False) is not True:
+    if not sitecustomize.verify_active():
         refuse('Iterator repair is not active')
     os.write(2,(json.dumps({'event':'study_gateway_verified','patch_sha256':args.patch_sha256,'upstream_source_sha256':sitecustomize.EXPECTED_SOURCE_SHA256})+'\n').encode())
     if args.verify_only:return

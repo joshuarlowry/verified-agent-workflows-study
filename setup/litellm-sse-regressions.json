@@ -7,9 +7,11 @@
     "reasoning_preserved",
     "real_sentinel_variants_end",
     "quoted_json_string_not_accepted_as_terminal",
-    "comment_and_suffixed_marker_not_terminal",
+    "comment_ignored_and_malformed_marker_rejected",
     "sync_iteration_continues_after_literal",
     "async_iteration_continues_after_literal",
+    "byte_comment_does_not_end_sync_iterator",
+    "byte_comment_does_not_end_async_iterator",
     "budget_error_not_swallowed",
     "usage_preserved"
   ],

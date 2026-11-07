@@ -23,7 +23,7 @@ Business targets are within 10 percentage points of Terra's completion rate at a
 | GLM | `z-ai/glm-5.3-flash` | Relace / fp4 |
 | Terra | `openai/gpt-6.1-terra` | Azure / not_disclosed |
 
-[Latest provider readiness evidence](readiness/revision7-provider-and-accounting.md) records Gemma BF16 ZDR capability and GLM automatic-tool/billing checks; full study Context/broker qualification remains pending. Provider metadata is not proof of identical serving implementations or future availability.
+[Historical provider-reference evidence](readiness/revision7-provider-and-accounting.md) records Gemma BF16 ZDR capability and GLM automatic-tool/billing checks; fresh clean-cohort transport and full study Context/broker qualification remain pending. Provider metadata is not proof of identical serving implementations or future availability.
 
 ## Collection forecast
 
@@ -57,4 +57,4 @@ Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus
 
 [Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Study execution plan](STUDY_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md)
 
-AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. GLM is the initial builder; artifacts require different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Only current materials appear in this tree; superseded drafts and readiness failures remain in Git history and private artifacts. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
+AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. Clean fixtures require fresh authorized builders and different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Only current materials appear in this tree; superseded drafts and readiness failures remain in Git history and private artifacts. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).

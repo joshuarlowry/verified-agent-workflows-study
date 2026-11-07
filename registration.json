@@ -543,18 +543,18 @@
       "supervisor/worker role behavior"
     ],
     "transport_compatibility": {
-      "status": "r3_engineering_candidate_pending_review",
+      "status": "strict_OpenRouter_candidate_pending_final_review",
       "upstream_litellm_version": "1.103.3",
       "patch": "harness/litellm_compatibility/sitecustomize.py",
-      "patch_sha256": "6f0d6a420be9a193a15fa313dbd8015ca81e771b7180464651cbd3032dab57a9",
+      "patch_sha256": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79",
       "activation": "Mandatory launch_gateway.py --patch-sha256 FROZEN_HASH with verified startup marker, overlay PYTHONPATH and activation 1; direct legacy CLI excluded",
-      "scope": "Same qualified overlay required for every model and role before calibration; no mixing",
+      "scope": "Process-local OpenRouter subclass only, same final frozen overlay required for all roles; no installed package mutation",
       "reason": "Base iterator falsely treats literal [DONE] inside streamed JSON as terminal; paired same-generation trace isolates gateway mutation",
       "regression_evidence": "setup/litellm-sse-regressions.json",
-      "review_status": "R2 startup-provenance defect fixed; fresh review pending",
+      "review_status": "Prior review findings addressed; full-wrapper regressions pass; final review pending",
       "scored_dispatch_authorized": false,
       "gateway_launcher": "harness/litellm_compatibility/launch_gateway.py",
-      "gateway_launcher_sha256": "dc29d521bae9a3ce06a359c1893f8f51329ab195d5f4f613d1540bfe8d034577"
+      "gateway_launcher_sha256": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e"
     }
   },
   "launch_blockers": [
@@ -793,11 +793,12 @@
     "unverified_model_outputs_policy": "Fresh reconstruction or explicit clean revalidation; no inherited solution/code/test or conversation access to constructors. Public requested-scope text is provisional until freshly revalidated.",
     "all_roles_same_final_transport_required": true,
     "transport_bundle_files": {
-      "harness/litellm_compatibility/check_gateway_startup.py": "3a8bce3f72e9a91b8d7dc4f19b26a42276e902d77e04f2f7e7f1f7703115f29c",
-      "harness/litellm_compatibility/check_sentinel.py": "3e33fd5f58df2ea0082c2745cf52de4fd2900f59c9ee871fe4e151f2af65a85b",
-      "harness/litellm_compatibility/launch_gateway.py": "dc29d521bae9a3ce06a359c1893f8f51329ab195d5f4f613d1540bfe8d034577",
-      "harness/litellm_compatibility/sitecustomize.py": "6f0d6a420be9a193a15fa313dbd8015ca81e771b7180464651cbd3032dab57a9"
+      "harness/litellm_compatibility/check_full_wrapper.py": "3e3fd82d22c764cd0c8799e7dfe431a3f6371ec93426a99bd7b518596cfa4c78",
+      "harness/litellm_compatibility/check_gateway_startup.py": "6fb326262df896349c1a3e1351cdfa923b914fd1980e4b3fd34d1bda1ab4b425",
+      "harness/litellm_compatibility/check_sentinel.py": "9c4adeaeabaab6965cce01c6fd2efc636e4568ee512e050a72bf3f8734b4ee99",
+      "harness/litellm_compatibility/launch_gateway.py": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e",
+      "harness/litellm_compatibility/sitecustomize.py": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79"
     },
-    "transport_bundle_sha256": "04bbd3b30d08fa05edd5d368b1f89e4791987f1c71e98117f6f76ba1a5e0e043"
+    "transport_bundle_sha256": "0e102e93bdf2540891f71e55185f9d1966ecf9178dbbc5608e3526dc9d9bff8c"
   }
 }

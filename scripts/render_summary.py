@@ -36,7 +36,7 @@ Business targets are within {abs(h['completion_difference_margin'])*100:g} perce
 |---|---|---|
 {models}
 
-[Latest provider readiness evidence](readiness/revision7-provider-and-accounting.md) records Gemma BF16 ZDR capability and GLM automatic-tool/billing checks; full study Context/broker qualification remains pending. Provider metadata is not proof of identical serving implementations or future availability.
+[Historical provider-reference evidence](readiness/revision7-provider-and-accounting.md) records Gemma BF16 ZDR capability and GLM automatic-tool/billing checks; fresh clean-cohort transport and full study Context/broker qualification remain pending. Provider metadata is not proof of identical serving implementations or future availability.
 
 ## Collection forecast
 
@@ -62,7 +62,7 @@ Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on mod
 
 [Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Study execution plan](STUDY_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md)
 
-AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. GLM is the initial builder; artifacts require different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Only current materials appear in this tree; superseded drafts and readiness failures remain in Git history and private artifacts. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
+AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. Clean fixtures require fresh authorized builders and different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Only current materials appear in this tree; superseded drafts and readiness failures remain in Git history and private artifacts. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
 '''
 path = root / 'README.md'
 if '--check' in sys.argv:

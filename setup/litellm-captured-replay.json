@@ -3,8 +3,8 @@
   "all_passed": true,
   "tool_arguments_preserved_byte_for_byte": true,
   "no_late_data_after_finish": true,
-  "patch_sha256": "6f0d6a420be9a193a15fa313dbd8015ca81e771b7180464651cbd3032dab57a9",
-  "gateway_launcher_sha256": "dc29d521bae9a3ce06a359c1893f8f51329ab195d5f4f613d1540bfe8d034577",
+  "patch_sha256": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79",
+  "gateway_launcher_sha256": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e",
   "tool_argument_sha256": [
     "5db2c9ae0debce8f54afe4e803db5121a1a8e43127b1b4dd014702622c73f9ff"
   ],

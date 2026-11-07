@@ -1,36 +1,25 @@
-# Study-only LiteLLM SSE repair candidate
+# Study-only OpenRouter streaming repair
 
-LiteLLM 1.103.3's `BaseModelResponseIterator._handle_string_chunk` checks whether `[DONE]` occurs anywhere in a raw event. A normal JSON content/tool/reasoning fragment containing that literal is replaced by a synthetic `stop` fragment. Subsequent tool arguments then make OpenCode reject the response. The affected fragment is also lost; suppressing the downstream exception would not recover correct content.
+The installed LiteLLM 1.103.3 parser treats any occurrence of the literal terminal marker inside a JSON event as stream completion. A paired same-generation capture proves that it drops a tool-argument fragment and injects premature stop; OpenRouter's upstream event is valid. Old successful constructor returns cannot rule out silent loss.
 
-The paired capture records the **same generation** before and after LiteLLM: the provider stream has no late content, while the gateway injects `stop` at the fragment containing the literal. Raw captures and payloads remain private. See [diagnostic evidence](../../setup/transport-diagnosis.json).
+The current process-local overlay targets only OpenRouterChatCompletionStreamingHandler. It:
 
-`sitecustomize.py` changes only the marker predicate to an equality check on the stripped SSE payload. It verifies the exact installed package version and upstream source hash, then compiles that one changed method in the original module namespace. It does not rewrite installed source, discard fragments, reconstruct tool arguments or choose a different model/provider. A failed compatibility check terminates startup with exit 78; Python's normally ignored `sitecustomize` error is insufficient.
+- Recognizes the standalone terminal payload, preserving literals inside content, tool arguments and reasoning.
+- Preserves SSE field boundaries for bytes and strings; comments never become terminal markers.
+- Rejects malformed JSON/non-object payloads, model data after a finish reason, and data after the terminal marker.
+- Raises on EOF without the terminal marker, preventing LiteLLM's full wrapper from synthesizing successful completion of a truncated stream.
+- Checks the exact package version and hashes of the upstream base iterator, OpenRouter handler and wrapper source. Installed files and other provider iterators are unchanged.
 
-Enable only for the study gateway process, before launching it:
+This is a strict contract for the registered OpenRouter ChatCompletions path, not a general-purpose SSE parser. The [official OpenRouter example](https://github.com/OpenRouterTeam/docs/blob/ee0e76998ffd6ec993fb711924fc805f13c479ec/api_reference/streaming.mdx) compares the raw data payload with the terminal marker before parsing JSON. A quoted JSON string or suffixed marker is not accepted as successful termination. A live provider that cannot meet the contract blocks qualification; it is not counted as an agent-quality failure.
 
-```sh
-PYTHONPATH="$PWD/harness/litellm_compatibility" \
-STUDY_LITELLM_DONE_FIX=1 \
-/opt/hermes/litellm-1.103.3/venv/bin/python \
-  harness/litellm_compatibility/launch_gateway.py \
-  --patch-sha256 FROZEN_PATCH_SHA256 -- \
-  --config PRIVATE_CONFIG --host 127.0.0.1 --port PRIVATE_PORT --num_workers 1
-```
+## Mandatory gateway entry point
 
-The process uses the study startup module instead of the host's default apport startup hook. This difference belongs in the frozen gateway manifest. Model parameters and provider pins are unchanged. The shared system gateway is untouched. The same qualified overlay must be used for every scored model and role; mixed patched/unpatched collection is prohibited.
+Clean jobs invoke launch_gateway.py in the pinned virtual environment, with the frozen patch hash, overlay PYTHONPATH and activation value 1. The launcher requires the module to have loaded at interpreter startup, checks its exact file and hash, and verifies the actual three active method bindings. A historical applied flag is insufficient. Any mismatch refuses startup before the CLI/model call.
 
-Run the actual sync/async iterator regressions without the opt-in flag:
+It emits study_gateway_verified with hashes. The controller must observe that record before dispatch. Direct legacy CLI launches are excluded. The gateway process uses this startup module instead of the host apport startup hook; record that difference. The shared system gateway remains unchanged.
 
-```sh
-/opt/hermes/litellm-1.103.3/venv/bin/python harness/litellm_compatibility/check_sentinel.py
-```
+## Qualification
 
-The negative control reproduces the original defect. Checks cover content, tool arguments, reasoning, real marker variants, sync/async continuation, budget errors and usage. Captured-stream replay, native tool/file round trips and different-model cross-review are also required. A passing unit check is not full role, worker-broker or acceptance qualification. This candidate cannot itself enable registered dispatch.
+Run check_sentinel.py, check_full_wrapper.py and check_gateway_startup.py using the pinned environment. The original substring defect is a negative control. Valid bytes/literals must pass; malformed and truncated streams must fail through the actual sync and async LiteLLM wrappers. Startup tests restore a defective method while keeping the legacy flag and require refusal.
 
-## Clean-cohort startup contract
-
-Clean jobs must invoke launch_gateway.py using the pinned virtual environment, the frozen patch SHA-256, the overlay PYTHONPATH and activation value 1. The launcher verifies the imported startup module, active iterator repair and exact patch hash before entering the CLI. Missing/mistyped activation and an unpatched import refuse startup. It emits a sanitized study_gateway_verified record; the controller must observe that record before any model request. Direct legacy CLI launches are excluded from the clean cohort.
-
-The first GLM review is preserved as engineering evidence. Its quoted-marker concern is resolved by an explicit strict protocol policy, subject to fresh review: accept the standalone marker, not a JSON string masquerading as a ChatCompletions chunk. OpenRouter's [official streaming example](https://github.com/OpenRouterTeam/docs/blob/ee0e76998ffd6ec993fb711924fc805f13c479ec/api_reference/streaming.mdx) compares the raw data payload with the marker before parsing JSON. A quoted JSON string is not the documented terminal marker or a chunk object. It remains an invalid-stream failure; no silent conversion to successful completion is permitted. SSE comments and suffixed text are not terminal markers. This policy is fixed before provider qualification; any incompatible live provider blocks qualification rather than counting as an agent failure.
-
-Startup guards now emit specific sanitized reasons and active/disabled markers; invalid nonempty activation values fail closed. Compiled-method tracebacks use a source-consistent linecache entry. The host apport-hook difference remains disclosed. These are preparation changes requiring new hashes, tests and review, not repairs to scored outcomes.
+Captured-stream replay, fresh native tool/file tests for all three registered models, raw provider/gateway/native capture, and different-model review are required. Use the same final frozen overlay for every role. The earlier repair candidates and review findings remain engineering history; none is a clean benchmark fixture or scored result. No candidate here enables calibration or scored dispatch.

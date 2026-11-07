@@ -1,0 +1,18 @@
+{
+  "kind": "mechanical_no_model_calls",
+  "all_passed": true,
+  "checks": [
+    "sync_valid_literal_and_byte_comment",
+    "sync_suffixed_invalid_marker_rejected",
+    "sync_missing_terminal_marker_rejected",
+    "sync_quoted_invalid_marker_rejected",
+    "sync_data_after_finish_rejected",
+    "sync_data_after_marker_rejected",
+    "async_valid_literal_and_byte_comment",
+    "async_suffixed_invalid_marker_rejected",
+    "async_missing_terminal_marker_rejected",
+    "async_quoted_invalid_marker_rejected",
+    "async_data_after_finish_rejected",
+    "async_data_after_marker_rejected"
+  ]
+}

@@ -27,7 +27,10 @@ def snapshot(manifest, service):
             raise ValueError('Invalid role identifier')
         rows.append({k: role[k] for k in ('role', 'run_id', 'model', 'status', 'dispatch_utc', 'ended_at_utc', 'agent_exit_code', 'controller_exit_code', 'api_budget_exhausted', 'prompt_sha256', 'controller_sha256') if k in role})
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
+    stamps=[manifest.get(k) for k in ('created_at_utc','started_at_utc','ended_at_utc')]
+    stamps += [row.get(k) for row in rows for k in ('dispatch_utc','ended_at_utc')]
+    event_at=max((x for x in stamps if x),default=now)
+    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'event_at_utc': event_at, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
 
 def main():
     parser = argparse.ArgumentParser()
@@ -44,6 +47,12 @@ def main():
     data = snapshot(json.loads(manifest_path.read_text()), args.service)
     if args.dry_run:
         print(json.dumps(data, indent=2)); return
+    previous_path=ROOT/'setup/launch.json'
+    if previous_path.exists():
+        previous=json.loads(previous_path.read_text())
+        if previous.get('cohort_id')==data.get('cohort_id') and previous.get('event_at_utc','')>data['event_at_utc']:
+            print('Older workflow status retained in private log; current page unchanged')
+            return
     status_path = ROOT/'setup/status.json'
     status = json.loads(status_path.read_text())
     status.update(updated_at_utc=data['snapshot_at_utc'], status='preparation_'+data['status'], active_launch='setup/launch.json', launch_snapshot_note='See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.')

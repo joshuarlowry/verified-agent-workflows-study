@@ -44,9 +44,11 @@ checks.append('real_sentinel_variants_end')
 try:parse('data: "[DONE]"')
 except (TypeError,ValueError):checks.append('quoted_json_string_not_accepted_as_terminal')
 else:raise AssertionError('Nonstandard quoted marker accepted')
-for line in [': [DONE]', 'data: [DONE] trailing']:
-    result=view(parse(line));assert result.get('is_finished') is False
-checks.append('comment_and_suffixed_marker_not_terminal')
+assert view(parse(': [DONE]')).get('is_finished') is False
+try:parse('data: [DONE] trailing')
+except ValueError:pass
+else:raise AssertionError('Malformed marker did not raise')
+checks.append('comment_ignored_and_malformed_marker_rejected')
 
 stream=[chunk({'content':'first [DONE] literal'}),chunk({'content':' second'}),chunk({},'stop'),'data: [DONE]']
 sync=list(OpenRouterChatCompletionStreamingHandler(iter(stream),sync_stream=True))
@@ -62,6 +64,20 @@ async def verify():
     async for x in OpenRouterChatCompletionStreamingHandler(AsyncLines(),sync_stream=False):out.append(x)
     assert ''.join(x.choices[0].delta.content or '' for x in out if hasattr(x,'choices'))=='first [DONE] literal second'
 asyncio.run(verify());checks.append('async_iteration_continues_after_literal')
+byte_stream=[b': data: [DONE]',chunk({'content':'not terminal'}).encode(),chunk({},'stop').encode(),b'data: [DONE]']
+byte_sync=list(OpenRouterChatCompletionStreamingHandler(iter(byte_stream),sync_stream=True))
+assert any(getattr(x,'choices',None) and x.choices[0].delta.content=='not terminal' for x in byte_sync)
+checks.append('byte_comment_does_not_end_sync_iterator')
+class AsyncBytes:
+ def __aiter__(self):
+  async def rows():
+   for x in byte_stream:yield x
+  return rows()
+async def verify_bytes():
+ out=[]
+ async for x in OpenRouterChatCompletionStreamingHandler(AsyncBytes(),sync_stream=False):out.append(x)
+ assert any(getattr(x,'choices',None) and x.choices[0].delta.content=='not terminal' for x in out)
+asyncio.run(verify_bytes());checks.append('byte_comment_does_not_end_async_iterator')
 # A real provider error must remain an error, including a marker in its text.
 try:parse('data: '+json.dumps({'error':{'code':402,'message':'credit limit [DONE] literal'}}))
 except Exception as e:
