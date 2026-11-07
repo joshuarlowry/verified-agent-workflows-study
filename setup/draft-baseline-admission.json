@@ -15,7 +15,13 @@
     "review_sha256": "c2552ea380f0d5f0dd94602d17db05070631841fddaa596f27dd38ed086144a7",
     "successful_calls": 17,
     "captured_failed_http_calls": 31,
-    "failed_usage": "unavailable, not assumed zero"
+    "failed_usage": "unavailable, not assumed zero",
+    "metadata_limitations": {
+      "field": "input_hashes.after_sha256sums",
+      "reviewer_claimed": "bc995902b4c9369067255949872c7797b6a68011b4794342c76d38a1d74d865c",
+      "controller_computed": "28a5218b37fb7c13249e13d893f9aadc419eae8402e85a4f7cae5d0ea8b39dee",
+      "disposition": "Reviewer transcription is incorrect and excluded from hash authority. Original report preserved. Before/after input bytes, all 32 manifest entries and exact nineteen-contract hashes were independently verified by the controller; normative input and original hash correction remain valid. No final freeze/qualification is claimed."
+    }
   },
   "governance": "setup/provenance-correction.json; hard design parameters verified unchanged",
   "baseline_launch_id": "baseline-construction-20261107T183146Z",
@@ -31,5 +37,6 @@
   },
   "calibration_runs": 0,
   "scored_runs": 0,
-  "scope_freeze_approved": false
+  "scope_freeze_approved": false,
+  "hash_authority": "Exact-byte controller computations and captured mechanical commands, never unchecked model-transcribed hash strings"
 }
