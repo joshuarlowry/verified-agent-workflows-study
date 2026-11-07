@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 02:55:19 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 02:59:59 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 02:55:19 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 02:59:59 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-docs-source-repair | openai/gpt-6.1-terra | running | Nov 07, 2026 at 02:55:19 PM EST (UTC-0500) | — |
+| terra-docs-source-repair | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 02:55:19 PM EST (UTC-0500) | Nov 07, 2026 at 02:59:59 PM EST (UTC-0500) |
 
 Terra repairs four documentation selection findings; original input hashes remain historical. Source approval, corpus build/review and runtime gates are still required.
 
