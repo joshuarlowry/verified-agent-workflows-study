@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:19:02 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:19:03 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:19:02 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:19:03 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-scope-boundary-amendment | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 01:15:48 PM EST (UTC-0500) | Nov 07, 2026 at 01:19:02 PM EST (UTC-0500) |
+| glm-scope-amendment-cross-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 01:19:03 PM EST (UTC-0500) | — |
 
-Terra addresses the five full-review boundary findings, without adding features. Scope remains unfrozen; fresh GLM review follows; baseline stays gated.
+GLM checks five boundary amendments and full contract preservation. Scope acceptance is separate from runtime qualification; no calibration/scoring enabled.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
