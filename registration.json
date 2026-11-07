@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 5,
+  "protocol_revision": 6,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -83,7 +83,7 @@
       "direct model systems",
       "supervised Gemma versus Gemma alone",
       "public-selected Gemma three-run portfolio",
-      "human review and time tradeoffs"
+      "runtime and measured operator effort; human patch review only in optional extension"
     ],
     "targets_are": "descriptive_business_targets_not_noninferiority_claims"
   },
@@ -166,8 +166,8 @@
       "all endpoint snapshots/statuses captured",
       "no unresolved evaluator/integrity defect",
       "native usage captured for at least 95 percent of completed calls with all missing calls listed",
-      "required review timing complete",
-      "remaining tasks can be qualified without access to prior outcomes"
+      "remaining tasks can be qualified without access to prior outcomes",
+      "optional human-review staffing does not gate core continuation"
     ],
     "checkpoint_decision": null,
     "checkpoint_evidence_sha256": null
@@ -222,41 +222,6 @@
     "artifact_author_records": [],
     "independent_qualifiers": []
   },
-  "review_measurement": {
-    "reviewers_per_machine_eligible_patch": 2,
-    "reviewer_assignments": [],
-    "rubric_sha256": null,
-    "blinding_assignment_sha256": null,
-    "prompt": "Would I merge this patch for the declared contract?",
-    "verdicts": [
-      "merge",
-      "changes_requested",
-      "cannot_assess"
-    ],
-    "time_recording": "active inspection and reproduction until verdict; queues and familiarization separate",
-    "reviewer_edits_in_measurement": false,
-    "critical_defects": "reproduce and adjudicate before final acceptance",
-    "include_review_rejected_patches_in_effort_total": true,
-    "blinded_reviewers_must_be_named_before_calibration": true,
-    "operators_and_outcome_exposed_people_eligible_as_blinded_reviewers": false,
-    "capacity_plan": {
-      "minutes_per_review_assumption": 15,
-      "reviews_per_patch": 2,
-      "example_100_patches_hours": 50,
-      "maximum_scored_unique_patches": 165,
-      "maximum_scored_review_hours": 82.5,
-      "maximum_calibration_review_hours": 20,
-      "first_scored_stage_max_review_hours": 27.5,
-      "basis": "planning assumptions, not measurements; no duplicate review charge for portfolio reuse",
-      "confirmed_hours": null
-    },
-    "reviewer_1": null,
-    "reviewer_2": null,
-    "capacity_confirmed": false,
-    "recruitment_status": "owner_has_no_candidates; reviewer brief prepared; no outreach sent",
-    "recruitment_brief": "REVIEWER_BRIEF.md",
-    "initial_calibration_block_max_hours_per_reviewer": 2.5
-  },
   "checks": {
     "requirements_public": true,
     "public_suite": "representative examples and baseline regressions; not exhaustive final acceptance",
@@ -275,7 +240,7 @@
   "randomized_schedule_sha256": null,
   "disposable_database_execution_authorized": false,
   "primary_endpoint": "first complete-agent/supervisor final return, uniform deadline, or recorded external interruption",
-  "primary_acceptance_rule": "All applicable frozen behavioral, regression, integration, build, typecheck, lint, integrity and critical-review gates pass",
+  "primary_acceptance_rule": "Timely final submission passes all applicable frozen independent machine behavior, UI/API/database, ownership, regression, build, typecheck, lint, scope and integrity checks; human review is an optional extension",
   "post_return_repair_extension_registered": false,
   "public_report": "Observed results and hypothetical pricing remain separate",
   "registration_approved_at_utc": null,
@@ -355,7 +320,9 @@
       "licenses and source/index hashes"
     ],
     "coordinator_role": "OpenAI GPT-family coordinator may propose sources and run approved mechanical packaging; cannot independently sign content suitability",
-    "corpus_plan": "APPLICATION_AND_DOCS_PLAN.md"
+    "corpus_plan": "APPLICATION_AND_DOCS_PLAN.md",
+    "independent_reviewer_eligibility": "independent human or recorded model outside subject families; human recruitment not required",
+    "human_review_required": false
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
@@ -472,15 +439,9 @@
   },
   "launch_blockers": [
     {
-      "id": "reviewers",
-      "phase": "before_calibration",
-      "detail": "name two independent humans, verify blinding, confirm calibration and staged scored-review hours",
-      "resolved": false
-    },
-    {
       "id": "corpus_reviewer",
       "phase": "before_calibration",
-      "detail": "name independent corpus content reviewer outside subject families; curator/source omissions reviewed",
+      "detail": "independent corpus qualification by eligible human or model outside subject families; source selection and omissions reviewed",
       "resolved": false
     },
     {
@@ -509,10 +470,62 @@
     }
   ],
   "pre_recruitment_work": {
-    "allowed": "generic mechanical transport, usage capture and documentation-adapter probes only",
-    "study_calibration_or_acceptance": false,
-    "human_effort_or_merge_readiness_claims": false,
-    "fixture_family_and_corpus_review_restrictions_remain": true,
-    "automation_only_study_requires_new_amendment": true
+    "human_recruitment_required_for_core": false,
+    "allowed": "core setup, calibration and scoring once non-human-review registration gates pass",
+    "human_effort_or_merge_readiness_claims_without_extension": false,
+    "fixture_family_and_independent_corpus_qualification_remain": true
+  },
+  "extensions": {
+    "human_review": {
+      "reviewers_per_machine_eligible_patch": 2,
+      "reviewer_assignments": [],
+      "rubric_sha256": null,
+      "blinding_assignment_sha256": null,
+      "prompt": "Would I merge this patch for the declared contract?",
+      "verdicts": [
+        "merge",
+        "changes_requested",
+        "cannot_assess"
+      ],
+      "time_recording": "active inspection and reproduction until verdict; queues and familiarization separate",
+      "reviewer_edits_in_measurement": false,
+      "critical_defects": "extension records reproduced defects and reviewed verdicts separately; preserve original core machine result",
+      "include_review_rejected_patches_in_effort_total": true,
+      "blinded_reviewers_must_be_named_before_calibration": false,
+      "operators_and_outcome_exposed_people_eligible_as_blinded_reviewers": false,
+      "capacity_plan": {
+        "minutes_per_review_assumption": 15,
+        "reviews_per_patch": 2,
+        "example_100_patches_hours": 50,
+        "maximum_scored_unique_patches": 165,
+        "maximum_scored_review_hours": 82.5,
+        "maximum_calibration_review_hours": 20,
+        "first_scored_stage_max_review_hours": 27.5,
+        "basis": "planning assumptions, not measurements; no duplicate review charge for portfolio reuse",
+        "confirmed_hours": null
+      },
+      "reviewer_1": null,
+      "reviewer_2": null,
+      "capacity_confirmed": false,
+      "recruitment_status": "owner_has_no_candidates; reviewer brief prepared; no outreach sent",
+      "recruitment_brief": "REVIEWER_BRIEF.md",
+      "initial_calibration_block_max_hours_per_reviewer": 2.5,
+      "status": "optional_not_registered",
+      "required_for_core": false,
+      "required_before_calibration": false,
+      "reviewers_named_before_extension": true,
+      "scope": "frozen endpoint patches; sampling and blinding preregistered before extension",
+      "changes_core_endpoint": false,
+      "repair_work": "separate repair extension; never silently repair original endpoints",
+      "missing_review": "not_measured; not zero and not a core acceptance failure"
+    }
+  },
+  "acceptance_reporting": {
+    "core_label": "machine-accepted by frozen independent suite",
+    "human_merge_readiness": "unverified unless optional review extension performed",
+    "human_review_effort": "not measured unless optional review extension performed",
+    "review_findings": "published separately against original frozen endpoints; reproduced evaluator defects trigger the uniform correction protocol",
+    "cost_per_acceptance_denominator": "core machine-accepted submissions",
+    "no_implicit_production_approval": true
   }
 }

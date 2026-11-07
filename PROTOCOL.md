@@ -10,7 +10,7 @@ Each task has one disclosed user outcome, explicit boundaries, permissions, comp
 
 A task qualifies when baseline regressions pass, the requested behavior fails for the intended reason, a complete reference passes, a materially different valid path passes, plausible critical omissions are rejected by negative controls, and clean-environment replays agree. Use [TASK_TEMPLATE.md](TASK_TEMPLATE.md). UI contracts require accessible roles/names/labels; tests use semantic locators and justify exceptions before dispatch. Sealed cases cover disclosed requirements using new inputs/combinations, without prescribing a reference implementation's markup or helpers.
 
-The external evaluator applies each frozen endpoint patch to a clean baseline. Trusted checks are outside subject write access. Full acceptance requires every applicable behavior, UI/API/persistence, ownership, regression, build, typecheck, lint, scope, integrity and critical-review gate. Subject tests supplement trusted checks. Machine eligibility and final reviewed acceptance are separate outcomes.
+The external evaluator applies each frozen endpoint patch to a clean baseline. Trusted checks are outside subject write access. Core machine acceptance requires every applicable behavior, UI/API/persistence, ownership, regression, build, typecheck, lint, scope and integrity gate. Subject tests supplement trusted checks. Human review is an optional extension; report its verdicts separately from the original machine acceptance endpoint.
 
 ## Harness, providers and tools
 
@@ -34,21 +34,21 @@ Use the sample and fixed cutoff in registration. The cutoff is chosen before cal
 
 Calibration reports completion, early return, cutoff hits and infrastructure interruptions per arm with counts/denominators. Apply the registered timeout-imbalance flags before scoring. A flag requires a documented scope/cutoff review and decision; any redesign needs a new frozen calibration version applied to all arms. Preserve original attempts. Report accepted-submission curves and the registered earlier-cutoff sensitivity, which classifies final endpoints without inspecting later patches. Do not imply that a patch existed earlier than its final return.
 
-Calibration also checks difficulty/floor/ceiling patterns, within-task variation, provider usage, role handoffs, reviewer timing and isolation. Task difficulty revisions occur before scored contracts freeze and do not target a preferred model. There is no power/confirmatory promotion gate in this estimation cohort.
+Calibration also checks difficulty/floor/ceiling patterns, within-task variation, provider usage, role handoffs, measured operator activity and isolation. Task difficulty revisions occur before scored contracts freeze and do not target a preferred model. There is no power/confirmatory promotion gate in this estimation cohort.
 
-Freeze seeded, balanced sequential run order before dispatch. Include every scheduled/dispatched attempt. At the registered stage boundary, review only capture, integrity, evaluator, staffing and task-preparation feasibility with comparative rankings masked. Continue only if the registered criteria and reviewer capacity hold. No favorable-outcome-based expansion or task replacement.
+Freeze seeded, balanced sequential run order before dispatch. Include every scheduled/dispatched attempt. At the registered stage boundary, review only capture, integrity, evaluator, staffing and task-preparation feasibility with comparative rankings masked. Continue only if the registered core criteria hold; optional patch-review capacity is not a gate. No favorable-outcome-based expansion or task replacement.
 
 Account exhaustion/outage stops new dispatch globally; record affected active attempts and unrun slots. User stop and unrecoverable failures remain endpoints. Missing slots are missing, while dispatched nondeliveries retain their distinct outcome categories. Resume under a documented environment/version boundary, not an invisible retry.
 
-## Human review and provenance
+## Optional human review and independent qualification
 
-Name the independent reviewers and confirm hours before calibration. People exposed to model identities, operator logs or comparative outcomes cannot count as blinded reviewers. The AI coordinator is not a human reviewer. Lack of staffing is a real launch blocker, not a zero-effort outcome. Use registration's capacity assumptions to reserve calibration and stage-specific review hours; actual review time may differ.
+Human patch review is an optional extension, not a core setup, calibration, scoring or acceptance requirement. Core results are labeled machine-accepted under the frozen evaluator. Merge readiness and human patch-review effort remain unverified/unmeasured without the extension. Mechanical operator effort is still recorded during core runs.
 
-Hide model/provider, cost, runtime and session identity. Randomize/balance reviewer assignments. Reviewers time active inspection/reproduction through merge, changes-requested or cannot-assess verdicts; record familiarization/queues separately. Reviewers do not repair patches during measurement. Reproduce and adjudicate critical defects before final acceptance; style preference alone is not a functional rejection. Record recognition/blinding breaches and reviewer effects.
+Before activating the extension, register reviewer identities/capacity, eligible frozen artifacts, sampling, rubric, blinding and analysis. Prefer all eligible endpoints; if sampling, use a frozen balanced policy and report selection. People exposed to model identities/operator outcomes cannot count as blinded. Reviewers independently time inspection/reproduction through verdict and do not repair code. Reuse an artifact's review for the retry portfolio without double counting. Include reviewed-but-rejected patches in effort totals.
 
-Include time on reviewed patches later rejected. Reuse the same blinded review when an artifact also enters the retry portfolio; do not invent a second physical review. No review data means unverified final acceptance and unknown effort, not zero cost.
+Preserve original core machine results and publish extension verdicts, reproduced defects and blinding limitations separately. A confirmed evaluator defect follows the uniform correction protocol for all affected frozen patches; a review rejection alone does not retroactively redefine the core endpoint. Any repair is a separately registered extension with separate time/usage.
 
-An independent documentation reviewer outside the subject families must approve source selection, omissions, version coverage, extraction and absence of solution hints. The coordinator may mechanically package approved inputs; it cannot sign its own content decisions. Record curator/reviewer identities, contributions, hashes and signoffs before calibration.
+Independent fixture and documentation qualification remains a core integrity requirement and can be performed by recorded eligible humans or models outside the subject families. Human recruitment is not required for those roles. The coordinator cannot independently approve its own source selection or fixture work. Record corpus selection/omissions, version coverage, extraction, solution-leakage checks, identities/families, hashes and signoff before calibration.
 
 ## Measurement, corrections and reporting
 

@@ -1,30 +1,27 @@
-# Ready-to-share reviewer brief
+# Optional human-review extension brief
 
-We are preparing a public, AI-managed feasibility study of coding-agent workflows on small UI/API/SQLite tasks. We need independent software reviewers; no model-specific expertise is required. Identities, agreed hours and conflicts are recorded before study calibration. This brief is prepared for the owner to share; no invitations have been sent.
+Human patch review is an optional extension to the machine-evaluated feasibility study. It is not needed to start core setup, calibration or scoring. No invitations have been sent. Current extension settings and capacity assumptions live in [registration.json](registration.json), `extensions.human_review`.
 
-## Patch reviewers
+## Purpose and activation
 
-Two humans familiar with TypeScript, React, HTTP APIs and SQL inspect patches against a disclosed contract and independent machine evidence. Reviewers should not operate the agents or see model identities, operator logs, costs, runtimes or comparative outcomes. A study operator cannot serve as a blinded reviewer of the runs they observed. Ordinary recognition and uncertainty are logged rather than concealed.
+The core study measures machine acceptance under a frozen independent suite. This extension asks whether the same frozen patches are merge-ready and how much active human review they require. Without it, those outcomes remain unverified/unmeasured, not zero effort.
 
-You receive the baseline/task contract, anonymized patch, reproduction commands and machine-check report. Time active inspection and reproduction, then return merge / changes requested / cannot assess, concrete reasons and critical defect reproductions. Do not repair the code. Both reviewers assess each machine-eligible artifact independently; critical disagreements are adjudicated before final acceptance.
+Before reviewing patches, register the reviewers, agreed hours, artifact selection, rubric, blinding and analysis. Use all eligible patches where feasible; otherwise select a balanced sample by a frozen policy and disclose selection limits. Agree compensation separately. Capacity assumptions are planning estimates and do not gate the core study.
 
-Start with availability for the initial calibration block, then confirm later batches. Use the canonical `review_measurement.capacity_plan` in [registration.json](registration.json) for hours; these are planning estimates, not a request to reserve the entire maximum immediately. The study only advances when each next stage has adequate capacity. Agree compensation separately; the study does not invent a labor price.
+## Reviewer task
 
-## Documentation reviewer
+Reviewers familiar with TypeScript, React, HTTP APIs and SQL receive the task contract, anonymized baseline/patch, reproduction commands and independent machine report. Hide model/provider, session, cost and runtime. Reviewers exposed to operator logs or identities cannot count as blinded for those runs; record recognition and uncertainty honestly.
 
-Independently inspect the proposed official source list, relevant omitted topics, version coverage, extracted documents and any solution leakage. The reviewer must be independent of the curator and outside the subject model families. This review is about what every subject sees; a working retrieval server alone is insufficient. Record comments, fixes, source hashes and signoff. This role may be filled by a suitable human patch reviewer with separate declared duties; exposure to documentation content does not itself reveal run/model identity.
+Time active inspection/reproduction through merge / changes requested / cannot assess, with concrete reasons and critical defect reproductions. Do not repair patches during measurement. Review independently under the registered assignment policy; adjudicate disagreements. Record queues and one-time familiarization separately. Include time on reviewed-but-rejected patches and avoid duplicate charging when an artifact also enters the retry portfolio.
 
-## Response information
+## Reporting
 
-- Name/handle and relevant experience.
-- Relationship to study operation, fixture construction and corpus curation.
-- Availability for initial and subsequent batches; agreed active-hour limit and compensation if any.
-- Any prior exposure to agent identities/outcomes or conflicts affecting blinding.
+Publish extension verdicts and measured review effort alongside original core machine results. Do not retroactively replace the core endpoint with a review verdict. A confirmed evaluator defect follows the protocol's uniform regrading rule for all affected frozen patches. Repairs require their own extension and time/usage records.
 
-The owner currently has no reviewer candidates. Recruiting through a colleague or a paid independent contractor are practical options; the coordinator can prepare anonymized review packets after eligible fixture construction. The coordinator does not impersonate a human reviewer or silently replace this role with a model panel.
+## Information to request when activating
 
-## Work possible before recruitment
+- Name/handle, experience, conflicts and prior exposure to identities/outcomes.
+- Availability and agreed hours for the selected batch.
+- Compensation arrangement if applicable.
 
-Mechanical transport, usage-capture and documentation-adapter preflight may proceed with disposable generic probes and explicit unqualified status. These are not study calibration/acceptance results and do not measure merge quality or human effort. Fixture authorship and corpus content restrictions still apply. Reviewed calibration and scoring remain gated by named reviewers and content signoff.
-
-If independent human capacity cannot be obtained, an automation-only feasibility study is a possible **new registration amendment**: report machine acceptance and known evaluator limits, remove human-review economic claims, and label merge readiness unverified. That alternative has not replaced this registration's reviewed-acceptance endpoint.
+Independent fixture and documentation qualification remains separate core integrity work. It may be performed by eligible humans or recorded models outside the subject families, so it does not require recruiting human patch reviewers. The coordinator cannot independently approve its own content decisions.

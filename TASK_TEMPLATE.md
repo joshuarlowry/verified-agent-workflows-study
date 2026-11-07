@@ -36,7 +36,7 @@ All requirements are public. Public checks are representative examples; sealed c
 - Independent contract/check review and author-family provenance are signed off.
 - No unresolved oracle defect, missing adapter or known flake.
 
-## Run and review records
+## Core run records and optional review extension
 
 - Frozen workflow deadline T; first-return/deadline/blocked endpoint and timestamp.
 - Source/public-check/acceptance hashes and per-criterion accepted/rejected/unverified evidence.
@@ -44,7 +44,7 @@ All requirements are public. Public checks are representative examples; sealed c
 - Native input/output/cache/reasoning/write provenance and missing usage.
 - MCP calls, errors/retries, latency, corpus/index revisions and retrieval service overhead; effective tool/corpus parity across supervisor and worker sessions.
 - Human operational activity separated from blinded patch-review timing.
-- For machine-eligible patches: both blinded reviewers' active minutes, merge/change/cannot-assess verdicts, critical reproductions and adjudication.
+- Only if the human-review extension is registered: reviewer active minutes, verdicts, critical reproductions and adjudication on frozen endpoints. Otherwise record review effort and merge readiness as not measured; core machine acceptance is unaffected.
 - For Gemma portfolio candidates: preregistered position and public-only selection manifest committed before sealed outcome disclosure to selector/analyst.
 
 ## Subject prompt skeleton
