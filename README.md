@@ -20,6 +20,8 @@ The proposed target is **within 10 percentage points of Terra's completion rate,
 
 The exact three model IDs are retained. These compare **whole systems**, including harnesses. Terra stays in Codex.
 
+**Transport update:** [Terra through OpenRouter passed a separate readiness check](readiness/terra-openrouter-20261107.md), including OpenCode tool use. This makes a common OpenCode harness feasible to consider; it does not change the draft configurations above or constitute a study run.
+
 ## Workload and limits
 
 Use a new small application with real UI, API and a disposable local database.

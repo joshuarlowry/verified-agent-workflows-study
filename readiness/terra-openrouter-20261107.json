@@ -1,0 +1,273 @@
+{
+  "kind": "transport_readiness_not_scored_study",
+  "date_utc": "2026-11-07",
+  "requested_model": "openai/gpt-6.1-terra",
+  "resolved_model_observed": "openai/gpt-6.1-terra-20261026",
+  "provider": "Azure",
+  "route": [
+    "OpenCode 2.2.5",
+    "LiteLLM 1.103.3",
+    "OpenRouter",
+    "Azure"
+  ],
+  "reasoning_effort_configured": "high",
+  "litellm_alias": "experiment-terra-6-1",
+  "opencode_selector": "litellm-terra-experiment/terra-implementation",
+  "fallbacks": false,
+  "zdr_required": true,
+  "gateway_tests": [
+    {
+      "test": "plain",
+      "dispatch_utc": "2026-11-07T02:11:46.726374+00:00",
+      "elapsed_seconds": 1.2591567620111164,
+      "status": 200,
+      "check_passed": true,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 18,
+        "total_tokens": 26,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 5.8e-05,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 5.8e-05,
+          "upstream_inference_prompt_cost": 1.8e-05,
+          "upstream_inference_completions_cost": 4e-05
+        }
+      },
+      "prompt_sha256": "0c77c6369ae64d5ca95480b11f901067760f938da1dd695ee7f15ef64c46f69d"
+    },
+    {
+      "test": "stream",
+      "dispatch_utc": "2026-11-07T02:11:47.985692+00:00",
+      "elapsed_seconds": 1.1084480739955325,
+      "status": 200,
+      "check_passed": true,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 18,
+        "total_tokens": 26,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 5.8e-05
+      },
+      "prompt_sha256": "4c6545668911ace17925291737815059c0fb643432fbf1d2df00e3167a45f8ae"
+    },
+    {
+      "test": "tool_request",
+      "dispatch_utc": "2026-11-07T02:11:49.094316+00:00",
+      "elapsed_seconds": 0.9922805480018724,
+      "status": 200,
+      "check_passed": true,
+      "usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 78,
+        "total_tokens": 102,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0.000198,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.000198,
+          "upstream_inference_prompt_cost": 7.8e-05,
+          "upstream_inference_completions_cost": 0.00012
+        }
+      },
+      "prompt_sha256": "181255a0c45823f63dbb2b991ecc882bcdcd8f7bdb25b2736c6a2031f6b18960"
+    },
+    {
+      "test": "tool_result",
+      "dispatch_utc": "2026-11-07T02:11:50.086849+00:00",
+      "elapsed_seconds": 1.1977796560095157,
+      "status": 200,
+      "check_passed": true,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 121,
+        "total_tokens": 126,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0.000146,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.000146,
+          "upstream_inference_prompt_cost": 0.000121,
+          "upstream_inference_completions_cost": 2.5e-05
+        }
+      },
+      "prompt_sha256": "c4cd51444d96c1c897702fa4577efd40aff6c64b2a848d85ba76f5a9d52fe846"
+    },
+    {
+      "test": "structured_output",
+      "dispatch_utc": "2026-11-07T02:11:51.284867+00:00",
+      "elapsed_seconds": 1.4496385419915896,
+      "status": 200,
+      "check_passed": true,
+      "usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 43,
+        "total_tokens": 72,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 10,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0.000188,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.000188,
+          "upstream_inference_prompt_cost": 4.3e-05,
+          "upstream_inference_completions_cost": 0.000145
+        }
+      },
+      "prompt_sha256": "42267b35c9e7fda40d84ffc20ef44f3998fb7c8c626cc6723f013075df473fec"
+    }
+  ],
+  "opencode": {
+    "dispatch_utc": "2026-11-07T02:14:27.926522+00:00",
+    "elapsed_seconds": 5.764666108996607,
+    "exit_code": 0,
+    "prompt_sha256": "77814d102372c6aadde5354775bbaa40575dda4152baf03702469d8a67b4aa7d",
+    "file_check_passed": true,
+    "final_text_passed": true,
+    "shell_calls": 2,
+    "steps": [
+      {
+        "reason": "tool-calls",
+        "cost": 0.00551925,
+        "tokens": {
+          "input": 3,
+          "output": 32,
+          "reasoning": 26,
+          "cache": {
+            "read": 0,
+            "write": 4181
+          }
+        }
+      },
+      {
+        "reason": "tool-calls",
+        "cost": 0.0003608,
+        "tokens": {
+          "input": 3,
+          "output": 19,
+          "reasoning": 0,
+          "cache": {
+            "read": 4181,
+            "write": 43
+          }
+        }
+      },
+      {
+        "reason": "stop",
+        "cost": 0.0003092,
+        "tokens": {
+          "input": 3,
+          "output": 10,
+          "reasoning": 0,
+          "cache": {
+            "read": 4224,
+            "write": 36
+          }
+        }
+      }
+    ]
+  },
+  "provider_crosschecks": [
+    {
+      "model": "openai/gpt-6.1-terra-20261026",
+      "provider_name": "Azure",
+      "total_cost": 0.0003092,
+      "native_tokens_prompt": 4263,
+      "native_tokens_completion": 10,
+      "native_tokens_reasoning": 0,
+      "native_tokens_cached": 4224,
+      "is_byok": false,
+      "finish_reason": "stop"
+    },
+    {
+      "model": "openai/gpt-6.1-terra-20261026",
+      "provider_name": "Azure",
+      "total_cost": 0.00551925,
+      "native_tokens_prompt": 4184,
+      "native_tokens_completion": 58,
+      "native_tokens_reasoning": 26,
+      "native_tokens_cached": 0,
+      "is_byok": false,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "all_successful_gateway_calls_including_setup_retry": {
+    "calls": 11,
+    "prompt_tokens_including_cache": 33215,
+    "completion_tokens_including_reasoning": 220,
+    "reported_cost_usd": 0.01901875
+  },
+  "direct_provider_probe": {
+    "prompt_tokens": 14,
+    "completion_tokens": 8,
+    "reported_cost_usd": 5.4e-05
+  },
+  "total_observed_successful_request_cost_usd": 0.01907275,
+  "failed_gateway_route": {
+    "reason": "OpenAI provider rejected by account ZDR policy",
+    "status": 404,
+    "gateway_reported_cost_usd": 0,
+    "provider_billed_cost_verified": false
+  },
+  "raw_evidence_sha256": {
+    "20261107T021146Z/results.json": "3ae0a44f212a0e46b01c4830b1691e628e3ec64ff8e3e9040a41afcfef8898c5",
+    "opencode-smoke/events.jsonl": "f458da5d0625d7e53a6fb1ed9aea21d4ac2e9a3af0008d8b675ddbceaeb075a3",
+    "opencode-smoke/initial-events.jsonl": "c313ce4a3fbe3e50c3f723e58058e1587ce304b26088a1211d84df49a59d251b",
+    "opencode-smoke/wrong-location-events.jsonl": "8143f688492c200b8700e3f5fdfd447a322bd0685e000f68e9640219f3806999",
+    "opencode-smoke/controller.json": "498dbf2dfbe929be1c15cad66795ede4916982c11c2646ea8a655c9a887841ed"
+  }
+}
