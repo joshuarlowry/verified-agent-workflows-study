@@ -1,12 +1,12 @@
 # Current run status
 
-Updated: 2026-11-07T11:48:11.457580+00:00
+Updated: 2026-11-07T11:50:54.830382+00:00
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State |
 |---|---|---|
-| gemma-c1-evaluator-review | google/gemma-4-31b-it | running |
+| gemma-c1-evaluator-review | google/gemma-4-31b-it | returned requires cross review |
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 

@@ -1,8 +1,8 @@
 {
   "launch_id": "review-20261107T114803Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T11:48:11.457580+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T11:50:54.830382+00:00",
+  "status": "construction_returned_not_qualified",
   "background_service": "study2-c1-review-20261107t114803z",
   "automatic_restart": false,
   "roles": [
@@ -10,8 +10,11 @@
       "role": "gemma-c1-evaluator-review",
       "run_id": "gemma-c1-evaluator-review-20261107T114803Z",
       "model": "google/gemma-4-31b-it",
-      "status": "running",
+      "status": "returned_requires_cross_review",
       "dispatch_utc": "2026-11-07T11:48:11.405365+00:00",
+      "ended_at_utc": "2026-11-07T11:50:54.778779+00:00",
+      "agent_exit_code": 0,
+      "controller_exit_code": 0,
       "prompt_sha256": "71d1b541c6f336a9a091447ac3775b7bd31a3e0df835264de85a3880151df39a",
       "controller_sha256": "27d28678fa1b378ac1c154400d5f9f38d0c06a2cf421c65db334432cbafd6e29"
     }
