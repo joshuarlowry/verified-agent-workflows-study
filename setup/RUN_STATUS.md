@@ -1,16 +1,15 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 03:27:52 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 03:27:54 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 03:27:52 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 03:27:54 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-baseline-delta-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 03:15:37 PM EST (UTC-0500) | Nov 07, 2026 at 03:27:52 PM EST (UTC-0500) |
 
-Fresh GLM checks R1/R2 amendment, exact unchanged contracts and real non-test auth probes. No final freeze or study dispatch.
+After accepted baseline delta review, build fresh exact-lockfile dependency image and replay public checks in three independent offline containers. Not task acceptance or final study qualification.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
