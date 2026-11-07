@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+"""Supervisor CLI: the mount location is fixed, not caller-configurable."""
+import json
+import re
+import socket
+import sys
+
+SOCKET = '/run/study/gemma-broker.sock'
+MAX_WIRE = 65536
+ID = re.compile(r'^[A-Za-z0-9_-]{1,80}$')
+
+
+def main(argv):
+    if len(argv) < 2 or argv[0] not in ('call', 'get', 'cancel') or not ID.fullmatch(argv[1]):
+        return {'error': 'invalid_cli'}, 2
+    op, rid = argv[:2]
+    if (op != 'call' and len(argv) != 2) or (op == 'call' and len(argv) not in (2, 3)):
+        return {'error': 'invalid_cli'}, 2
+    msg = {'op': op, 'request_id': rid}
+    if op == 'call':
+        if len(argv) == 3:
+            if not ID.fullmatch(argv[2]):
+                return {'error': 'invalid_cli'}, 2
+            msg['session'] = argv[2]
+        try:
+            data = sys.stdin.buffer.read(16385)
+            if not data or len(data) > 16384:
+                return {'error': 'invalid_cli'}, 2
+            msg['work'] = data.decode('utf-8')
+        except (UnicodeError, OSError):
+            return {'error': 'invalid_cli'}, 2
+    try:
+        data = json.dumps(msg, ensure_ascii=True, separators=(',', ':')).encode() + b'\n'
+        if len(data) > MAX_WIRE:
+            return {'error': 'invalid_cli'}, 2
+        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+            s.settimeout(3)
+            s.connect(SOCKET)
+            s.sendall(data)
+            buf = bytearray()
+            while b'\n' not in buf and len(buf) <= MAX_WIRE:
+                chunk = s.recv(min(8192, MAX_WIRE + 1 - len(buf)))
+                if not chunk:
+                    break
+                buf.extend(chunk)
+            if len(buf) > MAX_WIRE or not buf.endswith(b'\n') or buf.count(b'\n') != 1:
+                raise ValueError('bad response')
+            response = json.loads(buf)
+            if not isinstance(response, dict):
+                raise ValueError('bad response')
+            return response, 1 if 'error' in response else 0
+    except (OSError, ValueError):
+        return {'error': 'broker_unavailable'}, 1
+
+
+if __name__ == '__main__':
+    result, code = main(sys.argv[1:])
+    print(json.dumps(result, ensure_ascii=True, separators=(',', ':')))
+    sys.exit(code)

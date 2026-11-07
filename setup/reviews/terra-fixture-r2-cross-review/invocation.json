@@ -1,0 +1,46 @@
+{
+  "run_id": "terra-fixture-r2-cross-review",
+  "requested_model": "openai/gpt-6.1-terra",
+  "expected_provider_tag": "azure",
+  "reasoning_effort_configured": "high",
+  "generation_crosschecks_first_last": [
+    {
+      "model": "openai/gpt-6.1-terra-20261026",
+      "provider_name": "Azure",
+      "total_cost": 0.0013451,
+      "native_tokens_prompt": 3893,
+      "native_tokens_completion": 122,
+      "native_tokens_reasoning": 19
+    },
+    {
+      "model": "openai/gpt-6.1-terra-20261026",
+      "provider_name": "Azure",
+      "total_cost": 0.0076585,
+      "native_tokens_prompt": 121697,
+      "native_tokens_completion": 246,
+      "native_tokens_reasoning": 0
+    }
+  ],
+  "dispatch_utc": "2026-11-07T05:10:49.631414+00:00",
+  "elapsed_seconds": 319.1887010880164,
+  "exit_code": 0,
+  "native_steps": 35,
+  "provider_usage_calls": 35,
+  "native_session_ids": [
+    "ses_e4b955bf4ffe137dQyridDxLHL"
+  ],
+  "reported_model_cost_usd": 0.4347685,
+  "raw_usage_prompt_tokens_inclusive_cache": 3468227,
+  "raw_usage_completion_tokens_do_not_add_reasoning": 23871,
+  "prompt_sha256": "411d13400620163c2b54960ef328a05cf8cc2eec22c6697a224416055758d4d5",
+  "raw_events_sha256": "61a92d27a921b04a4814ffaec3a3d64273fd07092b75afd93efb32abd38a5bd1",
+  "observed_tool_call_counts": {
+    "edit": 1,
+    "glob": 1,
+    "grep": 4,
+    "read": 56,
+    "shell": 24,
+    "write": 8
+  },
+  "evidence_scope": "preparation only; raw observed usage deduplicated by response id, native counters are cross-checks; first/last generation resolution only, failed uncaptured usage not inferred; no full capture qualification"
+}

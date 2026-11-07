@@ -1,0 +1,76 @@
+{
+  "phase": "R3 preparation construction endpoint; not qualified or scored",
+  "authorship": {
+    "harness_identity": "study2-terra-fixture-review/terra; Terra Azure High",
+    "requested_route": "openai/gpt-6.1-terra via OpenCode/LiteLLM/OpenRouter/Azure, high reasoning",
+    "routing_limit": "Exact upstream revision and route require controller evidence.",
+    "prior_author": "GLM authored the preserved baseline and prior repairs",
+    "independence": "Authorized study subject families; not independent-family evidence. Fresh GLM cross-review required after endpoint; self-review is not approval.",
+    "other_models_or_subagents_invoked": false
+  },
+  "input_verification": {
+    "outer_entries": 74,
+    "outer_canonical_sha256": "71cef603e46ef3a424cf86610c16394ea2e72a5ad4f5d6b73e47ac192d79488b",
+    "independent_sha256": "608d7ba5494ae1bee23e1cb6b50468b8a559f9eabdde73dd2bdd60101564e257",
+    "inner_entries": 73,
+    "evidence": ["outputs/r3/prior-verification.log", "outputs/r3/audit-static-final.log", "outputs/r3/source-diff.log"],
+    "limit": "Original R1 source tree and manifest not supplied; historical claims not independently reconstructed."
+  },
+  "findings": [
+    {
+      "id": "R2-N1",
+      "disposition": "Repaired in candidate; cross-review required",
+      "changes": "Synchronous selection generation and form and delete-action lifetimes; guarded caller close, catches, field errors, finally, feedback and reload, including delete after a newer same-selection form; intentional switch-time discard preserved.",
+      "evidence": ["baseline/src/components/Workboard.tsx", "baseline/src/components/ItemForm.tsx", "baseline/e2e/switch.spec.ts", "baseline/e2e/isolation.spec.ts", "outputs/r3/diagnostic-red.log", "outputs/r3/mutant-check-retry.log", "outputs/r3/check-final-rerun.log"],
+      "limitations": "Response-consumption and scheduling barrier is implementation-aware rather than a formal proof; broader concurrency and browser portability require qualification. Failed responses are injected; successes use real server writes."
+    },
+    {
+      "id": "R2-N2",
+      "disposition": "Observed exception documented and tested",
+      "changes": "GET get-session 200 JSON null versus HEAD 404 empty; distinguish dispatch from handler status and exclude HEAD from non-HEAD app-envelope rule. No auth architecture change.",
+      "evidence": ["baseline/tests/api/auth.test.ts", "baseline/docs/baseline-contract.md", "docs/faq-draft.md", "review-inputs/diagnostics/routes.log", "outputs/r3/check-final.log"],
+      "limitations": "Other Better Auth method/subroute combinations not exhaustively characterized."
+    },
+    {
+      "id": "R2-N3",
+      "disposition": "Contract migration scope corrected",
+      "changes": "Exact workspace label predicate in named files may migrate to stable workspace IDs; seed option text assertions updated explicitly; isolation tests already use IDs. No stale dynamic count assumption.",
+      "evidence": ["contracts/C1-workspace-item-counts.md", "contracts/README.md", "outputs/r3/audit-static-final.log", "baseline/e2e/isolation.spec.ts"],
+      "limitations": "No C1 implementation or migration exercise constructed; subject to fresh cross-review and later qualification."
+    },
+    {
+      "id": "R2-N4",
+      "disposition": "Contract model and examples reconciled",
+      "changes": "Strict live keyset allows older-than-cursor future-key writes and equal-timestamp tie repeats; conditional exclusion requires each write strictly newer than current cursor; top example observes timestamp above pre-PATCH maximum.",
+      "evidence": ["contracts/S03-stable-cursor-pagination.md", "docs/faq-draft.md", "review-inputs/diagnostics/keyset.log"],
+      "limitations": "No S03 implementation or controlled-clock acceptance test constructed."
+    },
+    {
+      "id": "R2-N5",
+      "disposition": "Contract compatibility choice documented",
+      "changes": "Dirty forms remain guarded while pending; define completion and bar behavior; authorize narrow guard/discard flow migrations in named held-action and ABA tests preserving barriers and checks.",
+      "evidence": ["contracts/S10-workspace-switch-guard.md", "contracts/README.md", "baseline/e2e/switch.spec.ts", "baseline/e2e/isolation.spec.ts"],
+      "limitations": "No S10 implementation or migration exercise built; fresh review and qualification required."
+    },
+    {
+      "id": "R2-N6",
+      "disposition": "Current delivered paths distinguished from historical mount",
+      "changes": "Root README points to delivered R2 review, outer manifest and diagnostics; explicitly notes missing historical R1 input and unchanged historical records.",
+      "evidence": ["README.md", "review-inputs/terra-r2-review.json", "review-inputs/prior-endpoint-manifest.json"],
+      "limitations": "R1 mount and manifest cannot be independently recovered from supplied copy."
+    }
+  ],
+  "diagnostics": {
+    "initial_red": "outputs/r3/diagnostic-red.log: edit success and ABA create expose actual prior defects; unscoped assertion and unroute timeout were diagnostic mistakes, corrected as recorded in provenance.",
+    "typecheck": "outputs/r3/typecheck-initial.log: DOM ambient types and unused type; corrected and rerun exit 0.",
+    "mutant": "First attempt used unsupported option; retry after deliberately disabling tokens fails all three selected tests, as expected. See outputs/r3/mutate.py and mutant-check-retry.log.",
+    "final_command": "CI=1 PLAYWRIGHT_BROWSERS_PATH=/workspace/outputs/r3/browsers npm run check:full",
+    "cwd": "/workspace/baseline",
+    "exit": 0,
+    "result": "typecheck, lint, 11 unit, 36 API, 41 e2e pass; known Better Auth initialization warnings",
+    "log": "outputs/r3/check-final-rerun.log"
+  },
+  "self_review": "Mutation lifecycle, barriers, static selector census and cross-document claims examined; selected mutants killed. No cross-review approval claimed.",
+  "remaining_gates": ["Fresh GLM cross-review of this R3 revision", "Independent qualification, contract-by-contract review, reference/alternate and sealed evaluator construction in a separately authorized phase", "Further timing, browser, error precedence, auth and data edge qualification"],
+  "scope_exclusions": ["No scored rescue, calibration, task implementation or hidden evaluator", "No production DB, account or budget changes, deploy, push, merge or study dispatch"]
+}

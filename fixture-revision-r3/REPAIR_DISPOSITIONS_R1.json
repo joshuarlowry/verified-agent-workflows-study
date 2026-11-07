@@ -1,0 +1,223 @@
+{
+  "repair_kind": "preparation repair revision R1; not qualification, not a scored-run rescue, not a task attempt",
+  "session": {
+    "model": "z-ai/glm-5.3-flash",
+    "harness_identity": "study2-glm-probe/glm (OpenCode/LiteLLM/OpenRouter/Relace FP4)",
+    "date_utc": "2026-11-07",
+    "workspace_role": "writable source-only copy of the first Workboard Lab fixture",
+    "independence_limitation": "This repair was authored by the same subject-model family (GLM) as the original fixture builder; the review it implements was authored by a different study model (Terra) but is also not an independent family. Cross-review within the authorized study models is disclosed as same-family evidence, not independent replication. This session did NOT cross-review or approve its own revision (stopped before that step).",
+    "prior_source_identity": {
+      "manifest": "review-inputs/first-endpoint-manifest.json (68 files, declared_tree_sha256 1f0b63fae9392282474183f4015bf3599c5a32c6d9bbc1c39d65a9e895e72ad3)",
+      "verified": "All 68 source paths and per-file SHA-256 values matched this workspace copy before any edit; independent tree hash (review's algorithm) recomputed as cd25e6e35a5f2a81952e1bdf0a53ce4c5c6dbc0467f84eb830011cbab4eee142, matching the review's independent_inputs_tree_sha256 for the same algorithm.",
+      "review_report": "review-inputs/terra-fixture-review.json (immutable; not edited)",
+      "prior_provenance": "PREPARATION_PROVENANCE.md (first endpoint; left unchanged as the historical record)"
+    }
+  },
+  "scope_respected": {
+    "findings_implemented": ["B1", "B2", "B3", "C1", "C2", "S1", "S2", "S3", "S4", "S5", "S6", "A1", "D1"],
+    "findings_explicitly_not_touched": {
+      "U1": "Coordinator's usage schema/normalizer — outside this application workspace; handled separately with recorded review. No edits.",
+      "U2": "Same as U1. No edits.",
+      "U3": "Same as U1. No edits."
+    },
+    "not_done_by_design": [
+      "No reference solutions, sealed tests, or oracles were created or claimed.",
+      "No task features implemented into the baseline (deliberately missing task features stay missing).",
+      "No calibration or study scoring runs.",
+      "No three-clean-instance or qualification work; none claimed.",
+      "No new npm dependencies; lockfile pins unchanged (npm ci from the existing lockfile).",
+      "No databases beyond new local disposable SQLite files under baseline/.tmp and :memory: probes; no production resources, deploys, or pushes."
+    ]
+  },
+  "dispositions": [
+    {
+      "id": "B1",
+      "finding_summary": "useJson retained the previous workspace's data (and error states) when the workspace path changed, so a delayed or failed Borealis load rendered Apollo items/actions under Borealis.",
+      "disposition": "fixed_in_baseline (unintended bug; the intentionally unguarded edit discard was preserved)",
+      "policy_choice": "Data is keyed by request path: on path change the derived view exposes data:null immediately (no stale paint), and a failed load for the NEW path clears the old workspace's data; same-path refetches keep previously loaded data while loading (pre-existing same-workspace behavior). No cross-workspace data or row actions can render under a new selection, including after failures.",
+      "changes": [
+        "baseline/src/hooks/useJson.ts — rewritten: RequestState keyed by path, derived view for the render gap, error-aware clearing",
+        "baseline/e2e/switch.spec.ts — NEW public regression: deterministic delayed-switch test (route-fetched response held on a gate: no Apollo rows, loading state exposed, then real Borealis rows) and failed-switch test (aborted route: old rows cleared, alert + Retry exposed, unroute + Retry recovers)",
+        "baseline/docs/baseline-contract.md §6 — normative workspace-switch list-freshness rule + explicit statement that the silent form discard remains intentional baseline behavior (S10's increment)"
+      ],
+      "evidence": "npm run check:full exit 0 (typecheck, lint, build, 11 unit, 34 api, 18 e2e; both new switch tests pass)",
+      "remaining_limitations": ["No React-component unit tests exist (no @testing-library dependency); the regression evidence is e2e-level by design."]
+    },
+    {
+      "id": "B2",
+      "finding_summary": "Contract claimed all errors use the app envelope and 401 for all unauthenticated endpoints, but unknown unauthenticated endpoints return 404 and Better Auth wrong-credentials returns its native {message, code} body.",
+      "disposition": "docs_reconciled_implementation_kept",
+      "policy_choice": "Keep the implementation (do not normalize Better Auth internals; observed outputs are real). Contract now states route-resolution precedence (unknown endpoints and unsupported methods → 404 app envelope regardless of session) and documents Better Auth routes as outside the envelope, with the verified native example.",
+      "changes": [
+        "baseline/docs/baseline-contract.md §5 — reconciled error/precedence wording (verified examples included)",
+        "baseline/tests/api/auth.test.ts — wrong-password test now also pins the observed native body (no error envelope, code INVALID_EMAIL_OR_PASSWORD); NEW api test: unsupported method on a known path → 404 envelope (session state irrelevant)",
+        "docs/faq-draft.md Q13 — envelope stability + the two documented facts; S09's typed currentItem recorded as the only task-defined non-string exception"
+      ],
+      "evidence": "diagnostics/error-format-probe.mts run (tsx): unknown endpoint → 404 {\"error\":{\"code\":\"not_found\",...}}; wrong creds → 401 {\"message\":\"Invalid email or password\",\"code\":\"INVALID_EMAIL_OR_PASSWORD\"}; DELETE /api/health → 404 envelope. API suite 34/34 pass.",
+      "remaining_limitations": ["Better Auth's full internal error taxonomy beyond the observed path remains undocumented (FAQ open question 1)."]
+    },
+    {
+      "id": "B3",
+      "finding_summary": "Fresh npm ci lacked a Playwright browser (documented check:full exited 1 until chromium was installed); non-CI reuseExistingServer could silently reuse a foreign listener on 4599.",
+      "disposition": "documented_and_isolation_hardened",
+      "policy_choice": "reuseExistingServer set to false unconditionally: every e2e run builds, resets, seeds and serves its own .tmp/e2e.db on 127.0.0.1:4599; a foreign listener fails the run loudly. Browser install documented as a one-time pinned prerequisite.",
+      "changes": [
+        "baseline/playwright.config.ts — reuseExistingServer: false with explanatory comment",
+        "baseline/docs/baseline-contract.md §2 — Playwright browser prerequisite (npx playwright install chromium --only-shell; PLAYWRIGHT_BROWSERS_PATH relocation), headless-shell sufficiency, OS fallback note, server-isolation note",
+        "baseline/README.md — prerequisites section with exact commands"
+      ],
+      "evidence": "Browser installed in THIS session's private cache: PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npx playwright install chromium --only-shell → chromium_headless_shell-1254 + ffmpeg-1013; CI=1 check:full exit 0 with 18/18 e2e.",
+      "remaining_limitations": ["The Ubuntu 24.04 unsupported-OS fallback warning may not generalize to other OSes; other browsers are not installed or required."]
+    },
+    {
+      "id": "C1",
+      "finding_summary": "C1 acceptance table claimed 5/3 seed counts (requirement correctly says 4/3); option-label changes affect ownership.spec.ts selectOption labels and the fresh-workspace assertion, not just auth.spec.ts; FAQ/README blanket-prohibited test edits while C1 required them.",
+      "disposition": "examples_corrected_and_migration_scope_enumerated",
+      "policy_choice": "Correct acceptance counts to 4/3. Uniform precedence rule published (contracts/README.md + FAQ Q11): contract-enumerated, expectation-only migrations win for their scope; behavioral coverage preserved. C1 now exhaustively enumerates the affected assertions (4 option-text assertions in auth.spec.ts incl. the fresh-workspace one; 3 selectOption labels in ownership.spec.ts).",
+      "changes": [
+        "contracts/C1-workspace-item-counts.md — 4/3 counts in acceptance mapping; exhaustive enumerated test migrations section",
+        "contracts/README.md — uniform baseline-test-edit precedence rule (settled at R1)",
+        "docs/faq-draft.md Q11 — same rule, replaces the blanket prohibition"
+      ],
+      "evidence": "Seed re-derived from server/seed.ts and cross-checked against review seed_checks (Apollo open 4, Borealis open 3; title_nocase first 'Archive old assets'); test-count updates recorded (api 33→34, e2e 16→18).",
+      "remaining_limitations": ["Exact C1 option-text behavior is implementer-owned and re-verifiable only when C1 is implemented (no premature implementation, per scope)."]
+    },
+    {
+      "id": "C2",
+      "finding_summary": "C2's title_asc first item was wrong ('Audit analytics events'); NOCASE order puts 'Archive old assets' first.",
+      "disposition": "examples_corrected",
+      "policy_choice": "Publish exact id sequences for all three sort orders (derived from the pinned seed) so acceptance can assert exact sequences, not just first/last.",
+      "changes": [
+        "contracts/C2-item-list-sort-toggle.md — title_asc example fixed; updated_asc/updated_desc full sequences added; UI example corrected; header notes reset-per-task policy"
+      ],
+      "evidence": "Orderings derived from seed.ts created/updated timestamps and titles (verified against review's independent seed computation: title_nocase_first 'Archive old assets', updated_desc sequence matches baseline seed.test.ts).",
+      "remaining_limitations": []
+    },
+    {
+      "id": "S1",
+      "finding_summary": "S01's disabled-submit UI contradicted the baseline e2e empty-title flow; its validator change conflicted with a baseline unit assertion; S08 replaced the raw date UI and had a title-less POST example plus a volatile far-future example.",
+      "disposition": "contracts_reconciled_with_enumerated_migrations",
+      "policy_choice": "S01: single unified title message ('title must be 1-120 characters.' for every title failure); enumerated, exhaustive test migrations (verbatim-title api test, non-empty contains assertion, unit whitespace assertion, e2e empty-title test replaced by disabled-button + server-side api coverage). S08: pure helper takes day strings; UTC-flip documented as day-string derivation; POST examples given valid titles; testing policy makes all date assertions time-robust (permanently-past seeded item + relative-date probes computed from real today; optional pinned page.clock with server+page parity).",
+      "changes": [
+        "contracts/S01-input-validation-hardening.md — full rewrite: unified message, enumerated migrations, UTF-16/trim boundaries disclosed",
+        "contracts/S08-due-date-semantics.md — full rewrite: helper interface, label grammar (1 day / N days), valid POST bodies, non-volatile testing policy, storage-unchanged guarantee",
+        "contracts/README.md + docs/faq-draft.md Q11 — the authorizing rule for these migrations"
+      ],
+      "evidence": "Baseline unit test (isValidTitle whitespace-only passes) and e2e empty-title flow confirmed still-present and unchanged in baseline; migrations authorized for the task, not applied now (premature implementation forbidden).",
+      "remaining_limitations": ["Migration equivalence is enforced by the contract text and implementer recording; it can only be verified when the task is implemented."]
+    },
+    {
+      "id": "S2",
+      "finding_summary": "S02 said archived items are both excluded from and included in filter=archived; S03 promised no-repeats while encoding only an (updatedAt,id) cursor, with no stated clock limitation and ambiguous data-page semantics.",
+      "disposition": "wording_fixed_consistency_model_published",
+      "policy_choice": "S02: archived items are excluded from the default/active list; filter=archived shows archived only; filter=all both; unknown filter value → 400 (same explicit-parameter policy as C2); archive/restore touch only archived_at (version/updated_at unchanged). S03: published realizable model — keyset cursor, no-repeats-within-a-walk guaranteed under monotonic updated_at (backward server clock explicitly outside the model), live-keyset skip tolerance (mid-walk updates skip items until a fresh walk; new items don't appear mid-walk), no snapshot/seen-ID promises; data-page = pages-loaded-so-far counter.",
+      "changes": [
+        "contracts/S02-archive-restore.md — filter wording, restore-conflict message, untouched-ordering-keys rule, new acceptance rows",
+        "contracts/S03-stable-cursor-pagination.md — consistency model section, corrected walk-stability example (wi_108), cursor validation rules, accurate compatibility note (no current baseline test breaks; seeded workspaces < 20 items), explicit not-promised list"
+      ],
+      "evidence": "Model check: ordinary PATCH only moves updated_at forward (server clock), so a served item can leave the remaining walk but never reappear mid-walk without a backward clock step; walk example recomputed against seed order.",
+      "remaining_limitations": ["Snapshot semantics are explicitly NOT promised; evaluators must test the published model only."]
+    },
+    {
+      "id": "S3",
+      "finding_summary": "S05's example listed an incorrect created_at order, omitted workspaceId from the exact export shape despite requiring every column once, and compared JSON.parse(export) to raw snake_case rows; C2 had the wrong title-first example.",
+      "disposition": "export_contract_corrected",
+      "policy_choice": "Publish the correct created_at ASC id order (wi_101, wi_108, wi_102, wi_107, wi_104, wi_105, wi_103, wi_106 with timestamps); exact field order includes workspaceId; equality defined after the documented snake_case→camelCase mapping.",
+      "changes": [
+        "contracts/S05-export-fidelity.md — corrected order + timestamps, complete field list incl. workspaceId, mapping-based equality rule, garbled example text removed",
+        "contracts/C2-item-list-sort-toggle.md — title example fixed (same finding)"
+      ],
+      "evidence": "Order derived from pinned seed created_at values (09:10 wi_101 … 11:30 wi_106 on 2026-11-01) and cross-checked against the review's seed computation.",
+      "remaining_limitations": []
+    },
+    {
+      "id": "S4",
+      "finding_summary": "S06 left 'unchanged title present in PATCH' vs 'actual rename' undefined while the UI sends all fields; S09 put a full object in fields.currentItem against the string-fields rule and lacked a single-item refetch endpoint.",
+      "disposition": "permission_and_payload_policies_defined",
+      "policy_choice": "S06: rename rule applies to actual changes only (patch.title !== stored title → 403 for non-creator/non-owner); unchanged title in the payload is member-level, which keeps the baseline save-all-fields UI working with a disabled Title field. canRename/canDelete are additive on list-response items only. S09: error.fields stays string-valued (currentVersion as string); currentItem is a typed additive error.currentItem field (the one documented exception); GET /api/items/:id added to the task's owned surface as the refetch path (non-member → 404).",
+      "changes": [
+        "contracts/S06-destructive-permissions.md — unchanged-title policy, cleaned requirement text (garbled draft lines removed), UI coherence, new acceptance rows",
+        "contracts/S09-optimistic-concurrency.md — typed payload definition, refetch endpoint, exact examples, acceptance rows"
+      ],
+      "evidence": "UI payload flow verified against src/components/Workboard.tsx valuesToPayload (sends all four fields); fields typing verified against shared/types.ts + src/api-client.ts (Record<string,string>).",
+      "remaining_limitations": ["error.currentItem is a disclosed envelope extension; reviewers of the task must check the exception stays singular."]
+    },
+    {
+      "id": "S5",
+      "finding_summary": "S10 examples had ada (not a member of Borealis) switching; 'dirty = any non-empty field' conflicted with non-empty defaults; <form title> undefined; S11 said three selected then announced 2 of 8, duplicates undefined; S04 said random server ids but 'pinned ids' and lacked error priority/oversize message.",
+      "disposition": "examples_and_rules_corrected",
+      "policy_choice": "S10: bruno for all dual-workspace examples; dirty = differs-from-pristine (create defaults / loaded item values, dueDate normalized); form titles are exactly 'New work item' or the item's current title. S11: consistent numbers (2 selected → indeterminate; select-all → all 8 → announcement '8 work items updated.'); duplicates rejected 400 'item <id> is duplicated.' (first offender); foreign-workspace ids use the same not-found message (anti-leak). S04: server-generated ids; array-level 400 messages exact (missing/not-array, empty, >200); entry-level 422 with lowest-index-wins priority and title→notes→status→dueDate field order.",
+      "changes": [
+        "contracts/S10-workspace-switch-guard.md — corrected actors, exact dirty definition + form titles, status-only dirty example, acceptance rows",
+        "contracts/S11-bulk-status-update.md — corrected example numbers, duplicate/foreign rules, disclosed boundaries",
+        "contracts/S04-transactional-import.md — error priority + exact array messages + server-id wording"
+      ],
+      "evidence": "Membership facts from seed.ts (ada: Apollo owner only; bruno dual; cleo Borealis member); Apollo item count 8 from seed.",
+      "remaining_limitations": []
+    },
+    {
+      "id": "S6",
+      "finding_summary": "S07 said 'with consent' but auto-prefilled and 'non-empty, changed' was ambiguous; S08's helper interface and label grammar were unclear; S12 heading mismatched its field set, limit errors and atomicity unspecified; S15 wrongly claimed the baseline was mouse-only.",
+      "disposition": "boundaries_and_grammars_defined",
+      "policy_choice": "S07: restore is automatic with the 'Draft restored.' banner as the disclosure (no dialog); draft trigger = values differ from pristine (cleared-to-empty is a valid draft state); debounce canceled on close-without-save; stale deleted-item drafts ignored/never crash; drafts survive switches+reloads within the tab (feature) while the live-form discard stays baseline (S10 composes separately, never combined). S08: helper signature (dueDate, today day-string); label grammar 'Due in 1 day (…)' singular / '<N> days' plural. S12: recorded fields exactly title/notes/status/dueDate in fixed order; PATCH+event in one transaction; limit 1..50 default 20 with exact 400 message. S15: baseline described as keyboard-operable (Tab/Enter) with no shortcuts — corrected without implying the feature exists.",
+      "changes": [
+        "contracts/S07-failure-safe-editing.md — rewrite of trigger/consent/stale/composability boundaries + cleared-field example",
+        "contracts/S08-due-date-semantics.md — interface/grammar sections",
+        "contracts/S12-item-activity-history.md — field set, atomicity, limit validation",
+        "contracts/S15-keyboard-quick-add-focus.md — corrected baseline description"
+      ],
+      "evidence": "ItemForm.tsx defaults + Workboard switch reset verified as the pristine/baseline reference points; ItemForm save-all-fields flow verified for S06/S07 composition statements.",
+      "remaining_limitations": ["S07↔S10 composition effects are deliberately undefined (independent increments on a fresh baseline)."]
+    },
+    {
+      "id": "A1",
+      "finding_summary": "Per-task reset was left as an open coordinator decision; overlapping task primitives needed advisories without combined-task acceptance assumptions.",
+      "disposition": "policy_settled_and_published",
+      "policy_choice": "Reset-to-baseline per task is the settled preparation-phase default (fresh tree + npm run db:reset on a disposable SQLite file); each contract is an independent single-baseline increment; combined-task behavior is undefined and must never be asserted by acceptance checks. Final corpus packaging remains a coordinator decision. Overlap advisories retained and expanded (C1/S14, S01/S08/S09, S07/S10, S02/S03, S06/S13, S04/S05, S11/S12, C2/C4/S15).",
+      "changes": [
+        "contracts/README.md — 'Execution model (settled at R1)' section + expanded advisories",
+        "docs/faq-draft.md Q18 — same policy; open-questions list updated (reset question moved to settled with coordinator caveat)"
+      ],
+      "evidence": "Every contract's boundaries now reference the reset policy; no acceptance row assumes another task's changes.",
+      "remaining_limitations": ["The coordinator still owns final corpus packaging; this is a preparation-phase default, not a qualification decision."]
+    },
+    {
+      "id": "D1",
+      "finding_summary": "Inventory lacked official Node/SQLite/browser-API sources and version/retrieval coverage; links targeted current docs without retrieval context; baseline README pointed to a wrong inventory path.",
+      "disposition": "inventory_expanded_and_paths_fixed",
+      "policy_choice": "Added a system_sources section: Node 24 docs (honest version-context: serves latest 24.x, runtime pinned 24.19.0), SQLite language + WAL docs (runtime 3.53.4 re-verified first-hand via sqlite_version()), browser API sources (MDN Clipboard/Web Storage/History.replaceState/KeyboardEvent) and WAI-ARIA APG — each with retrieval date (2026-11-07), version context, coverage statements, and explicit omission statements. License fields for documentation sources are null with an explicit not-verified note (no invented upstream license/version facts). Context archives remain explicitly NOT BUILT. Baseline README now points to ../docs/source-inventory.json.",
+      "changes": [
+        "docs/source-inventory.json — revision_note, runtime.sqlite + verification, system_sources (9 entries), coverage_statement, better-auth/playwright omission updates",
+        "baseline/README.md — corrected inventory path + retrieval-context wording"
+      ],
+      "evidence": "URL spot-checks (nodejs.org/docs/latest-v24.x/api/ and sqlite.org/lang.html fetched live 2026-11-07); sqlite_version() re-verified 3.53.4; inventory parses (python3 -m json.tool).",
+      "remaining_limitations": ["No version-pinned doc snapshots; no upstream content/license qualification; no Context archives."]
+    }
+  ],
+  "verification": {
+    "all_commands": [
+      {"command": "npm ci --no-audit --no-fund (baseline/)", "exit_code": 0, "notes": "fresh install from the committed lockfile; pins unchanged"},
+      {"command": "npm run typecheck", "exit_code": 0},
+      {"command": "npm run lint", "exit_code": 0},
+      {"command": "npm run test:unit", "exit_code": 0, "notes": "11/11"},
+      {"command": "npm run test:api", "exit_code": 0, "notes": "34/34 (33 existing + 1 new route-precedence test)"},
+      {"command": "CI=1 PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npm run test:e2e", "exit_code": 0, "notes": "18/18 (16 existing + 2 new switch regressions)"},
+      {"command": "npm run build", "exit_code": 0},
+      {"command": "CI=1 PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npm run check:full", "exit_code": 0, "notes": "typecheck+lint+build+unit+api+e2e, final clean run"},
+      {"command": "npx playwright install chromium --only-shell (private cache)", "exit_code": 0, "notes": "chromium_headless_shell-1254 + ffmpeg-1013 into /workspace/.cache/ms-playwright"},
+      {"command": "python3 -m json.tool docs/source-inventory.json", "exit_code": 0},
+      {"command": "tree-identity recomputation vs manifest (python)", "exit_code": 0, "notes": "68/68 files matched before edits; tree hash cd25e6e3…142 matches review"}
+    ],
+    "diagnostics": [
+      {"path": "diagnostics/error-format-probe.mts", "role": "B2 evidence: unknown-route precedence + Better Auth native error body (non-authoritative diagnostic, outside baseline/)"}
+    ]
+  },
+  "unresolved_questions": [
+    "The revised (R1) contracts have not been re-reviewed by any second session; self-review was explicitly not performed.",
+    "Better Auth internals beyond the verified paths remain undocumented (FAQ open question).",
+    "Scoring weights, corpus packaging, and qualification remain coordinator-owned.",
+    "Playwright's OS-fallback warning behavior may differ on other platforms.",
+    "S01's enumerated test migrations and every other contract-side acceptance detail are verified only when their tasks are implemented."
+  ],
+  "stop_point": "This session stopped before cross-reviewing or approving its own revision, per instructions."
+}

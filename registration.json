@@ -222,8 +222,21 @@
     "eligible_builders": [
       {
         "model": "z-ai/glm-5.3-flash",
-        "role": "initial fixture/contract/FAQ/source-inventory builder",
+        "role": "initial fixture/contracts/FAQ and repairs R1/R2; further artifacts require recorded appointment",
         "harness": "OpenCode -> LiteLLM -> OpenRouter",
+        "session_isolation_required": true
+      },
+      {
+        "model": "google/gemma-4-31b-it",
+        "role": "initial documentation corpus and cross-review; further artifacts require recorded appointment",
+        "harness": "OpenCode -> LiteLLM -> OpenRouter",
+        "session_isolation_required": true
+      },
+      {
+        "model": "openai/gpt-6.1-terra",
+        "role": "fixture repair R3, documentation corpus revision and broker construction; further artifacts require recorded appointment",
+        "harness": "OpenCode -> LiteLLM -> OpenRouter",
+        "reasoning_effort": "high",
         "session_isolation_required": true
       }
     ],
@@ -249,16 +262,23 @@
         "family": "OpenAI GPT",
         "harness": "Codex",
         "sha256_by_file": {
+          "setup/prompts/gemma-broker-cross-review.txt": "87bb59f69d4609d3a47733bec346e11e7e04d82fdc17a54265731c7eaeee3f8b",
           "setup/prompts/gemma-cross-review.txt": "95e5c22a0acaa8833100b79eb85f03027d771ccf018a41cac9a2f5d39aff7b64",
           "setup/prompts/gemma-docs-corpus-builder.txt": "d7c6f500a5f18c8f94fc872e2ee8f41045ba710b5ec11e1e2cf33654d8ea7797",
+          "setup/prompts/gemma-runtime-cross-review.txt": "97b8da81957c454d7b63831f04f3aa3220afe32b24e5554d99674ad906df5592",
           "setup/prompts/glm-docs-cross-review.txt": "0cfd9fdc0c966ed7ac67536b4bec6feb38f6b45fa89adf28a1b8ef9f06c87654",
+          "setup/prompts/glm-docs-r1-cross-review.txt": "f6f8043e1f543d075f01f9d719c0b5b239977801a2ff3e1d93910219b680cb87",
           "setup/prompts/glm-fixture-builder.txt": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0",
+          "setup/prompts/glm-fixture-r3-cross-review.txt": "b46ec3afc7116273616151a0c1cb7262cf5fd5b303985cb78011e2ca1e77ddc9",
           "setup/prompts/glm-fixture-repair-r1.txt": "c7e54088432ce3ea632c03006f5b6b0bb102ff99bbe1976ef66180c41a69f097",
           "setup/prompts/glm-fixture-repair-r2.txt": "89c1d05b64b45947dfb1c98817f3a9bcb693eb7ca4ef5250a49f24196ad2ac7e",
           "setup/prompts/glm-usage-cross-review.txt": "5e2562da2afbf194ce1920df9413eb6e0d467da6b4eb214a1ec23fdaf62d2f6e",
           "setup/prompts/terra-broker-construction.txt": "e3e48214bfa3e32767fe92b216d9bc68f69ab0cb04cd6e75a772c5f9da385330",
+          "setup/prompts/terra-docs-repair-r1.txt": "50b02616ee1c7e38ab3973d7052a5b08b3183047675ebd4249a841751b2d11cd",
           "setup/prompts/terra-fixture-cross-review.txt": "ea6a8c7aa1272899fa5f845045a5e8ab4830bc7e644778ecd208a9baf83d3c27",
           "setup/prompts/terra-fixture-r1-cross-review.txt": "604a1e32880b7b9bdb3e2c7121c5b9f978a6a0674511ae4f2fb960ce6f17f3a2",
+          "setup/prompts/terra-fixture-r2-cross-review.txt": "411d13400620163c2b54960ef328a05cf8cc2eec22c6697a224416055758d4d5",
+          "setup/prompts/terra-fixture-repair-r3.txt": "fd92064ae367eba9d9e1f7cd1c610552db8b4621662f15ad45b580d196e794cf",
           "setup/prompts/terra-preparation-review.txt": "1a79756409c7db9f5d48fd62dd521591450189f01f1f97f29003ccc97d6462fb"
         },
         "independent_review_status": "first protocol prompts reviewed by Terra; later preparation repair/review prompts retain coordinator attribution and are not independent-family approved"
@@ -284,6 +304,20 @@
         "previous_endpoint": "fixture-draft/",
         "status": "unqualified_preparation_revision",
         "review": "setup/reviews/terra-fixture-r1-cross-review/FIXTURE_R1_CROSS_REVIEW.json"
+      },
+      {
+        "artifact": "fixture-revision-r2/",
+        "author_model": "z-ai/glm-5.3-flash",
+        "tree_manifest": "setup/glm-repair-r2-endpoint.json",
+        "review": "setup/reviews/terra-fixture-r2-cross-review/FIXTURE_R2_CROSS_REVIEW.json",
+        "status": "changes_required; preserved first endpoint"
+      },
+      {
+        "artifact": "fixture-revision-r3/",
+        "author_model": "openai/gpt-6.1-terra",
+        "tree_manifest": "setup/terra-repair-r3-endpoint.json",
+        "reviewer_model": "z-ai/glm-5.3-flash",
+        "status": "fresh review running; unqualified"
       }
     ],
     "family_decisions": {
@@ -349,7 +383,11 @@
       "setup/reviews/gemma-cross-review/",
       "setup/reviews/terra-fixture-cross-review/",
       "setup/reviews/glm-usage-cross-review/",
-      "setup/reviews/terra-fixture-r1-cross-review/"
+      "setup/reviews/terra-fixture-r1-cross-review/",
+      "setup/reviews/gemma-broker-cross-review/",
+      "setup/reviews/glm-docs-cross-review/",
+      "setup/reviews/terra-fixture-r2-cross-review/",
+      "setup/reviews/gemma-runtime-cross-review/"
     ]
   },
   "checks": {
@@ -370,7 +408,7 @@
   "randomized_schedule_sha256": null,
   "disposable_database_execution_authorized": true,
   "primary_endpoint": "first complete-agent/supervisor final return, uniform deadline, or recorded external interruption",
-  "primary_acceptance_rule": "Timely final submission passes all applicable frozen independent machine behavior, UI/API/database, ownership, regression, build, typecheck, lint, scope and integrity checks; human review is an optional extension",
+  "primary_acceptance_rule": "Timely final submission passes all applicable frozen separately executed machine behavior, UI/API/database, ownership, regression, build, typecheck, lint, scope and integrity checks; human review is an optional extension",
   "post_return_repair_extension_registered": false,
   "public_report": "Observed results and hypothetical pricing remain separate",
   "registration_approved_at_utc": null,
@@ -442,7 +480,7 @@
       "model": "google/gemma-4-31b-it",
       "session": "gemma-docs-corpus-builder",
       "provider_tag": "crusoe/bf16",
-      "status": "first_draft_returned_not_qualified",
+      "status": "first_draft_reviewed_changes_required",
       "independence_claim": false
     },
     "review_scope": [
@@ -459,13 +497,25 @@
     "cross_reviewer": {
       "model": "z-ai/glm-5.3-flash",
       "session": "glm-docs-cross-review",
-      "status": "running_not_signoff"
+      "status": "returned_changes_required"
     },
-    "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence"
+    "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence",
+    "revision_curator": {
+      "model": "openai/gpt-6.1-terra",
+      "session": "terra-docs-repair-r1",
+      "provider_tag": "azure",
+      "reasoning_effort": "high",
+      "status": "returned_pending_GLM_cross_review"
+    },
+    "revision_cross_reviewer": {
+      "model": "z-ai/glm-5.3-flash",
+      "session": "glm-docs-r1-cross-review",
+      "status": "running_not_signoff"
+    }
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "status": "R1_fresh_review_found_changes_required_GLM_R2_repair_running",
+    "status": "Terra_R3_repair_returned_fresh_GLM_review_running",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
@@ -559,8 +609,8 @@
     "cross_review_signoff": null,
     "first_candidate_manifest": "setup/glm-builder-first-endpoint.json",
     "candidate_source_path": "fixture-draft/",
-    "current_candidate_manifest": "setup/glm-repair-r1-endpoint.json",
-    "current_candidate_path": "fixture-revision-r1/"
+    "current_candidate_manifest": "setup/terra-repair-r3-endpoint.json",
+    "current_candidate_path": "fixture-revision-r3/"
   },
   "study_kind": "feasibility_and_estimation_only",
   "canonical_configuration": true,
@@ -632,7 +682,7 @@
     "human_recruitment_required_for_core": false,
     "allowed": "core setup, calibration and scoring once non-human-review registration gates pass",
     "human_effort_or_merge_readiness_claims_without_extension": false,
-    "fixture_family_and_independent_corpus_qualification_remain": true
+    "fixture_and_corpus_different_model_cross_review_remain": true
   },
   "extensions": {
     "human_review": {
@@ -680,12 +730,13 @@
     }
   },
   "acceptance_reporting": {
-    "core_label": "machine-accepted by frozen independent suite",
+    "core_label": "machine-accepted by frozen separately executed suite",
     "human_merge_readiness": "unverified unless optional review extension performed",
     "human_review_effort": "not measured unless optional review extension performed",
     "review_findings": "published separately against original frozen endpoints; reproduced evaluator defects trigger the uniform correction protocol",
     "cost_per_acceptance_denominator": "core machine-accepted submissions",
-    "no_implicit_production_approval": true
+    "no_implicit_production_approval": true,
+    "independence_scope": "evaluator execution and subject access are separate; fixture/check authorship is not independent of the evaluated model families"
   },
   "provider_qualification": {
     "precision_choice": "Prefer tested ZDR BF16 Gemma candidate over FP4 before calibration; no model ID substitution",
@@ -759,7 +810,7 @@
       8
     ],
     "worst_case_subject_minutes_per_run": 120,
-    "excludes": "fixture/reference/negative-control/corpus construction, independent qualification, outages, provider requalification and optional human review",
+    "excludes": "fixture/reference/negative-control/corpus construction, fixture/corpus cross-review and qualification, outages, provider requalification and optional human review",
     "reforecast": "after first technical block and calibration using actual endpoint runtimes, timeout rates and setup/evaluation overhead; preserve forecast history; no outcome-based sample changes",
     "report_generator": "scripts/estimate_collection.py"
   },

@@ -1,0 +1,111 @@
+{
+  "kind": "mechanical_container_signal_diagnosis_not_model_evaluation",
+  "model_calls": 0,
+  "image_id": "9f5eb85cf09bb66ea8ea5d916db2c3bbda5559f5f0daf1daec89d744a3d0c1d6",
+  "profile_sha256": "eeedf4158c2754ade242f05e0c74cea56e863aa3b93cbaf507f8b7e508cac037",
+  "variants": [
+    {
+      "variant": "runtime_default",
+      "dispatch_utc": "2026-11-07T05:01:14.185045+00:00",
+      "elapsed_seconds": 1.2925753610034008,
+      "exit_code": 0,
+      "result": {
+        "killSucceeded": false,
+        "error": "EACCES",
+        "childExitCode": 0,
+        "childExitSignal": null,
+        "uid": 1000,
+        "capEff": "0000000000000000",
+        "noNewPrivs": "1",
+        "seccomp": "2",
+        "externalInterfaces": []
+      },
+      "stderr": ""
+    },
+    {
+      "variant": "add_KILL_diagnostic",
+      "dispatch_utc": "2026-11-07T05:01:15.477642+00:00",
+      "elapsed_seconds": 1.3394775880151428,
+      "exit_code": 0,
+      "result": {
+        "killSucceeded": false,
+        "error": "EACCES",
+        "childExitCode": 0,
+        "childExitSignal": null,
+        "uid": 1000,
+        "capEff": "0000000000000020",
+        "noNewPrivs": "1",
+        "seccomp": "2",
+        "externalInterfaces": []
+      },
+      "stderr": ""
+    },
+    {
+      "variant": "unconfined_seccomp_diagnostic",
+      "dispatch_utc": "2026-11-07T05:01:16.817140+00:00",
+      "elapsed_seconds": 1.3449065430031624,
+      "exit_code": 0,
+      "result": {
+        "killSucceeded": false,
+        "error": "EACCES",
+        "childExitCode": 0,
+        "childExitSignal": null,
+        "uid": 1000,
+        "capEff": "0000000000000000",
+        "noNewPrivs": "1",
+        "seccomp": "0",
+        "externalInterfaces": []
+      },
+      "stderr": ""
+    },
+    {
+      "variant": "unconfined_apparmor_diagnostic",
+      "dispatch_utc": "2026-11-07T05:01:18.162064+00:00",
+      "elapsed_seconds": 0.43872850498883054,
+      "exit_code": 0,
+      "result": {
+        "killSucceeded": true,
+        "error": null,
+        "childExitCode": null,
+        "childExitSignal": "SIGTERM",
+        "uid": 1000,
+        "capEff": "0000000000000000",
+        "noNewPrivs": "1",
+        "seccomp": "2",
+        "externalInterfaces": []
+      },
+      "stderr": ""
+    },
+    {
+      "variant": "study_scoped_profile",
+      "dispatch_utc": "2026-11-07T05:01:18.600812+00:00",
+      "elapsed_seconds": 0.4343387219996657,
+      "exit_code": 0,
+      "result": {
+        "killSucceeded": true,
+        "error": null,
+        "childExitCode": null,
+        "childExitSignal": "SIGTERM",
+        "uid": 1000,
+        "capEff": "0000000000000000",
+        "noNewPrivs": "1",
+        "seccomp": "2",
+        "externalInterfaces": []
+      },
+      "stderr": ""
+    }
+  ],
+  "checks": {
+    "default_failure_reproduced": true,
+    "KILL_not_a_fix": true,
+    "seccomp_not_a_fix": true,
+    "apparmor_control_succeeds": true,
+    "scoped_profile_succeeds": true,
+    "candidate_retains_zero_caps_nnp_seccomp_and_network_none": true
+  },
+  "all_passed": true,
+  "qualification_limits": [
+    "profile source requires different-model review",
+    "not full role/isolation/endpoint-race qualification"
+  ]
+}

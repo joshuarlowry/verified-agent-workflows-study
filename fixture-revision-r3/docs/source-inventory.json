@@ -1,0 +1,286 @@
+{
+  "name": "workboard-lab-source-inventory",
+  "prepared_by": "z-ai/glm-5.3-flash fixture builder (preparation phase)",
+  "revised_by": "GLM repair sessions R1 and R2 (see REPAIR_PROVENANCE_R1.md / REPAIR_PROVENANCE_R2.md)",
+  "date": "2026-11-07",
+  "revision_note": "R1 adds the system/platform sources (Node, SQLite, browser APIs) that the fixture actually relies on, with retrieval context and explicit coverage/omission statements. R2 corrects the @playwright/test host-OS record (the host OS was never verified; 'Ubuntu 24.04' is Playwright's fallback label, not a confirmed reference OS) and documents the PLAYWRIGHT_BROWSERS_PATH install/run consistency requirement. It still lists official upstream documentation only and does NOT claim Context archives, upstream content qualification, or version-pinned documentation snapshots.",
+  "runtime": {
+    "node": "24.19.0",
+    "verified": "node -v == v24.19.0 in the build environment; engines field pins 24.19.0",
+    "sqlite": "3.53.4 (bundled by better-sqlite3 13.0.3)",
+    "sqlite_verified": "SELECT sqlite_version() on a fresh better-sqlite3 connection returned 3.53.4 in this environment (re-verified in R1)"
+  },
+  "system_sources": [
+    {
+      "name": "Node.js runtime documentation (v24 line)",
+      "url": "https://nodejs.org/docs/latest-v24.x/api/",
+      "version_context": "Runtime is Node 24.19.0 (engines-pinned). The URL serves the latest 24.x docs (currently 24.22.2 at retrieval), not a 24.19.0-pinned snapshot; minor-version drift between docs and runtime is possible.",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "Upstream license terms for the documentation pages were not verified in this workspace; do not cite them as qualified.",
+      "relevant_topics": ["node:fs (disposable DB files, dist/index.html serving)", "node:path", "Web Crypto crypto.randomUUID for prefixed IDs", "process env/argv for WORKBOARD_* options", "fetch (client) via global fetch"],
+      "coverage": "Topics spot-checked against baseline usage (fs/path/env/crypto.randomUUID); not exhaustively verified against the runtime version.",
+      "omissions": ["No version-pinned 24.19.0 snapshot was captured (docs URL serves the moving 24.x latest).", "Undici/fetch internals are documented upstream, not verified here."]
+    },
+    {
+      "name": "Node.js release/engines context",
+      "url": "https://nodejs.org/en/about/previous-releases",
+      "version_context": "Used to place Node 24 on the release line; retrieval context only.",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "Not verified upstream; pointer only.",
+      "relevant_topics": ["Node 24 release line / LTS status context"],
+      "coverage": "Pointer only; the pinned version comes from engines + the verified runtime, not from this page.",
+      "omissions": ["Exact LTS schedule dates were not verified here."]
+    },
+    {
+      "name": "SQLite SQL language reference",
+      "url": "https://www.sqlite.org/lang.html",
+      "version_context": "SQLite.org current docs. The runtime engine (3.53.4, bundled by better-sqlite3) is newer than the page's visible last-update marker; the language surface used (CREATE TABLE/INDEX, ALTER TABLE ADD COLUMN, transactions, PRAGMA, JSON1 functions) is stable across these versions.",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "SQLite itself is public domain (upstream statement not re-verified here); documentation-site terms were not qualified.",
+      "relevant_topics": ["CREATE TABLE / CHECK constraints (status/role enums)", "ALTER TABLE ADD COLUMN (S02 migration path)", "BEGIN/COMMIT transaction semantics", "PRAGMA statements (journal_mode=WAL, foreign_keys, busy_timeout)", "date and time functions (S08 background)"],
+      "coverage": "Statement-level topics listed are the ones the baseline (and named tasks) touch; behavior was exercised through better-sqlite3, not by reading the full upstream text.",
+      "omissions": ["No version-pinned 3.53.4 documentation snapshot.", "WAL internals read only via the WAL page pointer, not qualified."]
+    },
+    {
+      "name": "SQLite WAL mode documentation",
+      "url": "https://www.sqlite.org/wal.html",
+      "version_context": "SQLite.org current docs; the baseline sets journal_mode=WAL on every connection.",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "Not verified upstream; pointer only.",
+      "relevant_topics": ["WAL persistence between connections (the second-connection test strategy relies on it)", "WAL sidecar files (-wal/-shm) removed by scripts/db-reset helpers"],
+      "coverage": "Behavioral claims about WAL persistence are backed by the passing second-connection API tests in this workspace, not by upstream text review.",
+      "omissions": ["Checkpoint/synchronization details not verified."]
+    },
+    {
+      "name": "MDN Clipboard API — writeText",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText",
+      "version_context": "Living Standard reference (no version pin). Relevant to C3 (share-link clipboard writes).",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "MDN content licensing not verified here.",
+      "relevant_topics": ["navigator.clipboard.writeText", "permission/failure modes (C3's disclosed clipboard-failure boundary)"],
+      "coverage": "Pointer for the API surface; the failure path is exercised in browsers only via the task's e2e, not verified here.",
+      "omissions": ["Per-browser permission behavior not verified."]
+    },
+    {
+      "name": "MDN Web Storage API (localStorage / sessionStorage)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API",
+      "version_context": "Living Standard reference (no version pin). Relevant to C4 (localStorage key) and S07 (sessionStorage drafts).",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "MDN content licensing not verified here.",
+      "relevant_topics": ["localStorage semantics (survives sessions; C4's key)", "sessionStorage semantics (per-tab; S07's draft store)", "quota/errors and JSON serialization caveats"],
+      "coverage": "Pointer for the API surface; behaviors used are exercised by the tasks' own tests.",
+      "omissions": ["Storage-event and cross-tab behavior not verified here."]
+    },
+    {
+      "name": "MDN History API — replaceState",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState",
+      "version_context": "Living Standard reference (no version pin). Relevant to C3 (query-string cleanup after deep-link apply).",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "MDN content licensing not verified here.",
+      "relevant_topics": ["history.replaceState for removing the share query string without navigation"],
+      "coverage": "Pointer for the API surface.",
+      "omissions": ["Cross-browser address-bar nuances not verified."]
+    },
+    {
+      "name": "MDN KeyboardEvent + key values",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent",
+      "version_context": "Living Standard reference (no version pin). Relevant to S15 (quick-add `n`, Ctrl+Enter, Escape).",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "MDN content licensing not verified here.",
+      "relevant_topics": ["key vs code, modifier handling (S15's modifier guards)", "event target guards for editable contexts"],
+      "coverage": "Pointer for the API surface; the shortcut logic is specified in S15 and verified by its own e2e.",
+      "omissions": ["Browser IME/keyboard-layout edge cases not verified."]
+    },
+    {
+      "name": "W3C WAI-ARIA Authoring Practices Guide (APG)",
+      "url": "https://www.w3.org/WAI/ARIA/apg/",
+      "version_context": "Current W3C guidance (no version pin). Baseline UI semantics (roles/labels/live regions) and task UIs reference it as practice guidance, not as a conformance claim.",
+      "retrieved": "2026-11-07",
+      "license": null,
+      "license_note": "W3C document-use terms not verified here.",
+      "relevant_topics": ["live-region announcement patterns (role=status/alert)", "disclosure/focus-management patterns (S15, S10)", "label/name-from-content used by the semantic tests"],
+      "coverage": "Practice guidance pointer; conformance of the baseline UI is NOT claimed — passing Playwright role/label queries is the only verified accessibility evidence.",
+      "omissions": ["No screen-reader conformance testing was performed or is claimed."]
+    }
+  ],
+  "packages": [
+    {
+      "name": "vite",
+      "installed_version": "8.3.6",
+      "pinned": "8.3.6 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://vite.dev/guide/",
+      "relevant_topics": ["dev server + proxy /api", "production build to dist/", "plugin-react integration"],
+      "doc_omissions": []
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "installed_version": "6.2.1",
+      "pinned": "6.2.1 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react",
+      "relevant_topics": ["React 19 fast refresh", "peer range vite ^8.0.0 verified"],
+      "doc_omissions": [
+        "Optional peers (oxc-transform-react, @rolldown/plugin-babel, babel-plugin-react-compiler) are not clearly documented as optional; npm install resolved cleanly without them."
+      ]
+    },
+    {
+      "name": "react / react-dom",
+      "installed_version": "19.3.1 / 19.3.1",
+      "pinned": "19.3.1 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://react.dev/reference/react",
+      "relevant_topics": ["createRoot", "StrictMode double-effect behavior", "controlled form state", "aria-* props"]
+    },
+    {
+      "name": "hono",
+      "installed_version": "4.13.16",
+      "pinned": "4.13.16 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://hono.dev/docs/",
+      "relevant_topics": ["Hono app factory", "app.request() test harness", "routing order & app.notFound", "context json/body helpers", "error mapping via app.onError"]
+    },
+    {
+      "name": "@hono/node-server",
+      "installed_version": "2.1.6",
+      "pinned": "2.1.6 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://hono.dev/docs/getting-started/nodejs",
+      "relevant_topics": ["serve({ fetch, port })", "serveStatic from '@hono/node-server/serve-static' for the built SPA"],
+      "doc_omissions": [
+        "serveStatic root is resolved relative to process.cwd(); the docs do not emphasize this, which matters because db:reset/e2e scripts assume the package root as cwd."
+      ]
+    },
+    {
+      "name": "typescript",
+      "installed_version": "5.9.3",
+      "pinned": "5.9.3 (candidate pin kept)",
+      "license": "Apache-2.0",
+      "official_docs": "https://www.typescriptlang.org/docs/",
+      "relevant_topics": ["strict + noUncheckedIndexedAccess", "verbatimModuleSyntax", "two-config split (DOM vs Node)"]
+    },
+    {
+      "name": "better-auth",
+      "installed_version": "1.7.18",
+      "pinned": "1.7.18 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://www.better-auth.com/docs",
+      "relevant_topics": [
+        "emailAndPassword enabled",
+        "passing a better-sqlite3 Database instance as `database`",
+        "auth.handler(c.req.raw) inside Hono",
+        "auth.api.getSession({ headers })",
+        "programmatic schema migration via better-auth/db/migration getMigrations(...).runMigrations()",
+        "server-side auth.api.* returning plain objects (not Response)",
+        "client: better-auth/react createAuthClient + useSession",
+        "trustedOrigins + CSRF origin checks on cookie POSTs"
+      ],
+      "doc_omissions": [
+        "1.7.18 does NOT auto-create its tables when given a database connection: first use throws SchemaMismatchError (SCHEMA_MISMATCH) telling you to run the CLI. The programmatic path (better-auth/db/migration -> getMigrations(auth.options) -> runMigrations()) is under-documented.",
+        "During first-time table creation runMigrations() logs a transient 'Database schema mismatch ... Missing tables' ERROR even though creation then succeeds; subsequent boots are clean. Not documented.",
+        "Server-side auth.api.signUpEmail returns the created user object directly, while the HTTP endpoint returns { token, user }; docs do not call this asymmetry out.",
+        "POST /api/auth/sign-out with a JSON content-type but empty body returns 400; docs do not mention that a body is expected.",
+        "Auth routes answer with Better Auth's native JSON error format (observed: wrong credentials -> 401 {\"message\":\"Invalid email or password\",\"code\":\"INVALID_EMAIL_OR_PASSWORD\"}), not the Workboard envelope; docs do not present a unified error taxonomy (re-verified in R1, recorded in baseline contract §5).",
+        "createAuthClient() origin inference: docs describe an explicit baseURL pattern; same-origin inference works but the default-host behavior is easy to misconfigure silently.",
+        "Docs present Kysely as the custom-database path; passing a better-sqlite3 instance directly also works in 1.7.18 (verified) but is thinly documented."
+      ]
+    },
+    {
+      "name": "better-sqlite3",
+      "installed_version": "13.0.3",
+      "pinned": "13.0.3 (candidate pin kept)",
+      "license": "MIT (bundled SQLite engine is public domain)",
+      "official_docs": "https://github.com/WiseLibs/better-sqlite3/blob/master/docs/api.md",
+      "relevant_topics": ["prepared statements", "transactions", "pragma journal_mode=WAL / foreign_keys", "SQLite 3.53.4 bundled (verified via sqlite_version())"],
+      "doc_omissions": []
+    },
+    {
+      "name": "@types/better-sqlite3",
+      "installed_version": "9.6.0",
+      "pinned": "9.6.0 (latest available; runtime is 13.0.3)",
+      "license": "MIT",
+      "official_docs": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/better-sqlite3",
+      "relevant_topics": ["Database/Statement/RunResult typings"],
+      "doc_omissions": [
+        "Types release lags the runtime major (9.6.0 vs 13.0.3); the used API surface type-checks cleanly under skipLibCheck, but this is a known type/runtime version gap."
+      ]
+    },
+    {
+      "name": "vitest",
+      "installed_version": "5.1.0",
+      "pinned": "5.1.0 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://vitest.dev/guide/",
+      "relevant_topics": ["vitest run (CI mode) for reliable exit codes", "pool: forks", "environment: node", "per-file timeout config"]
+    },
+    {
+      "name": "@playwright/test",
+      "installed_version": "1.65.0",
+      "pinned": "1.65.0 (candidate pin kept)",
+      "license": "Apache-2.0",
+      "official_docs": "https://playwright.dev/docs/intro",
+      "relevant_topics": ["webServer with env + health URL (reuseExistingServer: false in R1)", "getByRole/getByLabel semantic queries (substring vs exact)", "strict mode violations", "test.describe.serial", "chromium headless shell install (`npx playwright install chromium --only-shell`)", "PLAYWRIGHT_BROWSERS_PATH cache relocation must be set for install AND run", "route interception for delayed/aborted switch and delayed-action regressions (e2e/switch.spec.ts)"],
+      "doc_omissions": [
+        "Browsers are not installed by npm install; the headless shell must be installed once per environment (documented in baseline README + contract §2). A relocated cache (PLAYWRIGHT_BROWSERS_PATH) must be set for BOTH the install and every test run; a mismatch makes the run look in the default cache and exit 1 ('Executable doesn't exist').",
+        "The headless shell still needs chromium's shared system libraries (NSS, fontconfig, and related packages); docs point to `npx playwright install-deps chromium` for that, which was not exercised in the preparation sandbox.",
+        "Host-OS support: the preparation sandbox could not read /etc/os-release, and Playwright's own banner reported the host as unsupported and downloaded an Ubuntu 24.04 fallback build, after which the pinned tests passed. 'Ubuntu 24.04' is the fallback's label, not a verified host OS; the fixture docs do not claim any specific host OS."
+      ]
+    },
+    {
+      "name": "eslint",
+      "installed_version": "10.14.0",
+      "pinned": "10.14.0 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://eslint.org/docs/latest/",
+      "relevant_topics": ["flat config", "no-useless-assignment core rule", "exit codes"]
+    },
+    {
+      "name": "eslint toolchain",
+      "installed_version": "@eslint/js 10.0.1, typescript-eslint 8.72.1, eslint-plugin-react-hooks 7.1.1, globals 17.14.0",
+      "pinned": "exact",
+      "license": "MIT (all)",
+      "official_docs": "https://typescript-eslint.io/getting-started , https://www.npmjs.com/package/eslint-plugin-react-hooks",
+      "relevant_topics": ["tseslint.config helper", "react-hooks rules on src only", "ESLint 10 peer ranges verified (typescript-eslint ^10.0.0, react-hooks ^10.0.0)"]
+    },
+    {
+      "name": "tsx",
+      "installed_version": "4.23.15",
+      "pinned": "4.23.15 (candidate pin kept)",
+      "license": "MIT",
+      "official_docs": "https://tsx.is/",
+      "relevant_topics": ["running server/main.ts and scripts/db-reset.ts directly under Node 24"]
+    }
+  ],
+  "candidate_pin_verdict": {
+    "summary": "All 13 candidate pins exist on the npm registry and work together; zero version changes were required.",
+    "verified_by": [
+      "npm view <pkg>@<version> for each pin (all present)",
+      "peer ranges checked: @vitejs/plugin-react 6.2.1 -> vite ^8.0.0; vitest 5.1.0 -> vite ^6.4.0||^7||^8; typescript-eslint 8.72.1 -> eslint ^10.0.0; eslint-plugin-react-hooks 7.1.1 -> eslint ^10.0.0; @hono/node-server 2.1.6 -> hono ^4",
+      "npm install clean (206 packages), better-sqlite3 native build OK on Node 24.19.0",
+      "package-lock.json committed; all 21 tracked packages consistent between lockfile and node_modules",
+      "R1: lockfile install (npm ci) clean in the fresh workspace copy; pins unchanged"
+    ]
+  },
+  "context_archives": {
+    "status": "NOT BUILT and NOT independently reviewed",
+    "note": "This inventory lists official upstream documentation pointers with retrieval context only. No curated Context archives exist, none have been built or reviewed, and no upstream document content has been exhaustively verified; do not assume their content or availability."
+  },
+  "coverage_statement": {
+    "covered": "Direct dependency versions/links (npm registry + runtime-verified), Node 24 docs, SQLite language/WAL docs, and the browser-API/ARIA surfaces the calibration and scored tasks actually touch.",
+    "not_claimed": [
+      "No version-pinned documentation snapshots; links may drift from the pinned runtime/library versions.",
+      "No verification of upstream document availability over time, licenses of documentation pages, or full upstream content.",
+      "No Context archives, no curated corpus for any package, and no claim that the linked docs are complete for any task.",
+      "No browser/platform conformance beyond the chromium headless runs in this workspace."
+    ]
+  },
+  "out_of_scope_note": "No Next.js or Python stack is used by this fixture; no corpus for those was gathered."
+}

@@ -1,0 +1,9 @@
+ownership.spec.ts Borealis Ops 2 [22, 35]
+ownership.spec.ts Apollo Launch 1 [26]
+switch.spec.ts Borealis Ops 4 [46, 67, 108, 147]
+switch.spec.ts Apollo Launch 2 [125, 159]
+due assertion items.spec.ts 23 await expect(checklistCard.getByText("Due 2026-11-12")).toBeVisible();
+due assertion items.spec.ts 32 await expect(demoCard.getByText("No due date")).toBeVisible();
+due assertion items.spec.ts 47 await expect(card.getByText("Due 2026-11-25")).toBeVisible();
+inner manifest entries: 73 array hash: 51f627395573b4774b7e7c57894ca00780275b6337045b1d13c757b1ef59e99f declared: 51f627395573b4774b7e7c57894ca00780275b6337045b1d13c757b1ef59e99f
+inner entries differing from actual: []

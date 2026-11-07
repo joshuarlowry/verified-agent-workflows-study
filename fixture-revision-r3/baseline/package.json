@@ -1,0 +1,49 @@
+{
+  "name": "workboard-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Workboard Lab - small work-item tracker baseline fixture (React + Hono + SQLite + Better Auth)",
+  "engines": {
+    "node": "24.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "tsx server/main.ts",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
+    "lint": "eslint .",
+    "test:unit": "vitest run tests/unit",
+    "test:api": "vitest run tests/api",
+    "test:e2e": "playwright test",
+    "db:reset": "tsx scripts/db-reset.ts",
+    "e2e:serve": "npm run build && npm run db:reset && tsx server/main.ts",
+    "check": "npm run typecheck && npm run lint && npm run test:unit && npm run test:api",
+    "check:full": "npm run check && npm run test:e2e"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.6",
+    "better-auth": "1.7.18",
+    "better-sqlite3": "13.0.3",
+    "hono": "4.13.16",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.65.0",
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.14.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1",
+    "vite": "8.3.6",
+    "vitest": "5.1.0"
+  }
+}

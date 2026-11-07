@@ -5,7 +5,7 @@
 
 Can a cheaper worker with supervision approach standalone Terra's delivery quality at lower cost? The focal comparison is **Terra supervising Gemma versus Terra alone**. GLM supervision, direct agents and the public-selected Gemma retry portfolio remain secondary comparisons.
 
-Business targets are within 10 percentage points of Terra's completion rate at at most 50% of its standardized model cost per accepted result. These guide replication decisions; this sample cannot establish noninferiority or a purchasing recommendation. Core completion requires the frozen independent machine acceptance suite. Human patch review is an optional extension; merge readiness and review effort remain unmeasured until it runs.
+Business targets are within 10 percentage points of Terra's completion rate at at most 50% of its standardized model cost per accepted result. These guide replication decisions; this sample cannot establish noninferiority or a purchasing recommendation. Core completion requires the frozen separately executed machine acceptance suite. Human patch review is an optional extension; merge readiness and review effort remain unmeasured until it runs.
 
 ## Fixed design
 
@@ -36,7 +36,7 @@ Assumptions, not measurements: 205 runs, 120.25 aggregate subject hours plus 51.
 | All runs hit cutoff | 1 | 24.02 | 72.07 |
 | All runs hit cutoff | 2 | 12.01 | 36.04 |
 
-Excludes: fixture/reference/negative-control/corpus construction, independent qualification, outages, provider requalification and optional human review. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
+Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus cross-review and qualification, outages, provider requalification and optional human review. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
 ## Blocking dependencies
 

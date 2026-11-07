@@ -1,0 +1,16 @@
+[WebServer] 2026-11-07T05:12:44.472Z ERROR [Better Auth]: Database schema mismatch
+[WebServer] 
+[WebServer]   Missing tables
+[WebServer]     session, account, verification
+[WebServer] 
+[WebServer]   help: Run `npx auth migrate` to add the missing tables and columns.
+
+Running 2 tests using 1 worker
+
+Apollo PATCH actual status 200
+OBSERVED: Borealis edit form vanished, unsaved notes lost after Apollo response.
+  ✓  1 [chromium] › e2e/diagnostic-r2-scope.spec.ts:5:1 › held Apollo edit response closes Borealis edit (775ms)
+OBSERVED: returned-to-Apollo new draft vanished and stale response announced.
+  ✓  2 [chromium] › e2e/diagnostic-r2-scope.spec.ts:34:1 › held create after switch away and back closes later form (694ms)
+
+  2 passed (5.1s)

@@ -1,0 +1,12 @@
+{
+  "repo": "https://github.com/containers/common",
+  "commit": "a5ccdae846b629b5ceaefa6ffd5c6511409c3487",
+  "requested_v0_66_0_tag": "404; not claimed to match installed policy source exactly",
+  "source_template_sha256": "e44ed0d7e07c515f3bb106e3b91d4a06fe7c86e13d010b25b1bbb6b2146e3e4f",
+  "profile_name": "study2-agent-a5ccdae8-stack1",
+  "rendered_profile_sha256": "eeedf4158c2754ade242f05e0c74cea56e863aa3b93cbaf507f8b7e508cac037",
+  "change": "permit only the exact same container/crun stacked label in either ordering; no unconfined runtime used for study",
+  "parser_observed": "5.0.2",
+  "status": "candidate_requires_mechanical_and_different_model_review",
+  "initial_candidate": "one ordering failed; kernel observed crun//&study2 profile"
+}

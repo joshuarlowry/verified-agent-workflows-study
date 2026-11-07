@@ -1,0 +1,16 @@
+test_budget_stop_and_freeze_failure (test_broker.BrokerTests.test_budget_stop_and_freeze_failure) ... ok
+test_cli (test_broker.BrokerTests.test_cli) ... ok
+test_invalid_and_override (test_broker.BrokerTests.test_invalid_and_override) ... ok
+test_output_limit (test_broker.BrokerTests.test_output_limit) ... ok
+test_overlap_cancel_tree (test_broker.BrokerTests.test_overlap_cancel_tree) ... ok
+test_parent_native_final_and_freeze (test_broker.BrokerTests.test_parent_native_final_and_freeze) ... ok
+test_partial_and_private_stderr (test_broker.BrokerTests.test_partial_and_private_stderr) ... ok
+test_public_response_wire_bound (test_broker.BrokerTests.test_public_response_wire_bound) ... ok
+test_success_idempotency_continuation (test_broker.BrokerTests.test_success_idempotency_continuation) ... ok
+test_absolute_deadline_no_reset_and_admission_race (test_broker.DeadlineTests.test_absolute_deadline_no_reset_and_admission_race) ... ok
+test_stop_call_race (test_broker.DeadlineTests.test_stop_call_race) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.945s
+
+OK

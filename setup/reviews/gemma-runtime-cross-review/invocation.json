@@ -1,0 +1,44 @@
+{
+  "run_id": "gemma-runtime-cross-review",
+  "requested_model": "google/gemma-4-31b-it",
+  "expected_provider_tag": "crusoe/bf16",
+  "reasoning_effort_configured": null,
+  "generation_crosschecks_first_last": [
+    {
+      "model": "google/gemma-4-31b-it-20260402",
+      "provider_name": "Crusoe",
+      "total_cost": 0.00064894,
+      "native_tokens_prompt": 4601,
+      "native_tokens_completion": 12,
+      "native_tokens_reasoning": 0
+    },
+    {
+      "model": "google/gemma-4-31b-it-20260402",
+      "provider_name": "Crusoe",
+      "total_cost": 0.00259074,
+      "native_tokens_prompt": 17271,
+      "native_tokens_completion": 432,
+      "native_tokens_reasoning": 0
+    }
+  ],
+  "dispatch_utc": "2026-11-07T05:08:42.518894+00:00",
+  "elapsed_seconds": 65.8882530409901,
+  "exit_code": 0,
+  "native_steps": 16,
+  "provider_usage_calls": 16,
+  "native_session_ids": [
+    "ses_e4b974b70ffecpt0ivQ5YS02j7"
+  ],
+  "reported_model_cost_usd": 0.02345448,
+  "raw_usage_prompt_tokens_inclusive_cache": 161312,
+  "raw_usage_completion_tokens_do_not_add_reasoning": 2177,
+  "prompt_sha256": "97b8da81957c454d7b63831f04f3aa3220afe32b24e5554d99674ad906df5592",
+  "raw_events_sha256": "80b4e9026490934ee3dfc8dd2808203232bf7e13187b0dc8102f66c13e8aec9d",
+  "observed_tool_call_counts": {
+    "glob": 1,
+    "read": 10,
+    "shell": 2,
+    "write": 2
+  },
+  "evidence_scope": "preparation only; raw observed usage deduplicated by response id, native counters are cross-checks; first/last generation resolution only, failed uncaptured usage not inferred; no full capture qualification"
+}

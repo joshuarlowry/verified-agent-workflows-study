@@ -1,0 +1,30 @@
+{
+  "model_calls": 0,
+  "kind": "configuration_schema_discovery_not_subject_run",
+  "variants": [
+    {
+      "scope": "project",
+      "shape": "servers",
+      "exit_code": 0,
+      "stdout": "No MCP servers configured\n",
+      "stderr": "",
+      "elapsed_seconds": 0.7642412740096916
+    },
+    {
+      "scope": "project",
+      "shape": "direct",
+      "exit_code": 0,
+      "stdout": "No MCP servers configured\n",
+      "stderr": "",
+      "elapsed_seconds": 0.7756922859989572
+    },
+    {
+      "scope": "global",
+      "shape": "direct",
+      "exit_code": 0,
+      "stdout": "No MCP servers configured\n",
+      "stderr": "",
+      "elapsed_seconds": 0.8105355209845584
+    }
+  ]
+}

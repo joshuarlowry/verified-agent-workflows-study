@@ -1,0 +1,120 @@
+
+> workboard-lab@0.1.0 check:full
+> npm run check && npm run test:e2e
+
+
+> workboard-lab@0.1.0 check
+> npm run typecheck && npm run lint && npm run test:unit && npm run test:api
+
+
+> workboard-lab@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json
+
+
+> workboard-lab@0.1.0 lint
+> eslint .
+
+
+> workboard-lab@0.1.0 test:unit
+> vitest run tests/unit
+
+
+ RUN  v5.1.0 /workspace/diagnostics/scratch-baseline
+
+ ✓ tests/unit/ordering.test.ts (3 tests) 6ms
+ ✓ tests/unit/domain.test.ts (5 tests) 7ms
+ ✓ tests/unit/ids.test.ts (3 tests) 15ms
+
+ Test Files  3 passed (3)
+      Tests  11 passed (11)
+   Start at  05:11:42
+   Duration  246ms (transform 60%, import 19%, tests 13%, worker 8%)
+
+
+> workboard-lab@0.1.0 test:api
+> vitest run tests/api
+
+
+ RUN  v5.1.0 /workspace/diagnostics/scratch-baseline
+
+stderr | tests/api/seed.test.ts
+2026-11-07T05:11:43.640Z ERROR [Better Auth]: Database schema mismatch
+
+  Missing tables
+    session, account, verification
+
+  help: Run `npx auth migrate` to add the missing tables and columns.
+
+stderr | tests/api/auth.test.ts
+2026-11-07T05:11:43.640Z ERROR [Better Auth]: Database schema mismatch
+
+  Missing tables
+    session, account, verification
+
+  help: Run `npx auth migrate` to add the missing tables and columns.
+
+stderr | tests/api/workspaces.test.ts
+2026-11-07T05:11:43.640Z ERROR [Better Auth]: Database schema mismatch
+
+  Missing tables
+    session, account, verification
+
+  help: Run `npx auth migrate` to add the missing tables and columns.
+
+stderr | tests/api/items.test.ts
+2026-11-07T05:11:43.643Z ERROR [Better Auth]: Database schema mismatch
+
+  Missing tables
+    session, account, verification
+
+  help: Run `npx auth migrate` to add the missing tables and columns.
+
+stderr | tests/api/auth.test.ts > sign-up and sign-in over HTTP > rejects a wrong password with an error status
+2026-11-07T05:11:44.013Z WARN [Better Auth]: Invalid password
+
+ ✓ tests/api/items.test.ts (14 tests) 630ms
+ ✓ tests/api/workspaces.test.ts (7 tests) 632ms
+ ✓ tests/api/seed.test.ts (5 tests) 672ms
+ ✓ tests/api/auth.test.ts (10 tests) 847ms
+
+ Test Files  4 passed (4)
+      Tests  36 passed (36)
+   Start at  05:11:42
+   Duration  1.58s (tests 54%, import 38%, transform 7%, worker 1%)
+
+
+> workboard-lab@0.1.0 test:e2e
+> playwright test
+
+[WebServer] 2026-11-07T05:11:46.848Z ERROR [Better Auth]: Database schema mismatch
+[WebServer] 
+[WebServer]   Missing tables
+[WebServer]     session, account, verification
+[WebServer] 
+[WebServer]   help: Run `npx auth migrate` to add the missing tables and columns.
+
+Running 20 tests using 1 worker
+
+  ✓   1 [chromium] › e2e/auth.spec.ts:14:3 › authentication › shows a labeled sign-in form with semantic controls (249ms)
+[WebServer] 2026-11-07T05:11:49.706Z WARN [Better Auth]: Invalid password
+  ✓   2 [chromium] › e2e/auth.spec.ts:22:3 › authentication › a wrong password surfaces an alert, not a navigation (444ms)
+  ✓   3 [chromium] › e2e/auth.spec.ts:31:3 › authentication › seeded ada signs in and sees exactly her workspace with the owner role (447ms)
+  ✓   4 [chromium] › e2e/auth.spec.ts:39:3 › authentication › seeded cleo only sees the workspace she belongs to (461ms)
+  ✓   5 [chromium] › e2e/auth.spec.ts:46:3 › authentication › seeded bruno sees both workspaces (member of Apollo, owner of Borealis) (471ms)
+  ✓   6 [chromium] › e2e/auth.spec.ts:54:3 › authentication › sign out returns to the sign-in screen and the session is really gone (593ms)
+  ✓   7 [chromium] › e2e/auth.spec.ts:62:3 › authentication › sign-up creates a fresh account whose first workspace flow works (636ms)
+  ✓   8 [chromium] › e2e/items.spec.ts:9:3 › work item CRUD through the real UI + API + database › lists seeded items with semantic status labels and due dates (499ms)
+  ✓   9 [chromium] › e2e/items.spec.ts:35:3 › work item CRUD through the real UI + API + database › creating an item persists it across a full page reload (755ms)
+  ✓  10 [chromium] › e2e/items.spec.ts:57:3 › work item CRUD through the real UI + API + database › editing an item updates the stored data (844ms)
+  ✓  11 [chromium] › e2e/items.spec.ts:82:3 › work item CRUD through the real UI + API + database › deleting requires an explicit confirm step and then removes the item (747ms)
+  ✓  12 [chromium] › e2e/items.spec.ts:103:3 › work item CRUD through the real UI + API + database › submitting an empty title surfaces the baseline validation message (550ms)
+  ✓  13 [chromium] › e2e/items.spec.ts:112:3 › work item CRUD through the real UI + API + database › cancel closes the new-item form without creating anything (597ms)
+  ✓  14 [chromium] › e2e/ownership.spec.ts:5:3 › workspace ownership and visibility in the UI › a non-member never sees another workspace's items (458ms)
+  ✓  15 [chromium] › e2e/ownership.spec.ts:14:3 › workspace ownership and visibility in the UI › a member of two workspaces can switch and sees the right items (505ms)
+  ✓  16 [chromium] › e2e/ownership.spec.ts:30:3 › workspace ownership and visibility in the UI › role labels follow the selected workspace's membership (461ms)
+  ✓  17 [chromium] › e2e/switch.spec.ts:33:3 › workspace switch clears the previous workspace's items › a delayed switch shows the loading state, never the old workspace's items (495ms)
+  ✓  18 [chromium] › e2e/switch.spec.ts:62:3 › workspace switch clears the previous workspace's items › a failed switch clears the old workspace's items and Retry recovers (603ms)
+  ✓  19 [chromium] › e2e/switch.spec.ts:84:3 › delayed action completion stays scoped to its own workspace › a held old-workspace create does not close or clear the new workspace's form (685ms)
+  ✓  20 [chromium] › e2e/switch.spec.ts:129:3 › delayed action completion stays scoped to its own workspace › a held old-workspace delete does not change the new workspace's UI (592ms)
+
+  20 passed (15.3s)

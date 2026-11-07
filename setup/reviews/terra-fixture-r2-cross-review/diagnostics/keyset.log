@@ -1,0 +1,11 @@
+page1 cursor 2026-11-04T10:15:00.000Z wi_a
+nondecreasing wall clock, create at 2026-01-01T00:00:00.000Z page2 [
+  { id: 'wi_b', updated_at: '2026-11-04T09:00:00.000Z' },
+  { id: 'wi_new', updated_at: '2026-01-01T00:00:00.000Z' }
+]
+same nondecreasing wall clock, bump already-served row, page2 [
+  { id: 'wi_b', updated_at: '2026-11-04T09:00:00.000Z' },
+  { id: 'wi_a', updated_at: '2026-01-01T00:00:00.000Z' },
+  { id: 'wi_new', updated_at: '2026-01-01T00:00:00.000Z' }
+]
+top-test: patched timestamp 2026-11-04T09:30:00.000Z > second seed cursor 09:00, but < newest seed 10:15

@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "study2-agent.profile": {
+      "hash": "eeedf4158c2754ade242f05e0c74cea56e863aa3b93cbaf507f8b7e508cac037",
+      "verdict": "APPROVED",
+      "findings": [
+        "Correctly implements dual-ordering signal rules for stacked crun labels: 'study2-agent-a5ccdae8-stack1//&crun' and 'crun//&study2-agent-a5ccdae8-stack1'.",
+        "Retains strict restrictions on /proc, /sys, and capabilities consistent with the upstream containers/common template.",
+        "Verification via signal-preliminary.json confirms that this profile resolves the EACCES signal failure where the default profile failed."
+      ],
+      "evidence_limits": "Review is based on source analysis and provided mechanical diagnostics; no live runtime verification performed in this session."
+    },
+    "build_candidate_image.py": {
+      "hash": "not_calculated",
+      "verdict": "APPROVED",
+      "findings": [
+        "Correctly pins application dependencies via sha256 of package-lock.json and package.json.",
+        "Ensures context module integrity by hashing the module tree and verifying symlink boundaries.",
+        "Correctly uses --network none and --cap-drop ALL for the version manifest probe to prevent leakage."
+      ],
+      "evidence_limits": "Pure source review; image not rebuilt."
+    },
+    "replay_candidate_baseline.py": {
+      "hash": "not_calculated",
+      "verdict": "APPROVED",
+      "findings": [
+        "Enforces isolation by creating fresh writable workspaces for each instance, preventing shared node_modules pollution.",
+        "Correctly configures container security opts: read-only rootfs, tmpfs /tmp, no-new-privileges, and user 1000:1000.",
+        "Implements a strict check that the source matches the pinned hashes in the build report before execution."
+      ],
+      "evidence_limits": "Pure source review; no containers launched."
+    },
+    "signal_preflight.py": {
+      "hash": "not_calculated",
+      "verdict": "APPROVED",
+      "findings": [
+        "Accurately isolates the signal failure (EACCES) and proves that CAP_KILL and seccomp=unconfined are insufficient, while AppArmor is the primary blocker.",
+        "Validates that the candidate profile restores functionality while maintaining CapEff=0, NoNewPrivs=1, and Seccomp=2."
+      ],
+      "evidence_limits": "Verified against result data in signal-preliminary.json."
+    },
+    "record_preparation_endpoint.py": {
+      "hash": "not_calculated",
+      "verdict": "APPROVED",
+      "findings": [
+        "Ensures sanitization by exporting metadata rather than raw logs.",
+        "Implements a robust cross-check of first/last generation routes via OpenRouter API to verify model/provider identity.",
+        "Deduplicates usage records by response_id to prevent overcounting."
+      ],
+      "evidence_limits": "Pure source review."
+    }
+  },
+  "consistency_check": {
+    "claim_evidence_consistency": "CONSISTENT",
+    "findings": [
+      "The claim that the default profile failed while the candidate succeeded is evidenced by signal-preliminary.json.",
+      "The claim that the initial replay failed due to infrastructure (cleanup hang) is evidenced by r1-container-runtime-preliminary.json (exit 137) vs r1-container-runtime-signal-repair.json (exit 0)."
+    ]
+  },
+  "required_host_side_effects": [
+    "Loading of study2-agent.profile via apparmor_parser."
+  ],
+  "isolation_assessment": {
+    "credential_handling": "SAFE",
+    "isolation_limitations": "Confirmed that 0600 permissions are used for some outputs, but not relied upon for process-level isolation between same-UID containers."
+  },
+  "minimal_repairs": []
+}
