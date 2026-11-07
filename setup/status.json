@@ -64,5 +64,16 @@
   "historical_preparation_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/status.json",
   "historical_qualification_note": "Latest reports retain their original session and revision identifiers for provenance; they are evidence, not alternative plans.",
   "active_launch": "setup/launch.json",
-  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
+  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
+  "queued_preparation": {
+    "service": "study2-c1-valid-paths-20261107t115435z.service",
+    "status": "waiting_for_harness_retry",
+    "jobs": [
+      "Terra C1 reference construction",
+      "Gemma C1 separately authored alternative candidate"
+    ],
+    "condition": "Run sequentially only after the harness retry returns normally; halt if that dependency fails.",
+    "isolation": "Each builder sees baseline and public C1 contract/FAQ only; no evaluator or other implementation.",
+    "qualification": "External acceptance, negative controls, substantive alternative-path review and clean replays follow separately; no scored dispatch."
+  }
 }
