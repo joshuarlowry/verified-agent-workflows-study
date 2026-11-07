@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:28:27 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:28:29 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 04:28:27 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 04:28:29 PM EST (UTC-0500)
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-worker-harness-review | z-ai/glm-5.3-flash | blocked preserved | Nov 07, 2026 at 04:28:13 PM EST (UTC-0500) | Nov 07, 2026 at 04:28:27 PM EST (UTC-0500) |
+| glm-c1-independent-evaluator | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 04:28:29 PM EST (UTC-0500) | — |
 
-Fresh GLM source/synthetic review of common worker harness and generic prompts. Actual seven-role/native/Context/resource qualification remains separate.
+Independent C1 independent-evaluator authoring. No references/checks/conversations/outcomes supplied; cross-review and actual positive/negative/clean qualification remain separate.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
