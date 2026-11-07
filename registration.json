@@ -312,7 +312,9 @@
     "ui_locator_policy": "accessible roles/names/labels; justified preregistered exceptions only",
     "acceptance_suite_sha256": null,
     "task_qualification_signoffs": [],
-    "positive_negative_control_records": []
+    "positive_negative_control_records": [],
+    "independent_C1_evaluator_status": "Fresh GLM construction queued from baseline/contract only; original coauthored suite is diagnostic, not final independent acceptance.",
+    "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json"
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
@@ -805,7 +807,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "baseline_public_and_auth_image_replays_passed_C1_construction_active_docs_partial_extraction_requires_review",
+    "status": "C1_reference_return_preserved_independent_evaluator_and_alternate_queued_common_harness_active_docs_partial",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,
