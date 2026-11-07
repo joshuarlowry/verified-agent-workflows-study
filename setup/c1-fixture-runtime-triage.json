@@ -36,5 +36,7 @@
   "model_calls": 0,
   "calibration_runs": 0,
   "scored_runs": 0,
-  "next_step": "Different-model source/artifact review using exact frozen source and triage. Any author revision is a separately recorded extension; original source, patch and failed preflight remain preserved."
+  "next_step": "Different-model source/artifact review using exact frozen source and triage. Any author revision is a separately recorded extension; original source, patch and failed preflight remain preserved.",
+  "controller_patch_export": "setup/c1-controller-patch-export.json",
+  "packaging_extension_scope": "Controller-derived reviewable patches reproduce both exact original source trees; original patches and lock preflight issue retained. Not a feature or source repair."
 }

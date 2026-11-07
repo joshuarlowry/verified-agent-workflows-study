@@ -638,6 +638,15 @@
           "sha256": "8db82f437af28a8694fec5209e56e76edee381ca708f148753e66c33943e0b95",
           "scope": "Reference public runtime proof; alternative exact-lock preflight stopped before tests and original patch packaging observations. No sealed evaluator, candidate edits or prompt/controller change."
         }
+      ],
+      "pre_dispatch_packaging_evidence_additions": [
+        {
+          "recorded_at_utc": "2026-11-07T23:54:32.649448+00:00",
+          "kind": "pre_dispatch_mechanical_patch_export_provenance",
+          "file": "controller-derived-patches/CONTROLLER_EXPORT_PROVENANCE.json",
+          "sha256": "8cd1c0c75f92c559656d8bfe00dd559656d27ec5e4e192782b79c163227cc481",
+          "scope": "Exact frozen source trees only; both patches round-trip to identical original source bytes. No feature fix or lock reconciliation; original author patch preserved and first endpoint unchanged."
+        }
       ]
     },
     {
