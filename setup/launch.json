@@ -1,23 +1,21 @@
 {
-  "cohort_id": null,
-  "launch_id": "litellm-patch-review-20261107T130038Z",
+  "cohort_id": "clean-20261107T122746Z",
+  "launch_id": "litellm-patch-review-20261107T133859Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T13:07:28.975689+00:00",
-  "status": "construction_returned_not_qualified",
-  "background_service": "study2-litellm-review-20261107t130038z",
+  "snapshot_at_utc": "2026-11-07T13:49:25.498449+00:00",
+  "event_at_utc": "2026-11-07T13:49:25.447979+00:00",
+  "status": "running",
+  "background_service": "study2-litellm-review-20261107t133859z",
   "automatic_restart": false,
   "roles": [
     {
       "role": "glm-litellm-patch-review",
-      "run_id": "terra-litellm-final-review-20261107T130038Z",
-      "model": "openai/gpt-6.1-terra",
-      "status": "returned_requires_cross_review",
-      "dispatch_utc": "2026-11-07T13:03:44.108650+00:00",
-      "ended_at_utc": "2026-11-07T13:07:28.924891+00:00",
-      "agent_exit_code": 0,
-      "controller_exit_code": 0,
-      "prompt_sha256": "731f5ba017079a98ac2c2d3230016f7a6a3e7454d39cd33d1d5916b5ab0e8f1c",
-      "controller_sha256": "92280aa02c597bb23742f1bcfa05ad7948db3993dc7a0ae5782114fb27c89d01"
+      "run_id": "glm-litellm-patch-review-20261107T133859Z",
+      "model": "z-ai/glm-5.3-flash",
+      "status": "running",
+      "dispatch_utc": "2026-11-07T13:49:25.447979+00:00",
+      "prompt_sha256": "7d704d053441cd617fbdd6303b623787d7591049d3115c9c3df044519b6956cd",
+      "controller_sha256": "70deb349ca694da3d669d33f15a5c285dff12a57c13cc624bc8dd6a88eee1b11"
     }
   ],
   "qualification_status": "not_qualified",
