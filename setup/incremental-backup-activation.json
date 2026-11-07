@@ -7,5 +7,6 @@
   "synthetic_checks": 13,
   "prior_archives_preserved": true,
   "future_format": "Incremental archives with complete inventories and verified parent digest; legacy full and split archives remain restorable. Official raw .tgz source artifacts now retained.",
-  "status": "enabled_after_13_synthetic_checks_real_restore_pending"
+  "status": "enabled_13_synthetic_checks_and_real_chain_restore_passed",
+  "real_restore_evidence": "setup/incremental-backup-real-restore.json"
 }

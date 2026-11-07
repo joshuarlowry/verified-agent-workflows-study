@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-11-07T20:51:33.717571+00:00",
+  "archive": "checkpoints/preparation-20261107T204855669921Z.tar.gz",
+  "archive_sha256": "86cc3aaf92ffc4b4a07c1bcd4eb37f3006fecd3c24aa8070924e2917b2d8ce1d",
+  "restore_result": {
+    "files_restored": 11704,
+    "archives_read": 2,
+    "sanitized": true
+  },
+  "restored_regular_files": 11704,
+  "known_credential_values_found": 0,
+  "immutable_baseline_git_bundle_matches": true,
+  "restore_target": "New temporary directory outside source snapshot tree, removed after verification; original archive/source untouched.",
+  "source_sha256": "a56aff0450fd54fe46bc12a57f231a914b3c014fa231231f4e414973eb31d905",
+  "scope": "Actual sanitized passive checkpoint restore, not a production recovery or atomic endpoint certification."
+}
