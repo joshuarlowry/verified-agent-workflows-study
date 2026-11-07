@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T21:23:18.621493+00:00",
+  "updated_at_utc": "2026-11-07T21:37:48.684634+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -42,11 +42,11 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "docs-extraction-review-20261107T204047Z",
+    "active_launch": "c1-independent-evaluator-20261107T211533Z",
     "queued_in_order": [
-      "worker-harness-review-20261107T210437Z",
-      "c1-independent-evaluator-20261107T211533Z",
-      "c1-alternate-20261107T211533Z"
+      "c1-alternate-20261107T211533Z",
+      "native-worker-probe-20261107T213237Z",
+      "worker-harness-review-retry-20261107T213519Z"
     ],
     "data_dependencies": "Documentation review uses its amended source plan, not baseline amendment. Baseline delta review uses baseline amendment, not docs findings. Three offline public replays require accepted baseline delta review and a fresh exact-lockfile image. Documentation extraction separately requires accepted source selection and preserved streams; staging review precedes Context archive build.",
     "order": "Sequential external model execution; heavy container build/replays wait for review endpoints. All originals preserved.",
@@ -80,5 +80,7 @@
   "native_auth_image_replays": "setup/clean-native-auth-replay-20261107T200937Z.json",
   "docs_extraction_endpoint": "setup/docs-extraction-endpoint.json",
   "c1_constructor_endpoint": "setup/c1-constructor-endpoint.json",
-  "worker_harness_constructor_endpoint": "setup/worker-harness-constructor-endpoint.json"
+  "worker_harness_constructor_endpoint": "setup/worker-harness-constructor-endpoint.json",
+  "docs_extraction_review": "setup/docs-extraction-review.json",
+  "worker_review_startup_failure": "setup/worker-review-startup-failure.json"
 }

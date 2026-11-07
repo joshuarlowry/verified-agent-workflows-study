@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T21:17:05.190189+00:00",
+  "recorded_at_utc": "2026-11-07T21:37:48.684634+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -483,6 +483,32 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
       "qualification": "Baseline/contract/FAQ inputs only; no reference, evaluator, controls, conversations or results. Later joint positive/negative/clean-image qualification and different-model review required."
+    },
+    {
+      "launch_id": "native-worker-probe-20261107T213237Z",
+      "role": "gemma-native-worker-continuation-probe",
+      "requested_model": "google/gemma-4-31b-it",
+      "run_id": "clean-20261107T122746Z-native-worker-probe-gemma-20261107T213237Z",
+      "manifest_created_at_utc": "2026-11-07T21:32:37.802118+00:00",
+      "prompt_sha256": "8a91b224fc1e3236a3b4e6299321bca9d885c775ca1345dc6939d37e4b3418a2",
+      "controller_sha256": "aff085520024e0a1be12c47eb87b8df7479b9e17db880bd532ac9694729d652b",
+      "phase": "mechanical_preflight",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model clean study setup and deterministic native worker-launch preflight; no new treatment or models",
+      "qualification": "Native probe: two fixed transport handoffs, no benchmark/Context/supervisor qualification. Retry: identical zero-call startup-failure retry; review and actual qualifications remain separate."
+    },
+    {
+      "launch_id": "worker-harness-review-retry-20261107T213519Z",
+      "role": "glm-worker-harness-review-retry",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-worker-harness-review-retry-glm-20261107T213519Z",
+      "manifest_created_at_utc": "2026-11-07T21:35:19.697303+00:00",
+      "prompt_sha256": "059ec0b4ee9b4e043f93e9f1b6fef360c149d3e570c73a644d22e88084f50916",
+      "controller_sha256": "016def4f367e513f3c3c3559ca942644e2041285027b1bdf1aebeb0f709beeff",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model clean study setup and deterministic native worker-launch preflight; no new treatment or models",
+      "qualification": "Native probe: two fixed transport handoffs, no benchmark/Context/supervisor qualification. Retry: identical zero-call startup-failure retry; review and actual qualifications remain separate."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",

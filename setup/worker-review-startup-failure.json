@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-11-07T21:37:48.684634+00:00",
+  "launch_id": "worker-harness-review-20261107T210437Z",
+  "status": "local_gateway_startup_failure_preserved",
+  "gateway_exit_signal": 11,
+  "verified_overlay_startup_markers_present": true,
+  "gateway_readiness_reached": false,
+  "native_OpenCode_started": false,
+  "paid_model_requests": 0,
+  "basis": "controller.json ready=false server_exit=-11; no provider-request files; no native process/events",
+  "retry_launch": "worker-harness-review-retry-20261107T213519Z",
+  "retry_policy": "One identical fresh launch, exact same40input files and prompt; source candidate and model/provider/settings/overlay unchanged. Original attempt never converted to success.",
+  "scored_failure": false
+}

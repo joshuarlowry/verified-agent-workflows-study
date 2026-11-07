@@ -1,0 +1,71 @@
+{
+  "recorded_at_utc": "2026-11-07T21:37:48.684634+00:00",
+  "run_id": "clean-20261107T122746Z-docs-extraction-review-glm-20261107T204047Z",
+  "verdict": "changes_required",
+  "review_sha256": "6447fa5eadc56788cd3940fe6a550156744f474183264fbf0f1bbd81babcd451",
+  "stream_integrity": "All51calls passed native endpoint/request inventory/semantic fidelity/terminal/usage capture checks",
+  "findings": [
+    {
+      "id": "F-01",
+      "severity": "blocking",
+      "title": "Coverage: candidate is a 6-excerpt preview, not a dispatchable corpus"
+    },
+    {
+      "id": "F-02",
+      "severity": "blocking_resolved_by_decision",
+      "title": "vitest cli.md dangling include -> resolved by approved single-file extension (SRC-EXT-001)"
+    },
+    {
+      "id": "F-03",
+      "severity": "must_fix",
+      "title": "Two staged excerpts are too thin for their scenarios' expected content"
+    },
+    {
+      "id": "F-04",
+      "severity": "must_fix",
+      "title": "13 positive-scenario targets are wholly unstaged; per-file bounded retention plan required"
+    },
+    {
+      "id": "F-05",
+      "severity": "must_fix",
+      "title": "npm generated placeholders: resolve as absent-by-source, never fabricated"
+    },
+    {
+      "id": "F-06",
+      "severity": "must_fix",
+      "title": "SQLite lang_transaction.html: bounded HTML body extraction + per-passage 3.53.4 applicability annotation"
+    },
+    {
+      "id": "F-07",
+      "severity": "must_fix",
+      "title": "ESLint configuration-files.md: Jinja tab macros are unreferenced site templates; resolve by bounded in-page exclusion (default) or a separate template extension decision"
+    },
+    {
+      "id": "F-08",
+      "severity": "must_fix_before_freeze",
+      "title": "Version-applicability annotations must be completed per passage (carried over from selection-stage caveats)"
+    },
+    {
+      "id": "F-09",
+      "severity": "should_fix",
+      "title": "Extraction tooling: replace text-marker anchoring with byte-offset anchoring"
+    },
+    {
+      "id": "F-10",
+      "severity": "informational",
+      "title": "Licenses/notices and publication restrictions: retained, unchanged; publication of raw material remains blocked"
+    }
+  ],
+  "source_extension": {
+    "decision": "approved",
+    "decision_id": "SRC-EXT-001",
+    "path": "docs/guide/cli-generated.md",
+    "commit": "7a3844954d8753fc0d5bed76a96ffd3a21716c22",
+    "sha256": "4ddc85b3ada75a4bf0e60cf6fe19a4845644e212fbb76fbc8c6c5139b6fd2464",
+    "scope": "Exactly one pinned Vitest generated include; no recursive/new-topic authorization and no approval of partial corpus."
+  },
+  "next_action": "Terra must complete faithful extraction against the bounded per-scenario retention/transform plan before a fresh final content review and indexing.",
+  "corpus_approved": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
