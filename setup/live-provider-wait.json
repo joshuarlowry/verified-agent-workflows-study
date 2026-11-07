@@ -9,5 +9,9 @@
   "completion_data_seen": false,
   "action": "Preserve original live request; no restart, retry prompt, provider change or model substitution",
   "measurement": "Observable upstream wait, not exclusive inference time; usage/cost unavailable until provider reports it",
-  "qualification": "No baseline, corpus, calibration or scored qualification implied"
+  "qualification": "No baseline, corpus, calibration or scored qualification implied",
+  "observation_status": "historical; original request interrupted for mechanical capture-relay repair",
+  "resolution_record": "setup/relay-timeout-repair.json",
+  "superseded_by_launch": "docs-transport-retry-20261107T191133Z",
+  "clarification": "Keepalive-only upstream activity was observed. Subsequent diagnosis found the independent 120-second capture-relay timeout causing repeated request aborts; this record is not a current provider-outage claim."
 }
