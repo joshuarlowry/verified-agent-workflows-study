@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T15:33:40.662562+00:00",
+  "updated_at_utc": "2026-11-07T17:14:57.401358+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -38,8 +38,19 @@
     "run_id": "clean-20261107T122746Z-scope-revision-terra-20261107T144032Z",
     "dispatch_gate": "GLM review final return, no budget exhaustion, all review streams preserved, structured proposals available",
     "endpoint_policy": "Fresh session; no automatic calibration/scored dispatch; revised scope still requires different-model approval",
-    "status": "Blocked endpoint preserved: no revised scope produced; required GLM review inputs were root-only. No agent currently running."
+    "status": "Previous blocked endpoint remains preserved. Superseded operationally by the fresh scope pipeline; no original model run resumed."
   },
   "supplemental_coordinator_review": "setup/scope-review.json",
-  "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff"
+  "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
+  "active_pipeline": {
+    "launch_id": "scope-pipeline-20261107T171430Z",
+    "roles": [
+      "Terra fresh scope revision",
+      "Gemma fresh-session scope cross-review"
+    ],
+    "order": "sequential; cross-review only after complete revision and passing stream audit",
+    "input_access_gate": "actual mounted subject-UID read of every input before each model launch",
+    "endpoint_policy": "first returns preserved; dependent dispatch blocked on missing artifacts, process/capture failure or API exhaustion",
+    "scoring_enabled": false
+  }
 }
