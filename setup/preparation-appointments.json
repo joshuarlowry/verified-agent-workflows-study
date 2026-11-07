@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T21:45:04.013329+00:00",
+  "recorded_at_utc": "2026-11-07T22:03:59.173127+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -540,6 +540,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model clean construction/cross-review and completion of recorded incomplete setup artifacts",
       "qualification": "New recorded extension, never replacement of first endpoint. Docs require fresh extraction review before indexing; native code requires fresh source review and actual seven-role/resource/Context/endpoint qualification. No nested paid model calls or application feature input."
+    },
+    {
+      "launch_id": "c1-checker-review-20261107T220209Z",
+      "role": "terra-c1-checker-review",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-c1-checker-review-terra-20261107T220209Z",
+      "manifest_created_at_utc": "2026-11-07T22:02:09.851116+00:00",
+      "prompt_sha256": "d25bdd84636ff255ede58c20a0c0b601d4b99a90cb99cff90c1ad7e6bbb592ac",
+      "controller_sha256": "e877a250b98a7d41d3ecbfb9405181be9f859c9d6227ddcf86c2b8135c81821e",
+      "phase": "cross_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/checker cross-review waiver and independent evaluator construction protocol",
+      "qualification": "Terra reviews GLM checker only from baseline/contract. No reference/alternate implementation supplied and no self-approval of Terra reference. Actual positive/negative/clean-image task qualification remains separate."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
