@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 05:04:02 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 05:04:04 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 05:04:02 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 05:04:04 PM EST (UTC-0500)
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-native-worker-continuation-probe | google/gemma-4-31b-it | blocked preserved | Nov 07, 2026 at 05:03:36 PM EST (UTC-0500) | Nov 07, 2026 at 05:04:02 PM EST (UTC-0500) |
+| glm-worker-harness-review-retry | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 05:04:04 PM EST (UTC-0500) | — |
 
-Two prewritten transport handoffs in one isolated Gemma session. No application feature, supervisor, Context or study acceptance; not primary workflow continuation/rescue.
+Identical source review retry after zero-call local gateway crash; original endpoint preserved. Runtime preflight predecessor is resource order only, no new evidence added to reviewer inputs.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
