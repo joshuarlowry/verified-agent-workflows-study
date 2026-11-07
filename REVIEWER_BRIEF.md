@@ -24,4 +24,4 @@ Publish extension verdicts and measured review effort alongside original core ma
 - Availability and agreed hours for the selected batch.
 - Compensation arrangement if applicable.
 
-Independent fixture and documentation qualification remains separate core integrity work. It may be performed by eligible humans or recorded models outside the subject families, so it does not require recruiting human patch reviewers. The coordinator cannot independently approve its own content decisions.
+Independent fixture and documentation qualification remains separate core integrity work. It is performed by different authorized study models under the disclosed cross-review method, so it does not require recruiting human patch reviewers or establish independent-family authorship. The coordinator cannot independently approve its own content decisions.

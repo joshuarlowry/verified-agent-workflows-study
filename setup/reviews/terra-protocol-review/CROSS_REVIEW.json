@@ -1,0 +1,138 @@
+{
+  "document_type": "preparation_cross_review",
+  "status": "draft_review_no_launch_or_freeze_approval",
+  "reviewed_at_utc": "2026-11-07T03:15:25Z",
+  "scope": "Immutable inputs only; internal consistency, completion, leakage, roles, capture and authorized cross-review. No application code or sealed task answers inspected.",
+  "review_identity": {
+    "requested_model_route": "openai/gpt-6.1-terra via OpenCode/LiteLLM/OpenRouter/Azure, high reasoning, as supplied by user",
+    "harness_reported_model_name": "Terra Azure High",
+    "harness_reported_provider_id": "study2-terra-review",
+    "harness_reported_model_id": "glm",
+    "resolved_revision_and_actual_route": "not independently verified in this session; invocation evidence required",
+    "session_id": null,
+    "family": "OpenAI GPT family as identified by user; subject-family cross-review, not independent-family qualification"
+  },
+  "methodology": {
+    "authorized_models_only": true,
+    "extra_models_or_subagents_invoked": false,
+    "human_patch_review_required_for_core": false,
+    "different_authorized_model_fresh_session_required_per_substantive_artifact": true,
+    "self_approval_forbidden": true,
+    "limitations": "Fresh sessions and different models reduce unchecked self-approval but do not establish independent-family authorship or eliminate shared priors/training bias. Coordinator drafts were authored by an OpenAI GPT-family coordinator, currently gpt-6.1-sol, as disclosed by user; this review is not independent-family review."
+  },
+  "artifacts": [
+    {"path": "inputs/PROTOCOL.md", "sha256": "23a86ef2a8c3576be0f441985c84762f4e002a6560f663aeea153587215f614a", "status": "reviewed"},
+    {"path": "inputs/registration.json", "sha256": "597971bfaf47099393e148c91b1c6d2ed30213dc546c0af7ac22fe85c46dc46e", "status": "reviewed"},
+    {"path": "inputs/TASK_TEMPLATE.md", "sha256": "38b66858c4433805dab5f16d398b5cb7b2de37ef46127279e533b84876680a3e", "status": "reviewed; hash matches registration construction_provenance.artifact_author_records"},
+    {"path": "inputs/builder-prompt.txt", "sha256": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0", "status": "reviewed"},
+    {"path": "inputs/APPLICATION_AND_DOCS_PLAN.md", "sha256": "b2a4da19169d80ea500be1ed960f057b9be30fd2c9a11399d557d765715d993d", "status": "reviewed"},
+    {"path": "inputs/MCP_SETUP.md", "sha256": "8fd27e4ad15500168ac5404b4ca2de63889d22b8f4e57d2e6145884dc9db8821", "status": "reviewed"},
+    {"path": "inputs/ANALYSIS_PLAN.md", "sha256": "6fafd20df11b1dac6a923e4e3db7242ccbf52fdb2f99cce4bf45a47c439103ac", "status": "reviewed"},
+    {"path": "role-prompts/complete-agent.md", "sha256": "0b0a98f7198b8a1d69158408b2e7b1085a158c3806dba061df4de2c913b8824d", "status": "authored draft; not self-approved; different-model review pending"},
+    {"path": "role-prompts/supervisor.md", "sha256": "6d108f88a6def7be2b2b3f8ec78c281be938eaf106dce4a517b3465d3a519807", "status": "authored draft; not self-approved; different-model review pending"},
+    {"path": "role-prompts/gemma-worker.md", "sha256": "ca5e693236af1f8501b12d44ccf3c34517f7d4ab1135a5a7fb6e470ec24af23f", "status": "authored draft; not self-approved; different-model review pending"},
+    {"path": "role-prompts/broker-contract-draft.md", "sha256": "6bb22c01da23305bc9dafb1b18f807314c559035c0cdd45caf125ccc4d1e2510", "status": "authored draft; not self-approved; implementation and different-model review pending"},
+    {"path": "PREPARATION_PROVENANCE.md", "sha256": "48d8086fbda83ce86f24054d7aed8929510f34b5d9870ed4872f6102282d8a9f", "status": "authored session provenance"}
+  ],
+  "confirmed_design_points": [
+    {"evidence": "inputs/registration.json:91-108, 61-67", "observation": "Arithmetic is consistent: 15 tasks x 5 configurations x 2 repetitions = 150 core runs, plus 15 Gemma runs = 165; calibration is 4 x 5 x 2 = 40; scored stages total 55 + 110."},
+    {"evidence": "inputs/PROTOCOL.md:31-35; inputs/TASK_TEMPLATE.md:52-58", "observation": "Fixed overall deadline does not reset on handoffs, first complete-agent/supervisor final return freezes the endpoint, and a worker return is only a handoff. Human patch review is optional and separate from machine acceptance."},
+    {"evidence": "inputs/PROTOCOL.md:5-13, 45-53; inputs/registration.json:208-289", "observation": "User-authorized study-model construction and different-model fresh-session cross-review are explicitly disclosed as non-independent of subject families; no mandatory human patch reviewer is required."},
+    {"evidence": "inputs/registration.json:290-299; inputs/TASK_TEMPLATE.md:19-25", "observation": "Requirements are public and sealed cases must map to disclosed requirements, avoiding secret behavioral requirements."}
+  ],
+  "findings": [
+    {
+      "id": "B1", "severity": "blocker_before_calibration", "title": "Unimplemented and unqualified execution path, including broker",
+      "evidence": ["inputs/registration.json:17-58, 300-305, 312-346, 528-532", "inputs/PROTOCOL.md:15-21", "inputs/MCP_SETUP.md:7-11"],
+      "detail": "Provider pins and full harness qualification hashes are unset; Context/broker path, actual resolution, raw usage capture, role inheritance and no-fallback enforcement are not qualified. The broker interface is not implemented. Transport probe claims alone do not establish end-to-end readiness.",
+      "minimal_fix": "Implement and different-model cross-review the broker and manifests; preflight every role through the pinned path, including streaming, raw/native usage, permissions, deadline cancellation, provider drift and no fallback. Record hashes and failures; keep calibration blocked until evidence passes."
+    },
+    {
+      "id": "B2", "severity": "blocker_before_calibration", "title": "Fixture, corpus, controls and task qualifications are pending",
+      "evidence": ["inputs/registration.json:290-299, 348-390, 392-485, 533-538", "inputs/PROTOCOL.md:9-13", "inputs/TASK_TEMPLATE.md:19-37", "inputs/builder-prompt.txt:3-9"],
+      "detail": "The builder handoff requests a new baseline and draft contracts, explicitly not references or sealed tests. This is a staged handoff, not qualification. Baseline, calibration contracts, public/sealed evaluator, independent valid path, negative controls, corpus and clean replays lack evidence in the provided inputs. Candidate pins are not runtime qualification.",
+      "minimal_fix": "Construct and cross-review these separately using authorized models, map sealed assertions to public requirements, run baseline/reference/alternative/negative controls and clean replays, and record artifact-specific signoffs and hashes before calibration; freeze all scored contracts and schedule before scored stage 1."
+    },
+    {
+      "id": "B3", "severity": "blocker_before_freeze_and_calibration", "title": "Authored treatment artifacts lack different-model signoff",
+      "evidence": ["inputs/registration.json:230-243, 257-285, 540-544", "inputs/TASK_TEMPLATE.md:15-16, 50-60", "role-prompts/complete-agent.md", "role-prompts/supervisor.md", "role-prompts/gemma-worker.md", "role-prompts/broker-contract-draft.md"],
+      "detail": "The existing template record has pending review. New role and broker drafts in this session have not been cross-reviewed and cannot be self-approved. This review cannot stand in for review of artifacts authored in the same session.",
+      "minimal_fix": "Have a different authorized model in a fresh session review each substantive draft and revisions, including common/public feedback parity and worker restrictions; capture invocation, settings, session ancestry, hashes, findings and signoff before freezing. Disclose subject-family involvement."
+    },
+    {
+      "id": "B4", "severity": "blocker_before_calibration", "title": "Physical leakage and endpoint race controls need executable evidence",
+      "evidence": ["inputs/PROTOCOL.md:23-29, 31-33", "inputs/MCP_SETUP.md:6-11", "inputs/TASK_TEMPLATE.md:29-31, 41-43"],
+      "detail": "Isolation and first-return rules are stated but no supplied controller/broker specification defines atomic handling of final-return, timeout, active tools and late worker writes. A prompt cannot enforce sealed or other-run isolation, nor keep a mutable subject copy of a trusted public selector authoritative.",
+      "minimal_fix": "Specify and test controller-side snapshot/termination ordering and races, deny access at filesystem/network/identity boundaries, and execute the frozen trusted public selector from a protected copy against frozen endpoints. Verify no private output reaches subjects or selectors before selection. Record evidence."
+    },
+    {
+      "id": "B5", "severity": "blocker_before_calibration", "title": "Usage and time accounting lack qualified per-call implementation",
+      "evidence": ["inputs/PROTOCOL.md:55-59", "inputs/registration.json:169-170, 194-206, 300-304, 620-639", "inputs/ANALYSIS_PLAN.md:9, 19, 27-31"],
+      "detail": "Raw usage capture and billable mapping hashes remain unset; GLM's diagnostic reasoning count can exceed completion and cannot be added or used to reconstruct billing. Parent/worker IDs and source-specific timing are not yet demonstrated. A 95% stage threshold does not make the other 5% zero or guarantee decision-valid cost estimates.",
+      "minimal_fix": "Qualify per-call gateway/native capture and session linkage, clock sources and snapshots including paid failures/retries; freeze rate card and mapping, reconcile without double counting, and preserve missing data or decision-valid bounds. Separate generation, controller, preparation, calibration and evaluation time/usage."
+    },
+    {
+      "id": "B6", "severity": "blocker_before_calibration", "title": "Resource lanes, randomized execution and launch metadata remain unresolved",
+      "evidence": ["inputs/registration.json:129-160, 300-305, 506-550, 641-664", "inputs/PROTOCOL.md:31-43"],
+      "detail": "Deadline approval timestamp, schedule seed/hash, lane qualification, prompt/manifest hashes and other run identifiers are unset; equal lane performance, provider rate behavior and time-source enforcement have no provided qualifying evidence.",
+      "minimal_fix": "Freeze required registration approvals and seeds/manifests before their respective dispatches; qualify equal isolated lanes and rate limits or amend to sequential before calibration. Use the same fixed deadline across arms and retain all attempts and drift boundaries."
+    },
+    {
+      "id": "B7", "severity": "blocker_to_signoff", "title": "Reviewer invocation and same-family limitation need verifiable provenance",
+      "evidence": ["inputs/registration.json:261-288, 506-511", "inputs/PROTOCOL.md:5-7, 53", "inputs/builder-prompt.txt:1, 11"],
+      "detail": "This session was requested as Terra through Azure high reasoning, but harness metadata exposes provider ID study2-terra-review and model ID glm; these may be internal aliases and do not prove or disprove the requested upstream route. Resolved model, provider, settings and session ID were not independently exposed or verified here. GPT-family coordinator authorship is not family-independent from the requested reviewer.",
+      "minimal_fix": "Attach trustworthy invocation/session and resolved-route/settings evidence before counting this as a qualifying different-model review; confirm author identity artifact by artifact, record any substantive revisions and use a different authorized model when reviewer and author are the same. Do not claim family independence or add an unauthorized reviewer."
+    },
+    {
+      "id": "F1", "severity": "improvement_before_relevant_freeze", "title": "Stale eligibility and independence terminology is ambiguous",
+      "evidence": ["inputs/registration.json:222-229, 245-255, 258-288, 540-544, 552-557", "inputs/APPLICATION_AND_DOCS_PLAN.md:11-15, 21"],
+      "detail": "The policy authorizes all three models to construct, while eligible_builders lists only GLM as initial builder. Legacy terms 'independent qualifier', 'independently approve' and 'fixture_family_and_independent_corpus_qualification_remain' can be misread as a subject-family exclusion or an extra independent model requirement, despite the current policy.",
+      "minimal_fix": "Distinguish the initial appointment from the full authorized builder set, and consistently say 'different authorized model in a fresh session' for cross-review; retain the documented nonindependence limitation. Preserve history."
+    },
+    {
+      "id": "F2", "severity": "improvement_before_task_freeze", "title": "Complete alternate-path and replay evidence can be made less ambiguous",
+      "evidence": ["inputs/PROTOCOL.md:11", "inputs/TASK_TEMPLATE.md:31-36"],
+      "detail": "Protocol requires a materially different valid path to pass; the template says it passes 'relevant checks', and explicitly calls for three clean instances only for baseline/reference. These formulations leave the alternative's full acceptance and replay scope open.",
+      "minimal_fix": "Require the valid alternative to pass every applicable frozen acceptance gate and specify which baseline, reference, alternative and control cases are replayed in three clean instances, with reasons for any inapplicable check."
+    },
+    {
+      "id": "F3", "severity": "improvement_before_schedule_freeze", "title": "Scored freeze and later qualification sequence needs explicit separation",
+      "evidence": ["inputs/PROTOCOL.md:9, 39", "inputs/TASK_TEMPLATE.md:3, 17", "inputs/registration.json:103-108, 165-171"],
+      "detail": "All scored contracts must freeze before stage 1, while a task may complete qualification before its stage and later builders must remain blind to earlier outcomes. This can be feasible but does not state which later-stage artifacts may still be constructed or how blinding is enforced.",
+      "minimal_fix": "Freeze all scored contracts/FAQ/strata and schedule before stage 1; list permitted later qualification artifacts and mechanically isolate their authors from prior outcomes, or qualify all tasks first. Contract changes require a new cohort."
+    },
+    {
+      "id": "F4", "severity": "improvement_before_analysis_freeze", "title": "Outcome status dimensions and sensitivity classification need a precise schema",
+      "evidence": ["inputs/registration.json:129-142, 306-308", "inputs/ANALYSIS_PLAN.md:15-19", "inputs/TASK_TEMPLATE.md:39-44"],
+      "detail": "Deadline/non-delivery, early return, interruption, rejection and unverified describe overlapping event and evaluator dimensions. Earlier cutoffs must not use patches observed only at later returns. Without a priority/schema, counts and denominators can diverge.",
+      "minimal_fix": "Define separate mutually exclusive endpoint event and verification status fields, precedence at simultaneous events, and frozen timestamp-based sensitivity rules; retain raw timestamps and report unrun slots separately."
+    },
+    {
+      "id": "F5", "severity": "improvement_before_builder_dispatch", "title": "Builder handoff duplicates candidate pins and has an ambiguous independence prohibition",
+      "evidence": ["inputs/builder-prompt.txt:3, 7, 13", "inputs/APPLICATION_AND_DOCS_PLAN.md:3", "inputs/registration.json:392-485, 686-703"],
+      "detail": "Inline candidate versions may drift from canonical registration. 'Do not run study models on the task contracts' could be read as forbidding the separately required cross-review rather than preventing calibration/subject runs; the handoff itself ends before later review.",
+      "minimal_fix": "Render versions from frozen registration or compare and hash them at dispatch; clarify that this builder stops before subject/calibration attempts and later fresh authorized-model review is permitted."
+    },
+    {
+      "id": "F6", "severity": "improvement_before_role_freeze", "title": "Seven-role tool parity and broker handoff inputs need explicit qualification matrix",
+      "evidence": ["inputs/registration.json:61-67, 312-346, 370-372", "inputs/PROTOCOL.md:17-21", "inputs/TASK_TEMPLATE.md:45, 50-60"],
+      "detail": "Five configurations imply three direct roles plus two supervisor and two worker role instances; the registration specifies seven but references a configuration list rather than an explicit role-by-role permission and public-feedback matrix. The supervisor's edit restriction is an intended role distinction, not a reason to remove common public tools or feedback.",
+      "minimal_fix": "Freeze a matrix identifying all seven role instances, effective tools and public checks, scope/protected paths and worker-only application/test edit permissions; test each inherited configuration and shared deadline."
+    },
+    {
+      "id": "F7", "severity": "improvement_before_qualification", "title": "Supporting evidence is referenced but unavailable in this input bundle",
+      "evidence": ["inputs/registration.json:495-499, 523-525, 615, 695", "inputs/PROTOCOL.md:3"],
+      "detail": "Readiness files, setup status and generated overview are referenced but not included under inputs. Their claims and full historical substantive edit attribution cannot be independently checked here. The provided template hash matches its registration record.",
+      "minimal_fix": "Supply the referenced evidence and versioned substantive edit history to the later qualifying reviewer, or mark missing evidence explicitly and rerun necessary checks; do not invent attribution or infer failed probes."
+    }
+  ],
+  "unresolved_assumptions": [
+    "The user's requested Terra/Azure/high routing and fresh-session claim are accepted as intent, not verified actual model resolution or session identity; harness identifiers may be aliases.",
+    "Inputs are a supplied snapshot; referenced readiness files and history may exist outside this bundle but were not accessed.",
+    "All public requirements and allowable changes will be specified in future contracts; no task implementation or sealed answer was examined.",
+    "Deadline monitoring, protected trusted-public evaluation, role-specific edit enforcement and isolation require controller/broker implementation; prompt text alone is insufficient.",
+    "Later-stage qualification after contract freeze is viable only if no contract changes are needed and blinding is enforceable; otherwise qualify first or register a new cohort.",
+    "Current-session direction forbids database access and network; future authorized fixture work may use the separately registered disposable local database only under its own permissions."
+  ],
+  "conclusion": "Not launchable or qualified. This is a preparation review only. No calibration, subject run, model scoring, app edit, deployment, push, migration or database access was performed. New drafts require different-model fresh-session cross-review before freeze."
+}

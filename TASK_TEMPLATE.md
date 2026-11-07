@@ -13,7 +13,7 @@ Read current settings from [registration.json](registration.json); do not copy h
 - UI requirements including accessible roles/names/labels and keyboard behavior where applicable.
 - Frozen FAQ and documented assumptions, identical for all systems.
 - Author record for the baseline, reference patch, alternate valid path, each check, task contract, frozen FAQ, role prompts and worker-handoff templates: human identity/role, exact model/family/provider if used, date and artifact hash.
-- Registered exclusion-group eligibility verified (Gemini counts with Gemma); independent qualifier identified and signed off. Coordinator-authored generic/role prompt drafts are disclosed and independently reviewed; authoritative task-specific contracts/FAQ follow their stricter authorship rule.
+- Allowlisted builder and different-model cross-reviewer identities/sessions recorded; no self-approval. Disclose subject-family fixture authorship, including contracts/FAQ and coordinator prompt drafts. A fresh session is not independent model-family evidence.
 - For later-stage tasks, evidence of builder blinding to earlier scored outcomes.
 
 ## Requirements, examples and sealed verification

@@ -1,0 +1,28 @@
+{
+  "kind": "synthetic_mechanical_transport_not_model_evaluation",
+  "checks": {
+    "stream_roundtrip": true,
+    "wrong_model_rejected": true,
+    "route_override_rejected": true,
+    "budget_refusal_preserved": true,
+    "raw_usage_captured": true,
+    "network_isolation": true,
+    "host_paths_absent": true,
+    "only_allowed_requests_forwarded": true,
+    "budget_event_logged": true
+  },
+  "all_passed": true,
+  "model_calls": 0,
+  "upstream_calls": 2,
+  "source_sha256": {
+    "harness/container_http_bridge.mjs": "1b6b4bc53918081ef4132aeb1d9ee704827450b34e7762357b76e4b27daaa500",
+    "harness/unix_inference_proxy.py": "b7a0fbef4c07106c264967e4abf4086f3c611b319c5508f374dc60670d026987"
+  },
+  "not_yet_qualified": [
+    "real OpenCode in container",
+    "actual pinned models through socket bridge",
+    "Context corpus",
+    "Gemma worker broker",
+    "full application/evaluator isolation"
+  ]
+}

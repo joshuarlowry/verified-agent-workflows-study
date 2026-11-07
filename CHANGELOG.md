@@ -1,5 +1,9 @@
 # Protocol revision notes
 
+## Revision 9 — authorize study-model fixture construction and cross-review
+
+User explicitly permits the three study models to build and cross-review fixtures in separate sessions. Replace the former family exclusion with an allowlisted, different-model cross-review rule; no session approves its own substantive work. Preserve authorship, exact route/session/settings, revisions and checks, while explicitly disclosing subject-family benchmark bias and lack of independent-family qualification. Appoint GLM as initial fixture builder; no outside model is appointed. Start an isolated preparation session; scoring/calibration remain unstarted. Core disposable SQLite execution is authorized only inside the new fixture/evaluator workspace as part of the requested setup.
+
 ## Revision 8 — restrict setup and study models
 
 User confirms Gemma 4, GLM and Terra only. No external builder appointments or construction sessions were launched. Preserve the two already-completed external availability probes as excluded setup overhead, never study evaluations. Future model calls are restricted to the canonical three unless explicitly revised. The independent-family fixture-construction rule is not silently waived; its authorship method remains unresolved. Record preliminary container CPU/memory enforcement evidence and the rootless cpuset failure in setup/status.json; full lane qualification remains incomplete.

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 8,
+  "protocol_revision": 9,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -206,12 +206,8 @@
     "missing_usage_policy": "unresolved unless decision-valid bounds are available"
   },
   "construction_provenance": {
-    "subject_models_may_author_fixture": false,
-    "excluded_families": [
-      "Gemma and Gemini families (one exclusion group for independence)",
-      "GLM family",
-      "OpenAI GPT family including Terra"
-    ],
+    "subject_models_may_author_fixture": true,
+    "excluded_families": [],
     "applies_to": [
       "application baseline",
       "reference solutions",
@@ -223,7 +219,14 @@
       "documentation corpus selection and extraction"
     ],
     "protocol_author_role": "AI coordinator under human direction; not fixture-builder eligibility",
-    "eligible_builders": [],
+    "eligible_builders": [
+      {
+        "model": "z-ai/glm-5.3-flash",
+        "role": "initial fixture/contract/FAQ/source-inventory builder",
+        "harness": "OpenCode -> LiteLLM -> OpenRouter",
+        "session_isolation_required": true
+      }
+    ],
     "artifact_author_records": [
       {
         "artifact": "TASK_TEMPLATE.md",
@@ -234,31 +237,86 @@
         "harness": "Codex",
         "settings": "not exposed in per-artifact evidence",
         "history": "Git history preserves previous drafts; no independent review signoff yet",
-        "sha256": "b48896db79c0805944cb835ed40c0b35a66d0542a5f7ee6137351d20b7759e7c",
+        "sha256": "38b66858c4433805dab5f16d398b5cb7b2de37ef46127279e533b84876680a3e",
         "independent_reviewer": null,
         "independent_review_status": "pending"
+      },
+      {
+        "artifact": "setup/prompts/",
+        "class": "preparation role handoffs",
+        "author": "existing chat coordinator",
+        "model": "gpt-6.1-sol",
+        "family": "OpenAI GPT",
+        "harness": "Codex",
+        "sha256_by_file": {
+          "setup/prompts/glm-fixture-builder.txt": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0",
+          "setup/prompts/terra-preparation-review.txt": "1a79756409c7db9f5d48fd62dd521591450189f01f1f97f29003ccc97d6462fb"
+        },
+        "independent_review_status": "Terra fresh-session cross-review in progress; new Terra-authored prompts need different-model review"
       }
     ],
-    "independent_qualifiers": [],
     "family_decisions": {
       "Gemini": {
         "eligible_for_building_or_independent_qualification": false,
-        "decision": "Treat Gemini and Gemma as the same exclusion group for study independence, without asserting identical weights/architecture. Includes fine-tuned/distilled derivatives where lineage is known.",
+        "decision": "Historically grouped with Gemma for independence. Current user waiver permits only the three allowlisted study models, so Gemini remains unauthorized.",
         "basis": "Google describes Gemma 4 as built from Gemini 3 research and technology.",
         "source": "https://deepmind.google/models/gemma/gemma-4/",
-        "decision_revision": 7
+        "decision_revision": 7,
+        "current_reason": "not one of the three authorized models; original lineage grouping retained as history",
+        "historical_decision_revision": 7
       },
       "uncertain_lineage": "resolve and record before appointment; uncertainty is not automatic eligibility"
     },
     "artifact_policies": {
-      "fixture_contract_FAQ": "authoritative task-specific baseline/reference/check/contract/FAQ construction uses eligible humans or models outside exclusion groups; product-owner requirements retained with human provenance",
-      "role_prompts": "GPT-family coordinator may draft role prompts and generic templates; record exact known model/harness, source hashes and substantive edits; independent content/neutrality review outside exclusion groups required before freeze",
-      "corpus": "coordinator may propose sources and mechanically package approved inputs; independent content approval outside exclusion groups required",
-      "historical_drafts": "preserve known provenance; unavailable historical model IDs/settings explicitly unknown, never inferred from thread nickname",
-      "all_artifacts": "record authors/contributors, exact known models/families/providers/harness/settings or unknown, timestamps, source lineage, hashes, reviewer identity and independent signoff"
+      "fixture_contract_FAQ": "authorized three models may construct baseline, references, checks, contracts and FAQ in recorded preparation sessions; another authorized model reviews each substantive artifact",
+      "role_prompts": "existing coordinator drafts remain labeled with known provenance; authorized model cross-review required before freeze; no unrecorded treatment edits",
+      "corpus": "authorized builder proposes sources; different authorized model reviews source selection, omissions, version coverage and extraction before freeze",
+      "historical_drafts": "retain known provenance and unknown historical details; do not invent attribution",
+      "all_artifacts": "log author and reviewer model/session/provider/settings, input/output hashes, substantive revisions and checks; no self-approval"
     },
     "authoritative_prompt_FAQ_contract_review_required_before_calibration": true,
-    "appointment_status": "No outside model appointed; only three study models authorized for future calls. Independent-family construction remains unresolved; no automatic waiver."
+    "appointment_status": "GLM initial construction; Terra and Gemma cross-review in separate fresh sessions; invocation evidence required before signoff",
+    "former_exclusion_groups": [
+      "Gemma/Gemini",
+      "GLM",
+      "OpenAI GPT including Terra"
+    ],
+    "cross_review_policy": {
+      "user_authorized": true,
+      "authorization": "User explicitly permits the three models to build and cross-review fixtures in separate sessions, disclosing the independence limitation",
+      "allowed_models": [
+        "google/gemma-4-31b-it",
+        "z-ai/glm-5.3-flash",
+        "openai/gpt-6.1-terra"
+      ],
+      "same_session_author_and_reviewer": false,
+      "different_model_review_required": true,
+      "self_approval_forbidden": true,
+      "fresh_scored_sessions": true,
+      "builder_conversations_and_solutions_not_imported_to_subjects": true,
+      "artifact_models_and_hashes_recorded": true,
+      "independent_model_family_claim": false,
+      "claims": "cross-reviewed by study models; not independently human-authored or independent of subject families"
+    },
+    "qualifier_label": "cross-reviewer, not independent model-family qualifier",
+    "cross_reviewers": [
+      {
+        "model": "openai/gpt-6.1-terra",
+        "role": "protocol and generic template cross-review; authors new role prompts requiring another model review",
+        "session": "terra-preparation-review",
+        "status": "returned draft review; not launch signoff"
+      },
+      {
+        "model": "google/gemma-4-31b-it",
+        "role": "Terra role-prompt and coordinator transport-helper cross-review",
+        "session": "gemma-cross-review",
+        "status": "returned acceptable prompt drafts; broker schema revision and hash/time provenance gaps recorded; no launch signoff"
+      }
+    ],
+    "cross_review_evidence": [
+      "setup/reviews/terra-protocol-review/",
+      "setup/reviews/gemma-cross-review/"
+    ]
   },
   "checks": {
     "requirements_public": true,
@@ -276,7 +334,7 @@
   "worker_broker_preflight_sha256": null,
   "randomization_seed": null,
   "randomized_schedule_sha256": null,
-  "disposable_database_execution_authorized": false,
+  "disposable_database_execution_authorized": true,
   "primary_endpoint": "first complete-agent/supervisor final return, uniform deadline, or recorded external interruption",
   "primary_acceptance_rule": "Timely final submission passes all applicable frozen independent machine behavior, UI/API/database, ownership, regression, build, typecheck, lint, scope and integrity checks; human review is an optional extension",
   "post_return_repair_extension_registered": false,
@@ -346,10 +404,7 @@
     "exact_queries_and_expected_sources_sha256": null,
     "source_version_coverage_review_signoff": null,
     "runtime_compatibility_verified": false,
-    "independent_content_review_required_before_calibration": true,
     "curator": null,
-    "independent_reviewer": null,
-    "independent_reviewer_excludes_subject_families": true,
     "review_scope": [
       "source selection and omissions",
       "version/API coverage",
@@ -357,10 +412,12 @@
       "absence of task-specific solutions/hints",
       "licenses and source/index hashes"
     ],
-    "coordinator_role": "OpenAI GPT-family coordinator may propose sources and run approved mechanical packaging; cannot independently sign content suitability",
+    "coordinator_role": "mechanical coordination; current chat gpt-6.1-sol is not a fixture builder or scored subject",
     "corpus_plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "independent_reviewer_eligibility": "independent human or recorded model outside subject families; human recruitment not required",
-    "human_review_required": false
+    "human_review_required": false,
+    "different_model_cross_review_required_before_calibration": true,
+    "cross_reviewer": null,
+    "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence"
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
@@ -455,7 +512,7 @@
     "sqlite_engine_version": null,
     "lockfile_and_image_qualification_required": true,
     "eligible_builder_signoff": null,
-    "independent_qualification_signoff": null
+    "cross_review_signoff": null
   },
   "study_kind": "feasibility_and_estimation_only",
   "canonical_configuration": true,
@@ -480,14 +537,15 @@
     {
       "id": "corpus_reviewer",
       "phase": "before_calibration",
-      "detail": "independent corpus qualification by eligible human or model outside subject families; source selection and omissions reviewed",
+      "detail": "different authorized study model cross-reviews source inventory and omissions in a separate session; family dependence disclosed",
       "resolved": false
     },
     {
       "id": "fixture_builders",
       "phase": "before_fixture_construction",
-      "detail": "appoint eligible baseline/reference/check builders and qualifiers outside subject families",
-      "resolved": false
+      "detail": "user authorized study-model construction/cross-review; GLM appointed initial builder; per-artifact review evidence still required",
+      "resolved": true,
+      "evidence": "construction_provenance.cross_review_policy"
     },
     {
       "id": "glm_accounting",
@@ -511,14 +569,15 @@
     {
       "id": "authored_treatment_review",
       "phase": "before_calibration",
-      "detail": "record and independently approve authoritative role prompts, worker handoff templates, task contracts and frozen FAQ under artifact-specific provenance rules",
+      "detail": "record and cross-review authoritative role prompts, handoff templates, task contracts and FAQ using different authorized models; retain per-artifact hashes and revisions",
       "resolved": false
     },
     {
       "id": "resource_lanes",
       "phase": "before_calibration",
       "detail": "qualify two equal isolated lanes and rate-limit behavior, or explicitly amend to sequential",
-      "resolved": false
+      "resolved": false,
+      "evidence": "setup/resource-preliminary.json; generic enforcement/contention passed, app/inference/full isolation pending"
     }
   ],
   "pre_recruitment_work": {
@@ -665,6 +724,17 @@
     "other_model_evaluation_or_builder_launches": false,
     "external_builder_appointments": [],
     "prior_unscored_availability_probes": "setup/status.json; excluded from study results, recorded as setup overhead",
-    "construction_exclusion_rule_waived": false
-  }
+    "construction_exclusion_rule_waived": true,
+    "interactive_coordinator": "existing chat is coordination only; launched builder/reviewer/subject models restricted to the three allowlisted IDs"
+  },
+  "disposable_database_authorization": {
+    "basis": "user directs execution of the approved setup steps for the new application with disposable local test database",
+    "scope": "new isolated study fixture and evaluator SQLite files only",
+    "production_and_prior_experiments": false
+  },
+  "limitations": [
+    "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
+    "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
+  ],
+  "setup_progress": "setup/WORK_LOG.md"
 }

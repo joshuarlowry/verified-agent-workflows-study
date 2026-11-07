@@ -52,7 +52,7 @@ Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on mod
 
 {blockers}
 
-**Optional extension:** blinded human patch review can later measure merge readiness and active review effort on frozen endpoints. It does not gate core setup, calibration or scoring. See [reviewer brief](REVIEWER_BRIEF.md); independent fixture/corpus qualification may use eligible humans or models outside the subject families.
+**Optional extension:** blinded human patch review can later measure merge readiness and active review effort on frozen endpoints. It does not gate core setup, calibration or scoring. See [reviewer brief](REVIEWER_BRIEF.md); fixture/corpus qualification uses recorded cross-review by different authorized study models; it does not establish independent-family authorship.
 
 ## Canonical record and supporting methods
 
@@ -60,7 +60,7 @@ Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on mod
 
 [Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Application/docs work plan](APPLICATION_AND_DOCS_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md) · [Historical revisions](CHANGELOG.md)
 
-AI managed under human direction. The registered exclusion groups include Gemini with Gemma. Fixture, contract/FAQ, prompt and corpus authorship/review policies are recorded explicitly. Eligible builders/qualifiers remain unassigned; human patch reviewers are needed only if that extension is activated. Historical drafts and readiness failures are preserved in Git; they are not current settings. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
+AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. GLM is the initial builder; artifacts require different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Historical drafts and readiness failures are preserved in Git; they are not current settings. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
 '''
 path = root / 'README.md'
 if '--check' in sys.argv:

@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-11-07T03:08:19.880149+00:00",
-  "status": "mechanical_preflight_in_progress_fixture_authorship_unresolved",
+  "updated_at_utc": "2026-11-07T03:27:28.078995+00:00",
+  "status": "preparation_started_cross_review_method_authorized",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": false,
   "excluded_availability_probes": [
@@ -75,8 +75,70 @@
       "cpuset": "0-1",
       "memoryMax": 8589934592
     },
-    "two_lane_contention_and_full_isolation_qualification": "not_completed"
+    "two_lane_contention_and_full_isolation_qualification": "generic probe passed; actual app/inference/full isolation still pending",
+    "generic_probe_evidence": "setup/resource-preliminary.json",
+    "transport_mechanical_evidence": "setup/transport-preliminary.json"
   },
   "other_preparation": "Node image imported into local rootful Podman store; existing experiments/images preserved",
-  "next_dependency": "choose permitted fixture authorship method without adding model families; no subject-written fixtures have been produced"
+  "next_dependency": "launch isolated GLM fixture builder and capture endpoint; qualify cross-review separately",
+  "preparation_runs": [
+    {
+      "run_id": "glm-fixture-builder",
+      "model": "z-ai/glm-5.3-flash",
+      "provider_tag": "relace/fp4",
+      "role": "baseline/contracts/FAQ/source-inventory builder",
+      "status": "running",
+      "prompt_sha256": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0",
+      "filesystem": "bubblewrap view of fresh workspace/private home; previous experiments and control logs absent",
+      "network": "construction-only official docs/package access; not scored-network qualification",
+      "raw_logs": "private; controller timestamps/native events/raw SSE usage captured",
+      "qualified": false
+    },
+    {
+      "run_id": "terra-preparation-review",
+      "model": "openai/gpt-6.1-terra",
+      "provider_tag": "azure",
+      "reasoning_effort": "high",
+      "role": "protocol/template cross-review and role-prompt drafting",
+      "status": "returned_review_and_drafts_no_launch_signoff",
+      "prompt_sha256": "1a79756409c7db9f5d48fd62dd521591450189f01f1f97f29003ccc97d6462fb",
+      "inputs": "read-only protocol snapshot; no application or sealed answers",
+      "qualified": false,
+      "exit_code": 0,
+      "elapsed_seconds": 161.20476516100462,
+      "dispatch_utc": "2026-11-07T03:14:52.158687+00:00",
+      "completed_model_steps": 18,
+      "reported_cost_usd": 0.13665155,
+      "public_artifacts": "setup/reviews/terra-protocol-review/",
+      "endpoint_events_sha256": "38e12476851d8a2ff6d2650a04869dde125e08194a27840763ef72261d9b1336"
+    },
+    {
+      "run_id": "gemma-cross-review",
+      "model": "google/gemma-4-31b-it",
+      "provider_tag": "crusoe/bf16",
+      "role": "different-model review of Terra prompts/broker draft and coordinator transport helpers",
+      "status": "returned_draft_review_broker_schema_changes_required",
+      "prompt_sha256": "95e5c22a0acaa8833100b79eb85f03027d771ccf018a41cac9a2f5d39aff7b64",
+      "inputs": "read-only snapshots; no application/sealed task solutions",
+      "qualified": false,
+      "exit_code": 0,
+      "elapsed_seconds": 82.70259349199478,
+      "dispatch_utc": "2026-11-07T03:21:43.007940+00:00",
+      "completed_model_steps": 21,
+      "reported_cost_usd": 0.05171594,
+      "public_artifacts": "setup/reviews/gemma-cross-review/",
+      "endpoint_events_sha256": "d25e1cc237777fead3bfa39bafa05cc2d8bb1be9eb1dc36f6f719546e87b0d94",
+      "qualification_gaps": [
+        "reviewer self-reported timestamp differs from controller time; use controller time",
+        "helper source hashes marked not_computed; controller supplement is not a model-computed hash",
+        "acceptable draft is not broker/runtime launch signoff"
+      ]
+    }
+  ],
+  "usage_schema_followup": {
+    "schema": "schemas/provider-usage-record.schema.json",
+    "mechanical_result": "setup/usage-schema-preliminary.json",
+    "cross_review": "pending",
+    "broker_integration": "pending"
+  }
 }

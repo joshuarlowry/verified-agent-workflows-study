@@ -1,0 +1,242 @@
+{
+  "kind": "generic_preliminary_not_full_application_lane_qualification",
+  "utc": "2026-11-07T03:12:24.958669+00:00",
+  "trials_per_mode_lane": 5,
+  "image": "docker.io/library/node:24.19.0-bookworm-slim",
+  "solo": [
+    {
+      "lane": 0,
+      "seconds": 0.524097821,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.553489768,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.540459592,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.5238231229999999,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.514779337,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.5140548380000001,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.520871983,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.5328776719999999,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.5325300470000001,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.517791966,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    }
+  ],
+  "parallel": [
+    {
+      "lane": 0,
+      "seconds": 0.562013433,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.542955098,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.5639607680000001,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.544434301,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.563027114,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.566810472,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.552732321,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.5507245789999999,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 0,
+      "seconds": 0.547382874,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "0-1",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    },
+    {
+      "lane": 1,
+      "seconds": 0.550591316,
+      "node": "v24.19.0",
+      "cpus": 2,
+      "cpuset": "2-3",
+      "memoryMax": "8589934592",
+      "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "hostHomeVisible": false,
+      "externalInterfaces": []
+    }
+  ],
+  "median_inflation_by_lane": {
+    "0": 0.07234453279667408,
+    "1": 0.057056885319170636
+  },
+  "generic_resource_checks_passed": true,
+  "generic_contention_threshold_passed": true,
+  "unqualified": [
+    "actual app install/build/typecheck/Playwright replay",
+    "inference rate limits",
+    "complete subject mounts/network/inference broker",
+    "background preparation workload may affect this preliminary result"
+  ]
+}

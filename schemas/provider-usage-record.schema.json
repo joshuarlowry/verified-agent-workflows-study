@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Provider request usage snapshot - draft requiring cross-review",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_session_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "actor_role": {
+      "enum": [
+        "complete_agent",
+        "supervisor",
+        "worker",
+        "builder",
+        "cross_reviewer",
+        "coordinator",
+        "evaluator"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "mechanical_preflight",
+        "construction",
+        "cross_review",
+        "calibration",
+        "scored",
+        "evaluation"
+      ]
+    },
+    "requested_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolved_model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "actual_provider": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider_response_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "const": "gateway_preserved_provider_usage"
+    },
+    "counter_semantics": {
+      "const": "request_total_snapshot"
+    },
+    "mapping_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "billing_counters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inclusive_input_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "billable_output_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cached_input_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cache_write_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "diagnostic_reasoning_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "inclusive_input_tokens",
+        "billable_output_tokens",
+        "cached_input_tokens",
+        "cache_write_tokens",
+        "diagnostic_reasoning_tokens"
+      ]
+    },
+    "reported_cost_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "reasoning_rule": {
+      "const": "preserve_diagnostic_counter_do_not_add_to_completion"
+    },
+    "raw_provider_usage": {
+      "type": "object"
+    },
+    "native_usage": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "reconciliation": {
+      "enum": [
+        "provider_counters_only_native_join_and_resolution_unverified",
+        "crosschecked",
+        "missing",
+        "inconsistent"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_id",
+    "run_id",
+    "session_id",
+    "parent_session_id",
+    "actor_role",
+    "phase",
+    "requested_model",
+    "resolved_model",
+    "actual_provider",
+    "provider_response_id",
+    "source",
+    "counter_semantics",
+    "mapping_id",
+    "billing_counters",
+    "reported_cost_usd",
+    "reasoning_rule",
+    "raw_provider_usage",
+    "native_usage",
+    "reconciliation"
+  ]
+}

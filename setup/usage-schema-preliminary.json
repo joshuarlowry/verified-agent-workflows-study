@@ -1,0 +1,10 @@
+{
+  "kind": "mechanical_counter_and_schema_probe_not_model_evaluation",
+  "model_calls": 0,
+  "observed_reasoning_exceeds_completion_case_preserved": true,
+  "cache_write_alias_not_doubled": true,
+  "duplicate_snapshot_not_double_charged": true,
+  "missing_counters_remain_null": true,
+  "schema_validation_passed": true,
+  "cross_review_and_broker_integration": "pending"
+}
