@@ -1,0 +1,37 @@
+{
+  "recorded_at_utc": "2026-11-07T19:14:04.854923+00:00",
+  "classification": "preparation capture-relay first-token/read-timeout defect",
+  "evidence": {
+    "source": "Outer Relay.do_POST used urllib.request.urlopen(q,timeout=120)",
+    "repeated_requests": "Native requests 51-55 have identical SHA256 dc1bd8b566b5e84ae42382c3c39a12c3f9ac5da8c15daad49d64ebc0063e740f and recur around 122-128 seconds apart",
+    "provider_streams": "Requests 51-53 captured keepalive comments without JSON generation frames or terminal marker; outer gateway captures were absent",
+    "controlled_local_check": "A synthetic delayed-header server reproduces TimeoutError with a scaled short read timeout; timeout=None preserves the exact response. No model call used for that check.",
+    "interpretation": "The capture relay can abort a still-live provider request whose keepalives are buffered by LiteLLM; removing that artificial cutoff is a mechanical repair, not a model change."
+  },
+  "repair": {
+    "relay_read_timeout_seconds": null,
+    "native_sdk_model_settings": "unchanged",
+    "request_capture_ordinal": "now request-local",
+    "gateway_exception_metadata": "captured without credential values",
+    "scored_workflow_deadline_minutes": 120,
+    "scored_deadline_changed": false,
+    "still_requires_full_controller_deadline_and_abort_qualification": true
+  },
+  "affected_endpoint": {
+    "launch_id": "docs-selection-review-20261107T183238Z",
+    "outcome": "interrupted for mechanical transport repair; no native final return",
+    "original_logs_and_partial_outputs": "preserved privately; not imported into retry",
+    "incomplete_call_usage": "unavailable, not zero"
+  },
+  "retry": {
+    "launch_id": "docs-transport-retry-20261107T191133Z",
+    "model": "z-ai/glm-5.3-flash",
+    "provider": "Relace FP4, ZDR, no fallback",
+    "prompt_sha256": "c4131293193129d2819b4f63edda87a1f068fd52e99e1733748f1eebcea9aace",
+    "all_input_bytes_identical": true,
+    "new_session_workspace_and_run_id": true
+  },
+  "earlier_completed_preparation": "Complete successful provider/gateway pairs remain valid; baseline 91 generations and all 21 source checksums were verified separately. No calibration/scored run exists.",
+  "next_baseline_review": "baseline-review-20261107T191158Z",
+  "calibration_or_scored_dispatch_authorized": false
+}
