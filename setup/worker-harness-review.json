@@ -1,0 +1,68 @@
+{
+  "recorded_at_utc": "2026-11-07T22:19:17.286665+00:00",
+  "run_id": "clean-20261107T122746Z-worker-harness-review-retry-glm-20261107T213519Z",
+  "verdict": "changes_required",
+  "review_sha256": "22cc50fba94e775fd10e7b88abc69649ce464197b32eaf7c543258086ea4ac67",
+  "stream_integrity": "All48calls passed current capture auditor",
+  "findings": [
+    {
+      "id": "F-01",
+      "severity": "blocker",
+      "title": "No native OpenCode 2.2.5 adapter or worker launcher exists; the supervisor-to-Gemma interface is protocol-only with a synthetic transport"
+    },
+    {
+      "id": "F-02",
+      "severity": "major",
+      "title": "Missing-controller-ledger fails open: absent ledger is silently created and treated as 'not stopped'"
+    },
+    {
+      "id": "F-03",
+      "severity": "major",
+      "title": "120-minute whole-workflow deadline is caller-supplied, not derived from the registration"
+    },
+    {
+      "id": "F-04",
+      "severity": "major",
+      "title": "Budget-term matching over a full non-stream response body can latch the global admission stop on model/task text"
+    },
+    {
+      "id": "F-05",
+      "severity": "medium",
+      "title": "Candidate-added Gemma/Terra usage mappings conflict with the supplied frozen usage-record schema; subset partition is unvalidated"
+    },
+    {
+      "id": "F-06",
+      "severity": "medium",
+      "title": "Broker and relay Unix sockets are not permission-restricted"
+    },
+    {
+      "id": "F-07",
+      "severity": "medium",
+      "title": "Construction-input provenance diverges from the supplied current inputs"
+    },
+    {
+      "id": "F-08",
+      "severity": "low",
+      "title": "Non-'final' terminal reasons do not validate actor/session identity"
+    },
+    {
+      "id": "F-09",
+      "severity": "low",
+      "title": "prompt_sha256/config_sha256 are recorded but never verified against actual artifacts"
+    },
+    {
+      "id": "F-10",
+      "severity": "low",
+      "title": "Any relay exception sets the shared cancel event, conflating supervisor-side client aborts with infrastructure failure"
+    },
+    {
+      "id": "F-11",
+      "severity": "info",
+      "title": "Hardcoded five-arm list and optional registration binding in Store"
+    }
+  ],
+  "scope": "Source/synthetic review of preserved partial prototype; actual native/root runtime remains unimplemented/unqualified in that candidate.",
+  "repair_launch": "native-harness-completion-20261107T214216Z",
+  "original_zero_call_startup_crash_preserved": true,
+  "no_synthetic_pass_as_live_qualification": true
+}

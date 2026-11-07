@@ -1,0 +1,79 @@
+{
+  "recorded_at_utc": "2026-11-07T22:19:17.286665+00:00",
+  "run_id": "clean-20261107T122746Z-native-worker-short-socket-gemma-20261107T220933Z",
+  "status": "limited_native_worker_launch_and_continuation_proof_passed",
+  "requested_model": "google/gemma-4-31b-it",
+  "route": "OpenCode2.2.5 -> isolated loopback/Unix bridge -> verified private LiteLLM1.103.3 -> OpenRouter Crusoe BF16/ZDR, no fallback",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "phases": [
+    {
+      "phase": 1,
+      "exit_code": 0,
+      "session_id": "ses_e47edd643ffeMBBgGhFDpZKRjK",
+      "elapsed_seconds": 5.001275095011806,
+      "first_request": 1,
+      "last_request": 3,
+      "prompt_sha256": "a0af96baff712b744c86a2c6df82487c187860545a70198516f3b646cf4410b3"
+    },
+    {
+      "phase": 2,
+      "exit_code": 0,
+      "session_id": "ses_e47edd643ffeMBBgGhFDpZKRjK",
+      "elapsed_seconds": 26.003735795995453,
+      "first_request": 4,
+      "last_request": 11,
+      "prompt_sha256": "e67d29cf5b9aeeeecf30c7f7561a21bbe25d4751c598e712c410c90e38abaf26"
+    }
+  ],
+  "checks": {
+    "proof.txt": true,
+    "memory.txt": true,
+    "two_native_returns_same_session": true,
+    "phase2_wire_contains_prior_nonce": true
+  },
+  "all_passed": true,
+  "total_requests": 11,
+  "successful_captured_calls": 6,
+  "failed_http_calls": [
+    {
+      "request": 4,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 5,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 8,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 9,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    },
+    {
+      "request": 10,
+      "provider_error_code": 429,
+      "capture_sha256": "f2642c7ed6dc9831d4495179d36c967f2059f51355014ab743ebed5470961281",
+      "usage_status": "unavailable; not assumed zero"
+    }
+  ],
+  "failed_call_billing_complete": false,
+  "proof": "Two native returns on one captured session; phase2upstream request contains prior nonce; literal [DONE] inside a file-write tool argument preserved and both exact file byte checks pass.",
+  "limits": [
+    "Disposable transport tasks only; not benchmark quality or a scored workflow.",
+    "Context absent; no full supervisor/broker interface or seven-role inheritance proof.",
+    "No whole-workflow cgroup endpoint/cancellation/resource-lane qualification.",
+    "Five recognized429failures retained; failed-call billing unavailable, not assumed zero."
+  ],
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

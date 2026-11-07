@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T22:13:36.862573+00:00",
+  "updated_at_utc": "2026-11-07T22:19:17.286665+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -42,10 +42,8 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "worker-harness-review-retry-20261107T213519Z",
+    "active_launch": "docs-extraction-completion-20261107T213919Z",
     "queued_in_order": [
-      "native-worker-short-socket-20261107T220933Z (nested before docs constructor)",
-      "docs-extraction-completion-20261107T213919Z",
       "native-harness-completion-20261107T214216Z",
       "c1-checker-review-20261107T220209Z"
     ],
@@ -86,5 +84,7 @@
   "worker_review_startup_failure": "setup/worker-review-startup-failure.json",
   "independent_C1_evaluator_endpoint": "setup/c1-independent-evaluator-endpoint.json",
   "independent_C1_alternate_endpoint": "setup/c1-alternate-endpoint.json",
-  "native_worker_socket_repair": "setup/native-worker-socket-repair.json"
+  "native_worker_socket_repair": "setup/native-worker-socket-repair.json",
+  "native_worker_continuation_preflight": "setup/native-worker-continuation-preflight.json",
+  "worker_harness_review": "setup/worker-harness-review.json"
 }
