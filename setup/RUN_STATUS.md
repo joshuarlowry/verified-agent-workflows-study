@@ -1,12 +1,12 @@
 # Current run status
 
-Updated: 2026-11-07T11:54:57.448471+00:00
+Updated: 2026-11-07T12:07:35.645797+00:00
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State |
 |---|---|---|
-| terra-harness-adapter-retry | openai/gpt-6.1-terra | blocked preserved |
+| glm-litellm-patch-review | z-ai/glm-5.3-flash | running |
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
