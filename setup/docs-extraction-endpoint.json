@@ -1,0 +1,23 @@
+{
+  "recorded_at_utc": "2026-11-07T20:41:58.419771+00:00",
+  "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z",
+  "status": "BLOCKED_PARTIAL_NOT_DISPATCHABLE",
+  "stream_integrity": "52calls; all paired-stream, native endpoint, request inventory and captured usage checks passed",
+  "manifest_sha256": "3090ca160e6420551342c81b73e45ebe3284fa78d193ec62ce0fe887a42757b5",
+  "coverage_sha256": "979110ddcadc88a88d587dbdee546838a8111783a711cf5434e9f4f22210624d",
+  "source_bodies_acquired_reported": 125,
+  "partial_excerpts_staged_reported": 6,
+  "query_scenarios": 22,
+  "queries_executed": false,
+  "Context_indexes_built": false,
+  "gaps": [
+    "Pinned Vitest CLI page references cli-generated.md outside the approved include list; narrow source-extension review required.",
+    "Most approved bodies remain excluded; faithful MDX/generated-content extraction and version-passage coverage unresolved.",
+    "Attribution/publication review, indexed-file parity and seven-role offline query/isolation qualification remain pending."
+  ],
+  "review_launch": "docs-extraction-review-20261107T204047Z",
+  "qualification_claim": false,
+  "first_endpoint_preserved": true,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

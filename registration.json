@@ -379,9 +379,10 @@
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
     "coverage_gaps": [
-      "Fresh source selection, omissions and version/API coverage review pending",
-      "Clean corpus build and seven-role offline retrieval qualification pending",
-      "Public attribution/redistribution review pending; raw upstream material withheld"
+      "Source selection accepted; expanded extraction is partial (125bodies acquired, six excerpts staged).",
+      "Proposed pinned Vitest include and faithful MDX/generated-content/SQLite passage coverage need review and repair.",
+      "Context archive/index, file parity and all22generic queries/seven-role offline qualification pending.",
+      "Attribution/publication review pending; raw upstream material withheld."
     ],
     "preparation_plan": "STUDY_PLAN.md",
     "candidate_corpus_plan": "registration.json#/application_preparation",
@@ -395,11 +396,14 @@
     "runtime_compatibility_verified": false,
     "curator": {
       "model": "openai/gpt-6.1-terra",
-      "session": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
+      "session": "ses_e484a21b7ffeTsJZ56wk8qJJgr",
       "provider_tag": "azure",
       "reasoning_effort": "high",
-      "status": "source_selection_delivered_pending_different_model_review",
-      "independence_claim": false
+      "status": "source_plan_accepted_partial_extraction_returned_pending_review",
+      "independence_claim": false,
+      "source_selection_run": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
+      "source_amendment_run": "clean-20261107T122746Z-docs-source-repair-terra-20261107T193704Z",
+      "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z"
     },
     "review_scope": [
       "source selection and omissions",
@@ -413,17 +417,25 @@
     "human_review_required": false,
     "different_model_cross_review_required_before_calibration": true,
     "cross_reviewer": {
-      "status": "pending_clean_rerun"
+      "model": "z-ai/glm-5.3-flash",
+      "source_review_run": "clean-20261107T122746Z-docs-amendment-review-glm-20261107T200337Z",
+      "source_review_status": "accepted_source_plan_only",
+      "extraction_review_run": "clean-20261107T122746Z-docs-extraction-review-glm-20261107T204047Z",
+      "extraction_review_status": "queued",
+      "independent_model_family_claim": false
     },
     "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence",
     "snapshot_hash_definition": "SHA256 of the frozen SHA256SUMS artifact listing; raw files/archives are retained privately with listed hashes",
     "generic_native_smoke": "setup/opencode-context-preliminary.json; generic archive and synthetic responses only, explicit runtime add/healthcheck required in observed setup",
     "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public",
-    "selection_evidence": "setup/docs-selection.json"
+    "selection_evidence": "setup/docs-source-approval.json",
+    "original_selection_evidence": "setup/docs-selection.json",
+    "extraction_status": "partial_blocked_not_indexed",
+    "extraction_evidence": "setup/docs-extraction-endpoint.json"
   },
   "application_preparation": {
     "plan": "STUDY_PLAN.md",
-    "status": "source_and_binding_review_accepted_three_public_replays_passed_non_test_auth_image_replays_pending",
+    "status": "source_and_binding_review_accepted_three_public_and_non_test_auth_image_replays_passed_pending_final_freeze",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
@@ -518,7 +530,8 @@
     "current_candidate_manifest": "setup/baseline-candidate.json",
     "current_candidate_path": "Private frozen endpoint; final public baseline not promoted",
     "baseline_review_evidence": "setup/baseline-delta-approval.json",
-    "baseline_clean_replay_evidence": "setup/clean-container-replay-20261107T200937Z.json"
+    "baseline_clean_replay_evidence": "setup/clean-container-replay-20261107T200937Z.json",
+    "native_auth_image_replay_evidence": "setup/clean-native-auth-replay-20261107T200937Z.json"
   },
   "study_kind": "feasibility_and_estimation_only",
   "canonical_configuration": true,
@@ -792,7 +805,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "baseline_review_accepted_public_replays_passed_documentation_extraction_running",
+    "status": "baseline_public_and_auth_image_replays_passed_C1_construction_active_docs_partial_extraction_requires_review",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,

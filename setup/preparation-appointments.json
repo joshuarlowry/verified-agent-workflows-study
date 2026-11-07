@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T20:21:59.680465+00:00",
+  "recorded_at_utc": "2026-11-07T20:41:58.419771+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -431,6 +431,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
       "qualification": "Common adapter/broker and generic prompts, no application/task/evaluator input. Synthetic tests only; no nested paid model probes. Different-model review and actual seven-role runtime/resource/Context/capture qualification required."
+    },
+    {
+      "launch_id": "docs-extraction-review-20261107T204047Z",
+      "role": "glm-docs-extraction-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-docs-extraction-review-glm-20261107T204047Z",
+      "manifest_created_at_utc": "2026-11-07T20:40:47.988997+00:00",
+      "prompt_sha256": "5475905a3a6b78031a174bb245efde437a076ed3cdae13a4e60fa25e23f48812",
+      "controller_sha256": "964871cff4e9e6d88e45394ef98a3df57db370ba6e9900bbf1ef71edf3fdeb29",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
+      "qualification": "Review partial extraction and constructor-proposed pinned Vitest include. Not approval of partial corpus; no indexes or study dispatch."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
