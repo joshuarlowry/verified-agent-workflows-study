@@ -47,7 +47,6 @@ Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus
 - **fixture_and_corpus**: qualify baseline, calibration tasks, source corpus, evaluator and isolated DB authorization
 - **authored_treatment_review**: record and cross-review authoritative role prompts, handoff templates, task contracts and FAQ using different authorized models; retain per-artifact hashes and revisions
 - **resource_lanes**: qualify two equal isolated lanes and rate-limit behavior, or explicitly amend to sequential
-- **clean_transport**: Reviewed frozen repair, mandatory startup identity, complete raw stream capture, and fresh Gemma/GLM/Terra native tool/accounting checks
 
 **Optional extension:** blinded human patch review can later measure merge readiness and active review effort on frozen endpoints. It does not gate core setup, calibration or scoring. See [reviewer brief](REVIEWER_BRIEF.md); fixture/corpus qualification uses recorded cross-review by different authorized study models; it does not establish independent-family authorship.
 

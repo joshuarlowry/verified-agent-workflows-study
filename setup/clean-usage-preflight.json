@@ -1,0 +1,188 @@
+{
+  "cohort_id": "clean-20261107T122746Z",
+  "kind": "fresh_accounting_capture_preflight_not_quality_result",
+  "all_passed": true,
+  "count_each_response_once": true,
+  "never_add_native_and_provider_views": true,
+  "completion_rule": "Provider completion tokens billed once; reasoning remains diagnostic, not an extra billable category.",
+  "input_rule": "For these observed calls, cached/read and write counters partition inclusive prompt with uncached remainder; recorded rate card reproduces provider cost.",
+  "models": [
+    {
+      "model": "google/gemma-4-31b-it",
+      "provider_tag": "crusoe/bf16",
+      "catalog_quantization": "bf16",
+      "public_revision_name": "Crusoe | google/gemma-4-31b-it-20260402",
+      "rates_usd_per_token": {
+        "prompt": "0.00000014",
+        "completion": "0.0000004",
+        "input_cache_read": "0.00000014",
+        "discount": 0
+      },
+      "calls": [
+        {
+          "response_id": "gen-1794060769-xlolppg8TEVYn3QpCvoR",
+          "input_inclusive": 4099,
+          "billable_completion": 522,
+          "cached_input_subset": 5,
+          "cache_write_subset": 0,
+          "reasoning_diagnostic": 0,
+          "provider_cost_usd": "0.00078266",
+          "rate_card_recomputed_usd": "0.00078266",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060772-VOinIsfeSLBmgx3dXIcQ",
+          "input_inclusive": 4656,
+          "billable_completion": 28,
+          "cached_input_subset": 5,
+          "cache_write_subset": 0,
+          "reasoning_diagnostic": 0,
+          "provider_cost_usd": "0.00066304",
+          "rate_card_recomputed_usd": "0.00066304",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        }
+      ]
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "provider_tag": "relace/fp4",
+      "catalog_quantization": "fp4",
+      "public_revision_name": "Relace | z-ai/glm-5.3-flash-20260826",
+      "rates_usd_per_token": {
+        "prompt": "0.0000000285",
+        "completion": "0.0000000923",
+        "input_cache_read": "0.0000000285",
+        "discount": 0
+      },
+      "calls": [
+        {
+          "response_id": "gen-1794060801-6lMHHX6USBPC3tRuRQXE",
+          "input_inclusive": 4025,
+          "billable_completion": 1054,
+          "cached_input_subset": 0,
+          "cache_write_subset": 0,
+          "reasoning_diagnostic": 653,
+          "provider_cost_usd": "0.0002119967",
+          "rate_card_recomputed_usd": "0.0002119967",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060819-svYxVAZsQXZBi5wqgkGU",
+          "input_inclusive": 5089,
+          "billable_completion": 55,
+          "cached_input_subset": 0,
+          "cache_write_subset": 0,
+          "reasoning_diagnostic": 0,
+          "provider_cost_usd": "0.000150113",
+          "rate_card_recomputed_usd": "0.0001501130",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060821-93fcREz6b63RSfHuRSq8",
+          "input_inclusive": 5167,
+          "billable_completion": 66,
+          "cached_input_subset": 5120,
+          "cache_write_subset": 0,
+          "reasoning_diagnostic": 12,
+          "provider_cost_usd": "0.0001533513",
+          "rate_card_recomputed_usd": "0.0001533513",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060823-4YOU3FSq8AkJgobNqFna",
+          "input_inclusive": 5248,
+          "billable_completion": 78,
+          "cached_input_subset": 5120,
+          "cache_write_subset": 0,
+          "reasoning_diagnostic": 0,
+          "provider_cost_usd": "0.0001567674",
+          "rate_card_recomputed_usd": "0.0001567674",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        }
+      ]
+    },
+    {
+      "model": "openai/gpt-6.1-terra",
+      "provider_tag": "azure",
+      "catalog_quantization": "unknown",
+      "public_revision_name": "Azure | openai/gpt-6.1-terra-20261026",
+      "rates_usd_per_token": {
+        "prompt": "0.000001",
+        "completion": "0.000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000005",
+        "input_cache_write": "0.00000125",
+        "discount": 0,
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.000002",
+            "completion": "0.0000075",
+            "input_cache_read": "0.0000001",
+            "input_cache_write": "0.0000025"
+          }
+        ]
+      },
+      "calls": [
+        {
+          "response_id": "gen-1794060854-Wtn3MYrwkflkWSrqNOBp",
+          "input_inclusive": 3503,
+          "billable_completion": 465,
+          "cached_input_subset": 0,
+          "cache_write_subset": 3500,
+          "reasoning_diagnostic": 15,
+          "provider_cost_usd": "0.006703",
+          "rate_card_recomputed_usd": "0.00670300",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060856-eDDX6Oz3Zs1ThKV1NnDu",
+          "input_inclusive": 3967,
+          "billable_completion": 90,
+          "cached_input_subset": 3500,
+          "cache_write_subset": 464,
+          "reasoning_diagnostic": 0,
+          "provider_cost_usd": "0.001208",
+          "rate_card_recomputed_usd": "0.00120800",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060858-BsSZcXp6fnOrAdrGL50b",
+          "input_inclusive": 4086,
+          "billable_completion": 297,
+          "cached_input_subset": 3964,
+          "cache_write_subset": 119,
+          "reasoning_diagnostic": 189,
+          "provider_cost_usd": "0.00183495",
+          "rate_card_recomputed_usd": "0.00183495",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        },
+        {
+          "response_id": "gen-1794060860-jkubQAMFujsEq8belRQY",
+          "input_inclusive": 4215,
+          "billable_completion": 27,
+          "cached_input_subset": 4083,
+          "cache_write_subset": 129,
+          "reasoning_diagnostic": 0,
+          "provider_cost_usd": "0.0005034",
+          "rate_card_recomputed_usd": "0.00050340",
+          "cost_matches": true,
+          "usage_packets_observed": 1
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Finite disposable calls only; preserve raw counters and revalidate after model/provider/harness changes.",
+    "Full actor/session/retry accounting and collection controller still require qualification."
+  ]
+}

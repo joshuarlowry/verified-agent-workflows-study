@@ -1,0 +1,169 @@
+{
+  "cohort_id": "clean-20261107T122746Z",
+  "kind": "fresh_native_transport_preflight_not_coding_quality_scores",
+  "all_passed": true,
+  "models": [
+    {
+      "model": "google/gemma-4-31b-it",
+      "run_id": "clean-20261107T122746Z-transport-gemma-20261107T140924Z",
+      "prompt_sha256": "02b52637680489682846189deacbe2ff477f582d2d987df587745eca1d19d224",
+      "all_passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "budget_not_exhausted": true,
+        "startup_verified": true,
+        "file_bytes_exact": true,
+        "native_final_stop": true,
+        "native_usage_present": true,
+        "all_calls_paired": true,
+        "all_streams_preserved": true,
+        "raw_usage_captured": true
+      },
+      "calls": 2,
+      "pairs": [
+        {
+          "response_ids": [
+            "gen-1794060769-xlolppg8TEVYn3QpCvoR"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "838765b57779043b9f546474b4699e03b8faa2f2ec950e7717de436efab60525"
+        },
+        {
+          "response_ids": [
+            "gen-1794060772-VOinIsfeSLBmgx3dXIcQ"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "95698d6649e568e478ac584fc3166159810821743c1087cb6eae8d5b156ff441"
+        }
+      ]
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-transport-glm-20261107T140924Z",
+      "prompt_sha256": "02b52637680489682846189deacbe2ff477f582d2d987df587745eca1d19d224",
+      "all_passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "budget_not_exhausted": true,
+        "startup_verified": true,
+        "file_bytes_exact": true,
+        "native_final_stop": true,
+        "native_usage_present": true,
+        "all_calls_paired": true,
+        "all_streams_preserved": true,
+        "raw_usage_captured": true
+      },
+      "calls": 4,
+      "pairs": [
+        {
+          "response_ids": [
+            "gen-1794060801-6lMHHX6USBPC3tRuRQXE"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "35eb1cb0ea43721fc8d56899784ad546c52ea7c8a96792779f8093fb236319cc"
+        },
+        {
+          "response_ids": [
+            "gen-1794060819-svYxVAZsQXZBi5wqgkGU"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "9e4b8a03135201d4c892671b2210a85595ff74af1d1e8e6c3b4734d89dafed85"
+        },
+        {
+          "response_ids": [
+            "gen-1794060821-93fcREz6b63RSfHuRSq8"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "5564b40ebe9ef799ea6bb7d0160b9971b8b2eee3172056699ccf076eada5495b"
+        },
+        {
+          "response_ids": [
+            "gen-1794060823-4YOU3FSq8AkJgobNqFna"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "9fadf00a974dd0e2ffeaeb1bb748f0ca9c3f63ea68e867f28ae62b185d27c4b8"
+        }
+      ]
+    },
+    {
+      "model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-transport-terra-20261107T140924Z",
+      "prompt_sha256": "02b52637680489682846189deacbe2ff477f582d2d987df587745eca1d19d224",
+      "all_passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "budget_not_exhausted": true,
+        "startup_verified": true,
+        "file_bytes_exact": true,
+        "native_final_stop": true,
+        "native_usage_present": true,
+        "all_calls_paired": true,
+        "all_streams_preserved": true,
+        "raw_usage_captured": true
+      },
+      "calls": 4,
+      "pairs": [
+        {
+          "response_ids": [
+            "gen-1794060854-Wtn3MYrwkflkWSrqNOBp"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "b91c36b2a797b902327405db9f41df28c37e96204ebeec83e3af21c3a6f36903"
+        },
+        {
+          "response_ids": [
+            "gen-1794060856-eDDX6Oz3Zs1ThKV1NnDu"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "5d2275e310cf6b21b281a2b22d4d6abc310820488f3323cd704e92f37f557ed3"
+        },
+        {
+          "response_ids": [
+            "gen-1794060858-BsSZcXp6fnOrAdrGL50b"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "efdca255deeb53ceae068caecc60829ab0b4beb977e82cf5b38b33e8dcb56383"
+        },
+        {
+          "response_ids": [
+            "gen-1794060860-jkubQAMFujsEq8belRQY"
+          ],
+          "semantic_fidelity_and_terminal_order": true,
+          "provider_usage_present": true,
+          "gateway_usage_present": true,
+          "upstream_semantic_sha256": "90db19b1b247467ef20be1ac35c535c6959b7ba782a6e8f1305d5ab4bceed52d"
+        }
+      ]
+    }
+  ],
+  "same_frozen_patch_sha256": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79",
+  "order": [
+    "google/gemma-4-31b-it",
+    "z-ai/glm-5.3-flash",
+    "openai/gpt-6.1-terra"
+  ],
+  "calibration_or_scored_runs": 0,
+  "limitations": [
+    "No full model-role/corpus/broker/resource qualification yet.",
+    "Raw usage captured; detailed subset/billing reconciliation and final harness freeze remain required.",
+    "Fresh public scope and all benchmark fixtures still need reconstruction/requalification."
+  ]
+}

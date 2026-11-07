@@ -543,7 +543,7 @@
       "supervisor/worker role behavior"
     ],
     "transport_compatibility": {
-      "status": "strict_OpenRouter_candidate_pending_final_review",
+      "status": "qualified_for_clean_construction_only",
       "upstream_litellm_version": "1.103.3",
       "patch": "harness/litellm_compatibility/sitecustomize.py",
       "patch_sha256": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79",
@@ -551,10 +551,11 @@
       "scope": "Process-local OpenRouter subclass only, same final frozen overlay required for all roles; no installed package mutation",
       "reason": "Base iterator falsely treats literal [DONE] inside streamed JSON as terminal; paired same-generation trace isolates gateway mutation",
       "regression_evidence": "setup/litellm-sse-regressions.json",
-      "review_status": "Prior review findings addressed; full-wrapper regressions pass; final review pending",
+      "review_status": "GLM acceptable limited candidate plus fresh three-model native/capture/billing probes passed",
       "scored_dispatch_authorized": false,
       "gateway_launcher": "harness/litellm_compatibility/launch_gateway.py",
-      "gateway_launcher_sha256": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e"
+      "gateway_launcher_sha256": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e",
+      "review_evidence": "setup/transport-review.json"
     }
   },
   "launch_blockers": [
@@ -608,7 +609,13 @@
       "id": "clean_transport",
       "phase": "before_clean_model_construction",
       "detail": "Reviewed frozen repair, mandatory startup identity, complete raw stream capture, and fresh Gemma/GLM/Terra native tool/accounting checks",
-      "resolved": false
+      "resolved": true,
+      "evidence": [
+        "setup/transport-review.json",
+        "setup/clean-transport-preflight.json",
+        "setup/clean-usage-preflight.json"
+      ],
+      "resolution_scope": "Source-free native payload/startup and observed-call billing qualification for all three models; full role/corpus/broker/resource controller qualification remains gated."
     }
   ],
   "pre_recruitment_work": {
@@ -784,7 +791,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "transport_gate_pending",
+    "status": "fresh_public_scope_construction_in_progress",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,
@@ -799,6 +806,8 @@
       "harness/litellm_compatibility/launch_gateway.py": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e",
       "harness/litellm_compatibility/sitecustomize.py": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79"
     },
-    "transport_bundle_sha256": "0e102e93bdf2540891f71e55185f9d1966ecf9178dbbc5608e3526dc9d9bff8c"
+    "transport_bundle_sha256": "0e102e93bdf2540891f71e55185f9d1966ecf9178dbbc5608e3526dc9d9bff8c",
+    "transport_preflight": "setup/clean-transport-preflight.json",
+    "usage_preflight": "setup/clean-usage-preflight.json"
   }
 }

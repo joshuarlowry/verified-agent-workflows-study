@@ -1,0 +1,77 @@
+{
+  "cohort_id": "clean-20261107T122746Z",
+  "kind": "repair_qualification_not_model_quality_results",
+  "reviewer_model": "z-ai/glm-5.3-flash",
+  "provider_tag": "relace/fp4",
+  "verdict": "acceptable limited candidate",
+  "review_report_sha256": "b8ad0a0d42d77c96b2bc68eb9176dd2790174bd54e01f83ffa20bae73c791208",
+  "patch_sha256": "c190a8fa7b44c8dd2945e69a061f761a8551913ca5e7a1d2d8047e614e915c79",
+  "gateway_launcher_sha256": "e6d74758824da4a1a41338517f2de18384d782b1ce96ebe2af78cf10e0534c5e",
+  "scope": "Strict registered OpenRouter path, actual method identity/startup guards and full sync/async wrapper regressions; not full worker/corpus/study qualification",
+  "limitations": [
+    {
+      "id": "F1",
+      "severity": "info",
+      "area": "scope",
+      "paths": [
+        "inputs/patch/README.md"
+      ],
+      "finding": "Overlay scope is exactly the registered OpenRouter ChatCompletions streaming handler; strict contract (single-line JSON data events, standalone terminal marker, comments inert) is documented and enforced. Multi-line folded data events and leading-whitespace data lines are rejected as malformed; per the documented contract a live provider requiring them blocks qualification and is not an agent-quality failure."
+    },
+    {
+      "id": "F2",
+      "severity": "low",
+      "area": "strictness edge",
+      "paths": [
+        "inputs/patch/sitecustomize.py"
+      ],
+      "finding": "After a clean terminal, subsequent comment/keepalive lines return empty chunks rather than raising; a duplicate terminal marker raises. Both preserve stop semantics; no premature-success path found. Acceptable."
+    },
+    {
+      "id": "F3",
+      "severity": "low",
+      "area": "data-after-finish detector",
+      "paths": [
+        "inputs/patch/sitecustomize.py"
+      ],
+      "finding": "Post-finish data detection keys on content/tool_calls/reasoning/reasoning_content/reasoning_details; a post-finish delta carrying only legacy fields (e.g. role-only or function_call-only) would pass through without raising. Not model payload for the registered path; acceptable, noted for awareness."
+    },
+    {
+      "id": "F4",
+      "severity": "info",
+      "area": "launcher bootstrap",
+      "paths": [
+        "inputs/patch/launch_gateway.py"
+      ],
+      "finding": "Bootstrap limitation (disclosed): verification is one-shot at interpreter startup. The launcher depends on the interpreter auto-importing sitecustomize via PYTHONPATH (refuses if absent, mistyped activation, wrong path, hash mismatch, changed upstream, or restored methods). Direct CLI launches without the launcher remain possible and are only excluded procedurally. STUDY_LITELLM_DONE_FIX=1 activates the overlay in every pinned-env process started with that environment, not only the gateway. Runtime un-patching inside the long-running gateway after startup is not re-detected per chunk."
+    },
+    {
+      "id": "F5",
+      "severity": "info",
+      "area": "event ordering",
+      "paths": [
+        "inputs/patch/launch_gateway.py"
+      ],
+      "finding": "study_gateway_verified is emitted before the --config requirement and CLI launch; a missing-config refusal still exits 78 after the event. The controller must treat the event together with process exit status, and must observe the event before dispatch as documented."
+    },
+    {
+      "id": "F6",
+      "severity": "info",
+      "area": "startup module slot",
+      "paths": [
+        "inputs/patch/sitecustomize.py"
+      ],
+      "finding": "The pinned venv has no other sitecustomize; with PYTHONPATH set the overlay takes the startup-module slot for every pinned-env python process (on a host interpreter the same slot is otherwise occupied by the apport hook). Recorded as the documented difference."
+    },
+    {
+      "id": "F7",
+      "severity": "info",
+      "area": "invalid vs regression",
+      "paths": [
+        "inputs/paired-capture"
+      ],
+      "finding": "Distinction verified: invalid stream shapes fail fast through the wrappers with mapped errors; genuine provider regressions would appear as provider-side valid streams failing the strict contract and block qualification; real provider error frames still surface as errors with their status code (402 preserved end-to-end in probes). The corrupted unpatched-gateway capture is rejected as data-after-finish, which is correct strict behavior on already-corrupted input."
+    }
+  ],
+  "model_family_independence_claim": false
+}
