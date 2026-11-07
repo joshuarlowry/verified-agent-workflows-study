@@ -1,0 +1,15 @@
+{
+  "kind": "mechanical_no_model_calls",
+  "upstream_bug_negative_control": true,
+  "checks": [
+    "content_preserved",
+    "tool_arguments_preserved",
+    "reasoning_preserved",
+    "real_sentinel_variants_end",
+    "sync_iteration_continues_after_literal",
+    "async_iteration_continues_after_literal",
+    "budget_error_not_swallowed",
+    "usage_preserved"
+  ],
+  "all_passed": true
+}

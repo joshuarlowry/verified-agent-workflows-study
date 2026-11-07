@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 9,
+  "protocol_revision": 10,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -587,7 +587,19 @@
       "model-specific reasoning/settings support",
       "provider serving stack and quantization",
       "supervisor/worker role behavior"
-    ]
+    ],
+    "transport_compatibility": {
+      "status": "study_only_candidate_pending_cross_review_and_full_role_qualification",
+      "upstream_litellm_version": "1.103.3",
+      "patch": "harness/litellm_compatibility/sitecustomize.py",
+      "patch_sha256": "d594e4a18083fae8fd03f6f10a87027dd24769e887d7043761f68af542891e6a",
+      "activation": "Study gateway PYTHONPATH plus STUDY_LITELLM_DONE_FIX=1; shared system service untouched",
+      "scope": "Same qualified overlay required for every model and role before calibration; no mixing",
+      "reason": "Base iterator falsely treats literal [DONE] inside streamed JSON as terminal; paired same-generation trace isolates gateway mutation",
+      "regression_evidence": "setup/litellm-sse-regressions.json",
+      "review_status": "pending",
+      "scored_dispatch_authorized": false
+    }
   },
   "launch_blockers": [
     {

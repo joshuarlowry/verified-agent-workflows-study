@@ -10,3 +10,7 @@ node_modules/
 *.sqlite
 *.sqlite3
 .DS_Store
+
+# Python controller caches
+__pycache__/
+*.py[cod]

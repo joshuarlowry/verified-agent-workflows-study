@@ -3,7 +3,7 @@
   "observed_at_utc": "2026-11-07T11:52:50.069913+00:00",
   "original_failure": "provider.invalid-output: content received after finish reason",
   "original_endpoint_preserved": true,
-  "root_cause_status": "not_reproduced_not_fixed",
+  "root_cause_status": "isolated_to_LiteLLM_substring_sentinel_predicate_fix_candidate_under_qualification",
   "probes": [
     {
       "route": "direct_openrouter",
@@ -69,5 +69,26 @@
     "api_budget_exhausted": false,
     "raw_streams_retained_privately": true
   },
-  "next_action": "One explicitly recorded identical-prompt harness-construction retry with raw upstream stream capture; no automatic rescues or scored dispatch."
+  "next_action": "Qualify isolated source-guarded marker-equality patch, captured replay, native tool roundtrip and different-model review. No scored dispatch.",
+  "updated_at_utc": "2026-11-07T12:05:07.388101+00:00",
+  "identical_prompt_retry": {
+    "run_id": "terra-harness-retry-20261107T115222Z",
+    "outcome": "failed_same_provider_invalid_output",
+    "late_tool_arguments_after_gateway_stop": true,
+    "API_budget_exhausted": false,
+    "original_failure_and_retry_preserved": true
+  },
+  "same_generation_boundary_capture": {
+    "generation_id": "gen-1794052797-U95K0UqH7v9a1BmCfOG4",
+    "provider_frames": 139,
+    "gateway_frames": 139,
+    "provider_early_finish": false,
+    "gateway_premature_stop_frame": 71,
+    "trigger": "Literal [DONE] inside JSON tool arguments",
+    "subsequent_tool_argument_frames": true,
+    "raw_captures": "private artifact repository; not counted as a second billed generation per boundary",
+    "source_path": "litellm/llms/base_llm/base_model_iterator.py",
+    "source_method": "BaseModelResponseIterator._handle_string_chunk",
+    "defective_predicate": "if \"[DONE]\" in str_line:"
+  }
 }
