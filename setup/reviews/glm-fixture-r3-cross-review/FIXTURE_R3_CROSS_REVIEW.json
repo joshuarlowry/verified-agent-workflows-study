@@ -1,0 +1,201 @@
+{
+  "kind": "fixture_cross_review",
+  "phase": "fresh GLM cross-review of Terra's R3 preparation-repair endpoint; review endpoint only",
+  "reviewer": {
+    "requested": "GLM (z-ai/glm-5.3-flash) via OpenCode/LiteLLM/OpenRouter/Relace FP4",
+    "harness_identity": "study2-glm-probe/glm",
+    "exact_upstream_revision_and_route": null,
+    "note": "Requested identity is not independently resolved from the harness alias; controller evidence is authoritative for session identity, routing and timing.",
+    "other_models_or_subagents_invoked": false,
+    "subject_model_disclosure": "GLM authored the preserved baseline and R1/R2 repairs; Terra authored R3; this session is a fresh GLM cross-review of Terra's R3. All three families (Gemma, GLM, Terra) are authorized study subjects, so this review is disclosed subject-model cross-review, NOT independent-family evidence."
+  },
+  "input_identity": {
+    "outer_manifest": "inputs/endpoint-manifest.json",
+    "outer_manifest_file_sha256": "04ed73b05bc11c774878d4cc0c785ae65271669566f7384501e4de0d09093cb8",
+    "outer_entries": 78,
+    "outer_tree_sha256": "99f190ef87c601502bff08d15b6875071937dadcbf4ca1e90f394321ef5b8148",
+    "outer_tree_matches_claim": true,
+    "outer_independent_sha256_path_nul_hash_lf": "af6cc8c745e3d81d28ba57a3392e48d321bd39d4e9ac60b1e9fc557e4f3d5689",
+    "inner_manifest": "inputs/fixture/r3-endpoint-manifest.json",
+    "inner_manifest_file_sha256": "3ae36db8bc516e5985a197b81e637d38efb5e527ddf9f2afcb461252af17a4cf",
+    "inner_entries": 77,
+    "inner_tree_sha256": "57236d931b3c0b2d5becd54ed3ed09ba4327b05fd3986f591b0603d38fbe0004",
+    "inner_tree_matches_claim": true,
+    "inner_independent_sha256_path_nul_hash_lf": "62c7ca13a2721cc38426f93cc9eee1f5605c0736c8ec8f51582e1a70c4907e2a",
+    "outer_covers_inner_manifest_exactly": true,
+    "verification": "All 77 inner entries and all 78 outer entries verified: every path is a regular file with matching size and SHA-256; no extra or missing files under inputs/fixture. Outer additionally covers the inner manifest byte-exactly. source-hashes-final.txt (exit 0) reproduced identically after all diagnostics (cmp clean); immutable inputs were not modified.",
+    "r2_era_anchors": {
+      "r2_inner_manifest_delivered": "inputs/fixture/r2-endpoint-manifest.json (73 entries; tree 51f627395573b4774b7e7c57894ca00780275b6337045b1d13c757b1ef59e99f matches its own claim)",
+      "r2_outer_manifest": "NOT delivered in this endpoint; prior-review.json records its hash 663347850176614ed0ec0c362a94ee840c91521fb818305eb525cca3d298759e; its pre-edit verification remains a Terra-session historical claim, not independently re-verified here.",
+      "prior_review_file": "inputs/prior-review.json; delivered file sha256 2ea5e12f6e6a4efbb6999b48e6fa100499ce736bebcf3d593c4d2bf483bbb963. Its self-recorded prior_review_sha256 (0a92d4dc…) is self-referential and cannot be verified from the file itself; controller records are authoritative for prior-review integrity.",
+      "r3_changeset_vs_r2": "12 modified: README.md, baseline/docs/baseline-contract.md, baseline/e2e/helpers.ts, baseline/e2e/switch.spec.ts, baseline/src/components/ItemForm.tsx, baseline/src/components/Workboard.tsx, baseline/tests/api/auth.test.ts, contracts/C1-workspace-item-counts.md, contracts/README.md, contracts/S03-stable-cursor-pagination.md, contracts/S10-workspace-switch-guard.md, docs/faq-draft.md; 4 new: REPAIR_DISPOSITIONS_R3.json, REPAIR_PROVENANCE_R3.md, baseline/e2e/isolation.spec.ts, r2-endpoint-manifest.json. This exactly matches Terra's declared repair surface; every other file is byte-identical to the R2 manifest entries."
+    }
+  },
+  "overall_verdict": "consistent at review endpoint; all six prior R2 findings repaired or reduced to low documentation residue; no behavioral contradiction found in the R3 changeset; construction may proceed on draft terms subject to disclosed qualification gates",
+  "construction_decision": {
+    "baseline": "Consistent with the app on all inspected surfaces; freeze-ready candidate for the next phase. R2-N1 and R2-N2 are repaired and independently verified (control-flow inspection, fresh green check 11 unit / 36 API / 41 e2e, 21/21 HTTP-surface reproductions, 5/5 mutant kills of the new guards). Freezing remains a controller decision; a consistency verdict does not qualify nonexistent references or sealed controls.",
+    "C1": "Consistent; CAN PROCEED to reference/alternate/evaluator construction. Migration authorization is now exhaustive and correct (verified census), seed counts verified (Apollo 8 items / 4 open; Borealis 5 / 3 open), and the dynamic-count problem is resolved by value-based selection. No implementation exists; nothing is qualified or proven solvable.",
+    "C2": "Consistent draft; CAN PROCEED to reference/alternate/evaluator construction. All three advertised orderings re-verified against the seeded DB; empty/repeated query values and mixed-error cases remain qualification scope.",
+    "C3": "Consistent draft; CAN PROCEED to reference/alternate/evaluator construction. Malformed/partial/extra query paths are defined; duplicate-query-param precedence and clipboard/browser permissions remain qualification scope.",
+    "C4": "Consistent draft; CAN PROCEED to reference/alternate/evaluator construction. Single-slot semantics, mismatch fallback and sign-out retention are internally coherent; multi-user retention is explicitly not promised.",
+    "S03": "Consistent draft; CAN PROCEED. The live-keyset model is now self-consistent and was verified with 15/15 independent reproductions over the real seeded DB (future-key admits, conditional guarantees, stronger sufficient condition, 20/21 threshold, nextCursor-null semantics). No S03 implementation or controlled-clock acceptance exists yet.",
+    "S10": "Consistent draft; CAN PROCEED. The pending-dirty compatibility choice is documented and the authorized equivalent-coverage migrations were traced as realizable for every named test. No S10 implementation exists; not qualified.",
+    "scope": "The R3 repaired defects were scoped exactly as R2 scoped them: baseline defects are shared prerequisites; S03/S10 concern those scored contracts. No scored-contract issue blocks calibration construction once the shared baseline is consistent, which it now is. Reference/alternate/evaluator construction remains construction, not qualification; none of it was performed in this review.",
+    "carried_over_contracts": "S01, S02, S04–S09, S11–S15 are byte-identical to the R2-manifest entries; the R2 review's per-contract verdicts and qualification limitations carry over unchanged. No new defects were found in them within this review's scope; that is not a blanket consistency certification."
+  },
+  "prior_finding_dispositions": [
+    {
+      "id": "R2-N1",
+      "severity": "high",
+      "title": "Delayed edit completion escapes workspace guard; ABA create can close a later form",
+      "disposition": "repaired; verified",
+      "evidence": [
+        "baseline/src/components/Workboard.tsx:23-60 (synchronous selectionGeneration/formGeneration/deleteGeneration advanced in changeSelection), 86-110 (createItem/updateItem gate reload, close, announce on isCurrent; the caller-side unconditional close is gone), 112-132 (deleteItem tokens include selection+form+deletion; success, catch and cancel all guarded)",
+        "baseline/src/components/ItemForm.tsx:56-74 (isCurrent from startFormAction gates error, field errors and busy reset)",
+        "baseline/e2e/helpers.ts:7-41 (response-consumption + task/microtask + two-frame barrier and waitForMutationProcessing)",
+        "baseline/e2e/isolation.spec.ts (21 new tests: held create/edit/delete × success/failure across switches, ABA create/edit/delete × success/failure with reloads===0 assertions, same-selection form replacement, delete-vs-replacement-confirmation, delete-vs-later-form with API state check)",
+        "diagnostics/mutant-r3.log (this review: guards disabled on the scratch copy → 5/5 selected held-success tests FAIL on assertions after the barrier, not timeouts)",
+        "diagnostics/check-full.log (fresh unmodified scratch copy: exit 0)"
+      ],
+      "verification": "Control-flow walk of every mutation completion and caller found no remaining unguarded completion effect; the R2 defect paths (changed-scope early return with unconditional caller close; ABA ref equality) are closed by synchronous generation advance and token-gated effects. The intentional switch-time discard is preserved and documented.",
+      "residual": "Barrier is implementation-aware (fetch wrapper marks response-body consumption, then timer + two animation frames), not a formal event-loop proof; unusual browser scheduling, network failure modes and multi-click overlaps remain qualification scope (disclosed by Terra). Failed responses are synthesized without a server write; successes use real server writes."
+    },
+    {
+      "id": "R2-N2",
+      "severity": "medium",
+      "title": "HEAD Better Auth route is not equivalent to GET status",
+      "disposition": "repaired; independently reproduced",
+      "evidence": [
+        "baseline/docs/baseline-contract.md:184-202 (HEAD dispatch-vs-handler distinction; per-path observed exceptions; 404-envelope rule scoped to non-HEAD methods)",
+        "docs/faq-draft.md:89-103 (Q13 rewritten to the observed per-handler behavior)",
+        "baseline/tests/api/auth.test.ts:138-178 (HEAD health/me/get-session/unknown and native-vs-envelope auth sub-route tests)",
+        "diagnostics/routes-r3.log (this review: 21/21 documented claims reproduced against the real app, including unauthenticated GET get-session 200 JSON null vs HEAD 404 empty; authed HEAD me 200; DELETE health 404 envelope with and without session)"
+      ],
+      "residual": "Other Better Auth method/subroute combinations are not exhaustively characterized (disclosed; qualification scope)."
+    },
+    {
+      "id": "R2-N3",
+      "severity": "high",
+      "title": "C1 exhaustive selector migrations miss and misidentify actual calls",
+      "disposition": "repaired; census re-verified",
+      "evidence": [
+        "contracts/C1-workspace-item-counts.md:53-72 (exhaustive predicate: EVERY workspace selectOption({label:…}) in ownership.spec.ts and switch.spec.ts may migrate to stable values; exact auth.spec.ts option-text enumeration; isolation.spec.ts already value-based)",
+        "This review's grep census: ownership.spec.ts Borealis ×2 (lines 22, 35) + Apollo ×1 (26); switch.spec.ts Borealis ×4 (46, 67, 115, 162) + Apollo ×2 (133, 175) — all label-based, all covered by the authorization; items.spec.ts:65 and helpers.ts:78 are the status select (explicitly excluded and untouched); auth.spec.ts option-text assertions at 35, 42, 49, 75 match C1's enumerated migrations one-for-one (['Apollo Launch (4)'], ['Borealis Ops (3)'], ['Apollo Launch (4)','Borealis Ops (3)'], ['Dora Lab (0)'])",
+        "Seed counts verified by SQL on the real seeded DB: ws_apollo 8 items / 4 open; ws_borealis 5 / 3 open (diagnostics/keyset-r3.log I1/I2)",
+        "playwright.config.ts workers=1, fullyParallel=false; Playwright runs spec files alphabetically, so auth.spec.ts (no mutations before its option-text assertions; Dora's own workspace has 0 items) runs before the mutation-bearing specs — C1's 'before mutations' ordering claim holds"
+      ],
+      "verification": "Realizable under dynamic counts: value-based selection removes label/count coupling; the only label assertions left (auth.spec option text) run at sign-in points before public-suite mutations. No stale-count assumption remains in the migration scope."
+    },
+    {
+      "id": "R2-N4",
+      "severity": "high",
+      "title": "Nondecreasing clock alone does not place writes above future seeded keys",
+      "disposition": "repaired; model reproduced",
+      "evidence": [
+        "contracts/S03-stable-cursor-pagination.md:40-64 (live keyset boundary semantics; explicit admission that a nondecreasing clock does not imply writes above future-stored keys; conditional guarantee per-write vs current cursor; stronger sufficient condition write > newest stored at walk start; example precondition observes PATCH updatedAt above the pre-PATCH maximum; counterexamples documented at 87-91)",
+        "docs/faq-draft.md:114-121 (Q15 reconciled: future-dated stored rows can cause repeats or new items; exactly-20 → nextCursor null)",
+        "diagnostics/keyset-r3.log (this review: 15/15 checks PASS over the real seeded DB with the exact strict predicate: page sequences [wi_103,wi_106]/[wi_102,wi_107,wi_105]/[wi_101,wi_108]; constant 2026-01-01 clock → new row appears later and served row PATCHed to now repeats (admitted); PATCH at 09:30 → skipped in remaining walk but not top on fresh walk; PATCH above the top seed → skipped and top; equal-timestamp tie admitted; write strictly newer than the current cursor → skipped; 20/21 threshold; exactly-20 → nextCursor null)"
+      ],
+      "verification": "The conditional statements are now true of the specified strict keyset and the previously contradictory examples are explicitly admitted as out-of-guarantee cases. S03's acceptance assertions are conditional, so a compliant implementation is describable without inventing guarantees."
+    },
+    {
+      "id": "R2-N5",
+      "severity": "high",
+      "title": "New delayed-create public regression conflicts with S10 dirty switch guard",
+      "disposition": "repaired by documented contract choice; migration traced as realizable",
+      "evidence": [
+        "contracts/S10-workspace-switch-guard.md:79-98 (compatibility: a submitted form remains dirty while pending; pending completion semantics; explicit authorization of narrow equivalent-coverage flow migrations in the switch.spec.ts held-create test and all held-action/ABA tests in isolation.spec.ts, preserving every action, held response, processing barrier, result, ownership and feedback assertion; delete and pristine switches need no migration)",
+        "This review traced every named test through the authorized migration: switch.spec.ts held-create (guard on switch-back with the dirty Borealis draft covered by 'also on switch-back'); isolation first-loop create/edit (guard + discard both ways; the dirty edit draft handled); delete kind and pristine switches need none; ABA create needs only the first switch; same-selection and replacement tests involve no switch. All preserved assertions remain reachable, so no coverage loss is forced.",
+        "The delivered R3 baseline keeps the untouched tests green without the guard (fresh check exit 0); S10's guard does not exist yet, so no runtime conflict exists today."
+      ],
+      "residual": "No S10 implementation or migration exercise has been executed; the guard and its migrations remain to be built and qualified (draft consistency, not solvability proof)."
+    },
+    {
+      "id": "R2-N6",
+      "severity": "low",
+      "title": "Endpoint README still advertises absent review-inputs directory",
+      "disposition": "partially repaired; residual documentation-path mismatch remains (see R3-N2)",
+      "evidence": [
+        "README.md:16-25 now distinguishes the historical R2 inner manifest, describes review-inputs/ as 'the delivered immutable R2 review' and lists outputs/r3/ diagnostics",
+        "Delivered export reality: no review-inputs/ and no outputs/r3/ directory exists in this endpoint; the actual delivered R2 review is /workspace/inputs/prior-review.json and the R3 diagnostics are not part of the source-only export"
+      ],
+      "verification": "The historical/current distinction Terra added is real, but the delivered copy cannot resolve the advertised paths; the outer manifest's export_scope_note ('full diagnostic logs retained separately/private') shows the exclusion is deliberate, so this is a navigation/wording issue, not evidence of corruption."
+    }
+  ],
+  "new_defects": [
+    {
+      "id": "R3-N1",
+      "severity": "low",
+      "scope": ["fixture root documentation"],
+      "title": "FAQ self-identifies as 'revision R1' although its content is R3-repaired",
+      "evidence": ["docs/faq-draft.md:1-8 (title '(DRAFT, revision R1)' and 'Revision R1 reconciles this FAQ…')", "docs/faq-draft.md:89-106 (Q13 HEAD exception) and 114-121 (Q15 future-key wording) are R2/R3-era repairs", "docs/faq-draft.md:173-176 ('Every revised contract (R1)…')"],
+      "reproduction": "The delivered FAQ contains R3 repair content (HEAD get-session 404 exception, future-key pagination admission) under an R1 revision label; hash-verified file, so the mismatch is in the document itself.",
+      "impact": "Revision-attribution inaccuracy in a document intended to be frozen as the corpus FAQ; no behavioral or contract contradiction.",
+      "direction": "Update the revision label and the closing cross-review sentence to reflect R2/R3 before freezing; coordinate with the provenance chain."
+    },
+    {
+      "id": "R3-N2",
+      "severity": "low",
+      "scope": ["fixture root documentation", "R2-N6 residual"],
+      "title": "README (and R3 dispositions evidence) reference construction-time paths absent from the delivered source-only export",
+      "evidence": ["README.md:18-25 (review-inputs/ and outputs/r3/ described as workspace contents)", "REPAIR_DISPOSITIONS_R3.json:31,45 (evidence cites review-inputs/diagnostics/routes.log, review-inputs/diagnostics/keyset.log)", "Delivered tree: no review-inputs/ or outputs/ directory; the R2 review is delivered at inputs/prior-review.json and endpoint-manifest.json"],
+      "reproduction": "ls of the delivered endpoint shows no review-inputs/ or outputs/r3/; the R3 inner manifest deliberately excludes external inputs and diagnostics ('The inputs are excluded from R3 source manifest as external evidence, not deleted' — REPAIR_PROVENANCE_R3.md:37-38).",
+      "impact": "Misleading navigation for a recipient of exactly this export; not source corruption and not a contract failure. Terra's session-space references were accurate at construction time.",
+      "direction": "At packaging time, either mount the referenced review inputs/diagnostics or reword README to point at the delivered inputs/ paths; do not edit immutable inputs during this review."
+    }
+  ],
+  "preserved_intentional_gaps": [
+    "Switch-time unguarded discard of open forms remains intentional baseline behavior (baseline-contract.md §6; S10 builds the guard; R2-N1's repair explicitly preserves it).",
+    "Stale-but-successful writes persist without triggering a reload; the list refreshes on later selection/reload (baseline-contract.md §6 'in-flight action scope'; asserted by isolation.spec.ts reloads===0 checks).",
+    "Last-write-wins PATCH with no client version hint (S09's territory); 404-not-403 anti-enumeration; verbatim untrimmed storage; owner role grants no powers (S06/S13 territory).",
+    "Better Auth native responses are not normalized; HEAD/auth-method exceptions are observed-behavior documentation, not blanket status rules.",
+    "S03 makes no snapshot/seen-ID/immutable-page promises; future-key and tie repeats are explicitly out of guarantee.",
+    "C4 is a single-slot last-user store with disclosed overwrite semantics; C3 clipboard failures and malformed links have disclosed exact behaviors."
+  ],
+  "per_contract": {
+    "baseline": {"verdict": "consistent; freeze-ready candidate, not qualified", "evidence": "R2-N1/R2-N2 repaired and independently verified; fresh check exit 0 (typecheck, lint, 11 unit, 36 API, 41 e2e); HTTP surface 21/21 as documented; keyset/seed facts verified; known Better Auth initialization warnings reproduce as documented."},
+    "C1": {"verdict": "consistent; construction-ready draft (reference/alternate/evaluator may be built), not qualified", "evidence": "Census, seed counts and ordering-claim all re-verified; migrations realizable; no implementation exists."},
+    "C2": {"verdict": "consistent; construction-ready draft, not qualified", "evidence": "Three orderings bit-match the seeded DB (this review's SQL check); unknown-value 400 and default path specified; empty/repeated query values remain qualification scope."},
+    "C3": {"verdict": "consistent; construction-ready draft, not qualified", "evidence": "Signed-out timing, member/nonmember, malformed/partial/extra query and clipboard rejection disclosed; duplicate-param precedence and browser permissions remain qualification scope."},
+    "C4": {"verdict": "consistent; construction-ready draft, not qualified", "evidence": "Single-slot store, mismatch fallback, sign-out retention coherent; no multi-user retention promised."},
+    "S01": {"verdict": "no demonstrated contradiction; not frozen (carried from R2; file byte-identical to R2)", "evidence": "Trim/limits/messages/migrations as R2 reviewed; workspace-name validation preserved."},
+    "S02": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Lifecycle/status separation, filter modes, ordering keys unchanged."},
+    "S03": {"verdict": "consistent; construction-ready draft, not qualified", "evidence": "R2-N4 repaired; 15/15 keyset reproductions PASS; no implementation or controlled-clock acceptance built yet."},
+    "S04": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Validation priority/messages as verified in R2; transaction and auth precedence need qualification."},
+    "S05": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Column mapping and orderings verified in R2; download/serialization unimplemented."},
+    "S06": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Permission differentiations and 404 protection as R2 reviewed."},
+    "S07": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Reversion/conflict repair as R2 reviewed; timer/cancel/switch interactions need qualification; R3's in-flight scope work is adjacent but does not alter S07's file."},
+    "S08": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Wire/calendar/test migrations as R2 reviewed (items.spec.ts byte-identical in R3); legacy invalid dates and validation precedence need qualification."},
+    "S09": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Typed conflict payload and conditional update as R2 reviewed; race/freshness need qualification."},
+    "S10": {"verdict": "consistent; construction-ready draft, not qualified", "evidence": "R2-N5 repaired by documented compatibility choice; authorized migrations traced realizable; guard unimplemented."},
+    "S11": {"verdict": "not frozen; mixed invalid input priority underspecified (carried from R2)", "evidence": "Individual messages and transaction specified; combined precedence and the public example's status omission remain."},
+    "S12": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Diff/no-op/transaction specified; failure injection and timestamp ordering need qualification."},
+    "S13": {"verdict": "not frozen; membership error precedence requires qualification (carried from R2)", "evidence": "Owner/member and last-owner rules specified; mixed body/auth paths unsettled."},
+    "S14": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Seeded aggregates match; mutation-refresh behavior unimplemented."},
+    "S15": {"verdict": "no demonstrated contradiction; not frozen (carried from R2)", "evidence": "Shortcut/suppression/focus/announcements specified; accessibility and in-flight focus cases need qualification."}
+  },
+  "diagnostics_and_commands": [
+    {"cwd": "/workspace", "command": "python3 diagnostics/verify_r3_sources.py > diagnostics/source-hashes-final.txt", "exit": 0, "result": "77 inner + 78 outer entries verified (regular files, sizes, SHA-256); tree hashes match claims; no extra/missing files; outer covers inner manifest; R2→R3 changeset = 12 modified + 4 new; repeated after diagnostics with cmp clean"},
+    {"cwd": "/workspace/diagnostics", "command": "cp -a /workspace/inputs/fixture/baseline /workspace/diagnostics/scratch-r3", "exit": 0},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "npm ci --no-audit --no-fund > /workspace/diagnostics/npm-ci.log 2>&1", "exit": 0, "result": "Node v24.19.0, npm 10.9.0"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "PLAYWRIGHT_BROWSERS_PATH=/workspace/diagnostics/browsers npx playwright install chromium --only-shell > /workspace/diagnostics/browser-install.log 2>&1", "exit": 0, "result": "unsupported-host warning and Ubuntu 24.04 fallback label reproduced as documented"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "CI=1 PLAYWRIGHT_BROWSERS_PATH=/workspace/diagnostics/browsers npm run check:full > /workspace/diagnostics/check-full.log 2>&1", "exit": 0, "result": "typecheck + lint clean; 11 unit, 36 API, 41 e2e pass (7 auth + 21 isolation + 6 items + 3 ownership + 4 switch); matches Terra's claimed final counts"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "WORKBOARD_DB=.tmp/keyset.db npm run db:reset > /workspace/diagnostics/db-reset.log 2>&1", "exit": 0, "result": "seeded 3 users, 2 workspaces, 13 items"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "npx tsx diagnostic-r3-keyset.mts > /workspace/diagnostics/keyset-r3.log 2>&1", "exit": 0, "result": "15/15 S03 keyset/seed checks PASS (strict predicate simulation on the real seeded DB; includes C1 seed counts and C2-adjacent ordering facts)"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "npx tsx diagnostic-r3-routes.mts > /workspace/diagnostics/routes-r3.log 2>&1", "exit": 0, "result": "21/21 documented HTTP surface claims reproduced (HEAD exceptions, envelopes, Better Auth native responses)"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "python3 mutant-apply (startFormAction and deleteItem isCurrent → () => true on the SCRATCH COPY only) then npx playwright test e2e/isolation.spec.ts --grep 'held edit success|held create success|ABA create success|old delete success' > /workspace/diagnostics/mutant-r3.log 2>&1", "exit": 1, "result": "EXPECTED failure: 5/5 selected held-success tests fail on concrete assertions after the processing barrier (value clobbered, status polluted, confirmation reset) — the new guards and barriers are load-bearing, not vacuously green"},
+    {"cwd": "/workspace/diagnostics/scratch-r3", "command": "restore Workboard.tsx from saved original; diff -r against inputs (clean); npx playwright test e2e/isolation.spec.ts > /workspace/diagnostics/isolation-rerun.log 2>&1", "exit": 0, "result": "21/21 isolation tests pass again on the restored copy"},
+    {"cwd": "/workspace", "command": "python3 diagnostics/verify_r3_sources.py > diagnostics/source-hashes-final-after.txt 2>&1 && cmp diagnostics/source-hashes-final.txt diagnostics/source-hashes-final-after.txt", "exit": 0, "result": "immutable inputs byte-identical across all diagnostics"}
+  ],
+  "limits": [
+    "Exact upstream model revision, route, session ancestry and timing are controller-evidence matters; the harness alias and requested route are recorded but not independently resolved.",
+    "The R2 outer manifest and Terra's outputs/r3/ diagnostics are not part of this delivery; Terra's pre-edit verification and mutant/diagnostic logs remain historical claims. This review reproduced the substantive behaviors independently.",
+    "prior-review.json integrity is anchored by the controller; its self-recorded hash is self-referential and cannot be verified from the file itself.",
+    "The R1 source tree and manifest were never supplied in any revision; R1-era claims remain historical.",
+    "The mutation barrier is implementation-aware (response consumption + scheduling), not a formal proof; browser/scheduling/network edge cases and full concurrency remain qualification scope.",
+    "No S03/S10/C1 implementation, reference, alternate, sealed evaluator or controlled-clock acceptance has been constructed; draft consistency does not qualify them.",
+    "Better Auth behavior beyond the verified paths, duplicate-query-param precedence (C3), mixed-error precedence (S11/S13/S04), legacy persisted dates (S08), races (S09/S12) and browser/OS portability remain unqualified.",
+    "U1–U3 and anything outside the supplied files have no disposition here."
+  ],
+  "stop_point": "Fresh-review endpoint only. Immutable inputs verified unchanged before and after diagnostics; no fixes, task implementations, calibration, scored runs, worker/model calls, account/budget/production changes, deploy, push or merge. Scratch installs and diagnostics live under /workspace/diagnostics and are self-authored review evidence, not acceptance fixtures."
+}

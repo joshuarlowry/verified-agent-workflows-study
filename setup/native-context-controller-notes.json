@@ -1,0 +1,8 @@
+{
+  "scope": "generic zero-model synthetic OpenCode MCP integration; not all-model/role qualification",
+  "runtime_bootstrap": "native API runtime add + wait for connected before prompt; file definitions were visible but did not yield an active server in the disposable probes",
+  "incorrect_initial_skill_control": "name argument was invalid; initial output retained and not proof of disabled skill loading",
+  "corrected_skill_control": "id=browser accepted structurally and returned Unable to load skill browser; this does not prove why the load was rejected",
+  "source_label_correction": "renamed body-field absence check to avoid claiming universal secret scanning",
+  "remaining": "real 22-archive corpus through all actual registered model roles, scoped sockets, provider accounting, worker/controller integration"
+}

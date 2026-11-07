@@ -1,0 +1,52 @@
+{
+  "kind": "synthetic_native_adapter_mechanics_not_model_evaluation",
+  "model_calls": 0,
+  "checks": {
+    "cli_exit_zero": true,
+    "two_upstream_calls": true,
+    "context_docs_completed": true,
+    "unrelated_tools_absent": false,
+    "context_tool_exposed": true,
+    "final_text": true,
+    "native_final_stop": true,
+    "two_usage_records": true,
+    "auto_tool_choice_not_forced": true,
+    "no_secret_sent_by_cli": true
+  },
+  "all_passed": false,
+  "cli_exit_code": 0,
+  "native_session_ids": [
+    "ses_e4b68dd97ffeQSsGwYnBy6vSX3"
+  ],
+  "native_diagnostic_events": [],
+  "upstream_finish_reasons": [
+    "user",
+    "tool"
+  ],
+  "native_step_count": 2,
+  "tool_names_offered": [
+    "context_get_docs",
+    "edit",
+    "execute",
+    "glob",
+    "grep",
+    "read",
+    "shell",
+    "skill",
+    "write"
+  ],
+  "subagent_tool_schema": null,
+  "stderr": "Runtime Context healthcheck connected; credentials omitted\n",
+  "source_sha256": {
+    "harness/container_http_bridge.mjs": "1b6b4bc53918081ef4132aeb1d9ee704827450b34e7762357b76e4b27daaa500",
+    "harness/unix_inference_proxy.py": "b7a0fbef4c07106c264967e4abf4086f3c611b319c5508f374dc60670d026987",
+    "scripts/opencode_context_preflight.py": "db9fe1bf7c48ad38fbeaa1e9dd75f2ecaa4e51b66982e3be60049b3b041d2cdb"
+  },
+  "qualification_limits": [
+    "synthetic responses only",
+    "no real provider/counter mapping qualification",
+    "generic archive only; application corpus and worker broker still pending",
+    "ephemeral synthetic socket world-accessible inside isolated probe; actual roles require scoped ownership"
+  ],
+  "elapsed_seconds_including_cleanup": 2.786651836009696
+}

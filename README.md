@@ -38,9 +38,10 @@ Assumptions, not measurements: 205 runs, 120.25 aggregate subject hours plus 51.
 
 Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus cross-review and qualification, outages, provider requalification and optional human review. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
+[Preparation work and evidence](setup/WORK_LOG.md) · [Latest recorded statuses](setup/status.json)
+
 ## Blocking dependencies
 
-- **corpus_reviewer**: different authorized study model cross-reviews source inventory and omissions in a separate session; family dependence disclosed
 - **common_adapter**: qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16
 - **fixture_and_corpus**: qualify baseline, calibration tasks, source corpus, evaluator and isolated DB authorization
 - **authored_treatment_review**: record and cross-review authoritative role prompts, handoff templates, task contracts and FAQ using different authorized models; retain per-artifact hashes and revisions

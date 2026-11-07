@@ -48,6 +48,8 @@ Assumptions, not measurements: {f['runs']} runs, {f['assumed_subject_hours']:.2f
 
 Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
+[Preparation work and evidence](setup/WORK_LOG.md) · [Latest recorded statuses](setup/status.json)
+
 ## Blocking dependencies
 
 {blockers}

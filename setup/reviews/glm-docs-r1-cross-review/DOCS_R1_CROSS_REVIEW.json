@@ -1,0 +1,567 @@
+{
+  "verdict": "pass_progress_recommended_with_conditions",
+  "schema": "DOCS_R1_CROSS_REVIEW/1",
+  "review_kind": "study_model_cross_review_not_independent_family_qualification",
+  "artifact": "documentation_corpus_revision_r1",
+  "corpus_name": "documentation-corpus-revision-r1",
+  "reviewer": {
+    "model": "GLM (z-ai/glm-5.3-flash, Relace FP4)",
+    "provider_tag": "relace/fp4",
+    "harness": "OpenCode -> LiteLLM -> OpenRouter",
+    "session_kind": "fresh R1 docs cross-review session; no builder conversation imported; no subagents; only Gemma/GLM/Terra authorized and only this GLM session invoked",
+    "independence_claim": false,
+    "disclosed_limitation": "Cross-review by a study model; subject-family dependence disclosed per registration.cross_review_policy. Builder (Terra) and reviewer (GLM) are different models in different sessions, which is the registered method; this is not independent-model-family authorship or qualification."
+  },
+  "inputs_and_exact_hashes": {
+    "inputs_copied_never_modified": true,
+    "corpus_root_sha256": {
+      "CORPUS_BUILD_PROVENANCE_R1.md": "17968d4549903607d49fda29b40ccd8aa8ed16bfe8bae2ca9a58b68042d0e0cf",
+      "CORPUS_MANIFEST.json": "b4a9c538fad64801107f11f9efd9993b25a6f0e162aaa784e50f4b81ca4746bf",
+      "SERVE_COMMAND.sh": "ee4cf30cfdff44aeca34257adafabd2c0de30f4bf91f6b7c508ec06ff816b429",
+      "SOURCE_SELECTION_OMISSIONS.md": "bd0ffb370385b515b080923d43a6393c0116cab839094a00db5fbccb271029aa",
+      "SHA256SUMS": "ee10b86ba78a2e5ea227985183d3ac89379fb7186af39c8710a7b92a54b04c07"
+    },
+    "other_supplied_inputs_sha256": {
+      "/workspace/inputs/registration.json": "017aac59974b26caffeaed6dd04c911072145bca2c5fe286187bedfe1cd66844",
+      "/workspace/inputs/application-package-lock.json": "2fa59272fde383011374d769e06b419946b197aedf42887b7d6860faee471246",
+      "/workspace/inputs/prior-review.json": "d617e57ecabced0d4f28be4839e9f9ef77305cfcccf6368eef8fd3445306e3ca"
+    },
+    "context_module_pinned": {
+      "package": "@neuledge/context 1.3.3",
+      "cli.js_sha256": "550c247223c04f905e02da0c8b9a468a014effeb7bc6fdc09475cc65c108bf45",
+      "package.json_sha256": "7f61f40b4f3eb038458611a76e6498507b8f065b37342edd68f8701ca1348835",
+      "hashes_reverified_this_review": true,
+      "path": "/tools/context/node_modules/@neuledge/context/dist/cli.js"
+    },
+    "input_hash_reconciliation": {
+      "manifest_input_hash_entries": 76,
+      "verifiable_in_this_endpoint": 1,
+      "verdict": {
+        "inputs/glm-docs-review.json (manifest) == /workspace/inputs/prior-review.json (this endpoint)": "MATCH d617e57ecabced0d4f28be4839e9f9ef77305cfcccf6368eef8fd3445306e3ca; the first GLM review Terra consumed is byte-identical to the review supplied to this reviewer",
+        "inputs/registration.json (manifest) vs this endpoint": "MISMATCH c43765d1... (builder session, 37603 bytes) vs 017aac59... (endpoint, 38171 bytes); provenance line 7 discloses registration revisions differ; registration.json is coordinator-owned and was revised around the build",
+        "inputs/baseline/* (45) and inputs/first-corpus/* (28) and inputs/source-inventory.json": "NOT SUPPLIED to this reviewer; hashes recorded in manifest cannot be independently re-verified here",
+        "application-package-lock.json": "not listed in manifest input_hashes but byte-identical (2fa59272...) to the work/package-lock.json the build recorded, and equals the hash GLM's first review recorded"
+      }
+    }
+  },
+  "sources": [
+    {
+      "repository_or_site": "WiseLibs/better-sqlite3",
+      "ref": "v13.0.3",
+      "resolved_commit_or_snapshot": "dbc2ea1165fef1f599b9be12faea33fa5e9d7ffb",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v13.0.3",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/WiseLibs/better-sqlite3/LICENSE",
+      "indexed_files_from_this_source": 10,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured at exact commit; retain copyright+notice"
+    },
+    {
+      "repository_or_site": "better-auth/better-auth",
+      "ref": "v1.7.18",
+      "resolved_commit_or_snapshot": "38f43e390920faa400d51ff0bd18570a424d05ce",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v1.7.18",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/better-auth/better-auth/LICENSE.md",
+      "indexed_files_from_this_source": 12,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "eslint/eslint",
+      "ref": "v10.14.0",
+      "resolved_commit_or_snapshot": "12cbff4125db3f6446f72fa0c48c46b92b120427",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v10.14.0",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/eslint/eslint/LICENSE",
+      "indexed_files_from_this_source": 3,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "facebook/react",
+      "ref": "eslint-plugin-react-hooks@7.1.1",
+      "resolved_commit_or_snapshot": "d1727fbf987392749b374f3afe62227d2c70fc41",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag eslint-plugin-react-hooks@7.1.1",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/facebook/react/LICENSE",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "honojs/node-server",
+      "ref": "v2.1.6",
+      "resolved_commit_or_snapshot": "123f78269626704eb7f4d85a9529e357315ba051",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v2.1.6 (README); website nodejs.md is moving",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/honojs/node-server/LICENSE",
+      "indexed_files_from_this_source": 2,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "honojs/website",
+      "ref": "main",
+      "resolved_commit_or_snapshot": "20aab4e020e35ca62c40b157ab5cdc79503cbbba",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "moving main snapshot (not hono 4.13.16 release docs)",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/honojs/website/LICENSE",
+      "indexed_files_from_this_source": 14,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "mdn/content",
+      "ref": "main",
+      "resolved_commit_or_snapshot": "288e644117c29285df2acf37a2ac97f57546a146",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "moving main snapshot (date-labelled web-api@2026.11.7)",
+      "license_claim": "CC-BY-SA-2.5 prose; code examples have separate terms",
+      "license_evidence_file": "raw/upstream/mdn/content/LICENSE.md",
+      "indexed_files_from_this_source": 7,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "withheld_attribution_incomplete",
+      "redistribution_basis": "CC-BY-SA-2.5 requires creator attribution + share-alike; per-page contributor attribution NOT captured; code-example terms vary"
+    },
+    {
+      "repository_or_site": "microsoft/TypeScript-Website",
+      "ref": "v2",
+      "resolved_commit_or_snapshot": "a3ed0be5249fd75fae9c2f527de23f0fc16c5d0d",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "moving v2 branch snapshot (not TS 5.9.3 release docs)",
+      "license_claim": "CC-BY-4.0 prose; MIT code (LICENSE-CODE)",
+      "license_evidence_file": "raw/upstream/microsoft/TypeScript-Website/LICENSE",
+      "indexed_files_from_this_source": 11,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "withheld_attribution_preparation",
+      "redistribution_basis": "CC-BY-4.0 prose + MIT code captured; attribution materials not yet prepared"
+    },
+    {
+      "repository_or_site": "microsoft/playwright",
+      "ref": "v1.65.0",
+      "resolved_commit_or_snapshot": "a1f35e1955976e84411f9c10358228a80b763ebe",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v1.65.0",
+      "license_claim": "Apache-2.0",
+      "license_evidence_file": "raw/upstream/microsoft/playwright/LICENSE",
+      "indexed_files_from_this_source": 8,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "Apache-2.0 text captured; license+notices+change-marking obligations apply"
+    },
+    {
+      "repository_or_site": "nodejs/node",
+      "ref": "v24.19.0",
+      "resolved_commit_or_snapshot": "cdc1b38d40cb567b7ad0b39c86addf830a0af0ae",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v24.19.0",
+      "license_claim": "MIT plus included third-party notices",
+      "license_evidence_file": "raw/upstream/nodejs/node/LICENSE",
+      "indexed_files_from_this_source": 12,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention_with_caveat",
+      "redistribution_basis": "MIT+third-party notices captured; full NOTICE set for docs redistribution not itemized"
+    },
+    {
+      "repository_or_site": "privatenumber/tsx",
+      "ref": "v4.23.15",
+      "resolved_commit_or_snapshot": "ca66105a17a2a4c6503fe3a12b5b9ec408286011",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v4.23.15",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/privatenumber/tsx/LICENSE",
+      "indexed_files_from_this_source": 2,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "reactjs/react.dev",
+      "ref": "main",
+      "resolved_commit_or_snapshot": "2e6dca162985d438d7a834b339d89177cf0a92b9",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "moving main snapshot (not react 19.3.1 release docs)",
+      "license_claim": "CC-BY-4.0 docs (README confirms)",
+      "license_evidence_file": "raw/upstream/reactjs/react.dev/LICENSE-DOCS.md",
+      "indexed_files_from_this_source": 6,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "withheld_attribution_preparation",
+      "redistribution_basis": "CC-BY-4.0 license captured but attribution/credit/change-indication materials not yet prepared"
+    },
+    {
+      "repository_or_site": "sindresorhus/globals",
+      "ref": "v17.14.0",
+      "resolved_commit_or_snapshot": "3080111aa55079a19fb9bc65fccc685b3ae262f6",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v17.14.0",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/sindresorhus/globals/license",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "sqlite.org",
+      "ref": "moving pages (no ref)",
+      "resolved_commit_or_snapshot": "sqlite.org etag base m6ae24ec4s at 2026-11-07T05:13:02Z; live etag identical at review",
+      "re_resolved_identically_at_review": null,
+      "version_label_in_corpus": "moving website snapshot captured 2026-11-07T05:13:02Z; labelled by observed bundled engine 3.53.4",
+      "license_claim": "public domain statement",
+      "license_evidence_file": "raw/sqlite.org/copyright.html",
+      "indexed_files_from_this_source": 13,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_caveat",
+      "redistribution_basis": "copyright.html states public domain dedication; jurisdiction/third-party caveats on that page not itemized"
+    },
+    {
+      "repository_or_site": "typescript-eslint/typescript-eslint",
+      "ref": "v8.72.1",
+      "resolved_commit_or_snapshot": "4ad6b7553781fa3c93fc26642d7219d2e6624504",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v8.72.1",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/typescript-eslint/typescript-eslint/LICENSE",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "vitejs/vite",
+      "ref": "v8.3.6",
+      "resolved_commit_or_snapshot": "0fd9a29f57d49d496f39c952f44c1b5fc3e90769",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v8.3.6",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/vitejs/vite/LICENSE",
+      "indexed_files_from_this_source": 3,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "vitejs/vite-plugin-react",
+      "ref": "plugin-react@6.2.1",
+      "resolved_commit_or_snapshot": "29efd1cc6d875185f91a3325beb981bb45af876f",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag plugin-react@6.2.1",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/vitejs/vite-plugin-react/LICENSE",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "vitest-dev/vitest",
+      "ref": "v5.1.0",
+      "resolved_commit_or_snapshot": "7a3844954d8753fc0d5bed76a96ffd3a21716c22",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "exact tag v5.1.0",
+      "license_claim": "MIT",
+      "license_evidence_file": "raw/upstream/vitest-dev/vitest/LICENSE",
+      "indexed_files_from_this_source": 4,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT license text captured"
+    },
+    {
+      "repository_or_site": "w3c/aria-practices",
+      "ref": "main",
+      "resolved_commit_or_snapshot": "0f765e4dc33e966026114ac12a8380db1de3b787",
+      "re_resolved_identically_at_review": true,
+      "version_label_in_corpus": "moving main snapshot (date-labelled wai-aria-apg@2026.11.7)",
+      "license_claim": "W3C Software and Document License 2023",
+      "license_evidence_file": "raw/upstream/w3c/aria-practices/LICENSE.md",
+      "indexed_files_from_this_source": 3,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "withheld_attribution_review_pending",
+      "redistribution_basis": "W3C SWD 2023 terms captured; matrix declares copyright year/attribution for derivative APG sections still needs review"
+    },
+    {
+      "repository_or_site": "npm-installed:better-auth",
+      "ref": "lockfile-resolved tarball (integrity verified against application-package-lock.json)",
+      "resolved_commit_or_snapshot": "sha512 integrity match recorded in selection.json",
+      "re_resolved_identically_at_review": null,
+      "version_label_in_corpus": "installed package version from actual lockfile",
+      "license_claim": "MIT",
+      "license_evidence_file": "licenses/packages/better-auth/LICENSE.md",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT LICENSE captured from installed package"
+    },
+    {
+      "repository_or_site": "npm-installed:@types/better-sqlite3",
+      "ref": "lockfile-resolved tarball (integrity verified against application-package-lock.json)",
+      "resolved_commit_or_snapshot": "sha512 integrity match recorded in selection.json",
+      "re_resolved_identically_at_review": null,
+      "version_label_in_corpus": "installed package version from actual lockfile",
+      "license_claim": "MIT",
+      "license_evidence_file": "licenses/packages/@types/better-sqlite3/LICENSE",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT LICENSE captured from installed package"
+    },
+    {
+      "repository_or_site": "npm-installed:typescript-eslint",
+      "ref": "lockfile-resolved tarball (integrity verified against application-package-lock.json)",
+      "resolved_commit_or_snapshot": "sha512 integrity match recorded in selection.json",
+      "re_resolved_identically_at_review": null,
+      "version_label_in_corpus": "installed package version from actual lockfile",
+      "license_claim": "MIT",
+      "license_evidence_file": "licenses/packages/typescript-eslint/LICENSE",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT LICENSE captured from installed package"
+    },
+    {
+      "repository_or_site": "npm-installed:@eslint/js",
+      "ref": "lockfile-resolved tarball (integrity verified against application-package-lock.json)",
+      "resolved_commit_or_snapshot": "sha512 integrity match recorded in selection.json",
+      "re_resolved_identically_at_review": null,
+      "version_label_in_corpus": "installed package version from actual lockfile",
+      "license_claim": "MIT",
+      "license_evidence_file": "licenses/packages/@eslint/js/LICENSE",
+      "indexed_files_from_this_source": 1,
+      "evidence_verified_by_this_review": true,
+      "redistribution_assessment": "may_copy_with_notice_retention",
+      "redistribution_basis": "MIT LICENSE captured from installed package"
+    }
+  ],
+  "counts_verified": {
+    "technical_files": {
+      "claimed": 118,
+      "verified": 118,
+      "method": "selection.json set == docs-files tree; every file sha256 re-hashed; byte-exact reconstruction from chunks"
+    },
+    "archives": {
+      "claimed": 22,
+      "verified": 22,
+      "method": "archive-build.json + context list + SERVE_COMMAND lib list + sqlite meta name/version"
+    },
+    "indexed_chunks": {
+      "claimed": 167,
+      "verified": 167,
+      "method": "per-archive mapping sums; chunks table rows; context list sections; fts5vocab doc set"
+    },
+    "smoke_queries": {
+      "claimed": "47/47",
+      "verified": "47/47",
+      "method": "independent rerun (glm-query-check.py) + builder smoke.py rerun from fresh copies"
+    },
+    "hashed_output_files": {
+      "claimed": 355,
+      "verified": 355,
+      "method": "SHA256SUMS 356 entries (355 + manifest) all OK, exit 0; disk inventory == manifest set"
+    },
+    "input_file_count": {
+      "claimed": 76,
+      "verified": "76 entries recorded; only 1 re-verifiable in this endpoint (see input_hash_reconciliation)"
+    }
+  },
+  "verification_results": {
+    "sha256_sums": "356/356 OK, exit 0",
+    "manifest_files_hashmap": "355/355 match actual files; no orphan or missing files",
+    "equivalence_reconstruction": {
+      "result": "PASS",
+      "detail": "All 118 files reconstruct byte-for-byte from 167 chunk contents in the 22 archives (bidirectional chunk-set equality); PRAGMA integrity_check ok on all 22; FTS5 integrity-check passes on scratch copies; fts5vocab doc set == chunks id set",
+      "scripts": [
+        "glm_equivalence_check.py (independent, ok exit 0)",
+        "builder equivalence.py re-run from fresh copies (ok, mapping sets identical to preserved result)"
+      ]
+    },
+    "scoped_serve": {
+      "result": "PASS",
+      "detail": "SERVE_COMMAND.sh runs pinned CLI 1.3.3 with 22 exact name@version libs; stdio MCP tools/list == ['get_docs']; get_docs library enum set == exactly the 22 approved identities; positive createRoot query returns content; unlisted-library@0.0.1, bare 'react', wrong version react@19.3.0, 'react@19.3.1 ', '../etc/passwd', '' all rejected as tool errors containing MCP error -32602",
+      "unscoped_difference": "unscoped serve exposes search_packages and download_package in addition to get_docs; scoped list has neither",
+      "network_negation_approximation": "get_docs succeeds with HTTP(S)_PROXY pointed at an unroutable 127.0.0.1:9 for all 22 local archives (registry egress not needed for retrieval path)",
+      "true_network_disabled_container_test": "NOT PERFORMED (unshare -n denied: Operation not permitted); R1 itself claims no network-isolated lane qualification"
+    },
+    "retrieval": {
+      "result": "PASS",
+      "detail": "47/47 preserved queries pass on independent rerun requiring expected source filename AND expected API token in returned content; nonsense-term control correctly empty; prior-review's five empty-topic queries now non-empty (react createRoot: 2; playwright webServer: 1; eslint flat config: 1; vitest pool forks: 1; better-sqlite3 'wal': still 0 by design - WAL content lives under sqlite@3.53.4 identity where 'wal' returns 3 results incl. the WAL-reset-bug section)",
+      "exit_code_note": "context query exits 0 even with zero results; JSON results array is the reliable signal"
+    },
+    "source_selection_and_versions": {
+      "result": "PASS",
+      "detail": "All 18 repository refs re-resolved via git ls-remote at review time: identical commits (13 exact tags unchanged; 5 moving refs react.dev/honojs-website/mdn/w3c/TypeScript-Website-v2 still at build-time commits as of review). 92 raw files match recorded sha256. 10-of-92 representative raw files re-fetched over the network: byte-identical. All 118 selection source_sha256 verified against raw/ on disk. 102 verbatim line-range entries reproduce exactly from raw[line_start..line_end] with only the declared two-heading wrapper; 4 installed-declaration entries contain their fenced bodies; 16 Turndown HTML conversions verified by raw-hash + content spot checks (conversion itself not re-derived).",
+      "package_evidence": "4 installed-package entries (typescript-eslint 8.72.1, better-auth 1.7.18, @types/better-sqlite3 9.6.0, @eslint/js 10.0.1): installed package.json versions, lockfile versions, sha512 integrity and MIT licenses all cross-verified",
+      "version_label_honesty": "Archive identities are declared retrieval identities, not claims that moving docs equal dependency versions; moving-ref sources (react.dev, hono website, MDN, W3C, TS-Website v2, sqlite.org) are labeled as snapshots in SOURCE_SELECTION_OMISSIONS.md; exact-tag sources are labeled exact. Labels verified truthful."
+    },
+    "licenses_and_attribution": {
+      "result": "EVIDENCE_CAPTURED_PUBLICATION_STILL_WITHHELD",
+      "detail": "25 license evidence files (23 mapped files + SQLite copyright page + W3C full-terms HTML) verified present and matching claimed license types (MIT x17 incl. packages, Apache-2.0 playwright, CC-BY-4.0 react.dev + TS-Website, CC-BY-SA-2.5 MDN full text, W3C SWD 2023 + full terms HTML, SQLite public-domain statement). No license file is indexed as technical content. Attribution completeness for MDN contributors and W3C derivative-section copyright remains undeclared/unreviewed; CC attribution materials for react.dev/TS-Website not prepared.",
+      "no_legal_guarantee": "This review expresses evidence-based readiness only; it is not legal advice or a guarantee."
+    },
+    "task_solution_absence": {
+      "result": "NEGATIVE",
+      "detail": "Scan of all 118 files and all 167 stored chunks for workboard/task-ID (C#/S#)/acceptance/contract/fixture/workspace/ownership/baseline terms: only 10 generic hits, all verbatim upstream ESLint doc examples ('.fixtures', 'tests/fixtures' ignore patterns). No registration/task references found in corpus artifacts.",
+      "limitation": "No task contracts or reference solutions exist in this endpoint; a negative scan cannot rule out hints invisible without task definitions."
+    },
+    "sqlite_engine": {
+      "result": "REPRODUCED",
+      "detail": "better-sqlite3@13.0.3 copied from the build's disposable npm ci install (package-lock byte-identical to application-package-lock.json, 2fa59272...) returns SELECT sqlite_version() == 3.53.4 on node v24.19.0; matches engines pin and sqlite@3.53.4 archive identity label (which is explicitly a snapshot label, not a docs release claim)"
+    }
+  },
+  "original_finding_dispositions": {
+    "from_first_review": [
+      {
+        "finding": "Manifest malformed 65-char hash for vitejs_plugin_react@6.2.1.db",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "First-corpus manifest superseded; R1 SHA256SUMS 356/356 OK and all 22 archive hashes match files (arch set rebuilt; vite-plugin-react@6.2.1.db = c4d2de02...)"
+      },
+      {
+        "finding": "Manifest package_count 13 vs 12 archives",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "R1 counts explicitly separate candidate_packages_from_registration=13, archive_count=22, technical_file_count=118, indexed_chunk_count=167; all independently verified"
+      },
+      {
+        "finding": "Placeholder timestamp 12:00:00Z",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "generated_utc 2026-11-07T05:14:57.137765+00:00, consistent with artifact mtimes (05:13-05:14); still self-reported clock, controller measurements supersede"
+      },
+      {
+        "finding": "9 text files misdescribed as raw webfetch snapshots (they were ~0.3KB summaries)",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "R1 replaces stubs with 118 extraction-logged sections; provenance + selection.json describe exact transforms; verbatim fidelity independently verified"
+      },
+      {
+        "finding": "eslint_toolchain@exact.db non-version label",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "Replaced by eslint-js@10.0.1, eslint-plugin-react-hooks@7.1.1, globals@17.14.0, typescript-eslint@8.72.1 archives at real lockfile versions with install evidence"
+      },
+      {
+        "finding": "Provenance serve command dropped 3 of 12 archives and used bare names",
+        "disposition": "RESOLVED",
+        "evidence": "SERVE_COMMAND.sh carries all 22 exact name@version entries; equals manifest allowed_libraries; regenerated byte-identically by re-running serve_probe.py"
+      },
+      {
+        "finding": "corpus_plan.json listed 14 unproduced package text files; plan unreconciled",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "No corpus_plan.json in R1; selection matrix maps all 118 actual files; 16 package text-file slots now real extracts"
+      },
+      {
+        "finding": "react-dom absent with no declared gap",
+        "disposition": "RESOLVED",
+        "evidence": "react-dom@19.3.1 archive with createRoot/root.render/root.unmount/hydrateRoot content; matrix row declares it; query returns content"
+      },
+      {
+        "finding": "manifest_temp.txt unexplained stdin-hash leftover",
+        "disposition": "RESOLVED_BY_REPLACEMENT",
+        "evidence": "No manifest_temp.txt in R1 corpus or SHA256SUMS"
+      },
+      {
+        "finding": "Provenance referenced inputs/baseline/package.json not present in endpoint",
+        "disposition": "RESOLVED_AS_STATEMENT_GAP_OPEN",
+        "evidence": "R1 provenance says baseline was read in the builder session and discloses that its observed input set differs; 45 baseline hashes remain unverifiable in this endpoint (inputs not supplied)"
+      },
+      {
+        "finding": "ToC/index-only archives (react, hono, better-auth, playwright, vitest, eslint)",
+        "disposition": "RESOLVED",
+        "evidence": "Each now has substantive tagged/verbatim sections; declared relevant topics retrievable (verified by queries and token checks); content embeds version evidence only where sources are tagged"
+      },
+      {
+        "finding": "No LICENSE/attribution files ship with archives",
+        "disposition": "RESOLVED_AS_EVIDENCE_CAPTURE_PUBLICATION_STILL_WITHHELD",
+        "evidence": "License evidence captured per source in raw/ + licenses/packages/ + matrix mapping (by design outside the index); publication approval still correctly withheld pending attribution/privacy review"
+      },
+      {
+        "finding": "WAL-reset bug absent from corpus",
+        "disposition": "RESOLVED",
+        "evidence": "docs-files/sqlite@3.53.4/wal--the_wal_reset_bug.md (3.51.3 fix, backports) present and retrievable ('wal' and 'WAL reset' queries)"
+      },
+      {
+        "finding": "Node 24 stub content + 24.19.0 vs 24.22.2 drift",
+        "disposition": "RESOLVED",
+        "evidence": "12 substantive sections from exact tag v24.19.0 (commit cdc1b38d... verified); drift eliminated by tagging source at the engine version"
+      },
+      {
+        "finding": "Stale source-inventory context_archives 'NOT BUILT' + cwd-claim contradiction",
+        "disposition": "OPEN_COORDINATOR",
+        "evidence": "source-inventory.json not supplied to this reviewer; R1 declares it historical/stale and supersedes via matrix; in-place edit correctly avoided (inputs immutable)"
+      },
+      {
+        "finding": "Stale registration coverage_gaps 'Vite/Hono not yet built'",
+        "disposition": "OPEN_COORDINATOR",
+        "evidence": "Current registration.json (017aac59...) still carries the stale entry; R1 built vite/hono and this review verified them; coordinator must revise registration after review"
+      },
+      {
+        "finding": "context-mechanical-probe not rerun by first reviewer",
+        "disposition": "NOT_APPLICABLE_HERE",
+        "evidence": "R1 does not rely on the podman probe; scoped serve verified directly via stdio MCP in this review"
+      }
+    ]
+  },
+  "remaining_gaps": [
+    "Publication remains withheld pending rights/attribution review: MDN contributor attribution (CC-BY-SA-2.5 + share-alike), W3C derivative-section copyright/attribution review, CC attribution preparation for react.dev and TypeScript-Website, SQLite public-domain caveats itemization, Node third-party notice set for docs redistribution. Evidence is captured but completeness is unreviewed; no legal guarantee is offered.",
+    "Moving-snapshot version gaps (declared, by design): react.dev, honojs/website, mdn/content, w3c/aria-practices, TypeScript-Website v2 and sqlite.org content are not the pinned dependency versions' release docs; exact-version fidelity for those archives cannot be proven from the artifacts.",
+    "Coverage is section-based: individual rule references, additional APIs, browser-compat tables, HTML diagrams and some MDN macros are omitted as declared; declaration coverage for @types/node, @types/react, @types/react-dom is not claimed.",
+    "75 of 76 manifest input hashes (inputs/baseline/*, inputs/first-corpus/*, source-inventory.json) and the builder-session registration.json revision are unverifiable in this endpoint because those files were not supplied.",
+    "registration.json in this endpoint differs from the revision the builder hashed (c43765d1... vs 017aac59...); registration corpus sections still contain stale entries (coverage_gaps; revision_curator status 'running_not_qualified' though the R1 build is complete); reconciliation is coordinator-side.",
+    "The preserved verify_manifest.py resolves input hashes relative to the corpus dir's parent, which only matches the builder session's layout; in this endpoint's layout (corpus at inputs/corpus) it cannot pass its input section by construction. Minor tooling portability defect for the coordinator to fix or document.",
+    "True network-disabled container serve qualification not performed here (unshare -n denied); the proxy-blackhole approximation passed but does not substitute for the registered isolated-lane test.",
+    "The 16 Turndown HTML conversions were verified by raw hash and content spot checks, not by re-running the converter.",
+    "Gemma/Gemini-family absence from this review is per authorization; no other model was invoked and no controller measurements exist in this session; all times are self-reported."
+  ],
+  "progression_decision": {
+    "corpus_progression": "PROGRESS_RECOMMENDED",
+    "to": "actual network-disabled OpenCode integration and role qualification (the still-unperformed real integration step)",
+    "conditions": [
+      "Keep inputs immutable; mount docs-files/ and context-packages/ read-only in the qualification environment and install only the 22 approved archives in a dedicated identity's ~/.context/packages",
+      "Run SERVE_COMMAND.sh unchanged (22 exact name@version libs) and record the scoped-serve, enum and rejection checks as part of qualification evidence",
+      "Coordinator-side: revise registration.json corpus sections (coverage_gaps, revision_curator status) and source-inventory.json staleness, and record the registration revision hash change",
+      "Rights/attribution review remains a separate gate for ANY public redistribution; corpus publication stays withheld"
+    ],
+    "explicitly_not_approved": [
+      "The real OpenCode/role integration is NOT approved by this review; standalone retrieval and serve tests do not qualify live role integration",
+      "No public redistribution of technical extracts, archives, raw downloads or logs is approved by this review",
+      "No launch/registration signoff, no study dispatch, no production/account/budget changes"
+    ]
+  },
+  "reproductions": {
+    "hash_verification": "cd /workspace/inputs/corpus && sha256sum -c SHA256SUMS   # 356/356 OK, exit 0",
+    "equivalence_independent": "python3 /workspace/diagnostics/glm_equivalence_check.py   # ok:true, 22 archives/118 files/167 chunks, exit 0",
+    "equivalence_builder_rerun": "cd /workspace/diagnostics/fresh && python3 diagnostics/equivalence.py   # ok:true, exit 0; mapping sets identical to preserved result",
+    "smoke_rerun_builder": "cd /workspace/diagnostics/fresh && python3 diagnostics/smoke.py   # 47/47, exit 0",
+    "serve_probe_rerun_builder": "cd /workspace/diagnostics/fresh && python3 diagnostics/serve_probe.py   # ok:true, exit 0; regenerates SERVE_COMMAND.sh byte-identically",
+    "query_rerun_independent": "python3 /workspace/diagnostics/glm_query_check.py   # 47/47, exit 0",
+    "serve_scoping_independent": "node /workspace/diagnostics/glm_serve_probe.mjs   # scoped_ok:true; unscoped exposes search_packages+download_package, exit 0",
+    "extraction_fidelity": "python3 /workspace/diagnostics/glm_extraction_fidelity.py   # ok:true, 102 verbatim + 4 fenced + 16 converted, exit 0",
+    "coverage_tokens": "python3 /workspace/diagnostics/glm_coverage_check.py   # all declared tokens present, exit 0",
+    "hint_scan": "python3 /workspace/diagnostics/glm_hint_scan.py   # only generic eslint fixture examples, exit 0",
+    "license_check": "python3 /workspace/diagnostics/glm_license_check.py   # 23 evidence files verified, exit 0",
+    "network_refetch": "python3 /workspace/diagnostics/refetch_sample.py   # 10/10 byte-identical, exit 0",
+    "ref_reResolution": "sh /workspace/diagnostics/reresolve_refs.sh   # 18/18 identical, all exit 0",
+    "sqlite_engine": "cp -r <build>/node_modules/better-sqlite3 scratch && node -e \"console.log(new (require('better-sqlite3'))(':memory:').prepare('SELECT sqlite_version() v').get().v)\"   # 3.53.4",
+    "private_store": "mkdir -p ~/.context/packages && cp /workspace/inputs/corpus/context-packages/*.db ~/.context/packages/ && node /tools/context/node_modules/@neuledge/context/dist/cli.js list   # 22 packages/167 sections, exit 0",
+    "net_negated_get_docs": "scoped serve with HTTPS_PROXY=http://127.0.0.1:9 -> get_docs succeeds; true network isolation still untested (unshare -n denied)"
+  },
+  "limitations": [
+    "Different-model cross-review with disclosed subject-family dependence; not independent-family qualification; no self-approval of any artifact",
+    "Content fidelity proven for verbatim sections by line-range reconstruction and for raw acquisition by hashes + ref re-resolution + network refetch of a sample; live-site rendering parity is not claimed",
+    "Review environment: node v24.19.0, npm 10.9.0; Context 1.3.3 mounted at /tools/context; reviewer home ~/.context/packages holds fresh copies of the 22 approved archives only",
+    "No controller measurements available; no invented times or model routing; all diagnostics are reviewer-authored and unapproved"
+  ],
+  "self_authored_artifacts_note": "DOCS_R1_CROSS_REVIEW.json, PREPARATION_PROVENANCE.md and everything under /workspace/diagnostics are this reviewer's unapproved outputs; per registration artifact_policies they require coordinator handling and no self-approval.",
+  "inputs_untouched": true,
+  "app_or_tests_written": false,
+  "replacement_corpus_written": false,
+  "calibration_started": false
+}

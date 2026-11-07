@@ -1,0 +1,50 @@
+{
+  "kind": "mechanical_actual_pod_boundary_not_model_or_endpoint_controller_qualification",
+  "model_calls": 0,
+  "dispatch_utc": "2026-11-07T06:07:10.547839+00:00",
+  "image_id": "9f5eb85cf09bb66ea8ea5d916db2c3bbda5559f5f0daf1daec89d744a3d0c1d6",
+  "profile": "study2-agent-a5ccdae8-stack1",
+  "actors": {
+    "parent": {
+      "role": "parent",
+      "appWrite": "EROFS",
+      "parallelism": 2,
+      "externalInterfaces": [],
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1",
+      "seccomp": "2",
+      "hostWorkspace": false
+    },
+    "worker": {
+      "role": "worker",
+      "appWrite": "ok",
+      "parallelism": 2,
+      "externalInterfaces": [],
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1",
+      "seccomp": "2",
+      "hostWorkspace": false
+    }
+  },
+  "aggregate_limits": {
+    "memory.max": "8589934592",
+    "memory.swap.max": "0",
+    "cpuset.cpus.effective": "0-1",
+    "pids.max": "512"
+  },
+  "checks": {
+    "separate_loopback_namespaces": true,
+    "aggregate_memory_swap_cpu_pids": true,
+    "supervisor_app_readonly_worker_writable": true,
+    "zero_caps_nnp_seccomp_no_egress_host_paths": true,
+    "freeze_stops_both_roles_and_detached_descendants": true,
+    "unfreeze_positive_control_resumes_all_writers": true
+  },
+  "all_passed": true,
+  "qualification_limits": [
+    "native-final/deadline/controller integration not tested",
+    "actual inference/Context/broker not tested",
+    "not full two-lane performance qualification"
+  ],
+  "elapsed_seconds_including_cleanup": 2.1467329940060154
+}

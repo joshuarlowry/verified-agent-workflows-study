@@ -1,0 +1,7 @@
+{
+  "phase": "first_native_Context_mechanical_probe",
+  "model_calls": 0,
+  "cause": "rootful engine created missing mounted-file parent directories under bound home as root; helper temp cleanup then failed",
+  "repair": "precreate user-owned archive directory and mount that directory read-only; initial failed result preserved",
+  "known_leftover_temp": "/tmp/study2-native-transport-g10kix3e"
+}

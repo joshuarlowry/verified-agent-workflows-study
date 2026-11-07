@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-07T05:43:10.624100+00:00",
+  "updated_at_utc": "2026-11-07T06:18:46.418772+00:00",
   "status": "preparation_started_cross_review_method_authorized",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": false,
@@ -82,7 +82,7 @@
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
   "other_preparation": "Node image imported into local rootful Podman store; existing experiments/images preserved",
-  "next_dependency": "GLM reviews of Terra R3 fixture and R1 corpus; fix native Context discovery; actual broker/controller, references/alternatives/negative controls still pending",
+  "next_dependency": "construct/qualify initial task references, alternate implementations, independent external acceptance and negative controls; complete actual seven-role corpus/provider/broker/controller integration and lane qualification",
   "preparation_runs": [
     {
       "run_id": "glm-fixture-builder",
@@ -262,7 +262,7 @@
       "provider_tag": "azure",
       "reasoning_effort": "high",
       "role": "reconstruct relevant version/source-traceable file and Context corpus from GLM review",
-      "status": "returned_rebuilt_corpus_pending_GLM_cross_review",
+      "status": "returned_GLM_review_recommends_runtime_qualification_with_conditions",
       "qualified": false,
       "public_artifacts": "setup/terra-docs-r1-endpoint/"
     },
@@ -289,7 +289,7 @@
       "provider_tag": "azure",
       "reasoning_effort": "high",
       "role": "remaining baseline/contract repairs after GLM R2; not a scored supervisor",
-      "status": "returned_pending_fresh_GLM_review",
+      "status": "returned_GLM_review_consistent_baseline_task_qualification_pending",
       "public_artifacts": "fixture-revision-r3/",
       "qualified": false
     },
@@ -297,15 +297,17 @@
       "run_id": "glm-fixture-r3-cross-review",
       "model": "z-ai/glm-5.3-flash",
       "provider_tag": "relace/fp4",
-      "status": "running",
-      "qualified": false
+      "status": "returned_baseline_and_C1_C4_consistent_construction_may_proceed_not_task_qualification",
+      "qualified": false,
+      "public_artifacts": "setup/reviews/glm-fixture-r3-cross-review/"
     },
     {
       "run_id": "glm-docs-r1-cross-review",
       "model": "z-ai/glm-5.3-flash",
       "provider_tag": "relace/fp4",
-      "status": "running",
-      "qualified": false
+      "status": "returned_pass_progress_recommended_with_conditions_not_role_or_publication_approval",
+      "qualified": false,
+      "public_artifacts": "setup/reviews/glm-docs-r1-cross-review/"
     }
   ],
   "usage_schema_followup": {
@@ -320,7 +322,7 @@
       "setup/context-preliminary-initial.json",
       "setup/context-cleanup-incident.json"
     ],
-    "application_corpus": "first draft cross-review requires changes; Terra revision R1 running"
+    "application_corpus": "Terra R1 rebuilt; GLM review recommends actual role runtime qualification with conditions; raw redistribution withheld"
   },
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
@@ -332,23 +334,29 @@
     "diagnosis": "setup/signal-preliminary.json",
     "profile": "harness/security/study2-agent.profile",
     "repaired_replay": "setup/r1-container-runtime-signal-repair.json",
-    "status": "mechanics passed; different-model review/full qualification pending",
+    "status": "mechanics passed; Gemma accepts limited runtime candidates; full qualification pending",
     "existing_host_profiles_modified": false
   },
   "passive_artifact_backup": {
     "repository": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
     "visibility": "private",
-    "latest_checkpoint": "checkpoints/preparation-20261107T053217Z.tar.gz",
+    "latest_checkpoint": "checkpoints/preparation-20261107T062938Z.tar.gz",
     "scope": "sanitized passive preparation copy, not atomic endpoint; active files may be partial",
-    "credential_values_removed": true
+    "credential_values_removed": true,
+    "sha256": "c110c0a91bf7f8b452e57f7b53713c878f360d11b730e5fc4e56ef755179d33b"
   },
   "baseline_container_replays": {
     "R2": "setup/r2-three-container-replays.json",
-    "status": "three public full checks exited 0; source cross-review still requires repair, not task acceptance"
+    "status": "R3 consistent source review plus three clean public-check replays exit 0; reference/alternate/task oracles still unbuilt",
+    "R3": "setup/r3-three-container-replays.json"
   },
   "native_context_integration": {
-    "status": "first synthetic native-tool probe failed; config/schema/discovery investigation in progress",
+    "status": "generic native synthetic retrieval succeeds after explicit runtime bootstrap/healthcheck; 22-archive corpus and seven actual model roles pending",
     "evidence": "setup/opencode-context-preliminary.json",
     "app_corpus_qualification": "pending"
+  },
+  "aggregate_two_role_boundary": {
+    "evidence": "setup/pod-boundary-preliminary.json",
+    "status": "combined 2 CPUs/8 GiB/zero swap/512 PIDs, separate loopback, supervisor readonly app and whole-group freeze of detached writers passed; actual endpoint controller and concurrent lanes pending"
   }
 }

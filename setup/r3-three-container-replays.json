@@ -1,0 +1,53 @@
+{
+  "kind": "clean_container_public_regression_replay_not_task_acceptance_or_full_qualification",
+  "model_calls": 0,
+  "source": "fixture-revision-r3",
+  "image_id": "9f5eb85cf09bb66ea8ea5d916db2c3bbda5559f5f0daf1daec89d744a3d0c1d6",
+  "resource_limits": {
+    "assigned_cpu_mask": "0,1",
+    "memory_bytes": 8589934592,
+    "pids": 256,
+    "network": "none",
+    "rootfs": "read_only",
+    "apparmor_profile": "study2-agent-a5ccdae8-stack1"
+  },
+  "independent_dependencies": "copied separately into each fresh writable workspace; no writable shared node_modules links",
+  "instances": [
+    {
+      "instance": 1,
+      "dispatch_utc": "2026-11-07T06:10:20.006211+00:00",
+      "preparation_seconds": 0.9550243889971171,
+      "public_check_seconds": 49.956886300991755,
+      "exit_code": 0,
+      "stdout_sha256": "dd5ae0963662798771fa4e329989c9637cadb18074fe2b6a530e8265d39c5279",
+      "stderr_sha256": "5317de024a58f07c3a334741f51f531c7c0d098183a9d2dd03c09347642a5e3e",
+      "total_elapsed_seconds_including_container_cleanup": 51.11680869400152
+    },
+    {
+      "instance": 2,
+      "dispatch_utc": "2026-11-07T06:11:11.237468+00:00",
+      "preparation_seconds": 1.0033781249949243,
+      "public_check_seconds": 49.46462771302322,
+      "exit_code": 0,
+      "stdout_sha256": "b8625153dc07915e931248bb9e0a7c7bfbbbbab97d4d55f83e63673a598d8742",
+      "stderr_sha256": "8c210af8f6b36b7276e5e4a71870c0742d5c72bd43bec555529434d82147966b",
+      "total_elapsed_seconds_including_container_cleanup": 50.667479900002945
+    },
+    {
+      "instance": 3,
+      "dispatch_utc": "2026-11-07T06:12:02.015548+00:00",
+      "preparation_seconds": 0.9300282910116948,
+      "public_check_seconds": 49.21764034300577,
+      "exit_code": 0,
+      "stdout_sha256": "02e30e8bbeb5395ac31dafb69878d3d497f74bfe2ada3ceb26d553b8fbacdf6b",
+      "stderr_sha256": "6be6a2d01c64eb3572361cb02fc8eacb655cd483cbb0af8714c1dc5d7e1c7705",
+      "total_elapsed_seconds_including_container_cleanup": 50.375936636002734
+    }
+  ],
+  "all_public_checks_passed": true,
+  "qualification_limits": [
+    "baseline/contract cross-review is separate",
+    "no sealed task acceptance or positive/negative controls",
+    "no concurrent lane, actual model, Context or broker runtime qualification"
+  ]
+}

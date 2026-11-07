@@ -5,7 +5,7 @@
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
-  "baseline_commit": null,
+  "baseline_commit": "ebf0c02ea0b30ddb1070ac0193ab6e43852a9af9",
   "image_digest": null,
   "lockfile_sha256": null,
   "models": [
@@ -317,7 +317,8 @@
         "author_model": "openai/gpt-6.1-terra",
         "tree_manifest": "setup/terra-repair-r3-endpoint.json",
         "reviewer_model": "z-ai/glm-5.3-flash",
-        "status": "fresh review running; unqualified"
+        "status": "baseline consistent at GLM review endpoint; three clean-container public replays passed",
+        "review": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json"
       }
     ],
     "family_decisions": {
@@ -387,7 +388,9 @@
       "setup/reviews/gemma-broker-cross-review/",
       "setup/reviews/glm-docs-cross-review/",
       "setup/reviews/terra-fixture-r2-cross-review/",
-      "setup/reviews/gemma-runtime-cross-review/"
+      "setup/reviews/gemma-runtime-cross-review/",
+      "setup/reviews/glm-fixture-r3-cross-review/",
+      "setup/reviews/glm-docs-r1-cross-review/"
     ]
   },
   "checks": {
@@ -457,14 +460,16 @@
     "official_version_local_sources_preferred": true,
     "community_package_source_version_coverage_review_required": true,
     "same_readonly_file_corpus_for_all_arms": true,
-    "source_manifest_sha256": null,
-    "snapshot_sha256": null,
+    "source_manifest_sha256": "b4a9c538fad64801107f11f9efd9993b25a6f0e162aaa784e50f4b81ca4746bf",
+    "snapshot_sha256": "ee10b86ba78a2e5ea227985183d3ac89379fb7186af39c8710a7b92a54b04c07",
     "offline_retrieval_smoke_sha256": null,
     "retrieval_model_if_any": null,
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
     "coverage_gaps": [
-      "Vite/Hono and associated adapter docs not yet built/reviewed"
+      "declared release-line/moving-source versus pinned API differences in SOURCE_SELECTION_OMISSIONS.md",
+      "actual network-disabled OpenCode integration with the 22-archive corpus and seven roles pending",
+      "public redistribution/attribution review remains open; raw materials withheld"
     ],
     "preparation_plan": "APPLICATION_AND_DOCS_PLAN.md",
     "candidate_corpus_plan": "registration.json#/application_preparation",
@@ -474,7 +479,11 @@
     "required_role_matrix": "registration.json#/core_configurations",
     "generic_query_suite_frozen_before_model_runs": true,
     "exact_queries_and_expected_sources_sha256": null,
-    "source_version_coverage_review_signoff": null,
+    "source_version_coverage_review_signoff": {
+      "evidence": "setup/reviews/glm-docs-r1-cross-review/DOCS_R1_CROSS_REVIEW.json",
+      "verdict": "pass_progress_recommended_with_conditions",
+      "scope": "internal source/version/extraction/coverage review; no real role qualification or public redistribution approval"
+    },
     "runtime_compatibility_verified": false,
     "curator": {
       "model": "google/gemma-4-31b-it",
@@ -505,17 +514,20 @@
       "session": "terra-docs-repair-r1",
       "provider_tag": "azure",
       "reasoning_effort": "high",
-      "status": "returned_pending_GLM_cross_review"
+      "status": "returned_cross_review_recommends_runtime_progression"
     },
     "revision_cross_reviewer": {
       "model": "z-ai/glm-5.3-flash",
       "session": "glm-docs-r1-cross-review",
-      "status": "running_not_signoff"
-    }
+      "status": "pass_progress_recommended_with_conditions_not_role_or_publication_approval"
+    },
+    "snapshot_hash_definition": "SHA256 of the frozen SHA256SUMS artifact listing; raw files/archives are retained privately with listed hashes",
+    "generic_native_smoke": "setup/opencode-context-preliminary.json; generic archive and synthetic responses only, explicit runtime add/healthcheck required in observed setup",
+    "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public"
   },
   "application_preparation": {
     "plan": "APPLICATION_AND_DOCS_PLAN.md",
-    "status": "Terra_R3_repair_returned_fresh_GLM_review_running",
+    "status": "baseline_R3_source_frozen_consistent_GLM_review_three_clean_replays_passed_task_fixtures_not_qualified",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
@@ -610,7 +622,9 @@
     "first_candidate_manifest": "setup/glm-builder-first-endpoint.json",
     "candidate_source_path": "fixture-draft/",
     "current_candidate_manifest": "setup/terra-repair-r3-endpoint.json",
-    "current_candidate_path": "fixture-revision-r3/"
+    "current_candidate_path": "fixture-revision-r3/",
+    "baseline_review_evidence": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json",
+    "baseline_clean_replay_evidence": "setup/r3-three-container-replays.json"
   },
   "study_kind": "feasibility_and_estimation_only",
   "canonical_configuration": true,
@@ -636,7 +650,9 @@
       "id": "corpus_reviewer",
       "phase": "before_calibration",
       "detail": "different authorized study model cross-reviews source inventory and omissions in a separate session; family dependence disclosed",
-      "resolved": false
+      "resolved": true,
+      "evidence": "setup/reviews/glm-docs-r1-cross-review/DOCS_R1_CROSS_REVIEW.json",
+      "resolution_scope": "internal source/version/extraction/coverage cross-review only; actual role/runtime and public redistribution remain separate open gates"
     },
     {
       "id": "fixture_builders",
@@ -836,5 +852,8 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "setup/WORK_LOG.md"
+  "setup_progress": "setup/WORK_LOG.md",
+  "baseline_source_prefix": "fixture-revision-r3/baseline",
+  "baseline_application_git_tree": "3dd81492b2a30aab05cda82f90768543945e37c6",
+  "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions"
 }
