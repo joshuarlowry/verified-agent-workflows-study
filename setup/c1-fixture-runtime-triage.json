@@ -1,0 +1,40 @@
+{
+  "recorded_at_utc": "2026-11-07T23:33:23.968379+00:00",
+  "kind": "C1_fixture_public_regression_and_packaging_triage_not_scored_outcome",
+  "reference": {
+    "source_commit": "4d610cb01c838f924566fd43159939d495965197",
+    "record": "setup/c1-reference-public-replays-20261107T232728Z.json",
+    "three_clean_public_regression_replays_passed": true,
+    "source_unchanged": true,
+    "feature_acceptance": "pending"
+  },
+  "alternative": {
+    "source_commit": "eb7d00f932f15522d3647197455b9c80eb1b6f3b",
+    "public_regression_status": "unverified_not_executed",
+    "preflight_exit_code": 1,
+    "preflight_reason": "Exact image-input lockfile hash mismatch; target tests never started.",
+    "baseline_lock_sha256": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
+    "alternative_lock_sha256": "6b815275f564f7de8739631e0d887c30166928ce6c1bac0b838f82c1756796ca",
+    "complete_parsed_lock_difference": [
+      {
+        "path": "/packages/node_modules/better-sqlite3/hasInstallScript",
+        "change": "added",
+        "value": true
+      }
+    ],
+    "dependency_versions_integrities_and_all_other_parsed_fields_equal": true,
+    "package_json_bytes_equal": true,
+    "original_patch": {
+      "bytes": 111928473,
+      "sha256": "40c1e435cb66d5edd6e7380e7aeb4e2da0c323812742b04c90b7566e3d300b34",
+      "observed_prefix": "Unified filesystem diff includes .git/COMMIT_EDITMSG and other generated/Git files; not a clean application-only patch.",
+      "strict_utf8_decode": "failed; binary bytes in patch artifact"
+    },
+    "source_edited_or_lock_reconciled_by_operator": false,
+    "feature_acceptance": "pending, not a demonstrated feature regression"
+  },
+  "model_calls": 0,
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "next_step": "Different-model source/artifact review using exact frozen source and triage. Any author revision is a separately recorded extension; original source, patch and failed preflight remain preserved."
+}

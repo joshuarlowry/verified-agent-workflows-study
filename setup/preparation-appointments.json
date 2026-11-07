@@ -629,7 +629,16 @@
       "phase": "fixture_cross_review",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized fixture construction and different-model review",
-      "qualification": "Tracked positive source only, no evaluator/sealed tests. Independent repaired checker first-return frozen before this separate-session positive exposure; no shared native home/conversation. Full task qualification remains pending."
+      "qualification": "Tracked positive source only, no evaluator/sealed tests. Independent repaired checker first-return frozen before this separate-session positive exposure; no shared native home/conversation. Full task qualification remains pending.",
+      "pre_dispatch_runtime_evidence_additions": [
+        {
+          "recorded_at_utc": "2026-11-07T23:33:24.296917+00:00",
+          "kind": "pre_dispatch_fixture_runtime_and_packaging_triage",
+          "file": "CONTROLLER_PUBLIC_REPLAY_TRIAGE.json",
+          "sha256": "8db82f437af28a8694fec5209e56e76edee381ca708f148753e66c33943e0b95",
+          "scope": "Reference public runtime proof; alternative exact-lock preflight stopped before tests and original patch packaging observations. No sealed evaluator, candidate edits or prompt/controller change."
+        }
+      ]
     },
     {
       "launch_id": "c1-repaired-checker-review-20261107T225348Z",

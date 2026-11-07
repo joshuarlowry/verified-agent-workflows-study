@@ -93,5 +93,6 @@
   "C1_checker_review": "setup/c1-checker-review.json",
   "external_evaluator_plumbing": "setup/external-evaluator-plumbing.json",
   "dependency_image_recovery": "setup/dependency-image-preservation.json",
-  "native_session_export_preflight": "setup/native-session-export-preflight.json"
+  "native_session_export_preflight": "setup/native-session-export-preflight.json",
+  "C1_fixture_runtime_triage": "setup/c1-fixture-runtime-triage.json"
 }

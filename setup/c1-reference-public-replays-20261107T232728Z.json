@@ -1,0 +1,320 @@
+{
+  "kind": "clean_container_public_regression_replay_not_task_acceptance_or_full_qualification",
+  "model_calls": 0,
+  "source_snapshot_sha256": "4975b8f559c544097e282f8c1003b594902d02eb51863d3011dcd18dba1c323a",
+  "source_files": 21,
+  "application_lock_sha256": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "resource_limits": {
+    "cpu_mask": "0,1",
+    "memory_bytes": 8589934592,
+    "pids": 256,
+    "network": "none",
+    "rootfs": "read_only",
+    "apparmor_profile": "study2-agent-a5ccdae8-stack1"
+  },
+  "independent_dependencies": "Separate writable copies of dependencies, source, SQLite files, browser profiles, build and TypeScript caches; no writable node_modules symlinks. npm ci ran during image build before copying dependencies.",
+  "instances": [
+    {
+      "instance": 1,
+      "dispatch_utc": "2026-11-07T23:27:28.241956+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.13862565101590008,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.19343236699933186,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.5629124340193812,
+          "stdout_sha256": "7ff204bc4950ff3eefd4d528137f6587e8a779041a05c73ad72f10b0086dba02",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.371281073981663,
+          "stdout_sha256": "359d4447519603b6508d38c8953f4e3d5bf4ac965a223eb13aabf92250c484ff",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "lint"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.231355843017809,
+          "stdout_sha256": "be49adeceb032c4cc44609f19c15756c40f1d1bbd00435c5120408e3dd216f57",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "test"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.1388759709952865,
+          "stdout_sha256": "6f952813ba1eca0445dad3adbcd406f56e9cad3f3e3476758f44d7f6f9213094",
+          "stderr_sha256": "185bf97b4a7b29866abeab2918e2f552347fb247a3d1d88b5286337192a4a490"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "e2e"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 12.102940279000904,
+          "stdout_sha256": "e3cd1e87526bc5f1de47415ba12437be0c5fb60d20f81ff3ad00542afd3b7eda",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.2293162209971342,
+          "stdout_sha256": "44c56d0e79a9152de58e59bdbaecfa15a0c0ee5f949425f149b82ae8b6510750",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.7728422219806816,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 22.9925704030029,
+      "passed": true
+    },
+    {
+      "instance": 2,
+      "dispatch_utc": "2026-11-07T23:27:51.234925+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.15630892998888157,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.20136122999247164,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.6156302780145779,
+          "stdout_sha256": "ae083cd3434842572bf0a25d1821ae07eea535b6c36a821e1320930477726a26",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.1960695250018034,
+          "stdout_sha256": "359d4447519603b6508d38c8953f4e3d5bf4ac965a223eb13aabf92250c484ff",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "lint"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.2680460989940912,
+          "stdout_sha256": "be49adeceb032c4cc44609f19c15756c40f1d1bbd00435c5120408e3dd216f57",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "test"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.0936470220040064,
+          "stdout_sha256": "f1fa317a50298261ad4e4163910eb9993a59186d9bcf9d7ae5eba047d97bbbde",
+          "stderr_sha256": "ad6ec2736f3eb4675eb26883b7607ab111168c3d03e824fdc187fb0318aceffe"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "e2e"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 12.169139642006485,
+          "stdout_sha256": "e3cd1e87526bc5f1de47415ba12437be0c5fb60d20f81ff3ad00542afd3b7eda",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.2060236890101805,
+          "stdout_sha256": "44c56d0e79a9152de58e59bdbaecfa15a0c0ee5f949425f149b82ae8b6510750",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.7789851289999206,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 22.927713164011948,
+      "passed": true
+    },
+    {
+      "instance": 3,
+      "dispatch_utc": "2026-11-07T23:28:14.162937+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.14458217797800899,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.19072660399251617,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.5552028739766683,
+          "stdout_sha256": "0a97f1c9a8673b5e664ab77ec71791046bb0265cda8721cb410c327209826abe",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.318534328980604,
+          "stdout_sha256": "359d4447519603b6508d38c8953f4e3d5bf4ac965a223eb13aabf92250c484ff",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "lint"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.2365392269857693,
+          "stdout_sha256": "be49adeceb032c4cc44609f19c15756c40f1d1bbd00435c5120408e3dd216f57",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "test"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.2134361659991555,
+          "stdout_sha256": "80b8ccbcf143bd67ae6acc2cc895dac491f70ed218198b47048d177f73ac9319",
+          "stderr_sha256": "031533d9f504bb6b079ca4fba03d92507f1a2c959981a6ebf6691a16e76e1216"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "e2e"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 11.91737585599185,
+          "stdout_sha256": "d7feeafaa05a6430cc94f68a79702bd661b932c2294cba56019d8782d56232c7",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.2420756479841657,
+          "stdout_sha256": "44c56d0e79a9152de58e59bdbaecfa15a0c0ee5f949425f149b82ae8b6510750",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.7425256459973752,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 22.80607294299989,
+      "passed": true
+    }
+  ],
+  "all_public_checks_passed": true,
+  "qualification_limits": [
+    "Native API unit tests remain test-mode conditional; trusted evaluator non-test auth probes are separate.",
+    "No sealed task acceptance, reference/alternate implementations or negative controls.",
+    "No concurrent lanes, live models, Context or worker broker qualification.",
+    "Study-local signal profile and dependency image still need current different-model final-runtime review."
+  ]
+}
