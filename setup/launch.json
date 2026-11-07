@@ -1,22 +1,22 @@
 {
-  "launch_id": "review-20261107T114803Z",
+  "retry_of": "preparation-20261107T110750Z-terra-harness-adapter",
+  "original_failure_preserved": true,
+  "retry_policy": "One identical-prompt fresh-session transport retry; no model/harness settings substitution, no corrective implementation hints. Added raw upstream capture only. Failure remains in preparation accounting.",
+  "launch_id": "harness-retry-20261107T115222Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T11:50:54.830382+00:00",
-  "status": "construction_returned_not_qualified",
-  "background_service": "study2-c1-review-20261107t114803z",
+  "snapshot_at_utc": "2026-11-07T11:52:51.269349+00:00",
+  "status": "running",
+  "background_service": "study2-harness-retry-20261107t115222z",
   "automatic_restart": false,
   "roles": [
     {
-      "role": "gemma-c1-evaluator-review",
-      "run_id": "gemma-c1-evaluator-review-20261107T114803Z",
-      "model": "google/gemma-4-31b-it",
-      "status": "returned_requires_cross_review",
-      "dispatch_utc": "2026-11-07T11:48:11.405365+00:00",
-      "ended_at_utc": "2026-11-07T11:50:54.778779+00:00",
-      "agent_exit_code": 0,
-      "controller_exit_code": 0,
-      "prompt_sha256": "71d1b541c6f336a9a091447ac3775b7bd31a3e0df835264de85a3880151df39a",
-      "controller_sha256": "27d28678fa1b378ac1c154400d5f9f38d0c06a2cf421c65db334432cbafd6e29"
+      "role": "terra-harness-adapter-retry",
+      "run_id": "terra-harness-retry-20261107T115222Z",
+      "model": "openai/gpt-6.1-terra",
+      "status": "running",
+      "dispatch_utc": "2026-11-07T11:52:51.220475+00:00",
+      "prompt_sha256": "b6aefc7079f927e6c972c66232eb370cc2d34257f2950af5f4c18a222ba253a1",
+      "controller_sha256": "f603515cdf31628f380c13113a7586ca6f40b25e4dc712bd7d449466a859b87c"
     }
   ],
   "qualification_status": "not_qualified",
