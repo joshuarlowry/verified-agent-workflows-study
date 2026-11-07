@@ -1,11 +1,20 @@
 {
+  "mechanical_recovery": {
+    "at_utc": "2026-11-07T15:06:49.888627+00:00",
+    "reason": "Strict count gate stopped before any Terra call: native compaction has usage but no step_finish. All 40 streams reconciled, including one summary consumed verbatim by next request.",
+    "original_service": "study2-clean-scope-revision-20261107t144032z",
+    "recovery_service": "study2-clean-scope-revision-20261107t144032z-audit-recovery",
+    "prior_model_calls": 0,
+    "same_prompt_and_controller": true,
+    "original_audit_failure_preserved": "review-stream-audit-original-count-failure.log"
+  },
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "scope-revision-20261107T144032Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T15:06:50.308220+00:00",
+  "snapshot_at_utc": "2026-11-07T15:07:12.689890+00:00",
   "event_at_utc": "2026-11-07T15:06:50.255880+00:00",
   "status": "running",
-  "background_service": "study2-clean-scope-revision-20261107t144032z",
+  "background_service": "study2-clean-scope-revision-20261107t144032z-audit-recovery",
   "automatic_restart": false,
   "roles": [
     {
