@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T18:33:03.211839+00:00",
+  "updated_at_utc": "2026-11-07T18:36:11.970868+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -43,12 +43,11 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "provenance-delta-review-20261107T183055Z",
+    "active_launch": "baseline-construction-20261107T183146Z",
     "queued_in_order": [
-      "baseline-construction-20261107T183146Z",
       "docs-selection-review-20261107T183238Z"
     ],
-    "order": "sequential; draft baseline requires exact correction acceptance with no normative changes; runtime/scoring gates remain pending",
+    "order": "sequential; baseline construction allowed by exact combined review evidence, no final freeze or qualification implied",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
@@ -65,5 +64,6 @@
     "verdict": "changes_required; only XR-06 provenance transcription error remains",
     "normative_closure": "All R1-R8 and XR-01..XR-05 verified closed; exact 19-contract coverage preserved",
     "correction_evidence": "setup/provenance-correction.json"
-  }
+  },
+  "draft_baseline_admission": "setup/draft-baseline-admission.json"
 }

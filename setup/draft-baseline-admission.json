@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-11-07T18:36:11.930423+00:00",
+  "admission_scope": "draft baseline construction only; no study or runtime qualification",
+  "full_semantic_review": {
+    "run_id": "clean-20261107T122746Z-scope-amendment-review-glm-20261107T181332Z",
+    "original_verdict": "changes_required (unchanged)",
+    "only_remaining_finding": "XR-06 provenance transcription; no normative text affected",
+    "contract_coverage": 19
+  },
+  "mechanical_delta_review": {
+    "run_id": "clean-20261107T122746Z-provenance-delta-gemma-20261107T183055Z",
+    "model": "google/gemma-4-31b-it",
+    "verdict": "accepted",
+    "scope": "mechanical_delta_only",
+    "review_sha256": "c2552ea380f0d5f0dd94602d17db05070631841fddaa596f27dd38ed086144a7",
+    "successful_calls": 17,
+    "captured_failed_http_calls": 31,
+    "failed_usage": "unavailable, not assumed zero"
+  },
+  "governance": "setup/provenance-correction.json; hard design parameters verified unchanged",
+  "baseline_launch_id": "baseline-construction-20261107T183146Z",
+  "baseline_dispatch_gates": {
+    "verified_at_utc": "2026-11-07T18:35:26.478145+00:00",
+    "product_scope_reviewed_and_provenance_correction_separately_accepted": true,
+    "original_full_review_verdict": "changes_required (preserved)",
+    "scope_freeze_or_runtime_qualification": false,
+    "review_coverage_matches_all_19_contracts": true,
+    "sequential_predecessor_returned": true,
+    "capture_audits_passed": true,
+    "scoring_authorized": false
+  },
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "scope_freeze_approved": false
+}
