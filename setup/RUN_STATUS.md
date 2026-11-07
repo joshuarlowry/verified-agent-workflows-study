@@ -1,13 +1,12 @@
 # Current run status
 
-Updated: 2026-11-07T11:47:18.021273+00:00
+Updated: 2026-11-07T11:48:11.457580+00:00
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State |
 |---|---|---|
-| glm-c1-evaluator | z-ai/glm-5.3-flash | returned requires cross review |
-| terra-harness-adapter | openai/gpt-6.1-terra | blocked preserved |
+| gemma-c1-evaluator-review | google/gemma-4-31b-it | running |
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 

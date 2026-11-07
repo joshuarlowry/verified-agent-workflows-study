@@ -1,36 +1,19 @@
 {
-  "launch_id": "preparation-20261107T110750Z",
+  "launch_id": "review-20261107T114803Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T11:47:18.021273+00:00",
-  "status": "stopped_preserving_state",
-  "background_service": "study2-preparation-20261107t110750z.service",
+  "snapshot_at_utc": "2026-11-07T11:48:11.457580+00:00",
+  "status": "running",
+  "background_service": "study2-c1-review-20261107t114803z",
   "automatic_restart": false,
   "roles": [
     {
-      "role": "glm-c1-evaluator",
-      "run_id": "preparation-20261107T110750Z-glm-c1-evaluator",
-      "model": "z-ai/glm-5.3-flash",
-      "status": "returned_requires_cross_review",
-      "dispatch_utc": "2026-11-07T11:08:37.298131+00:00",
-      "ended_at_utc": "2026-11-07T11:38:03.688422+00:00",
-      "agent_exit_code": 0,
-      "controller_exit_code": 0,
-      "api_budget_exhausted": false,
-      "prompt_sha256": "727e6161758ae6c782869ca0b9b294bd28f03eb807239684003dd69a87a24927",
-      "controller_sha256": "e000e124a39d2ec8a738b578b42c953170e848afb51f93906a6c37ad816165df"
-    },
-    {
-      "role": "terra-harness-adapter",
-      "run_id": "preparation-20261107T110750Z-terra-harness-adapter",
-      "model": "openai/gpt-6.1-terra",
-      "status": "blocked_preserved",
-      "dispatch_utc": "2026-11-07T11:38:03.688638+00:00",
-      "ended_at_utc": "2026-11-07T11:39:26.482457+00:00",
-      "agent_exit_code": 1,
-      "controller_exit_code": 0,
-      "api_budget_exhausted": false,
-      "prompt_sha256": "b6aefc7079f927e6c972c66232eb370cc2d34257f2950af5f4c18a222ba253a1",
-      "controller_sha256": "f13a427b6cf5b63e47b16cf332ee65347ac259238a3e74e4bbde43dd4efdb979"
+      "role": "gemma-c1-evaluator-review",
+      "run_id": "gemma-c1-evaluator-review-20261107T114803Z",
+      "model": "google/gemma-4-31b-it",
+      "status": "running",
+      "dispatch_utc": "2026-11-07T11:48:11.405365+00:00",
+      "prompt_sha256": "71d1b541c6f336a9a091447ac3775b7bd31a3e0df835264de85a3880151df39a",
+      "controller_sha256": "27d28678fa1b378ac1c154400d5f9f38d0c06a2cf421c65db334432cbafd6e29"
     }
   ],
   "qualification_status": "not_qualified",
