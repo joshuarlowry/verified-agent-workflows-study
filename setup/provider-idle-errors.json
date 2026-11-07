@@ -1,0 +1,70 @@
+{
+  "recorded_at_utc": "2026-11-07T19:31:51.788866+00:00",
+  "kind": "explicit_provider_midstream_errors_after_relay_repair",
+  "run_id": "clean-20261107T122746Z-docs-transport-retry-glm-20261107T191133Z",
+  "provider": "Relace",
+  "requested_model": "z-ai/glm-5.3-flash",
+  "errors": [
+    {
+      "request": 58,
+      "code": 504,
+      "message": "Upstream idle timeout exceeded"
+    },
+    {
+      "request": 59,
+      "code": 504,
+      "message": "Upstream idle timeout exceeded"
+    }
+  ],
+  "generation_api_crosscheck": [
+    {
+      "request": 58,
+      "http_status": 200,
+      "retrieved_at_utc": "2026-11-07T19:30:19.793349+00:00",
+      "reported": {
+        "id": "gen-1794079315-CP5H1Z8VWQERQTDD9783",
+        "model": "z-ai/glm-5.3-flash-20260826",
+        "provider_name": "Relace",
+        "tokens_prompt": 53913,
+        "tokens_completion": 3094,
+        "native_tokens_prompt": 53913,
+        "native_tokens_completion": 3094,
+        "native_tokens_reasoning": 3061,
+        "total_cost": 0,
+        "is_byok": false,
+        "cancelled": false,
+        "streamed": true,
+        "finish_reason": null,
+        "native_finish_reason": null
+      },
+      "usage_available": true
+    },
+    {
+      "request": 59,
+      "http_status": 200,
+      "retrieved_at_utc": "2026-11-07T19:30:19.963072+00:00",
+      "reported": {
+        "id": "gen-1794079502-KuuZwb0CaQPz4oPkhE7A",
+        "model": "z-ai/glm-5.3-flash-20260826",
+        "provider_name": "Relace",
+        "tokens_prompt": 53974,
+        "tokens_completion": 1093,
+        "native_tokens_prompt": 53974,
+        "native_tokens_completion": 1093,
+        "native_tokens_reasoning": 1093,
+        "total_cost": 0,
+        "is_byok": false,
+        "cancelled": false,
+        "streamed": true,
+        "finish_reason": null,
+        "native_finish_reason": null
+      },
+      "usage_available": true
+    }
+  ],
+  "cost_interpretation": "These two generation records explicitly report total_cost 0 at retrieval. This is observed provider billing, not an assumed zero for missing usage; preserve their reported token quantities separately. Do not add generation-API counters to streaming counters as extra usage.",
+  "standardized_repricing": "No scored data exists. Failed-call quantity/repricing policy must be applied uniformly and frozen before calibration; this evidence is preparation overhead.",
+  "transport_interpretation": "Provider error frames are preserved. A 504 is a failed provider generation, not evidence of dropped valid JSON by the repaired relay. Whole-review capture classification remains pending its final endpoint.",
+  "routing_or_model_substitution": false,
+  "baseline_source_changed": false
+}
