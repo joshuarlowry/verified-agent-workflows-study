@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 05:04:04 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 05:12:11 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 05:04:04 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 05:12:11 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-worker-harness-review-retry | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 05:04:04 PM EST (UTC-0500) | — |
+| glm-worker-harness-review-retry | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 05:04:04 PM EST (UTC-0500) | Nov 07, 2026 at 05:12:11 PM EST (UTC-0500) |
 
 Identical source review retry after zero-call local gateway crash; original endpoint preserved. Runtime preflight predecessor is resource order only, no new evidence added to reviewer inputs.
 
