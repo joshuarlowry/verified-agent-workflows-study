@@ -1,4 +1,5 @@
 """Back up private preparation at a batch endpoint, without exposing contents."""
+import datetime
 import hashlib
 import fcntl
 import json
@@ -10,7 +11,21 @@ REPO = Path('/home/josh/Documents/Model Mechanisms/verified-agent-workflows-arti
 HELPER = '/home/josh/.local/state/study2-setup/backup_preparation.py'
 
 def main():
-    result = subprocess.run(['/usr/bin/python3', HELPER], check=True, capture_output=True, text=True)
+    result = subprocess.run(['/usr/bin/python3', HELPER], capture_output=True, text=True)
+    if result.returncode:
+        private = Path(HELPER).parent
+        keys = [Path('/run/credentials/hermes-litellm.service/OPENROUTER_API_KEY').read_text().strip()]
+        keys += [p.read_text().strip() for p in private.glob('*/probe.key')]
+        stdout, stderr = result.stdout, result.stderr
+        for key in keys:
+            if key:
+                stdout=stdout.replace(key,'<REDACTED_CREDENTIAL>')
+                stderr=stderr.replace(key,'<REDACTED_CREDENTIAL>')
+        stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+        receipt=private/('checkpoint-producer-failure-'+stamp+'.json')
+        with receipt.open('x') as out:
+            json.dump({'recorded_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'producer_exit_code':result.returncode,'sanitized_stdout':stdout,'sanitized_stderr':stderr,'scope':'Artifact producer failure, not a model/primary endpoint; failed attempt retained and not silently retried.'},out,indent=2)
+        raise RuntimeError('Checkpoint producer failed; sanitized diagnostic retained at '+str(receipt))
     row = json.loads(result.stdout.strip().splitlines()[-1])
     archive = (REPO/row['archive']).resolve()
     if not archive.is_relative_to((REPO/'checkpoints').resolve()):

@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-11-07T22:26:34.894227+00:00",
+  "first_checkpoint_attempt": "Failed producer exit1; original wrapper did not retain underlying stderr, cause remains unverified.",
+  "diagnostic_kernel_interval": "No kernel crash/OOM entries in the bounded failure interval. This is not proof of cause.",
+  "diagnostic_binary_scan": "15364eligible files inspected; no known credential values found in binary exports.",
+  "recovery": "Fresh producer completed; archive hash verified and exact existing completed artifact committed/pushed without changing source or prior archives.",
+  "checkpoint": "checkpoints/preparation-20261107T222306723572Z.tar.gz",
+  "sha256": "76b0589f819341e6fc2b5486231023576a8c0db36c3cbaa7f1d4a9a204376a2d",
+  "bytes": 28265822,
+  "published_private": true,
+  "future_diagnostics": "checkpoint_preparation.py now preserves full sanitized producer stdout/stderr/exit on failure, with no silent automatic retry.",
+  "scope": "Artifact transport only; no model/prompt/provider/budget change and no scored endpoint rescued."
+}
