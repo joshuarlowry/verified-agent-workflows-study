@@ -1,4 +1,5 @@
 """Back up private preparation at a batch endpoint, without exposing contents."""
+import argparse
 import datetime
 import hashlib
 import fcntl
@@ -11,6 +12,7 @@ REPO = Path('/home/josh/Documents/Model Mechanisms/verified-agent-workflows-arti
 HELPER = '/home/josh/.local/state/study2-setup/backup_preparation.py'
 
 def main():
+    if os.geteuid()!=0:raise SystemExit('Run from the authorized root preparation controller')
     result = subprocess.run(['/usr/bin/python3', HELPER], capture_output=True, text=True)
     if result.returncode:
         private = Path(HELPER).parent
@@ -62,6 +64,8 @@ def main():
     print(json.dumps({'checkpoint':row['archive'],'sha256':row['sha256'],'bytes':row['bytes'],'published_private':True}))
 
 if __name__=='__main__':
+    argparse.ArgumentParser(description=__doc__).parse_args()
+    if os.geteuid()!=0:raise SystemExit('Run from the authorized root preparation controller')
     with (REPO/'.git/study-checkpoint.lock').open('a') as lock:
         if os.geteuid()==0:os.chown(lock.name,1000,1000)
         fcntl.flock(lock,fcntl.LOCK_EX)

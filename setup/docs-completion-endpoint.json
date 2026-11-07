@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-11-07T22:36:05.109809+00:00",
+  "launch_id": "docs-extraction-completion-20261107T213919Z",
+  "run_id": "clean-20261107T122746Z-docs-extraction-completion-terra-20261107T213919Z",
+  "model": "openai/gpt-6.1-terra",
+  "dispatch_utc": "2026-11-07T22:14:25.319845+00:00",
+  "elapsed_seconds": 284.12430489697726,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "transport_audit": {
+    "all_passed": true,
+    "requests": 58,
+    "scope": "Successful generation stream fidelity and request inventory only; HTTP errors lack complete gateway error-wire capture and billable usage. Not full adapter qualification."
+  },
+  "prompt_sha256": "6cc7dbfddec89b1f0c999e0ced15d037ebbf7ce49d01446f8fbb6a0dd3bafca5",
+  "controller_sha256": "f8bc6a14990c8d552f9c9b5092986f394aa863588d51abbc93a6034cb847f79d",
+  "first_return_inventory_retained_private": true,
+  "disposition": "Revised staged documentation candidate; 119 files across 17 keys. Content/source-version review pending; all 22 retrieval scenarios not run. Not a frozen corpus.",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

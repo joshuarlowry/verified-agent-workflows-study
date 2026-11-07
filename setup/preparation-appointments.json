@@ -566,8 +566,48 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Registered native worker mechanics and mechanical repair after zero-call AF_UNIX path failure",
       "qualification": "Two identical fixed handoffs; short socket only; actual owning service is docs-completion via mechanical_recovery metadata. No new model/treatment or app task."
+    },
+    {
+      "launch_id": "c1-checker-repair-20261107T223442Z",
+      "role": "glm-c1-checker-repair",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-c1-checker-repair-glm-20261107T223442Z",
+      "manifest_created_at_utc": "2026-11-07T22:34:42.169101+00:00",
+      "prompt_sha256": "e36b810b716b2da0388715f99524bcc6330dd5c716f949622a651b06ac00be62",
+      "controller_sha256": "760ff0020665656ae10bf4df102a19e18306969b67783262795c57d5887a9036",
+      "phase": "preparation_revision_or_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized clean study construction, cross-review and separate preparation extensions",
+      "qualification": "Original returns retained. Source review and live qualification remain separate; no scored dispatch."
+    },
+    {
+      "launch_id": "docs-final-extraction-review-20261107T223442Z",
+      "role": "glm-docs-final-extraction-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-docs-final-extraction-review-glm-20261107T223442Z",
+      "manifest_created_at_utc": "2026-11-07T22:34:42.273955+00:00",
+      "prompt_sha256": "fe15767a3e9ba310b7ff4c156b46c3b8d57eba0c7680b1ea70d50297e826a351",
+      "controller_sha256": "adff42360916a12360d50ee3fdef4d6fcb2ff413738d167cfdcc0c2e1f6a306a",
+      "phase": "preparation_revision_or_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized clean study construction, cross-review and separate preparation extensions",
+      "qualification": "Original returns retained. Source review and live qualification remain separate; no scored dispatch."
+    },
+    {
+      "launch_id": "native-controller-integration-20261107T223522Z",
+      "role": "terra-native-controller-integration",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-native-controller-integration-terra-20261107T223522Z",
+      "manifest_created_at_utc": "2026-11-07T22:35:22.280509+00:00",
+      "prompt_sha256": "c71535381607a678696c3976705af5ee1648eac292531dce138f40c07efe3885",
+      "controller_sha256": "fa2da7b7ec19a731712104468874540b0304a050c520d59446bfd549dabb1026",
+      "phase": "preparation_revision_or_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized clean study construction, cross-review and separate preparation extensions",
+      "qualification": "Original returns retained. Source review and live qualification remain separate; no scored dispatch."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
-  "independent_model_family_claim": false
+  "independent_model_family_claim": false,
+  "updated_at_utc": "2026-11-07T22:36:05.109809+00:00"
 }

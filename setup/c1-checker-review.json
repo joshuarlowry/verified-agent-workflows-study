@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-11-07T22:36:05.109809+00:00",
+  "launch_id": "c1-checker-review-20261107T220209Z",
+  "run_id": "clean-20261107T122746Z-c1-checker-review-terra-20261107T220209Z",
+  "model": "openai/gpt-6.1-terra",
+  "dispatch_utc": "2026-11-07T22:27:24.768293+00:00",
+  "elapsed_seconds": 310.0970569429919,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "transport_audit": {
+    "all_passed": true,
+    "requests": 39,
+    "scope": "Successful generation stream fidelity and request inventory only; HTTP errors lack complete gateway error-wire capture and billable usage. Not full adapter qualification."
+  },
+  "prompt_sha256": "d25bdd84636ff255ede58c20a0c0b601d4b99a90cb99cff90c1ad7e6bbb592ac",
+  "controller_sha256": "e877a250b98a7d41d3ecbfb9405181be9f859c9d6227ddcf86c2b8135c81821e",
+  "first_return_inventory_retained_private": true,
+  "disposition": "Changes required: membership oracle, target attribution, fail-closed reports, semantic UI/auth/status/regression coverage. GLM author repair launched without positive-source exposure.",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

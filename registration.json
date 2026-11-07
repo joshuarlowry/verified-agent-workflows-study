@@ -313,9 +313,10 @@
     "acceptance_suite_sha256": null,
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
-    "independent_C1_evaluator_status": "Independent GLM first-return checker frozen before positive-candidate exposure; different-model source review and actual reference/alternate/negative/clean replays pending.",
+    "independent_C1_evaluator_status": "First-return GLM checker frozen before positive exposure; Terra source review changes_required. Separate GLM repair underway without positive-source exposure; actual reference/alternate/negative/clean replays pending.",
     "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json",
-    "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json"
+    "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json",
+    "independent_C1_checker_review": "setup/c1-checker-review.json"
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
@@ -382,9 +383,9 @@
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
     "coverage_gaps": [
-      "Source selection accepted; expanded extraction is partial (125bodies acquired, six excerpts staged).",
-      "Proposed pinned Vitest include and faithful MDX/generated-content/SQLite passage coverage need review and repair.",
-      "Context archive/index, file parity and all22generic queries/seven-role offline qualification pending.",
+      "Revised extraction stages 119 source files across 17 keys; different-model final content/version review queued.",
+      "Moving-snapshot passage applicability and retained generated content require explicit reviewed disposition.",
+      "Context archive/index, identical files and all22queries/seven-role offline qualification pending.",
       "Attribution/publication review pending; raw upstream material withheld."
     ],
     "preparation_plan": "STUDY_PLAN.md",
@@ -402,11 +403,12 @@
       "session": "ses_e484a21b7ffeTsJZ56wk8qJJgr",
       "provider_tag": "azure",
       "reasoning_effort": "high",
-      "status": "source_plan_accepted_partial_extraction_returned_pending_review",
+      "status": "revised_extraction_returned_pending_fresh_content_review",
       "independence_claim": false,
       "source_selection_run": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
       "source_amendment_run": "clean-20261107T122746Z-docs-source-repair-terra-20261107T193704Z",
-      "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z"
+      "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z",
+      "latest_revision_run": "clean-20261107T122746Z-docs-extraction-completion-terra-20261107T213919Z"
     },
     "review_scope": [
       "source selection and omissions",

@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T22:19:17.286665+00:00",
+  "updated_at_utc": "2026-11-07T22:36:05.109809+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -22,11 +22,10 @@
     ]
   },
   "remaining": [
-    "Review narrow baseline contract/native-auth binding amendment and freeze qualified scope",
-    "Build/review generic documentation corpus from approved amended source selection",
-    "Construct/review role prompts, worker broker and evaluator",
-    "Build task reference/alternate solutions and negative controls; qualify five tasks first",
-    "Three clean replay, actual role isolation/equal resource and deadline/cancellation qualification before calibration"
+    "Complete and cross-review independent C1 evaluator repair, then actual reference/alternate/negative/three-clean-replay task qualification",
+    "Review revised documentation extraction, then build/qualify offline Context corpus and seven-role parity",
+    "Complete executable native controller integration, cross-review and real supervisor/worker/endpoint/isolation qualification",
+    "Qualify five tasks before staged calibration; no scored admission yet"
   ],
   "scored_runs": 0,
   "calibration_runs": 0,
@@ -42,10 +41,10 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "docs-extraction-completion-20261107T213919Z",
+    "active_launch": "c1-checker-repair-20261107T223442Z",
     "queued_in_order": [
-      "native-harness-completion-20261107T214216Z",
-      "c1-checker-review-20261107T220209Z"
+      "docs-final-extraction-review-20261107T223442Z",
+      "native-controller-integration-20261107T223522Z"
     ],
     "data_dependencies": "Documentation review uses its amended source plan, not baseline amendment. Baseline delta review uses baseline amendment, not docs findings. Three offline public replays require accepted baseline delta review and a fresh exact-lockfile image. Documentation extraction separately requires accepted source selection and preserved streams; staging review precedes Context archive build.",
     "order": "Sequential external model execution; heavy container build/replays wait for review endpoints. All originals preserved.",
@@ -86,5 +85,8 @@
   "independent_C1_alternate_endpoint": "setup/c1-alternate-endpoint.json",
   "native_worker_socket_repair": "setup/native-worker-socket-repair.json",
   "native_worker_continuation_preflight": "setup/native-worker-continuation-preflight.json",
-  "worker_harness_review": "setup/worker-harness-review.json"
+  "worker_harness_review": "setup/worker-harness-review.json",
+  "docs_completion_endpoint": "setup/docs-completion-endpoint.json",
+  "native_harness_extension_endpoint": "setup/native-harness-extension-endpoint.json",
+  "C1_checker_review": "setup/c1-checker-review.json"
 }

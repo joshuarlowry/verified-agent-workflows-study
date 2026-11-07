@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "Accepted baseline delta and documentation source selection. Fresh image, three isolated public regression replays and three accepted native-auth probe replays pending; extraction, first C1 packet and common worker harness follow their recorded gates. No calibration/scored runs yet.",
+  "next_dependency": "GLM repairs reviewed C1 evaluator without positive-source exposure; fresh GLM docs-content review and Terra executable native-controller integration follow sequentially. Baseline source/binding and three public/native-auth image replays passed; no task/corpus/full-harness qualification or calibration/scored run yet.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",

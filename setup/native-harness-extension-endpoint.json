@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-11-07T22:36:05.109809+00:00",
+  "launch_id": "native-harness-completion-20261107T214216Z",
+  "run_id": "clean-20261107T122746Z-native-harness-completion-terra-20261107T214216Z",
+  "model": "openai/gpt-6.1-terra",
+  "dispatch_utc": "2026-11-07T22:19:37.685526+00:00",
+  "elapsed_seconds": 438.1105411419994,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "transport_audit": {
+    "all_passed": true,
+    "requests": 125,
+    "scope": "Successful generation stream fidelity and request inventory only; HTTP errors lack complete gateway error-wire capture and billable usage. Not full adapter qualification."
+  },
+  "prompt_sha256": "c0d57334b3148728c6ddf1f099884988658ba063d3aa182bd98c54e12eba82ef",
+  "controller_sha256": "967522ac1a4cde916df3aac21940c31a36e7fe1acd5a80d1728cf15f6edbaea3",
+  "first_return_inventory_retained_private": true,
+  "disposition": "Substantive native source returned incomplete. Executable controller, Context, continuation and capture integration still missing. New explicit integration extension queued; no live harness qualification.",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
