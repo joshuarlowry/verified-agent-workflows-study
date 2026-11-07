@@ -21,5 +21,12 @@
     "Global native worker/Context/resource/endpoint qualification before calibration."
   ],
   "calibration_runs": 0,
-  "scored_runs": 0
+  "scored_runs": 0,
+  "command_level_audit": {
+    "tool_inputs_checked": 117,
+    "flagged_inputs": 0,
+    "audit_sha256": "569e456a6400ca3b3fdae52f2be320feef0dfa41c2907d4e5b2c3f35ae0ee587",
+    "scope": "command_level_preparation_independence_audit_not_full_network_syscall_audit",
+    "limit": "Exact pattern audit of recorded tool inputs only; dynamic dependency network operations and arbitrary encoded paths are not exhaustively observed. Fresh session, scoped input snapshot and filesystem isolation remain separate controls. No independent-model-family claim."
+  }
 }
