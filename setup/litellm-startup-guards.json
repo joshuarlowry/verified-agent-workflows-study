@@ -1,0 +1,8 @@
+{
+  "kind": "mechanical_no_model_calls",
+  "all_passed": true,
+  "valid_source_activates_patch": true,
+  "wrong_source_hash_exits_78_before_program_runs": true,
+  "installed_source_modified": false,
+  "patch_sha256": "d594e4a18083fae8fd03f6f10a87027dd24769e887d7043761f68af542891e6a"
+}

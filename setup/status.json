@@ -67,13 +67,26 @@
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "queued_preparation": {
     "service": "study2-c1-valid-paths-20261107t115435z.service",
-    "status": "waiting_for_harness_retry",
+    "status": "dependency_blocked_preserved",
     "jobs": [
       "Terra C1 reference construction",
       "Gemma C1 separately authored alternative candidate"
     ],
-    "condition": "Run sequentially only after the harness retry returns normally; halt if that dependency fails.",
+    "condition": "The unpatched retry failed; no builder in this queue was dispatched.",
     "isolation": "Each builder sees baseline and public C1 contract/FAQ only; no evaluator or other implementation.",
     "qualification": "External acceptance, negative controls, substantive alternative-path review and clean replays follow separately; no scored dispatch."
+  },
+  "next_preparation": {
+    "service": "study2-after-sse-fix-20261107t121019z.service",
+    "status": "waiting_for_GLM_patch_review",
+    "jobs": [
+      "Terra harness construction with qualified study SSE overlay",
+      "Terra C1 reference construction",
+      "Gemma C1 alternative candidate"
+    ],
+    "gate": "Exact acceptable-limited-candidate review with no high/critical/blocker findings, unchanged patch hash and passing runtime/replay/native checks; otherwise halt and preserve state.",
+    "concurrency": 1,
+    "calibration_or_scoring_enabled": false,
+    "reporting": "Automatic repository status at transitions; private checkpoint and push at batch endpoint."
   }
 }
