@@ -605,6 +605,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized clean study construction, cross-review and separate preparation extensions",
       "qualification": "Original returns retained. Source review and live qualification remain separate; no scored dispatch."
+    },
+    {
+      "launch_id": "c1-implementation-review-20261107T223656Z",
+      "role": "glm-c1-implementation-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-c1-implementation-review-glm-20261107T223656Z",
+      "manifest_created_at_utc": "2026-11-07T22:36:56.054277+00:00",
+      "prompt_sha256": "cdf679dce6bf3008f9af9b15c6db6f9a24da2b030c630e0b01f8083e2d899130",
+      "controller_sha256": "5da0a2bd113ca4a65db016ccf36b7b49ba1a663cfbafe0173aad336449a65bb3",
+      "phase": "fixture_cross_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized fixture construction and different-model review",
+      "qualification": "Tracked positive source only, no evaluator/sealed tests. Independent repaired checker first-return frozen before this separate-session positive exposure; no shared native home/conversation. Full task qualification remains pending."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
