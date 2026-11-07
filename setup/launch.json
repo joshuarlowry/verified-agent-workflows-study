@@ -3,10 +3,10 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "scope-pipeline-20261107T171430Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T17:19:32.858486+00:00",
-  "snapshot_at_eastern": "Nov 07, 2026 at 12:19:32 PM EST (UTC-0500)",
-  "event_at_utc": "2026-11-07T17:19:32.717405+00:00",
-  "event_at_eastern": "Nov 07, 2026 at 12:19:32 PM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-07T17:19:34.120170+00:00",
+  "snapshot_at_eastern": "Nov 07, 2026 at 12:19:34 PM EST (UTC-0500)",
+  "event_at_utc": "2026-11-07T17:19:34.070897+00:00",
+  "event_at_eastern": "Nov 07, 2026 at 12:19:34 PM EST (UTC-0500)",
   "display_timezone": "America/New_York",
   "status": "running",
   "background_service": "study2-clean-scope-pipeline-20261107t171430z",
@@ -31,9 +31,11 @@
       "role": "gemma-cross-review",
       "run_id": "clean-20261107T122746Z-gemma-cross-review-20261107T171430Z",
       "model": "google/gemma-4-31b-it",
-      "status": "queued",
+      "status": "running",
+      "dispatch_utc": "2026-11-07T17:19:34.070897+00:00",
       "prompt_sha256": "49fb21bf97be79b2196b30c602e46c664ef44a11172f6fa395f905a7f599c8e1",
-      "controller_sha256": "cc055271e80eb887d85578da295f97cc5bb73b9fd2916f1b979b302a239af4c2"
+      "controller_sha256": "cc055271e80eb887d85578da295f97cc5bb73b9fd2916f1b979b302a239af4c2",
+      "dispatch_eastern": "Nov 07, 2026 at 12:19:34 PM EST (UTC-0500)"
     }
   ],
   "qualification_status": "not_qualified",
