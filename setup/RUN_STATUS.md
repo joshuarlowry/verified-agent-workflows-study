@@ -1,17 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 12:22:34 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:04:56 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 12:22:34 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:04:56 PM EST (UTC-0500)
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-revision | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 12:14:37 PM EST (UTC-0500) | Nov 07, 2026 at 12:19:32 PM EST (UTC-0500) |
-| gemma-cross-review | google/gemma-4-31b-it | blocked preserved | Nov 07, 2026 at 12:19:34 PM EST (UTC-0500) | Nov 07, 2026 at 12:22:34 PM EST (UTC-0500) |
+| glm-full-contract-cross-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 01:04:56 PM EST (UTC-0500) | — |
 
-Preparation pipeline stopped; endpoint and local diagnostics preserved. No scoring enabled.
+GLM is reviewing every revised contract. Prior Gemma acceptance is preserved as a partial sampled review, not full scope approval. No calibration/scoring dispatch.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
