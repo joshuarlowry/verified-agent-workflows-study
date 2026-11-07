@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T14:39:27.267617+00:00",
+  "updated_at_utc": "2026-11-07T15:07:11.416559+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -12,7 +12,14 @@
   "scope_review": {
     "model": "z-ai/glm-5.3-flash",
     "run_id": "clean-20261107T122746Z-scope-review-glm-20261107T143832Z",
-    "status": "launched; endpoint not yet inspected"
+    "status": "Completed: changes required; 40 calls reconciled (39 steps plus one native compaction call). All stream pairs preserved.",
+    "findings": [
+      "Undefined seed values for task expectations",
+      "Unqualified version-sensitive baseline claims",
+      "Provenance hash mismatch",
+      "Contradictory pagination example",
+      "Unpinned validation messages"
+    ]
   },
   "remaining": [
     "Freeze revalidated scope and common decisions after review",
@@ -30,6 +37,7 @@
     "role": "Terra clean scope revision",
     "run_id": "clean-20261107T122746Z-scope-revision-terra-20261107T144032Z",
     "dispatch_gate": "GLM review final return, no budget exhaustion, all review streams preserved, structured proposals available",
-    "endpoint_policy": "Fresh session; no automatic calibration/scored dispatch; revised scope still requires different-model approval"
+    "endpoint_policy": "Fresh session; no automatic calibration/scored dispatch; revised scope still requires different-model approval",
+    "status": "Resumed after mechanical accounting-gate repair; original pre-dispatch failure preserved; no duplicate model calls."
   }
 }

@@ -19,6 +19,10 @@ STATES = {'queued', 'running', 'returned_requires_cross_review', 'blocked_preser
 FILES = ['setup/launch.json', 'setup/status.json', 'setup/RUN_STATUS.md']
 
 def snapshot(manifest, service):
+    recovery = manifest.get('mechanical_recovery', {})
+    service = recovery.get('recovery_service', service)
+    if not re.fullmatch(r'study2-[a-z0-9-]+(?:\.service)?', service):
+        raise ValueError('Invalid recovery service identifier')
     rows = []
     for role in manifest['roles']:
         if role['model'] not in MODELS or role['status'] not in STATES:
@@ -30,7 +34,7 @@ def snapshot(manifest, service):
     stamps=[manifest.get(k) for k in ('created_at_utc','started_at_utc','ended_at_utc')]
     stamps += [row.get(k) for row in rows for k in ('dispatch_utc','ended_at_utc')]
     event_at=max((x for x in stamps if x),default=now)
-    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'event_at_utc': event_at, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
+    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy', 'mechanical_recovery') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'event_at_utc': event_at, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
 
 def main():
     parser = argparse.ArgumentParser()
