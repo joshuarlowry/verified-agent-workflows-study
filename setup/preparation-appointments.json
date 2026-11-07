@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-07T20:06:44.332134+00:00",
+  "recorded_at_utc": "2026-11-07T20:11:55.484580+00:00",
   "cohort_id": "clean-20261107T122746Z",
   "scope": "Clean preparation role appointments derived from original launch manifests, including queued or unstarted slots; this list is not an endpoint or approval ledger. No additional models authorized.",
   "appointments": [
@@ -392,6 +392,19 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
       "qualification": "Appointment is not approval or proof of dispatch; consult endpoint and per-artifact review evidence."
+    },
+    {
+      "launch_id": "docs-extraction-20261107T201115Z",
+      "role": "terra-docs-extraction",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z",
+      "manifest_created_at_utc": "2026-11-07T20:11:15.715840+00:00",
+      "prompt_sha256": "181fed13e94dd8a78596eb3ecaefe03b1a45aa7aa196a8884ac39f5f0d3da79d",
+      "controller_sha256": "0eefc3fe6aaca65ebb6b96533ed445773d22d259c097b2435890caa09550e3a4",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "Three-model fixture/cross-review waiver and user-directed clean reconstruction",
+      "qualification": "Appointment is not approval or dispatch; wrapper requires accepted source review. Extraction staging needs different-model review before Context indexing."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
