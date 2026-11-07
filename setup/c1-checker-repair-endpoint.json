@@ -43,5 +43,6 @@
   "capture_audit_repair": "setup/capture-audit-repair.json",
   "source_oracle_edited_by_operator": false,
   "calibration_runs": 0,
-  "scored_runs": 0
+  "scored_runs": 0,
+  "external_baseline_replay": "setup/c1-repaired-checker-baseline-replay.json"
 }

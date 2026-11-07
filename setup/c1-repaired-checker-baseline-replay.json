@@ -1,0 +1,57 @@
+{
+  "recorded_at_utc": "2026-11-07T23:49:07.965977+00:00",
+  "kind": "repaired_checker_external_baseline_replay_not_positive_acceptance",
+  "run_id": "replay-27c089aebbb1",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "controller_sha256": "712b5131aca20e424681f913671181f3455a88dafdacee19ae1c1f2bf9de5f5e",
+  "plumbing_completed": true,
+  "evaluator_exit_code": 1,
+  "evaluator_summary": {
+    "checks_total": 37,
+    "completed": 37,
+    "passed": 16,
+    "failed": 21,
+    "failed_by_class": {
+      "target.shape_violation": 5,
+      "target.missing_feature": 8,
+      "target.ui_violation": 8
+    },
+    "unverified": 0,
+    "unverified_by_class": {},
+    "assertions_attempted": 438,
+    "assertions_passed": 417,
+    "assertions_failed": 21,
+    "skips": 0,
+    "outcome": "target_regression_or_missing_feature",
+    "exit_code": 1
+  },
+  "evaluator_report_sha256": "18b7e4b1fa310428b9b2163729caa5fc67636cbaf9f0551311d4182f85fb006b",
+  "elapsed_seconds": 92.14733077399433,
+  "target_source_unchanged": true,
+  "checker_source_unchanged": true,
+  "evaluator_visibility_probe": {
+    "targetVisible": false,
+    "node": "v24.19.0",
+    "playwright": "1.65.0",
+    "nodeEnv": null,
+    "testEnv": null
+  },
+  "cleanup": [
+    {
+      "container": "study2-evaluator-f4be39f966",
+      "exit_code": 0
+    },
+    {
+      "container": "study2-target-0e2cb4bd3c",
+      "exit_code": 0
+    }
+  ],
+  "scope": "Unimplemented baseline is expected to fail C1. Repaired checker bytes untouched; source review, real reference/alternate/control and three-clean feature replays pending.",
+  "mechanical_recoveries": [
+    "First watcher stopped on audit parser error; original failure preserved.",
+    "Next replay exited 3 before checks on inherited browser path; exact trusted browser selected via evaluator-owned path, no checker/target edits."
+  ],
+  "model_calls": 0,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

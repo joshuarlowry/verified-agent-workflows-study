@@ -662,6 +662,15 @@
           "scope": "Provide complete immutable author inputs and explicit path mapping so reviewer can verify original hashes; no positive source, conversation or changed prompt/controller.",
           "subject_dispatch_started": false
         }
+      ],
+      "pre_dispatch_runtime_evidence_additions": [
+        {
+          "recorded_at_utc": "2026-11-07T23:49:07.965977+00:00",
+          "kind": "pre_dispatch_repaired_checker_baseline_runtime_evidence",
+          "file": "REPAIRED_CHECKER_EXTERNAL_BASELINE_REPLAY.json",
+          "sha256": "dff46a9eb7103626ae6dd1f8ce34c0957c760e14873b6d26ec422c23804ad3e4",
+          "scope": "Actual repaired checker against unimplemented baseline only. No positive implementation/outcome or candidate edit. Source review and task qualification remain separate."
+        }
       ]
     }
   ],
