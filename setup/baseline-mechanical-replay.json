@@ -1,9 +1,0 @@
-{
-  "kind": "mechanical_replay_of_builder_authored_public_checks_not_independent_task_acceptance",
-  "dispatch_utc": "2026-11-07T03:51:00.255844+00:00",
-  "elapsed_seconds": 22.510266936995322,
-  "command": "npm run check:full",
-  "exit_code": 0,
-  "environment": "same isolated construction view; clean-container replays still pending",
-  "model_calls": 0
-}

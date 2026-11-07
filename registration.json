@@ -255,70 +255,14 @@
         "independent_review_status": "pending"
       },
       {
-        "artifact": "setup/prompts/",
-        "class": "preparation role handoffs",
-        "author": "existing chat coordinator",
-        "model": "gpt-6.1-sol",
-        "family": "OpenAI GPT",
-        "harness": "Codex",
-        "sha256_by_file": {
-          "setup/prompts/gemma-broker-cross-review.txt": "87bb59f69d4609d3a47733bec346e11e7e04d82fdc17a54265731c7eaeee3f8b",
-          "setup/prompts/gemma-cross-review.txt": "95e5c22a0acaa8833100b79eb85f03027d771ccf018a41cac9a2f5d39aff7b64",
-          "setup/prompts/gemma-docs-corpus-builder.txt": "d7c6f500a5f18c8f94fc872e2ee8f41045ba710b5ec11e1e2cf33654d8ea7797",
-          "setup/prompts/gemma-runtime-cross-review.txt": "97b8da81957c454d7b63831f04f3aa3220afe32b24e5554d99674ad906df5592",
-          "setup/prompts/glm-docs-cross-review.txt": "0cfd9fdc0c966ed7ac67536b4bec6feb38f6b45fa89adf28a1b8ef9f06c87654",
-          "setup/prompts/glm-docs-r1-cross-review.txt": "f6f8043e1f543d075f01f9d719c0b5b239977801a2ff3e1d93910219b680cb87",
-          "setup/prompts/glm-fixture-builder.txt": "b81d6073a433c29bb9ee40e342a569db7280d722e8b47873fee63e5d4b19a2b0",
-          "setup/prompts/glm-fixture-r3-cross-review.txt": "b46ec3afc7116273616151a0c1cb7262cf5fd5b303985cb78011e2ca1e77ddc9",
-          "setup/prompts/glm-fixture-repair-r1.txt": "c7e54088432ce3ea632c03006f5b6b0bb102ff99bbe1976ef66180c41a69f097",
-          "setup/prompts/glm-fixture-repair-r2.txt": "89c1d05b64b45947dfb1c98817f3a9bcb693eb7ca4ef5250a49f24196ad2ac7e",
-          "setup/prompts/glm-usage-cross-review.txt": "5e2562da2afbf194ce1920df9413eb6e0d467da6b4eb214a1ec23fdaf62d2f6e",
-          "setup/prompts/terra-broker-construction.txt": "e3e48214bfa3e32767fe92b216d9bc68f69ab0cb04cd6e75a772c5f9da385330",
-          "setup/prompts/terra-docs-repair-r1.txt": "50b02616ee1c7e38ab3973d7052a5b08b3183047675ebd4249a841751b2d11cd",
-          "setup/prompts/terra-fixture-cross-review.txt": "ea6a8c7aa1272899fa5f845045a5e8ab4830bc7e644778ecd208a9baf83d3c27",
-          "setup/prompts/terra-fixture-r1-cross-review.txt": "604a1e32880b7b9bdb3e2c7121c5b9f978a6a0674511ae4f2fb960ce6f17f3a2",
-          "setup/prompts/terra-fixture-r2-cross-review.txt": "411d13400620163c2b54960ef328a05cf8cc2eec22c6697a224416055758d4d5",
-          "setup/prompts/terra-fixture-repair-r3.txt": "fd92064ae367eba9d9e1f7cd1c610552db8b4621662f15ad45b580d196e794cf",
-          "setup/prompts/terra-preparation-review.txt": "1a79756409c7db9f5d48fd62dd521591450189f01f1f97f29003ccc97d6462fb"
-        },
-        "independent_review_status": "first protocol prompts reviewed by Terra; later preparation repair/review prompts retain coordinator attribution and are not independent-family approved"
-      },
-      {
-        "artifact": "fixture-draft/",
-        "author_model": "z-ai/glm-5.3-flash",
-        "author_session": "glm-fixture-builder",
-        "provider_tag": "relace/fp4",
-        "tree_manifest": "setup/glm-builder-first-endpoint.json",
-        "cross_reviewer_model": "openai/gpt-6.1-terra",
-        "review": "setup/reviews/terra-fixture-cross-review/FIXTURE_CROSS_REVIEW.json",
-        "status": "changes_required; first endpoint preserved; no study qualification"
-      },
-      {
-        "artifact": "fixture-revision-r1/",
-        "author_model": "z-ai/glm-5.3-flash",
-        "author_session": "glm-fixture-repair-r1",
-        "provider_tag": "relace/fp4",
-        "tree_manifest": "setup/glm-repair-r1-endpoint.json",
-        "cross_reviewer_model": "openai/gpt-6.1-terra",
-        "review_status": "returned_changes_required",
-        "previous_endpoint": "fixture-draft/",
-        "status": "unqualified_preparation_revision",
-        "review": "setup/reviews/terra-fixture-r1-cross-review/FIXTURE_R1_CROSS_REVIEW.json"
-      },
-      {
-        "artifact": "fixture-revision-r2/",
-        "author_model": "z-ai/glm-5.3-flash",
-        "tree_manifest": "setup/glm-repair-r2-endpoint.json",
-        "review": "setup/reviews/terra-fixture-r2-cross-review/FIXTURE_R2_CROSS_REVIEW.json",
-        "status": "changes_required; preserved first endpoint"
-      },
-      {
-        "artifact": "fixture-revision-r3/",
+        "artifact": "fixtures/",
         "author_model": "openai/gpt-6.1-terra",
         "tree_manifest": "setup/terra-repair-r3-endpoint.json",
         "reviewer_model": "z-ai/glm-5.3-flash",
         "status": "baseline consistent at GLM review endpoint; three clean-container public replays passed",
-        "review": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json"
+        "review": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json",
+        "initial_author_model": "z-ai/glm-5.3-flash",
+        "author_role": "current revision by Terra, based on GLM construction; full revision attribution retained in audit snapshot"
       }
     ],
     "family_decisions": {
@@ -382,16 +326,17 @@
     "cross_review_evidence": [
       "setup/reviews/terra-protocol-review/",
       "setup/reviews/gemma-cross-review/",
-      "setup/reviews/terra-fixture-cross-review/",
+      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/terra-fixture-cross-review/",
       "setup/reviews/glm-usage-cross-review/",
-      "setup/reviews/terra-fixture-r1-cross-review/",
+      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/terra-fixture-r1-cross-review/",
       "setup/reviews/gemma-broker-cross-review/",
-      "setup/reviews/glm-docs-cross-review/",
-      "setup/reviews/terra-fixture-r2-cross-review/",
+      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/glm-docs-cross-review/",
+      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/terra-fixture-r2-cross-review/",
       "setup/reviews/gemma-runtime-cross-review/",
       "setup/reviews/glm-fixture-r3-cross-review/",
       "setup/reviews/glm-docs-r1-cross-review/"
-    ]
+    ],
+    "historical_authorship_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/registration.json"
   },
   "checks": {
     "requirements_public": true,
@@ -619,10 +564,8 @@
     "lockfile_and_image_qualification_required": true,
     "eligible_builder_signoff": null,
     "cross_review_signoff": null,
-    "first_candidate_manifest": "setup/glm-builder-first-endpoint.json",
-    "candidate_source_path": "fixture-draft/",
     "current_candidate_manifest": "setup/terra-repair-r3-endpoint.json",
-    "current_candidate_path": "fixture-revision-r3/",
+    "current_candidate_path": "fixtures/",
     "baseline_review_evidence": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json",
     "baseline_clean_replay_evidence": "setup/r3-three-container-replays.json"
   },
@@ -635,8 +578,8 @@
     "codex_subject_or_supervisor_arms": false,
     "all_roles_share_adapter": true,
     "readiness_evidence": [
-      "readiness/terra-openrouter-20261107.md",
-      "readiness/gemma-glm-zdr-20261107.md",
+      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/readiness/terra-openrouter-20261107.md",
+      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/readiness/gemma-glm-zdr-20261107.md",
       "readiness/revision7-provider-and-accounting.md"
     ],
     "residual_variation": [
@@ -852,8 +795,16 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "setup/WORK_LOG.md",
-  "baseline_source_prefix": "fixture-revision-r3/baseline",
+  "setup_progress": "setup/README.md",
+  "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": "3dd81492b2a30aab05cda82f90768543945e37c6",
-  "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions"
+  "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
+  "materials_policy": {
+    "current_tree": "One current set of materials; superseded planning versions are absent from the default branch tree.",
+    "audit_history": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d",
+    "private_artifacts": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
+    "qualification": "Current does not mean launch-qualified; unresolved gates remain in launch_blockers.",
+    "source_repackaging": "Application, contracts and FAQ bytes unchanged; current fixture subtrees relocated to fixtures/. Historical manifests identify their original paths."
+  },
+  "baseline_commit_source_prefix": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/fixture-revision-r3/baseline"
 }

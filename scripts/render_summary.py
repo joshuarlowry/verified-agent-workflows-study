@@ -48,7 +48,7 @@ Assumptions, not measurements: {f['runs']} runs, {f['assumed_subject_hours']:.2f
 
 Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
-[Preparation work and evidence](setup/WORK_LOG.md) · [Latest recorded statuses](setup/status.json)
+[Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
 
 ## Blocking dependencies
 
@@ -60,9 +60,9 @@ Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on mod
 
 **[registration.json](registration.json) is the single source of truth** for systems, versions, sample, deadlines, targets, roles and launch gates. This overview is generated; change the registration and rerun `python3 scripts/render_summary.py`. Validate with `python3 scripts/render_summary.py --check`.
 
-[Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Application/docs work plan](APPLICATION_AND_DOCS_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md) · [Historical revisions](CHANGELOG.md)
+[Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Application/docs work plan](APPLICATION_AND_DOCS_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md)
 
-AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. GLM is the initial builder; artifacts require different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Historical drafts and readiness failures are preserved in Git; they are not current settings. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
+AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. GLM is the initial builder; artifacts require different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Only current materials appear in this tree; superseded drafts and readiness failures remain in Git history and private artifacts. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).
 '''
 path = root / 'README.md'
 if '--check' in sys.argv:
