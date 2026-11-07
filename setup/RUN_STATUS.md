@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 05:26:59 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 05:32:35 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 05:26:59 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 05:32:35 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-c1-checker-review | openai/gpt-6.1-terra | running | Nov 07, 2026 at 05:26:59 PM EST (UTC-0500) | — |
+| terra-c1-checker-review | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 05:26:59 PM EST (UTC-0500) | Nov 07, 2026 at 05:32:35 PM EST (UTC-0500) |
 
 Terra reviews GLM checker from baseline/contract only; no positive app implementation supplied. Source approval is separate from actual positive/negative/clean qualification.
 
