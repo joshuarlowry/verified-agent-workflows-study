@@ -25,8 +25,35 @@ def parse(path):
     v['name']+=f.get('name') or '';v['arguments']+=f.get('arguments') or ''
    if c.get('finish_reason') is not None:finish[i]=c['finish_reason']
  return {'semantic':sem,'response_ids':sorted(ids),'terminal_marker':terminal,'late_data':late,'usage':usages}
+def record_compaction_calls(run,record,steps):
+ """Recognize only a captured harness summary consumed by the next request."""
+ paths=sorted(run.glob('provider-response-*.sse'),key=lambda p:int(p.stem.rsplit('-',1)[1]))
+ if len(paths)<=len(steps) or list(run.glob('provider-http-error-*.json')):return
+ usage=json.loads((run/'provider-usage.json').read_text())
+ if len(usage)!=len(paths):return
+ mapping=[];extras=[];evidence={'controller.json','provider-usage.json'};step_index=0
+ for path,u in zip(paths,usage):
+  j=int(path.stem.rsplit('-',1)[1]);raw=u['usage']
+  if step_index<len(steps):
+   step=steps[step_index];t=step['tokens'];cache=t.get('cache',{})
+   if t['input']+cache.get('read',0)+cache.get('write',0)==raw['prompt_tokens'] and abs(step['cost']-raw['cost'])<=1e-12:
+    mapping.append({'native_step':step_index+1,'request':j,'response_id':u['response_id']});step_index+=1;continue
+  request=run/f'native-request-{j}.json';following=run/f'native-request-{j+1}.json';gateway=run/f'gateway-response-{j}.sse'
+  if not following.exists() or not gateway.exists():return
+  a=json.loads(request.read_text());n=json.loads(following.read_text());x=parse(path);y=parse(gateway);text=''.join(y['semantic']['text'].values());last=a['messages'][-1]
+  if last.get('role')!='user' or not isinstance(last.get('content'),str) or not last['content'].startswith('You MUST summarize the conversation above into a structured summary'):return
+  if not text or y['semantic']['tools'] or x['semantic']!=y['semantic'] or not x['terminal_marker'] or not y['terminal_marker'] or x['late_data'] or y['late_data']:return
+  if not any(m.get('role')=='user' and isinstance(m.get('content'),str) and text in m['content'] and '<conversation-checkpoint>' in m['content'] for m in n['messages']):return
+  extras.append({'request':j,'response_id':u['response_id'],'classification':'native_context_compaction','basis':'Harness-injected user summary request; full returned text consumed verbatim in next user conversation checkpoint; no tools.','usage':raw,'usage_policy':'Include billed summary once; no additional operator or model charge.'})
+  evidence.update({request.name,following.name,path.name,gateway.name})
+ if step_index!=len(steps) or not extras:return
+ report={'kind':'explicit_native_compaction_reconciliation','run_id':run.name,'native_steps':len(steps),'requests':len(record['requests']),'mapping':mapping,'non_step_calls':extras,'evidence_sha256':{name:hashlib.sha256((run/name).read_bytes()).hexdigest() for name in sorted(evidence)},'method':'deterministic sequence/usage match plus captured summary-consumption proof; unsupported cases remain blocked'}
+ target=run/'native-call-reconciliation.json'
+ with target.open('x') as out:out.write(json.dumps(report,indent=2)+'\n')
+
 def verified_non_step_calls(run,record,steps):
  path=run/'native-call-reconciliation.json'
+ if not path.exists():record_compaction_calls(run,record,steps)
  if not path.exists():return 0
  d=json.loads(path.read_text())
  if d.get('kind')!='explicit_native_compaction_reconciliation' or d.get('run_id')!=run.name:raise ValueError('Invalid reconciliation identity')

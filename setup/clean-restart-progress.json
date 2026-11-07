@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T18:14:29.870570+00:00",
+  "updated_at_utc": "2026-11-07T18:20:16.433418+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -43,15 +43,22 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "docs-selection-20261107T180550Z",
+    "active_launch": "scope-boundaries-20261107T181242Z",
     "queued_in_order": [
-      "scope-boundaries-20261107T181242Z",
       "scope-amendment-review-20261107T181332Z",
-      "baseline-construction-20261107T181352Z"
+      "baseline-construction-20261107T181352Z",
+      "docs-selection-review-20261107T181757Z"
     ],
-    "order": "sequential; baseline blocked until actual scope acceptance and verified complete review",
+    "order": "sequential; scope acceptance gates baseline; source selection approval gates corpus construction",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
-  "full_scope_review_evidence": "setup/full-scope-review.json"
+  "full_scope_review_evidence": "setup/full-scope-review.json",
+  "documentation_selection": {
+    "launch_id": "docs-selection-20261107T180550Z",
+    "status": "delivered, not approved; actual package metadata verified, version/API and extraction gates remain",
+    "source_count": 15,
+    "cross_review_launch": "docs-selection-review-20261107T181757Z",
+    "cross_review_order": "after baseline endpoint to use actual lockfile; source review precedes corpus build"
+  }
 }

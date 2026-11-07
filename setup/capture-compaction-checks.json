@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-07T18:19:25.658697+00:00",
+  "kind": "captured_compaction_inventory_regressions_not_model_quality",
+  "cases": [
+    {
+      "case": "captured compaction auto-recognized without prior manual report",
+      "expected_pass": true,
+      "observed_exit": 0
+    },
+    {
+      "case": "summary not consumed verbatim is rejected",
+      "expected_pass": false,
+      "observed_exit": 1
+    }
+  ],
+  "paid_model_calls": 0,
+  "original_evidence_unmodified": true,
+  "unsupported_error_plus_compaction_combination": "fails closed; requires explicit reconciliation"
+}
