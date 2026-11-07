@@ -43,10 +43,11 @@
   "passive_artifact_backup": {
     "repository": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
     "visibility": "private",
-    "latest_checkpoint": "checkpoints/preparation-20261107T062938Z.tar.gz",
-    "scope": "sanitized passive preparation copy, not atomic endpoint; active files may be partial",
+    "latest_checkpoint": "checkpoints/preparation-20261107T121402Z.tar.gz",
+    "scope": "sanitized passive preparation checkpoint; active files can be partial; not atomic endpoint",
     "credential_values_removed": true,
-    "sha256": "c110c0a91bf7f8b452e57f7b53713c878f360d11b730e5fc4e56ef755179d33b"
+    "sha256": "682ae7ded70492cc8cad0687aad4241155158a9207f6f1ca62c3a00c4a8d92bb",
+    "published_private": true
   },
   "baseline_container_replays": {
     "status": "R3 consistent source review plus three clean public-check replays exit 0; reference/alternate/task oracles still unbuilt",
