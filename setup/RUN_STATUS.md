@@ -1,8 +1,8 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 02:00:37 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 02:03:01 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:46:11 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 02:03:01 PM EST (UTC-0500)
 
 **running**
 
@@ -10,7 +10,7 @@
 |---|---|---|---|---|
 | glm-docs-source-selection-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 01:46:11 PM EST (UTC-0500) | — |
 
-GLM reviews new documentation sources against actual baseline dependency evidence. This gate precedes corpus construction; final extraction/runtime approval remains separate.
+GLM documentation-source review is live. Its current provider request is sending keepalives without completion data; this upstream wait is recorded. No restart or provider switch. Baseline review remains queued.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 

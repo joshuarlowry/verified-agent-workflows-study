@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-11-07T19:03:01.478406+00:00",
+  "launch_id": "docs-selection-review-20261107T183238Z",
+  "request_index": 51,
+  "unit_state": "active",
+  "request_body_captured_at_utc": "2026-11-07T18:59:47.161303+00:00",
+  "elapsed_since_request_capture_seconds": 194.3,
+  "provider_keepalive_comments": 283,
+  "completion_data_seen": false,
+  "action": "Preserve original live request; no restart, retry prompt, provider change or model substitution",
+  "measurement": "Observable upstream wait, not exclusive inference time; usage/cost unavailable until provider reports it",
+  "qualification": "No baseline, corpus, calibration or scored qualification implied"
+}
