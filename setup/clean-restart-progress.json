@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T18:43:13.372157+00:00",
+  "updated_at_utc": "2026-11-07T18:55:37.067218+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -43,13 +43,11 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "baseline-construction-20261107T183146Z",
+    "active_launch": "docs-selection-review-20261107T183238Z",
     "queued_in_order": [
-      "docs-selection-review-20261107T183238Z",
       "baseline-review-20261107T184202Z"
     ],
-    "order": "sequential; dependency/DB environments are independent; all original endpoints preserved",
-    "review_scope": "Full baseline source and real UI/API/auth/SQLite behavior; no application fixes by reviewer; accepted baseline review still does not qualify scored runs",
+    "order": "sequential; original baseline source frozen; independent installs and disposable DBs for review",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
@@ -67,5 +65,6 @@
     "normative_closure": "All R1-R8 and XR-01..XR-05 verified closed; exact 19-contract coverage preserved",
     "correction_evidence": "setup/provenance-correction.json"
   },
-  "draft_baseline_admission": "setup/draft-baseline-admission.json"
+  "draft_baseline_admission": "setup/draft-baseline-admission.json",
+  "baseline_candidate": "setup/baseline-candidate.json"
 }

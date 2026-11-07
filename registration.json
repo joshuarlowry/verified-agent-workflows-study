@@ -423,7 +423,7 @@
   },
   "application_preparation": {
     "plan": "STUDY_PLAN.md",
-    "status": "clean_reconstruction_pending_no_eligible_baseline",
+    "status": "fresh_constructor_candidate_delivered_pending_independent_review_and_clean_qualification",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
@@ -515,8 +515,8 @@
     "lockfile_and_image_qualification_required": true,
     "eligible_builder_signoff": null,
     "cross_review_signoff": null,
-    "current_candidate_manifest": null,
-    "current_candidate_path": "fixtures/",
+    "current_candidate_manifest": "setup/baseline-candidate.json",
+    "current_candidate_path": "Private frozen endpoint; final public baseline not promoted",
     "baseline_review_evidence": null,
     "baseline_clean_replay_evidence": null
   },
@@ -792,7 +792,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "revised_scope_delivered_full_review_running_docs_selection_queued",
+    "status": "baseline_candidate_delivered_documentation_and_runtime_reviews_in_progress",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,

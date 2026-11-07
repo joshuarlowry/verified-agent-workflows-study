@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-11-07T18:55:37.025538+00:00",
+  "status": "constructor_candidate_delivered_not_qualified",
+  "run_id": "clean-20261107T122746Z-baseline-terra-20261107T183146Z",
+  "application_commit": "ac96364336be35f0d8d7dadb2717b951cd3c9ac4",
+  "application_git_tree": "4414d89a023611ce7507075c322973d2629860be",
+  "working_tree_clean": true,
+  "git_bundle_sha256": "5418d8111d14434d46e0ba8c5fe207fd6889a94a653b1ac4e108988e230701d7",
+  "git_bundle_verified_exit_code": 0,
+  "controller_source_manifest_check": {
+    "entries": 21,
+    "all_match": true,
+    "manifest_sha256": "fcf3c362805812b6218a69b5fb5d37af0eb57e1e02e57fe994455e2ef0c9c7bc"
+  },
+  "lockfile_sha256": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
+  "transport": {
+    "successful_calls": 91,
+    "requests": 91,
+    "accounted_native_compactions": 1,
+    "all_capture_checks_passed": true
+  },
+  "author_reported_checks": {
+    "build": "pass",
+    "typecheck": "pass",
+    "lint": "pass",
+    "unit_api": "7/7 reported pass",
+    "browser": "10/10 reported pass",
+    "independent_verification": "pending; counts are not a quality score"
+  },
+  "author_reported_environment": {
+    "node": "24.19.0",
+    "npm": "10.9.0",
+    "sqlite": "3.53.4",
+    "playwright": "1.65.0",
+    "browser_limitation": "Unsupported-OS fallback browser build in constructor workspace; supported clean image still requires qualification"
+  },
+  "source_availability": "Endpoint Git bundle and raw construction evidence preserved privately; candidate source not promoted to final public baseline yet",
+  "next_steps": [
+    "Fresh GLM documentation-source review against actual package/lockfile evidence",
+    "Fresh full GLM baseline source/runtime review in independent dependencies/DB workspace",
+    "Fix confirmed baseline defects through authorized model author if needed; preserve original endpoint",
+    "Trusted verification and three clean-environment qualification before final baseline freeze"
+  ],
+  "baseline_launch_qualified": false,
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
