@@ -1,13 +1,7 @@
 # Current run status
 
-Updated: 2026-11-07T12:19:35.042796+00:00
+**Clean restart: transport gate pending.**
 
-**construction returned not qualified**
+The previous construction queues were stopped or superseded; no calibration or scored run has started. The initial repair review requested changes. Startup verification and a protocol-edge-case disposition are being completed before a new review and fresh three-model transport qualification.
 
-| Job | Model | State |
-|---|---|---|
-| glm-litellm-patch-review | z-ai/glm-5.3-flash | returned requires cross review |
-
-A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
-
-This page updates automatically at job transitions. It is not a live heartbeat. No chat/push/email notification is configured. [Machine-readable status](launch.json).
+See [the contamination audit](contamination-audit.json) and [registration](../registration.json). Model-job transitions will update this page automatically when the clean jobs launch. There is no chat/push/email notification.

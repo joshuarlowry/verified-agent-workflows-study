@@ -22,20 +22,20 @@ The secondary comparisons cover GLM supervision, GLM alone, Gemma alone, and a p
 
 All roles use the common OpenCode → LiteLLM → OpenRouter path. Exact requested/resolved IDs, ZDR provider pins, precision, reasoning settings and fallback restrictions come from registration and the frozen launch manifest. Only Gemma 4, GLM and Terra are launched. Context documentation is the only MCP treatment; every role also receives the same read-only documentation files.
 
-The work is performed against **Workboard Lab**, the current [application baseline](fixtures/baseline), with a Vite/React UI, Hono API, Better Auth sessions and a disposable local SQLite database. Each task is an independent increment on that same baseline. No task inherits another implementation or a builder's conversation.
+The work is performed against **Workboard Lab**, the planned application baseline ([clean reconstruction status](fixtures/README.md)), with a Vite/React UI, Hono API, Better Auth sessions and a disposable local SQLite database. Each task is an independent increment on that same baseline. No task inherits another implementation or a builder's conversation.
 
 ## Starting position
 
 | Component | Evidence available | Work remaining |
 |---|---|---|
-| Application | Different-model source review and three clean full-check container replays | Final launch export/image/lockfile verification |
-| Contracts | Four calibration and fifteen scored candidates under [fixtures/contracts](fixtures/contracts) | Per-task references, alternative paths, external checks, negative controls and qualification |
-| Documentation | Source/extraction cross-review of rebuilt corpus | Actual role integration, tool/file parity, containment and publication attribution |
+| Application | Earlier source/tests retired from the clean cohort | Fresh construction, review and clean replays |
+| Contracts | Public scope retained only as provisional input | Fresh scope/FAQ review, contracts, references, alternate paths and evaluator qualification |
+| Documentation | Hashed upstream bytes may seed reproducible setup | Fresh selection/extraction/package review, role integration and publication attribution |
 | Isolation | Physical resource, mount, loopback and group-freeze probes | Real controller endpoint races, failure handling and full role boundaries |
-| Agent transport | Synthetic native OpenCode and generic Context retrieval | Actual provider/corpus/broker sessions and complete usage reconciliation |
-| Worker broker | Cross-reviewed synthetic candidate | Registered worker adapter, reliable handoffs and real stop/snapshot integration |
+| Agent transport | Sentinel defect isolated; repair being hardened/reviewed | Frozen verified startup and fresh raw-captured native checks for all three models |
+| Worker broker | Previous candidate retired | Fresh source/review, registered adapter, handoffs and stop/snapshot integration |
 
-See [current preparation status](setup/README.md) and [machine-readable evidence](setup/status.json). Existing check totals are preparation evidence, not study results. The broker candidate explicitly refuses registered dispatch; filling hashes alone does not make it usable.
+See [current preparation status](setup/README.md) and [machine-readable evidence](setup/status.json). Existing check totals are preparation evidence, not study results. No previous fixture/broker/evaluator signoff is eligible for the clean cohort. See [the contamination audit](setup/contamination-audit.json).
 
 ## Responsibilities
 
@@ -46,6 +46,16 @@ See [current preparation status](setup/README.md) and [machine-readable evidence
 - **External evaluator:** runs trusted checks outside subject access against the frozen endpoint. It provides no sealed diagnostic feedback during a primary attempt.
 
 This is AI managed under human direction. Subject models help build and cross-review their own benchmark. Fresh sessions reduce conversation carryover but do not establish independent-family authorship. The coordinator's protocol/harness work retains its own attribution. Human patch review is an optional later extension, not a core gate or an implicit zero-cost activity.
+
+## Phase 0 — Clean restart after the streaming defect
+
+The clean-cohort policy and ID live in registration. All uncertified pre-fix model-authored source, tests, contracts/FAQ approval, prompts, corpus qualification and reviews are excluded. Original attempts remain in audit history and historical preparation overhead. No calibration or scored attempt existed to rerun.
+
+First finalize/cross-review the source-guarded transport repair and mandatory verified gateway launcher. Freeze their hashes and prove actual native tool/file fidelity, raw capture and accounting for Gemma, GLM and Terra sequentially. Missing startup proof or incomplete streams block dispatch. Use fresh sessions, workspaces, writable dependencies/caches and controller logs.
+
+Next revalidate public requested-scope text, rebuild baseline/tests and model-authored harness/corpus/prompt/evaluator artifacts without old solution, test, conversation or review access. Public scope is provisional until freshly reviewed; trusted upstream package/document bytes are reusable only with exact provenance and fresh qualification. Regeneration is not permission to change the five treatments or select favorable tasks.
+
+This transport-only gate authorizes clean construction, not calibration. Phases 1 and 2 can exchange freshly reviewed baseline/docs inputs as required; both must fully qualify before Phase 3.
 
 ## Phase 1 — Finish the common harness
 
@@ -63,7 +73,7 @@ Use generic/disposable probes rather than scored tasks while repairing infrastru
 
 ## Phase 2 — Qualify the task bank
 
-Start with the four calibration contracts. Then qualify the first five scored tasks before committing to the remaining construction workload. All fifteen scored contracts and the stage allocation must be frozen before scored collection. Later reference/check builders must remain blind to earlier comparative outcomes.
+Start by freshly reviewing baseline/task/FAQ scope, then constructing and cross-reviewing the baseline and public regression suite from that scope. Do not inherit the retired implementation/tests. Next construct the four calibration contracts. Then qualify the first five scored tasks before committing to the remaining construction workload. All fifteen scored contracts and the stage allocation must be frozen before scored collection. Later reference/check builders must remain blind to earlier comparative outcomes.
 
 Use [TASK_TEMPLATE.md](TASK_TEMPLATE.md) for every task:
 
@@ -137,4 +147,4 @@ Disclose AI management, subject-family fixture authorship, shared training/prior
 
 The registered forecast covers **205 workflows** including calibration. Under its assumptions, qualified two-lane collection is about **4.47 days continuously or 13.40 eight-hour days**; the all-cutoff scenario is **12.01 or 36.04 days**. These are planning assumptions, exclude construction/qualification/outages and must be replaced by a calibration-based forecast. Do not assign a confident preparation completion date before the first task packet and real handoff qualify. There is no aggregate dollar or token cap.
 
-The next milestone is deliberately small: **one qualified calibration task packet plus the real common supervisor-worker path**. Finish C1's reference/alternate/external-check/negative-control packet; finish real Gemma broker launch, all-model capture and cutoff/final freeze; cross-review both. Then expand qualification to the remaining calibration tasks and role matrix. Calibration follows the gates above, not the existence of a runnable prototype.
+The next milestone is deliberately small: **the frozen reviewed transport and fresh three-model fidelity/accounting preflight**, followed by public-scope revalidation and fresh construction. The next construction milestone is one qualified C1 packet plus the real common supervisor-worker path. Finish C1's reference/alternate/external-check/negative-control packet; finish real Gemma broker launch, all-model capture and cutoff/final freeze; cross-review both. Then expand qualification to the remaining calibration tasks and role matrix. Calibration follows the gates above, not the existence of a runnable prototype.

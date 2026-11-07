@@ -39,6 +39,15 @@ for label,delta in [('content',{'content':text}),('tool_arguments',{'tool_calls'
 for sentinel in ['data: [DONE]','data:[DONE]\n','[DONE]','data:  [DONE]  \n']:
     data=view(parse(sentinel));assert data['is_finished'] is True and data['finish_reason']=='stop',data
 checks.append('real_sentinel_variants_end')
+# Nonstandard quoted JSON strings are not ChatCompletions chunk objects or
+# the standalone non-JSON terminal marker. They must not become clean stops.
+try:parse('data: "[DONE]"')
+except (TypeError,ValueError):checks.append('quoted_json_string_not_accepted_as_terminal')
+else:raise AssertionError('Nonstandard quoted marker accepted')
+for line in [': [DONE]', 'data: [DONE] trailing']:
+    result=view(parse(line));assert result.get('is_finished') is False
+checks.append('comment_and_suffixed_marker_not_terminal')
+
 stream=[chunk({'content':'first [DONE] literal'}),chunk({'content':' second'}),chunk({},'stop'),'data: [DONE]']
 sync=list(OpenRouterChatCompletionStreamingHandler(iter(stream),sync_stream=True))
 assert ''.join(x.choices[0].delta.content or '' for x in sync if hasattr(x,'choices'))=='first [DONE] literal second'

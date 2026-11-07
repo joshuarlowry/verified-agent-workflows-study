@@ -1,11 +1,11 @@
 {
   "schema_version": 3,
-  "protocol_revision": 10,
+  "protocol_revision": 11,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
-  "baseline_commit": "ebf0c02ea0b30ddb1070ac0193ab6e43852a9af9",
+  "baseline_commit": null,
   "image_digest": null,
   "lockfile_sha256": null,
   "models": [
@@ -252,17 +252,7 @@
         "history": "Git history preserves previous drafts; no independent review signoff yet",
         "sha256": "38b66858c4433805dab5f16d398b5cb7b2de37ef46127279e533b84876680a3e",
         "independent_reviewer": null,
-        "independent_review_status": "pending"
-      },
-      {
-        "artifact": "fixtures/",
-        "author_model": "openai/gpt-6.1-terra",
-        "tree_manifest": "setup/terra-repair-r3-endpoint.json",
-        "reviewer_model": "z-ai/glm-5.3-flash",
-        "status": "baseline consistent at GLM review endpoint; three clean-container public replays passed",
-        "review": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json",
-        "initial_author_model": "z-ai/glm-5.3-flash",
-        "author_role": "current revision by Terra, based on GLM construction; full revision attribution retained in audit snapshot"
+        "independent_review_status": "pending_clean_rerun"
       }
     ],
     "family_decisions": {
@@ -285,7 +275,7 @@
       "all_artifacts": "log author and reviewer model/session/provider/settings, input/output hashes, substantive revisions and checks; no self-approval"
     },
     "authoritative_prompt_FAQ_contract_review_required_before_calibration": true,
-    "appointment_status": "GLM initial construction; Terra and Gemma cross-review in separate fresh sessions; invocation evidence required before signoff",
+    "appointment_status": "Clean cohort appointments pending qualified transport; prior fixture/model review signoffs excluded",
     "former_exclusion_groups": [
       "Gemma/Gemini",
       "GLM",
@@ -309,34 +299,9 @@
       "claims": "cross-reviewed by study models; not independently human-authored or independent of subject families"
     },
     "qualifier_label": "cross-reviewer, not independent model-family qualifier",
-    "cross_reviewers": [
-      {
-        "model": "openai/gpt-6.1-terra",
-        "role": "protocol and generic template cross-review; authors new role prompts requiring another model review",
-        "session": "terra-preparation-review",
-        "status": "returned draft review; not launch signoff"
-      },
-      {
-        "model": "google/gemma-4-31b-it",
-        "role": "Terra role-prompt and coordinator transport-helper cross-review",
-        "session": "gemma-cross-review",
-        "status": "returned acceptable prompt drafts; broker schema revision and hash/time provenance gaps recorded; no launch signoff"
-      }
-    ],
-    "cross_review_evidence": [
-      "setup/reviews/terra-protocol-review/",
-      "setup/reviews/gemma-cross-review/",
-      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/terra-fixture-cross-review/",
-      "setup/reviews/glm-usage-cross-review/",
-      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/terra-fixture-r1-cross-review/",
-      "setup/reviews/gemma-broker-cross-review/",
-      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/glm-docs-cross-review/",
-      "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/reviews/terra-fixture-r2-cross-review/",
-      "setup/reviews/gemma-runtime-cross-review/",
-      "setup/reviews/glm-fixture-r3-cross-review/",
-      "setup/reviews/glm-docs-r1-cross-review/"
-    ],
-    "historical_authorship_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/registration.json"
+    "cross_reviewers": [],
+    "cross_review_evidence": [],
+    "historical_authorship_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd/registration.json"
   },
   "checks": {
     "requirements_public": true,
@@ -362,7 +327,7 @@
   "registration_approved_at_utc": null,
   "mcp_setup": {
     "plan": "MCP_SETUP.md",
-    "status": "planned_not_qualified",
+    "status": "pending_clean_cohort_requalification",
     "selected_servers": [
       {
         "name": "context",
@@ -406,8 +371,8 @@
     "official_version_local_sources_preferred": true,
     "community_package_source_version_coverage_review_required": true,
     "same_readonly_file_corpus_for_all_arms": true,
-    "source_manifest_sha256": "b4a9c538fad64801107f11f9efd9993b25a6f0e162aaa784e50f4b81ca4746bf",
-    "snapshot_sha256": "ee10b86ba78a2e5ea227985183d3ac89379fb7186af39c8710a7b92a54b04c07",
+    "source_manifest_sha256": null,
+    "snapshot_sha256": null,
     "offline_retrieval_smoke_sha256": null,
     "retrieval_model_if_any": null,
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
@@ -425,11 +390,7 @@
     "required_role_matrix": "registration.json#/core_configurations",
     "generic_query_suite_frozen_before_model_runs": true,
     "exact_queries_and_expected_sources_sha256": null,
-    "source_version_coverage_review_signoff": {
-      "evidence": "setup/reviews/glm-docs-r1-cross-review/DOCS_R1_CROSS_REVIEW.json",
-      "verdict": "pass_progress_recommended_with_conditions",
-      "scope": "internal source/version/extraction/coverage review; no real role qualification or public redistribution approval"
-    },
+    "source_version_coverage_review_signoff": null,
     "runtime_compatibility_verified": false,
     "curator": {
       "model": "google/gemma-4-31b-it",
@@ -450,9 +411,7 @@
     "human_review_required": false,
     "different_model_cross_review_required_before_calibration": true,
     "cross_reviewer": {
-      "model": "z-ai/glm-5.3-flash",
-      "session": "glm-docs-cross-review",
-      "status": "returned_changes_required"
+      "status": "pending_clean_rerun"
     },
     "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence",
     "revision_curator": {
@@ -462,18 +421,13 @@
       "reasoning_effort": "high",
       "status": "returned_cross_review_recommends_runtime_progression"
     },
-    "revision_cross_reviewer": {
-      "model": "z-ai/glm-5.3-flash",
-      "session": "glm-docs-r1-cross-review",
-      "status": "pass_progress_recommended_with_conditions_not_role_or_publication_approval"
-    },
     "snapshot_hash_definition": "SHA256 of the frozen SHA256SUMS artifact listing; raw files/archives are retained privately with listed hashes",
     "generic_native_smoke": "setup/opencode-context-preliminary.json; generic archive and synthetic responses only, explicit runtime add/healthcheck required in observed setup",
     "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public"
   },
   "application_preparation": {
     "plan": "STUDY_PLAN.md",
-    "status": "baseline_R3_source_frozen_consistent_GLM_review_three_clean_replays_passed_task_fixtures_not_qualified",
+    "status": "clean_reconstruction_pending_no_eligible_baseline",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
     "runtime_candidate": {
@@ -565,10 +519,10 @@
     "lockfile_and_image_qualification_required": true,
     "eligible_builder_signoff": null,
     "cross_review_signoff": null,
-    "current_candidate_manifest": "setup/terra-repair-r3-endpoint.json",
+    "current_candidate_manifest": null,
     "current_candidate_path": "fixtures/",
-    "baseline_review_evidence": "setup/reviews/glm-fixture-r3-cross-review/FIXTURE_R3_CROSS_REVIEW.json",
-    "baseline_clean_replay_evidence": "setup/r3-three-container-replays.json"
+    "baseline_review_evidence": null,
+    "baseline_clean_replay_evidence": null
   },
   "study_kind": "feasibility_and_estimation_only",
   "canonical_configuration": true,
@@ -589,16 +543,18 @@
       "supervisor/worker role behavior"
     ],
     "transport_compatibility": {
-      "status": "study_only_candidate_pending_cross_review_and_full_role_qualification",
+      "status": "r2_frozen_engineering_candidate_pending_review_then_three_model_preflight",
       "upstream_litellm_version": "1.103.3",
       "patch": "harness/litellm_compatibility/sitecustomize.py",
-      "patch_sha256": "d594e4a18083fae8fd03f6f10a87027dd24769e887d7043761f68af542891e6a",
-      "activation": "Study gateway PYTHONPATH plus STUDY_LITELLM_DONE_FIX=1; shared system service untouched",
+      "patch_sha256": "6f0d6a420be9a193a15fa313dbd8015ca81e771b7180464651cbd3032dab57a9",
+      "activation": "Mandatory launch_gateway.py --patch-sha256 FROZEN_HASH with verified startup marker, overlay PYTHONPATH and activation 1; direct legacy CLI excluded",
       "scope": "Same qualified overlay required for every model and role before calibration; no mixing",
       "reason": "Base iterator falsely treats literal [DONE] inside streamed JSON as terminal; paired same-generation trace isolates gateway mutation",
       "regression_evidence": "setup/litellm-sse-regressions.json",
-      "review_status": "pending",
-      "scored_dispatch_authorized": false
+      "review_status": "pending_fresh_r2_review",
+      "scored_dispatch_authorized": false,
+      "gateway_launcher": "harness/litellm_compatibility/launch_gateway.py",
+      "gateway_launcher_sha256": "24c43d5b51cd79c2795a1990d5b32b4172d75805412c316f5659a8a25e67856a"
     }
   },
   "launch_blockers": [
@@ -606,9 +562,8 @@
       "id": "corpus_reviewer",
       "phase": "before_calibration",
       "detail": "different authorized study model cross-reviews source inventory and omissions in a separate session; family dependence disclosed",
-      "resolved": true,
-      "evidence": "setup/reviews/glm-docs-r1-cross-review/DOCS_R1_CROSS_REVIEW.json",
-      "resolution_scope": "internal source/version/extraction/coverage cross-review only; actual role/runtime and public redistribution remain separate open gates"
+      "resolved": false,
+      "resolution_scope": "Earlier model review excluded; fresh source/coverage/extraction review required"
     },
     {
       "id": "fixture_builders",
@@ -648,6 +603,12 @@
       "detail": "qualify two equal isolated lanes and rate-limit behavior, or explicitly amend to sequential",
       "resolved": false,
       "evidence": "setup/resource-preliminary.json; generic enforcement/contention passed, app/inference/full isolation pending"
+    },
+    {
+      "id": "clean_transport",
+      "phase": "before_clean_model_construction",
+      "detail": "Reviewed frozen repair, mandatory startup identity, complete raw stream capture, and fresh Gemma/GLM/Terra native tool/accounting checks",
+      "resolved": false
     }
   ],
   "pre_recruitment_work": {
@@ -810,15 +771,33 @@
   ],
   "setup_progress": "setup/README.md",
   "baseline_source_prefix": "fixtures/baseline",
-  "baseline_application_git_tree": "3dd81492b2a30aab05cda82f90768543945e37c6",
+  "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
   "materials_policy": {
     "current_tree": "One current set of materials; superseded planning versions are absent from the default branch tree.",
     "audit_history": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d",
     "private_artifacts": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
     "qualification": "Current does not mean launch-qualified; unresolved gates remain in launch_blockers.",
-    "source_repackaging": "Application, contracts and FAQ bytes unchanged; current fixture subtrees relocated to fixtures/. Historical manifests identify their original paths."
+    "source_repackaging": "Pre-fix model-authored fixture/prompt/broker copies retired from the current tree. Historical originals remain in the predecessor Git snapshot/private backups; clean reviewed artifacts will be promoted only after reset gates."
   },
-  "baseline_commit_source_prefix": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/fixture-revision-r3/baseline",
-  "execution_plan": "STUDY_PLAN.md"
+  "baseline_commit_source_prefix": null,
+  "execution_plan": "STUDY_PLAN.md",
+  "clean_restart": {
+    "cohort_id": "clean-20261107T122746Z",
+    "status": "transport_gate_pending",
+    "audit": "setup/contamination-audit.json",
+    "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
+    "scored_runs_discarded": 0,
+    "calibration_runs_discarded": 0,
+    "pre_fix_fixture_signoffs_eligible": false,
+    "unverified_model_outputs_policy": "Fresh reconstruction or explicit clean revalidation; no inherited solution/code/test or conversation access to constructors. Public requested-scope text is provisional until freshly revalidated.",
+    "all_roles_same_final_transport_required": true,
+    "transport_bundle_files": {
+      "harness/litellm_compatibility/check_gateway_startup.py": "9e6e8cf84eefb5fc833c8da88cbb223061a5447f55371e41282d401dd273b969",
+      "harness/litellm_compatibility/check_sentinel.py": "3e33fd5f58df2ea0082c2745cf52de4fd2900f59c9ee871fe4e151f2af65a85b",
+      "harness/litellm_compatibility/launch_gateway.py": "24c43d5b51cd79c2795a1990d5b32b4172d75805412c316f5659a8a25e67856a",
+      "harness/litellm_compatibility/sitecustomize.py": "6f0d6a420be9a193a15fa313dbd8015ca81e771b7180464651cbd3032dab57a9"
+    },
+    "transport_bundle_sha256": "515bc1da77cbac1075c8ffd5d3ac4ef90a9f161f5e87132fb2a2e3b53faa1347"
+  }
 }

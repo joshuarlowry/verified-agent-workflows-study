@@ -48,7 +48,7 @@ Assumptions, not measurements: {f['runs']} runs, {f['assumed_subject_hours']:.2f
 
 Excludes: {f['excludes']}. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
-[Run status](setup/RUN_STATUS.md) · [Study execution plan](STUDY_PLAN.md) · [Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
+[Clean restart and exclusions](setup/contamination-audit.json) · [Run status](setup/RUN_STATUS.md) · [Study execution plan](STUDY_PLAN.md) · [Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
 
 ## Blocking dependencies
 

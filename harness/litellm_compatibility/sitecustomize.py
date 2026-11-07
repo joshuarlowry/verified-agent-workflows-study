@@ -3,6 +3,8 @@
 Enable only in the study gateway process, never global site-packages.
 """
 import hashlib
+import json
+import linecache
 import inspect
 import os
 import textwrap
@@ -26,15 +28,29 @@ def apply():
     if source.count(old) != 1:
         raise RuntimeError('Upstream method does not match reviewed patch')
     namespace = {}
-    exec(compile(source.replace(old, new), __file__ + ':guarded-upstream-method', 'exec'), module.__dict__, namespace)
+    repaired_source = source.replace(old, new)
+    filename = '<study-litellm-sse-method>'
+    linecache.cache[filename] = (len(repaired_source), None, repaired_source.splitlines(keepends=True), filename)
+    exec(compile(repaired_source, filename, 'exec'), module.__dict__, namespace)
     module._study_original_handle_string_chunk = original
     module.BaseModelResponseIterator._handle_string_chunk = namespace['_handle_string_chunk']
     module._study_done_fix_applied = True
 
-if os.environ.get('STUDY_LITELLM_DONE_FIX') == '1':
+def emit(event, **fields):
+    os.write(2, (json.dumps({'event': event, **fields})+'\n').encode())
+
+mode = os.environ.get('STUDY_LITELLM_DONE_FIX')
+if mode == '1':
     try:
         apply()
-    except Exception:
-        # Python otherwise ignores sitecustomize import errors and continues.
-        os.write(2, b'Study LiteLLM compatibility verification failed; refusing startup\n')
+        emit('study_litellm_overlay_active', upstream_source_sha256=EXPECTED_SOURCE_SHA256)
+    except Exception as error:
+        allowed = {'Unqualified LiteLLM version', 'Unqualified upstream source', 'Upstream method does not match reviewed patch'}
+        reason = str(error) if str(error) in allowed else type(error).__name__
+        emit('study_litellm_overlay_refused', reason=reason)
         os._exit(78)
+elif mode:
+    emit('study_litellm_overlay_refused', reason='Unrecognized activation mode')
+    os._exit(78)
+else:
+    emit('study_litellm_overlay_disabled')

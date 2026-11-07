@@ -6,6 +6,8 @@
     "tool_arguments_preserved",
     "reasoning_preserved",
     "real_sentinel_variants_end",
+    "quoted_json_string_not_accepted_as_terminal",
+    "comment_and_suffixed_marker_not_terminal",
     "sync_iteration_continues_after_literal",
     "async_iteration_continues_after_literal",
     "budget_error_not_swallowed",

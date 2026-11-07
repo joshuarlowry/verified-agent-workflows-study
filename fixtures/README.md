@@ -1,10 +1,5 @@
-# Current study fixtures
+# Clean fixture reconstruction
 
-This is the only current fixture tree. Packaging/index maintained by the coordinator; application, contract and FAQ content is unchanged from the reviewed construction endpoint.
+No application baseline, task contract, FAQ or evaluator is currently qualified for the clean cohort. Previous model-authored copies were retired from this tree after the streaming defect; their immutable audit snapshot is linked from [the contamination audit](../setup/contamination-audit.json).
 
-- [Application baseline](baseline/README.md)
-- [Baseline behavior contract](baseline/docs/baseline-contract.md)
-- [Task contracts](contracts/README.md)
-- [Product FAQ](docs/faq-draft.md)
-
-The baseline passed GLM cross-review and three clean public-check replays. Task contracts remain candidates until references, alternate implementations, sealed checks and negative controls qualify. No calibration or scored run has started. [Current status and provenance](../setup/README.md).
+Public requested-scope text is being revalidated in fresh sessions. New constructors receive approved public scope, never old implementation code, acceptance suites, conversations or review findings. Fresh reviewed artifacts will be promoted here. No calibration or scored run has started.

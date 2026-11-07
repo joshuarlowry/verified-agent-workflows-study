@@ -1,25 +1,10 @@
 {
-  "launch_id": "litellm-patch-review-20261107T120714Z",
-  "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T12:19:35.042796+00:00",
-  "status": "construction_returned_not_qualified",
-  "background_service": "study2-litellm-review-20261107t120714z",
-  "automatic_restart": false,
-  "roles": [
-    {
-      "role": "glm-litellm-patch-review",
-      "run_id": "glm-litellm-patch-review-20261107T120714Z",
-      "model": "z-ai/glm-5.3-flash",
-      "status": "returned_requires_cross_review",
-      "dispatch_utc": "2026-11-07T12:07:35.595249+00:00",
-      "ended_at_utc": "2026-11-07T12:19:34.992803+00:00",
-      "agent_exit_code": 0,
-      "controller_exit_code": 0,
-      "prompt_sha256": "b2dc89cbab5ed4501db02f7334a4e7436dfed2cb222baf434deac24665a7e67b",
-      "controller_sha256": "87557371c7f3bacb64625600ec3c03716c85acea5256c12a633b801491202aac"
-    }
-  ],
-  "qualification_status": "not_qualified",
-  "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
-  "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
+  "cohort_id": "clean-20261107T122746Z",
+  "status": "clean_restart_transport_gate_pending",
+  "kind": "preparation_not_calibration_or_scoring",
+  "roles": [],
+  "previous_queues_superseded": true,
+  "scored_runs_started": 0,
+  "calibration_runs_started": 0,
+  "audit": "setup/contamination-audit.json"
 }

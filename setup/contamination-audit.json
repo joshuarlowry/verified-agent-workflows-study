@@ -1,0 +1,220 @@
+{
+  "cohort_id": "clean-20261107T122746Z",
+  "created_at_utc": "2026-11-07T12:27:46.110580+00:00",
+  "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
+  "scored_runs_before_reset": 0,
+  "calibration_runs_before_reset": 0,
+  "reason": "Unpatched LiteLLM could drop any JSON payload fragment containing literal [DONE]. Earlier successful native returns without complete upstream/downstream captures do not establish absence of corruption.",
+  "policy": "Conservative exclusion does not claim every earlier output was corrupt. All uncertified model-authored preparation must be regenerated or revalidated in fresh fixed-transport sessions before promotion.",
+  "excluded_artifact_classes": [
+    "application source and baseline tests",
+    "task contracts and FAQ approval",
+    "external evaluator and its review",
+    "model-authored role prompts and worker-broker source",
+    "documentation source selection/extraction/package qualification",
+    "pre-fix model cross-review signoffs",
+    "all failed/early/incomplete constructor endpoints"
+  ],
+  "retain_as_unqualified_inputs": [
+    "Existing public behavior/task/FAQ text only as provisional requested scope, revalidated before construction; no old code, evaluator, solutions, conversations or quality findings imported.",
+    "Upstream package/document bytes with independently checked hashes, subject to fresh source/coverage/extraction review."
+  ],
+  "unaffected_assets": [
+    "Human-directed study question, five workflows, model allowlist, sample, deadlines and analysis rules",
+    "Source-verified package/tool versions and non-generative hardware/mount probes as reference; requalify changed dependencies and final image",
+    "Defect captures and repair regressions as engineering evidence, never model-quality results"
+  ],
+  "rerun_order": [
+    "Finalize and cross-review transport, including mandatory startup verification",
+    "Fresh sequential real transport/capture/accounting checks for Gemma, GLM and Terra under one frozen overlay",
+    "Revalidate public baseline/task/FAQ scope in new sessions; cross-review; freeze",
+    "Fresh baseline construction and tests from approved scope with no old implementation access",
+    "Rebuild/requalify corpus, role prompts, worker harness and evaluator; different-model reviews",
+    "Fresh C1 reference/alternate/negative controls and clean replays; remaining task qualification",
+    "Only then calibration; later scored collection under original prospective gates"
+  ],
+  "rules": [
+    "No blending pre-fix preparation into clean acceptance evidence.",
+    "Old attempts and missing/billed usage remain in historical preparation overhead.",
+    "No calibration/scored dispatch is enabled by this reset.",
+    "All clean jobs use new run/session/workspace IDs and isolated writable state.",
+    "Complete raw provider and gateway/native streams, configuration hashes and startup repair identity are required."
+  ],
+  "runs": [
+    {
+      "run_id": "gemma-broker-cross-review",
+      "dispatch_utc": "2026-11-07T04:47:00.953196+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "gemma-c1-evaluator-review-20261107T114803Z",
+      "dispatch_utc": "2026-11-07T11:48:34.934871+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "gemma-cross-review",
+      "dispatch_utc": "2026-11-07T03:21:43.007940+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "gemma-docs-corpus-builder",
+      "dispatch_utc": "2026-11-07T04:31:52.842610+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "gemma-runtime-cross-review",
+      "dispatch_utc": "2026-11-07T05:08:42.518894+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-docs-cross-review",
+      "dispatch_utc": "2026-11-07T04:44:20.036386+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-docs-r1-cross-review",
+      "dispatch_utc": "2026-11-07T05:38:05.096707+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-fixture-builder",
+      "dispatch_utc": "2026-11-07T03:11:40.301802+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-fixture-r3-cross-review",
+      "dispatch_utc": "2026-11-07T05:41:13.816241+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-fixture-repair-r1",
+      "dispatch_utc": "2026-11-07T04:06:54.498259+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-fixture-repair-r2",
+      "dispatch_utc": "2026-11-07T04:37:24.952451+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "glm-litellm-patch-review-20261107T120714Z",
+      "dispatch_utc": "2026-11-07T12:07:59.095408+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "repair_engineering_only_not_clean_cohort_fixture_evidence"
+    },
+    {
+      "run_id": "glm-usage-cross-review",
+      "dispatch_utc": "2026-11-07T04:22:52.642467+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "preparation-20261107T110750Z-glm-c1-evaluator",
+      "dispatch_utc": "2026-11-07T11:08:59.701237+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "preparation-20261107T110750Z-terra-harness-adapter",
+      "dispatch_utc": "2026-11-07T11:38:23.065374+00:00",
+      "endpoint_exit_code": 1,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-broker-construction",
+      "dispatch_utc": "2026-11-07T04:38:28.803214+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-docs-repair-r1",
+      "dispatch_utc": "2026-11-07T05:00:45.626007+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-fixture-cross-review",
+      "dispatch_utc": "2026-11-07T03:51:59.983169+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-fixture-r1-cross-review",
+      "dispatch_utc": "2026-11-07T04:28:44.380659+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-fixture-r2-cross-review",
+      "dispatch_utc": "2026-11-07T05:10:49.631414+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-fixture-repair-r3",
+      "dispatch_utc": "2026-11-07T05:20:02.568219+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-harness-retry-20261107T115222Z",
+      "dispatch_utc": "2026-11-07T11:53:14.720817+00:00",
+      "endpoint_exit_code": 1,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-native-stream-20261107T115021Z",
+      "dispatch_utc": "2026-11-07T11:50:50.773114+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    },
+    {
+      "run_id": "terra-patched-native-20261107T120534Z",
+      "dispatch_utc": "2026-11-07T12:06:03.083054+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "repair_engineering_only_not_clean_cohort_fixture_evidence"
+    },
+    {
+      "run_id": "terra-preparation-review",
+      "dispatch_utc": "2026-11-07T03:14:52.158687+00:00",
+      "endpoint_exit_code": 0,
+      "disposition": "excluded_pre_fix_or_uncertified_preparation"
+    }
+  ],
+  "provisional_scope_sha256": {
+    "FAQ.md": "3d95ff152c1bad84c8563e147862e2f34de7864532590598ede45a13fc0ce2ad",
+    "baseline-behavior.md": "8d28c6a1c84fb35f951742d9042fa6fed74da5bf2cdf43b81db429ec3c2a6bfc",
+    "contracts/C4-remember-last-workspace.md": "e3f99102ca47ab43b846d5b94070db54c0989b0b5524ba547c1dda2b3d019c18",
+    "contracts/S13-membership-management.md": "79edfd768e4c2f926b095496d4ba817c0ca7128e0158fe4becf7b2544b1b0546",
+    "contracts/S12-item-activity-history.md": "a34b4a7885bbfa654b1aad79fe79ef64a8a33423348fd68b8d032f39f8d0b074",
+    "contracts/S09-optimistic-concurrency.md": "c015821f04fe260b1fa027f2bf73ce232971be9b44bd289ff8022b7a66f680a1",
+    "contracts/C2-item-list-sort-toggle.md": "c22a4b2aac53a2bb1f380e23128e580f98a784d5d688e52c68e85d287509a553",
+    "contracts/S10-workspace-switch-guard.md": "43ed34f559872809bcafbb8d28ebb36a3cf597b74cbcb8ca380ea08133dff6c4",
+    "contracts/S11-bulk-status-update.md": "4fbb1a997cf7061d84dd6e392379966cec80016c255947ac0d5b7fff78617dde",
+    "contracts/C1-workspace-item-counts.md": "fd664375c4667b4891125b09a553602507d7715ece90f0a337ae5ab91a4aea59",
+    "contracts/S08-due-date-semantics.md": "05d2553416f102229edd936c66737e2e48cc4251f2773ae9fdaa2679fd58551f",
+    "contracts/S14-workspace-overview-summary.md": "b4e2b4bbd0dc0f5db885a638d329088a96b88311c4cee6afaaf01361a8f0798a",
+    "contracts/S05-export-fidelity.md": "2062cff8b270842d95a6933dcfd5f74d8e2fffb1773622757e5efe55823e7623",
+    "contracts/S15-keyboard-quick-add-focus.md": "8bbdddac60d3e79c9dac81ef2ac2a04deca7d4253ac82a4a2ac2db690f637d67",
+    "contracts/S06-destructive-permissions.md": "ae9c0d47d595ee0b8fc63eca8963011bd7604fbff5bb26c11516c312b339450e",
+    "contracts/S07-failure-safe-editing.md": "31d4f3fbad357e15964ed669b192bafb74d0930e05474998047f6dec04c05f45",
+    "contracts/README.md": "d5957eb274e44a4653d6665579853c8dad582cd1e73c89de408994be9445a9cc",
+    "contracts/C3-item-share-link.md": "ac2526fa821a45c800afe45203f0276763a8b51c5b131be316472f8dd5bc1193",
+    "contracts/S02-archive-restore.md": "682e8693c4ddee8998bfcc5e84d4df6365454da8d0e2b8689785d6fa9300c1a6",
+    "contracts/S04-transactional-import.md": "a5d695f02621740e13effa3db59ab1ada842036c217d14b2f3acb2325accacfc",
+    "contracts/S01-input-validation-hardening.md": "f17785dbc7131be75c520037f83cf260f7efb2141fa294cd888a9ff7894ce2ad",
+    "contracts/S03-stable-cursor-pagination.md": "96d2f59f42424f433a33cb15f99d15148de577c85257d2306cb6eabd56c63c44"
+  },
+  "disclosure": "Three study models still construct/cross-review fixtures; fresh sessions and transport repair do not establish model-family independence."
+}
