@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T18:06:22.755873+00:00",
+  "updated_at_utc": "2026-11-07T18:14:29.870570+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -43,13 +43,15 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "launch_id": "full-scope-review-20261107T180439Z",
-    "roles": [
-      "GLM full scope cross-review"
+    "active_launch": "docs-selection-20261107T180550Z",
+    "queued_in_order": [
+      "scope-boundaries-20261107T181242Z",
+      "scope-amendment-review-20261107T181332Z",
+      "baseline-construction-20261107T181352Z"
     ],
-    "next_queued_launch": "docs-selection-20261107T180550Z",
-    "order": "sequential",
+    "order": "sequential; baseline blocked until actual scope acceptance and verified complete review",
     "scoring_enabled": false
   },
-  "scope_revision_review_evidence": "setup/scope-revision-review.json"
+  "scope_revision_review_evidence": "setup/scope-revision-review.json",
+  "full_scope_review_evidence": "setup/full-scope-review.json"
 }

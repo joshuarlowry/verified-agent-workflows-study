@@ -1,0 +1,48 @@
+{
+  "recorded_at_utc": "2026-11-07T18:14:29.835750+00:00",
+  "run_id": "clean-20261107T122746Z-full-scope-review-glm-20261107T180439Z",
+  "verdict": "changes_required",
+  "scope_freeze_approved": false,
+  "full_coverage_verified_against_candidate": 19,
+  "prior_findings_R1_to_R8": "Reviewer independently closed all eight",
+  "new_findings": [
+    {
+      "id": "XR-01",
+      "severity": "minor",
+      "title": "S02 leaves PATCH-on-archived-item versus body/field validation ordering undecided"
+    },
+    {
+      "id": "XR-02",
+      "severity": "minor",
+      "title": "Nonmember 404 versus query-parameter validation is pinned only in S12; C2, S03 and S02 omit it"
+    },
+    {
+      "id": "XR-03",
+      "severity": "minor",
+      "title": "S03: simultaneous invalid limit and cursor, and the scope of the repeated-parameter rule, are not fully pinned"
+    },
+    {
+      "id": "XR-04",
+      "severity": "minor",
+      "title": "S07 draft savedAt format is unspecified while the restored-draft title must display the saved time"
+    },
+    {
+      "id": "XR-05",
+      "severity": "minor",
+      "title": "Keyboard interaction with the inline delete confirmation is unspecified in baseline and S15"
+    }
+  ],
+  "successful_calls": 31,
+  "report_sha256": "f67ffeb07c940a5563956b07b23c87e5157149c05f36da174c9b906ca0030554",
+  "current_execution": {
+    "active": "docs-selection-20261107T180550Z",
+    "queued_in_order": [
+      "scope-boundaries-20261107T181242Z",
+      "scope-amendment-review-20261107T181332Z",
+      "baseline-construction-20261107T181352Z"
+    ],
+    "baseline_dispatch_gate": "Accepted review with all 19 exact contract hashes, no interruption/budget exhaustion, and passing capture inventories; no old code or solution imported"
+  },
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
