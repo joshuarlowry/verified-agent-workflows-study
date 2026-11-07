@@ -1,0 +1,72 @@
+{
+  "recorded_at_utc": "2026-11-07T20:34:20.635940+00:00",
+  "kind": "baseline_public_regression_clean_image_replays_not_task_acceptance",
+  "model_calls": 0,
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "image_record": "setup/clean-image-20261107T200937Z.json",
+  "raw_check_record": "setup/clean-container-replay-20261107T200937Z.json",
+  "instances": [
+    {
+      "instance": 1,
+      "runtime": {
+        "node": "v24.19.0",
+        "cpus": 2,
+        "sqlite": "3.53.4",
+        "nodeEnv": null,
+        "testEnv": null
+      },
+      "unit_api_test_count": [],
+      "browser_test_count": [
+        "10"
+      ],
+      "browser_unsupported_OS_warning": false,
+      "all_exit_codes_zero": true,
+      "source_unchanged": true,
+      "total_seconds_including_setup_cleanup": 23.996029376023216
+    },
+    {
+      "instance": 2,
+      "runtime": {
+        "node": "v24.19.0",
+        "cpus": 2,
+        "sqlite": "3.53.4",
+        "nodeEnv": null,
+        "testEnv": null
+      },
+      "unit_api_test_count": [],
+      "browser_test_count": [
+        "10"
+      ],
+      "browser_unsupported_OS_warning": false,
+      "all_exit_codes_zero": true,
+      "source_unchanged": true,
+      "total_seconds_including_setup_cleanup": 22.86960992301465
+    },
+    {
+      "instance": 3,
+      "runtime": {
+        "node": "v24.19.0",
+        "cpus": 2,
+        "sqlite": "3.53.4",
+        "nodeEnv": null,
+        "testEnv": null
+      },
+      "unit_api_test_count": [],
+      "browser_test_count": [
+        "10"
+      ],
+      "browser_unsupported_OS_warning": false,
+      "all_exit_codes_zero": true,
+      "source_unchanged": true,
+      "total_seconds_including_setup_cleanup": 22.85228411501157
+    }
+  ],
+  "counts_scope": "Builder baseline regression suites, not independent task acceptance. Test files and app source matched original21file controller snapshot in all3instances.",
+  "remaining": [
+    "Three accepted non-test native-auth probe repetitions (queued before C1 constructor).",
+    "Task-specific reference, materially different alternate, external acceptance and negative controls.",
+    "Documentation extraction/indexing/retrieval parity; full worker/controller/resource/cancellation qualification."
+  ],
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
