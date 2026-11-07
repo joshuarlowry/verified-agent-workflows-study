@@ -92,5 +92,6 @@
   "native_harness_extension_endpoint": "setup/native-harness-extension-endpoint.json",
   "C1_checker_review": "setup/c1-checker-review.json",
   "external_evaluator_plumbing": "setup/external-evaluator-plumbing.json",
-  "dependency_image_recovery": "setup/dependency-image-preservation.json"
+  "dependency_image_recovery": "setup/dependency-image-preservation.json",
+  "native_session_export_preflight": "setup/native-session-export-preflight.json"
 }

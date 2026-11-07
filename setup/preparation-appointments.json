@@ -604,7 +604,19 @@
       "phase": "preparation_revision_or_review",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized clean study construction, cross-review and separate preparation extensions",
-      "qualification": "Original returns retained. Source review and live qualification remain separate; no scored dispatch."
+      "qualification": "Original returns retained. Source review and live qualification remain separate; no scored dispatch.",
+      "pre_dispatch_mechanical_evidence_additions": [
+        {
+          "recorded_at_utc": "2026-11-07T23:15:41.131867+00:00",
+          "kind": "pre_dispatch_additional_mechanical_evidence_not_subject_steering",
+          "file": "NATIVE_SESSION_EXPORT_PREFLIGHT.json",
+          "sha256": "4ed975a8d5fa07049a911138d3db3807a25545faf7084f3e2337718846349d13",
+          "scope": "Offline native export/list proof from synthetic non-app transport session. No reference/evaluator/task data, no model call, no full qualification claim.",
+          "subject_dispatch_started": false,
+          "prompt_bytes_changed": false,
+          "controller_bytes_changed": false
+        }
+      ]
     },
     {
       "launch_id": "c1-implementation-review-20261107T223656Z",
