@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:04:56 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:11:03 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:04:56 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:11:03 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-full-contract-cross-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 01:04:56 PM EST (UTC-0500) | — |
+| glm-full-contract-cross-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 01:04:56 PM EST (UTC-0500) | Nov 07, 2026 at 01:11:03 PM EST (UTC-0500) |
 
 GLM is reviewing every revised contract. Prior Gemma acceptance is preserved as a partial sampled review, not full scope approval. No calibration/scoring dispatch.
 
