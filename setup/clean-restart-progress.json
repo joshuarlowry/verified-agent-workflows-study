@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T18:36:11.970868+00:00",
+  "updated_at_utc": "2026-11-07T18:43:13.372157+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -45,9 +45,11 @@
   "active_pipeline": {
     "active_launch": "baseline-construction-20261107T183146Z",
     "queued_in_order": [
-      "docs-selection-review-20261107T183238Z"
+      "docs-selection-review-20261107T183238Z",
+      "baseline-review-20261107T184202Z"
     ],
-    "order": "sequential; baseline construction allowed by exact combined review evidence, no final freeze or qualification implied",
+    "order": "sequential; dependency/DB environments are independent; all original endpoints preserved",
+    "review_scope": "Full baseline source and real UI/API/auth/SQLite behavior; no application fixes by reviewer; accepted baseline review still does not qualify scored runs",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
