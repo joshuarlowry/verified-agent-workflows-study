@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "construct/qualify initial task references, alternate implementations, independent external acceptance and negative controls; complete actual seven-role corpus/provider/broker/controller integration and lane qualification",
+  "next_dependency": "Clean scope/contract/FAQ cross-review and uniform decision packet; then fresh baseline, documentation corpus, worker harness and evaluator construction and qualification. No calibration or scored runs yet.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
@@ -27,7 +27,7 @@
   "signal_environment_repair": {
     "diagnosis": "setup/signal-preliminary.json",
     "profile": "harness/security/study2-agent.profile",
-    "status": "mechanics passed; Gemma accepts limited runtime candidates; full qualification pending",
+    "status": "Non-generative mechanics retained as reference; previous model approval excluded by contamination audit. Fresh final-runtime review and qualification pending.",
     "existing_host_profiles_modified": false
   },
   "passive_artifact_backup": {
@@ -44,7 +44,7 @@
     "status": "combined 2 CPUs/8 GiB/zero swap/512 PIDs, separate loopback, supervisor readonly app and whole-group freeze of detached writers passed; actual endpoint controller and concurrent lanes pending"
   },
   "historical_preparation_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/status.json",
-  "historical_qualification_note": "Latest reports retain their original session and revision identifiers for provenance; they are evidence, not alternative plans.",
+  "historical_qualification_note": "All pre-reset model-authored approvals are excluded. Historical mechanical probes are reference only; current final assembly still requires clean qualification.",
   "active_launch": "setup/launch.json",
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "cohort_id": "clean-20261107T122746Z",

@@ -1,0 +1,29 @@
+{
+  "cohort_id": "clean-20261107T122746Z",
+  "updated_at_utc": "2026-11-07T14:39:27.267617+00:00",
+  "transport": "three-model native checks and observed billing reconciled",
+  "scope_construction": {
+    "model": "openai/gpt-6.1-terra",
+    "run_id": "clean-20261107T122746Z-scope-terra-20261107T141406Z",
+    "calls": 32,
+    "transport_integrity": "all checks passed; complete paired provider/gateway streams",
+    "quality_status": "draft pending different-model review; open questions not silently resolved"
+  },
+  "scope_review": {
+    "model": "z-ai/glm-5.3-flash",
+    "run_id": "clean-20261107T122746Z-scope-review-glm-20261107T143832Z",
+    "status": "launched; endpoint not yet inspected"
+  },
+  "remaining": [
+    "Freeze revalidated scope and common decisions after review",
+    "Fresh baseline and baseline tests",
+    "Fresh corpus selection/build/review",
+    "Fresh role prompts, worker broker and evaluator",
+    "References, alternate solutions, negative controls and clean replay qualification",
+    "Actual full-role isolation and equal-resource qualification before calibration"
+  ],
+  "scored_runs": 0,
+  "calibration_runs": 0,
+  "old_evidence_policy": "Excluded from clean approval; preserved in Git history and private raw artifacts. Historical overhead remains separate.",
+  "known_metadata_difference": "Scope-review controller inherited a legacy session display title. Explicit prompt, run/session/workspace IDs and inputs are new; no legacy conversation/source was supplied. Title is metadata only; correct in future controllers."
+}
