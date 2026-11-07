@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T19:14:04.885444+00:00",
+  "updated_at_utc": "2026-11-07T19:37:53.390241+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -43,11 +43,12 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "docs-transport-retry-20261107T191133Z",
+    "active_launch": "baseline-review-20261107T193523Z",
     "queued_in_order": [
-      "baseline-review-20261107T191158Z"
+      "docs-source-repair-20261107T193704Z"
     ],
-    "order": "sequential; identical transport retry uses same prompt/input/model; interrupted endpoint preserved",
+    "data_dependencies": "Baseline review uses only the verified frozen baseline, not documentation-review output. Source repair uses its own selection/review and dependency evidence.",
+    "order": "sequential model execution; all original endpoints and independent qualification gates preserved",
     "scoring_enabled": false
   },
   "scope_revision_review_evidence": "setup/scope-revision-review.json",
@@ -67,5 +68,6 @@
   },
   "draft_baseline_admission": "setup/draft-baseline-admission.json",
   "baseline_candidate": "setup/baseline-candidate.json",
-  "relay_timeout_repair": "setup/relay-timeout-repair.json"
+  "relay_timeout_repair": "setup/relay-timeout-repair.json",
+  "docs_source_review": "setup/docs-source-review.json"
 }

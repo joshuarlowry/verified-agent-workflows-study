@@ -1,0 +1,56 @@
+{
+  "recorded_at_utc": "2026-11-07T19:35:43.558870+00:00",
+  "run_id": "clean-20261107T122746Z-docs-transport-retry-glm-20261107T191133Z",
+  "agent_exit_code": 1,
+  "native_final_return_received": true,
+  "review_verdict": "changes_required",
+  "review_sha256": "c31b2411898cbeb820ba15246223924835bb4e71a8da5ab2cc0b856b4d79e02a",
+  "requested_changes": [
+    {
+      "id": "F-001",
+      "title": "sqlite-engine placeholder blocks the required sqlite-sql query scenario although the engine version is now known",
+      "severity": "must_fix_before_freeze"
+    },
+    {
+      "id": "F-002",
+      "title": "Lockfile-derived direct devDependencies have no source mapping and no documented omission decision",
+      "severity": "must_resolve_before_freeze"
+    },
+    {
+      "id": "F-003",
+      "title": "Curator provenance binds a superseded registration revision",
+      "severity": "provenance-clarity"
+    },
+    {
+      "id": "F-004",
+      "title": "better-auth 'errors' topic claimed but no error reference file is included",
+      "severity": "minor"
+    }
+  ],
+  "captured_provider_errors": [
+    {
+      "request": 58,
+      "code": 504,
+      "message": "Upstream idle timeout exceeded"
+    },
+    {
+      "request": 59,
+      "code": 504,
+      "message": "Upstream idle timeout exceeded"
+    }
+  ],
+  "capture_status": "All raw provider/gateway files preserved; strict success-only audit failed on explicit provider error frames. This is not a clean success-stream report or approval.",
+  "original_capture_gate_failure_preserved": true,
+  "F003_adjudication": {
+    "curator_actual_input_hash": "4d9c6ac05afee67110af23abc8ade58250fcfd50c23255a4d561b9f4fa4a56cd",
+    "matches_curator_claim": true,
+    "action": "Preserve original hash; annotate later registration boundary. Do not replace historical input hashes or claim curator corruption."
+  },
+  "independent_baseline_review": {
+    "launch_id": "baseline-review-20261107T193523Z",
+    "actual_data_dependency": "Frozen baseline source and its completed capture audit; documentation-review content is not an input",
+    "documentation_gate_bypassed_for_calibration": false
+  },
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
