@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 02:55:18 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 02:55:19 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 02:55:18 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 02:55:19 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-clean-baseline-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 02:35:43 PM EST (UTC-0500) | Nov 07, 2026 at 02:55:18 PM EST (UTC-0500) |
+| terra-docs-source-repair | openai/gpt-6.1-terra | running | Nov 07, 2026 at 02:55:19 PM EST (UTC-0500) | — |
 
-GLM cross-reviews all fresh baseline source and real behavior in an independent dependency/DB workspace. Original source is read-only; no fixes or study qualification implied.
+Terra repairs four documentation selection findings; original input hashes remain historical. Source approval, corpus build/review and runtime gates are still required.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
