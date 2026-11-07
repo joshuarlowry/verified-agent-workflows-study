@@ -10,5 +10,14 @@
   "basis": "controller.json ready=false server_exit=-11; no provider-request files; no native process/events",
   "retry_launch": "worker-harness-review-retry-20261107T213519Z",
   "retry_policy": "One identical fresh launch, exact same40input files and prompt; source candidate and model/provider/settings/overlay unchanged. Original attempt never converted to success.",
-  "scored_failure": false
+  "scored_failure": false,
+  "kernel_corroboration": {
+    "at": "2026-11-07T16:28:26-05:00",
+    "process": "python",
+    "pid": 1674916,
+    "executable": "python3.14",
+    "signal": "segmentation fault",
+    "source": "journalctl kernel entry; bounded startup interval",
+    "cause": "unresolved; kernel record confirms local interpreter crash, not its cause or model behavior"
+  }
 }
