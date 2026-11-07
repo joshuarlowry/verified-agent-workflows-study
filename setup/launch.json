@@ -11,9 +11,9 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "scope-revision-20261107T144032Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T15:07:12.689890+00:00",
-  "event_at_utc": "2026-11-07T15:06:50.255880+00:00",
-  "status": "running",
+  "snapshot_at_utc": "2026-11-07T15:07:33.248610+00:00",
+  "event_at_utc": "2026-11-07T15:07:33.201993+00:00",
+  "status": "construction_returned_not_qualified",
   "background_service": "study2-clean-scope-revision-20261107t144032z-audit-recovery",
   "automatic_restart": false,
   "roles": [
@@ -21,8 +21,12 @@
       "role": "terra-clean-public-scope-revision",
       "run_id": "clean-20261107T122746Z-scope-revision-terra-20261107T144032Z",
       "model": "openai/gpt-6.1-terra",
-      "status": "running",
+      "status": "returned_requires_cross_review",
       "dispatch_utc": "2026-11-07T15:06:50.255880+00:00",
+      "ended_at_utc": "2026-11-07T15:07:33.201982+00:00",
+      "agent_exit_code": 0,
+      "controller_exit_code": 0,
+      "api_budget_exhausted": false,
       "prompt_sha256": "77f5ac4e2df521c21d58967f40de8b8badc8d97375cf094bc27897bea7dbe11c",
       "controller_sha256": "5d16afb8aca663bbc5755f99f341fb67b1b658945f9ebe8236ef3ab842bd89a7"
     }
