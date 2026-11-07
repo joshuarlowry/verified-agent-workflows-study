@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-11-07T18:26:40.540552+00:00",
+  "run_id": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
+  "native_session_ids": [
+    "ses_e48caa30cffeDniX2QXx16Z0Bm"
+  ],
+  "requested_model": "openai/gpt-6.1-terra",
+  "provider_route": "OpenCode -> private LiteLLM -> OpenRouter Azure, high reasoning, ZDR, no fallback",
+  "status": "source_selection_delivered_not_approved",
+  "source_count": 15,
+  "source_plan_sha256": "2feb5584189c86b376b7f8e99bd52d80e440cef9bcaec88e12a266d5e10b25fb",
+  "successful_calls": 50,
+  "elapsed_seconds": 257.0896296449937,
+  "raw_upstream_materials": "retained privately; source selection is not redistribution clearance",
+  "important_gaps": [
+    "Candidate npm package versions were available; availability does not prove installation or compatibility",
+    "Node distribution bundled npm differs from separately pinned harness npm; verify the actual launch PATH and npm executable",
+    "SQLite engine version and moving-doc/API compatibility remain to be bound to the actual lockfile/runtime",
+    "Content selection review, exact extraction, provenance/fidelity and offline seven-role Context checks remain pending"
+  ],
+  "cross_review_launch": "docs-selection-review-20261107T181757Z",
+  "cross_review_dependency": "actual baseline package/lockfile evidence; no application source or task solutions supplied",
+  "calibration_authorized": false
+}

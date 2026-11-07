@@ -395,10 +395,10 @@
     "runtime_compatibility_verified": false,
     "curator": {
       "model": "openai/gpt-6.1-terra",
-      "session": "pending: clean docs-selection-20261107T180550Z",
+      "session": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
       "provider_tag": "azure",
       "reasoning_effort": "high",
-      "status": "fresh_source_selection_queued_after_full_scope_review",
+      "status": "source_selection_delivered_pending_different_model_review",
       "independence_claim": false
     },
     "review_scope": [
@@ -418,7 +418,8 @@
     "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence",
     "snapshot_hash_definition": "SHA256 of the frozen SHA256SUMS artifact listing; raw files/archives are retained privately with listed hashes",
     "generic_native_smoke": "setup/opencode-context-preliminary.json; generic archive and synthetic responses only, explicit runtime add/healthcheck required in observed setup",
-    "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public"
+    "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public",
+    "selection_evidence": "setup/docs-selection.json"
   },
   "application_preparation": {
     "plan": "STUDY_PLAN.md",
