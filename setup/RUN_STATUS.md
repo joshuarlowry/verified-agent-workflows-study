@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 01:11:05 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 01:15:47 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 01:11:04 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 01:15:47 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-docs-source-selection | openai/gpt-6.1-terra | running | Nov 07, 2026 at 01:11:04 PM EST (UTC-0500) | — |
+| terra-docs-source-selection | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 01:11:04 PM EST (UTC-0500) | Nov 07, 2026 at 01:15:47 PM EST (UTC-0500) |
 
 Fresh documentation source selection; no old corpus approval reused. Different-model content review precedes corpus construction. No calibration/scoring enabled.
 
