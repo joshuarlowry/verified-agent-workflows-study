@@ -11,8 +11,11 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "scope-revision-20261107T144032Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-07T15:07:33.248610+00:00",
+  "snapshot_at_utc": "2026-11-07T15:20:05.080161+00:00",
+  "snapshot_at_eastern": "Nov 07, 2026 at 10:20:05 AM EST (UTC-0500)",
   "event_at_utc": "2026-11-07T15:07:33.201993+00:00",
+  "event_at_eastern": "Nov 07, 2026 at 10:07:33 AM EST (UTC-0500)",
+  "display_timezone": "America/New_York",
   "status": "construction_returned_not_qualified",
   "background_service": "study2-clean-scope-revision-20261107t144032z-audit-recovery",
   "automatic_restart": false,
@@ -28,7 +31,9 @@
       "controller_exit_code": 0,
       "api_budget_exhausted": false,
       "prompt_sha256": "77f5ac4e2df521c21d58967f40de8b8badc8d97375cf094bc27897bea7dbe11c",
-      "controller_sha256": "5d16afb8aca663bbc5755f99f341fb67b1b658945f9ebe8236ef3ab842bd89a7"
+      "controller_sha256": "5d16afb8aca663bbc5755f99f341fb67b1b658945f9ebe8236ef3ab842bd89a7",
+      "dispatch_eastern": "Nov 07, 2026 at 10:06:50 AM EST (UTC-0500)",
+      "ended_at_eastern": "Nov 07, 2026 at 10:07:33 AM EST (UTC-0500)"
     }
   ],
   "qualification_status": "not_qualified",

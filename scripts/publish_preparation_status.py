@@ -11,12 +11,22 @@ import os
 from pathlib import Path
 import re
 import subprocess
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = Path('/home/josh/.local/state/study2-setup')
 MODELS = {'google/gemma-4-31b-it', 'z-ai/glm-5.3-flash', 'openai/gpt-6.1-terra'}
 STATES = {'queued', 'running', 'returned_requires_cross_review', 'blocked_preserved'}
 FILES = ['setup/launch.json', 'setup/status.json', 'setup/RUN_STATUS.md']
+
+EASTERN = ZoneInfo('America/New_York')
+
+def eastern_time(value):
+    stamp = datetime.datetime.fromisoformat(value.replace('Z', '+00:00'))
+    if stamp.tzinfo is None:
+        raise ValueError('Status timestamp must include timezone')
+    local = stamp.astimezone(EASTERN)
+    return local.strftime('%b %d, %Y at %I:%M:%S %p %Z (UTC%z)')
 
 def snapshot(manifest, service):
     recovery = manifest.get('mechanical_recovery', {})
@@ -30,11 +40,15 @@ def snapshot(manifest, service):
         if not re.fullmatch(r'[a-zA-Z0-9_-]+', role['role']):
             raise ValueError('Invalid role identifier')
         rows.append({k: role[k] for k in ('role', 'run_id', 'model', 'status', 'dispatch_utc', 'ended_at_utc', 'agent_exit_code', 'controller_exit_code', 'api_budget_exhausted', 'prompt_sha256', 'controller_sha256') if k in role})
+    for row in rows:
+        for field in ('dispatch_utc', 'ended_at_utc'):
+            if row.get(field):
+                row[field.replace('_utc', '_eastern')] = eastern_time(row[field])
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
     stamps=[manifest.get(k) for k in ('created_at_utc','started_at_utc','ended_at_utc')]
     stamps += [row.get(k) for row in rows for k in ('dispatch_utc','ended_at_utc')]
     event_at=max((x for x in stamps if x),default=now)
-    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy', 'mechanical_recovery') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'event_at_utc': event_at, 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
+    return {**{k: manifest[k] for k in ('retry_of', 'original_failure_preserved', 'retry_policy', 'mechanical_recovery') if k in manifest}, 'cohort_id': manifest.get('cohort_id'), 'launch_id': manifest['launch_id'], 'kind': 'preparation_construction_not_calibration_or_scoring', 'snapshot_at_utc': now, 'snapshot_at_eastern': eastern_time(now), 'event_at_utc': event_at, 'event_at_eastern': eastern_time(event_at), 'display_timezone': 'America/New_York', 'status': manifest['status'], 'background_service': service, 'automatic_restart': False, 'roles': rows, 'qualification_status': 'not_qualified', 'notification': 'This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.', 'scope': 'Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue.'}
 
 def main():
     parser = argparse.ArgumentParser()
@@ -59,10 +73,10 @@ def main():
             return
     status_path = ROOT/'setup/status.json'
     status = json.loads(status_path.read_text())
-    status.update(updated_at_utc=data['snapshot_at_utc'], status='preparation_'+data['status'], active_launch='setup/launch.json', launch_snapshot_note='See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.')
-    lines = ['# Current run status', '', 'Updated: '+data['snapshot_at_utc'], '', '**'+data['status'].replace('_', ' ')+'**', '', '| Job | Model | State |', '|---|---|---|']
-    lines += [f"| {r['role']} | {r['model']} | {r['status'].replace('_', ' ')} |" for r in data['roles']]
-    lines += ['', 'A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.', '', 'This page updates automatically at job transitions. It is not a live heartbeat. No chat/push/email notification is configured. [Machine-readable status](launch.json).', '']
+    status.update(updated_at_utc=data['snapshot_at_utc'], updated_at_eastern=data['snapshot_at_eastern'], last_workflow_event_eastern=data['event_at_eastern'], status='preparation_'+data['status'], active_launch='setup/launch.json', launch_snapshot_note='See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.')
+    lines = ['# Current run status', '', '**Status checked/published:** '+data['snapshot_at_eastern'], '', '**Latest workflow event:** '+data['event_at_eastern'], '', '**'+data['status'].replace('_', ' ')+'**', '', '| Job | Model | State | Started (Eastern) | Ended (Eastern) |', '|---|---|---|---|---|']
+    lines += [f"| {r['role']} | {r['model']} | {r['status'].replace('_', ' ')} | {r.get('dispatch_eastern', '—')} | {r.get('ended_at_eastern', '—')} |" for r in data['roles']]
+    lines += ['', 'A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.', '', 'All displayed times use America/New_York, automatically switching between EST and EDT. UTC timestamps remain in the machine-readable record. This page updates automatically at job transitions and on explicit status refreshes. A newer status-check timestamp does not imply new agent work. It is not a live heartbeat. No chat/push/email notification is configured. [Machine-readable status](launch.json).', '']
     for path, text in [(ROOT/FILES[0], json.dumps(data,indent=2)+'\n'), (status_path, json.dumps(status,indent=2)+'\n'), (ROOT/FILES[2], '\n'.join(lines))]:
         path.write_text(text)
         if os.geteuid() == 0: os.chown(path,1000,1000)
