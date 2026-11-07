@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 03:04:37 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 03:07:25 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 03:02:56 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 03:07:25 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-baseline-binding-amendment | openai/gpt-6.1-terra | running | Nov 07, 2026 at 03:02:56 PM EST (UTC-0500) | — |
+| terra-baseline-binding-amendment | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 03:02:56 PM EST (UTC-0500) | Nov 07, 2026 at 03:07:25 PM EST (UTC-0500) |
 
 Narrow R1/R2 amendment with non-test native-auth probes. App/test source remains unchanged. Different-model delta review required before freeze.
 
