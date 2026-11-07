@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:28:14 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:28:27 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 04:28:13 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 04:28:27 PM EST (UTC-0500)
 
-**running**
+**stopped preserving state**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-worker-harness-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 04:28:13 PM EST (UTC-0500) | — |
+| glm-worker-harness-review | z-ai/glm-5.3-flash | blocked preserved | Nov 07, 2026 at 04:28:13 PM EST (UTC-0500) | Nov 07, 2026 at 04:28:27 PM EST (UTC-0500) |
 
 Fresh GLM source/synthetic review of common worker harness and generic prompts. Actual seven-role/native/Context/resource qualification remains separate.
 
