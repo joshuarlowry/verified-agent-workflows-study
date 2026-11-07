@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 04:19:01 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 04:19:02 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 04:19:01 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 04:19:02 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-worker-harness | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 04:12:41 PM EST (UTC-0500) | Nov 07, 2026 at 04:19:01 PM EST (UTC-0500) |
+| glm-docs-extraction-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 04:19:02 PM EST (UTC-0500) | — |
 
-Fresh common worker adapter/broker and generic role prompts. Synthetic tests only; no paid nested probes, cross-review and actual seven-role qualification still required.
+GLM reviews honestly partial docs staging and one proposed pinned Vitest include. No corpus approval, indexing or study dispatch implied.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
