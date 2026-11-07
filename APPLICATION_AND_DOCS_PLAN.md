@@ -8,8 +8,8 @@ Use a small React UI built with Vite and a separate Hono HTTP API on Node, with 
 
 | Work | Owner | Exit evidence |
 |---|---|---|
-| App fixture and dependency qualification | Eligible builder outside subject families; independent qualifier | Locked runtime/dependencies/browser/SQLite engine; native module install, UI/API/database/auth integration, reset and public check commands replay cleanly |
-| Documentation source selection | Named curator; independent content reviewer outside subject families | Reviewed source inventory and omissions, version/API coverage, licenses, extraction checks and absence of benchmark solutions |
+| App fixture and dependency qualification | Eligible builder outside the registered exclusion groups; independent qualifier | Locked runtime/dependencies/browser/SQLite engine; native module install, UI/API/database/auth integration, reset and public check commands replay cleanly |
+| Documentation source selection | Named curator; independent content reviewer outside the registered exclusion groups | Reviewed source inventory and omissions, version/API coverage, licenses, extraction checks and absence of benchmark solutions |
 | Context packaging and common adapter | Mechanical maintainer using approved sources | Approved package IDs/hashes and read-only files; one OpenCode adapter; isolated storage and role inheritance |
 | Calibration task/evaluator qualification | Eligible builders and independent qualifier | Reference/alternate paths, negative controls, clean replay and contract/check signoffs |
 | Rehearsal | Coordinator and eligible independent qualifiers | Broker/usage capture, evaluator and core launch gates pass; human patch-review staffing is optional |
@@ -18,6 +18,8 @@ Documentation topics cover Vite configuration/proxy/build, React state/inputs/ev
 
 Where official docs describe a release family, record the snapshot/source revision and validate relevant APIs against pinned packages/types; never relabel unverified prose as exact patch coverage. Missing Context packages may be built from approved official inputs without adding a RAG server. Underlying Context lexical retrieval introduces no extra model.
 
-The coordinator may plan and perform approved mechanical setup. It may not build the application, references or acceptance suite under the subject-family exclusion, nor independently approve the corpus it proposed. Independent fixture/corpus qualifiers may be eligible humans or models outside subject families, with provenance recorded. Human patch-review names and capacity are needed only before an optional review extension, not before core calibration.
+The coordinator may plan and perform approved mechanical setup. It may not build the application, references or acceptance suite under the subject-family exclusion, nor independently approve the corpus it proposed. Independent fixture/corpus qualifiers may be eligible humans or models outside the registered exclusion groups, with provenance recorded. Human patch-review names and capacity are needed only before an optional review extension, not before core calibration.
+
+Authoritative task contracts, the frozen FAQ and role prompts also follow the canonical artifact-specific authorship/review rules. Setup and collection capacity follow the canonical execution schedule and forecast; generic transport probes do not qualify the resource lanes.
 
 No stack installation, fixture construction or corpus content approval is completed by this plan. See [MCP_SETUP.md](MCP_SETUP.md) for the compact procedure and [TASK_TEMPLATE.md](TASK_TEMPLATE.md) for task evidence.

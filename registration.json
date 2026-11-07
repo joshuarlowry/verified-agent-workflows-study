@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 6,
+  "protocol_revision": 7,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -14,15 +14,17 @@
       "requested_id": "google/gemma-4-31b-it",
       "harness": "OpenCode -> LiteLLM -> OpenRouter",
       "resolved_id": "google/gemma-4-31b-it-20260402",
-      "provider": "CoreWeave",
+      "provider": "Crusoe",
       "settings_sha256": null,
-      "provider_tag": "coreweave/fp4",
-      "quantization": "fp4",
-      "readiness": "direct_ZDR_plain_and_forced_tool_passed",
+      "provider_tag": "crusoe/bf16",
+      "quantization": "bf16",
+      "readiness": "direct_ZDR_plain_and_auto_tool_passed_full_adapter_pending",
       "zdr_required": true,
       "allow_fallbacks": false,
       "provider_pin_applied_to_study": false,
-      "full_harness_qualification_sha256": null
+      "full_harness_qualification_sha256": null,
+      "previous_candidate": "CoreWeave FP4; pre-study readiness only; no scored outcomes",
+      "serving_label": "Gemma as served by Crusoe at catalog-reported BF16"
     },
     {
       "name": "GLM",
@@ -33,7 +35,7 @@
       "settings_sha256": null,
       "provider_tag": "relace/fp4",
       "quantization": "fp4",
-      "readiness": "direct_ZDR_plain_and_auto_tool_passed_forced_tool_unsupported_usage_mapping_unresolved",
+      "readiness": "streaming_OpenCode_LiteLLM_Relace_auto_tool_roundtrip_and_billing_mapping_passed_Context_and_broker_pending",
       "zdr_required": true,
       "allow_fallbacks": false,
       "provider_pin_applied_to_study": false,
@@ -73,7 +75,6 @@
     ],
     "completion_difference_margin": -0.1,
     "maximum_cost_per_acceptance_ratio": 0.5,
-    "readiness_observed_completion_floor_candidate_and_reference": 0.8,
     "business_margins_approved_at_utc": null,
     "point_targets_only_label": "candidate_for_larger_replication",
     "zero_acceptance_cost_per_acceptance": "undefined",
@@ -207,7 +208,7 @@
   "construction_provenance": {
     "subject_models_may_author_fixture": false,
     "excluded_families": [
-      "Gemma family",
+      "Gemma and Gemini families (one exclusion group for independence)",
       "GLM family",
       "OpenAI GPT family including Terra"
     ],
@@ -215,12 +216,48 @@
       "application baseline",
       "reference solutions",
       "alternative implementations",
-      "acceptance checks"
+      "acceptance checks",
+      "task contracts",
+      "frozen product FAQ",
+      "role/system/user prompts and worker handoff templates",
+      "documentation corpus selection and extraction"
     ],
     "protocol_author_role": "AI coordinator under human direction; not fixture-builder eligibility",
     "eligible_builders": [],
-    "artifact_author_records": [],
-    "independent_qualifiers": []
+    "artifact_author_records": [
+      {
+        "artifact": "TASK_TEMPLATE.md",
+        "class": "generic role/task prompt skeleton, not an authoritative task-specific contract",
+        "author": "AI coordinator under human direction",
+        "model": "gpt-6.1-sol for current revision; earlier exact per-edit attribution not established",
+        "family": "OpenAI GPT",
+        "harness": "Codex",
+        "settings": "not exposed in per-artifact evidence",
+        "history": "Git history preserves previous drafts; no independent review signoff yet",
+        "sha256": "b48896db79c0805944cb835ed40c0b35a66d0542a5f7ee6137351d20b7759e7c",
+        "independent_reviewer": null,
+        "independent_review_status": "pending"
+      }
+    ],
+    "independent_qualifiers": [],
+    "family_decisions": {
+      "Gemini": {
+        "eligible_for_building_or_independent_qualification": false,
+        "decision": "Treat Gemini and Gemma as the same exclusion group for study independence, without asserting identical weights/architecture. Includes fine-tuned/distilled derivatives where lineage is known.",
+        "basis": "Google describes Gemma 4 as built from Gemini 3 research and technology.",
+        "source": "https://deepmind.google/models/gemma/gemma-4/",
+        "decision_revision": 7
+      },
+      "uncertain_lineage": "resolve and record before appointment; uncertainty is not automatic eligibility"
+    },
+    "artifact_policies": {
+      "fixture_contract_FAQ": "authoritative task-specific baseline/reference/check/contract/FAQ construction uses eligible humans or models outside exclusion groups; product-owner requirements retained with human provenance",
+      "role_prompts": "GPT-family coordinator may draft role prompts and generic templates; record exact known model/harness, source hashes and substantive edits; independent content/neutrality review outside exclusion groups required before freeze",
+      "corpus": "coordinator may propose sources and mechanically package approved inputs; independent content approval outside exclusion groups required",
+      "historical_drafts": "preserve known provenance; unavailable historical model IDs/settings explicitly unknown, never inferred from thread nickname",
+      "all_artifacts": "record authors/contributors, exact known models/families/providers/harness/settings or unknown, timestamps, source lineage, hashes, reviewer identity and independent signoff"
+    },
+    "authoritative_prompt_FAQ_contract_review_required_before_calibration": true
   },
   "checks": {
     "requirements_public": true,
@@ -429,7 +466,8 @@
     "all_roles_share_adapter": true,
     "readiness_evidence": [
       "readiness/terra-openrouter-20261107.md",
-      "readiness/gemma-glm-zdr-20261107.md"
+      "readiness/gemma-glm-zdr-20261107.md",
+      "readiness/revision7-provider-and-accounting.md"
     ],
     "residual_variation": [
       "model-specific reasoning/settings support",
@@ -453,19 +491,32 @@
     {
       "id": "glm_accounting",
       "phase": "before_calibration",
-      "detail": "Relace reports reasoning greater than completion; establish actual native/billable mapping or register a provider revision with requalification",
-      "resolved": false
+      "detail": "completion-only bill verified, including all instrumented adapter calls; native OpenCode split documented as unsuitable for billing; raw gateway usage capture required",
+      "resolved": true,
+      "evidence": "readiness/revision7-provider-and-accounting.md"
     },
     {
       "id": "common_adapter",
       "phase": "before_calibration",
-      "detail": "pin all provider routes and qualify full OpenCode tool/usage/Context/broker path",
+      "detail": "qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16",
       "resolved": false
     },
     {
       "id": "fixture_and_corpus",
       "phase": "before_calibration",
       "detail": "qualify baseline, calibration tasks, source corpus, evaluator and isolated DB authorization",
+      "resolved": false
+    },
+    {
+      "id": "authored_treatment_review",
+      "phase": "before_calibration",
+      "detail": "record and independently approve authoritative role prompts, worker handoff templates, task contracts and frozen FAQ under artifact-specific provenance rules",
+      "resolved": false
+    },
+    {
+      "id": "resource_lanes",
+      "phase": "before_calibration",
+      "detail": "qualify two equal isolated lanes and rate-limit behavior, or explicitly amend to sequential",
       "resolved": false
     }
   ],
@@ -527,5 +578,80 @@
     "review_findings": "published separately against original frozen endpoints; reproduced evaluator defects trigger the uniform correction protocol",
     "cost_per_acceptance_denominator": "core machine-accepted submissions",
     "no_implicit_production_approval": true
+  },
+  "provider_qualification": {
+    "precision_choice": "Prefer tested ZDR BF16 Gemma candidate over FP4 before calibration; no model ID substitution",
+    "precision_not_independently_audited": true,
+    "terra_precision": "undisclosed; disclose residual serving confound",
+    "evidence": "readiness/revision7-provider-and-accounting.md",
+    "all_gemma_arms_same_provider_quantization": true,
+    "no_silent_FP4_fallback": true,
+    "if_BF16_unavailable": "pause; register/requalify explicit alternative (FP8 preferred, FP4 must be labeled as served at FP4); do not pool configurations"
+  },
+  "token_mapping": {
+    "glm_relace_fp4": {
+      "input": "prompt_tokens (includes cache subsets when present)",
+      "billable_output": "completion_tokens; do not add completion_tokens_details.reasoning_tokens",
+      "historical_evidence": {
+        "prompt_tokens": 19,
+        "completion_tokens": 89,
+        "reasoning_tokens": 104,
+        "prompt_usd_per_token": "0.0000000284",
+        "completion_usd_per_token": "0.0000000923",
+        "completion_only_cost_usd": "0.0000087543",
+        "completion_plus_reasoning_cost_usd": "0.0000183535",
+        "provider_reported_cost_usd": "0.0000087543"
+      },
+      "interpretation": "completion-only reproduces this bill exactly; not evidence that reasoning is a subset of completion or of physically separate chargeable tokens",
+      "status": "observed_provider_bill_and_full_OpenCode_streaming_adapter_mapping_verified",
+      "revalidate_after_provider_or_harness_change": true,
+      "native_OpenCode_output_caveat": "OpenCode subtracts reasoning and clamps output at zero; when reasoning exceeds completion, output+reasoning overcounts billed output. Never reconstruct billed output from that split.",
+      "authoritative_billing_source": "captured raw gateway/provider usage.completion_tokens, cross-checked against provider cost; preserve OpenCode native fields separately"
+    }
+  },
+  "execution_schedule": {
+    "mode": "two_equal_isolated_lanes_after_resource_qualification",
+    "max_parallel_workflows": 2,
+    "lane_resources": {
+      "dedicated_cpu_cores": 2,
+      "memory_gib": 8,
+      "node_test_workers": 1,
+      "playwright_workers": 1,
+      "independent_container_database_dependencies_cache_ports_and_context": true
+    },
+    "host_observation": {
+      "logical_cpus": 6,
+      "memory_mib": 31360,
+      "free_disk_gib_approx": 116,
+      "measured_at_utc": "2026-11-07T02:57:07.607915+00:00"
+    },
+    "reserve": "remaining CPU/memory for controller and separately limited evaluator; no competing interactive build jobs",
+    "qualification": "replay same generic/public mechanical commands alone and with both lanes loaded; median duration inflation <=10%, no OOM/throttling/unaccounted swap or transport rate-limit drift; same limits in sequential qualification",
+    "qualification_sha256": null,
+    "if_qualification_fails": "amend to sequential before calibration; preserve failed qualification; no silent mixed scheduling",
+    "assignment": "seeded balanced lane and time-block assignment across arms/tasks; preserve paired blocks; do not run all of one model first",
+    "portfolio": "physical collection may overlap; report registered sequential retry-policy opportunity as sum of candidate durations, not minimum parallel latency",
+    "provider_drift_checks": "verify catalog revision/tag/quantization before each dispatch and generation resolution after each call; stop new dispatch on drift and record affected runs; resume as separately registered cohort, never pool silently",
+    "opaque_provider_drift_limit": "unchanged public IDs cannot prove immutable hidden serving weights/settings"
+  },
+  "collection_forecast": {
+    "kind": "planning_assumptions_not_measured",
+    "mean_subject_minutes_by_system": {
+      "Gemma alone": 25,
+      "GLM alone": 45,
+      "Terra alone": 20,
+      "Terra supervising Gemma": 40,
+      "GLM supervising Gemma": 50
+    },
+    "setup_and_evaluation_minutes_per_run": 15,
+    "scheduler_utilization_assumption": 0.8,
+    "availability_hours_per_day_scenarios": [
+      24,
+      8
+    ],
+    "worst_case_subject_minutes_per_run": 120,
+    "excludes": "fixture/reference/negative-control/corpus construction, independent qualification, outages, provider requalification and optional human review",
+    "reforecast": "after first technical block and calibration using actual endpoint runtimes, timeout rates and setup/evaluation overhead; preserve forecast history; no outcome-based sample changes",
+    "report_generator": "scripts/estimate_collection.py"
   }
 }

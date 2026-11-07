@@ -1,5 +1,7 @@
 # Gemma and GLM ZDR provider probes
 
+Historical readiness record. [Revision 7 follow-up](revision7-provider-and-accounting.md) resolves the GLM billing interpretation and confirms its normal adapter path; it also tests a BF16 Gemma candidate. The failures and raw counters below remain unchanged.
+
 On 2026-11-07 UTC, direct OpenRouter probes required `zdr: true`, an exact provider tag, `allow_fallbacks: false` and parameter support. Account privacy settings were preserved. These are small transport probes, not calibration or complete OpenCode/LiteLLM qualification. No existing gateway routes were changed.
 
 | Requested model | Pinned provider tag | Catalog quantization | Plain reply | Tool selection |

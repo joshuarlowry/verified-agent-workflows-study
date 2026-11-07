@@ -1,0 +1,364 @@
+{
+  "kind": "readiness_not_scored_study",
+  "gemma_precision_probes": [
+    {
+      "provider_tag": "crusoe/bf16",
+      "utc": "2026-11-07T02:53:54.000292+00:00",
+      "prompt_sha256": "d48b8bdec75639ac0aca267bb653fb5f74136e8eed598aa5ab0baf8e7d2b09d8",
+      "status": 200,
+      "passed": true,
+      "provider": "Crusoe",
+      "usage": {
+        "prompt_tokens": 21,
+        "completion_tokens": 5,
+        "total_tokens": 26,
+        "cost": 4.94e-06,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 3,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 4.94e-06,
+          "upstream_inference_prompt_cost": 2.94e-06,
+          "upstream_inference_completions_cost": 2e-06
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "model": "google/gemma-4-31b-it",
+      "elapsed_seconds": 1.1166857670177706,
+      "generation_crosscheck": {
+        "model": "google/gemma-4-31b-it-20260402",
+        "provider_name": "Crusoe",
+        "total_cost": 4.94e-06,
+        "native_tokens_prompt": 21,
+        "native_tokens_completion": 5,
+        "native_tokens_reasoning": 0
+      }
+    },
+    {
+      "test": "tool_auto",
+      "utc": "2026-11-07T02:55:28.091243+00:00",
+      "provider_tag": "crusoe/bf16",
+      "provider": "Crusoe",
+      "model": "google/gemma-4-31b-it",
+      "usage": {
+        "prompt_tokens": 67,
+        "completion_tokens": 14,
+        "total_tokens": 81,
+        "cost": 1.498e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 3,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 1.498e-05,
+          "upstream_inference_prompt_cost": 9.38e-06,
+          "upstream_inference_completions_cost": 5.6e-06
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "prompt_sha256": "a9ec735770d99ddd27c88f9b6f46d3f65f5b8b6416d08f8051c5dcb1755fa7e3",
+      "passed": true,
+      "elapsed_seconds": 0.7203247259894852,
+      "generation_crosscheck_error": "HTTPError"
+    }
+  ],
+  "glm_adapter": {
+    "dispatch_utc": "2026-11-07T02:58:00.119798+00:00",
+    "elapsed_seconds": 8.482755874982104,
+    "exit_code": 0,
+    "file_check_passed": true,
+    "final_text_passed": true,
+    "requests": [
+      {
+        "model": "glm-probe",
+        "tool_choice": null,
+        "tool_choice_present": false,
+        "tools_count": 12,
+        "stream": true
+      },
+      {
+        "model": "glm-probe",
+        "tool_choice": null,
+        "tool_choice_present": false,
+        "tools_count": 12,
+        "stream": true
+      },
+      {
+        "model": "glm-probe",
+        "tool_choice": null,
+        "tool_choice_present": false,
+        "tools_count": 12,
+        "stream": true
+      }
+    ],
+    "provider_usage": [
+      {
+        "model": "glm-probe",
+        "usage": {
+          "completion_tokens": 245,
+          "prompt_tokens": 5005,
+          "total_tokens": 5250,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 272,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 384,
+            "video_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0.0001647555
+        }
+      },
+      {
+        "model": "glm-probe",
+        "usage": {
+          "completion_tokens": 13,
+          "prompt_tokens": 5257,
+          "total_tokens": 5270,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 5120,
+            "video_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0.0001504987
+        }
+      },
+      {
+        "model": "glm-probe",
+        "usage": {
+          "completion_tokens": 6,
+          "prompt_tokens": 5279,
+          "total_tokens": 5285,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 5248,
+            "video_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0.0001504774
+        }
+      }
+    ],
+    "steps": [
+      {
+        "tokens": {
+          "input": 4621,
+          "output": 0,
+          "reasoning": 272,
+          "cache": {
+            "read": 384,
+            "write": 0
+          }
+        },
+        "cost": 0.0001647555,
+        "reason": "tool-calls"
+      },
+      {
+        "tokens": {
+          "input": 137,
+          "output": 13,
+          "reasoning": 0,
+          "cache": {
+            "read": 5120,
+            "write": 0
+          }
+        },
+        "cost": 0.0001504987,
+        "reason": "tool-calls"
+      },
+      {
+        "tokens": {
+          "input": 31,
+          "output": 6,
+          "reasoning": 0,
+          "cache": {
+            "read": 5248,
+            "write": 0
+          }
+        },
+        "cost": 0.0001504774,
+        "reason": "stop"
+      }
+    ]
+  },
+  "glm_prior_successful_adapter": {
+    "dispatch_utc": "2026-11-07T02:56:36.274600+00:00",
+    "elapsed_seconds": 6.935407943994505,
+    "exit_code": 0,
+    "file_check_passed": true,
+    "final_text_passed": true,
+    "requests": [
+      {
+        "model": "glm-probe",
+        "tool_choice": null,
+        "tools_count": 12,
+        "stream": true
+      },
+      {
+        "model": "glm-probe",
+        "tool_choice": null,
+        "tools_count": 12,
+        "stream": true
+      },
+      {
+        "model": "glm-probe",
+        "tool_choice": null,
+        "tools_count": 12,
+        "stream": true
+      }
+    ],
+    "steps": [
+      {
+        "tokens": {
+          "input": 5005,
+          "output": 0,
+          "reasoning": 153,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "cost": 0.0001558024,
+        "reason": "tool-calls"
+      },
+      {
+        "tokens": {
+          "input": 40,
+          "output": 13,
+          "reasoning": 0,
+          "cache": {
+            "read": 5120,
+            "write": 0
+          }
+        },
+        "cost": 0.0001477439,
+        "reason": "tool-calls"
+      },
+      {
+        "tokens": {
+          "input": 62,
+          "output": 1,
+          "reasoning": 21,
+          "cache": {
+            "read": 5120,
+            "write": 0
+          }
+        },
+        "cost": 0.0001491994,
+        "reason": "stop"
+      }
+    ]
+  },
+  "billing_recomputations": [
+    {
+      "prompt_tokens": 5005,
+      "completion_tokens": 245,
+      "reasoning_tokens": 272,
+      "completion_only_cost_usd": "0.0001647555",
+      "completion_plus_reasoning_cost_usd": "0.0001898611",
+      "reported_cost_usd": "0.0001647555",
+      "completion_only_matches": true
+    },
+    {
+      "prompt_tokens": 5257,
+      "completion_tokens": 13,
+      "reasoning_tokens": 0,
+      "completion_only_cost_usd": "0.0001504987",
+      "completion_plus_reasoning_cost_usd": "0.0001504987",
+      "reported_cost_usd": "0.0001504987",
+      "completion_only_matches": true
+    },
+    {
+      "prompt_tokens": 5279,
+      "completion_tokens": 6,
+      "reasoning_tokens": 0,
+      "completion_only_cost_usd": "0.0001504774",
+      "completion_plus_reasoning_cost_usd": "0.0001504774",
+      "reported_cost_usd": "0.0001504774",
+      "completion_only_matches": true
+    }
+  ],
+  "historical_bill_recomputation": {
+    "prompt_tokens": 19,
+    "completion_tokens": 89,
+    "reasoning_tokens": 104,
+    "prompt_usd_per_token": "0.0000000284",
+    "completion_usd_per_token": "0.0000000923",
+    "completion_only_cost_usd": "0.0000087543",
+    "completion_plus_reasoning_cost_usd": "0.0000183535",
+    "provider_reported_cost_usd": "0.0000087543"
+  },
+  "launch_failure": {
+    "type": "OS identity mismatch",
+    "description": "initial OpenCode startup tried /root state after UID switch; no model request made; corrected via runuser; original stderr preserved privately"
+  },
+  "raw_evidence_sha256": {
+    "precision-results.json": "dfc8311ad697b2d40cc90a85b455d5017d20bc9f2be4c45169f1d406314ed600",
+    "glm-adapter/events.jsonl": "1c9885db2fe3c4695c93677c8285c4196de90ec7ff9f4ed8b94b93429fce6642",
+    "glm-adapter/controller.json": "19f90645b306bcf713edde7517b5df5d1b47b77928b0c1ca445a1be20a90c3fe",
+    "glm-adapter/provider-usage.json": "3f03a9fcf03ca319b62790f227e1c4442f9556c3f3eb46b975eea6bc6b8c1460",
+    "glm-adapter-uninstrumented/events.jsonl": "5ccb3192315f9a325dc0debc40d8c74805ccc4a50292c568a3317136cada8d3a",
+    "glm-adapter-uninstrumented/initial-identity-opencode.stderr.log": "c6badaeed4896eb247679d1734f2ef6e364499c3ecabeeaa34719fccf4d6882a"
+  },
+  "adapter_generation_crosschecks": [
+    {
+      "model": "z-ai/glm-5.3-flash-20260826",
+      "provider_name": "Relace",
+      "total_cost": 0.000164755,
+      "native_tokens_prompt": 5005,
+      "native_tokens_completion": 245,
+      "native_tokens_reasoning": 272,
+      "native_tokens_cached": 384
+    },
+    {
+      "model": "z-ai/glm-5.3-flash-20260826",
+      "provider_name": "Relace",
+      "total_cost": 0.000150498,
+      "native_tokens_prompt": 5257,
+      "native_tokens_completion": 13,
+      "native_tokens_reasoning": 0,
+      "native_tokens_cached": 5120
+    },
+    {
+      "model": "z-ai/glm-5.3-flash-20260826",
+      "provider_name": "Relace",
+      "total_cost": 0.000150477,
+      "native_tokens_prompt": 5279,
+      "native_tokens_completion": 6,
+      "native_tokens_reasoning": 0,
+      "native_tokens_cached": 5248
+    }
+  ]
+}

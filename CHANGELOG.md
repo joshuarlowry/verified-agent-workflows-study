@@ -1,5 +1,13 @@
 # Protocol revision notes
 
+## Revision 7 — family decisions, treatment provenance, precision and schedule
+
+Group Gemini with Gemma for independent-builder/qualifier eligibility, citing Google's declared lineage without asserting identical model weights. Extend provenance to task contracts, FAQ, role/system/user prompts, handoff templates and corpus content. Coordinator role-prompt drafts require explicit authorship and independent review; authoritative task-specific contracts/FAQ use eligible construction authors.
+
+Crusoe BF16 serves the exact Gemma model under ZDR with plain and automatic-tool probes passing; select that candidate consistently across Gemma arms instead of historical FP4 readiness. Recompute the earlier Relace GLM bill: completion-only matches exactly; adding reasoning overcounts. Add streamed OpenCode/LiteLLM adapter evidence and preserve initial identity-launch failure plus all usage counters. Full study Context/broker qualification remains separate.
+
+Add a reproducible collection forecast and a proposed two-lane isolated resource schedule with a pre-calibration contention/rate-limit gate, balanced lane/time assignment and per-call revision-drift checks. Estimates explicitly exclude fixture/corpus construction and are planning assumptions. Remove the unused observed-completion floor. No scored study outcomes exist to reclassify.
+
 ## Revision 6 — optional human patch-review extension
 
 At the user's direction, core completion is timely passage of the frozen independent machine acceptance suite. Move human patch review, merge verdicts and active review timing to an optional preregistered extension over frozen endpoints. Remove reviewer recruitment/capacity from calibration and continuation gates. Keep machine and extension outcomes distinct; do not infer zero review effort or production merge readiness from missing review data. Confirmed evaluator defects still receive uniform, versioned correction.

@@ -1,0 +1,52 @@
+{
+  "kind": "planning_assumptions_not_measured",
+  "runs": 205,
+  "counts_by_arm": {
+    "Gemma alone": 53,
+    "GLM alone": 38,
+    "Terra alone": 38,
+    "Terra supervising Gemma": 38,
+    "GLM supervising Gemma": 38
+  },
+  "assumed_subject_hours": 120.25,
+  "setup_evaluation_hours": 51.25,
+  "cases": [
+    {
+      "scenario": "Assumed mix",
+      "lanes": 1,
+      "collection_hours": 214.375,
+      "days_by_availability": {
+        "24": 8.932291666666666,
+        "8": 26.796875
+      }
+    },
+    {
+      "scenario": "Assumed mix",
+      "lanes": 2,
+      "collection_hours": 107.1875,
+      "days_by_availability": {
+        "24": 4.466145833333333,
+        "8": 13.3984375
+      }
+    },
+    {
+      "scenario": "All runs hit cutoff",
+      "lanes": 1,
+      "collection_hours": 576.5625,
+      "days_by_availability": {
+        "24": 24.0234375,
+        "8": 72.0703125
+      }
+    },
+    {
+      "scenario": "All runs hit cutoff",
+      "lanes": 2,
+      "collection_hours": 288.28125,
+      "days_by_availability": {
+        "24": 12.01171875,
+        "8": 36.03515625
+      }
+    }
+  ],
+  "excludes": "fixture/reference/negative-control/corpus construction, independent qualification, outages, provider requalification and optional human review"
+}
