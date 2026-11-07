@@ -23,7 +23,7 @@ Business targets are within 10 percentage points of Terra's completion rate at a
 | GLM | `z-ai/glm-5.3-flash` | Relace / fp4 |
 | Terra | `openai/gpt-6.1-terra` | Azure / not_disclosed |
 
-[Historical provider-reference evidence](readiness/revision7-provider-and-accounting.md) records Gemma BF16 ZDR capability and GLM automatic-tool/billing checks; fresh clean-cohort transport and full study Context/broker qualification remain pending. Provider metadata is not proof of identical serving implementations or future availability.
+[Historical provider-reference evidence](readiness/revision7-provider-and-accounting.md) records Gemma BF16 ZDR capability and GLM automatic-tool/billing checks. [Fresh three-model transport](setup/clean-transport-preflight.json) and [observed-call accounting](setup/clean-usage-preflight.json) qualify clean construction only; full study Context/broker qualification remains pending. Provider metadata is not proof of identical serving implementations or future availability.
 
 ## Collection forecast
 

@@ -26,16 +26,7 @@ The work is performed against **Workboard Lab**, the planned application baselin
 
 ## Starting position
 
-| Component | Evidence available | Work remaining |
-|---|---|---|
-| Application | Earlier source/tests retired from the clean cohort | Fresh construction, review and clean replays |
-| Contracts | Public scope retained only as provisional input | Fresh scope/FAQ review, contracts, references, alternate paths and evaluator qualification |
-| Documentation | Hashed upstream bytes may seed reproducible setup | Fresh selection/extraction/package review, role integration and publication attribution |
-| Isolation | Physical resource, mount, loopback and group-freeze probes | Real controller endpoint races, failure handling and full role boundaries |
-| Agent transport | Sentinel defect isolated; repair being hardened/reviewed | Frozen verified startup and fresh raw-captured native checks for all three models |
-| Worker broker | Previous candidate retired | Fresh source/review, registered adapter, handoffs and stop/snapshot integration |
-
-See [current preparation status](setup/README.md) and [machine-readable evidence](setup/status.json). Existing check totals are preparation evidence, not study results. No previous fixture/broker/evaluator signoff is eligible for the clean cohort. See [the contamination audit](setup/contamination-audit.json).
+Current gates and evidence live in `application_preparation`, `harness_decision`, `documentation_corpus`, `launch_blockers` and `clean_restart` in [registration.json](registration.json). [Preparation status](setup/README.md) links the recorded construction/review evidence; [run status](setup/RUN_STATUS.md) reports current job transitions in Eastern time. Preparation test totals are not study results. No pre-reset fixture/broker/evaluator signoff is eligible for this cohort.
 
 ## Responsibilities
 
@@ -147,4 +138,4 @@ Disclose AI management, subject-family fixture authorship, shared training/prior
 
 The registered forecast covers **205 workflows** including calibration. Under its assumptions, qualified two-lane collection is about **4.47 days continuously or 13.40 eight-hour days**; the all-cutoff scenario is **12.01 or 36.04 days**. These are planning assumptions, exclude construction/qualification/outages and must be replaced by a calibration-based forecast. Do not assign a confident preparation completion date before the first task packet and real handoff qualify. There is no aggregate dollar or token cap.
 
-The next milestone is deliberately small: **the frozen reviewed transport and fresh three-model fidelity/accounting preflight**, followed by public-scope revalidation and fresh construction. The next construction milestone is one qualified C1 packet plus the real common supervisor-worker path. Finish C1's reference/alternate/external-check/negative-control packet; finish real Gemma broker launch, all-model capture and cutoff/final freeze; cross-review both. Then expand qualification to the remaining calibration tasks and role matrix. Calibration follows the gates above, not the existence of a runnable prototype.
+The first task milestone is **one qualified C1 packet plus the real common supervisor-worker path**, after the registered source, transport, runtime and documentation gates. Consult canonical evidence for completed gates rather than treating this phase ordering as a status ledger. Finish C1's reference/alternate/external-check/negative-control packet; finish real Gemma broker launch, all-model capture and cutoff/final freeze; cross-review both. Then expand qualification to the remaining calibration tasks and role matrix. Calibration follows the gates above, not the existence of a runnable prototype.
