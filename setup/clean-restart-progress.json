@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T20:04:28.866381+00:00",
+  "updated_at_utc": "2026-11-07T20:06:44.332558+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -44,7 +44,8 @@
   "active_pipeline": {
     "active_launch": "baseline-binding-amendment-20261107T200246Z",
     "queued_in_order": [
-      "docs-amendment-review-20261107T200337Z"
+      "docs-amendment-review-20261107T200337Z",
+      "baseline-delta-review-20261107T200558Z"
     ],
     "data_dependencies": "Native-auth/contract amendment uses frozen app and baseline review. Documentation review uses completed amended source selection, official evidence and exact registration snapshots.",
     "order": "Sequential external model execution; all original endpoints preserved",
