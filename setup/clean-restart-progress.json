@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-07T21:17:05.190189+00:00",
+  "updated_at_utc": "2026-11-07T21:23:18.621493+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -42,9 +42,8 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "worker-harness-20261107T202114Z",
+    "active_launch": "docs-extraction-review-20261107T204047Z",
     "queued_in_order": [
-      "docs-extraction-review-20261107T204047Z",
       "worker-harness-review-20261107T210437Z",
       "c1-independent-evaluator-20261107T211533Z",
       "c1-alternate-20261107T211533Z"
@@ -80,5 +79,6 @@
   "baseline_runtime_progress": "setup/baseline-runtime-progress.json",
   "native_auth_image_replays": "setup/clean-native-auth-replay-20261107T200937Z.json",
   "docs_extraction_endpoint": "setup/docs-extraction-endpoint.json",
-  "c1_constructor_endpoint": "setup/c1-constructor-endpoint.json"
+  "c1_constructor_endpoint": "setup/c1-constructor-endpoint.json",
+  "worker_harness_constructor_endpoint": "setup/worker-harness-constructor-endpoint.json"
 }

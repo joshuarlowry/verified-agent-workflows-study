@@ -807,7 +807,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "C1_reference_return_preserved_independent_evaluator_and_alternate_queued_common_harness_active_docs_partial",
+    "status": "C1_reference_and_partial_harness_first_returns_preserved_docs_extraction_review_active_independent_C1_roles_queued",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,

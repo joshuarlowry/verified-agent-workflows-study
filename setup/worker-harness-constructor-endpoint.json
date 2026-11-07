@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-11-07T21:23:18.621493+00:00",
+  "run_id": "clean-20261107T122746Z-worker-harness-terra-20261107T202114Z",
+  "status": "partial_constructor_return_not_requested_finished_live_adapter",
+  "stream_integrity": "90calls; all native endpoint/request inventory/paired semantic fidelity/terminal/usage capture checks passed",
+  "artifact_file_count": 23,
+  "artifact_inventory_sha256": "525144367d86c9d73fa06b69eb4c2b57e74c3d3198e6e24511579db5f44d6675",
+  "constructor_report_sha256": "e035eaffafd7ed0c97efb3ccbecf08f737e5d5c82d8f445612804e4aca6283f8",
+  "reported_synthetic_tests": 17,
+  "native_dispatch_available": false,
+  "remaining_implementation": [
+    "Real OpenCode adapter, proven session creation/continuation and event-to-terminal parser.",
+    "Real supervisor-to-Gemma transport, role-enforced source permissions, no-egress and credential-free pinned sockets.",
+    "Whole-workflow cgroup quiescence, sealed endpoint freeze, full capture/usage integration and crash/storage handling.",
+    "Actual Context corpus retrieval, all-seven-role native checks and equal-resource qualification."
+  ],
+  "review_launch": "worker-harness-review-20261107T210437Z",
+  "disposition": "Preserve first return; queued source review must not treat synthetic passes as native qualification. Any implementation extension is separately logged.",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}
