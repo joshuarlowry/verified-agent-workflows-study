@@ -38,7 +38,7 @@ Assumptions, not measurements: 205 runs, 120.25 aggregate subject hours plus 51.
 
 Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus cross-review and qualification, outages, provider requalification and optional human review. Reforecast from calibration; stop new dispatch on model/provider-revision drift. Two-lane execution must qualify before calibration.
 
-[Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
+[Study execution plan](STUDY_PLAN.md) · [Preparation work and evidence](setup/README.md) · [Latest recorded statuses](setup/status.json)
 
 ## Blocking dependencies
 
@@ -53,6 +53,6 @@ Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus
 
 **[registration.json](registration.json) is the single source of truth** for systems, versions, sample, deadlines, targets, roles and launch gates. This overview is generated; change the registration and rerun `python3 scripts/render_summary.py`. Validate with `python3 scripts/render_summary.py --check`.
 
-[Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Application/docs work plan](APPLICATION_AND_DOCS_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md)
+[Protocol](PROTOCOL.md) · [Analysis methods](ANALYSIS_PLAN.md) · [Study execution plan](STUDY_PLAN.md) · [MCP setup procedure](MCP_SETUP.md) · [Task template](TASK_TEMPLATE.md)
 
 AI managed under human direction. The user permits Gemma, GLM and Terra to build and cross-review fixtures in separate sessions. This weakens authorship independence and is disclosed explicitly. GLM is the initial builder; artifacts require different-model cross-review. Human patch reviewers are needed only if that optional extension is activated. Only current materials appear in this tree; superseded drafts and readiness failures remain in Git history and private artifacts. This study follows the [Minutes pilot](https://joshuarlowry.github.io/minutes-agent-workflow-study/).

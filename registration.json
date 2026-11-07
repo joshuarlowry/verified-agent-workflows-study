@@ -394,7 +394,8 @@
     "independent_writable_run_state": true,
     "warmup_policy": "prestart_and_healthcheck_before_dispatch_for_all_arms",
     "runtime_retrieval_counts_toward_deadline": true,
-    "post_freeze_change_requires_amendment": true
+    "post_freeze_change_requires_amendment": true,
+    "existing_local_server_check": "Historical generic Context/Next smoke passed; rebuilt Vite/Hono corpus source/extraction reviewed, actual network-disabled seven-role integration pending"
   },
   "documentation_corpus": {
     "adapter_candidate": "Context MCP (@neuledge/context) only",
@@ -416,7 +417,7 @@
       "actual network-disabled OpenCode integration with the 22-archive corpus and seven roles pending",
       "public redistribution/attribution review remains open; raw materials withheld"
     ],
-    "preparation_plan": "APPLICATION_AND_DOCS_PLAN.md",
+    "preparation_plan": "STUDY_PLAN.md",
     "candidate_corpus_plan": "registration.json#/application_preparation",
     "context_storage_isolation": "dedicated container or OS identity with approved ~/.context/packages; no undocumented directory override",
     "existing_local_server_check": "Context startup/catalog/Next retrieval passed; new Vite/Hono corpus not built",
@@ -445,7 +446,7 @@
       "licenses and source/index hashes"
     ],
     "coordinator_role": "mechanical coordination; current chat gpt-6.1-sol is not a fixture builder or scored subject",
-    "corpus_plan": "APPLICATION_AND_DOCS_PLAN.md",
+    "corpus_plan": "STUDY_PLAN.md",
     "human_review_required": false,
     "different_model_cross_review_required_before_calibration": true,
     "cross_reviewer": {
@@ -471,7 +472,7 @@
     "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public"
   },
   "application_preparation": {
-    "plan": "APPLICATION_AND_DOCS_PLAN.md",
+    "plan": "STUDY_PLAN.md",
     "status": "baseline_R3_source_frozen_consistent_GLM_review_three_clean_replays_passed_task_fixtures_not_qualified",
     "architecture": "Vite React SPA plus separate Hono Node HTTP API; SQLite; Better Auth server sessions; same-origin proxy/static serving",
     "excluded_framework": "Next.js",
@@ -806,5 +807,6 @@
     "qualification": "Current does not mean launch-qualified; unresolved gates remain in launch_blockers.",
     "source_repackaging": "Application, contracts and FAQ bytes unchanged; current fixture subtrees relocated to fixtures/. Historical manifests identify their original paths."
   },
-  "baseline_commit_source_prefix": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/fixture-revision-r3/baseline"
+  "baseline_commit_source_prefix": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/fixture-revision-r3/baseline",
+  "execution_plan": "STUDY_PLAN.md"
 }
