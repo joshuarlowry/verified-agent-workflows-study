@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-11-07T14:14:23.399847+00:00",
-  "status": "preparation_running",
+  "updated_at_utc": "2026-11-07T14:14:24.600693+00:00",
+  "status": "preparation_construction_returned_not_qualified",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
   "resource_preflight": {
