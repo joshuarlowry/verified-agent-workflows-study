@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-11-07T06:34:38.134642+00:00",
-  "status": "current_preparation_materials_not_launch_qualified",
+  "updated_at_utc": "2026-11-07T11:09:26.957765+00:00",
+  "status": "preparation_construction_running_not_calibration_or_scoring",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
   "resource_preflight": {
@@ -62,5 +62,7 @@
     "status": "combined 2 CPUs/8 GiB/zero swap/512 PIDs, separate loopback, supervisor readonly app and whole-group freeze of detached writers passed; actual endpoint controller and concurrent lanes pending"
   },
   "historical_preparation_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/status.json",
-  "historical_qualification_note": "Latest reports retain their original session and revision identifiers for provenance; they are evidence, not alternative plans."
+  "historical_qualification_note": "Latest reports retain their original session and revision identifiers for provenance; they are evidence, not alternative plans.",
+  "active_launch": "setup/launch.json",
+  "launch_snapshot_note": "GLM C1 evaluator running; Terra real harness adapter queued sequentially. This is a dispatch snapshot, not live status or qualification."
 }
