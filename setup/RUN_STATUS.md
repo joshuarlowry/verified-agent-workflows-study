@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 05:12:13 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 05:13:11 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 05:12:13 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 05:13:10 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-native-worker-short-socket-probe | google/gemma-4-31b-it | running | Nov 07, 2026 at 05:12:13 PM EST (UTC-0500) | — |
+| gemma-native-worker-short-socket-probe | google/gemma-4-31b-it | returned requires cross review | Nov 07, 2026 at 05:12:13 PM EST (UTC-0500) | Nov 07, 2026 at 05:13:10 PM EST (UTC-0500) |
 
 Repair AF_UNIX path length before any model call; two fixed handoffs, no benchmark task. Does not qualify Context/supervisor/broker/whole-workflow isolation.
 
