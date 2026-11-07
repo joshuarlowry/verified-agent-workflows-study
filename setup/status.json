@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-11-07T12:27:46.110580+00:00",
-  "status": "clean_restart_transport_gate_pending",
+  "updated_at_utc": "2026-11-07T12:39:38.775458+00:00",
+  "status": "preparation_running",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
   "resource_preflight": {
@@ -45,8 +45,8 @@
   },
   "historical_preparation_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/status.json",
   "historical_qualification_note": "Latest reports retain their original session and revision identifiers for provenance; they are evidence, not alternative plans.",
-  "active_launch": null,
-  "launch_snapshot_note": "Old queues stopped/superseded before further construction. No pre-fix fixture or review signoff is eligible. New clean jobs await final transport qualification.",
+  "active_launch": "setup/launch.json",
+  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "cohort_id": "clean-20261107T122746Z",
   "contamination_audit": "setup/contamination-audit.json"
 }
