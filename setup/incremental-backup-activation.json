@@ -1,0 +1,11 @@
+{
+  "changed_at_utc": "2026-11-07T20:48:48.936599+00:00",
+  "scope": "Artifact transport only; no model/provider/prompt/sandbox/budget changes",
+  "previous_helper_sha256": "6b2f605e09746258d9f180c3eb9304017d55e6fadf4da8acad53cf4a4fb68439",
+  "new_helper_sha256": "064f2b9b984e96efb922414908e49e0f59a453a20c7f7c35a0e0bc84014330f3",
+  "snapshot_script_sha256": "a56aff0450fd54fe46bc12a57f231a914b3c014fa231231f4e414973eb31d905",
+  "synthetic_checks": 13,
+  "prior_archives_preserved": true,
+  "future_format": "Incremental archives with complete inventories and verified parent digest; legacy full and split archives remain restorable. Official raw .tgz source artifacts now retained.",
+  "status": "enabled_after_13_synthetic_checks_real_restore_pending"
+}

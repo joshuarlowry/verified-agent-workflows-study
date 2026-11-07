@@ -1,0 +1,22 @@
+{
+  "kind": "synthetic_snapshot_restore_and_redaction_checks_not_model_calls",
+  "checks": {
+    "only_changed_files_written": true,
+    "chain_restores_current_bytes": true,
+    "removed_path_not_restored": true,
+    "credential_redacted_key_file_excluded": true,
+    "official_archive_retained": true,
+    "unchanged_snapshot_has_no_bodies": true,
+    "old_archives_immutable": true,
+    "corrupt_parent_rejected": true,
+    "unsafe_paths_rejected": true,
+    "binary_credential_export_rejected": true,
+    "split_archive_restores_without_original_tar": true,
+    "latest_archive_corruption_rejected": true,
+    "legacy_full_archive_compatible": true
+  },
+  "all_passed": true,
+  "model_calls": 0,
+  "source_sha256": "a56aff0450fd54fe46bc12a57f231a914b3c014fa231231f4e414973eb31d905",
+  "test_sha256": "305b5c094a815bdd8536eed0235a5b572a52284649bf7997ddbf891ed90e6c72"
+}
