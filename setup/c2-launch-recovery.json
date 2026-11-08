@@ -1,0 +1,76 @@
+{
+  "recorded_at_utc": "2026-11-08T15:14:28.557164+00:00",
+  "kind": "operator_pre_dispatch_launcher_recovery_not_model_retry",
+  "cause": "Coordinator copied a one-time C1 auth prerequisite into the C2 queue. The replay helper refused an existing output before database/model execution. Its wrapper touched older metadata/logs; those were recovered from verified checkpoint history.",
+  "failed_launch_model_calls": 0,
+  "old_metadata_recovery": {
+    "kind": "restore_prior_metadata_after_pre_dispatch_launcher_error",
+    "observed_utc": "2026-11-08T15:04:35.796379+00:00",
+    "cause": "Coordinator reused old C1 queue containing one-time auth replay invocation. Replay helper refused its existing record before any app/database/model execution, but wrapper overwrote old metadata/logs.",
+    "old_metadata_restored_exact": true,
+    "source_leaf_archive": {
+      "archive": "checkpoints/preparation-20261108T143329086065Z.tar.gz",
+      "sha256": "8aa085a2eacbe6225be85ae7859bf06e6d537a1a8d9f4bf1577569db43928f3a"
+    },
+    "archives_checked": 86,
+    "files": [
+      {
+        "file": "manifest.json",
+        "before_restore_sha256": "85742566dff40f30a3636165fa120350c9358b27dab70ca4e81b9de35615d066",
+        "restored_sha256": "91e8f6912d8bc0c4edf45c4c6edd2d79ca0bf5224dfdbfc0c59247b81f2e67b4",
+        "source_archive": "checkpoints/preparation-20261107T204217714922Z.tar.gz"
+      },
+      {
+        "file": "dispatch-publication.log",
+        "before_restore_sha256": "ad30715ae7fffffcb94a9fafccbc199e64e50f809711d1696b43983cedca4635",
+        "restored_sha256": "ad30715ae7fffffcb94a9fafccbc199e64e50f809711d1696b43983cedca4635",
+        "source_archive": "checkpoints/preparation-20261107T204217714922Z.tar.gz"
+      },
+      {
+        "file": "stdout.log",
+        "before_restore_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "restored_sha256": "86ff2ed6d9ce2345491d1553220f536e8cc57f7d897b269c2770cd036e837ecf",
+        "source_archive": "checkpoints/preparation-20261107T204217714922Z.tar.gz"
+      },
+      {
+        "file": "stderr.log",
+        "before_restore_sha256": "3b46935cbe0ad7e7bd759e58286bf49ba124dc9a131b2fcc7f6578b5e919d68f",
+        "restored_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_archive": "checkpoints/preparation-20261107T204217714922Z.tar.gz"
+      },
+      {
+        "file": "endpoint-publication.log",
+        "before_restore_sha256": "ad30715ae7fffffcb94a9fafccbc199e64e50f809711d1696b43983cedca4635",
+        "restored_sha256": "ad30715ae7fffffcb94a9fafccbc199e64e50f809711d1696b43983cedca4635",
+        "source_archive": "checkpoints/preparation-20261107T204217714922Z.tar.gz"
+      }
+    ],
+    "application_or_test_source_changed": false,
+    "database_replay_started": false,
+    "model_calls": 0,
+    "new_constructor_run_directory_exists": false,
+    "original_C1_grades_changed": false
+  },
+  "corrected_queue_sha256": "4d6ada8588b1fd4cafcd02cd5a4c388e2dbc7f6c7fee10bbba32993ab57b4fa5",
+  "current_service": "study2-c2-reference-construction-20261108t145449z-launch2",
+  "current_pid": 2456862,
+  "actual_native_capture_confirmed": true,
+  "baseline_policy_docs_namespace_preflight_passed": true,
+  "actual_requested_model": "openai/gpt-6.1-terra",
+  "actual_reasoning_effort": "high",
+  "actual_provider_policy": {
+    "only": [
+      "azure"
+    ],
+    "ignore": [
+      "azure/us",
+      "azure/eu"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true,
+    "zdr": true
+  },
+  "source_and_C1_grades_changed": false,
+  "C2_primary_dispatches": 0,
+  "scope": "One unstarted fixture-author role launched for the first time after deterministic queue repair; no model endpoint rescued or repeated."
+}
