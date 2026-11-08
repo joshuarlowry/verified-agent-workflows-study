@@ -40,7 +40,7 @@ Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus
 
 ## Blocking dependencies
 
-No unresolved gates for the admitted C1 block. Retain three original C1 ordinary endpoints and collect seven remaining fresh slots. Qualify C2-C4 before their30calibration slots and all scored packets before165scored runs; no sample reduction or quality rescue.
+No unresolved gates for the admitted C1 block. Continue the five untouched C1 slots; preserve the four ordinary final returns and the provider-disrupted failed workflow as recorded outcomes. Then qualify C2-C4 before their30calibration slots and all scored packets before165scored runs. No failed supervisor retry or sample reduction.
 
 **Optional extension:** blinded human patch review can later measure merge readiness and active review effort on frozen endpoints. It does not gate core setup, calibration or scoring. See [reviewer brief](REVIEWER_BRIEF.md); fixture/corpus qualification uses recorded cross-review by different authorized study models; it does not establish independent-family authorship.
 
