@@ -954,7 +954,7 @@
       "phase": "explicit_fixture_revision_only",
       "run_id": "clean-20261107T122746Z-c2-checks-revision2-glm-20261108T172211Z",
       "prompt_sha256": "9c93fa68d12971470f4aa0af634654e0df56eb27cb7f6c95702c4348fb034981",
-      "status": "staged_not_dispatched",
+      "status": "running",
       "fresh_session": true,
       "candidate_source_or_outcomes_supplied": false,
       "qualification": "Preserved first suite is not overwritten; revision2 requires different-model review and all runtime/negative/clean gates. No self-approval.",
@@ -977,5 +977,5 @@
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T17:38:26.657369+00:00"
+  "updated_at_utc": "2026-11-08T17:41:13.168536+00:00"
 }

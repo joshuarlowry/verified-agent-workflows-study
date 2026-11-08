@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T17:38:26.657369+00:00",
+  "snapshot_at_utc": "2026-11-08T17:41:13.168536+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -108,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 12:38:26 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 12:41:13 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -161,11 +161,21 @@
   },
   "checks_revision_2": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "staged_not_dispatched",
+    "status": "running",
     "fresh_session": true,
     "first_suite_and_review_unchanged": true,
     "candidate_source_or_outcomes_supplied": false,
-    "qualification_required": "Fresh different-model review plus complete positive/negative/clean/runtime gates before primary collection."
+    "qualification_required": "Fresh different-model review plus complete positive/negative/clean/runtime gates before primary collection.",
+    "service": "study2-c2-external-checks-revision2-20261108t172211z",
+    "pid": 2531201,
+    "startup_identity_verified": true,
+    "first_wire_requested_model": "z-ai/glm-5.3-flash",
+    "provider_only": [
+      "relace/fp4"
+    ],
+    "allow_fallbacks": false,
+    "zdr": true,
+    "actual_generation_metadata_audit": "pending first endpoint"
   },
   "review_triage_limits": {
     "raw_review_disposition_preserved": true,
