@@ -326,7 +326,7 @@
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
-  "usage_capture_smoke_results_sha256": "42de15137ac663598bf78285c19cee31ebb9168cdbfc76d1759e9065adc0b2d4",
+  "usage_capture_smoke_results_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
   "worker_broker_preflight_sha256": null,
   "randomization_seed": null,
   "randomized_schedule_sha256": null,

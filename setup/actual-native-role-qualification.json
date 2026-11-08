@@ -38,14 +38,14 @@
   ],
   "route_policy": "Every captured request pins provider only, require_parameters=true, ZDR=true, fallback=false; Terra high reasoning and Azure regional ignores verified.",
   "docs": "Context catalog/config/readiness inheritance checked across all7roles. Actual queries/results observed for all3direct agents and both restored Gemma workers. Supervisors did not directly query docs; same-server corpus/offline proofs plus actual catalog/config/readiness establish availability, not a falsely claimed direct retrieval.",
-  "native_builtin_tools": "context_get_docs,edit,glob,grep,read,shell,skill,write,execute. Generic skill/execute wrappers are declared; global skill/plugin deny policies apply, unrelated skill content is not offered/loaded, task/web tools are absent from actual catalogs.",
+  "native_builtin_tools": "Actual catalogs contain context_get_docs,edit,glob,grep,read,shell,skill,write,execute. Generic skill/execute wrappers remain declared; configuration denies global skill/plugin use except Context. No skill invocation occurred in this smoke; task/web tools are absent. This records observed availability/configuration, not an assertion that wrapper names disappear.",
   "process_environment": "Actual /workspace cwd AND inherited PWD verified in complete-agent, supervisor, worker and fresh-restored-worker native containers. Immutable browser path and public mount write denial verified; supervisor source is read-only.",
   "usage": {
     "input_inclusive_total": 188144,
     "billable_output_total": 5815,
     "cached_input_subset_total": 132808,
-    "reasoning_diagnostic_subset_not_added": 3792,
-    "provider_reported_total_usd": 0.028332931
+    "provider_reported_total_usd": 0.028332931,
+    "reported_reasoning_diagnostic_not_added": 3792
   },
   "cache_write_subset_total": 7183,
   "usage_semantics": {
