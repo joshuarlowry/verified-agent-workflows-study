@@ -1,6 +1,6 @@
 {
   "cohort_id": "clean-20261107T122746Z",
-  "updated_at_utc": "2026-11-08T00:22:56.832814+00:00",
+  "updated_at_utc": "2026-11-08T00:41:44.195681+00:00",
   "transport": "three-model native checks and observed billing reconciled",
   "scope_construction": {
     "model": "openai/gpt-6.1-terra",
@@ -41,11 +41,11 @@
   "supplemental_coordinator_review": "setup/scope-review.json",
   "supplemental_review_verdict": "changes_required; not a registered fresh-session signoff",
   "active_pipeline": {
-    "active_launch": "docs-metadata-repair-20261107T235927Z",
+    "active_launch": "c1-repaired-checker-review-20261107T225348Z",
     "queued_in_order": [
-      "docs-metadata-delta-review-20261107T235927Z",
-      "c1-repaired-checker-review-20261107T225348Z",
-      "c1-alternative-repair-20261108T001713Z"
+      "c1-alternative-repair-20261108T001713Z",
+      "docs-packaging-closure-20261108T003023Z",
+      "docs-packaging-closure-review-20261108T003023Z"
     ],
     "data_dependencies": "Documentation review uses its amended source plan, not baseline amendment. Baseline delta review uses baseline amendment, not docs findings. Three offline public replays require accepted baseline delta review and a fresh exact-lockfile image. Documentation extraction separately requires accepted source selection and preserved streams; staging review precedes Context archive build.",
     "order": "Sequential external model execution; heavy container build/replays wait for review endpoints. All originals preserved.",

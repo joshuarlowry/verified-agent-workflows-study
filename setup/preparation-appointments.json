@@ -720,9 +720,35 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized three-model construction/cross-review and explicit preparation repairs, original first returns retained",
       "qualification": "Metadata or alternative-only author revision; no new treatment, source approval or task acceptance. Reference/evaluator/conversation access prohibited for alternative repair."
+    },
+    {
+      "launch_id": "docs-packaging-closure-20261108T003023Z",
+      "role": "terra-docs-packaging-closure",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-docs-packaging-closure-terra-20261108T003023Z",
+      "manifest_created_at_utc": "2026-11-08T00:30:23.555553+00:00",
+      "prompt_sha256": "8c9df0d491c044a30a8b5cce0e8967792dcd708e467e0860d319b7e3ba2c2bd7",
+      "controller_sha256": "811087c406db60f916e75a6e1c90ca7a86a7030a1cfe5f3f47eab131d4505afd",
+      "phase": "bounded_verifier_notice_packaging_closure",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized artifact construction/cross-review; all previously approved content annotations and technical source remain byte-identical",
+      "qualification": "Only N01/N02 verifier portability/accurate evidence and exact approved NOTICE installation. No new sources, topics, index, models or treatment."
+    },
+    {
+      "launch_id": "docs-packaging-closure-review-20261108T003023Z",
+      "role": "glm-docs-packaging-closure-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-docs-packaging-closure-review-glm-20261108T003023Z",
+      "manifest_created_at_utc": "2026-11-08T00:30:23.675585+00:00",
+      "prompt_sha256": "1be18a18c1987ee04dcf7765ae24d22dc1d93c5618728e28ab978ead337402a2",
+      "controller_sha256": "ba289c580ea010a08da16cfed808cb99c72de7cd2aef6a7626cb652a04f0b77d",
+      "phase": "bounded_verifier_notice_packaging_closure",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized artifact construction/cross-review; all previously approved content annotations and technical source remain byte-identical",
+      "qualification": "Only N01/N02 verifier portability/accurate evidence and exact approved NOTICE installation. No new sources, topics, index, models or treatment."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T00:22:56.832814+00:00"
+  "updated_at_utc": "2026-11-08T00:41:44.195681+00:00"
 }

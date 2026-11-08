@@ -1,0 +1,19 @@
+{
+  "kind": "offline_supported_native_session_import_identity_probe",
+  "started_at_utc": "2026-11-08T00:36:21.694226+00:00",
+  "external_model_calls": 0,
+  "inference_socket_mounted": false,
+  "source": "Synthetic two-handoff transport session export, no app/task context.",
+  "checks": {
+    "import_exit_zero": true,
+    "export_same_identity": true,
+    "message_payloads_unchanged": true,
+    "list_exit_zero": true
+  },
+  "all_scoped_checks_passed": true,
+  "import_stdout_shape": "Imported session: ses_e47edd643ffeMBBgGhFDpZKRjK\n",
+  "restored_message_count": 10,
+  "cleanup_exit_code": 0,
+  "elapsed_seconds": 3.3039456469996367,
+  "limits": "Offline import/export semantics only, not live model continuity, atomic leasing or complete controller qualification."
+}
