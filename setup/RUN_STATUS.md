@@ -1,17 +1,13 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:28:03 AM EST (UTC-0500)
+**Status published:** Nov 08, 2026 at 01:36:11 AM EST
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:28:03 AM EST (UTC-0500)
+**Latest ledger event:** Nov 08, 2026 at 01:36:06 AM EST
 
-**construction returned not qualified**
+C1 calibration: **0/10 dispatched; 0/10 endpoints recorded.** Scored: **0**.
 
-| Job | Model | State | Started (Eastern) | Ended (Eastern) |
-|---|---|---|---|---|
-| glm-c1-additive-rule-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 01:09:36 AM EST (UTC-0500) | Nov 08, 2026 at 01:28:03 AM EST (UTC-0500) |
+| Workflow | Repetition | State | Endpoint |
+|---|---|---|---|
+| GLM supervising Gemma | 1 | setting_up | — |
 
-Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
-
-A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
-
-All displayed times use America/New_York, automatically switching between EST and EDT. UTC timestamps remain in the machine-readable record. This page updates automatically at job transitions and on explicit status refreshes. A newer status-check timestamp does not imply new agent work. It is not a live heartbeat. No chat/push/email notification is configured. [Machine-readable status](launch.json).
+Endpoints remain ungraded. A final return or deadline may leave incomplete work. Backups run between workflows. All displayed times use America/New_York. [Frozen admission](c1-calibration-admission.json).

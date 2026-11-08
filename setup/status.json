@@ -1,56 +1,24 @@
 {
-  "updated_at_utc": "2026-11-08T06:28:03.467053+00:00",
-  "status": "preparation_construction_returned_not_qualified",
-  "model_scope": "Gemma 4, GLM and Terra only",
-  "external_builder_work_launched": true,
-  "resource_preflight": {
-    "rootless_podman_cpuset": "failed: controller unavailable",
-    "alternative": "rootful Podman with restricted container capabilities and no network",
-    "single_container_test": {
-      "node": "v24.19.0",
-      "availableParallelism": 2,
-      "cpuset": "0-1",
-      "memoryMax": 8589934592
-    },
-    "two_lane_contention_and_full_isolation_qualification": "generic probe passed; actual app/inference/full isolation still pending",
-    "generic_probe_evidence": "setup/resource-preliminary.json",
-    "transport_mechanical_evidence": "setup/transport-preliminary.json",
-    "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
-    "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
-  },
-  "next_dependency": "First ten C1 calibration workflows remain the milestone. Standard checker running -> focused native/docs/control review -> checker review -> bounded client-only fixture repair. Qualify these components and the real model path, then dispatch the frozen ten-slot order. Optional concurrency/framework work deferred; no calibration/scored runs yet.",
-  "dependency_image": {
-    "candidate_build": "setup/image-build-preliminary.json",
-    "package_versions": "setup/image-package-versions.txt",
-    "status": "built; clean application/evaluator/isolation qualification pending"
-  },
-  "signal_environment_repair": {
-    "diagnosis": "setup/signal-preliminary.json",
-    "profile": "harness/security/study2-agent.profile",
-    "status": "Non-generative mechanics retained as reference; previous model approval excluded by contamination audit. Fresh final-runtime review and qualification pending.",
-    "existing_host_profiles_modified": false
-  },
-  "passive_artifact_backup": {
-    "repository": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
-    "visibility": "private",
-    "latest_checkpoint": "checkpoints/preparation-20261108T011739918749Z.tar.gz",
-    "scope": "Sanitized passive preparation checkpoint; active files can be partial; not atomic endpoint. Later automatic endpoint backups may exist.",
-    "credential_values_removed": true,
-    "sha256": "a91b58317ad7096ff721da38a718d72641ad3f6715e7f795a1b793dc16b7c9f9",
-    "published_private": true
-  },
-  "aggregate_two_role_boundary": {
-    "evidence": "setup/pod-boundary-preliminary.json",
-    "status": "combined 2 CPUs/8 GiB/zero swap/512 PIDs, separate loopback, supervisor readonly app and whole-group freeze of detached writers passed; actual endpoint controller and concurrent lanes pending"
-  },
-  "historical_preparation_record": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/e1750c4ddcf7614d179e3510303a1fd8e13f001d/setup/status.json",
-  "historical_qualification_note": "All pre-reset model-authored approvals are excluded. Historical mechanical probes are reference only; current final assembly still requires clean qualification.",
-  "active_launch": "setup/launch.json",
-  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
+  "kind": "registered_C1_calibration_metadata",
+  "status": "running",
+  "snapshot_at_utc": "2026-11-08T06:36:11.404352+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:36:11 AM EST",
+  "event_at_utc": "2026-11-08T06:36:06.502117+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 01:36:06 AM EST",
   "cohort_id": "clean-20261107T122746Z",
-  "contamination_audit": "setup/contamination-audit.json",
-  "updated_at_eastern": "Nov 08, 2026 at 01:28:03 AM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 08, 2026 at 01:28:03 AM EST (UTC-0500)",
-  "dependency_image_recovery": "setup/dependency-image-preservation.json",
-  "pilot_readiness": "setup/pilot-readiness.json"
+  "calibration_block_size": 10,
+  "calibration_dispatched": 0,
+  "calibration_endpoints": 0,
+  "scored_runs": 0,
+  "rows": [
+    {
+      "position": 1,
+      "arm": "GLM supervising Gemma",
+      "repetition": 1,
+      "run_id": "cal-c1-01",
+      "status": "setting_up"
+    }
+  ],
+  "quality": "Not graded; an endpoint is not verified completion.",
+  "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions."
 }
