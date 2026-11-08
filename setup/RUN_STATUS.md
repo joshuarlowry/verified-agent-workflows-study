@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:35:00 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:35:49 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:29:40 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:35:48 PM EST (UTC-0500)
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-C2-alternative-revision-2 | google/gemma-4-31b-it | blocked preserved | Nov 08, 2026 at 01:27:32 PM EST (UTC-0500) | Nov 08, 2026 at 01:29:40 PM EST (UTC-0500) |
+| gemma-C2-alternative-revision-2-clean-input | google/gemma-4-31b-it | running | Nov 08, 2026 at 01:35:48 PM EST (UTC-0500) | — |
 
-Stopped/preserved unscored setup attempt: operator feedback extraction accidentally included one sentence about another candidate; exposure confirmed. All overhead retained. Fresh identical-prompt clean session staged with only that foreign sentence removed; no contaminated source/conversation inherited. No primary or scored result changed.
+Staged clean session after operator feedback-filtering error: one foreign-candidate sentence was present in prior unscored fixture attempt, which was stopped/preserved. Same product prompt; corrected own-source-only packet; no contaminated output/conversation imported. All overhead retained. No primary/scored data changed.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
