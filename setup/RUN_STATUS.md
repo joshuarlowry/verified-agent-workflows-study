@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 11:08:01 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 11:13:07 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 11:08:01 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 11:13:06 AM EST (UTC-0500)
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-C2-independent-alternative | google/gemma-4-31b-it | blocked preserved | Nov 08, 2026 at 10:30:46 AM EST (UTC-0500) | Nov 08, 2026 at 11:08:01 AM EST (UTC-0500) |
+| glm-C2-independent-external-checks | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 11:13:06 AM EST (UTC-0500) | — |
 
-Original baseline/public inputs only. No reference/evaluator/previous outcomes or conversations supplied; prompt frozen before reference dispatch. Source difference must later qualify.
+Staged, not launched. Wait for actual Gemma alternative first return and backup; no reference/alternative/outcomes included. Checks prompt frozen before reference construction.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
