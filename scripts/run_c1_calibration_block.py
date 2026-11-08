@@ -179,6 +179,28 @@ def main():
                         (root/'controller-ledger.sql').write_text('\n'.join(destination.iterdump())+'\n')
                     finally:
                         destination.close();source.close()
+                    parent_role = 'supervisor' if 'supervising' in slot['arm'] else 'complete_agent'
+                    home = root/(parent_role+'-home')
+                    native_db = home/'.local/share/opencode/opencode.db'
+                    if native_db.exists():
+                        # Preserve supported native state after process quiescence;
+                        # never follow a subject-created link out of its home.
+                        for part in [home,home/'.local',home/'.local/share',native_db.parent,native_db]:
+                            if part.is_symlink():
+                                raise ValueError('Native-state backup path contains a symlink')
+                        if not native_db.is_file() or native_db.stat().st_nlink != 1:
+                            raise ValueError('Native-state backup is not a private regular file')
+                        native_source = sqlite3.connect(native_db.as_uri()+'?mode=ro',uri=True)
+                        native_snapshot = sqlite3.connect(root/'captures/parent/native-state.snapshot')
+                        try:
+                            native_source.backup(native_snapshot)
+                            if native_snapshot.execute('PRAGMA integrity_check').fetchone() != ('ok',):
+                                raise ValueError('Native-state snapshot failed integrity check')
+                        finally:
+                            native_snapshot.close();native_source.close()
+                        row['parent_native_state_snapshot'] = 'preserved'
+                    else:
+                        row['parent_native_state_snapshot'] = 'unavailable'
                     backup = subprocess.run([sys.executable,str(REPO/'scripts/checkpoint_preparation.py')],
                                             capture_output=True,text=True)
                     (root/'checkpoint.stdout.log').write_text(backup.stdout)
