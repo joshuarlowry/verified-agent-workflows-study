@@ -74,7 +74,8 @@ def main():
             raise ValueError('Unregistered image')
         sys.path.insert(0, str(harness/'src'))
         from workflow_bootstrap import run_mechanical_workflow, validate_pilot_admission
-        from core import Store
+        from core import Store, registered_model
+        from check_registered_serving import preflight, postflight
         staged = json.loads(protected(block/'prepared-workspaces.json').read_text())
         workspaces = {r['run_id']:r for r in staged['records']}
         docs = manifests['docs']
@@ -114,6 +115,8 @@ def main():
             row = {**slot,'controller_started':stamp(),'status':'setting_up','root':str(root)}
             state['runs'].append(row);save()
             done = threading.Event()
+            models_by_role = {role:registered_model(reg,slot['arm'],role) for role in
+                             (['supervisor','worker'] if 'supervising' in slot['arm'] else ['complete_agent'])}
             def checkpoints():
                 next_at = 1800
                 while not done.wait(5):
@@ -137,6 +140,7 @@ def main():
                         (root/'passive-observer-error.json').write_text(json.dumps({'observed':stamp(),'error_type':type(exc).__name__})+'\n')
             observer = threading.Thread(target=checkpoints,daemon=True);observer.start()
             try:
+                preflight(list(models_by_role.values()),block/('provider-preflight-'+run_id))
                 report = run_mechanical_workflow(root=root,registration=reg,arm=slot['arm'],prompt=prompt,image=IMAGE,
                     cpus='2,3',workspace=Path(workspaces[run_id]['workspace']),docs=context['docs'],context_inputs=context,
                     gateway_python='/opt/hermes/litellm-1.103.3/venv/bin/python',
@@ -146,6 +150,13 @@ def main():
                            native_exit_code=report['result']['native']['exit_code'])
                 save()
                 if report['global_admission_stopped'] or row['endpoint_reason'] not in ('final','deadline'):
+                    state.update(status='stopped_preserving_state',ended=stamp());save();return
+                try:
+                    postflight(root,models_by_role,'/run/credentials/hermes-litellm.service/OPENROUTER_API_KEY')
+                    row['actual_provider_resolution'] = 'verified';save()
+                except Exception as exc:
+                    # Administrative postflight cannot change the primary endpoint.
+                    row.update(actual_provider_resolution='unverified_or_drift',postflight_error_type=type(exc).__name__)
                     state.update(status='stopped_preserving_state',ended=stamp());save();return
             except BaseException as exc:
                 row.update(status='infrastructure_failure_preserved',ended=stamp(),error_type=type(exc).__name__,error=str(exc))
