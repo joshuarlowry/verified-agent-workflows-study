@@ -1,7 +1,7 @@
 {
-  "recorded_at_utc": "2026-11-08T06:18:11.860364+00:00",
+  "recorded_at_utc": "2026-11-08T06:35:30.448028+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
-  "admitted": false,
+  "admitted": true,
   "calibration_runs": 0,
   "scored_runs": 0,
   "protocol_revision": 13,
@@ -9,7 +9,7 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "Feature/regression/DB20-run matrix passed. Additive-test source-rule closure now passes baseline and both valid fixtures; fresh GLM source review remains active. Exact reviewed role texts installed and38native checks passed. Final seven-manifest freeze/admission pending.",
+      "state": "C1 finite machine packet qualified and admitted.7root-protected manifests frozen; all10slots validated before dispatch. Final GLM source review found no blocking code defect; its omitted citation inputs were reconciled with exact matching bytes in a separate controller record.",
       "existing_evidence": "Current single-worker/first-failure matrix completed13cases: reference21/21\u00d73; alternative21/21\u00d73; baseline and6negative controls reject for intended reasons. Skipped dependent cases are unverified. Full non-aborting diagnostics are also retained.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
@@ -52,6 +52,6 @@
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 08, 2026 at 01:18:11 AM EST",
-  "next_collection": "Registered ten-slot C1 calibration order, starting GLM supervising Gemma; no new treatment or task scope. Dispatch remains blocked until current qualification and frozen manifests pass."
+  "recorded_at_eastern": "Nov 08, 2026 at 01:35:30 AM EST",
+  "next_collection": "Launch existing randomized10-slot C1 block; first GLM supervising Gemma. Endpoint backups occur between workflows; passive Eastern status publication observes metadata only."
 }

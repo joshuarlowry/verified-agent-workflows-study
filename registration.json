@@ -1,13 +1,13 @@
 {
   "schema_version": 3,
   "protocol_revision": 13,
-  "status": "draft_not_launchable",
+  "status": "C1_calibration_admitted_scored_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
-  "baseline_commit": null,
-  "image_digest": null,
-  "lockfile_sha256": null,
+  "baseline_commit": "ac96364336be35f0d8d7dadb2717b951cd3c9ac4",
+  "image_digest": "sha256:3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "lockfile_sha256": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
   "models": [
     {
       "name": "Gemma 4",
@@ -15,14 +15,14 @@
       "harness": "OpenCode -> LiteLLM -> OpenRouter",
       "resolved_id": "google/gemma-4-31b-it-20260402",
       "provider": "Crusoe",
-      "settings_sha256": null,
+      "settings_sha256": "05a6562397f6f7acd4d20649e474f43bc71eb7a01c4ac6b682e5a4f5d9bd22ae",
       "provider_tag": "crusoe/bf16",
       "quantization": "bf16",
-      "readiness": "direct_ZDR_plain_and_auto_tool_passed_full_adapter_pending",
+      "readiness": "common_native_adapter_qualified_C1_pins_frozen",
       "zdr_required": true,
       "allow_fallbacks": false,
-      "provider_pin_applied_to_study": false,
-      "full_harness_qualification_sha256": null,
+      "provider_pin_applied_to_study": true,
+      "full_harness_qualification_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
       "previous_candidate": "CoreWeave FP4; pre-study readiness only; no scored outcomes",
       "serving_label": "Gemma as served by Crusoe at catalog-reported BF16"
     },
@@ -32,14 +32,14 @@
       "harness": "OpenCode -> LiteLLM -> OpenRouter",
       "resolved_id": "z-ai/glm-5.3-flash-20260826",
       "provider": "Relace",
-      "settings_sha256": null,
+      "settings_sha256": "f270279036b304f6f761491431131f16b79f761e633802867fde883555c7ff0a",
       "provider_tag": "relace/fp4",
       "quantization": "fp4",
-      "readiness": "streaming_OpenCode_LiteLLM_Relace_auto_tool_roundtrip_and_billing_mapping_passed_Context_and_broker_pending",
+      "readiness": "common_native_adapter_qualified_C1_pins_frozen",
       "zdr_required": true,
       "allow_fallbacks": false,
-      "provider_pin_applied_to_study": false,
-      "full_harness_qualification_sha256": null
+      "provider_pin_applied_to_study": true,
+      "full_harness_qualification_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b"
     },
     {
       "name": "Terra",
@@ -47,15 +47,15 @@
       "harness": "OpenCode -> LiteLLM -> OpenRouter",
       "reasoning": "high",
       "resolved_id": "openai/gpt-6.1-terra-20261026",
-      "settings_sha256": null,
+      "settings_sha256": "cdf022a15bc68b179e5404dccd5bcb581e6881048fc49a6040d9f5c92bb3ccf9",
       "provider": "Azure",
       "provider_tag": "azure",
       "quantization": "not_disclosed",
-      "readiness": "transport_tools_passed_not_full_study_qualified",
+      "readiness": "common_native_adapter_qualified_C1_pins_frozen",
       "zdr_required": true,
       "allow_fallbacks": false,
-      "provider_pin_applied_to_study": false,
-      "full_harness_qualification_sha256": null
+      "provider_pin_applied_to_study": true,
+      "full_harness_qualification_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b"
     }
   ],
   "core_configurations": [
@@ -310,24 +310,24 @@
     "sealed_suite": "new cases and combinations of disclosed requirements",
     "hidden_feedback_during_primary": false,
     "ui_locator_policy": "accessible roles/names/labels; justified preregistered exceptions only",
-    "acceptance_suite_sha256": null,
+    "acceptance_suite_sha256": "4015ffd36a28c5316432bca048fc7069448ade34a47f94f0aba0d33ccbb962e4",
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
-    "independent_C1_evaluator_status": "Terra closure source-accepted by fresh GLM review, bounded preparation only. Existing positive/control cold matrix and native-auth replays retained. Complete protected original17-case HTTP/UI regression execution and finite machine-scope integration are being consolidated under revision13 before final qualification; no per-patch AI/human judge and no calibration admission.",
+    "independent_C1_evaluator_status": "Qualified finite machine packet for initial C1 calibration only; source/test preservation,20clean feature/regression/DB runs and native-auth proofs bound in frozen manifest.",
     "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json",
     "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json",
     "independent_C1_checker_review": "setup/c1-checker-review.json",
     "independent_C1_checker_repair_evidence": "setup/c1-checker-repair-endpoint.json",
     "C1_reference_public_regression_evidence": "setup/c1-reference-public-replays-20261107T232728Z.json",
     "C1_alternative_runtime_status": "Joint Gemma two-query server + Terra client repair source-accepted by GLM;3cold full public replays and3non-test native-auth replays passed. In-session staleness is not an additional C1 rule. Current feature checker has unresolved source defects; task qualification pending.",
-    "current_C1_checker_evidence": "setup/c1-standard-checker-validation.json",
+    "current_C1_checker_evidence": "setup/c1-final-runtime-matrix.json",
     "historical_evaluator_records_notice": "Earlier independent evaluator/checker evidence fields refer to retained historical preparation revisions, not the current acceptance suite. Current status and evidence above control; acceptance_suite_sha256 remains null.",
-    "protected_baseline_regression_status": "Original project suites passed on baseline and both known valid fixtures, but protected architecture-independent HTTP/UI execution and migration binding are being completed before calibration. Existing source/import/selector assumptions will not become hidden implementation requirements."
+    "protected_baseline_regression_status": "All17protected regression cases pass baseline and3fresh replays each of two valid implementations. Documented assertion migrations remain finite bounds; subject tests are supplementary."
   },
-  "prompt_bundle_sha256": null,
-  "harness_manifest_sha256": null,
+  "prompt_bundle_sha256": "98c99fc8ab5a4fed643c3251559f67a863a76056b709701eb212b93247e7cf5a",
+  "harness_manifest_sha256": "0ca578a4ddd6e26335f5bb3f42e2c260d2608097e8c99e1848813d427ab242ba",
   "usage_capture_smoke_results_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
-  "worker_broker_preflight_sha256": null,
+  "worker_broker_preflight_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
   "randomization_seed": null,
   "randomized_schedule_sha256": null,
   "disposable_database_execution_authorized": true,
@@ -620,13 +620,17 @@
       "id": "fixture_and_corpus",
       "phase": "before_calibration",
       "detail": "qualify baseline, calibration tasks, source corpus, evaluator and isolated DB authorization",
-      "resolved": false
+      "resolved": true,
+      "resolution_scope": "Initial C1 calibration block only. C2-C4 qualification and all scored-task/material freezes remain pending.",
+      "evidence": "setup/c1-calibration-admission.json"
     },
     {
       "id": "authored_treatment_review",
       "phase": "before_calibration",
       "detail": "record and cross-review authoritative role prompts, handoff templates, task contracts and FAQ using different authorized models; retain per-artifact hashes and revisions",
-      "resolved": false
+      "resolved": true,
+      "resolution_scope": "Initial C1 calibration block only. C2-C4 qualification and all scored-task/material freezes remain pending.",
+      "evidence": "setup/c1-calibration-admission.json"
     },
     {
       "id": "resource_lanes",
@@ -813,7 +817,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "Preparation only,0calibration/0scored. Common adapter qualified across actual5workflows/7roles/30generations, including exact models/providers, Context/broker/native history and provider/native/account billing. Final protected regression/source/evaluator consolidation and review remain under fixture_and_corpus/authored_treatment_review; see setup/pilot-readiness.json.",
+  "setup_progress": "C1 ten-slot calibration admitted after frozen machine qualification. Remaining30calibration and165scored slots retain all existing preparation gates; no run result inferred from readiness.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -924,14 +928,52 @@
         "run_id": "cal-c1-10"
       }
     ],
-    "admitted": false,
-    "admission_evidence_sha256": null,
+    "admitted": true,
+    "admission_evidence_sha256": "e6521775af10b7892e566cb89f84a4c0d20c907b27a2fc22fcf69aad32f3d103",
     "before_dispatch": [
       "C1 standard acceptance suite independently reviewed, frozen and qualified against baseline/reference/valid alternate/negative controls",
       "Single-workflow common native harness, real model roles, approved documentation, capture/accounting and endpoint integrity qualified",
       "Source/lock/image/prompt/provider/tool manifests frozen for this block"
     ],
-    "remaining_preparation": "Qualify C2-C4 before their calibration slots and the first five scored packets before scoring; remaining builders remain blind to comparative outcomes. Full planned sample and all registered systems/endpoints remain unchanged."
+    "remaining_preparation": "Qualify C2-C4 before their calibration slots and the first five scored packets before scoring; remaining builders remain blind to comparative outcomes. Full planned sample and all registered systems/endpoints remain unchanged.",
+    "admitted_at_utc": "2026-11-08T06:32:38.959231+00:00",
+    "frozen_manifests": [
+      {
+        "category": "baseline",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/baseline.json",
+        "sha256": "ab5a449f86b4f16ea20558ec3e8ba948bab807c3477307d70a144b636cc0a6bb"
+      },
+      {
+        "category": "image",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/image.json",
+        "sha256": "75fbc541180663e7fe1ef664057e52ce1ed27b83add4be4651400240b667cf60"
+      },
+      {
+        "category": "harness",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/harness.json",
+        "sha256": "0ca578a4ddd6e26335f5bb3f42e2c260d2608097e8c99e1848813d427ab242ba"
+      },
+      {
+        "category": "docs",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/docs.json",
+        "sha256": "9662e1c3af13c284cc9776e1b0e39a8a7627cf9e5c143015cb51a22a0cac17fa"
+      },
+      {
+        "category": "acceptance",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/acceptance.json",
+        "sha256": "4015ffd36a28c5316432bca048fc7069448ade34a47f94f0aba0d33ccbb962e4"
+      },
+      {
+        "category": "prompts",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/prompts.json",
+        "sha256": "98c99fc8ab5a4fed643c3251559f67a863a76056b709701eb212b93247e7cf5a"
+      },
+      {
+        "category": "model_roles",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/model_roles.json",
+        "sha256": "088575f64b0db41980232f91be02fb11fbcdd025a2d74813db041317860c4907"
+      }
+    ]
   },
   "convergence_amendment": {
     "recorded_at_utc": "2026-11-08T02:21:49.735221+00:00",
