@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 10:48:58 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 11:05:00 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 10:48:58 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 11:05:00 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-final-pilot-delta-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 10:48:58 PM EST (UTC-0500) | — |
+| glm-final-pilot-delta-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 07, 2026 at 10:48:58 PM EST (UTC-0500) | Nov 07, 2026 at 11:05:00 PM EST (UTC-0500) |
 
 Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
 
