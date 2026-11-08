@@ -1,6 +1,6 @@
 # Current run status
 
-**Status published:** Nov 08, 2026 at 08:35:02 AM EST
+**Status published:** Nov 08, 2026 at 08:37:25 AM EST
 
 **Latest ledger event:** Nov 08, 2026 at 08:30:06 AM EST
 
@@ -19,3 +19,5 @@ C1 calibration: **10/10 endpoints recorded** across the initial schedule. Curren
 Block version: **3**. Earlier ordinary endpoints carried forward: **3**. Prior interrupted attempts retained: **2**. [First interruption](c1-v1-technical-interruption.json) · [DNS interruption](c1-v2-dns-interruption.json).
 
 Endpoints remain ungraded. A final return or deadline may leave incomplete work. Backups run between workflows. All displayed times use America/New_York. [Frozen admission](c1-calibration-admission.json).
+
+**Frozen acceptance grading is running.** All ten nominal endpoints and backups are preserved: eight final returns and two infrastructure failures. No verified completion count yet. [Grading status](c1-grading-status.json).
