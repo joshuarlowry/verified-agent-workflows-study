@@ -1,8 +1,8 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 12:01:25 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 12:03:32 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 12:01:25 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 12:03:32 AM EST (UTC-0500)
 
 **running**
 
@@ -13,8 +13,8 @@
 | arm2-complete_agent | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 11:59:27 PM EST (UTC-0500) | Nov 08, 2026 at 12:00:04 AM EST (UTC-0500) |
 | arm3-supervisor | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 12:00:06 AM EST (UTC-0500) | Nov 08, 2026 at 12:01:24 AM EST (UTC-0500) |
 | arm3-worker | google/gemma-4-31b-it | returned requires cross review | Nov 08, 2026 at 12:00:06 AM EST (UTC-0500) | Nov 08, 2026 at 12:01:24 AM EST (UTC-0500) |
-| arm4-supervisor | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 12:01:25 AM EST (UTC-0500) | — |
-| arm4-worker | google/gemma-4-31b-it | running | Nov 08, 2026 at 12:01:25 AM EST (UTC-0500) | — |
+| arm4-supervisor | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 12:01:25 AM EST (UTC-0500) | Nov 08, 2026 at 12:03:32 AM EST (UTC-0500) |
+| arm4-worker | google/gemma-4-31b-it | returned requires cross review | Nov 08, 2026 at 12:01:25 AM EST (UTC-0500) | Nov 08, 2026 at 12:03:32 AM EST (UTC-0500) |
 
 Actual seven-role Context/native capture qualification only; 0 calibration and 0 scored runs. No automatic rescue.
 
