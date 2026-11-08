@@ -926,7 +926,7 @@
       "phase": "fixture_cross_review_only",
       "prompt_sha256": "b7e5539bcb5f53576ff963d3c37af01d7d7bcddb0f31e27b3131f3e607ad97da",
       "run_id": "clean-20261107T122746Z-c2-checks-review-terra-20261108T170635Z",
-      "status": "staged_not_dispatched",
+      "status": "running",
       "fresh_session": true,
       "self_approval": false,
       "qualification": "Appointment only. Different-model fresh review of immutable artifacts; no model-family independence or task admission.",
@@ -950,5 +950,5 @@
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T17:07:12.333590+00:00"
+  "updated_at_utc": "2026-11-08T17:13:28.419968+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T17:07:12.333590+00:00",
+  "snapshot_at_utc": "2026-11-08T17:13:28.419968+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -14,7 +14,17 @@
     "raw_capture_requests_verified": 67,
     "source_git_packaged": true,
     "source_patch_roundtrip_exact": true,
-    "existing_full_app_and_native_auth_replays": "Queued: three separate clean environments for each helper, start only after active GLM first endpoint and supported backup. Not C2 independent feature acceptance."
+    "existing_full_app_and_native_auth_replays": {
+      "app": "3 of 3 separate clean containers passed all native public checks",
+      "auth": "3 of 3 separate clean containers passed the original native non-test authentication probe",
+      "source_files": 22,
+      "source_bytes_unchanged": true,
+      "records": [
+        "setup/c2-reference-app-three-clean-20261108T1623Z.json",
+        "setup/c2-reference-auth-three-clean-20261108T1623Z.json"
+      ],
+      "scope": "Native regression/auth/runtime evidence only; independent C2 feature acceptance and full task qualification remain pending."
+    }
   },
   "alternative": {
     "model": "google/gemma-4-31b-it",
@@ -96,10 +106,26 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 12:07:12 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 12:13:28 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
-    "checks": "Terra high, staged fresh session; original baseline/public inputs plus frozen suite only, no candidate implementations.",
+    "checks": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": "high",
+      "status": "running",
+      "service": "study2-c2-checks-cross-review-20261108t170635z",
+      "pid": 2519224,
+      "startup_identity_verified": true,
+      "first_wire_requested_model": "openai/gpt-6.1-terra",
+      "first_wire_reasoning_effort": "high",
+      "provider_only": [
+        "azure"
+      ],
+      "zdr": true,
+      "allow_fallbacks": false,
+      "inputs": "Original baseline/public scope/policy/docs plus frozen first suite only; no candidate implementations or conversations.",
+      "actual_generation_metadata_audit": "pending first endpoint"
+    },
     "candidates": "GLM, staged fresh session; anonymized unmodified first source snapshots plus original baseline/public inputs only, no suite or conversations.",
     "self_approval": false
   }
