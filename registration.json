@@ -386,8 +386,8 @@
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
     "coverage_gaps": [
-      "GLM independently resolved R01-R06; remaining N01/N02 concern portable verification/evidence and exact approved NOTICE installation. Separate closure and delta review queued.",
-      "Context packages/index, all22queries, offline seven-role parity and final freeze remain pending.",
+      "Accepted source package preserves explicit moving-page/patch applicability limits; source acceptance does not imply exact patch-version coverage for every page.",
+      "Context packages/index, all22queries, offline seven-role parity and final corpus freeze remain pending.",
       "Raw upstream bodies remain private; no legal-certification claim."
     ],
     "preparation_plan": "STUDY_PLAN.md",
@@ -398,19 +398,27 @@
     "required_role_matrix": "registration.json#/core_configurations",
     "generic_query_suite_frozen_before_model_runs": true,
     "exact_queries_and_expected_sources_sha256": null,
-    "source_version_coverage_review_signoff": null,
+    "source_version_coverage_review_signoff": {
+      "reviewer_model": "z-ai/glm-5.3-flash",
+      "reviewer_session": "ses_e47614579ffe4LT7DZlYMnNsbf",
+      "review_sha256": "815e54e7bf6947131663b484d0564dddad3140c871208fd0e36ff09e786951d5",
+      "source_manifest_sha256": "d40519126eac8fc21af0925a7f73f5d066e91ff3f337e3db0296ccacedfab58e",
+      "source_inventory_sha256": "088c07978f62485bc358e1edc90d202f33eee8ccb4fcd5ff1434f5b842a2be02",
+      "evidence": "setup/docs-package-source-accepted.json",
+      "scope": "Accepted exact 119-file source package and recorded version/coverage limits only; no Context retrieval/isolation/role qualification or final corpus freeze."
+    },
     "runtime_compatibility_verified": false,
     "curator": {
       "model": "openai/gpt-6.1-terra",
       "session": "ses_e484a21b7ffeTsJZ56wk8qJJgr",
       "provider_tag": "azure",
       "reasoning_effort": "high",
-      "status": "all_six_content_metadata_findings_closed_final_portable_verifier_and_notice_packaging_pending",
+      "status": "source_package_cross_review_accepted_context_package_build_queued",
       "independence_claim": false,
       "source_selection_run": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
       "source_amendment_run": "clean-20261107T122746Z-docs-source-repair-terra-20261107T193704Z",
       "run_id": "clean-20261107T122746Z-docs-extraction-terra-20261107T201115Z",
-      "latest_revision_run": "clean-20261107T122746Z-docs-extraction-completion-terra-20261107T213919Z"
+      "latest_revision_run": "clean-20261107T122746Z-docs-packaging-closure-terra-20261108T003023Z"
     },
     "review_scope": [
       "source selection and omissions",
@@ -427,8 +435,8 @@
       "model": "z-ai/glm-5.3-flash",
       "source_review_run": "clean-20261107T122746Z-docs-amendment-review-glm-20261107T200337Z",
       "source_review_status": "accepted_source_plan_only",
-      "extraction_review_run": "clean-20261107T122746Z-docs-extraction-review-glm-20261107T204047Z",
-      "extraction_review_status": "queued",
+      "extraction_review_run": "clean-20261107T122746Z-docs-packaging-closure-review-glm-20261108T003023Z",
+      "extraction_review_status": "accepted_exact_source_package_only",
       "independent_model_family_claim": false
     },
     "cross_reviewer_eligibility": "different authorized study model in a fresh session; cross-review with disclosed subject-family dependence",
@@ -437,8 +445,8 @@
     "publication_status": "raw technical extracts/archives/downloads/logs withheld; study-generated provenance and review metadata public",
     "selection_evidence": "setup/docs-source-approval.json",
     "original_selection_evidence": "setup/docs-selection.json",
-    "extraction_status": "partial_blocked_not_indexed",
-    "extraction_evidence": "setup/docs-extraction-endpoint.json"
+    "extraction_status": "source_package_accepted_not_indexed",
+    "extraction_evidence": "setup/docs-package-source-accepted.json"
   },
   "application_preparation": {
     "plan": "STUDY_PLAN.md",
@@ -579,8 +587,9 @@
       "id": "corpus_reviewer",
       "phase": "before_calibration",
       "detail": "different authorized study model cross-reviews source inventory and omissions in a separate session; family dependence disclosed",
-      "resolved": false,
-      "resolution_scope": "Earlier model review excluded; fresh source/coverage/extraction review required"
+      "resolved": true,
+      "resolution_scope": "Different-model source selection/omissions/coverage/extraction/notice review accepted; Context package and runtime qualification remain under fixture_and_corpus/common_adapter gates.",
+      "evidence": "setup/docs-package-source-accepted.json"
     },
     {
       "id": "fixture_builders",

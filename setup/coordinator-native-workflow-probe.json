@@ -79,5 +79,21 @@
     "elapsed_seconds": 2.9012914200138766,
     "external_model_calls": 0,
     "cleanup_exit_code": 0
+  },
+  "parent_final_during_worker_probe": {
+    "checks": {
+      "parent_final_terminal": true,
+      "worker_was_inflight": true,
+      "one_worker_request": true,
+      "two_parent_requests": true,
+      "no_worker_handoff_fabricated": true,
+      "endpoint_frozen": true,
+      "whole_cgroup_empty": true
+    },
+    "all_scoped_checks_passed": true,
+    "elapsed_seconds": 4.920801112020854,
+    "external_model_calls": 0,
+    "cleanup_exit_code": 0,
+    "scope": "Parent final remains terminal while worker is awaiting inference; cgroup empty and no handoff fabricated. Raw cancellation/capture errors retained; transport drain/accounting still require source review."
   }
 }
