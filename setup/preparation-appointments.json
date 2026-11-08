@@ -917,7 +917,7 @@
       "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged.",
       "actual_launch_id": "c2-external-check-construction-20261108T154648Z",
       "dispatch_utc": "2026-11-08T16:13:06.956956+00:00",
-      "actual_state_at_provenance_update": "running"
+      "actual_state_at_provenance_update": "returned_requires_cross_review"
     },
     {
       "launch_id": "c2-cross-review-appointments-20261108T1615Z",
@@ -925,12 +925,13 @@
       "requested_model": "openai/gpt-6.1-terra",
       "phase": "fixture_cross_review_only",
       "prompt_sha256": "b7e5539bcb5f53576ff963d3c37af01d7d7bcddb0f31e27b3131f3e607ad97da",
-      "run_id": null,
-      "status": "appointed_not_dispatched",
+      "run_id": "clean-20261107T122746Z-c2-checks-review-terra-20261108T170635Z",
+      "status": "staged_not_dispatched",
       "fresh_session": true,
       "self_approval": false,
       "qualification": "Appointment only. Different-model fresh review of immutable artifacts; no model-family independence or task admission.",
-      "authorization": "Existing three-model fixture construction/cross-review waiver."
+      "authorization": "Existing three-model fixture construction/cross-review waiver.",
+      "actual_launch_id": "c2-checks-cross-review-20261108T170635Z"
     },
     {
       "launch_id": "c2-cross-review-appointments-20261108T1615Z",
@@ -949,5 +950,5 @@
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T16:20:58.426479+00:00"
+  "updated_at_utc": "2026-11-08T17:07:12.333590+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T16:35:36.557703+00:00",
+  "snapshot_at_utc": "2026-11-08T17:07:12.333590+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -60,13 +60,12 @@
   },
   "external_checks": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "running",
+    "status": "first_suite_returned_frozen_not_qualified",
     "prompt_frozen_before_reference": true,
     "reference_or_alternative_inputs": false,
     "provider_metadata_preflight_utc": "2026-11-08T15:59:53.454574+00:00",
     "provider_metadata_matches": true,
     "service": "study2-c2-external-check-construction-20261108t154648z",
-    "pid": 2486845,
     "dispatch_utc": "2026-11-08T16:13:06.956956+00:00",
     "startup_identity_verified": true,
     "actual_first_requested_model": "z-ai/glm-5.3-flash",
@@ -78,20 +77,30 @@
       "require_parameters": true,
       "zdr": true
     },
-    "actual_generation_identity_audit": "pending first endpoint",
-    "passive_observation": {
-      "native_requests": 66,
-      "successful_usage_rows": 66,
-      "native_error_events": 0,
-      "upstream_idle_timeout_message_mentions": 0,
-      "first_suite_returned": false,
-      "quality_inspected": false
-    }
+    "actual_generation_identity_audit": "all 99 known generation IDs verified",
+    "agent_exit_code": 0,
+    "native_elapsed_seconds": 3107.4566393300192,
+    "first_endpoint_frozen_files": 90,
+    "actual_dated_model": "z-ai/glm-5.3-flash-20260826",
+    "actual_provider": "Relace",
+    "successful_generation_ids_verified": 99,
+    "raw_capture_requests_verified": 99,
+    "raw_capture_all_passed": true,
+    "known_provider_reported_preparation_cost_usd": "0.3090660625",
+    "provider_input_tokens_inclusive": 9935317,
+    "provider_completion_tokens": 101429,
+    "cost_scope": "Unscored fixture preparation only; no native/provider cross-check addition",
+    "first_suite_qualification": "Pending different-model review, candidate acceptance, actual bad-patch rejection and clean external/runtime qualification"
   },
   "C2_primary_attempts": 0,
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 11:35:36 AM EST",
-  "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc."
+  "snapshot_at_eastern": "Nov 08, 2026 at 12:07:12 PM EST",
+  "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
+  "cross_reviews": {
+    "checks": "Terra high, staged fresh session; original baseline/public inputs plus frozen suite only, no candidate implementations.",
+    "candidates": "GLM, staged fresh session; anonymized unmodified first source snapshots plus original baseline/public inputs only, no suite or conversations.",
+    "self_approval": false
+  }
 }
