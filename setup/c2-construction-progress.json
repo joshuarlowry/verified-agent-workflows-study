@@ -1,0 +1,43 @@
+{
+  "snapshot_at_utc": "2026-11-08T15:37:08.645842+00:00",
+  "phase": "C2_fixture_construction_not_subject_collection",
+  "task_name": "Item-list sort toggle",
+  "reference": {
+    "model": "openai/gpt-6.1-terra",
+    "status": "first_candidate_returned_not_independently_qualified",
+    "self_reported_final_full_checks": "test/e2e/build/typecheck/lint all0; logs retained",
+    "frozen_artifact_files": 56,
+    "source_files": 22,
+    "actual_dated_model": "openai/gpt-6.1-terra-20261026",
+    "actual_provider": "Azure",
+    "successful_generations_verified": 67,
+    "raw_capture_requests_verified": 67
+  },
+  "alternative": {
+    "model": "google/gemma-4-31b-it",
+    "status": "running",
+    "service": "study2-c2-alternative-construction-20261108t152923z",
+    "pid": 2467885,
+    "actual_requested_provider_policy": {
+      "only": [
+        "crusoe/bf16"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "zdr": true
+    },
+    "reference_or_evaluator_inputs": false,
+    "prompt_frozen_before_reference": true,
+    "baseline_policy_docs_readability_checked": true
+  },
+  "external_checks": {
+    "model": "z-ai/glm-5.3-flash",
+    "status": "appointed_not_dispatched",
+    "prompt_frozen_before_reference": true,
+    "reference_or_alternative_inputs": false
+  },
+  "C2_primary_attempts": 0,
+  "scored_attempts": 0,
+  "task_qualified": false,
+  "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding."
+}
