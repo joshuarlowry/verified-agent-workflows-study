@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T03:24:08.225792+00:00",
+  "recorded_at_utc": "2026-11-08T03:40:01.998154+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -14,7 +14,9 @@
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
       "authorship_note": "Alternative retains Gemma two-query server design; any subsequent Terra client repair will have joint provenance and different-model review. No relabeling of Gemma result.",
-      "client_fixture": "Terra client-only repair returned: first/later zero labels and POST/detail preservation claimed with targeted regressions. Different-model GLM delta review queued; not yet accepted."
+      "client_fixture": "Frozen joint Gemma/Terra alternative commit f9695e2b3658928a9d4b4ada1c3550243edc2e1a passed full public build/typecheck/lint/API/browser/reset in3 independent cold containers. Actual47call capture audit passed. Different-model source review and final independent task acceptance remain pending.",
+      "public_replay_evidence": "setup/c1-client-alternative-public-replays-20261108T0332.json",
+      "native_auth_task_binding": "Qualified baseline auth probe has2 exact summary-key expectations obsoleted by C1. A fresh public-only Gemma preparation session is queued to add only openItemCount to those2 arrays; GLM cross-review will verify all other bytes/auth checks unchanged. Original baseline probe remains immutable; no false task failure or silent weakening."
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
@@ -36,10 +38,10 @@
     "Remaining reference/evaluator packets until initial C1 technical block"
   ],
   "latest_backup": {
-    "checkpoint": "checkpoints/preparation-20261108T025240255236Z.tar.gz",
-    "sha256": "dfecc0c0dc031b0076b395ea08985e360720f82b883705fe2a917f5345a7f5c6",
+    "checkpoint": "checkpoints/preparation-20261108T032421008515Z.tar.gz",
+    "sha256": "e34eb3f7c83aae4da64a8562a19c47b4743390d849edffe37b1eaf46a4c46fe8",
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 07, 2026 at 10:24:08 PM EST"
+  "recorded_at_eastern": "Nov 07, 2026 at 10:40:01 PM EST"
 }
