@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 10:48:57 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 10:48:58 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 07, 2026 at 10:48:57 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 07, 2026 at 10:48:58 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-c1-native-auth-binding | google/gemma-4-31b-it | returned requires cross review | Nov 07, 2026 at 10:47:52 PM EST (UTC-0500) | Nov 07, 2026 at 10:48:57 PM EST (UTC-0500) |
+| glm-final-pilot-delta-review | z-ai/glm-5.3-flash | running | Nov 07, 2026 at 10:48:58 PM EST (UTC-0500) | — |
 
 Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
 
