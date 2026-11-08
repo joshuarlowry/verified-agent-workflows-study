@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T16:04:35.175427+00:00",
+  "snapshot_at_utc": "2026-11-08T16:10:04.745975+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -17,9 +17,8 @@
   },
   "alternative": {
     "model": "google/gemma-4-31b-it",
-    "status": "running",
+    "status": "incomplete_first_endpoint_preserved_transport_failure",
     "service": "study2-c2-alternative-construction-20261108t152923z",
-    "pid": 2467885,
     "actual_requested_provider_policy": {
       "only": [
         "crusoe/bf16"
@@ -32,15 +31,35 @@
     "prompt_frozen_before_reference": true,
     "baseline_policy_docs_readability_checked": true,
     "passive_observation": {
-      "status": "service confirmed active; native capture growing",
+      "status": "terminal native process; endpoint backup running",
       "provider_transport": "Repeated upstream idle timeout messages observed; first-endpoint capture and actual-provider audit still pending.",
       "operator_interventions": "No restart, continuation prompt, product hint or routing change.",
       "scoring": "Unscored fixture construction"
-    }
+    },
+    "agent_exit_code": 1,
+    "api_budget_exhausted": false,
+    "native_elapsed_seconds": 2211.3002432349604,
+    "successful_generation_ids_verified": 42,
+    "actual_dated_model": "google/gemma-4-31b-it-20260402",
+    "actual_provider": "Crusoe",
+    "raw_capture": {
+      "requests": 130,
+      "successful_streams": 42,
+      "success_stream_bytes_preserved": true,
+      "failed_response_body_429": 80,
+      "failed_stream_504": 8,
+      "failed_call_billing": "unavailable; not zero",
+      "full_audit_passed": false,
+      "native_final_return": false
+    },
+    "first_source_snapshot_files": 19,
+    "source_git_packaged": true,
+    "source_patch_roundtrip_exact": true,
+    "no_silent_retry": true
   },
   "external_checks": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "staged_not_dispatched",
+    "status": "staged_waiting_for_previous_endpoint_backup",
     "prompt_frozen_before_reference": true,
     "reference_or_alternative_inputs": false,
     "provider_metadata_preflight_utc": "2026-11-08T15:59:53.454574+00:00",
@@ -50,5 +69,5 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 11:04:35 AM EST"
+  "snapshot_at_eastern": "Nov 08, 2026 at 11:10:04 AM EST"
 }
