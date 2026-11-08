@@ -1,11 +1,17 @@
-# Current study status
+# Current run status
 
-**Status published:** Nov 08, 2026 at 08:59:21 AM EST
+**Status checked/published:** Nov 08, 2026 at 09:10:29 AM EST (UTC-0500)
 
-All ten first-task calibration runs have ended and been graded against the unchanged frozen checks. **Five passed every gate.** Both direct Terra runs passed all non-policy gates but were rejected by the source/test-preservation grammar. That grammar was stricter than the public instructions disclosed: this instrument gap prevents a fair model-quality ranking.
+**Latest workflow or disposition event:** Nov 08, 2026 at 09:10:29 AM EST (UTC-0500)
 
-[Results, runtimes and known charges](C1_RESULTS.md) · [Protocol audit](c1-protocol-audit.json) · [Machine-readable results](c1-first-results.json).
+**running**
 
-No subject or grader is running. Further collection waits on a uniformly disclosed, qualified preservation policy and the next task packets. No C1 outcome will be silently repaired or upgraded. **Scored runs: 0.** Remaining registered scope:30calibration slots and165scored generations.
+| Job | Model | State | Started (Eastern) | Ended (Eastern) |
+|---|---|---|---|---|
+| glm-public-preservation-review | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 09:10:29 AM EST (UTC-0500) | — |
 
-Human merge review remains optional and unmeasured. Provider failures, capture repairs, operator access limitations and missing primary pricing are disclosed in the results. All original endpoint backups remain preserved.
+Prospective public source/FAQ disclosure only; all C1 results unchanged. No new primary task dispatch.
+
+A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
+
+All displayed times use America/New_York, automatically switching between EST and EDT. UTC timestamps remain in the machine-readable record. This page updates automatically at job transitions and on explicit status refreshes. A newer status-check timestamp does not imply new agent work. It is not a live heartbeat. No chat/push/email notification is configured. [Machine-readable status](launch.json).
