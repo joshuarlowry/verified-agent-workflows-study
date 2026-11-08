@@ -63,6 +63,39 @@ describe('real HTTP, native sessions and SQLite',()=>{
     expect(rows).toContainEqual({id:'wi_103',workspaceId:'ws_apollo',title:'Prepare demo script',notes:'',status:'open',dueDate:null,version:1,createdBy:me.user.id,createdAt:'2026-11-01T11:00:00.000Z',updatedAt:'2026-11-04T10:15:00.000Z',email:'bruno@workboard.test'});
     expect(other.prepare('SELECT workspaceId,role,joinedAt FROM membership WHERE userId=? ORDER BY workspaceId').all(me.user.id)).toEqual([{workspaceId:'ws_apollo',role:'member',joinedAt:'2026-10-21T09:00:00.000Z'},{workspaceId:'ws_borealis',role:'owner',joinedAt:'2026-10-25T09:00:00.000Z'}]);
   });
+  test('summary open counts reflect current items, roles and workspace visibility',async()=>{
+    const readSummaries=async(cookie:string)=>{
+      const me=await (await req('/api/me','GET',undefined,cookie)).json();
+      const list=await (await req('/api/workspaces','GET',undefined,cookie)).json();
+      expect(list).toEqual(me.workspaces);
+      return list as {id:string;name:string;role:string;createdAt:string;openItemCount:number}[];
+    };
+    const brunoBefore=await readSummaries(bruno);
+    expect(brunoBefore).toEqual([
+      {id:'ws_apollo',name:'Apollo Launch',role:'member',createdAt:'2026-10-20T09:00:00.000Z',openItemCount:4},
+      {id:'ws_borealis',name:'Borealis Ops',role:'owner',createdAt:'2026-10-25T09:00:00.000Z',openItemCount:3},
+    ]);
+    expect(await readSummaries(ada)).toEqual([{...brunoBefore[0],role:'owner'}]);
+    expect(await readSummaries(cleo)).toEqual([{...brunoBefore[1],role:'member'}]);
+    const detail=await (await req('/api/workspaces/ws_apollo','GET',undefined,bruno)).json();
+    expect(detail).toEqual({id:'ws_apollo',name:'Apollo Launch',role:'member',createdAt:'2026-10-20T09:00:00.000Z',updatedAt:'2026-10-20T09:00:00.000Z'});
+    const created=await req('/api/workspaces/ws_apollo/items','POST',{title:'Count test'},bruno); expect(created.status).toBe(201);
+    const item=await created.json();
+    try {
+      expect((await readSummaries(bruno)).map(w=>w.openItemCount)).toEqual([5,3]);
+      expect((await readSummaries(ada))[0].openItemCount).toBe(5);
+      expect((await req(`/api/items/${item.id}`,'PATCH',{status:'in_progress'},ada)).status).toBe(200);
+      expect((await readSummaries(bruno)).map(w=>w.openItemCount)).toEqual([4,3]);
+      expect((await req(`/api/items/${item.id}`,'PATCH',{status:'open'},ada)).status).toBe(200);
+      expect((await readSummaries(bruno))[0].openItemCount).toBe(5);
+      // External committed writes must be visible without restarting the server.
+      other.prepare('UPDATE item SET status=? WHERE id=?').run('done',item.id);
+      expect((await readSummaries(bruno))[0].openItemCount).toBe(4);
+      other.prepare('UPDATE item SET status=? WHERE id=?').run('open',item.id);
+      expect((await req(`/api/items/${item.id}`,'DELETE',undefined,ada)).status).toBe(204);
+      expect(await readSummaries(bruno)).toEqual(brunoBefore);
+    } finally { other.prepare('DELETE FROM item WHERE id=?').run(item.id); }
+  });
   test('malformed, non-object, exact errors and membership before validation',async()=>{
     for (const body of ['{', '[]','null']) { const r=await req('/api/workspaces/ws_apollo/items','POST',body,ada); expect(r.status).toBe(400); expect(await r.json()).toEqual({error:{code:'validation_failed',message:'request body must be valid JSON.'}}); }
     const r=await req('/api/workspaces/ws_apollo/items','POST',{},ada); expect(await r.json()).toEqual({error:{code:'validation_failed',message:'Invalid work item input.',fields:{title:'title is required.'}}});
@@ -84,6 +117,9 @@ describe('real HTTP, native sessions and SQLite',()=>{
     const before=await (await req('/api/me','GET',undefined,cookie)).json(); expect(before.workspaces).toEqual([]);
     const a=await (await req('/api/workspaces','POST',{name:'Same'},cookie)).json(); const b=await (await req('/api/workspaces','POST',{name:'Same'},cookie)).json();
     expect(a.id).toMatch(/^ws_[0-9a-f]{20}$/); expect(a.id).not.toBe(b.id); expect(a.role).toBe('owner');
+    expect(a).not.toHaveProperty('openItemCount'); expect(b).not.toHaveProperty('openItemCount');
+    const summaries=await (await req('/api/workspaces','GET',undefined,cookie)).json();
+    expect(summaries.map((w:{openItemCount:number})=>w.openItemCount)).toEqual([0,0]);
     expect(other.prepare('SELECT count(*) n FROM membership WHERE userId=?').get(before.user.id)).toEqual({n:2});
     const out=await req('/api/auth/sign-out','POST',{},cookie); expect(out.status).toBe(200); expect(out.headers.getSetCookie()[0]).toContain('Max-Age=0'); expect((await req('/api/me','GET',undefined,cookie)).status).toBe(401);
   });
