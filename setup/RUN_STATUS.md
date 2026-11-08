@@ -1,6 +1,6 @@
 # Current run status
 
-**Status published:** Nov 08, 2026 at 03:23:26 AM EST
+**Status published:** Nov 08, 2026 at 03:26:52 AM EST
 
 **Latest ledger event:** Nov 08, 2026 at 03:22:47 AM EST
 
@@ -11,6 +11,7 @@ C1 calibration: **3/10 dispatched; 3/10 endpoints recorded.** Scored: **0**.
 | GLM supervising Gemma | 1 | final | final |
 | GLM alone | 1 | final | final |
 | Terra alone | 1 | final | final |
+| Gemma alone | 1 | setting_up | — |
 
 Block version: **2**. Prior interrupted attempts retained: **1**. [Interruption record](c1-v1-technical-interruption.json).
 
