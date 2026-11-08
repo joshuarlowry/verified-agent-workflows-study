@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:35:49 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:54:22 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:35:48 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:54:22 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-C2-alternative-revision-2-clean-input | google/gemma-4-31b-it | running | Nov 08, 2026 at 01:35:48 PM EST (UTC-0500) | — |
+| gemma-C2-alternative-revision-2-clean-input | google/gemma-4-31b-it | returned requires cross review | Nov 08, 2026 at 01:35:48 PM EST (UTC-0500) | Nov 08, 2026 at 01:54:22 PM EST (UTC-0500) |
 
 Staged clean session after operator feedback-filtering error: one foreign-candidate sentence was present in prior unscored fixture attempt, which was stopped/preserved. Same product prompt; corrected own-source-only packet; no contaminated output/conversation imported. All overhead retained. No primary/scored data changed.
 
