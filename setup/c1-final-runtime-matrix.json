@@ -1,0 +1,337 @@
+{
+  "kind": "C1_external_feature_regression_database_runtime_qualification",
+  "recorded_at_utc": "2026-11-08T05:57:20.700340+00:00",
+  "recorded_at_eastern": "Nov 08, 2026 at 12:57:20 AM EST",
+  "model_calls": 0,
+  "runs": 20,
+  "feature_cases": 21,
+  "protected_baseline_regression_cases": 17,
+  "runtime_matrix_passed": true,
+  "baseline_feature_rejected": true,
+  "reference_feature_three_clean_runs_passed": true,
+  "alternative_feature_three_clean_runs_passed": true,
+  "negative_controls_rejected_for_observed_intended_defects": [
+    "membership leak",
+    "missing integer zero",
+    "role changed",
+    "stale count",
+    "wrong visible selector counts",
+    "wrong status inclusion"
+  ],
+  "regressions_baseline_and_three_each_valid_fixture_passed": true,
+  "initial_and_post_test_db_gates_all_passed": true,
+  "native_auth_qualification": "setup/c1-reference-native-auth-replays-20261108T035018Z.json and setup/c1-alternative-native-auth-replays-20261108T035018Z.json",
+  "source": "c1-acceptance-consolidation-20261108T045620Z",
+  "source_inventory_sha256": "57f5af8e9d404ac6b6ec138ca31e15d08fe5c679dfd168450da57041be68023d",
+  "controller_receipt_sha256": "f6c1d576888b451df825e43badb24e0d225e117b754e71bb84abc09dbde85f8e",
+  "rows": [
+    {
+      "label": "baseline",
+      "suite": "all",
+      "expected": "reject_disclosed_missing_feature",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:48:05.624Z",
+        "duration": 1003.5799999999999,
+        "expected": 0,
+        "skipped": 20,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "reference-1",
+      "suite": "all",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:48:14.605Z",
+        "duration": 14208.406,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "reference-2",
+      "suite": "all",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:48:36.942Z",
+        "duration": 14373.705,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "reference-3",
+      "suite": "all",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:48:59.184Z",
+        "duration": 14321.946,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "alternative-1",
+      "suite": "all",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:49:21.749Z",
+        "duration": 14250.437,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "alternative-2",
+      "suite": "all",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:49:44.122Z",
+        "duration": 14471.154999999999,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "alternative-3",
+      "suite": "all",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:50:06.694Z",
+        "duration": 14296.368,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "membership-leak",
+      "suite": "all",
+      "expected": "reject_intended_defect_not_environment_failure",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:50:29.318Z",
+        "duration": 1006.092,
+        "expected": 0,
+        "skipped": 20,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "missing-zero",
+      "suite": "all",
+      "expected": "reject_intended_defect_not_environment_failure",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:50:39.025Z",
+        "duration": 5556.4220000000005,
+        "expected": 8,
+        "skipped": 12,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "role-regression",
+      "suite": "all",
+      "expected": "reject_intended_defect_not_environment_failure",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:50:52.815Z",
+        "duration": 1047.294,
+        "expected": 0,
+        "skipped": 20,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "stale-count",
+      "suite": "all",
+      "expected": "reject_intended_defect_not_environment_failure",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:51:02.037Z",
+        "duration": 1668.8999999999999,
+        "expected": 2,
+        "skipped": 18,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "ui-mismatch",
+      "suite": "all",
+      "expected": "reject_intended_defect_not_environment_failure",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:51:12.079Z",
+        "duration": 13624.544999999998,
+        "expected": 6,
+        "skipped": 14,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "wrong-status",
+      "suite": "all",
+      "expected": "reject_intended_defect_not_environment_failure",
+      "native_runner_all_passed": false,
+      "stats": {
+        "startTime": "2026-11-08T05:51:34.060Z",
+        "duration": 1058.4270000000001,
+        "expected": 0,
+        "skipped": 20,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 1
+    },
+    {
+      "label": "regression-baseline",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:51:45.542Z",
+        "duration": 11428.207999999999,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "regression-reference-1",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:52:05.476Z",
+        "duration": 10882.234999999999,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "regression-reference-2",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:52:24.927Z",
+        "duration": 10776.946,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "regression-reference-3",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:52:44.072Z",
+        "duration": 10935.16,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "regression-alternative-1",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:53:03.330Z",
+        "duration": 11012.603000000001,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "regression-alternative-2",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:53:22.728Z",
+        "duration": 10901.463,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    },
+    {
+      "label": "regression-alternative-3",
+      "suite": "regression",
+      "expected": "all_cases_pass",
+      "native_runner_all_passed": true,
+      "stats": {
+        "startTime": "2026-11-08T05:53:41.632Z",
+        "duration": 11082.058,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evaluator_exit_code": 0
+    }
+  ],
+  "task_admitted": false,
+  "remaining": "Original-test source preservation policy falsely rejects a valid additive in-file test; bounded structural repair/review required. Final packet/role/prompt/manifests must be frozen and installed before calibration.",
+  "limits": [
+    "These are fixture qualification runs, not calibration/scored study attempts.",
+    "Finite machine checks do not establish arbitrary semantic equivalence or production merge readiness.",
+    "Native Playwright stops after first failure; skipped cases remain unverified.",
+    "Same three model families authored/cross-reviewed fixtures; independence limitation retained."
+  ]
+}
