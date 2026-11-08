@@ -114,6 +114,7 @@ def main():
             prompt = protected(prompts['parent_files_by_run'][run_id]).read_text()
             row = {**slot,'controller_started':stamp(),'status':'setting_up','root':str(root)}
             state['runs'].append(row);save()
+            backup_failed = False
             done = threading.Event()
             models_by_role = {role:registered_model(reg,slot['arm'],role) for role in
                              (['supervisor','worker'] if 'supervising' in slot['arm'] else ['complete_agent'])}
@@ -163,6 +164,34 @@ def main():
                 state.update(status='stopped_preserving_state',ended=stamp());save();raise
             finally:
                 done.set();observer.join(timeout=6)
+                # Back up only between workflows, so compression/publication never
+                # competes with a timed subject. This is the controller ledger,
+                # not an application database. Its supported SQLite snapshot is
+                # retained explicitly; disposable app databases remain excluded.
+                row['backup_started'] = stamp();save()
+                try:
+                    source = sqlite3.connect(ledger.as_uri()+'?mode=ro',uri=True)
+                    destination = sqlite3.connect(root/'controller-ledger.snapshot')
+                    try:
+                        source.backup(destination)
+                        if destination.execute('PRAGMA integrity_check').fetchone() != ('ok',):
+                            raise ValueError('Controller ledger backup failed integrity check')
+                        (root/'controller-ledger.sql').write_text('\n'.join(destination.iterdump())+'\n')
+                    finally:
+                        destination.close();source.close()
+                    backup = subprocess.run([sys.executable,str(REPO/'scripts/checkpoint_preparation.py')],
+                                            capture_output=True,text=True)
+                    (root/'checkpoint.stdout.log').write_text(backup.stdout)
+                    (root/'checkpoint.stderr.log').write_text(backup.stderr)
+                    if backup.returncode:
+                        raise ValueError('Private checkpoint publication failed; preserve endpoint and stop admission')
+                    row.update(backup_ended=stamp(),backup_receipt=json.loads(backup.stdout.strip().splitlines()[-1]))
+                    save()
+                except Exception as exc:
+                    row.update(backup_ended=stamp(),backup_error_type=type(exc).__name__)
+                    state.update(status='stopped_preserving_state',ended=stamp());save();backup_failed=True
+            if backup_failed:
+                return
         state.update(status='ten_first_endpoints_frozen_ungraded',ended=stamp());save()
 
 
