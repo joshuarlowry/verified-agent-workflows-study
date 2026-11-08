@@ -66,7 +66,9 @@ def main():
     p.add_argument('--target-inventory', required=True, type=Path)
     p.add_argument('--evaluator', required=True, type=Path)
     p.add_argument('--evaluator-inventory', required=True, type=Path)
-    p.add_argument('--suite', choices=['public', 'sealed', 'all'], default='all')
+    p.add_argument('--suite', choices=['public', 'sealed', 'regression', 'all'], default='all')
+    p.add_argument('--bind-disposable-db', action='store_true',
+                   help='Bind only the disposable database directory and execute the supplied protected DB gates.')
     p.add_argument('--format', choices=['legacy','playwright'], default='legacy')
     a = p.parse_args()
     if os.geteuid() != 0:
@@ -132,6 +134,13 @@ def main():
         for directory in [app_state, eval_state, results]: directory.mkdir()
         (checker/'node_modules').mkdir()
         (checker/'browsers').symlink_to('/opt/playwright-browsers')
+        if a.bind_disposable_db:
+            if a.format != 'playwright':
+                raise ValueError('DB binding requires the standard protected packet')
+            for name in ['db-scope/c1-gate.mjs', 'db-scope/baseline-scope.json']:
+                if name not in eval_inventory:
+                    raise ValueError('Missing inventoried protected DB artifact: '+name)
+            (checker/'db-scope/node_modules').symlink_to('/opt/application-deps/node_modules')
         for root in [target, checker, state, results]:
             for path in [root, *root.rglob('*')]:
                 os.lchown(path, 1000, 1000)
@@ -150,8 +159,12 @@ def main():
         exec_in(app_name, 'cp', '-R', '/opt/application-deps/node_modules', '/target/node_modules')
         for argv in [['npm', 'run', 'build'], ['npm', 'run', 'reset']]: exec_in(app_name, *argv)
         names.append(eval_name)
+        database_mount = (['-v', f'{target / "data"}:/database:rw',
+                           '-e', 'REGRESSION_DB=/database/external-replay.sqlite']
+                          if a.bind_disposable_db else [])
         _, eval_id = command(['podman', 'run', '--name', eval_name, '--network', 'container:'+app_name, *common,
                   '-e', 'PLAYWRIGHT_BROWSERS_PATH=/evaluator/browsers',
+                  *database_mount,
                   '-v', f'{checker}:/evaluator:ro', '-v', f'{checker / "node_modules"}:/evaluator/node_modules:rw',
                   '-v', f'{eval_state}:/state:rw', '-v', f'{results}:/results:rw', '--workdir', '/evaluator', IMAGE,
                   'node', '-e', 'setInterval(()=>{},10000)'])
@@ -161,6 +174,18 @@ def main():
                 exec_in(eval_name, 'mkdir', '-p', '/evaluator/node_modules/'+package.rsplit('/', 1)[0])
             exec_in(eval_name, 'cp', '-R', '/opt/application-deps/node_modules/'+package, '/evaluator/node_modules/'+package)
         report['trusted_evaluator_packages'] = sorted(expected)
+        if a.bind_disposable_db:
+            report['database_binding'] = {
+                'source': 'Same fresh disposable target/data directory; no target source or dependencies mounted.',
+                'path': '/database/external-replay.sqlite',
+                'purpose': 'Protected initial/schema gate and authored REG-UI-08 membership fixture control.',
+                'trusted_db_dependency': '/opt/application-deps/node_modules/better-sqlite3',
+            }
+            code, output = exec_in(eval_name, 'node', 'db-scope/c1-gate.mjs',
+                                   '/database/external-replay.sqlite', 'initial', require_zero=False)
+            report['initial_db_gate'] = {'exit_code': code, 'stdout': output}
+            if code != 0:
+                raise RuntimeError('Protected initial database gate rejected target')
         probe = "const fs=require('fs');console.log(JSON.stringify({targetVisible:fs.existsSync('/target/server'),node:process.version,playwright:require('playwright/package.json').version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}));if(fs.existsSync('/target/server'))process.exit(1)"
         _, visibility = exec_in(eval_name, 'node', '-e', probe)
         report['evaluator_visibility_probe'] = json.loads(visibility)
@@ -198,6 +223,14 @@ def main():
             report['native_runner_all_passed']=code==0 and not actual_document.get('errors') and all(
                 t.get('expectedStatus')=='passed' and t.get('status')=='expected' and t.get('results') and all(r.get('status')=='passed' for r in t['results']) for t in actual.values()) and all(stats.get(k)==0 for k in ['skipped','flaky','unexpected'])
         report['evaluator_report_sha256'] = digest(output)
+        if a.bind_disposable_db:
+            # Stop every application writer before the protected schema-only gate.
+            command(['podman', 'stop', '--time', '2', app_name])
+            code, gate_output = exec_in(eval_name, 'node', 'db-scope/c1-gate.mjs',
+                                        '/database/external-replay.sqlite', 'schema-only', require_zero=False)
+            report['post_test_db_gate'] = {'exit_code': code, 'stdout': gate_output}
+            if code != 0:
+                raise RuntimeError('Protected post-test database gate rejected target')
         report['target_source_unchanged'] = all(digest(target/name)==sha for name,sha in app_inventory.items())
         report['evaluator_source_unchanged'] = all(digest(checker/name)==sha for name,sha in eval_inventory.items())
         report['plumbing_completed'] = report['target_source_unchanged'] and report['evaluator_source_unchanged']

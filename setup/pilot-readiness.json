@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T05:31:49.996951+00:00",
+  "recorded_at_utc": "2026-11-08T05:49:57.815352+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -9,7 +9,7 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "Terra feature/scope closure source-accepted by GLM, bounded preparation only. Final protected7API/10browser regression project and finite machine-scope/test-preservation binding are being consolidated by Terra, with fresh GLM review queued. Calibration remains blocked.",
+      "state": "Final GLM review accepted finite feature/regression checks and verified all17baseline cases; no blocking behavioral finding. Controller is executing the final20-case clean-container feature/regression/DB qualification matrix. A narrowly bounded original-test preservation rule and delivery-metadata reconciliation are in preparation, followed by fresh GLM review.",
       "existing_evidence": "Current single-worker/first-failure matrix completed13cases: reference21/21\u00d73; alternative21/21\u00d73; baseline and6negative controls reject for intended reasons. Skipped dependent cases are unverified. Full non-aborting diagnostics are also retained.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
@@ -22,12 +22,12 @@
         "setup/c1-alternative-native-auth-replays-20261108T035018Z.json"
       ],
       "checker_evidence": "setup/c1-standard-checker-validation.json",
-      "scope_binding": "Revision13 explicitly preserves machine-only core and optional human/semantic review. Complete frozen real HTTP/UI baseline regressions before calibration rather than introducing an unregistered per-submission AI judge or binding a particular internal app helper/selector."
+      "scope_binding": "Finite machine-only gate, optional semantic/human review unchanged. Final review identified original in-file test migration policy and metadata/freeze reconciliation; these are not waived. Native-auth gate already qualified separately."
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
       "state": "Common adapter qualified: actual5workflows/7roles/30generations pass mechanical source/context/broker/history/capture checks; exact dated model/provider and billing cross-checks pass.",
-      "existing_evidence": "Prior eight native source findings were verified fixed by GLM; only prompt binding was launch-critical. Five-system13reply synthetic proof and actual cancellation/checkpoint cleanup remain valid scoped evidence. Public-only checks now have the same read-only mount interface in every role; final accepted suite is not staged yet.",
+      "existing_evidence": "Common adapter proof complete. Public-only feature/regression files are staged separately from sealed cases, reference/control sources, logs and previous reviews. Final manifest binding/install remain pending.",
       "limits": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted.",
       "evidence": "setup/actual-native-role-qualification.json"
     },
@@ -35,7 +35,7 @@
       "gate": "Approved documentation package runtime",
       "state": "Source/package cross-review accepted; independent offline rebuild and22query runtime replay passed",
       "existing_evidence": "All17DBs reproduced byte-for-byte;119technical files represented. Read-only packages reject writes; no external network interface and external-fetch rejection proved.",
-      "remaining": "Actual seven-role parity. Parser/attribution limitations are disclosed and accepted; no corpus redesign required."
+      "remaining": "Final manifest binding only; actual seven-role Context catalogue and direct/restored-worker docs calls verified in setup/actual-native-role-qualification.json."
     }
   ],
   "deferred": [
@@ -50,5 +50,6 @@
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 08, 2026 at 12:31:49 AM EST"
+  "recorded_at_eastern": "Nov 08, 2026 at 12:49:57 AM EST",
+  "next_collection": "Registered ten-slot C1 calibration order, starting GLM supervising Gemma; no new treatment or task scope. Dispatch remains blocked until current qualification and frozen manifests pass."
 }
