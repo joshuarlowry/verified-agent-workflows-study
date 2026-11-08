@@ -1,0 +1,38 @@
+{
+  "recorded_at_utc": "2026-11-08T15:00:14.111619+00:00",
+  "kind": "C2_benchmark_construction_appointments_not_primary_dispatch",
+  "roles": {
+    "task": "C2",
+    "stage": "benchmark_fixture_construction_not_primary_collection",
+    "baseline_commit": "ac96364336be35f0d8d7dadb2717b951cd3c9ac4",
+    "reference": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": "high",
+      "strategy": "SQLite-native API ordering",
+      "prompt_sha256": "192e6d8cbe44dabaeca94f01e709741e0c47e35c995c533f900c0897266ee4fe"
+    },
+    "alternative": {
+      "model": "google/gemma-4-31b-it",
+      "strategy": "In-memory API sorting matching public SQLite NOCASE semantics",
+      "fresh_session": true,
+      "reference_or_evaluator_inputs": false,
+      "prompt_sha256": "81c3fb46ebafe27be1e4d71fb91e7ccb6dc5fd417de6f9eb7bb191c51f045f85"
+    },
+    "external_checks": {
+      "model": "z-ai/glm-5.3-flash",
+      "fresh_session": true,
+      "inputs": "Original baseline, public contract/FAQ/policy/docs only; no reference/alternative or previous outcomes",
+      "requirements": "Freeze black-box public/sealed checks before target-dependent repairs; actual wrong-sort/tie/invalid/UI/ownership negative patches must be qualified before primary dispatch",
+      "prompt_sha256": "04c8807b0689a2998ef536ddf5581c73d4d4cb8413da08e24ae86d191e5b1413"
+    },
+    "cross_review": "Different authorized model in fresh session for each substantive artifact; no self-approval or family-independent claim",
+    "primary_subject_dispatch_admitted": false,
+    "extra_models_or_MCP": false,
+    "all_role_prompts_frozen_before_first_reference_dispatch": true
+  },
+  "reference_manifest_sha256": "138b4622ae232ac95b5542078ee50d776b7226f5d19831968d95453fc7ad5591",
+  "baseline_source_files": 21,
+  "public_inputs": "Original baseline + public C2 scope + exact prospective policy + approved docs. No C1 outcomes, implementations, hidden checks or conversations.",
+  "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
+  "primary_subject_dispatch_admitted": false
+}

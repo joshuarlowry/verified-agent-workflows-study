@@ -876,9 +876,42 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User directs convergence; allowed-model fixture construction/cross-review",
       "qualification": "Preserve rejected Gemma attempts; joint source provenance, not a Gemma study rescue. No new treatment."
+    },
+    {
+      "launch_id": "c2-reference-construction-20261108T145449Z",
+      "role": "terra-C2-reference-constructor",
+      "requested_model": "openai/gpt-6.1-terra",
+      "phase": "fixture_construction_only",
+      "prompt_sha256": "192e6d8cbe44dabaeca94f01e709741e0c47e35c995c533f900c0897266ee4fe",
+      "run_id": "clean-20261107T122746Z-c2-reference-terra-20261108T145449Z",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
+      "qualification": "Appointment only; no task admission or source approval. Fresh sessions and different-model cross-review required.",
+      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged."
+    },
+    {
+      "launch_id": "c2-reference-construction-20261108T145449Z",
+      "role": "gemma-C2-independent-alternative",
+      "requested_model": "google/gemma-4-31b-it",
+      "phase": "fixture_construction_only",
+      "prompt_sha256": "81c3fb46ebafe27be1e4d71fb91e7ccb6dc5fd417de6f9eb7bb191c51f045f85",
+      "run_id": null,
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
+      "qualification": "Appointment only; no task admission or source approval. Fresh sessions and different-model cross-review required.",
+      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged."
+    },
+    {
+      "launch_id": "c2-reference-construction-20261108T145449Z",
+      "role": "glm-C2-independent-external-checks",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "phase": "fixture_construction_only",
+      "prompt_sha256": "04c8807b0689a2998ef536ddf5581c73d4d4cb8413da08e24ae86d191e5b1413",
+      "run_id": null,
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
+      "qualification": "Appointment only; no task admission or source approval. Fresh sessions and different-model cross-review required.",
+      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T02:36:15.430856+00:00"
+  "updated_at_utc": "2026-11-08T15:00:14.111619+00:00"
 }
