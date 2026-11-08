@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T19:06:15.746904+00:00",
+  "snapshot_at_utc": "2026-11-08T19:27:02.712790+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -108,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 02:06:15 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 02:27:02 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -210,11 +210,10 @@
   "checks_revision_2_cross_review": {
     "model": "openai/gpt-6.1-terra",
     "reasoning": "high",
-    "status": "running",
+    "status": "returned_changes_required",
     "candidate_inputs_supplied": false,
     "scope": "Fresh source/prompt/oracle/helper review of frozen revision2. Mandatory implementing-target, negative, clean and runtime gates remain later and unverified.",
     "service": "study2-c2-checks-r2-cross-review-20261108t182456z",
-    "pid": 2568579,
     "startup_identity_verified": true,
     "first_wire_requested_model": "openai/gpt-6.1-terra",
     "first_wire_reasoning_effort": "high",
@@ -223,7 +222,14 @@
     ],
     "allow_fallbacks": false,
     "zdr": true,
-    "actual_generation_metadata_audit": "pending first endpoint"
+    "actual_generation_metadata_audit": "All 30 known successful generation IDs verified",
+    "native_elapsed_seconds": 210.16059887199663,
+    "raw_capture_requests_verified": 30,
+    "actual_generation_ids_verified": 30,
+    "actual_dated_model": "openai/gpt-6.1-terra-20261026",
+    "actual_provider": "Azure",
+    "review": "setup/c2-revision2-checks-review.json",
+    "review_sha256": "39a09c1f5f2cbbb7122ef7180941b93a49c3a690397d04127a9f3fd01d068588"
   },
   "alternative_revision_2_clean_setup": {
     "model": "google/gemma-4-31b-it",
@@ -267,10 +273,30 @@
   },
   "clean_alternative_revision2_source_review": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "staged_not_dispatched_clean_source_bound",
+    "status": "running",
     "source_author_endpoint_frozen_before_binding": true,
     "prompt_preappointed_before_author_return": true,
     "reference_or_evaluator_inputs": false,
-    "scope": "Separate fresh source/prompt review; actual task qualification remains later."
+    "scope": "Separate fresh source/prompt review; actual task qualification remains later.",
+    "service": "study2-c2-clean-alternative-r2-source-review-20261108t185010z",
+    "pid": 2575473,
+    "startup_identity_verified": true,
+    "first_wire_requested_model": "z-ai/glm-5.3-flash",
+    "provider_only": [
+      "relace/fp4"
+    ],
+    "allow_fallbacks": false,
+    "zdr": true,
+    "actual_generation_metadata_audit": "pending first endpoint"
+  },
+  "native_evaluator_revision_3": {
+    "model": "openai/gpt-6.1-terra",
+    "reasoning": "high",
+    "status": "staged_not_dispatched",
+    "source_construction": "Fresh native Playwright cases/config/helpers from original public scope; no previous feature-evaluator source or candidate source/results supplied.",
+    "simplification": "Reuse existing mechanical native runner/report mechanisms and unchanged qualified baseline-only DB guard. No second custom validator/scanner/framework.",
+    "fixture_helper_limit": "Proposal restricted to exact updatedAt updates on freshly API-created owned item IDs; no direct insert/delete/purge, schema/auth/seed changes. Still requires independent qualification.",
+    "scope_and_gates": "C2 feature scope, completion criteria and primary workflow treatments unchanged; every positive/negative/three-clean/runtime gate remains required.",
+    "first_versions_preserved": true
   }
 }

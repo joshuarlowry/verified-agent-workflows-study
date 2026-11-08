@@ -1,0 +1,28 @@
+{
+  "kind": "c2_revision2_fresh_session_cross_review",
+  "disposition": "changes_required",
+  "scope": "source, prompts, oracle, fixture and supplied mechanical replay interface only; no primary dispatch or family independence",
+  "original_first_suite_disposition": "changes_required; preserved, not retroactively approved",
+  "blocking_source_findings": [
+    {"id":"R1","title":"Fixture workspace ownership and exact allowed-write scope unenforced","references":["inputs/frozen-checks/support/probe.ts:44-65","inputs/frozen-checks/support/fixture-data.mjs:111-166"],"evidence":"Synthetic disposable SQLite direct invocation accepts other-owned workspace, deletes an unrelated row, inserts five rows."},
+    {"id":"R2","title":"Setup error classification, transaction postconditions, module handling and API re-verification incomplete","references":["inputs/frozen-checks/support/fixture-data.mjs:68-95,118-175","inputs/frozen-checks/runner/report-validate.mjs:85-100","inputs/frozen-checks/sealed/50-api-tie-directions.spec.ts:53-69"]},
+    {"id":"R3","title":"Accessible custom selectors and workspace constrained beyond disclosed semantics","references":["inputs/frozen-checks/support/ui.ts:66-69,86-115","inputs/frozen-checks/public/50-ui-sort-control.spec.ts:16-22","inputs/public-scope/FAQ.md:13-14"]},
+    {"id":"R4","title":"Refetch attribution, response witness, asynchronous completion and default-query assumption","references":["inputs/frozen-checks/support/ui.ts:149-201","inputs/frozen-checks/public/60-ui-refetch-reorder.spec.ts:39-92","inputs/public-scope/contracts/C2-item-list-sort-toggle.md:5-6"]},
+    {"id":"R5","title":"Missing-Origin assumption and vacuous raw-response session test","references":["inputs/frozen-checks/sealed/20-api-precedence-and-auth.spec.ts:59-75","inputs/frozen-checks/support/http.ts:35-52","inputs/public-scope/baseline-spec.md:17"]},
+    {"id":"R6","title":"Actual controller does not invoke wrapper/report validator; frozen full identity, manifest and protected DB attachment binding incomplete","references":["inputs/replay-interface/replay_external_evaluator.py:27-44,137-143,199-225,253-254","inputs/frozen-checks/runner/report-validate.mjs:107-142,191-215","inputs/frozen-checks/SUITE_SOURCE_INVENTORY.json:1-6"],"evidence":"Synthetic two-project partial report with global error passes standalone validator; controller itself rejects global errors."},
+    {"id":"R7","title":"Negative-control variants and first-failure witnesses overpromise, particularly with fail-fast replay","references":["inputs/frozen-checks/NEGATIVE_CONTROL_REQUIREMENTS.md:27-31,47-65,80-87","inputs/frozen-checks/sealed/50-api-tie-directions.spec.ts:66-77"]},
+    {"id":"R8","title":"DELETE body assertion is vacuous because helper discards body","references":["inputs/frozen-checks/public/40-api-crud-preservation.spec.ts:80-83","inputs/frozen-checks/support/http.ts:131-134"]},
+    {"id":"R9","title":"Pre-freeze baseline-probe chronology conflicts with stated first-execution freeze and needs provenance resolution","references":["inputs/frozen-checks/PROVENANCE.json:67-75,95-101","inputs/frozen-checks/CHECKS.md:50-61,78-87","inputs/role-prompts/first-constructor.txt:3,7"]}
+  ],
+  "optional_and_ambiguities": ["Representative non-ASCII and natural-sort examples; fixture tie-property documentation is inaccurate","Narrow URL/storage observation without prescribing storage keys","JavaScript comparator is not a universal SQLite NOCASE implementation","Clock monotonicity and create timestamp equality require uniform interpretation","Work items title collision and disposable probe residue","Present-empty/duplicate query, initial option and workspace-switch state remain ambiguous"],
+  "prior_response_assessments": {
+    "B1":"repaired at source","B2":"substantially repaired; clock ambiguity retained","B3":"replacement proposed; scope and setup classification still blocking","B4":"partially repaired; accessible popup and workspace issues blocking","B5":"partially repaired; Origin and cookie-jar issues blocking","B6":"improved; independent inventory and actual replay binding incomplete","B7":"improved; request/response attribution and default query incomplete","B8":"improved; witness promises still invalid","B9":"actual interface supplied; source integration incomplete, image qualification pending","B10":"pending launch gate, not circular source rejection",
+    "O1":"optional expansion, disagreement retained","O2":"narrow, disagreement about impossibility of broader testing","O3":"receipts useful, chronology remains conflicting","O4":"documentation improved, ownership/scope enforcement insufficient","O5":"interpretations remain open, no invented rule"
+  },
+  "pending_mandatory_not_source_rejection_by_itself": ["qualified baseline and runtime/image/browser/auth/version","protected source/auth/DB/schema/ownership/regression/build/typecheck/lint/integrity gates","fixture helper real-image scope, negative, rollback, contamination, module and clean qualification","reference and materially different alternative","actual negative-control patches with witnessed expected failures","three clean replays","fresh site/path/command/overlay bindings and provider, broker, transport, privacy, resource and every registered gate"],
+  "non_claims": ["No implementing target or candidate run","No real container replay, negative application patch or three-clean qualification","No family independence or primary dispatch approval","No suite or input edits","Accepted source review would only authorize the next qualification stage"],
+  "detail": "REVIEW.md",
+  "commands_and_exits": "CHECKS.md",
+  "provenance": "PROVENANCE.json",
+  "sha256_manifest": "SHA256SUMS"
+}

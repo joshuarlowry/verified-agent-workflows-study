@@ -984,7 +984,7 @@
       "phase": "revision2_fixture_cross_review_only",
       "run_id": "clean-20261107T122746Z-c2-checks-r2-review-terra-20261108T182456Z",
       "prompt_sha256": "5b1fcb8334ac95e4e4c6db2d3efdf48987b503e3533b531fe0c33d65b6adc047",
-      "status": "running",
+      "status": "returned_changes_required",
       "fresh_session": true,
       "candidate_inputs_supplied": false,
       "self_approval": false,
@@ -1014,7 +1014,7 @@
       "phase": "fixture_source_cross_review_only",
       "run_id": "clean-20261107T122746Z-c2-clean-alternative-r2-source-review-glm-20261108T185010Z",
       "prompt_sha256": "26f1b24c9df911dd0762e05cbe1be70101fb199d11de4a557234716018a76ec8",
-      "status": "staged_not_dispatched_clean_source_bound",
+      "status": "running",
       "fresh_session": true,
       "reference_or_evaluator_inputs": false,
       "requires_clean_source_binding": true,
@@ -1022,9 +1022,24 @@
       "qualification": "Source/prompt review only; full external/negative/three-clean/runtime gates remain required. Contaminated attempt cannot be used.",
       "authorization": "Existing three-model fixture construction/cross-review waiver.",
       "clean_author_endpoint_sha256": "8b4e74ac69c77b95d6ab5d4139ff9ee3fa69976758009328e9f0cc409d1637fe"
+    },
+    {
+      "launch_id": "c2-native-evaluator-r3-construction-20261108T192247Z",
+      "role": "terra-C2-native-evaluator-revision3-constructor",
+      "requested_model": "openai/gpt-6.1-terra",
+      "reasoning": "high",
+      "phase": "explicit_fresh_native_fixture_construction",
+      "run_id": "clean-20261107T122746Z-c2-native-evaluator-r3-terra-20261108T192247Z",
+      "prompt_sha256": "6a27e6c280f2f20c856d8bbfa403358589ebec41574bd8222a3648bc3c1277d3",
+      "status": "staged_not_dispatched",
+      "fresh_session": true,
+      "candidate_inputs_supplied": false,
+      "previous_feature_evaluator_source_supplied": false,
+      "qualification": "Existing common native runner and baseline DB support reused; no new primary treatment or public scope change. Different-model review and full positive/negative/three-clean/runtime gates required.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T19:06:15.746904+00:00"
+  "updated_at_utc": "2026-11-08T19:27:02.712790+00:00"
 }
