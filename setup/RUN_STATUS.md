@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:09:36 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:28:03 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:09:36 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:28:03 AM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-c1-additive-rule-review | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 01:09:36 AM EST (UTC-0500) | — |
+| glm-c1-additive-rule-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 01:09:36 AM EST (UTC-0500) | Nov 08, 2026 at 01:28:03 AM EST (UTC-0500) |
 
 Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
 
