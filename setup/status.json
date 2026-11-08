@@ -1,8 +1,8 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "running",
-  "snapshot_at_utc": "2026-11-08T06:43:48.863722+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:43:48 AM EST",
+  "status": "stopped_preserving_state",
+  "snapshot_at_utc": "2026-11-08T06:44:24.966487+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:44:24 AM EST",
   "event_at_utc": "2026-11-08T06:43:46.272215+00:00",
   "event_at_eastern": "Nov 08, 2026 at 01:43:46 AM EST",
   "cohort_id": "clean-20261107T122746Z",
@@ -16,7 +16,9 @@
       "arm": "GLM supervising Gemma",
       "repetition": 1,
       "run_id": "cal-c1-01",
-      "status": "setting_up"
+      "status": "first_endpoint_frozen_ungraded",
+      "endpoint_reason": "infrastructure_failure",
+      "native_exit_code": -9
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
