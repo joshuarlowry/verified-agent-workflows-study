@@ -1,15 +1,15 @@
 # Current run status
 
-**Status published:** Nov 08, 2026 at 03:10:35 AM EST
+**Status published:** Nov 08, 2026 at 03:11:01 AM EST
 
-**Latest ledger event:** Nov 08, 2026 at 03:06:26 AM EST
+**Latest ledger event:** Nov 08, 2026 at 03:10:59 AM EST
 
-C1 calibration: **1/10 dispatched; 1/10 endpoints recorded.** Scored: **0**.
+C1 calibration: **2/10 dispatched; 1/10 endpoints recorded.** Scored: **0**.
 
 | Workflow | Repetition | State | Endpoint |
 |---|---|---|---|
 | GLM supervising Gemma | 1 | final | final |
-| GLM alone | 1 | setting_up | — |
+| GLM alone | 1 | active | — |
 
 Block version: **2**. Prior interrupted attempts retained: **1**. [Interruption record](c1-v1-technical-interruption.json).
 
