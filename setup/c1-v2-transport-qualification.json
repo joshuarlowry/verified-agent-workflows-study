@@ -1,0 +1,135 @@
+{
+  "qualified": true,
+  "scope": "Common native transport repair for clean C1v2 only; no application quality result",
+  "recorded_at_utc": "2026-11-08T07:56:27.891894+00:00",
+  "recorded_at_eastern": "Nov 08, 2026 at 02:56:27 AM EST",
+  "broker_sha256": "2a60afc77c915f03a87de85993afb629566ca0112f7cb85da95d36d44cfdc097",
+  "controller_sha256": "fb85f31d6d787e249c55429bf5892d8422758eda671fbc56dd0e73d29b3b08ac",
+  "root_controller_checks": 42,
+  "root_controller_skipped": 0,
+  "source_reviews": {
+    "acknowledgement": {
+      "verdict": "accepted",
+      "sha256": "2d643e7efa04ab4b2deb9c1f9e2a3b1ba5ac0b78e50638f755831c141a1475b0"
+    },
+    "stop_classification": {
+      "verdict": "accepted",
+      "sha256": "87628e6b3d87a2539c1febfebbb9b77e78123a3282784a2fbd9c3ad9ff13e472"
+    }
+  },
+  "source_review_capture_audits": {
+    "acknowledgement": {
+      "requests": 46,
+      "all_passed": true
+    },
+    "stop_classification": {
+      "requests": 55,
+      "all_passed": true
+    }
+  },
+  "real_registered_role_fault_workflows": [
+    {
+      "arm": "GLM supervising Gemma",
+      "run_id": "ack-probe-0-20261108t072355z",
+      "checks": {
+        "intentional_client_only_fault": true,
+        "durable_ack_loss_logged": true,
+        "parent_final": true,
+        "native_exit_zero": true,
+        "two_unique_worker_requests": true,
+        "two_worker_executions_not_three": true,
+        "same_native_worker_lineage": true,
+        "literal_marker_final": true,
+        "frozen_and_quiesced": true,
+        "resources_closed": true,
+        "actual_dated_provider_models_match": true
+      },
+      "passed": true,
+      "marker_file_sha256": "b0fa65633bd52dd751c8cf8b32a207fdd08090dec99a87fe1134587b3aedc4a8",
+      "actual_completed_nonempty_docs_calls": 2,
+      "dated_provider_generations_verified": 12,
+      "actual_resolution_receipt_sha256": "ab21af956cc89da9c3ad2edd865fc6e5a6b1123e40e4da34bcd14ccc70d1142d"
+    },
+    {
+      "arm": "Terra supervising Gemma",
+      "run_id": "ack-probe-1-20261108t072355z",
+      "checks": {
+        "intentional_client_only_fault": true,
+        "durable_ack_loss_logged": true,
+        "parent_final": true,
+        "native_exit_zero": true,
+        "two_unique_worker_requests": true,
+        "two_worker_executions_not_three": true,
+        "same_native_worker_lineage": true,
+        "literal_marker_final": true,
+        "frozen_and_quiesced": true,
+        "resources_closed": true,
+        "actual_dated_provider_models_match": true
+      },
+      "passed": true,
+      "marker_file_sha256": "b0fa65633bd52dd751c8cf8b32a207fdd08090dec99a87fe1134587b3aedc4a8",
+      "actual_completed_nonempty_docs_calls": 2,
+      "dated_provider_generations_verified": 12,
+      "actual_resolution_receipt_sha256": "1ac45c167fede1a0b19a47a46d74d2cbca735336a04edc29d62bf5acac569373"
+    }
+  ],
+  "native_stop_and_expiry_controls": {
+    "kind": "native_inflight_global_stop_and_expiry_fault_qualification_not_study_data",
+    "external_provider_calls": 0,
+    "model_calls": 0,
+    "all_passed": true,
+    "cases": [
+      {
+        "case": "account_outage",
+        "checks": {
+          "native_worker_was_inflight": true,
+          "initial_clock_was_registered120minutes": true,
+          "expected_stop_reason": true,
+          "endpoint_frozen": true,
+          "final_quiescence": true,
+          "all_resources_closed": true
+        },
+        "injection": {
+          "native_worker_inflight": true,
+          "registered_initial_duration_seconds": 7199.999824769,
+          "injected_at_utc": "2026-11-08T07:36:53.868848+00:00",
+          "fault": "Synthetic account-outage latch in isolated probe ledger only."
+        },
+        "fake_provider_invocations": 2,
+        "external_provider_calls": 0,
+        "passed": true
+      },
+      {
+        "case": "expired_ledger_deadline",
+        "checks": {
+          "native_worker_was_inflight": true,
+          "initial_clock_was_registered120minutes": true,
+          "expected_stop_reason": true,
+          "endpoint_frozen": true,
+          "final_quiescence": true,
+          "all_resources_closed": true
+        },
+        "injection": {
+          "native_worker_inflight": true,
+          "registered_initial_duration_seconds": 7199.999825366,
+          "injected_at_utc": "2026-11-08T07:37:43.640179+00:00",
+          "fault": "Disposable probe ledger expiry simulation; no production/collection clock or source modified."
+        },
+        "fake_provider_invocations": 2,
+        "external_provider_calls": 0,
+        "passed": true
+      }
+    ],
+    "limits": "Synthetic provider and disposable-ledger faults; no actual account outage/budget exhaustion and no two-hour elapsed claim. Real serving/stream/accounting proof is separate."
+  },
+  "unchanged_component_evidence": "setup/actual-native-role-qualification.json plus existing baseline/docs/acceptance/image proofs; live no-stop behavior structurally unchanged by final classification guard.",
+  "app_oracle_role_prompt_models_settings_deadlines_changed": false,
+  "study_attempts": "Interrupted C1v1 retained separately; fresh v2 not dispatched yet.",
+  "independent_model_family_claim": false,
+  "limits": [
+    "Same-study-family fresh cross-review; no human semantic review.",
+    "Synthetic stop controls do not claim an actual account outage, real budget exhaustion or two-hour elapsed wait.",
+    "Mechanical marker probes do not measure application quality or rank model economics.",
+    "Provider precision/dates are metadata attestations, not physical-weight verification."
+  ]
+}

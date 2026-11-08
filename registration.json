@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "protocol_revision": 15,
-  "status": "C1_clean_replay_transport_and_stop_classification_qualification",
+  "status": "C1_v2_calibration_admitted_scored_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -22,7 +22,7 @@
       "zdr_required": true,
       "allow_fallbacks": false,
       "provider_pin_applied_to_study": true,
-      "full_harness_qualification_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
+      "full_harness_qualification_sha256": "67f4cf1d8fed3bd24c1c9f0ca8e0cd158fcfb13d43edb5e4e6799ad085ee435e",
       "previous_candidate": "CoreWeave FP4; pre-study readiness only; no scored outcomes",
       "serving_label": "Gemma as served by Crusoe at catalog-reported BF16"
     },
@@ -39,7 +39,7 @@
       "zdr_required": true,
       "allow_fallbacks": false,
       "provider_pin_applied_to_study": true,
-      "full_harness_qualification_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b"
+      "full_harness_qualification_sha256": "67f4cf1d8fed3bd24c1c9f0ca8e0cd158fcfb13d43edb5e4e6799ad085ee435e"
     },
     {
       "name": "Terra",
@@ -55,7 +55,7 @@
       "zdr_required": true,
       "allow_fallbacks": false,
       "provider_pin_applied_to_study": true,
-      "full_harness_qualification_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b"
+      "full_harness_qualification_sha256": "67f4cf1d8fed3bd24c1c9f0ca8e0cd158fcfb13d43edb5e4e6799ad085ee435e"
     }
   ],
   "core_configurations": [
@@ -310,7 +310,7 @@
     "sealed_suite": "new cases and combinations of disclosed requirements",
     "hidden_feedback_during_primary": false,
     "ui_locator_policy": "accessible roles/names/labels; justified preregistered exceptions only",
-    "acceptance_suite_sha256": "4015ffd36a28c5316432bca048fc7069448ade34a47f94f0aba0d33ccbb962e4",
+    "acceptance_suite_sha256": "c7c579c4482474eb180fec71785d52e217bf12067d128039c4d59b3509a7b2c6",
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
     "independent_C1_evaluator_status": "Qualified finite machine packet for initial C1 calibration only; source/test preservation,20clean feature/regression/DB runs and native-auth proofs bound in frozen manifest.",
@@ -319,15 +319,15 @@
     "independent_C1_checker_review": "setup/c1-checker-review.json",
     "independent_C1_checker_repair_evidence": "setup/c1-checker-repair-endpoint.json",
     "C1_reference_public_regression_evidence": "setup/c1-reference-public-replays-20261107T232728Z.json",
-    "C1_alternative_runtime_status": "Joint Gemma two-query server + Terra client repair source-accepted by GLM;3cold full public replays and3non-test native-auth replays passed. In-session staleness is not an additional C1 rule. Current feature checker has unresolved source defects; task qualification pending.",
+    "C1_alternative_runtime_status": "Qualified joint Gemma server/Terra client alternative: source preservation,21feature cases,17protected regressions, native-auth31 and full public checks pass in the retained cold replays. Acceptance/app bytes unchanged for C1v2.",
     "current_C1_checker_evidence": "setup/c1-final-runtime-matrix.json",
     "historical_evaluator_records_notice": "Earlier independent evaluator/checker evidence fields refer to retained historical preparation revisions, not the current acceptance suite. Current status and evidence above control; acceptance_suite_sha256 remains null.",
     "protected_baseline_regression_status": "All17protected regression cases pass baseline and3fresh replays each of two valid implementations. Documented assertion migrations remain finite bounds; subject tests are supplementary."
   },
-  "prompt_bundle_sha256": "98c99fc8ab5a4fed643c3251559f67a863a76056b709701eb212b93247e7cf5a",
-  "harness_manifest_sha256": null,
+  "prompt_bundle_sha256": "4deb03a168940fe73a7b8c6d33f91da128b1fd2b2401c7c44abb984c0aea9579",
+  "harness_manifest_sha256": "6fdfedcc252355ae1be1407fff11d2be48622c3578887845a2fcd094ec029cdb",
   "usage_capture_smoke_results_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
-  "worker_broker_preflight_sha256": null,
+  "worker_broker_preflight_sha256": "67f4cf1d8fed3bd24c1c9f0ca8e0cd158fcfb13d43edb5e4e6799ad085ee435e",
   "randomization_seed": null,
   "randomized_schedule_sha256": null,
   "disposable_database_execution_authorized": true,
@@ -612,9 +612,9 @@
       "id": "common_adapter",
       "phase": "before_calibration",
       "detail": "qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16",
-      "resolved": false,
-      "evidence": "setup/actual-native-role-qualification.json",
-      "resolution_scope": "Prior model/provider/Context/capture qualification remains evidence for unchanged components. Handoff acknowledgement repair must pass fresh source review and transport qualification before clean replay."
+      "resolved": true,
+      "evidence": "setup/c1-calibration-admission.json",
+      "resolution_scope": "Initial C1 calibration block only. C2-C4 qualification and all scored-task/material freezes remain pending."
     },
     {
       "id": "fixture_and_corpus",
@@ -817,7 +817,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "1interrupted C1v1attempt retained;0scored. Ack fix source accepted and live GLM/Terra-to-Gemma fault recovery qualified.42controller checks pass after separate endpoint-cause classification fix; its native stop controls/review precede clean v2 admission.",
+  "setup_progress": "Fresh C1v2 ten-slot calibration admitted. Interrupted C1v1 remains in feasibility/cost, separate from clean collection. Remaining30calibration and165scored slots retain existing preparation gates; no implementation result inferred from readiness.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -928,8 +928,8 @@
         "run_id": "cal-c1-v2-10"
       }
     ],
-    "admitted": false,
-    "admission_evidence_sha256": null,
+    "admitted": true,
+    "admission_evidence_sha256": "47e3e396b3863d00374b3deb74fa0d3939f3a79b119435f04d23f23d9f21befb",
     "before_dispatch": [
       "C1 standard acceptance suite independently reviewed, frozen and qualified against baseline/reference/valid alternate/negative controls",
       "Single-workflow common native harness, real model roles, approved documentation, capture/accounting and endpoint integrity qualified",
@@ -937,8 +937,44 @@
       "Transport acknowledgement fix cross-reviewed and qualified; fresh v2 identities/source/sessions frozen. Preserve interrupted v1 and its9unrun slots as execution history."
     ],
     "remaining_preparation": "Qualify C2-C4 before their calibration slots and the first five scored packets before scoring; remaining builders remain blind to comparative outcomes. Full planned sample and all registered systems/endpoints remain unchanged.",
-    "admitted_at_utc": null,
-    "frozen_manifests": [],
+    "admitted_at_utc": "2026-11-08T07:56:28.061772+00:00",
+    "frozen_manifests": [
+      {
+        "category": "baseline",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/baseline.json",
+        "sha256": "5ecd80ebf092c1064ae681fc6c1e9e1e05be89c49063ff0e4f04e088d4a11fb4"
+      },
+      {
+        "category": "image",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/image.json",
+        "sha256": "75fbc541180663e7fe1ef664057e52ce1ed27b83add4be4651400240b667cf60"
+      },
+      {
+        "category": "harness",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/harness.json",
+        "sha256": "6fdfedcc252355ae1be1407fff11d2be48622c3578887845a2fcd094ec029cdb"
+      },
+      {
+        "category": "docs",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/docs.json",
+        "sha256": "9662e1c3af13c284cc9776e1b0e39a8a7627cf9e5c143015cb51a22a0cac17fa"
+      },
+      {
+        "category": "acceptance",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/acceptance.json",
+        "sha256": "c7c579c4482474eb180fec71785d52e217bf12067d128039c4d59b3509a7b2c6"
+      },
+      {
+        "category": "prompts",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/prompts.json",
+        "sha256": "4deb03a168940fe73a7b8c6d33f91da128b1fd2b2401c7c44abb984c0aea9579"
+      },
+      {
+        "category": "model_roles",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/model_roles.json",
+        "sha256": "96c3d351b64f5aa29e6aff4e564b718eb608a2de362c257b0dd819bbd464b233"
+      }
+    ],
     "prior_frozen_registration": "Preserved privately with its7manifests; v1 first dispatch retained as infrastructure interruption, no successful completion claim.",
     "history_v1": {
       "frozen_registration_sha256": "ca1ac407b834774f294c020ef44670b2eb206463fc77802136888772848a5200",
@@ -1080,7 +1116,7 @@
     "changed_application_or_acceptance": false,
     "models_settings_deadlines_unchanged": true,
     "fresh_cross_review_required": true,
-    "status": "ack_source_review_accepted_and_both_real_supervisor_fault_probes_passed",
+    "status": "qualified_for_clean_C1_v2",
     "clean_replay_policy": "Preserve the interrupted first attempt in results and total study cost. Before any further collection, qualify/freeze the common transport repair and register a fresh10-slot clean C1 block with the same workflow order and fresh sessions/source. No continuation or rescue of the first attempt.",
     "actual_attempt_accounting": "Target remains40clean calibration+165scored; at least1additional interrupted technical attempt is retained and reported, not silently excluded from study-wide feasibility/cost.",
     "clean_block_order": "Same frozen seed/arm/repetition order; new cal-c1-v2-01..10 IDs, no rerandomization.",
@@ -1095,6 +1131,7 @@
     "scope": "Endpoint-cause classification only; cancellation/deadline thresholds, actor prompts, model settings, app/acceptance unchanged.",
     "before_regression_checks": "2new controller cases fail before fix; all42controller checks pass after.",
     "qualification": "Actual native in-flight outage replay passes; expiry fault replay and fresh GLM source review required before freeze.",
-    "new_clean_block_dispatch_allowed": false
+    "new_clean_block_dispatch_allowed": true,
+    "status": "source_review_accepted_native_stop_controls_passed"
   }
 }

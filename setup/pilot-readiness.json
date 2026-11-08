@@ -1,10 +1,10 @@
 {
-  "recorded_at_utc": "2026-11-08T06:58:45.693719+00:00",
+  "recorded_at_utc": "2026-11-08T08:00:29.643028+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
-  "admitted": false,
+  "admitted": true,
   "calibration_runs": 1,
   "scored_runs": 0,
-  "protocol_revision": 14,
+  "protocol_revision": 15,
   "primary_scheduling": "sequential",
   "critical_path": [
     {
@@ -28,10 +28,10 @@
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
-      "state": "First actual workflow interrupted by a reproduced broker acknowledgement cancellation bug after a waiting shell client timed out. Original endpoint preserved; new common transport fix passes40checks, fresh review pending.",
+      "state": "Transport repair and stop-cause classification accepted in fresh GLM reviews;42root checks pass. Both live supervisors recover from intentional lost handoff clients without duplicate workers; native outage/expiry controls pass. Fresh7-manifest C1v2 block admitted; prior interruption retained.",
       "existing_evidence": "Common adapter proof complete. Public-only feature/regression files are staged separately from sealed cases, reference/control sources, logs and previous reviews. Final manifest binding/install remain pending.",
       "limits": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted.",
-      "evidence": "setup/actual-native-role-qualification.json"
+      "evidence": "setup/c1-v2-transport-qualification.json"
     },
     {
       "gate": "Approved documentation package runtime",
@@ -52,6 +52,7 @@
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 08, 2026 at 01:58:45 AM EST",
-  "next_collection": "Qualify and freeze transport-only repair, then a fresh10-slot C1 block in unchanged workflow order. Retain interrupted v1 attempt separately; no agent continuation or quality rescue."
+  "recorded_at_eastern": "Nov 08, 2026 at 03:00:29 AM EST",
+  "next_collection": "Fresh C1v2 cal-c1-v2-01..10, unchanged arm/repetition order and role/task bytes. Prior cal-c1-01 and9unrun v1slots retained in history. Endpoint/native-state backups between workflows; passive Eastern status publisher.",
+  "clean_v2_dispatched": 0
 }

@@ -40,7 +40,7 @@ Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus
 
 ## Blocking dependencies
 
-- **common_adapter**: qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16
+
 
 **Optional extension:** blinded human patch review can later measure merge readiness and active review effort on frozen endpoints. It does not gate core setup, calibration or scoring. See [reviewer brief](REVIEWER_BRIEF.md); fixture/corpus qualification uses recorded cross-review by different authorized study models; it does not establish independent-family authorship.
 
