@@ -1,0 +1,22 @@
+{
+  "kind": "mechanical_cleanup_regenerable_verification_dependencies_only",
+  "started_at_utc": "2026-11-08T18:17:01.154718+00:00",
+  "ended_at_utc": "2026-11-08T18:17:17.574399+00:00",
+  "elapsed_seconds": 18.778181635017972,
+  "model_calls": 0,
+  "primary_collection_active": false,
+  "overlap": "One unscored GLM evaluator-revision fixture author was active; no primary timed subject collection. This maintenance interval is preparation overhead.",
+  "immutable_dependency_image_retained": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "status": "completed_retained_evidence_identical",
+  "retained_source_database_logs_and_receipts": true,
+  "retained_evidence_entries": 17292,
+  "retained_evidence_before_sha256": "7d97215c2efa2251eafd4ca1c052f4b214c3fe4dc200ff417379fae0a43ade16",
+  "retained_evidence_after_sha256": "7d97215c2efa2251eafd4ca1c052f4b214c3fe4dc200ff417379fae0a43ade16",
+  "free_bytes_before": 25673072640,
+  "free_bytes_after": 51807424512,
+  "completed_disposable_replays": 95,
+  "regenerable_dependency_directories_removed": 190,
+  "source_endpoints_modified": false,
+  "provider_or_budget_settings_changed": false,
+  "restore_method": "Recreate verification dependency copies from the same retained immutable image and frozen locks; no model output needs regeneration."
+}
