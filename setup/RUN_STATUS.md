@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 09:10:29 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 09:33:27 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 09:10:29 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 09:33:27 AM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-public-preservation-review | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 09:10:29 AM EST (UTC-0500) | — |
+| glm-public-preservation-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 09:10:29 AM EST (UTC-0500) | Nov 08, 2026 at 09:33:27 AM EST (UTC-0500) |
 
 Prospective public source/FAQ disclosure only; all C1 results unchanged. No new primary task dispatch.
 
