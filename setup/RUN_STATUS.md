@@ -16,3 +16,5 @@ C1 calibration: **7/10 endpoints recorded** across the initial schedule. Current
 Block version: **3**. Earlier ordinary endpoints carried forward: **3**. Prior interrupted attempts retained: **2**. [First interruption](c1-v1-technical-interruption.json) · [DNS interruption](c1-v2-dns-interruption.json).
 
 Endpoints remain ungraded. A final return or deadline may leave incomplete work. Backups run between workflows. All displayed times use America/New_York. [Frozen admission](c1-calibration-admission.json).
+
+Collection stopped after the second Terra-supervised Gemma trial encountered a truncated native session export. **7/10 endpoints recorded; 3 slots unrun.** Its failure and remote backup are preserved. Capture repair must be qualified before collection continues. [Failure and diagnostic evidence](c1-session-export-failure.json).

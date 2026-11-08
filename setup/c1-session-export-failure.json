@@ -1,0 +1,74 @@
+{
+  "kind": "failed_C1_calibration_workflow_preserved_not_retried",
+  "recorded_at_utc": "2026-11-08T12:27:25.838373+00:00",
+  "run_id": "cal-c1-v3-07",
+  "workflow": "Terra supervising Gemma",
+  "repetition": 2,
+  "primary_endpoint": "infrastructure_failure",
+  "first_supervisor_final_return": false,
+  "dispatch": {
+    "monotonic_ns": 283445743329365,
+    "utc": "2026-11-08T10:38:54.532049+00:00"
+  },
+  "process_exit": {
+    "monotonic_ns": 289612799197353,
+    "utc": "2026-11-08T12:21:41.587910+00:00"
+  },
+  "elapsed_dispatch_to_exit_seconds": 6167.055867988,
+  "native_exit_code": -9,
+  "api_budget_exhausted": false,
+  "global_admission_stopped": false,
+  "backup": {
+    "checkpoint": "checkpoints/preparation-20261108T122156935556Z.tar.gz",
+    "sha256": "c4367e77e2f0cef209997551d107970188cbe37e1f33439010d503a26d702dff",
+    "bytes": 53322774,
+    "published_private": true
+  },
+  "actual_provider_resolution": "verified",
+  "transport_diagnostic": {
+    "third_handoff_worker_inference_started": false,
+    "session_export_exit_code": 0,
+    "session_export_bytes": 516096,
+    "valid_json": false,
+    "error_type": "JSONDecodeError",
+    "expected_restored_export_bytes": 1150699,
+    "exact_capture_reproduction": [
+      {
+        "mode": "exact-capture",
+        "repeat": 0,
+        "exit_code": 0,
+        "bytes": 851968,
+        "valid_json": false,
+        "error_type": "JSONDecodeError"
+      },
+      {
+        "mode": "exact-capture",
+        "repeat": 1,
+        "exit_code": 0,
+        "bytes": 778240,
+        "valid_json": false,
+        "error_type": "JSONDecodeError"
+      },
+      {
+        "mode": "exact-capture",
+        "repeat": 2,
+        "exit_code": 0,
+        "bytes": 843776,
+        "valid_json": false,
+        "error_type": "JSONDecodeError"
+      }
+    ],
+    "reproduction_model_calls": 0,
+    "reproduction_application_source_mounted": false,
+    "source_report_sha256": "d500fc4a4dc01a31fff9701d8f143aa2f2c4de96938139492a7a45fcd5cd5edf",
+    "interpretation": "Large session export truncates under the exact capture path; direct and regular-file offline controls preserved complete JSON. Capture/flush mechanism needs qualification before more supervision."
+  },
+  "remaining_frozen_run_ids": [
+    "cal-c1-v3-08",
+    "cal-c1-v3-09",
+    "cal-c1-v3-10"
+  ],
+  "policy": "Failure remains a nominal calibration outcome; no retry, rescue or silent replacement. Qualify any capture repair and disclose harness versions before resuming original unrun slots. No new completion criteria. Scored collection has not started.",
+  "operator_access_disclosure": "After this endpoint, a diagnostic command printed supervisor instructions and worker summaries to the operator. No application source was opened, no subject feedback was sent, and remaining frozen prompts stay unchanged. Retained in protocol audit.",
+  "model_calls_by_this_record": 0
+}
