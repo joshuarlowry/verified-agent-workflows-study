@@ -1,34 +1,27 @@
 {
-  "status_note": "Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.",
+  "kind": "registered_C1_calibration_metadata",
+  "status": "running",
+  "snapshot_at_utc": "2026-11-08T08:01:50.110469+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 03:01:50 AM EST",
+  "event_at_utc": "2026-11-08T08:01:45.186605+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 03:01:45 AM EST",
   "cohort_id": "clean-20261107T122746Z",
-  "launch_id": "stop-classification-review-20261108T073929Z",
-  "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T07:50:36.294332+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 02:50:36 AM EST (UTC-0500)",
-  "event_at_utc": "2026-11-08T07:50:36.240249+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 02:50:36 AM EST (UTC-0500)",
-  "display_timezone": "America/New_York",
-  "status": "construction_returned_not_qualified",
-  "background_service": "study2-stop-classification-review-20261108t073929z",
-  "automatic_restart": false,
-  "roles": [
+  "calibration_block_size": 10,
+  "calibration_dispatched": 0,
+  "calibration_endpoints": 0,
+  "scored_runs": 0,
+  "rows": [
     {
-      "role": "glm-stop-classification-review",
-      "run_id": "clean-20261107T122746Z-stop-classification-review-glm-20261108T073929Z",
-      "model": "z-ai/glm-5.3-flash",
-      "status": "returned_requires_cross_review",
-      "dispatch_utc": "2026-11-08T07:39:29.493183+00:00",
-      "ended_at_utc": "2026-11-08T07:50:36.240237+00:00",
-      "agent_exit_code": 0,
-      "controller_exit_code": 0,
-      "api_budget_exhausted": false,
-      "prompt_sha256": "16b0364431a63d236c72198213361b379789ffc36c1e7208d74434d8f5cd31d4",
-      "controller_sha256": "098aa734767e368b77e9b3774ca5f051b5c30d02a18c73edd1d7690f845d7b85",
-      "dispatch_eastern": "Nov 08, 2026 at 02:39:29 AM EST (UTC-0500)",
-      "ended_at_eastern": "Nov 08, 2026 at 02:50:36 AM EST (UTC-0500)"
+      "position": 1,
+      "arm": "GLM supervising Gemma",
+      "repetition": 1,
+      "run_id": "cal-c1-v2-01",
+      "status": "setting_up"
     }
   ],
-  "qualification_status": "not_qualified",
-  "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
-  "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
+  "quality": "Not graded; an endpoint is not verified completion.",
+  "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
+  "calibration_block_version": 2,
+  "prior_interrupted_calibration_attempts": 1,
+  "total_calibration_dispatched_including_prior": 1
 }

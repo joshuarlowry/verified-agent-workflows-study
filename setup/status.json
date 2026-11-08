@@ -1,31 +1,27 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "preparation_construction_returned_not_qualified",
-  "snapshot_at_utc": "2026-11-08T06:44:24.966487+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:44:24 AM EST",
-  "event_at_utc": "2026-11-08T06:43:46.272215+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 01:43:46 AM EST",
+  "status": "running",
+  "snapshot_at_utc": "2026-11-08T08:01:50.110469+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 03:01:50 AM EST",
+  "event_at_utc": "2026-11-08T08:01:45.186605+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 03:01:45 AM EST",
   "cohort_id": "clean-20261107T122746Z",
   "calibration_block_size": 10,
-  "calibration_dispatched": 1,
-  "calibration_endpoints": 1,
+  "calibration_dispatched": 0,
+  "calibration_endpoints": 0,
   "scored_runs": 0,
   "rows": [
     {
       "position": 1,
       "arm": "GLM supervising Gemma",
       "repetition": 1,
-      "run_id": "cal-c1-01",
-      "status": "first_endpoint_frozen_ungraded",
-      "endpoint_reason": "infrastructure_failure",
-      "native_exit_code": -9
+      "run_id": "cal-c1-v2-01",
+      "status": "setting_up"
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
   "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
-  "updated_at_utc": "2026-11-08T07:50:36.294332+00:00",
-  "updated_at_eastern": "Nov 08, 2026 at 02:50:36 AM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 08, 2026 at 02:50:36 AM EST (UTC-0500)",
-  "active_launch": "setup/launch.json",
-  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
+  "calibration_block_version": 2,
+  "prior_interrupted_calibration_attempts": 1,
+  "total_calibration_dispatched_including_prior": 1
 }
