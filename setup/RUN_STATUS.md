@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 12:03:35 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 12:13:13 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 12:03:35 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 12:13:13 AM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-c1-acceptance-consolidation | openai/gpt-6.1-terra | running | Nov 08, 2026 at 12:03:35 AM EST (UTC-0500) | — |
+| terra-c1-acceptance-consolidation | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 12:03:35 AM EST (UTC-0500) | Nov 08, 2026 at 12:13:13 AM EST (UTC-0500) |
 
 Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
 
