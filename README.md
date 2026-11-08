@@ -42,7 +42,6 @@ Excludes: fixture/reference/negative-control/corpus construction, fixture/corpus
 
 ## Blocking dependencies
 
-- **corpus_reviewer**: different authorized study model cross-reviews source inventory and omissions in a separate session; family dependence disclosed
 - **common_adapter**: qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16
 - **fixture_and_corpus**: qualify baseline, calibration tasks, source corpus, evaluator and isolated DB authorization
 - **authored_treatment_review**: record and cross-review authoritative role prompts, handoff templates, task contracts and FAQ using different authorized models; retain per-artifact hashes and revisions
