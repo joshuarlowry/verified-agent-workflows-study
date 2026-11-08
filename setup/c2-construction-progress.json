@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T17:23:09.939493+00:00",
+  "snapshot_at_utc": "2026-11-08T17:38:26.657369+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -24,7 +24,8 @@
         "setup/c2-reference-auth-three-clean-20261108T1623Z.json"
       ],
       "scope": "Native regression/auth/runtime evidence only; independent C2 feature acceptance and full task qualification remain pending."
-    }
+    },
+    "cross_review": "Accepted within stated source/runtime-review scope; no candidate changes requested."
   },
   "alternative": {
     "model": "google/gemma-4-31b-it",
@@ -66,7 +67,8 @@
     "first_source_snapshot_files": 19,
     "source_git_packaged": true,
     "source_patch_roundtrip_exact": true,
-    "no_silent_retry": true
+    "no_silent_retry": true,
+    "cross_review": "Changes required: missing baseline dotfiles, unrelated sign-out behavior and empty-sort divergence under literal public rule; ambiguity preserved."
   },
   "external_checks": {
     "model": "z-ai/glm-5.3-flash",
@@ -106,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 12:23:09 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 12:38:26 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -134,9 +136,8 @@
     },
     "candidates": {
       "model": "z-ai/glm-5.3-flash",
-      "status": "running",
+      "status": "returned_reference_accepted_alternative_changes_required",
       "service": "study2-c2-candidate-cross-review-20261108t161644z",
-      "pid": 2522927,
       "startup_identity_verified": true,
       "first_wire_requested_model": "z-ai/glm-5.3-flash",
       "provider_only": [
@@ -145,7 +146,16 @@
       "allow_fallbacks": false,
       "zdr": true,
       "inputs": "Anonymized original first candidate source snapshots plus original baseline/public inputs only; no evaluator, conversations or outcome logs.",
-      "actual_generation_metadata_audit": "pending first endpoint"
+      "actual_generation_metadata_audit": "All 47 known generation IDs verified",
+      "native_elapsed_seconds": 783.1793832990224,
+      "raw_capture_requests_verified": 47,
+      "actual_generation_ids_verified": 47,
+      "actual_dated_model": "z-ai/glm-5.3-flash-20260826",
+      "actual_provider": "Relace",
+      "review": "setup/c2-first-candidate-review.json",
+      "review_sha256": "34c5968c9207eabc27492e248f1d3b8e16130496e69fab5bbe850f5661227864",
+      "verdict_scope": "Different-model source/runtime review only; browser/external/negative/three-clean task acceptance not established by this review.",
+      "timestamp_limit": "Model-authored reviewed_at_utc is later than observed return; controller timestamps and native elapsed time are authoritative."
     },
     "self_approval": false
   },
@@ -161,5 +171,16 @@
     "raw_review_disposition_preserved": true,
     "pending_qualification_is_not_an_executed_failure": true,
     "input_execute_permission_artifact": "Reviewer input staging removed executable bits; original frozen suite retained them. Explicit revision2 staging preserves execute bits and supplies actual replay interface. No oracle defect is silently waived."
+  },
+  "material_alternative_requirement": "Not yet met: reviewer found both first candidates use SQL ordering. Pre-appointed in-memory alternative requirement remains unchanged.",
+  "alternative_revision_2": {
+    "model": "google/gemma-4-31b-it",
+    "status": "staged_not_dispatched",
+    "fresh_session": true,
+    "reference_or_evaluator_inputs": false,
+    "feedback": "Exact candidate-B-only finding entries extracted from preserved review with original report hash; candidate-A/comparative/source/evaluator material omitted.",
+    "original_in_memory_strategy_requirement_unchanged": true,
+    "first_endpoint_preserved": true,
+    "qualification_required": "Different-model review, materially different ordering and all external/negative/clean/runtime gates."
   }
 }

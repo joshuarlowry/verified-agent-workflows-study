@@ -1,0 +1,137 @@
+{
+  "review": "C2 fixture cross-review (fresh-session appointed cross-reviewer)",
+  "reviewed_at_utc": "2026-11-08T17:45:00Z",
+  "reviewer_role": "fresh-session C2 fixture cross-reviewer; not a primary subject; not family-independent evaluator",
+  "task": "C2 — Item list sort toggle (calibration)",
+  "assigned_contract": "inputs/public-scope/contracts/C2-item-list-sort-toggle.md (sha256 51fa20665d9081a3a94af152c1ddeba56cb681b4ec80087380250e99a63d4055)",
+  "candidates_reviewed": [
+    {
+      "id": "candidate-a",
+      "path": "inputs/candidate-a",
+      "changed_vs_baseline": {
+        "modified": ["server/app.ts", "src/main.tsx", "tests/api.test.ts"],
+        "added": ["tests/e2e/c2-sort.spec.ts"],
+        "deleted": []
+      },
+      "verdict": "accepted",
+      "blocking_findings": [],
+      "optional_findings": ["A-O1", "A-O2", "A-O3", "A-O4", "A-N1"],
+      "public_behavior_coverage": {
+        "get_items_absent_defaults_updated_desc": "PASS (runtime probe, exit-verified)",
+        "get_items_updated_desc": "PASS (runtime probe)",
+        "get_items_updated_asc": "PASS (runtime probe; contract seed order reproduced)",
+        "get_items_title_asc": "PASS (runtime probe; contract seed order reproduced; NOCASE)",
+        "get_items_explicit_invalid_400": "PASS (runtime probe: nonsense, TITLE_ASC, empty ?sort=, bare ?sort -> 400 validation_failed with exact fields.sort string)",
+        "precedence_401_404_before_sort_400": "PASS (runtime probe: unauthenticated 401, non-member 404, unknown workspace 404, all with sort=bad)",
+        "item_shape_and_wrapper_preserved": "PASS (runtime probe: wrapper {workspaceId,items}; item keys id,workspaceId,title,notes,status,dueDate,version,createdBy,createdAt,updatedAt)",
+        "ui_accessible_sort_selector": "PASS (static: <label htmlFor=\"sort-items\">Sort items</label> + <select id=\"sort-items\">; options Newest activity/Oldest activity/Title A–Z with U+2013 byte-exact)",
+        "ui_refetch_without_reload": "PASS (static: native select onChange -> gated load(); no navigation; e2e spec asserts navigations===0)",
+        "no_persistence_url_filters_pagination_title_desc": "PASS (static: none present)",
+        "auth_schema_seed_unchanged": "PASS (server/db.ts, server/reset.ts, server/index.ts, package.json, package-lock.json byte-identical to baseline)"
+      },
+      "preservation": {
+        "finite_source_inventory": "verified (faithful local replication of path-gate-source.mjs against public SOURCE_INVENTORY.json; only allowed paths changed)",
+        "original_test_predicate": "PASS: preserveOriginalTest -> tests/api.test.ts {migration:false,assertions:0,cases:0,group_cases:1}; all other original tests byte-identical",
+        "frozen_config_files": "byte-identical (tsconfig, vite.config, vitest.config, playwright.config, eslint.config, index.html, README, .gitignore, .npmrc)"
+      },
+      "local_checks": {
+        "npm_ci": 0, "npm_run_build": 0, "npm_run_typecheck": 0, "npm_run_lint": 0, "npm_test": "0 (8/8 passed, incl. self-authored C2 case)",
+        "runtime_probe": "C2 endpoint behaviors verified on real server (port 34711, disposable probe.sqlite, NODE_ENV/TEST unset, trusted same-origin sign-in)"
+      },
+      "ordering_strategy": "single prepared statement with validated ORDER BY suffix map (Object.hasOwn guard; no user input concatenated); injection-safe",
+      "residual_risks": [
+        "Top-level invalid-sort message 'Invalid sort.' is not contract-pinned (only code + fields.sort are pinned); low risk since sealed cases cover disclosed requirements only.",
+        "Sort state resets to default on workspace switch (Board keyed by epoch remounts); permitted because contract forbids persistence, but exact reset behavior is unpinned.",
+        "Self-authored tests passed here are not independent acceptance; browser e2e (incl. new spec) not executed in this review (chromium not installed)."
+      ]
+    },
+    {
+      "id": "candidate-b",
+      "path": "inputs/candidate-b",
+      "changed_vs_baseline": {
+        "modified": ["server/app.ts", "src/main.tsx"],
+        "added": [],
+        "deleted": [".gitignore", ".npmrc"]
+      },
+      "verdict": "changes_required",
+      "blocking_findings": ["B-B1", "B-B2", "B-B3"],
+      "optional_findings": ["B-O1", "B-O2", "B-O3", "B-O4"],
+      "public_behavior_coverage": {
+        "get_items_absent_defaults_updated_desc": "PASS (runtime probe)",
+        "get_items_updated_desc": "PASS (runtime probe)",
+        "get_items_updated_asc": "PASS (runtime probe; contract seed order reproduced)",
+        "get_items_title_asc": "PASS (runtime probe; contract seed order reproduced; NOCASE)",
+        "get_items_explicit_invalid_400": "PARTIAL: nonsense and TITLE_ASC -> 400 with exact fields.sort; BUT ?sort= (empty) and bare ?sort -> 200 default order (runtime-verified divergence from the literal explicit-invalid rule)",
+        "precedence_401_404_before_sort_400": "PASS (runtime probe)",
+        "item_shape_and_wrapper_preserved": "PASS (runtime probe)",
+        "ui_accessible_sort_selector": "PASS (static: wrapping <label>Sort items<select/></label>; options byte-exact incl. U+2013)",
+        "ui_refetch_without_reload": "PASS (static: effect deps [sort] -> load(); no navigation)",
+        "no_persistence_url_filters_pagination_title_desc": "PASS (static: none present)",
+        "auth_schema_seed_unchanged": "PASS (db.ts/reset.ts/index.ts/package.json/package-lock.json byte-identical)",
+        "signout_error_handling": "CHANGED vs baseline (unrelated to C2): 401 swallowed"
+      },
+      "preservation": {
+        "finite_source_inventory": "FAIL: original files .gitignore and .npmrc deleted (gate error 'baseline source deletion unsupported'); all remaining changes within allowed paths",
+        "original_test_predicate": "PASS byte-identical (predicate returns unchanged for all four original test files)",
+        "frozen_config_files": "byte-identical except the two deleted dotfiles"
+      },
+      "local_checks": {
+        "npm_ci": 0, "npm_run_build": 0, "npm_run_typecheck": 0, "npm_run_lint": 0, "npm_test": "0 (7/7 passed, original suite only)",
+        "runtime_probe": "C2 endpoint behaviors verified on real server (port 34712); empty-sort divergence captured"
+      },
+      "ordering_strategy": "three full query strings selected by includes() with early error return; injection-safe; runtime-verified identical outputs to candidate-a for all valid values",
+      "residual_risks": [
+        "Empty-value sort semantics ambiguous in contract prose; candidate-b chose absent-treatment; literal explicit-invalid reading requires 400. Resolve by alignment or frozen evaluator ruling.",
+        "signOut 401 swallow is an unrelated UI behavior change with no disclosed requirement and no original-test dependency.",
+        "Browser e2e not executed in this review (chromium not installed)."
+      ]
+    }
+  ],
+  "blocking_findings": {
+    "B-B1": {
+      "candidate": "candidate-b",
+      "severity": "blocking",
+      "class": "original-source deletion / integrity gate",
+      "statement": "candidate-b tree is missing original baseline files .gitignore (8c70f989d47737d4e2ba403034fe4ae385b697d0e94824201b4ca6ae0905fd79) and .npmrc (be85cc462e740587626bbcbb1c3ed1c40b26e62ec072e8cbd2768f23915c28e6). PRESERVATION.md: 'Original file deletion, symlinks and nonregular files fail.' Faithful local replication of path-gate-source.mjs emits 'baseline source deletion unsupported: .gitignore'.",
+      "evidence": "CHECKS.md C5; SHA256SUMS; tree-gate2.mjs output",
+      "fix": "Restore both files byte-identical to baseline; no other change required for this finding."
+    },
+    "B-B2": {
+      "candidate": "candidate-b",
+      "severity": "blocking",
+      "class": "unrelated behavior change / scope gate",
+      "statement": "src/main.tsx signOut now catches ApiError 401 and ignores it (baseline: setError(msg(e))). Sign-out error handling is outside C2's declared surfaces (items list order + sort selector). PRESERVATION.md: 'An allowed file path does not authorize unrelated changes'; baseline-spec scope: do not 'change unrelated behavior'. No original test asserts sign-out error display, so the change is neither required nor disclosed.",
+      "evidence": "diff of src/main.tsx (CHECKS.md C2); grep of original tests (no dependency)",
+      "fix": "Revert the signOut catch block to baseline form."
+    },
+    "B-B3": {
+      "candidate": "candidate-b",
+      "severity": "blocking (contract-literal reading; ambiguity disclosed)",
+      "class": "public behavior divergence",
+      "statement": "Runtime-verified: GET /api/workspaces/ws_apollo/items?sort= and ?sort (valueless) return 200 with default updated_desc order. The contract defines 'absent' (default) and three exact valid values; any other explicit value is 'explicit invalid' -> 400 validation_failed with fields.sort. An explicitly present empty value is most literally an explicit invalid value. Candidate-a returns 400 for both inputs.",
+      "evidence": "probe.mjs candidate-b output line '?sort= (empty) 200' and '?sort= (no value) 200' (CHECKS.md C10)",
+      "fix": "Treat an explicitly present sort value (including empty string) that is not one of the three as 400 validation_failed with the exact fields.sort string; alternatively obtain a frozen evaluator ruling that empty == absent before dispatch."
+    }
+  },
+  "optional_findings": {
+    "A-O1": "candidate-a: top-level invalid-sort message 'Invalid sort.' is unpinned by the contract (code + fields.sort are pinned); informational, no change required.",
+    "A-O2": "candidate-a: new tests/e2e/c2-sort.spec.ts opens data/e2e.sqlite read-write while the server runs (baseline assertion pattern uses {readonly:true}); brief WAL writer contention possible; optional alignment to baseline pattern where possible.",
+    "A-O3": "candidate-a: sort selection resets to default on workspace switch (Board remount); permitted (contract forbids persistence); unpinned either way.",
+    "A-O4": "candidate-a: sort selector remains visible during load-error state (rendered outside the Work items section); no requirement breached.",
+    "A-N1": "candidate-a: self-authored tests (1 new api.test.ts group case; 1 new e2e spec) executed green locally but are NOT independent feature acceptance; sealed external suite remains the acceptance gate.",
+    "B-O1": "candidate-b: type-only cast (body.title as string) added in POST /items create; zero runtime delta but an unrelated source edit; revert for a scope-clean diff.",
+    "B-O2": "candidate-b: top-level invalid-sort message duplicates the field message; unpinned by contract; informational.",
+    "B-O3": "candidate-b: sort selector rendered only when items!==null, so it disappears in the load-failure state; permitted; informational.",
+    "B-O4": "candidate-b: effect deps [sort] invalidate pending form/confirm lifetimes on sort change (cleanup increments gates); conservative and consistent with isolation rules; untested by original suite."
+  },
+  "ordering_strategy_comparison": "Both candidates embed the identical three ORDER BY clauses (updatedAt DESC + id BINARY ASC; updatedAt ASC + id BINARY DESC; title NOCASE ASC + id BINARY ASC). candidate-a interpolates a validated suffix into one prepared statement; candidate-b selects among three full statements. Both validate only after auth (401) and membership/resource (404), per FAQ #5 query precedence. Both are injection-safe (fixed maps; no user input reaches SQL text). Runtime-verified identical item orders for all valid values; the strategies differ only in validation style, which produced the B-B3 empty-value divergence.",
+  "not_run_separate_required_gates": [
+    "machine external/sealed behavioral suite",
+    "negative controls",
+    "three clean-environment replays",
+    "runtime binding qualification / browser (chromium) e2e suite",
+    "ownership/scope trusted evaluator execution"
+  ],
+  "verdict_summary": "accepted: candidate-a (no blocking findings; all locally executable gates green). changes_required: candidate-b (B-B1, B-B2, B-B3).",
+  "final_return": "accepted (candidate-a) / changes_required (candidate-b)"
+}
