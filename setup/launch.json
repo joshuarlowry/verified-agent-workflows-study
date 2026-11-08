@@ -1,8 +1,8 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "running",
-  "snapshot_at_utc": "2026-11-08T12:21:44.249050+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 07:21:44 AM EST",
+  "status": "stopped_preserving_state",
+  "snapshot_at_utc": "2026-11-08T12:22:00.406035+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 07:22:00 AM EST",
   "event_at_utc": "2026-11-08T12:21:41.592367+00:00",
   "event_at_eastern": "Nov 08, 2026 at 07:21:41 AM EST",
   "cohort_id": "clean-20261107T122746Z",
@@ -45,7 +45,9 @@
       "arm": "Terra supervising Gemma",
       "repetition": 2,
       "run_id": "cal-c1-v3-07",
-      "status": "infrastructure_failure"
+      "status": "infrastructure_failure",
+      "endpoint_reason": "infrastructure_failure",
+      "native_exit_code": -9
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
