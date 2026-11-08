@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 12:11:58 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 12:15:47 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 12:11:58 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 12:15:47 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-frozen-checks-cross-review | openai/gpt-6.1-terra | running | Nov 08, 2026 at 12:11:58 PM EST (UTC-0500) | — |
+| terra-C2-frozen-checks-cross-review | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 12:11:58 PM EST (UTC-0500) | Nov 08, 2026 at 12:15:47 PM EST (UTC-0500) |
 
 Staged only. Frozen first suite plus original baseline/public scope/policy/docs; no candidate implementations, builder conversations or comparative outcomes. Different-model fresh cross-review, no self-approval. Wait prior backup and offline clean replays before sequential launch.
 
