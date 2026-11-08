@@ -1,14 +1,14 @@
 {
   "kind": "registered_C1_calibration_metadata",
   "status": "running",
-  "snapshot_at_utc": "2026-11-08T12:48:45.959391+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 07:48:45 AM EST",
-  "event_at_utc": "2026-11-08T12:48:01.339057+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 07:48:01 AM EST",
+  "snapshot_at_utc": "2026-11-08T12:52:52.093198+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 07:52:52 AM EST",
+  "event_at_utc": "2026-11-08T12:52:50.974534+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 07:52:50 AM EST",
   "cohort_id": "clean-20261107T122746Z",
   "calibration_block_size": 7,
   "calibration_dispatched": 5,
-  "calibration_endpoints": 4,
+  "calibration_endpoints": 5,
   "scored_runs": 0,
   "rows": [
     {
@@ -54,7 +54,7 @@
       "arm": "GLM alone",
       "repetition": 2,
       "run_id": "cal-c1-v3-08",
-      "status": "active"
+      "status": "final"
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
@@ -63,5 +63,5 @@
   "prior_interrupted_calibration_attempts": 2,
   "total_calibration_dispatched_including_prior": 10,
   "carried_forward_endpoints": 3,
-  "initial_C1_endpoints": 7
+  "initial_C1_endpoints": 8
 }
