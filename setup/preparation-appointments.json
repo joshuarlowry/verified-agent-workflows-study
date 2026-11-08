@@ -998,7 +998,7 @@
       "phase": "fixture_clean_setup_after_operator_input_error",
       "run_id": "clean-20261107T122746Z-c2-alternative-r2-clean-gemma-20261108T183126Z",
       "prompt_sha256": "bd502ea491f9f33826b57a91d26d31cc8a7d641c63dd950e4f27c17c88b86e87",
-      "status": "staged_not_dispatched",
+      "status": "running",
       "fresh_session": true,
       "prompt_unchanged": true,
       "input_isolation_correction_disclosed": true,
@@ -1010,5 +1010,5 @@
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T18:34:59.320177+00:00"
+  "updated_at_utc": "2026-11-08T18:39:17.251904+00:00"
 }

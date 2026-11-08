@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T18:34:59.320177+00:00",
+  "snapshot_at_utc": "2026-11-08T18:39:17.251904+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -108,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:34:59 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:39:17 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -216,7 +216,7 @@
   },
   "alternative_revision_2_clean_setup": {
     "model": "google/gemma-4-31b-it",
-    "status": "staged_waiting_for_incident_endpoint_backup",
+    "status": "running",
     "fresh_session": true,
     "product_prompt_unchanged": true,
     "correction": "Remove exactly the foreign outcome sentence and correct extraction metadata; own-source findings otherwise identical.",
@@ -224,6 +224,17 @@
     "contaminated_source_or_conversation_imported": false,
     "original_technical_attempt_preserved": true,
     "reference_or_evaluator_inputs": false,
-    "qualification": "All different-model and full positive/negative/clean/runtime gates remain required."
+    "qualification": "All different-model and full positive/negative/clean/runtime gates remain required.",
+    "service": "study2-c2-alternative-r2-clean-input-20261108t183126z",
+    "pid": 2556404,
+    "startup_identity_verified": true,
+    "first_wire_requested_model": "google/gemma-4-31b-it",
+    "provider_only": [
+      "crusoe/bf16"
+    ],
+    "allow_fallbacks": false,
+    "zdr": true,
+    "forbidden_cross_candidate_sentence_absent_from_input_and_observed_requests": true,
+    "actual_generation_metadata_audit": "pending first endpoint"
   }
 }
