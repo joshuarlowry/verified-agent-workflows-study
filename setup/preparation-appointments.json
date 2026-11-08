@@ -886,7 +886,10 @@
       "run_id": "clean-20261107T122746Z-c2-reference-terra-20261108T145449Z",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
       "qualification": "Appointment only; no task admission or source approval. Fresh sessions and different-model cross-review required.",
-      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged."
+      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged.",
+      "actual_launch_id": "c2-reference-construction-20261108T145449Z",
+      "dispatch_utc": "2026-11-08T15:06:23.403324+00:00",
+      "actual_state_at_provenance_update": "returned_requires_cross_review"
     },
     {
       "launch_id": "c2-reference-construction-20261108T145449Z",
@@ -894,10 +897,13 @@
       "requested_model": "google/gemma-4-31b-it",
       "phase": "fixture_construction_only",
       "prompt_sha256": "81c3fb46ebafe27be1e4d71fb91e7ccb6dc5fd417de6f9eb7bb191c51f045f85",
-      "run_id": null,
+      "run_id": "clean-20261107T122746Z-c2-alternative-gemma-20261108T152923Z",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
       "qualification": "Appointment only; no task admission or source approval. Fresh sessions and different-model cross-review required.",
-      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged."
+      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged.",
+      "actual_launch_id": "c2-alternative-construction-20261108T152923Z",
+      "dispatch_utc": "2026-11-08T15:30:46.902857+00:00",
+      "actual_state_at_provenance_update": "blocked_preserved"
     },
     {
       "launch_id": "c2-reference-construction-20261108T145449Z",
@@ -905,13 +911,43 @@
       "requested_model": "z-ai/glm-5.3-flash",
       "phase": "fixture_construction_only",
       "prompt_sha256": "04c8807b0689a2998ef536ddf5581c73d4d4cb8413da08e24ae86d191e5b1413",
-      "run_id": null,
+      "run_id": "clean-20261107T122746Z-c2-external-checks-glm-20261108T154648Z",
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
       "qualification": "Appointment only; no task admission or source approval. Fresh sessions and different-model cross-review required.",
-      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged."
+      "authorization": "Three-model fixture construction/cross-review waiver; full registered study scope unchanged.",
+      "actual_launch_id": "c2-external-check-construction-20261108T154648Z",
+      "dispatch_utc": "2026-11-08T16:13:06.956956+00:00",
+      "actual_state_at_provenance_update": "running"
+    },
+    {
+      "launch_id": "c2-cross-review-appointments-20261108T1615Z",
+      "role": "terra-C2-frozen-checks-cross-review",
+      "requested_model": "openai/gpt-6.1-terra",
+      "phase": "fixture_cross_review_only",
+      "prompt_sha256": "b7e5539bcb5f53576ff963d3c37af01d7d7bcddb0f31e27b3131f3e607ad97da",
+      "run_id": null,
+      "status": "appointed_not_dispatched",
+      "fresh_session": true,
+      "self_approval": false,
+      "qualification": "Appointment only. Different-model fresh review of immutable artifacts; no model-family independence or task admission.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver."
+    },
+    {
+      "launch_id": "c2-cross-review-appointments-20261108T1615Z",
+      "role": "glm-C2-reference-and-alternative-cross-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "phase": "fixture_cross_review_only",
+      "prompt_sha256": "d37227d1b4286301824df01ae9f90af8079c7575ffd6259994476a971c20f73c",
+      "run_id": "clean-20261107T122746Z-c2-candidate-review-glm-20261108T161644Z",
+      "status": "staged_not_dispatched",
+      "fresh_session": true,
+      "self_approval": false,
+      "qualification": "Appointment only. Different-model fresh review of immutable artifacts; no model-family independence or task admission.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver.",
+      "actual_launch_id": "c2-candidate-cross-review-20261108T161644Z"
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T15:00:14.111619+00:00"
+  "updated_at_utc": "2026-11-08T16:20:58.426479+00:00"
 }
