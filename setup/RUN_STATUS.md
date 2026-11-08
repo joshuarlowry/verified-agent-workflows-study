@@ -1,6 +1,6 @@
 # Current run status
 
-**Status published:** Nov 08, 2026 at 08:14:05 AM EST
+**Status published:** Nov 08, 2026 at 08:18:16 AM EST
 
 **Latest ledger event:** Nov 08, 2026 at 08:13:15 AM EST
 
@@ -14,6 +14,7 @@ C1 calibration: **9/10 endpoints recorded** across the initial schedule. Current
 | Terra supervising Gemma | 2 | infrastructure_failure | infrastructure_failure |
 | GLM alone | 2 | final | final |
 | GLM supervising Gemma | 2 | final | final |
+| Gemma alone | 2 | setting_up | — |
 
 Block version: **3**. Earlier ordinary endpoints carried forward: **3**. Prior interrupted attempts retained: **2**. [First interruption](c1-v1-technical-interruption.json) · [DNS interruption](c1-v2-dns-interruption.json).
 
