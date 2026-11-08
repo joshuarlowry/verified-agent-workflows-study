@@ -44,6 +44,22 @@ def frozen_copy(source, manifest, target):
     return entries
 
 
+def standard_inventory(document):
+    """Bind native runner cases to the controller's pre-run project selection."""
+    found={}
+    def visit(suite):
+        for spec in suite.get('specs',[]):
+            for test in spec.get('tests',[]):
+                key=(spec.get('id'),test.get('projectName'))
+                if not all(isinstance(x,str) and x for x in key) or key in found:
+                    raise ValueError('Missing/duplicate standard test identity')
+                found[key]=test
+        for child in suite.get('suites',[]):visit(child)
+    visit(document)
+    if not found:raise ValueError('No selected standard acceptance tests')
+    return found
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--target', required=True, type=Path)
@@ -51,6 +67,7 @@ def main():
     p.add_argument('--evaluator', required=True, type=Path)
     p.add_argument('--evaluator-inventory', required=True, type=Path)
     p.add_argument('--suite', choices=['public', 'sealed', 'all'], default='all')
+    p.add_argument('--format', choices=['legacy','playwright'], default='legacy')
     a = p.parse_args()
     if os.geteuid() != 0:
         raise SystemExit('Requires authorized preparation controller')
@@ -98,7 +115,11 @@ def main():
         eval_lock = json.loads((checker/'package-lock.json').read_text())['packages']
         base_packages = {'node_modules/playwright', 'node_modules/playwright-core'}
         required = {k for k, v in eval_lock.items() if k and not v.get('optional')}
-        if required not in (base_packages, base_packages | {'node_modules/@playwright/test'}):
+        if a.format=='playwright':
+            allowed=base_packages | {'node_modules/@playwright/test','node_modules/typescript','node_modules/@types/node','node_modules/undici-types'}
+            if not base_packages | {'node_modules/@playwright/test'} <= required or not required<=allowed:
+                raise ValueError('Unexpected standard checker dependency set')
+        elif required not in (base_packages, base_packages | {'node_modules/@playwright/test'}):
             raise ValueError('Evaluator dependencies need a separately qualified offline image')
         expected = required
         for key in expected:
@@ -150,12 +171,31 @@ def main():
         command(['podman', 'exec', '--detach', app_name, 'sh', '-c', 'exec npm start > /state/server.stdout.log 2> /state/server.stderr.log'])
         readiness = "import time,urllib.request,sys\nend=time.monotonic()+30\nwhile time.monotonic()<end:\n try:\n  urllib.request.urlopen('http://127.0.0.1:4010/api/health',timeout=1).close();sys.exit(0)\n except Exception:time.sleep(.2)\nsys.exit(1)"
         exec_in(eval_name, 'python3', '-c', readiness, timeout=40)
-        code, _ = exec_in(eval_name, 'node', 'bin/c1-eval.mjs', 'check', '--base-url', 'http://127.0.0.1:4010',
-                          '--suite', a.suite, '--json-out', '/results/evaluator-report.json', require_zero=False)
+        if a.format=='playwright':
+            projects=['--project=public','--project=sealed'] if a.suite=='all' else ['--project='+a.suite]
+            base=['env','BASE_URL=http://127.0.0.1:4010','C1_JSON_REPORT=/results/evaluator-report.json','node','node_modules/@playwright/test/cli.js','test']
+            _, listed=exec_in(eval_name,*(base+projects+['--list','--reporter=json']))
+            expected_listing=json.loads(listed)
+            (results/'controller-selected-test-list.json').write_text(json.dumps(expected_listing,indent=2)+'\n')
+            report['selected_projects']=projects
+            report['controller_selected_test_list_sha256']=digest(results/'controller-selected-test-list.json')
+            code,_=exec_in(eval_name,*(base+projects+['--output=/results/artifacts']),require_zero=False)
+        else:
+            code, _ = exec_in(eval_name, 'node', 'bin/c1-eval.mjs', 'check', '--base-url', 'http://127.0.0.1:4010',
+                              '--suite', a.suite, '--json-out', '/results/evaluator-report.json', require_zero=False)
         report['evaluator_exit_code'] = code
         output = results/'evaluator-report.json'
         if not output.is_file() or not isinstance(json.loads(output.read_text()), dict):
             raise RuntimeError('Evaluator did not retain a JSON object report')
+        if a.format=='playwright':
+            selected=standard_inventory(expected_listing);actual_document=json.loads(output.read_text());actual=standard_inventory(actual_document)
+            report['standard_inventory_matches']=set(selected)==set(actual)
+            if not report['standard_inventory_matches']:raise ValueError('Native runner omitted or added controller-selected tests')
+            report['selected_test_count']=len(selected)
+            stats=actual_document.get('stats',{})
+            report['native_runner_stats']=stats
+            report['native_runner_all_passed']=code==0 and not actual_document.get('errors') and all(
+                t.get('expectedStatus')=='passed' and t.get('status')=='expected' and t.get('results') and all(r.get('status')=='passed' for r in t['results']) for t in actual.values()) and all(stats.get(k)==0 for k in ['skipped','flaky','unexpected'])
         report['evaluator_report_sha256'] = digest(output)
         report['target_source_unchanged'] = all(digest(target/name)==sha for name,sha in app_inventory.items())
         report['evaluator_source_unchanged'] = all(digest(checker/name)==sha for name,sha in eval_inventory.items())

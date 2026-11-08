@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T02:36:15.430856+00:00",
+  "recorded_at_utc": "2026-11-08T03:24:08.225792+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -9,23 +9,24 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "Compact standard checker running, focused source/package review and checker review queued. Client-only zero fix queued with Terra from last compatible Gemma source.",
-      "existing_evidence": "Reference37/37; repaired alternative36/37 with the real first-workspace zero-label bug. Six existing negative controls rejected; membership/role controls also invalidate dependent prerequisites (17unverified each), not all37checks complete.",
+      "state": "GLM compact-checker repair running after Terra source review; one additional observed false rejection incorrectly assumed selected workspace survives reload. Original first checker return is frozen.",
+      "existing_evidence": "Standard checker v1 rejects baseline (19 fail/2 pass), but reference has20pass/1false rejection. Source review also found five critical issue groups. Prior custom checker diagnostics are historical; no current packet qualification claim.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
-      "authorship_note": "Alternative retains Gemma two-query server design; any subsequent Terra client repair will have joint provenance and different-model review. No relabeling of Gemma result."
+      "authorship_note": "Alternative retains Gemma two-query server design; any subsequent Terra client repair will have joint provenance and different-model review. No relabeling of Gemma result.",
+      "client_fixture": "Terra client-only repair returned: first/later zero labels and POST/detail preservation claimed with targeted regressions. Different-model GLM delta review queued; not yet accepted."
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
-      "state": "Focused prepilot source review queued; real-provider/approved-corpus role probes and minimal raw/native accounting reconciliation still required",
-      "existing_evidence": "33 generic controller tests; actual parent-final/restore-cancel and checkpoint-fault cleanup passed. All five systems passed actual pinned LiteLLM with13local fake replies and0actual model calls. Generic Context retrieval passed across supervisor/worker restoration.",
+      "state": "N-1 prompt-byte binding implemented and37 generic controller tests passed with0skips. Final delta/prompt cross-review and actual seven-role approved-corpus/native usage capture are queued sequentially.",
+      "existing_evidence": "Prior eight native source findings were verified fixed by GLM; only prompt binding was launch-critical. Five-system13reply synthetic proof and actual cancellation/checkpoint cleanup remain valid scoped evidence. Public-only checks now have the same read-only mount interface in every role; final accepted suite is not staged yet.",
       "limits": "Synthetic mechanical success is not model evaluation or study admission."
     },
     {
       "gate": "Approved documentation package runtime",
-      "state": "Focused package review queued",
-      "existing_evidence": "17DBs,119technical files represented;22get_docs scenarios ran (19positive,3negative).",
-      "remaining": "Applicability warnings absent from get_docs replies,195SVG diagrams omitted by native parser, some transformed-chunk attribution incomplete. Reviewer will identify minimum necessary repairs; no content re-curation."
+      "state": "Source/package cross-review accepted; independent offline rebuild and22query runtime replay passed",
+      "existing_evidence": "All17DBs reproduced byte-for-byte;119technical files represented. Read-only packages reject writes; no external network interface and external-fetch rejection proved.",
+      "remaining": "Actual seven-role parity. Parser/attribution limitations are disclosed and accepted; no corpus redesign required."
     }
   ],
   "deferred": [
@@ -35,9 +36,10 @@
     "Remaining reference/evaluator packets until initial C1 technical block"
   ],
   "latest_backup": {
-    "checkpoint": "checkpoints/preparation-20261108T012635569831Z.tar.gz",
-    "sha256": "ca43c1cf78f675c11cbd091eb4c10a889acc4b5d167eba3313552e5ffb5ed499",
+    "checkpoint": "checkpoints/preparation-20261108T025240255236Z.tar.gz",
+    "sha256": "dfecc0c0dc031b0076b395ea08985e360720f82b883705fe2a917f5345a7f5c6",
     "published_private": true
   },
-  "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits."
+  "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
+  "recorded_at_eastern": "Nov 07, 2026 at 10:24:08 PM EST"
 }
