@@ -1,10 +1,10 @@
 {
-  "status_note": "Staged explicit fixture revision, not a primary rescue. Original pre-appointed in-memory alternative requirement plus exact own-source-only review findings. No reference/evaluator/other-candidate source or outcomes supplied. Independent fresh review and full qualification remain required.",
+  "status_note": "Stopped/preserved unscored setup attempt: operator feedback extraction accidentally included one sentence about another candidate; exposure confirmed. All overhead retained. Fresh identical-prompt clean session staged with only that foreign sentence removed; no contaminated source/conversation inherited. No primary or scored result changed.",
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "c2-alternative-revision2-20261108T173759Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T18:29:40.842079+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:29:40 PM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-08T18:35:00.509945+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:35:00 PM EST (UTC-0500)",
   "event_at_utc": "2026-11-08T18:29:40.784125+00:00",
   "event_at_eastern": "Nov 08, 2026 at 01:29:40 PM EST (UTC-0500)",
   "display_timezone": "America/New_York",
