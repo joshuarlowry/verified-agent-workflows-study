@@ -1,0 +1,65 @@
+{
+  "recorded_at_utc": "2026-11-08T07:05:42.046593+00:00",
+  "recorded_at_eastern": "Nov 08, 2026 at 02:05:42 AM EST",
+  "run_id": "cal-c1-01",
+  "workflow": "GLM supervising Gemma",
+  "phase": "C1 calibration v1",
+  "outcome": "infrastructure_interruption_preserved_not_clean_completion",
+  "dispatched_at_utc": "2026-11-08T06:36:55.628420+00:00",
+  "dispatched_at_eastern": "Nov 08, 2026 at 01:36:55 AM EST",
+  "terminal_at_utc": "2026-11-08T06:43:46.272215+00:00",
+  "dispatch_to_terminal_seconds": 410.643801613,
+  "native_exit_code": -9,
+  "api_budget_exhausted": false,
+  "supervisor_handoff_requests": 2,
+  "durable_worker_responses": 1,
+  "quality": "Not graded; no supervisor final return. No inference of application correctness or model quality.",
+  "technical_evidence": [
+    "Foreground handoff shell command reported120000ms timeout while the worker continued.",
+    "Worker completed and its result was committed to the host ledger; the original waiting client was gone.",
+    "The old broker cancels the entire workflow if delivering that stored reply raises OSError.",
+    "A deterministic no-model replay reproduced cancellation with a durable/cached response; the repaired replay preserves the response and does not cancel."
+  ],
+  "repair": {
+    "status": "40controller checks pass; fresh GLM source review active",
+    "application_or_test_oracle_changes": false,
+    "role_prompt_changes": false,
+    "model_provider_deadline_changes": false,
+    "before_broker_sha256": "170ab8a59c112d8fb9d0b9271f37bafc86a5ee98191b5694aca1340fc6f868a7",
+    "after_broker_sha256": "2a60afc77c915f03a87de85993afb629566ca0112f7cb85da95d36d44cfdc097",
+    "replay_policy": "No continuation/rescue of this endpoint. Qualify and freeze a fresh common-harness block, retaining this interruption and its cost."
+  },
+  "actual_resolved_provider_models": "All50successful generations matched exact expected dated models/providers; failed/unknown usage remains explicitly unavailable.",
+  "usage_by_role": [
+    {
+      "role": "supervisor",
+      "provider_successful_generations": 28,
+      "known_input_inclusive_total": 1043736,
+      "known_billable_output_total": 13418,
+      "cached_input_subset_total": 991744,
+      "cache_write_subset_total": 0,
+      "diagnostic_reasoning_total": 10757,
+      "known_reported_cost_usd_subtotal": 0.032607746,
+      "cost_complete": false
+    },
+    {
+      "role": "worker",
+      "provider_successful_generations": 22,
+      "known_input_inclusive_total": 433753,
+      "known_billable_output_total": 1972,
+      "cached_input_subset_total": 389869,
+      "cache_write_subset_total": 0,
+      "diagnostic_reasoning_total": 0,
+      "known_reported_cost_usd_subtotal": 0.06151422,
+      "cost_complete": false
+    }
+  ],
+  "billing_limits": "Known provider subtotal only; failed requests/gateway-only views are not assumed free. Administrative generation metadata cross-checks are not extra inference charges. Coordinator/subscription overhead is separate and unavailable here.",
+  "endpoint_backup": {
+    "checkpoint": "checkpoints/preparation-20261108T064422263529Z.tar.gz",
+    "sha256": "48bc910617f5adf420f0c7e2aed1818ead2c7559ccbe8c379e0e5b6ea1e94e8d",
+    "published_private": true
+  },
+  "native_parent_state": "Supported SQLite snapshot subsequently retained; pending next checkpoint.",
+  "scored_runs": 0
+}
