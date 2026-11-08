@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T18:11:15.875414+00:00",
+  "snapshot_at_utc": "2026-11-08T18:34:59.320177+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -108,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:11:15 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:34:59 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -161,13 +161,12 @@
   },
   "checks_revision_2": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "running",
+    "status": "first_revision2_returned_frozen_not_qualified",
     "fresh_session": true,
     "first_suite_and_review_unchanged": true,
     "candidate_source_or_outcomes_supplied": false,
     "qualification_required": "Fresh different-model review plus complete positive/negative/clean/runtime gates before primary collection.",
     "service": "study2-c2-external-checks-revision2-20261108t172211z",
-    "pid": 2531201,
     "startup_identity_verified": true,
     "first_wire_requested_model": "z-ai/glm-5.3-flash",
     "provider_only": [
@@ -175,16 +174,18 @@
     ],
     "allow_fallbacks": false,
     "zdr": true,
-    "actual_generation_metadata_audit": "pending first endpoint",
-    "passive_checkpoint": {
-      "status": "Actual service active; native capture growing; first endpoint absent",
-      "checkpoint": "30-minute passive observation preserved",
-      "native_requests_observed": 129,
-      "usage_rows_observed": 128,
-      "unresolved_calls_not_assumed_failed_or_free": true,
-      "quality_inspected": false,
-      "feedback_or_restart": false
-    }
+    "actual_generation_metadata_audit": "All 169 known successful generation IDs verified",
+    "native_elapsed_seconds": 2424.383051687968,
+    "agent_exit_code": 0,
+    "first_endpoint_frozen_files": 105,
+    "raw_capture_requests_verified": 169,
+    "actual_generation_ids_verified": 169,
+    "actual_dated_model": "z-ai/glm-5.3-flash-20260826",
+    "actual_provider": "Relace",
+    "provider_input_tokens_inclusive": 15959991,
+    "provider_completion_tokens": 151109,
+    "known_provider_reported_preparation_cost_usd": "0.4920153135",
+    "proposed_deterministic_fixture_helper": "Unqualified; fresh different-model source/scope review and actual positive/negative/clean/runtime gates required"
   },
   "review_triage_limits": {
     "raw_review_disposition_preserved": true,
@@ -194,13 +195,35 @@
   "material_alternative_requirement": "Not yet met: reviewer found both first candidates use SQL ordering. Pre-appointed in-memory alternative requirement remains unchanged.",
   "alternative_revision_2": {
     "model": "google/gemma-4-31b-it",
-    "status": "staged_not_dispatched",
+    "status": "stopped_operator_input_isolation_violation",
     "fresh_session": true,
     "reference_or_evaluator_inputs": false,
     "feedback": "Exact candidate-B-only finding entries extracted from preserved review with original report hash; candidate-A/comparative/source/evaluator material omitted.",
     "original_in_memory_strategy_requirement_unchanged": true,
     "first_endpoint_preserved": true,
     "qualification_required": "Different-model review, materially different ordering and all external/negative/clean/runtime gates.",
-    "provider_metadata_preflight": "Exact dated Gemma model and Crusoe BF16 metadata matched; not an inference-availability guarantee."
+    "provider_metadata_preflight": "Exact dated Gemma model and Crusoe BF16 metadata matched; not an inference-availability guarantee.",
+    "qualifying_fixture": false,
+    "incident": "setup/c2-alternative-input-isolation-incident.json",
+    "cause": "One cross-candidate outcome sentence survived the operator feedback filter; exposure confirmed. Technical attempt stopped/preserved, including all overhead. No primary/scored data changed."
+  },
+  "checks_revision_2_cross_review": {
+    "model": "openai/gpt-6.1-terra",
+    "reasoning": "high",
+    "status": "staged_not_dispatched",
+    "candidate_inputs_supplied": false,
+    "scope": "Fresh source/prompt/oracle/helper review of frozen revision2. Mandatory implementing-target, negative, clean and runtime gates remain later and unverified."
+  },
+  "alternative_revision_2_clean_setup": {
+    "model": "google/gemma-4-31b-it",
+    "status": "staged_waiting_for_incident_endpoint_backup",
+    "fresh_session": true,
+    "product_prompt_unchanged": true,
+    "correction": "Remove exactly the foreign outcome sentence and correct extraction metadata; own-source findings otherwise identical.",
+    "other_candidate_text_scan_passed": true,
+    "contaminated_source_or_conversation_imported": false,
+    "original_technical_attempt_preserved": true,
+    "reference_or_evaluator_inputs": false,
+    "qualification": "All different-model and full positive/negative/clean/runtime gates remain required."
   }
 }

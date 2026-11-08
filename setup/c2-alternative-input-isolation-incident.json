@@ -1,0 +1,42 @@
+{
+  "kind": "operator_input_isolation_violation_fixture_attempt_preserved",
+  "observed_at_utc": "2026-11-08T18:29:34.843909+00:00",
+  "role": "unscored Gemma C2 alternative revision2",
+  "cause": "Candidate-B-only feedback extraction retained one sentence reporting candidate-A behavior, violating the pre-appointed other-candidate exclusion.",
+  "operator_owns_error": true,
+  "foreign_sentence": "Candidate-a returns 400 for both inputs.",
+  "feedback_sha256": "f66efa29be71a99c3b2b026d8f482a50d39f3405a852f81052d75b6939002715",
+  "exposure_confirmed_in_native_requests": [
+    "native-request-9.json",
+    "native-request-6.json",
+    "native-request-15.json",
+    "native-request-7.json",
+    "native-request-13.json",
+    "native-request-10.json",
+    "native-request-12.json",
+    "native-request-11.json",
+    "native-request-8.json",
+    "native-request-14.json"
+  ],
+  "model_calls_before_stop": 15,
+  "action": "SIGTERM only native CLI process group; leave controller to capture technical endpoint, stop local transport and perform supported backup. No model feedback supplied.",
+  "native_process_group": 2553281,
+  "no_application_or_test_edits_by_operator": true,
+  "primary_or_scored_attempt": false,
+  "replacement_policy": "Fresh session and namespace from original baseline/first own source; identical product prompt; correction limited to foreign sentence and extraction metadata; no contaminated source/conversation inherited. Preserve this attempt and its full overhead.",
+  "native_exit_code": -15,
+  "native_elapsed_seconds": 100.05820515495725,
+  "known_successful_generations": 14,
+  "known_generation_ids_dated_model_provider_verified": true,
+  "known_complete_stream_pairs_preserved": 14,
+  "partial_provider_captures": [
+    "provider-response-15.sse"
+  ],
+  "known_input_inclusive": 209757,
+  "known_completion_tokens": 3087,
+  "known_provider_reported_cost_usd_subtotal": "0.03060078",
+  "billing_complete": false,
+  "missing_call_usage": "Interrupted in-flight request remains unresolved, not zero.",
+  "clean_replacement_launch": "c2-alternative-r2-clean-input-20261108T183126Z",
+  "qualifying_fixture": false
+}
