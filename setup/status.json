@@ -1,14 +1,14 @@
 {
   "kind": "registered_C1_calibration_metadata",
   "status": "running",
-  "snapshot_at_utc": "2026-11-08T06:36:57.561951+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:36:57 AM EST",
-  "event_at_utc": "2026-11-08T06:36:55.628420+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 01:36:55 AM EST",
+  "snapshot_at_utc": "2026-11-08T06:43:48.863722+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:43:48 AM EST",
+  "event_at_utc": "2026-11-08T06:43:46.272215+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 01:43:46 AM EST",
   "cohort_id": "clean-20261107T122746Z",
   "calibration_block_size": 10,
   "calibration_dispatched": 1,
-  "calibration_endpoints": 0,
+  "calibration_endpoints": 1,
   "scored_runs": 0,
   "rows": [
     {
