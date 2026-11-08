@@ -1,0 +1,23 @@
+--- a/src/native.py
++++ b/src/native.py
+@@ -20,7 +20,19 @@
+ 
+ def command(container, *args):
+     if not re.fullmatch(r'study2-[a-z0-9-]+', container): raise ProtocolError('invalid host container name')
+-    return [PODMAN, 'exec', '--workdir', '/workspace', container, 'node', '/tools/native-cli.mjs', *args]
++    prefix = [PODMAN, 'exec', '--workdir', '/workspace', container]
++    if len(args) == 4 and args[:3] == ('session', 'export', '--standalone'):
++        if not re.fullmatch(r'ses[A-Za-z0-9_-]+', args[3]):
++            raise ProtocolError('invalid export session')
++        # OpenCode can exit before a large asynchronous pipe write drains.
++        # Export to a regular file first; cat reliably blocks on host backpressure.
++        # This affects offline identity checks only, never model run/JSONL output.
++        script = ('set -eu; exported=$(mktemp /tmp/study2-session-export.XXXXXX); '
++                  'trap \'rm -f -- "$exported"\' EXIT; '
++                  'node /tools/native-cli.mjs "$@" > "$exported"; '
++                  'cat -- "$exported"')
++        return [*prefix, 'sh', '-c', script, 'study2-native-export', *args]
++    return [*prefix, 'node', '/tools/native-cli.mjs', *args]
+ 
+ def _capture_process(argv, outdir, deadline_ns, cancel, *, stdout_name='native.jsonl'):
+     if stdout_name not in ('native.jsonl','session-export.json'): raise ProtocolError('invalid native capture format')

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 17,
-  "status": "C1_unrun_continuation_admitted_provider_failure_retained_scored_not_admitted",
+  "protocol_revision": 18,
+  "status": "C1_export_capture_repair_admitted_only_unrun_slots_scored_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -937,8 +937,8 @@
       },
       {
         "category": "harness",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/harness.json",
-        "sha256": "ab6a6f3458d17f3b5062ca25ba769b195f1a91a15f168f0d26699fd26f4d4747"
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests-export-repair/harness.json",
+        "sha256": "37ab9077b59a0897b1645a5d70dac8ec11dbbc7e8bf80b7fda58898abb0c5998"
       },
       {
         "category": "docs",
@@ -1278,5 +1278,25 @@
     "source_review": "Fresh GLM actual4source review; verdict changes_required preserved; conditional F1 resolved for exact supported DNS record by host proof, no source edit or generic recovery claim.",
     "technical_attempts_included_in_overhead": true,
     "fresh_replacement_not_agent_continuation": true
+  },
+  "calibration_export_capture_repair": {
+    "admitted": true,
+    "scope": "Calibration collection only; all7nominal first outcomes retained. Three original unrun slots use qualified export repair. No failed trial replay or product changes.",
+    "pending_run_ids": [
+      "cal-c1-v3-08",
+      "cal-c1-v3-09",
+      "cal-c1-v3-10"
+    ],
+    "source_review_sha256": "286097710cfb1a06db6560455c7eb5ced8ac8589ee59d62dba328f982cb9e454",
+    "host_qualification_sha256": "ecf911d2d56f35347da182bc889cc6da602513b34ef2eac0e0366cc86b9a4b24",
+    "native_before_sha256": "7b7eea3bf9dbb4cd799b9f5e7e5b746f33cf6ea69faf73f8cb1324820d84a929",
+    "native_after_sha256": "fbed32e6fffac51d9321b69c028241376930197622f698c322e34a68d50a612c",
+    "prior_registration_sha256": "8732266ecaff9624d804e1c39ca40c870fd13a11302087e91357afdbf36061cf",
+    "new_harness_manifest_sha256": "37ab9077b59a0897b1645a5d70dac8ec11dbbc7e8bf80b7fda58898abb0c5998",
+    "comparison_limit": "C1 calibration spans declared harness revisions and is not a uniform-harness confirmatory comparison. Scored study must use one frozen qualified final harness.",
+    "failed_outcomes_retained": [
+      "cal-c1-v3-05",
+      "cal-c1-v3-07"
+    ]
   }
 }

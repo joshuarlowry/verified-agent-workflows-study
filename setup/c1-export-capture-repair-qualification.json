@@ -1,0 +1,56 @@
+{
+  "kind": "qualified_calibration_export_capture_repair",
+  "protocol_revision": 18,
+  "source_review": {
+    "verdict": "accepted",
+    "actual_source_read_and_imported": true,
+    "checks": {
+      "total": 40,
+      "passed": 40,
+      "failed": 0
+    },
+    "sha256": "286097710cfb1a06db6560455c7eb5ced8ac8589ee59d62dba328f982cb9e454"
+  },
+  "host_qualification": {
+    "kind": "host_export_capture_repair_qualification",
+    "model_calls": 0,
+    "candidate_source_sha256": "fbed32e6fffac51d9321b69c028241376930197622f698c322e34a68d50a612c",
+    "before_source_sha256": "7b7eea3bf9dbb4cd799b9f5e7e5b746f33cf6ea69faf73f8cb1324820d84a929",
+    "changed_functional_files": [
+      "src/native.py"
+    ],
+    "changed_metadata_files": [
+      "SHA256SUMS"
+    ],
+    "source_otherwise_identical": true,
+    "actual_runtime_probe": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/large-session-export-diagnostic-20261108T123046Z/report.json",
+    "actual_runtime_probe_sha256": "d00c61358a5ec66cb4d22ccc31818b79134d9c5dd14cadb601e2d2aeb114f10e",
+    "large_exports_complete_and_message_identical": 3,
+    "missing_session_rejected": true,
+    "invalid_session_controls": 4,
+    "temporary_files_remaining": 0,
+    "native_run_argv_unchanged": true,
+    "existing_regression_tests_passed": 42,
+    "skipped": 0,
+    "regression_stderr_sha256": "33fabc1ea137ef87f1d9a42f73e8e2293e51df2f9421506bcc1649eb7a5ef17a",
+    "source_review_status": "pending",
+    "primary_failed_trials_retried": false
+  },
+  "remaining_run_ids": [
+    "cal-c1-v3-08",
+    "cal-c1-v3-09",
+    "cal-c1-v3-10"
+  ],
+  "nominal_endpoints_already_recorded": 7,
+  "nominal_failed_infrastructure_outcomes_retained": 2,
+  "dry_run": {
+    "exit_code": 0,
+    "model_calls": 0,
+    "collection_and_ledger_unchanged": true
+  },
+  "registration_sha256": "f04d60cae7ec4f9fd9548bc572ed25c80cc8d914ff2ec537c1996bdb830981b0",
+  "harness_manifest_sha256": "37ab9077b59a0897b1645a5d70dac8ec11dbbc7e8bf80b7fda58898abb0c5998",
+  "admission_sha256": "cbe41ab63f49f406790c1b34a1308a55f513fc8dcdba4ab851347f01a1182d01",
+  "limits": "C1 calibration spans declared harness revisions and is not a uniform-harness confirmatory comparison. Scored study must use one frozen qualified final harness.",
+  "policy": "No retries of failed subjects; original remaining order and prompts. Only three never-dispatched slots admitted. Scored collection remains disabled."
+}
