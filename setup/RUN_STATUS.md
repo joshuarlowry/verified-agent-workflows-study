@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 07:30:28 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 07:38:15 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 07:30:28 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 07:38:15 AM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-native-export-source-review | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 07:30:28 AM EST (UTC-0500) | — |
+| glm-native-export-source-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 07:30:28 AM EST (UTC-0500) | Nov 08, 2026 at 07:38:15 AM EST (UTC-0500) |
 
 C1 collection stopped with7nominal endpoints;3unrun. Source repair qualification only; no failed primary retry.
 
