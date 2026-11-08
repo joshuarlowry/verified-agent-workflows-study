@@ -1,8 +1,8 @@
 {
   "kind": "registered_C1_calibration_metadata",
   "status": "running",
-  "snapshot_at_utc": "2026-11-08T08:07:03.491242+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 03:07:03 AM EST",
+  "snapshot_at_utc": "2026-11-08T08:07:09.685923+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 03:07:09 AM EST",
   "event_at_utc": "2026-11-08T08:06:26.315440+00:00",
   "event_at_eastern": "Nov 08, 2026 at 03:06:26 AM EST",
   "cohort_id": "clean-20261107T122746Z",
@@ -18,7 +18,8 @@
       "run_id": "cal-c1-v2-01",
       "status": "final",
       "endpoint_reason": "final",
-      "native_exit_code": 0
+      "native_exit_code": 0,
+      "actual_provider_resolution": "verified"
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
