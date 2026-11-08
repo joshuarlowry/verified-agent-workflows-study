@@ -179,7 +179,8 @@ def main():
             (results/'controller-selected-test-list.json').write_text(json.dumps(expected_listing,indent=2)+'\n')
             report['selected_projects']=projects
             report['controller_selected_test_list_sha256']=digest(results/'controller-selected-test-list.json')
-            code,_=exec_in(eval_name,*(base+projects+['--output=/results/artifacts']),require_zero=False)
+            report['failure_boundary']='Native --max-failures=1 stops after a failed case; remaining skipped/unavailable cases are unverified, never pass.'
+            code,_=exec_in(eval_name,*(base+projects+['--output=/results/artifacts','--max-failures=1']),require_zero=False)
         else:
             code, _ = exec_in(eval_name, 'node', 'bin/c1-eval.mjs', 'check', '--base-url', 'http://127.0.0.1:4010',
                               '--suite', a.suite, '--json-out', '/results/evaluator-report.json', require_zero=False)

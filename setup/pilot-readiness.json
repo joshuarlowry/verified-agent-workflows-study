@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T03:54:03.226555+00:00",
+  "recorded_at_utc": "2026-11-08T04:26:10.586511+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -9,24 +9,26 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "GLM checker repair returned after94captured/paired calls; external baseline/reference/alternative/negative-control matrix running. Source re-review remains queued after final delta review.",
-      "existing_evidence": "Repaired standard checker has now accepted reference21/21 in3 cold environments and alternative21/21 in3 cold environments. Baseline rejects19/21 intended feature gaps,2preservation passes. Six controls still running; no final packet qualification claim.",
+      "state": "Terra compact-checker re-review returned changes_required with5remaining source findings despite clean fixture/control runs. Terra is queued for a fresh bounded repair, then fresh GLM cross-review; no broken checker promoted.",
+      "existing_evidence": "Current single-worker/first-failure matrix completed13cases: reference21/21\u00d73; alternative21/21\u00d73; baseline and6negative controls reject for intended reasons. Skipped dependent cases are unverified. Full non-aborting diagnostics are also retained.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
       "authorship_note": "Alternative retains Gemma two-query server design; any subsequent Terra client repair will have joint provenance and different-model review. No relabeling of Gemma result.",
-      "client_fixture": "Frozen joint Gemma/Terra alternative commit f9695e2b3658928a9d4b4ada1c3550243edc2e1a passed full public build/typecheck/lint/API/browser/reset in3 independent cold containers. Actual47call capture audit passed. Different-model source review and final independent task acceptance remain pending.",
+      "client_fixture": "GLM accepted actual joint Gemma/Terra alternative source; all targeted/full checks reproduced. Existing3cold public and3native-auth replays remain valid.",
       "public_replay_evidence": "setup/c1-client-alternative-public-replays-20261108T0332.json",
-      "native_auth_task_binding": "Gemma independently produced exactly the2 allowed summary-key expectation changes; reverse-substitution restores original bytes. Metadata deliverables were omitted (partial preparation return preserved). Controller provenance and raw capture are retained. The migrated31-check non-test auth probe passed3clean reference and3clean alternative replays; different-model GLM source review remains pending.",
+      "native_auth_task_binding": "GLM accepted exactly2changed summary-key arrays, with original31auth checks otherwise byte-identical; all3reference+3alternative non-test replays passed. Gemma omitted requested metadata deliverables; partial first return is retained and controller provenance supplies actual runtime evidence without claiming a complete author return.",
       "native_auth_replay_evidence": [
         "setup/c1-reference-native-auth-replays-20261108T035018Z.json",
         "setup/c1-alternative-native-auth-replays-20261108T035018Z.json"
-      ]
+      ],
+      "checker_evidence": "setup/c1-standard-checker-validation.json",
+      "scope_binding": "Gemma independently authored a DB schema/initial-seed guard; GLM source review is active. Concrete whole-patch allowed scope and protected baseline regression/migration binding remains required underR5 and is included in Terra closure. No new product requirement or treatment."
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
-      "state": "N-1 prompt-byte binding implemented and37 generic controller tests passed with0skips. Final delta/prompt cross-review and actual seven-role approved-corpus/native usage capture are queued sequentially.",
+      "state": "GLM accepted N-1 and read-only public mount; host added actual public_tree content-hash binding with38root tests passing0skips. Its bounded cross-review is active. Four-role actual no-model browser/mount proof passed; Terra accepted the one-value immutable browser-path delta. Real seven-role model/provider/Context/capture remains queued after checker closure review.",
       "existing_evidence": "Prior eight native source findings were verified fixed by GLM; only prompt binding was launch-critical. Five-system13reply synthetic proof and actual cancellation/checkpoint cleanup remain valid scoped evidence. Public-only checks now have the same read-only mount interface in every role; final accepted suite is not staged yet.",
-      "limits": "Synthetic mechanical success is not model evaluation or study admission."
+      "limits": "Host final public-only tree, exact per-run prompts/acceptance manifests and study admission still pending. Reviews/probes do not auto-admit calibration."
     },
     {
       "gate": "Approved documentation package runtime",
@@ -47,5 +49,5 @@
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 07, 2026 at 10:54:03 PM EST"
+  "recorded_at_eastern": "Nov 07, 2026 at 11:26:10 PM EST"
 }

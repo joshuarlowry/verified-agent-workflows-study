@@ -313,13 +313,15 @@
     "acceptance_suite_sha256": null,
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
-    "independent_C1_evaluator_status": "GLM repair first-return frozen before positive-source exposure; 221 physical requests reconciled (217 native steps, 2 summaries, 2 failed attempts with unavailable billing). Fresh checker-only re-review queued; actual positive/alternate/negative/clean qualification pending.",
+    "independent_C1_evaluator_status": "Compact GLM checker repair frozen after94paired calls; both valid fixtures21/21 in3cold environments each and6controls reject. Terra source review still findsR1-R5; a new Terra closure and fresh GLM review are queued. No accepted evaluator/packet or calibration admission.",
     "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json",
     "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json",
     "independent_C1_checker_review": "setup/c1-checker-review.json",
     "independent_C1_checker_repair_evidence": "setup/c1-checker-repair-endpoint.json",
     "C1_reference_public_regression_evidence": "setup/c1-reference-public-replays-20261107T232728Z.json",
-    "C1_alternative_runtime_status": "Different-model review confirms server checks pass but finds two UI defects (empty zero label; stale post-write count); separate Gemma author repair queued. Original first return unchanged."
+    "C1_alternative_runtime_status": "Joint Gemma two-query server + Terra client repair source-accepted by GLM;3cold full public replays and3non-test native-auth replays passed. In-session staleness is not an additional C1 rule. Current feature checker has unresolved source defects; task qualification pending.",
+    "current_C1_checker_evidence": "setup/c1-standard-checker-validation.json",
+    "historical_evaluator_records_notice": "Earlier independent evaluator/checker evidence fields refer to retained historical preparation revisions, not the current acceptance suite. Current status and evidence above control; acceptance_suite_sha256 remains null."
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
@@ -808,7 +810,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "setup/README.md",
+  "setup_progress": "Preparation only,0calibration/0scored: see setup/pilot-readiness.json and setup/c1-standard-checker-validation.json. Critical checker source closure, scope/migration binding, final freeze and actual seven-role capture remain pending.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
