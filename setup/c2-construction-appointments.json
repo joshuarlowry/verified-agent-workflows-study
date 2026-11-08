@@ -34,5 +34,36 @@
   "baseline_source_files": 21,
   "public_inputs": "Original baseline + public C2 scope + exact prospective policy + approved docs. No C1 outcomes, implementations, hidden checks or conversations.",
   "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter. Unscored isolated fixture-authoring surface, docs file copy; primary Context/Podman harness stays separate.",
-  "primary_subject_dispatch_admitted": false
+  "primary_subject_dispatch_admitted": false,
+  "cross_review_appointments": {
+    "recorded_at_utc": "2026-11-08T16:15:54.720004+00:00",
+    "kind": "C2_different_model_cross_review_appointments",
+    "prompts_authored_by": "AI coordinator, Codex; exact current coordinator model not exposed in per-artifact native evidence",
+    "author_provenance_limit": "Coordinator draft prompts require subject-model review before primary freeze; no family-independent claim.",
+    "roles": [
+      {
+        "role": "terra-C2-frozen-checks-cross-review",
+        "model": "openai/gpt-6.1-terra",
+        "prompt_sha256": "b7e5539bcb5f53576ff963d3c37af01d7d7bcddb0f31e27b3131f3e607ad97da",
+        "prompt_file": "terra-checks-review.txt",
+        "fresh_session_required": true,
+        "status": "appointed_not_dispatched",
+        "self_approval": false
+      },
+      {
+        "role": "glm-C2-reference-and-alternative-cross-review",
+        "model": "z-ai/glm-5.3-flash",
+        "prompt_sha256": "d37227d1b4286301824df01ae9f90af8079c7575ffd6259994476a971c20f73c",
+        "prompt_file": "glm-candidate-review.txt",
+        "fresh_session_required": true,
+        "status": "appointed_not_dispatched",
+        "self_approval": false
+      }
+    ],
+    "checks_review_inputs": "Original baseline/public scope/policy/docs + frozen check suite only; no candidate implementations/outcomes.",
+    "candidate_review_inputs": "Original baseline/public scope/policy/docs + anonymized unmodified first source snapshots; no conversations or comparative outcomes.",
+    "dispatch_order": "After first GLM check-builder endpoint and supported backup, sequential fresh isolated sessions.",
+    "primary_dispatch_admitted": false,
+    "review_is_not_automatic_approval": true
+  }
 }
