@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:27:32 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:29:40 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:27:32 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:29:40 PM EST (UTC-0500)
 
-**running**
+**stopped preserving state**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-C2-alternative-revision-2 | google/gemma-4-31b-it | running | Nov 08, 2026 at 01:27:32 PM EST (UTC-0500) | — |
+| gemma-C2-alternative-revision-2 | google/gemma-4-31b-it | blocked preserved | Nov 08, 2026 at 01:27:32 PM EST (UTC-0500) | Nov 08, 2026 at 01:29:40 PM EST (UTC-0500) |
 
 Staged explicit fixture revision, not a primary rescue. Original pre-appointed in-memory alternative requirement plus exact own-source-only review findings. No reference/evaluator/other-candidate source or outcomes supplied. Independent fresh review and full qualification remain required.
 
