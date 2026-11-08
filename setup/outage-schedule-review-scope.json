@@ -1,0 +1,24 @@
+{
+  "kind": "preparation_review_scope_failure_not_subject_quality",
+  "recorded_at_utc": "2026-11-08T08:49:29.287710+00:00",
+  "review_run": "outage-schedule-review-20261108T084030Z",
+  "reported_verdict": "accepted",
+  "actual_gate_satisfied": false,
+  "reason": "Review explicitly did not access supplied controller sources; simulated a new spec model. Accepted applies only to its synthetic model, not the real patch. Do not use this as source approval.",
+  "supplied_controller_files": {
+    "observer-before.py": "009fbf7c6c9f425ede0679b420e78f62ea36d17cedea1e993b019012e2fa571a",
+    "observe_c1_calibration.py": "5e56d4fefa312ffef41061ce901faa31c5dedd105ca36dfa74f959a17f91317f",
+    "caller-before.py": "50e6da61e02a917ae5f671f93a562ec54480a3eff08fec7deec2703d252b3a70",
+    "run_c1_calibration_block.py": "afddf10709e8f02aef0227b643ace96c2fd482f761ac10bab7d7043770e9282a"
+  },
+  "mounted_input_preflight": {
+    "exit_code": 0,
+    "files_read": 4
+  },
+  "review_sha256": "692c81b9126a46ffb49ab69255bb78c09d5b913182728d83fe1b528e50c7a26b",
+  "next_fresh_source_review": "outage-schedule-source-review-20261108T084856Z",
+  "application_data_supplied": false,
+  "study_model_outcomes_affected": false,
+  "source_changes_between_reviews": false,
+  "source_freeze_and_collection_resumption": "pending_actual_source_review"
+}
