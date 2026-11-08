@@ -83,7 +83,7 @@ def build(selection_path):
         'scored_runs': 0, 'rows': rows, 'model_calls_for_this_report': 0,
         'selection_sha256': sha(selection_path), 'source_reports': block_provenance,
         'billing_rule': 'Provider-reported known charges once by role; cached input is a subset of input. Reasoning is not added to billed output. Failed-call billing can be unknown.',
-        'primary_standardized_pricing': 'Unresolved: registered uncached list-price rate card has not been frozen. These are observed charge subtotals, not the registered primary economic comparison.',
+        'primary_standardized_pricing': 'Not preregistered for C1: at its first publication no uncached list-price rate card had been frozen. A later prospective card cannot retroactively preregister this comparison. These are observed charge subtotals.',
         'technical_extra_attempts': selection['technical_attempts_also_retained'],
         'limits': [
             'Acceptance is finite machine verification, not semantic completeness or human merge approval.',
@@ -112,7 +112,7 @@ def markdown(report):
         cost = row['recorded_provider_cost_usd_subtotal']
         cost_text = 'Unknown' if cost is None else ('' if row['recorded_cost_complete'] else '≥ ') + f'${cost:.4f}'
         lines.append(f"| {row['workflow']} | {row['repetition']} | {row['display_result']} | {duration(row['runtime_seconds'])} | {cost_text} |")
-    lines += ['', 'Runtime includes tools and waits, excluding setup and between-run backups. Charges are provider-reported known subtotals; ≥ means billing is incomplete. They exclude preparation, infrastructure repair, grading and earlier technical attempts. The registered standardized uncached pricing comparison remains unresolved because its rate card has not been frozen.', '',
+    lines += ['', 'Runtime includes tools and waits, excluding setup and between-run backups. Charges are provider-reported known subtotals; ≥ means billing is incomplete. They exclude preparation, infrastructure repair, grading and earlier technical attempts. At C1’s first publication, no standardized rate card had been frozen. Revision 21 later froze a [prospective rate card](economic-rate-card.json); any standardized C1 repricing remains post-hoc. These rows remain observed charge subtotals.', '',
               '## What the checks establish', '',
               'The unchanged frozen gates cover 21 public/sealed feature cases, 17 external baseline regression cases, database integrity/schema checks, 31 native authentication probes, full app checks, source/test preservation, timely final return and artifact integrity. A failing sequence can stop early: unexecuted tests are not passes.', '',
               'Both direct Terra runs passed the behavioral, regression, authentication and full-app checks. Their only rejection was the finite original-test rule: new assertions were inserted inside an existing test outside the permitted locations. The original test statements were retained. This is a policy rejection, not an observed functional defect; neither primary result was upgraded after inspection. As an explicitly exploratory diagnostic, seven runs passed every gate except this source policy. That is not a replacement completion definition.', '',

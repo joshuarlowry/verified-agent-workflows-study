@@ -19,7 +19,7 @@ All five systems use OpenCode → LiteLLM → OpenRouter. The pinned Gemma route
 | GLM supervising Gemma | 2 | Pass: all frozen gates | 14m 52s | ≥ $0.1600 |
 | Gemma alone | 2 | Pass: all frozen gates | 11m 26s | ≥ $0.2190 |
 
-Runtime includes tools and waits, excluding setup and between-run backups. Charges are provider-reported known subtotals; ≥ means billing is incomplete. They exclude preparation, infrastructure repair, grading and earlier technical attempts. The registered standardized uncached pricing comparison remains unresolved because its rate card has not been frozen.
+Runtime includes tools and waits, excluding setup and between-run backups. Charges are provider-reported known subtotals; ≥ means billing is incomplete. They exclude preparation, infrastructure repair, grading and earlier technical attempts. At C1’s first publication, no standardized rate card had been frozen. Revision 21 later froze a [prospective rate card](economic-rate-card.json); any standardized C1 repricing remains post-hoc. These rows remain observed charge subtotals.
 
 ## What the checks establish
 
@@ -30,6 +30,12 @@ Both direct Terra runs passed the behavioral, regression, authentication and ful
 **Instrument gap:** the detailed finite test-edit grammar was absent from the public-check bundle and initial subject prompt. The public FAQ required preserved coverage without disclosing these structural exclusions. The five all-gate passes therefore cannot support a fair model-quality ranking. The mismatch must be documented and resolved prospectively, without rewriting C1 results.
 
 Gemma trial 1 failed the first-created-workspace zero-count selector check. Both Terra-supervised attempts ended before a supervisor final: provider errors interrupted trial 1; truncated session export interrupted trial 2. Their preserved snapshots also fail lint, so later full-app checks were not executed. The capture repair was separately qualified before the last three unrun slots; no failed actor was retried.
+
+## Provider-error attribution
+
+A subsequent role-by-role audit of all ten fixed C1 endpoints found 440 captured response bodies identifying **Crusoe rate limits on Gemma requests**, plus seven worker-route timeout error bodies without provider metadata. No provider error body was captured on the direct GLM, direct Terra or supervisor routes. This is capture evidence, not a guarantee of platform uptime.
+
+The first failed Terra-supervised run contains **119 Gemma/Crusoe rate-limit errors and seven worker-route timeouts**. The second contains **248 Gemma/Crusoe rate-limit errors**, in addition to the separately documented session-export endpoint failure. Those interruptions and retry delays must not be attributed solely to Terra’s coding or supervision capability. Direct Gemma and GLM-supervised runs also encountered rate limits. Workloads and retry bursts differ, so these counts are not independent reliability trials or a causal supervisor comparison. Failed-call billing remains unknown; original timings, endpoints, source and acceptance results are unchanged. [Full fixed-run/role audit and evidence hashes](c1-provider-failure-attribution.json).
 
 ## Interpretation and remaining gaps
 
