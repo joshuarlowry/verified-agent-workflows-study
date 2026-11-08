@@ -1,15 +1,15 @@
 {
-  "recorded_at_utc": "2026-11-08T04:26:10.586511+00:00",
+  "recorded_at_utc": "2026-11-08T05:31:49.996951+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
   "scored_runs": 0,
-  "protocol_revision": 12,
+  "protocol_revision": 13,
   "primary_scheduling": "sequential",
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "Terra compact-checker re-review returned changes_required with5remaining source findings despite clean fixture/control runs. Terra is queued for a fresh bounded repair, then fresh GLM cross-review; no broken checker promoted.",
+      "state": "Terra feature/scope closure source-accepted by GLM, bounded preparation only. Final protected7API/10browser regression project and finite machine-scope/test-preservation binding are being consolidated by Terra, with fresh GLM review queued. Calibration remains blocked.",
       "existing_evidence": "Current single-worker/first-failure matrix completed13cases: reference21/21\u00d73; alternative21/21\u00d73; baseline and6negative controls reject for intended reasons. Skipped dependent cases are unverified. Full non-aborting diagnostics are also retained.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
@@ -22,13 +22,14 @@
         "setup/c1-alternative-native-auth-replays-20261108T035018Z.json"
       ],
       "checker_evidence": "setup/c1-standard-checker-validation.json",
-      "scope_binding": "Gemma independently authored a DB schema/initial-seed guard; GLM source review is active. Concrete whole-patch allowed scope and protected baseline regression/migration binding remains required underR5 and is included in Terra closure. No new product requirement or treatment."
+      "scope_binding": "Revision13 explicitly preserves machine-only core and optional human/semantic review. Complete frozen real HTTP/UI baseline regressions before calibration rather than introducing an unregistered per-submission AI judge or binding a particular internal app helper/selector."
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
-      "state": "GLM accepted N-1 and read-only public mount; host added actual public_tree content-hash binding with38root tests passing0skips. Its bounded cross-review is active. Four-role actual no-model browser/mount proof passed; Terra accepted the one-value immutable browser-path delta. Real seven-role model/provider/Context/capture remains queued after checker closure review.",
+      "state": "Common adapter qualified: actual5workflows/7roles/30generations pass mechanical source/context/broker/history/capture checks; exact dated model/provider and billing cross-checks pass.",
       "existing_evidence": "Prior eight native source findings were verified fixed by GLM; only prompt binding was launch-critical. Five-system13reply synthetic proof and actual cancellation/checkpoint cleanup remain valid scoped evidence. Public-only checks now have the same read-only mount interface in every role; final accepted suite is not staged yet.",
-      "limits": "Host final public-only tree, exact per-run prompts/acceptance manifests and study admission still pending. Reviews/probes do not auto-admit calibration."
+      "limits": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted.",
+      "evidence": "setup/actual-native-role-qualification.json"
     },
     {
       "gate": "Approved documentation package runtime",
@@ -49,5 +50,5 @@
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 07, 2026 at 11:26:10 PM EST"
+  "recorded_at_eastern": "Nov 08, 2026 at 12:31:49 AM EST"
 }

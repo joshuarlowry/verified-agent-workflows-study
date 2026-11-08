@@ -1,0 +1,87 @@
+{
+  "recorded_at_utc": "2026-11-08T05:31:49.996951+00:00",
+  "recorded_at_eastern": "Nov 08, 2026 at 12:31:49 AM EST",
+  "kind": "actual_model_common_adapter_qualification_preparation_only",
+  "application_task_attempts": 0,
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "registered_workflows_exercised": 5,
+  "roles_exercised": 7,
+  "native_generation_steps": 30,
+  "all_workflows_mechanical_checks_passed": true,
+  "supervised_handoffs": {
+    "Terra supervising Gemma": 2,
+    "GLM supervising Gemma": 2
+  },
+  "same_worker_native_history_restored": true,
+  "all_endpoints_frozen_and_resources_closed": true,
+  "all30_exact_resolved_model_provider_pairs_verified_by_OpenRouter_generation_metadata": true,
+  "models": [
+    {
+      "requested": "google/gemma-4-31b-it",
+      "resolved": "google/gemma-4-31b-it-20260402",
+      "provider_tag": "crusoe/bf16",
+      "precision": "bf16"
+    },
+    {
+      "requested": "z-ai/glm-5.3-flash",
+      "resolved": "z-ai/glm-5.3-flash-20260826",
+      "provider_tag": "relace/fp4",
+      "precision": "fp4"
+    },
+    {
+      "requested": "openai/gpt-6.1-terra",
+      "resolved": "openai/gpt-6.1-terra-20261026",
+      "provider_tag": "azure",
+      "precision": "not_disclosed"
+    }
+  ],
+  "route_policy": "Every captured request pins provider only, require_parameters=true, ZDR=true, fallback=false; Terra high reasoning and Azure regional ignores verified.",
+  "docs": "Context catalog/config/readiness inheritance checked across all7roles. Actual queries/results observed for all3direct agents and both restored Gemma workers. Supervisors did not directly query docs; same-server corpus/offline proofs plus actual catalog/config/readiness establish availability, not a falsely claimed direct retrieval.",
+  "native_builtin_tools": "context_get_docs,edit,glob,grep,read,shell,skill,write,execute. Generic skill/execute wrappers are declared; global skill/plugin deny policies apply, unrelated skill content is not offered/loaded, task/web tools are absent from actual catalogs.",
+  "process_environment": "Actual /workspace cwd AND inherited PWD verified in complete-agent, supervisor, worker and fresh-restored-worker native containers. Immutable browser path and public mount write denial verified; supervisor source is read-only.",
+  "usage": {
+    "input_inclusive_total": 188144,
+    "billable_output_total": 5815,
+    "cached_input_subset_total": 132808,
+    "reasoning_diagnostic_subset_not_added": 3792,
+    "provider_reported_total_usd": 0.028332931
+  },
+  "cache_write_subset_total": 7183,
+  "usage_semantics": {
+    "scope": "OpenCode2.2.5 through pinned LiteLLM/OpenRouter in these30actual calls",
+    "incremental_per_step": true,
+    "native_input": "uncached/non-write input; add native cache.read+cache.write to match provider inclusive prompt count",
+    "native_output": "max(provider completion minus reported reasoning,0); lossy when provider reasoning exceeds completion, so never use it to reconstruct billing",
+    "cached_input": "provider prompt is inclusive; cached read and cache write subsets are not additional input",
+    "reasoning": "provider diagnostic, intended as subset but exceeds completion in one observed GLM call; allocation is inconsistent/unverified and is never added to billing",
+    "native_cost": "incremental and agrees with stream provider cost and administrative generation total_cost to within1e-9USD",
+    "cache_write_missing": "Provider cache-write absence stays unavailable; a native0 is not proof of a reported provider0."
+  },
+  "provider_reasoning_exceeds_completion_calls": 1,
+  "cash_crosscheck": "All30stream-provider costs agree with native step costs and read-only administrative generation total_cost to1e-9USD. These are cross-checks, not added charges.",
+  "request_limits": {
+    "native_context_metadata": 200000,
+    "max_completion_tokens_observed_all30": 16384,
+    "temperature": "not sent; provider default/unknown",
+    "Gemma_reasoning": "not set; provider default",
+    "GLM_reasoning": "not set; provider default",
+    "Terra_reasoning": "high observed"
+  },
+  "smoke_elapsed_seconds_including_mechanical_setup_tools_and_cleanup": 323.467766732967,
+  "source_hashes": {
+    "smoke_receipt": "9cfd2eadfe6ed256db51320b661f2e6844f6740a951dce47403b44174ef86328",
+    "raw_route_docs_audit": "3e86c8cddc7e350c25f4eba14d4c76cb46f02ac1f2236a4af94a881e7988201f",
+    "public_catalog_snapshot": "462ef48ca0956076e164a0dcd75c1a28ac530cfd24ee5c81e37dfcacea8db0f2",
+    "token_cost_reconciliation": "2264ba45b5d0990fa3d00031fdc74784f10416287545ad90716a823a898514ea",
+    "generation_resolution": "2e576277c6bb602a13707637c2c5cb4b1c9cdd1c3e3f953d3406f71e3bfeed75",
+    "cwd_pwd_browser_mount": "b26feddfe8f494d4842f2e71a04c98a66043fefd96547ca3e727b60f54828b4c"
+  },
+  "qualification_scope": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted.",
+  "limits": [
+    "Provider-reported opaque serving identity/precision is not a hidden-weight immutability attestation.",
+    "One GLM reasoning diagnostic exceeds completion; native nonreasoning output clamps at0 and is lossy. Provider billable completion remains authoritative; reasoning is never added again.",
+    "No compaction occurred in this smoke; future non-step/auxiliary native attribution must remain separate/unverified if it differs, with raw provider charges retained.",
+    "These are trivial mechanical prompts, not evidence comparing coding performance/cost."
+  ]
+}

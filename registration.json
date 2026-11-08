@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 12,
+  "protocol_revision": 13,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -313,7 +313,7 @@
     "acceptance_suite_sha256": null,
     "task_qualification_signoffs": [],
     "positive_negative_control_records": [],
-    "independent_C1_evaluator_status": "Compact GLM checker repair frozen after94paired calls; both valid fixtures21/21 in3cold environments each and6controls reject. Terra source review still findsR1-R5; a new Terra closure and fresh GLM review are queued. No accepted evaluator/packet or calibration admission.",
+    "independent_C1_evaluator_status": "Terra closure source-accepted by fresh GLM review, bounded preparation only. Existing positive/control cold matrix and native-auth replays retained. Complete protected original17-case HTTP/UI regression execution and finite machine-scope integration are being consolidated under revision13 before final qualification; no per-patch AI/human judge and no calibration admission.",
     "C1_reference_endpoint_evidence": "setup/c1-constructor-endpoint.json",
     "independent_C1_evaluator_evidence": "setup/c1-independent-evaluator-endpoint.json",
     "independent_C1_checker_review": "setup/c1-checker-review.json",
@@ -321,11 +321,12 @@
     "C1_reference_public_regression_evidence": "setup/c1-reference-public-replays-20261107T232728Z.json",
     "C1_alternative_runtime_status": "Joint Gemma two-query server + Terra client repair source-accepted by GLM;3cold full public replays and3non-test native-auth replays passed. In-session staleness is not an additional C1 rule. Current feature checker has unresolved source defects; task qualification pending.",
     "current_C1_checker_evidence": "setup/c1-standard-checker-validation.json",
-    "historical_evaluator_records_notice": "Earlier independent evaluator/checker evidence fields refer to retained historical preparation revisions, not the current acceptance suite. Current status and evidence above control; acceptance_suite_sha256 remains null."
+    "historical_evaluator_records_notice": "Earlier independent evaluator/checker evidence fields refer to retained historical preparation revisions, not the current acceptance suite. Current status and evidence above control; acceptance_suite_sha256 remains null.",
+    "protected_baseline_regression_status": "Original project suites passed on baseline and both known valid fixtures, but protected architecture-independent HTTP/UI execution and migration binding are being completed before calibration. Existing source/import/selector assumptions will not become hidden implementation requirements."
   },
   "prompt_bundle_sha256": null,
   "harness_manifest_sha256": null,
-  "usage_capture_smoke_results_sha256": null,
+  "usage_capture_smoke_results_sha256": "42de15137ac663598bf78285c19cee31ebb9168cdbfc76d1759e9065adc0b2d4",
   "worker_broker_preflight_sha256": null,
   "randomization_seed": null,
   "randomized_schedule_sha256": null,
@@ -611,7 +612,9 @@
       "id": "common_adapter",
       "phase": "before_calibration",
       "detail": "qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16",
-      "resolved": false
+      "resolved": true,
+      "evidence": "setup/actual-native-role-qualification.json",
+      "resolution_scope": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted."
     },
     {
       "id": "fixture_and_corpus",
@@ -810,7 +813,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "Preparation only,0calibration/0scored: see setup/pilot-readiness.json and setup/c1-standard-checker-validation.json. Critical checker source closure, scope/migration binding, final freeze and actual seven-role capture remain pending.",
+  "setup_progress": "Preparation only,0calibration/0scored. Common adapter qualified across actual5workflows/7roles/30generations, including exact models/providers, Context/broker/native history and provider/native/account billing. Final protected regression/source/evaluator consolidation and review remain under fixture_and_corpus/authored_treatment_review; see setup/pilot-readiness.json.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -946,5 +949,22 @@
       "all incomplete/failed preparation endpoints preserved"
     ],
     "not_authorized": "Bypassing a known acceptance or integrity defect or treating synthetic smoke tests as actual model collection."
+  },
+  "machine_acceptance_scope": {
+    "status": "pre_calibration_clarification_no_subject_data_collected",
+    "source": "Existing core machine acceptance and optional-human-review decisions; no per-patch model or human judge is added.",
+    "required_checks": [
+      "disclosed feature behavior under frozen public/sealed cases",
+      "independent protected baseline API/UI regressions with original assertion and race/barrier coverage traced",
+      "real non-test auth/ownership preservation",
+      "initial deterministic seed and schema; post-test schema",
+      "frozen runtime/build/typecheck/lint checks",
+      "declared application paths and protected materials, whole-source inventory, frozen endpoint/integrity and execution restrictions"
+    ],
+    "baseline_regression_method": "Frozen real HTTP/browser checks derived from all existing7API and10browser cases, with explicit prequalified C1-only expectation/selector compatibility changes. No subject source imports/config/dependencies and no dependence on a particular internal helper/signature/DOM hook. Subject tests supplement these checks.",
+    "scope_reporting": "Report exactly which path, database, protected-material and behavioral constraints were checked. This is a finite machine gate, not proof of arbitrary semantic equivalence or every possible unrelated code defect.",
+    "semantic_patch_review": "Optional extension; no unregistered per-submission LLM judge, no implicit production/merge approval, no manufactured review_bound record. Any retained review_required source-gate output refers to that separate unperformed semantic review, never a completed core check.",
+    "test_preservation": "Protected original coverage and its assertion/barrier trace must remain; source/test deletions or unverified migrations are recorded honestly and cannot be silently treated as preservation.",
+    "qualified_before_calibration": false
   }
 }
