@@ -1,13 +1,13 @@
 {
   "kind": "registered_C1_calibration_metadata",
   "status": "running",
-  "snapshot_at_utc": "2026-11-08T08:26:52.246330+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 03:26:52 AM EST",
-  "event_at_utc": "2026-11-08T08:22:47.120612+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 03:22:47 AM EST",
+  "snapshot_at_utc": "2026-11-08T08:27:18.372870+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 03:27:18 AM EST",
+  "event_at_utc": "2026-11-08T08:27:14.856496+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 03:27:14 AM EST",
   "cohort_id": "clean-20261107T122746Z",
   "calibration_block_size": 10,
-  "calibration_dispatched": 3,
+  "calibration_dispatched": 4,
   "calibration_endpoints": 3,
   "scored_runs": 0,
   "rows": [
@@ -46,12 +46,12 @@
       "arm": "Gemma alone",
       "repetition": 1,
       "run_id": "cal-c1-v2-04",
-      "status": "setting_up"
+      "status": "active"
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
   "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
   "calibration_block_version": 2,
   "prior_interrupted_calibration_attempts": 1,
-  "total_calibration_dispatched_including_prior": 4
+  "total_calibration_dispatched_including_prior": 5
 }
