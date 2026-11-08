@@ -27,7 +27,14 @@ type Item = { id:string; workspaceId:string; title:string; notes:string; status:
 type Workspace = { id:string; name:string; role:string; createdAt:string; updatedAt:string };
 export function createApp(db: Database.Database, auth: ReturnType<typeof makeAuth>) {
   const app = new Hono();
-  const summaries = (uid: string) => db.prepare('SELECT w.id,w.name,m.role,w.createdAt FROM workspace w JOIN membership m ON m.workspaceId=w.id WHERE m.userId=? ORDER BY w.name COLLATE BINARY, w.createdAt, w.id COLLATE BINARY').all(uid);
+  const summaries = (uid: string) => db.prepare(`
+    SELECT w.id, w.name, m.role, w.createdAt, 
+    (SELECT COUNT(*) FROM item i WHERE i.workspaceId = w.id AND i.status = 'open') as openItemCount 
+    FROM workspace w 
+    JOIN membership m ON m.workspaceId = w.id 
+    WHERE m.userId = ? 
+    ORDER BY w.name COLLATE BINARY, w.createdAt, w.id COLLATE BINARY
+  `).all(uid);
   const workspace = (ws: string, uid: string) => db.prepare('SELECT w.*,m.role FROM workspace w JOIN membership m ON m.workspaceId=w.id WHERE w.id=? AND m.userId=?').get(ws,uid) as Workspace|undefined;
   const item = (itemId: string, uid: string) => db.prepare('SELECT i.* FROM item i JOIN membership m ON m.workspaceId=i.workspaceId WHERE i.id=? AND m.userId=?').get(itemId,uid) as Item|undefined;
   const user = async (c: Context) => (await auth.api.getSession({ headers:c.req.raw.headers }))?.user;
