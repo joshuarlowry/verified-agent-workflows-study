@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T16:10:04.745975+00:00",
+  "snapshot_at_utc": "2026-11-08T16:14:20.392322+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -31,7 +31,7 @@
     "prompt_frozen_before_reference": true,
     "baseline_policy_docs_readability_checked": true,
     "passive_observation": {
-      "status": "terminal native process; endpoint backup running",
+      "status": "terminal endpoint; supported backup published privately",
       "provider_transport": "Repeated upstream idle timeout messages observed; first-endpoint capture and actual-provider audit still pending.",
       "operator_interventions": "No restart, continuation prompt, product hint or routing change.",
       "scoring": "Unscored fixture construction"
@@ -59,15 +59,29 @@
   },
   "external_checks": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "staged_waiting_for_previous_endpoint_backup",
+    "status": "running",
     "prompt_frozen_before_reference": true,
     "reference_or_alternative_inputs": false,
     "provider_metadata_preflight_utc": "2026-11-08T15:59:53.454574+00:00",
-    "provider_metadata_matches": true
+    "provider_metadata_matches": true,
+    "service": "study2-c2-external-check-construction-20261108t154648z",
+    "pid": 2486845,
+    "dispatch_utc": "2026-11-08T16:13:06.956956+00:00",
+    "startup_identity_verified": true,
+    "actual_first_requested_model": "z-ai/glm-5.3-flash",
+    "actual_first_requested_provider_policy": {
+      "only": [
+        "relace/fp4"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "zdr": true
+    },
+    "actual_generation_identity_audit": "pending first endpoint"
   },
   "C2_primary_attempts": 0,
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 11:10:04 AM EST"
+  "snapshot_at_eastern": "Nov 08, 2026 at 11:14:20 AM EST"
 }
