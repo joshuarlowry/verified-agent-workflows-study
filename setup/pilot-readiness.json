@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T03:40:01.998154+00:00",
+  "recorded_at_utc": "2026-11-08T03:54:03.226555+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -9,14 +9,18 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "GLM compact-checker repair running after Terra source review; one additional observed false rejection incorrectly assumed selected workspace survives reload. Original first checker return is frozen.",
-      "existing_evidence": "Standard checker v1 rejects baseline (19 fail/2 pass), but reference has20pass/1false rejection. Source review also found five critical issue groups. Prior custom checker diagnostics are historical; no current packet qualification claim.",
+      "state": "GLM checker repair returned after94captured/paired calls; external baseline/reference/alternative/negative-control matrix running. Source re-review remains queued after final delta review.",
+      "existing_evidence": "Repaired standard checker has now accepted reference21/21 in3 cold environments and alternative21/21 in3 cold environments. Baseline rejects19/21 intended feature gaps,2preservation passes. Six controls still running; no final packet qualification claim.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
       "authorship_note": "Alternative retains Gemma two-query server design; any subsequent Terra client repair will have joint provenance and different-model review. No relabeling of Gemma result.",
       "client_fixture": "Frozen joint Gemma/Terra alternative commit f9695e2b3658928a9d4b4ada1c3550243edc2e1a passed full public build/typecheck/lint/API/browser/reset in3 independent cold containers. Actual47call capture audit passed. Different-model source review and final independent task acceptance remain pending.",
       "public_replay_evidence": "setup/c1-client-alternative-public-replays-20261108T0332.json",
-      "native_auth_task_binding": "Qualified baseline auth probe has2 exact summary-key expectations obsoleted by C1. A fresh public-only Gemma preparation session is queued to add only openItemCount to those2 arrays; GLM cross-review will verify all other bytes/auth checks unchanged. Original baseline probe remains immutable; no false task failure or silent weakening."
+      "native_auth_task_binding": "Gemma independently produced exactly the2 allowed summary-key expectation changes; reverse-substitution restores original bytes. Metadata deliverables were omitted (partial preparation return preserved). Controller provenance and raw capture are retained. The migrated31-check non-test auth probe passed3clean reference and3clean alternative replays; different-model GLM source review remains pending.",
+      "native_auth_replay_evidence": [
+        "setup/c1-reference-native-auth-replays-20261108T035018Z.json",
+        "setup/c1-alternative-native-auth-replays-20261108T035018Z.json"
+      ]
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
@@ -38,10 +42,10 @@
     "Remaining reference/evaluator packets until initial C1 technical block"
   ],
   "latest_backup": {
-    "checkpoint": "checkpoints/preparation-20261108T032421008515Z.tar.gz",
-    "sha256": "e34eb3f7c83aae4da64a8562a19c47b4743390d849edffe37b1eaf46a4c46fe8",
+    "checkpoint": "checkpoints/preparation-20261108T034325832274Z.tar.gz",
+    "sha256": "f3d8d97deae8cd2da09f1656756dbd7d90bcade91ad78a52dfa57ebff78480c6",
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 07, 2026 at 10:40:01 PM EST"
+  "recorded_at_eastern": "Nov 07, 2026 at 10:54:03 PM EST"
 }

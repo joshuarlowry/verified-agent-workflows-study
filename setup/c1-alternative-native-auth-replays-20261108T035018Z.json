@@ -1,0 +1,291 @@
+{
+  "kind": "three_clean_native_auth_binding_replays_not_task_acceptance_or_full_qualification",
+  "probe_sha256": "4e7840326067f92d15e689fc9d1b2f837c44c571ccce23d94a9b04ef85b0a05c",
+  "model_calls": 0,
+  "source_snapshot_sha256": "3facac3c64fe4ccf75335cd27a9a09ce15b756fa88f4a52c2749be82956ef996",
+  "source_files": 22,
+  "application_lock_sha256": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "resource_limits": {
+    "cpu_mask": "0,1",
+    "memory_bytes": 8589934592,
+    "pids": 256,
+    "network": "none",
+    "rootfs": "read_only",
+    "apparmor_profile": "study2-agent-a5ccdae8-stack1"
+  },
+  "independent_dependencies": "Separate writable copies of dependencies, source, SQLite files, browser profiles, build and TypeScript caches; no writable node_modules symlinks. npm ci ran during image build before copying dependencies.",
+  "instances": [
+    {
+      "instance": 1,
+      "dispatch_utc": "2026-11-08T03:50:37.748491+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.16608658598852344,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.2626120150089264,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.8219692579878028,
+          "stdout_sha256": "fd7db5401b0135989d967d1cec9d0271f0b484a1081d6ccab750ead311b933d5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "env",
+            "-u",
+            "NODE_ENV",
+            "-u",
+            "TEST",
+            "PORT=34657",
+            "BETTER_AUTH_URL=http://127.0.0.1:34657",
+            "WORKBOARD_DB=native-auth-probe.sqlite",
+            "PROBE_BASE=http://127.0.0.1:34657",
+            "PROBE_APP=/workspace",
+            "PROBE_DB=/workspace/data/native-auth-probe.sqlite",
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.5232483290019445,
+          "stdout_sha256": "f52de7d60fe5ab6a0653c468bc28715f2ee382a3e579fe430f9f2cbe2050f529",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "env",
+            "-u",
+            "NODE_ENV",
+            "-u",
+            "TEST",
+            "PORT=34657",
+            "BETTER_AUTH_URL=http://127.0.0.1:34657",
+            "WORKBOARD_DB=native-auth-probe.sqlite",
+            "PROBE_BASE=http://127.0.0.1:34657",
+            "PROBE_APP=/workspace",
+            "PROBE_DB=/workspace/data/native-auth-probe.sqlite",
+            "sh",
+            "-c",
+            "set -eu\nnode --import tsx server/index.ts > /workspace/native-auth-server.log 2>&1 &\ntask_server_pid=$!\ntrap 'kill -TERM \"$task_server_pid\" 2>/dev/null || true' EXIT\nready=0\ntask_attempt=0\nwhile [ \"$task_attempt\" -lt 100 ]; do\n if rg -q 'Workboard listening' /workspace/native-auth-server.log; then ready=1; break; fi\n if ! kill -0 \"$task_server_pid\" 2>/dev/null; then cat /workspace/native-auth-server.log; exit 1; fi\n task_attempt=$((task_attempt+1))\n sleep 0.1\ndone\nif [ \"$ready\" != 1 ]; then cat /workspace/native-auth-server.log; exit 1; fi\nnode /tools/native-auth-probe.mjs\nkill -TERM \"$task_server_pid\"\nwait \"$task_server_pid\"\ntrap - EXIT\n"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.667995380004868,
+          "stdout_sha256": "7e7b2efc5610be27a7991e9c08ae4f65fe12e556b14ebabd31c4d38c2c946e39",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.9367511400196236,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 6.026474270998733,
+      "passed": true
+    },
+    {
+      "instance": 2,
+      "dispatch_utc": "2026-11-08T03:50:43.775169+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.1872111090051476,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.21771397499833256,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.7501907130063046,
+          "stdout_sha256": "8d3fdb5cfc95cb48affc00caa6eb48654b0f989e23db143381f47a12bc490ea2",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "env",
+            "-u",
+            "NODE_ENV",
+            "-u",
+            "TEST",
+            "PORT=34657",
+            "BETTER_AUTH_URL=http://127.0.0.1:34657",
+            "WORKBOARD_DB=native-auth-probe.sqlite",
+            "PROBE_BASE=http://127.0.0.1:34657",
+            "PROBE_APP=/workspace",
+            "PROBE_DB=/workspace/data/native-auth-probe.sqlite",
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.553088139015017,
+          "stdout_sha256": "f52de7d60fe5ab6a0653c468bc28715f2ee382a3e579fe430f9f2cbe2050f529",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "env",
+            "-u",
+            "NODE_ENV",
+            "-u",
+            "TEST",
+            "PORT=34657",
+            "BETTER_AUTH_URL=http://127.0.0.1:34657",
+            "WORKBOARD_DB=native-auth-probe.sqlite",
+            "PROBE_BASE=http://127.0.0.1:34657",
+            "PROBE_APP=/workspace",
+            "PROBE_DB=/workspace/data/native-auth-probe.sqlite",
+            "sh",
+            "-c",
+            "set -eu\nnode --import tsx server/index.ts > /workspace/native-auth-server.log 2>&1 &\ntask_server_pid=$!\ntrap 'kill -TERM \"$task_server_pid\" 2>/dev/null || true' EXIT\nready=0\ntask_attempt=0\nwhile [ \"$task_attempt\" -lt 100 ]; do\n if rg -q 'Workboard listening' /workspace/native-auth-server.log; then ready=1; break; fi\n if ! kill -0 \"$task_server_pid\" 2>/dev/null; then cat /workspace/native-auth-server.log; exit 1; fi\n task_attempt=$((task_attempt+1))\n sleep 0.1\ndone\nif [ \"$ready\" != 1 ]; then cat /workspace/native-auth-server.log; exit 1; fi\nnode /tools/native-auth-probe.mjs\nkill -TERM \"$task_server_pid\"\nwait \"$task_server_pid\"\ntrap - EXIT\n"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.8000626639986876,
+          "stdout_sha256": "4263f8e48b89823f66988376861cb79045e072e827585a234f76db4c8866960d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.8250022190040909,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 5.699251184996683,
+      "passed": true
+    },
+    {
+      "instance": 3,
+      "dispatch_utc": "2026-11-08T03:50:49.474616+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.1458114620181732,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.2378555310133379,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.6803318430029321,
+          "stdout_sha256": "0eaf88d21e0f86d2a3c3d3c0788a66b792f3d1708a7fc32b74e85d24418eb1a5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "env",
+            "-u",
+            "NODE_ENV",
+            "-u",
+            "TEST",
+            "PORT=34657",
+            "BETTER_AUTH_URL=http://127.0.0.1:34657",
+            "WORKBOARD_DB=native-auth-probe.sqlite",
+            "PROBE_BASE=http://127.0.0.1:34657",
+            "PROBE_APP=/workspace",
+            "PROBE_DB=/workspace/data/native-auth-probe.sqlite",
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.5175049190002028,
+          "stdout_sha256": "f52de7d60fe5ab6a0653c468bc28715f2ee382a3e579fe430f9f2cbe2050f529",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "env",
+            "-u",
+            "NODE_ENV",
+            "-u",
+            "TEST",
+            "PORT=34657",
+            "BETTER_AUTH_URL=http://127.0.0.1:34657",
+            "WORKBOARD_DB=native-auth-probe.sqlite",
+            "PROBE_BASE=http://127.0.0.1:34657",
+            "PROBE_APP=/workspace",
+            "PROBE_DB=/workspace/data/native-auth-probe.sqlite",
+            "sh",
+            "-c",
+            "set -eu\nnode --import tsx server/index.ts > /workspace/native-auth-server.log 2>&1 &\ntask_server_pid=$!\ntrap 'kill -TERM \"$task_server_pid\" 2>/dev/null || true' EXIT\nready=0\ntask_attempt=0\nwhile [ \"$task_attempt\" -lt 100 ]; do\n if rg -q 'Workboard listening' /workspace/native-auth-server.log; then ready=1; break; fi\n if ! kill -0 \"$task_server_pid\" 2>/dev/null; then cat /workspace/native-auth-server.log; exit 1; fi\n task_attempt=$((task_attempt+1))\n sleep 0.1\ndone\nif [ \"$ready\" != 1 ]; then cat /workspace/native-auth-server.log; exit 1; fi\nnode /tools/native-auth-probe.mjs\nkill -TERM \"$task_server_pid\"\nwait \"$task_server_pid\"\ntrap - EXIT\n"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.6998717839887831,
+          "stdout_sha256": "67bd80475907d3c0195facdfd7a3c0f981a8a90eb24671ad050c024dafa1ad00",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.861041225027293,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 5.431177762016887,
+      "passed": true
+    }
+  ],
+  "all_native_auth_probes_passed": true,
+  "qualification_limits": [
+    "This runs the previously accepted non-test auth probe, not a new task evaluator. Test-mode API unit tests are separate.",
+    "No sealed task acceptance, reference/alternate implementations or negative controls.",
+    "No concurrent lanes, live models, Context or worker broker qualification.",
+    "Study-local signal profile and dependency image still need current different-model final-runtime review."
+  ]
+}
