@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T18:39:17.251904+00:00",
+  "snapshot_at_utc": "2026-11-08T19:06:15.746904+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -108,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:39:17 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 02:06:15 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -210,13 +210,24 @@
   "checks_revision_2_cross_review": {
     "model": "openai/gpt-6.1-terra",
     "reasoning": "high",
-    "status": "staged_not_dispatched",
+    "status": "running",
     "candidate_inputs_supplied": false,
-    "scope": "Fresh source/prompt/oracle/helper review of frozen revision2. Mandatory implementing-target, negative, clean and runtime gates remain later and unverified."
+    "scope": "Fresh source/prompt/oracle/helper review of frozen revision2. Mandatory implementing-target, negative, clean and runtime gates remain later and unverified.",
+    "service": "study2-c2-checks-r2-cross-review-20261108t182456z",
+    "pid": 2568579,
+    "startup_identity_verified": true,
+    "first_wire_requested_model": "openai/gpt-6.1-terra",
+    "first_wire_reasoning_effort": "high",
+    "provider_only": [
+      "azure"
+    ],
+    "allow_fallbacks": false,
+    "zdr": true,
+    "actual_generation_metadata_audit": "pending first endpoint"
   },
   "alternative_revision_2_clean_setup": {
     "model": "google/gemma-4-31b-it",
-    "status": "running",
+    "status": "first_clean_author_return_frozen_not_qualified",
     "fresh_session": true,
     "product_prompt_unchanged": true,
     "correction": "Remove exactly the foreign outcome sentence and correct extraction metadata; own-source findings otherwise identical.",
@@ -224,9 +235,8 @@
     "contaminated_source_or_conversation_imported": false,
     "original_technical_attempt_preserved": true,
     "reference_or_evaluator_inputs": false,
-    "qualification": "All different-model and full positive/negative/clean/runtime gates remain required.",
+    "qualification": "Source review and all external/negative/three-clean/runtime gates remain pending. Native final return is not verified completion.",
     "service": "study2-c2-alternative-r2-clean-input-20261108t183126z",
-    "pid": 2556404,
     "startup_identity_verified": true,
     "first_wire_requested_model": "google/gemma-4-31b-it",
     "provider_only": [
@@ -235,6 +245,32 @@
     "allow_fallbacks": false,
     "zdr": true,
     "forbidden_cross_candidate_sentence_absent_from_input_and_observed_requests": true,
-    "actual_generation_metadata_audit": "pending first endpoint"
+    "actual_generation_metadata_audit": "All 47 known successful generation IDs verified",
+    "agent_exit_code": 0,
+    "native_elapsed_seconds": 1090.171808329993,
+    "first_endpoint_frozen_files": 27,
+    "source_files": 21,
+    "raw_capture_requests": 75,
+    "known_successful_generation_ids_verified": 47,
+    "actual_dated_model": "google/gemma-4-31b-it-20260402",
+    "actual_provider": "Crusoe",
+    "failed_response_body_429": 28,
+    "raw_capture_all_passed": true,
+    "provider_input_tokens_inclusive": 2202383,
+    "provider_completion_tokens": 23835,
+    "known_provider_reported_preparation_cost_usd_subtotal": "0.31786762",
+    "billing_complete": false,
+    "forbidden_cross_candidate_sentence_absent_from_all_75_native_requests": true,
+    "constructor_self_report": "Lint/typecheck/build/unit tests passed; some browser race tests timed out. These claims are not independent task acceptance.",
+    "source_git_packaged": true,
+    "source_patch_roundtrip_exact": true
+  },
+  "clean_alternative_revision2_source_review": {
+    "model": "z-ai/glm-5.3-flash",
+    "status": "staged_not_dispatched_clean_source_bound",
+    "source_author_endpoint_frozen_before_binding": true,
+    "prompt_preappointed_before_author_return": true,
+    "reference_or_evaluator_inputs": false,
+    "scope": "Separate fresh source/prompt review; actual task qualification remains later."
   }
 }

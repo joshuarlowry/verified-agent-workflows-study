@@ -984,7 +984,7 @@
       "phase": "revision2_fixture_cross_review_only",
       "run_id": "clean-20261107T122746Z-c2-checks-r2-review-terra-20261108T182456Z",
       "prompt_sha256": "5b1fcb8334ac95e4e4c6db2d3efdf48987b503e3533b531fe0c33d65b6adc047",
-      "status": "staged_not_dispatched",
+      "status": "running",
       "fresh_session": true,
       "candidate_inputs_supplied": false,
       "self_approval": false,
@@ -998,7 +998,7 @@
       "phase": "fixture_clean_setup_after_operator_input_error",
       "run_id": "clean-20261107T122746Z-c2-alternative-r2-clean-gemma-20261108T183126Z",
       "prompt_sha256": "bd502ea491f9f33826b57a91d26d31cc8a7d641c63dd950e4f27c17c88b86e87",
-      "status": "running",
+      "status": "returned_requires_fresh_source_review",
       "fresh_session": true,
       "prompt_unchanged": true,
       "input_isolation_correction_disclosed": true,
@@ -1012,18 +1012,19 @@
       "role": "glm-C2-clean-alternative-revision2-source-review",
       "requested_model": "z-ai/glm-5.3-flash",
       "phase": "fixture_source_cross_review_only",
-      "run_id": null,
+      "run_id": "clean-20261107T122746Z-c2-clean-alternative-r2-source-review-glm-20261108T185010Z",
       "prompt_sha256": "26f1b24c9df911dd0762e05cbe1be70101fb199d11de4a557234716018a76ec8",
-      "status": "appointed_not_staged_no_source_bound",
+      "status": "staged_not_dispatched_clean_source_bound",
       "fresh_session": true,
       "reference_or_evaluator_inputs": false,
       "requires_clean_source_binding": true,
       "self_approval": false,
       "qualification": "Source/prompt review only; full external/negative/three-clean/runtime gates remain required. Contaminated attempt cannot be used.",
-      "authorization": "Existing three-model fixture construction/cross-review waiver."
+      "authorization": "Existing three-model fixture construction/cross-review waiver.",
+      "clean_author_endpoint_sha256": "8b4e74ac69c77b95d6ab5d4139ff9ee3fa69976758009328e9f0cc409d1637fe"
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T18:50:10.808352+00:00"
+  "updated_at_utc": "2026-11-08T19:06:15.746904+00:00"
 }
