@@ -1,8 +1,8 @@
 {
   "kind": "registered_C1_calibration_metadata",
   "status": "running",
-  "snapshot_at_utc": "2026-11-08T12:52:52.093198+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 07:52:52 AM EST",
+  "snapshot_at_utc": "2026-11-08T12:53:23.164392+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 07:53:23 AM EST",
   "event_at_utc": "2026-11-08T12:52:50.974534+00:00",
   "event_at_eastern": "Nov 08, 2026 at 07:52:50 AM EST",
   "cohort_id": "clean-20261107T122746Z",
@@ -54,7 +54,9 @@
       "arm": "GLM alone",
       "repetition": 2,
       "run_id": "cal-c1-v3-08",
-      "status": "final"
+      "status": "final",
+      "endpoint_reason": "final",
+      "native_exit_code": 0
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
