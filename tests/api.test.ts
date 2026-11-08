@@ -78,6 +78,39 @@ describe('real HTTP, native sessions and SQLite',()=>{
     expect(other.prepare('SELECT title,version,dueDate FROM item WHERE id=?').get(i.id)).toEqual({title:'second',version:3,dueDate:null});
     const del=await req(`/api/items/${i.id}`,'DELETE',undefined,ada); expect(del.status).toBe(204); expect(await del.text()).toBe(''); expect(other.prepare('SELECT id FROM item WHERE id=?').get(i.id)).toBeUndefined();
   });
+
+  test('workspace summaries openItemCount',async()=>{
+    const me = await (await req('/api/me','GET',undefined,bruno)).json();
+    const summaries = me.workspaces;
+    const apollo = summaries.find((w:{id:string})=>w.id==='ws_apollo');
+    const borealis = summaries.find((w:{id:string})=>w.id==='ws_borealis');
+    expect(apollo?.openItemCount).toBe(4);
+    expect(borealis?.openItemCount).toBe(3);
+
+    const list = await (await req('/api/workspaces','GET',undefined,bruno)).json();
+    expect(list).toEqual(summaries);
+
+    const cleoMe = await (await req('/api/me','GET',undefined,cleo)).json();
+    expect(cleoMe.workspaces).toEqual([
+      expect.objectContaining({ id: 'ws_borealis', openItemCount: 3 })
+    ]);
+
+    const newItem = { title: 'Temp Item' };
+    const created = await req('/api/workspaces/ws_apollo/items','POST',newItem,bruno);
+    const i = await created.json();
+
+    const meAfter = await (await req('/api/me','GET',undefined,bruno)).json();
+    expect(meAfter.workspaces.find((w:{id:string})=>w.id==='ws_apollo')?.openItemCount).toBe(5);
+    expect(meAfter.workspaces.find((w:{id:string})=>w.id==='ws_borealis')?.openItemCount).toBe(3);
+
+    await req(`/api/items/${i.id}`,'PATCH',{status:'done'},bruno);
+    const meDone = await (await req('/api/me','GET',undefined,bruno)).json();
+    expect(meDone.workspaces.find((w:{id:string})=>w.id==='ws_apollo')?.openItemCount).toBe(4);
+
+    await req(`/api/items/${i.id}`,'DELETE',undefined,bruno);
+    const meDel = await (await req('/api/me','GET',undefined,bruno)).json();
+    expect(meDel.workspaces.find((w:{id:string})=>w.id==='ws_apollo')?.openItemCount).toBe(4);
+  });
   test('signup, workspace ownership, duplicate membership sets and signout',async()=>{
     const signup=await req('/api/auth/sign-up/email','POST',{name:'New User',email:'new@workboard.test',password:'password-123'}); expect(signup.status).toBe(200);
     const cookie=signup.headers.getSetCookie().map(c=>c.split(';')[0]).join('; '); expect(cookie).toContain('session_token=');
