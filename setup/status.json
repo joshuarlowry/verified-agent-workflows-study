@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-11-08T04:11:33.316013+00:00",
-  "status": "preparation_running",
+  "updated_at_utc": "2026-11-08T04:14:21.938554+00:00",
+  "status": "preparation_construction_returned_not_qualified",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
   "resource_preflight": {
@@ -49,8 +49,8 @@
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "cohort_id": "clean-20261107T122746Z",
   "contamination_audit": "setup/contamination-audit.json",
-  "updated_at_eastern": "Nov 07, 2026 at 11:11:33 PM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 07, 2026 at 11:11:32 PM EST (UTC-0500)",
+  "updated_at_eastern": "Nov 07, 2026 at 11:14:21 PM EST (UTC-0500)",
+  "last_workflow_event_eastern": "Nov 07, 2026 at 11:14:21 PM EST (UTC-0500)",
   "dependency_image_recovery": "setup/dependency-image-preservation.json",
   "pilot_readiness": "setup/pilot-readiness.json"
 }
