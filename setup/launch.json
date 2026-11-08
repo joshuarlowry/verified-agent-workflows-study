@@ -3,10 +3,10 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "actual-seven-role-probe-20261108T032256Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T05:00:04.905020+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 12:00:04 AM EST (UTC-0500)",
-  "event_at_utc": "2026-11-08T05:00:04.847048+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 12:00:04 AM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-08T05:00:06.182050+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 12:00:06 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T05:00:06.125712+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 12:00:06 AM EST (UTC-0500)",
   "display_timezone": "America/New_York",
   "status": "running",
   "background_service": "study2-actual-seven-role-probe-20261108t032256z",
@@ -52,13 +52,17 @@
       "role": "arm3-supervisor",
       "run_id": "probe-20261108t032256z-3",
       "model": "openai/gpt-6.1-terra",
-      "status": "queued"
+      "status": "running",
+      "dispatch_utc": "2026-11-08T05:00:06.125681+00:00",
+      "dispatch_eastern": "Nov 08, 2026 at 12:00:06 AM EST (UTC-0500)"
     },
     {
       "role": "arm3-worker",
       "run_id": "probe-20261108t032256z-3",
       "model": "google/gemma-4-31b-it",
-      "status": "queued"
+      "status": "running",
+      "dispatch_utc": "2026-11-08T05:00:06.125712+00:00",
+      "dispatch_eastern": "Nov 08, 2026 at 12:00:06 AM EST (UTC-0500)"
     },
     {
       "role": "arm4-supervisor",
