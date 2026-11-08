@@ -1,6 +1,6 @@
 # Study execution plan
 
-Determine whether supervision makes Gemma a practical alternative to Terra doing the work itself. Execute the design in [registration.json](registration.json); that file remains authoritative for models, routes, settings, counts, deadlines and analysis. This plan orders the work and identifies the evidence required to advance. No calibration or scored run has started.
+Determine whether supervision makes Gemma a practical alternative to Terra doing the work itself. Execute the design in [registration.json](registration.json); that file remains authoritative for models, routes, settings, counts, deadlines and analysis. This plan orders the work and identifies the evidence required to advance. See [live collection status](setup/RUN_STATUS.md) for actual dispatches and endpoints; this document describes the execution sequence.
 
 ## Question and decision
 
@@ -81,7 +81,7 @@ The first scored block should cover distinct categories rather than five similar
 
 ## Phase 3 — Calibrate the whole workflow
 
-Run the registered **40 calibration workflows**: four tasks × five systems × two fresh trials. Start with qualified C1 across all five systems twice: ten sequential workflows included in those forty. Its order is frozen in `calibration_initial_block` in registration; its admission remains false until the listed gates pass. Qualify remaining calibration packets before their slots. Use one primary lane and a fresh baseline for every attempt. Concurrent collection is deferred unless explicitly amended and qualified.
+Run the registered **40 calibration workflows**: four tasks × five systems × two fresh trials. Start with qualified C1 across all five systems twice: ten sequential workflows included in those forty. Its order is frozen in `calibration_initial_block` in registration; its admission and exact frozen evidence are recorded in `calibration_initial_block` and the linked admission receipt. Qualify remaining calibration packets before their slots. Use one primary lane and a fresh baseline for every attempt. Concurrent collection is deferred unless explicitly amended and qualified.
 
 Measure route resolution, endpoint capture, public/sealed acceptance, usage, handoffs, mechanical operator activity, deadline hits and infrastructure interruptions. Preserve early returns and failures. No operator continuation prompts or unregistered rescue.
 
