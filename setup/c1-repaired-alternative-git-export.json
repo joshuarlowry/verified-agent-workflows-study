@@ -1,0 +1,16 @@
+{
+  "kind": "mechanical_source_endpoint_packaging_not_implementation_or_acceptance",
+  "recorded_at_utc": "2026-11-08T01:25:35.923804+00:00",
+  "application_author": "google/gemma-4-31b-it",
+  "commit_author": "Study mechanical controller",
+  "original_model_source_unchanged": true,
+  "baseline_commit": "ac96364336be35f0d8d7dadb2717b951cd3c9ac4",
+  "packaged_commit": "bd52d28af27c31ca157b76101143c5375476d69f",
+  "application_tree": "2bc5865b9db4c0750bf2b8cab2dc341618c296a1",
+  "patch_sha256": "499cedc4088f10e4c81fdeb697aa61fd6d871b73781d9dcfc2d1b4b42cd3cd2d",
+  "bundle_sha256": "89f147ca3edbef8971f144b9a11f11044ee92018dd61464a156cda4efc03fbd1",
+  "patch_roundtrip_exact": true,
+  "qualification": "No model authorship/commit claim, source review or acceptance implied.",
+  "original_endpoint_layout": "Gemma returned source-only; this is controller packaging after first return, not a model-authored commit or repair.",
+  "mechanical_failure_preserved": "First attempt rejected Git ownership because the sanitized subprocess environment omitted SUDO_UID. Explicit per-command safe.directory for the known local repository repaired only this controller environment; no global Git trust changes or model calls."
+}

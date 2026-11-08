@@ -15,5 +15,7 @@
   "disposition": "Author claims UI repairs; CHECKS.md lacks exact commands/exits and targeted tests unchanged. Needs delta source review, clean replays and independent checker; no qualification.",
   "contract_scope_note": "Automatic live refresh without a fresh count request is not an additional C1 requirement. Reviewer requests for that stronger behavior are not a new acceptance gate.",
   "scored_runs": 0,
-  "calibration_runs": 0
+  "calibration_runs": 0,
+  "controller_packaging_extension": "setup/c1-repaired-alternative-git-export.json",
+  "git_endpoint_note": "Original model return had none. Unchanged source later packaged mechanically; original first-return status not rewritten."
 }
