@@ -3,10 +3,10 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "actual-seven-role-probe-20261108T032256Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T05:01:24.568418+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 12:01:24 AM EST (UTC-0500)",
-  "event_at_utc": "2026-11-08T05:01:24.512531+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 12:01:24 AM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-08T05:01:25.944314+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 12:01:25 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T05:01:25.891286+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 12:01:25 AM EST (UTC-0500)",
   "display_timezone": "America/New_York",
   "status": "running",
   "background_service": "study2-actual-seven-role-probe-20261108t032256z",
@@ -76,13 +76,17 @@
       "role": "arm4-supervisor",
       "run_id": "probe-20261108t032256z-4",
       "model": "z-ai/glm-5.3-flash",
-      "status": "queued"
+      "status": "running",
+      "dispatch_utc": "2026-11-08T05:01:25.891272+00:00",
+      "dispatch_eastern": "Nov 08, 2026 at 12:01:25 AM EST (UTC-0500)"
     },
     {
       "role": "arm4-worker",
       "run_id": "probe-20261108t032256z-4",
       "model": "google/gemma-4-31b-it",
-      "status": "queued"
+      "status": "running",
+      "dispatch_utc": "2026-11-08T05:01:25.891286+00:00",
+      "dispatch_eastern": "Nov 08, 2026 at 12:01:25 AM EST (UTC-0500)"
     }
   ],
   "qualification_status": "not_qualified",
