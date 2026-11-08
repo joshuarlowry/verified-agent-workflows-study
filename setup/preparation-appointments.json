@@ -798,9 +798,22 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized three-model preparation cross-review",
       "qualification": "No reference or evaluator code/results; corrected fresh-request scope. No approval implied."
+    },
+    {
+      "launch_id": "c1-checker-second-repair-review-20261108T012107Z",
+      "role": "terra-c1-checker-second-repair-review",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-c1-checker-second-repair-review-terra-20261108T012107Z",
+      "manifest_created_at_utc": "2026-11-08T01:21:07.645200+00:00",
+      "prompt_sha256": "d9e6e61889ec4f294cea9ee0a2b61c8298f1c5a7b62ff4a518c19c824e4f4744",
+      "controller_sha256": "487b9efc3db6b5a464d30f1f57ba951ce49bd5c032bff9ca5ec31fa491652e49",
+      "phase": "preparation_checker_cross_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized three-model preparation cross-review",
+      "qualification": "Deferred candidate capture only after author final return and audit; no positive solution access, no approval implied."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T01:19:55.274301+00:00"
+  "updated_at_utc": "2026-11-08T01:21:35.595891+00:00"
 }

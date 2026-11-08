@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-08T01:17:38.307239+00:00",
+  "updated_at_utc": "2026-11-08T01:21:35.669994+00:00",
   "status": "preparation_running",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "GLM checker second repair active -> GLM native integration source review -> Terra approved Context package build, sequential. Native two-handoff local synthetic workflow passed; real provider/Context/accounting qualifications remain. C1 repaired alternative requires delta review and clean replays. No calibration/scoring.",
+  "next_dependency": "GLM checker repair active -> GLM harness source review -> Terra Context package build -> GLM repaired alternative source review -> Terra checker re-review, sequential. Direct and supervised local synthetic native workflows passed. Repaired alternative passed three clean public regression replays. Real-provider/Context/accounting/task qualification still pending; zero calibration/scored runs.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
@@ -33,10 +33,10 @@
   "passive_artifact_backup": {
     "repository": "https://github.com/joshuarlowry/verified-agent-workflows-artifacts",
     "visibility": "private",
-    "latest_checkpoint": "checkpoints/preparation-20261107T223713870404Z.tar.gz",
+    "latest_checkpoint": "checkpoints/preparation-20261108T011739918749Z.tar.gz",
     "scope": "Sanitized passive preparation checkpoint; active files can be partial; not atomic endpoint. Later automatic endpoint backups may exist.",
     "credential_values_removed": true,
-    "sha256": "b2429534c4af7944d4e6bbc70444f8ddc07998ffbd1a3081eb4290f5f0f65719",
+    "sha256": "a91b58317ad7096ff721da38a718d72641ad3f6715e7f795a1b793dc16b7c9f9",
     "published_private": true
   },
   "aggregate_two_role_boundary": {
@@ -49,7 +49,7 @@
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "cohort_id": "clean-20261107T122746Z",
   "contamination_audit": "setup/contamination-audit.json",
-  "updated_at_eastern": "Nov 07, 2026 at 08:17:38 PM EST (UTC-0500)",
+  "updated_at_eastern": "Nov 07, 2026 at 08:21:35 PM EST (UTC-0500)",
   "last_workflow_event_eastern": "Nov 07, 2026 at 08:04:45 PM EST (UTC-0500)",
   "dependency_image_recovery": "setup/dependency-image-preservation.json"
 }

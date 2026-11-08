@@ -65,5 +65,19 @@
   },
   "qualification": "scoped mechanical success only; no real provider/Context/full-accounting/crash/recovery qualification or scored admission",
   "calibration_runs": 0,
-  "scored_runs": 0
+  "scored_runs": 0,
+  "direct_workflow_probe": {
+    "checks": {
+      "direct_first_return_terminal": true,
+      "one_native_call": true,
+      "no_supervisor_or_handoff": true,
+      "frozen_endpoint": true,
+      "literal_DONE_survived": true,
+      "whole_cgroup_empty": true
+    },
+    "all_scoped_checks_passed": true,
+    "elapsed_seconds": 2.9012914200138766,
+    "external_model_calls": 0,
+    "cleanup_exit_code": 0
+  }
 }
