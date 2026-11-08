@@ -3,10 +3,10 @@
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "actual-handoff-ack-qualification-20261108T072355Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T07:25:56.220141+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 02:25:56 AM EST (UTC-0500)",
-  "event_at_utc": "2026-11-08T07:25:56.165287+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 02:25:56 AM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-08T07:25:57.775140+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 02:25:57 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T07:25:57.721753+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 02:25:57 AM EST (UTC-0500)",
   "display_timezone": "America/New_York",
   "status": "running",
   "background_service": "study2-actual-handoff-ack-qualification-20261108t072355z",
@@ -40,13 +40,17 @@
       "role": "1-supervisor",
       "run_id": "ack-probe-1-20261108t072355z",
       "model": "openai/gpt-6.1-terra",
-      "status": "queued"
+      "status": "running",
+      "dispatch_utc": "2026-11-08T07:25:57.721746+00:00",
+      "dispatch_eastern": "Nov 08, 2026 at 02:25:57 AM EST (UTC-0500)"
     },
     {
       "role": "1-worker",
       "run_id": "ack-probe-1-20261108t072355z",
       "model": "google/gemma-4-31b-it",
-      "status": "queued"
+      "status": "running",
+      "dispatch_utc": "2026-11-08T07:25:57.721753+00:00",
+      "dispatch_eastern": "Nov 08, 2026 at 02:25:57 AM EST (UTC-0500)"
     }
   ],
   "qualification_status": "not_qualified",
