@@ -1,0 +1,58 @@
+{
+  "kind": "operator_unrun_continuation_qualification",
+  "registered_at_utc": "2026-11-08T10:28:09.215341+00:00",
+  "scope": "Continue only original five never-dispatched C1slots after preserving every prior endpoint including cal-c1-v3-05 provider-disrupted failure. No retries of dispatched agents.",
+  "source_review": {
+    "model": "z-ai/glm-5.3-flash",
+    "run": "unrun-continuation-review-20261108T102045Z",
+    "verdict": "accepted",
+    "sha256": "d588f17fbdbe5a8153483a7799aae4009060b11c12048677fed7f6fe1984dd18",
+    "actual_candidate_sha256": "8ec0e079e428a674dc0791b7334ffbaab2f0030210688577f0cce41f3f0a14a3",
+    "actual_candidate_imported": true,
+    "independent_scratch_checks": 34,
+    "capture_requests_paired": 19
+  },
+  "protected_artifact_validation": {
+    "kind": "protected_artifact_unrun_admission_dry_run",
+    "utc": "2026-11-08T10:26:14.574624+00:00",
+    "exit_code": 0,
+    "result": {
+      "local_admission_valid": true,
+      "pending_run_ids": [
+        "cal-c1-v3-06",
+        "cal-c1-v3-07",
+        "cal-c1-v3-08",
+        "cal-c1-v3-09",
+        "cal-c1-v3-10"
+      ],
+      "preserved_outcomes": 2,
+      "model_calls": 0
+    },
+    "collection_unchanged": true,
+    "ledger_logical_contents_unchanged": true,
+    "ledger_logical_sha256": "4fa6ab4253fa3c7ac99a74f097e8f830a800757eb6289ec75fa62f19ea77ee65",
+    "admission_sha256": "91bb15621e97cd71c18e62cd44713f037f541d0033b7265b7023d5da4ac2166e",
+    "caller_sha256": "8ec0e079e428a674dc0791b7334ffbaab2f0030210688577f0cce41f3f0a14a3",
+    "review_sha256": "d588f17fbdbe5a8153483a7799aae4009060b11c12048677fed7f6fe1984dd18",
+    "scope": "No model calls, collection writes, old endpoint changes or pristine-source checks on completed workspaces. Exact remaining5source/dependency/prompt/native-manifest checks passed. Provider availability still rechecked at actual per-role dispatch."
+  },
+  "admission": {
+    "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/unrun-continuation-admission.json",
+    "sha256": "91bb15621e97cd71c18e62cd44713f037f541d0033b7265b7023d5da4ac2166e"
+  },
+  "original_dispatch_registration_sha256": "8732266ecaff9624d804e1c39ca40c870fd13a11302087e91357afdbf36061cf",
+  "native_manifests_sha256_unchanged": true,
+  "native_roles_models_settings_source_docs_image_checks_deadline_unchanged": true,
+  "original_completed_rows_unchanged": true,
+  "remaining_order": [
+    "cal-c1-v3-06",
+    "cal-c1-v3-07",
+    "cal-c1-v3-08",
+    "cal-c1-v3-09",
+    "cal-c1-v3-10"
+  ],
+  "failed_outcome_retained": "cal-c1-v3-05",
+  "old_host_DNS_replacement": "Earlier explicitly registered calibration amendment only; no general primary/scored retry permission.",
+  "scored_admission": false,
+  "source_review_limits": "Same authorized study-model families; no independent-family/human or software merge-readiness claim. Actual provider metadata rechecked before each next dispatch."
+}

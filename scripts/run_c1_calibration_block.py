@@ -72,10 +72,38 @@ def validate_schedule(admission, prior=None):
             raise ValueError('Recovery must use fresh execution identities')
 
 
+
+def validate_unrun_resume(state, admission, ledger_rows, stopped):
+    if state.get('status') != 'stopped_preserving_state' or stopped:
+        raise ValueError('Resume requires a terminal collection without a global stop')
+    if state.get('order') != admission['order']:
+        raise ValueError('The frozen schedule changed')
+    rows = state.get('runs', [])
+    if not 0 < len(rows) < len(admission['order']):
+        raise ValueError('Resume needs both preserved outcomes and unrun slots')
+    expected = [x['run_id'] for x in admission['order'][:len(rows)]]
+    if [x['run_id'] for x in rows] != expected:
+        raise ValueError('Completed outcomes must be the exact scheduled prefix')
+    if set(dict(ledger_rows)) != set(expected):
+        raise ValueError('Ledger and preserved outcomes differ')
+    for row in rows:
+        if row.get('endpoint_reason') not in ('final', 'deadline', 'infrastructure_failure') or row.get('status') != 'first_endpoint_frozen_ungraded':
+            raise ValueError('Unsupported or incomplete endpoint; preserve state')
+        if dict(ledger_rows)[row['run_id']] != row['endpoint_reason']:
+            raise ValueError('Ledger endpoint state differs')
+        if row.get('backup_receipt', {}).get('published_private') is not True or row.get('backup_error_type'):
+            raise ValueError('Preserved endpoint backup required')
+        if row.get('actual_provider_resolution') == 'unverified_or_drift':
+            raise ValueError('Unresolved serving drift blocks continuation')
+    return admission['order'][len(rows):]
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--registration', required=True, type=Path)
     p.add_argument('--block', required=True, type=Path)
+    p.add_argument('--resume-unrun', type=Path, help='Protected admission for unrun slots only; never restart an agent')
+    p.add_argument('--validate-only', action='store_true', help='Check local admission without model calls or collection writes')
     a = p.parse_args()
     if os.geteuid() != 0:
         raise SystemExit('Authorized root controller required')
@@ -93,7 +121,35 @@ def main():
                 raise ValueError('Recovery lineage changed')
             prior = json.loads(prior_path.read_text())
         validate_schedule(admission, prior)
-        if (block/'collection.json').exists():
+        state_path = block/'collection.json'
+        pending_slots = admission['order']
+        resumed_state = None
+        resume_record = None
+        if a.resume_unrun is not None:
+            subprocess.run([sys.executable,str(REPO/'scripts/preparation_admission.py'),'--private-root',str(PRIVATE),'--cohort-id',block.parent.name],check=True,capture_output=True)
+            resume_path = protected(a.resume_unrun)
+            resume_record = json.loads(resume_path.read_text())
+            if resume_record.get('admitted') is not True or resume_record['caller_sha256'] != sha(Path(__file__)) or resume_record['registration_sha256'] != sha(registration_path):
+                raise ValueError('Unrun continuation is not bound to this caller/registration')
+            if sha(protected(state_path)) != resume_record['stopped_collection_sha256']:
+                raise ValueError('Preserved collection state changed')
+            resumed_state = json.loads(state_path.read_text())
+            db = sqlite3.connect((block/'study-ledger.sqlite').as_uri()+'?mode=ro',uri=True)
+            try:
+                pending_slots = validate_unrun_resume(resumed_state, admission, db.execute('SELECT id,state FROM runs').fetchall(), bool(db.execute('SELECT 1 FROM stop').fetchone()))
+            finally:
+                db.close()
+            if [x['run_id'] for x in pending_slots] != resume_record['pending_run_ids']:
+                raise ValueError('Unrun continuation changes the remaining schedule')
+            for row in resumed_state['runs']:
+                for name in ['endpoint.json','endpoint.json.quiescence.json','controller.json','provider-resolution/verification.json']:
+                    relative = 'run-'+row['run_id']+'/'+name
+                    if sha(protected(block/relative)) != resume_record['preserved_files_sha256'][relative]:
+                        raise ValueError('Preserved endpoint evidence changed')
+                evidence = block/('run-'+row['run_id'])
+                if json.loads((evidence/'provider-resolution/verification.json').read_text())['status'] != 'verified' or json.loads((evidence/'endpoint.json').read_text())['status'] != 'copied_and_empty_unqualified' or json.loads((evidence/'endpoint.json.quiescence.json').read_text()).get('pod_empty_after_quiescence') is not True:
+                    raise ValueError('Serving/freeze/quiescence must be verified before continuation')
+        elif state_path.exists():
             raise ValueError('An existing collection endpoint/state must not be restarted')
         manifests = {}
         for record in admission['frozen_manifests']:
@@ -120,7 +176,7 @@ def main():
         context['expected_approval_sha256'] = docs['approval_sha256']
         public_checks = protected(manifests['acceptance']['public_checks'])
         prompts = manifests['prompts']
-        for slot in admission['order']:
+        for slot in pending_slots:
             workspace = Path(workspaces[slot['run_id']]['workspace']).resolve(strict=True)
             if workspace.parent != block or workspace.stat().st_uid != 1000:
                 raise ValueError('Workspace must be an independently staged subject-owned directory')
@@ -134,17 +190,25 @@ def main():
                 raise ValueError('Parent prompt binding mismatch')
         # Preparation workspaces belong to UID1000 for the subjects; the root-owned
         # staging records above, not subject directory ownership, protect provenance.
+        if a.validate_only:
+            print(json.dumps({'local_admission_valid':True,'pending_run_ids':[x['run_id'] for x in pending_slots],'preserved_outcomes':len(resumed_state['runs']) if resumed_state else 0,'model_calls':0}))
+            return
         ledger = block/'study-ledger.sqlite'
-        Store.initialize(ledger)
-        state = {'kind':'registered_C1_calibration_collection','started':stamp(),'registration_sha256':sha(registration_path),
-                 'order':admission['order'],'status':'running','runs':[], 'scored_runs':0,
-                 'policy':'One dispatch per frozen slot; no model feedback, retries, quality rescue or task selection.'}
-        state_path = block/'collection.json'
+        if resumed_state is None:
+            Store.initialize(ledger)
+            state = {'kind':'registered_C1_calibration_collection','started':stamp(),'registration_sha256':sha(registration_path),
+                     'order':admission['order'],'status':'running','runs':[], 'scored_runs':0,
+                     'policy':'One dispatch per frozen slot; no model feedback, retries, quality rescue or task selection.'}
+        else:
+            state = resumed_state
+            state['status'] = 'running'
+            previous_ended = state.pop('ended', None)
+            state.setdefault('controller_continuations', []).append({'started':stamp(),'previous_collection_ended':previous_ended,'admission_sha256':sha(resume_path),'preserved_collection_sha256':resume_record['stopped_collection_sha256'],'pending_run_ids':[x['run_id'] for x in pending_slots],'policy':'Only unrun frozen slots; all existing outcomes/identities/endpoints remain unchanged.'})
         def save():
             temp = block/'collection.json.tmp'
             temp.write_text(json.dumps(state,indent=2)+'\n');temp.replace(state_path)
         save()
-        for slot in admission['order']:
+        for slot in pending_slots:
             subprocess.run([sys.executable,str(REPO/'scripts/preparation_admission.py'),'--private-root',str(PRIVATE),
                             '--cohort-id',block.parent.name],check=True,capture_output=True)
             run_id = slot['run_id']; root = block/('run-'+run_id);root.mkdir(mode=0o700)

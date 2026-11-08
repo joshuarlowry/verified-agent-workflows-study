@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 16,
-  "status": "C1_v3_outage_recovery_admitted_scored_not_admitted",
+  "protocol_revision": 17,
+  "status": "C1_unrun_continuation_admitted_provider_failure_retained_scored_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -817,7 +817,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "C1 recovery after transient host DNS failure: three earlier ordinary first endpoints retained, interrupted Gemma recorded as additional technical overhead, seven fresh remaining slots admitted with identical original relative order and unchanged subject treatment. No endpoint graded.",
+  "setup_progress": "C1has four ordinary final returns and one provider-disrupted failed workflow recorded, all ungraded. Exact five unrun slots remain in frozen order. Guarded operator-only continuation source reviewed and real saved-state/workspace validation passed; no failed actor resumed. Full40calibration/165scored plan unchanged; no scored admission.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -1190,6 +1190,23 @@
         "cal-c1-v2-09",
         "cal-c1-v2-10"
       ]
+    },
+    "operator_unrun_continuation": {
+      "qualification": "setup/c1-unrun-continuation-qualification.json",
+      "source_review_sha256": "d588f17fbdbe5a8153483a7799aae4009060b11c12048677fed7f6fe1984dd18",
+      "caller_sha256": "8ec0e079e428a674dc0791b7334ffbaab2f0030210688577f0cce41f3f0a14a3",
+      "original_frozen_registration_unchanged": true,
+      "admission_sha256": "91bb15621e97cd71c18e62cd44713f037f541d0033b7265b7023d5da4ac2166e",
+      "pending_run_ids": [
+        "cal-c1-v3-06",
+        "cal-c1-v3-07",
+        "cal-c1-v3-08",
+        "cal-c1-v3-09",
+        "cal-c1-v3-10"
+      ],
+      "preserved_failed_run": "cal-c1-v3-05",
+      "previous_rows_and_ledger_not_reset": true,
+      "no_additional_subject_attempts_for_this_continuation": true
     }
   },
   "convergence_amendment": {
