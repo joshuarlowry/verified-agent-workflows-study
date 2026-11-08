@@ -46,3 +46,5 @@ Gemma trial 1 failed the first-created-workspace zero-count selector check. Both
 There are 30 remaining calibration slots before the planned 165 scored generations; their task packets still require qualification. Advancement depends on the registered integrity/readiness gates, not which workflow looks favorable here.
 
 [Machine-readable results, role usage and evidence hashes](c1-first-results.json) · [Export-capture repair](c1-export-capture-repair-qualification.json) · [Session-export failure](c1-session-export-failure.json) · [Provider failure](c1-terra-supervised-provider-failure.json)
+
+[Preserved application source branches and endpoint hashes](c1-source-endpoints.json). All ten nominal snapshots and the additional DNS-interrupted snapshot are published as separate branches; the study main branch is unchanged by those application commits.
