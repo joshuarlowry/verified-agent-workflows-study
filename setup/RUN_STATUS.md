@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:54:22 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 02:00:53 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:54:22 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 02:00:52 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| gemma-C2-alternative-revision-2-clean-input | google/gemma-4-31b-it | returned requires cross review | Nov 08, 2026 at 01:35:48 PM EST (UTC-0500) | Nov 08, 2026 at 01:54:22 PM EST (UTC-0500) |
+| terra-C2-checks-revision-2-cross-review | openai/gpt-6.1-terra | running | Nov 08, 2026 at 02:00:52 PM EST (UTC-0500) | — |
 
-Staged clean session after operator feedback-filtering error: one foreign-candidate sentence was present in prior unscored fixture attempt, which was stopped/preserved. Same product prompt; corrected own-source-only packet; no contaminated output/conversation imported. All overhead retained. No primary/scored data changed.
+Staged source/prompt/oracle/helper review only. No candidate implementations or implementing-target outcomes. Staged runtime/positive/negative/three-clean gates stay mandatory and unverified; no circular source self-approval.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
