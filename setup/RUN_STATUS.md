@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:04:07 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:04:09 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:04:07 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:04:09 AM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-c1-rule-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 12:54:07 AM EST (UTC-0500) | Nov 08, 2026 at 01:04:07 AM EST (UTC-0500) |
+| terra-c1-additive-test-closure | openai/gpt-6.1-terra | running | Nov 08, 2026 at 01:04:09 AM EST (UTC-0500) | — |
 
 Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
 
