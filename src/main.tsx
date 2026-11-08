@@ -3,8 +3,9 @@ import { createRoot } from 'react-dom/client';
 import './style.css';
 
 type Workspace = { id:string; name:string; role:'owner'|'member'; createdAt:string };
+type WorkspaceSummary = Workspace & { openItemCount:number };
 type Item = { id:string; workspaceId:string; title:string; notes:string; status:'open'|'in_progress'|'done'; dueDate:string|null; version:number; createdBy:string; createdAt:string; updatedAt:string };
-type Me = { user:{id:string;email:string;name:string}; workspaces:Workspace[] };
+type Me = { user:{id:string;email:string;name:string}; workspaces:WorkspaceSummary[] };
 type Form = { id?:string; title:string; notes:string; status:Item['status']; dueDate:string };
 class ApiError extends Error { constructor(message:string, public status:number, public fields:Record<string,string> = {}) { super(message); } }
 async function api<T>(path:string, options:RequestInit = {}):Promise<T> {
@@ -109,9 +110,9 @@ function App() {
   return <main><header><h1>Workboard Lab</h1>{me && <div>{me.user.email} <button onClick={()=>void signOut()}>Sign out</button></div>}</header>
     {error && <p role="alert">{error}</p>}
     {checking ? <p>Checking session…</p> : !me ? <Auth onLogin={async()=>{await refresh();}} /> : <>
-      {me.workspaces.length > 0 && <label>Workspace<select value={selected} onChange={e=>select(e.target.value)}>{me.workspaces.map(w=><option value={w.id} key={w.id}>{w.name}</option>)}</select></label>}
+      {me.workspaces.length > 0 && <label>Workspace<select value={selected} onChange={e=>select(e.target.value)}>{me.workspaces.map(w=><option value={w.id} key={w.id}>{w.name} ({w.openItemCount})</option>)}</select></label>}
       {ws && <Board key={`board-${epoch}`} ws={ws} epoch={epoch} selectionGate={selectionGate} onMembershipRefresh={refresh} />}
-      <p role="status">{notice}</p><WorkspaceCreator key={`creator-${epoch}`} selectionGate={selectionGate} first={!me.workspaces.length} onCreate={w=>{setMe({...me,workspaces:[...me.workspaces,w].sort((a,b)=>binary(a.name,b.name) || binary(a.createdAt,b.createdAt) || binary(a.id,b.id))}); select(w.id); setNotice('Workspace created.');}} />
+      <p role="status">{notice}</p><WorkspaceCreator key={`creator-${epoch}`} selectionGate={selectionGate} first={!me.workspaces.length} onCreate={w=>{setMe({...me,workspaces:[...me.workspaces,{...w,openItemCount:0}].sort((a,b)=>binary(a.name,b.name) || binary(a.createdAt,b.createdAt) || binary(a.id,b.id))}); select(w.id); setNotice('Workspace created.');}} />
     </>}
   </main>;
 }
