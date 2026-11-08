@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 02:38:28 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 02:43:54 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 02:38:28 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 02:43:54 PM EST (UTC-0500)
 
-**running**
+**stopped preserving state**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-native-evaluator-revision3-constructor | openai/gpt-6.1-terra | running | Nov 08, 2026 at 02:38:28 PM EST (UTC-0500) | — |
+| terra-C2-native-evaluator-revision3-constructor | openai/gpt-6.1-terra | blocked preserved | Nov 08, 2026 at 02:38:28 PM EST (UTC-0500) | Nov 08, 2026 at 02:43:54 PM EST (UTC-0500) |
 
 Staged explicit fresh native-Playwright evaluator construction. No previous feature-evaluator source or candidate implementations/results. Same C2 public scope and existing runner/gates, minimal update-only fixture proposal, no duplicate custom framework. Old versions remain preserved; different-model review and all actual qualification required. Wait current source-review endpoint/backup before sequential launch.
 
