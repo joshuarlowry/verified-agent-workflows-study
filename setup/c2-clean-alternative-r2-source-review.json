@@ -1,0 +1,134 @@
+{
+  "kind": "c2_clean_alternative_r2_source_review",
+  "reviewer": {
+    "declared_model": "GLM (study2-glm-probe / glm)",
+    "role": "fresh-session different-model source reviewer of clean C2 alternative revision 2",
+    "session_independence": "declared; fresh session with no access to author builder conversation; no cryptographic session-identity proof is possible from supplied material",
+    "scope": "fixture preparation source review; not a primary subject, family-independent evaluation, or study-dispatch approval"
+  },
+  "subject": {
+    "path": "/workspace/inputs/clean-alternative",
+    "author_declared_role": "Gemma, appointed C2 alternative fixture author, revision 2",
+    "declared_assignment": "materially different API implementation performing ordering in memory after authorized workspace-item selection (frozen pre-appointment), matching disclosed SQLite NOCASE and timestamp/id tie rules; not merely SQL ORDER BY selection for new modes"
+  },
+  "input_boundary": {
+    "verified": true,
+    "contents": [
+      "baseline source tree (21 files, byte-verified against public-policy/SOURCE_INVENTORY.json baseline_files_sha256: 21/21 OK)",
+      "public-scope: baseline-spec.md, FAQ.md, BASELINE_BINDINGS.json, contracts/C2-item-list-sort-toggle.md (hashes match BASELINE_BINDINGS.json declarations)",
+      "public-policy: PRESERVATION.md, preservation/preserve-tests.mjs, path-gate-source.mjs, SOURCE_INVENTORY.json (hashes match BASELINE_BINDINGS.json declarations)",
+      "context: approved docs package + approval.json + manifests (docs-manifest and package-manifest hashes match approval.json)",
+      "own-source-review.json: exact candidate-B-only extract of the original review (original full-review hash 34c5968c... recorded, original bytes not supplied by design)",
+      "role-prompts: original-preappointed-alternative.txt, clean-alternative-author.txt",
+      "clean-alternative: source, alternative.patch, REVIEW_RESPONSE.md, CHECKS.md, OPEN_QUESTIONS.md, PROVENANCE.json, SHA256SUMS"
+    ],
+    "forbidden_material_search": "no reference implementation, evaluator, sealed cases, other-candidate source/results, or builder conversation found in /workspace/inputs (path/name scan plus full file inventory)",
+    "withheld_by_design": [
+      "original full review bytes (candidate-B extract only)",
+      "first-alternative source snapshot (referenced by PROVENANCE.json as /workspace/inputs/first-alternative, not supplied)",
+      "evaluator protected-bundle.json and baseline-snapshot.json for path-gate-source.mjs (trusted deployment material)"
+    ]
+  },
+  "own_source_findings_disposition": {
+    "B-B1_missing_dotfiles": "RESOLVED — .gitignore and .npmrc restored byte-identical (8c70f989..., be85cc46...)",
+    "B-B2_signout_change": "RESOLVED — signOut catch reverted; src/main.tsx signOut now byte-identical to baseline",
+    "B-B3_empty_sort_200": "RESOLVED — runtime-verified 400 validation_failed with exact fields.sort for ?sort=, valueless ?sort, and non-empty invalid values",
+    "B-O1_type_cast": "resolved differently: no type cast added; instead a cosmetic zero-delta brace edit in refresh() (see optional R2-O3)",
+    "B-O2_top_level_message": "present as 'Invalid sort parameter.'; contract pins only code + fields.sort; permitted choice, not repeated",
+    "B-O3_selector_visibility": "unchanged (selector only when items!==null); permitted, not repeated",
+    "B-O4_effect_deps": "retained ([sort]); conservative and consistent with isolation rules; not repeated"
+  },
+  "blocking_findings": [
+    {
+      "id": "R2-D1",
+      "class": "public behavior divergence — C2 contract API ordering",
+      "severity": "blocking",
+      "statement": "GET /api/workspaces/:id/items returns rows from 'SELECT * FROM item WHERE workspaceId=?' with no ORDER BY and no in-memory API ordering (server/app.ts line 64). None of the three contract modes produces the contract order at the API. Runtime-verified on the pristine seed the returned order only coincidentally equals updated_desc (seed insertion order); after PATCH /api/items/wi_108 the API still returns the insertion order instead of moving wi_108 first, and ?sort=updated_asc / ?sort=title_asc always return the insertion order instead of the contract seed orders (updated ascending: wi_108, wi_101, wi_105, wi_107, wi_102, wi_104, wi_106, wi_103; title NOCASE: wi_108, wi_105, wi_101, wi_106, wi_103, wi_102, wi_104, wi_107). This also removes preserved baseline list ordering (baseline server/app.ts orders 'updatedAt DESC, id COLLATE BINARY ASC'; runtime baseline probe reorders correctly after the same PATCH). The unchanged original suite still passes only because the pristine seed insertion order coincides with baseline order — a masked regression, not equivalence.",
+      "evidence": "probe alt FAIL lines (updated_asc, title_asc, post-PATCH updated_desc, post-PATCH title_asc); baseline probe PASS post-PATCH; diff of server/app.ts line 60 vs line 64",
+      "rule": "contracts/C2-item-list-sort-toggle.md bullet 1 and 2; baseline-spec.md items list ordering; scope rule 'preserve unrelated behavior' (baseline ordering is pre-existing same-endpoint behavior)",
+      "fix": "bounded: implement the three orderings in server/app.ts (see R2-D2 fix — same change)"
+    },
+    {
+      "id": "R2-D2",
+      "class": "appointed strategy not implemented — material-difference requirement",
+      "severity": "blocking",
+      "statement": "The frozen pre-appointed requirement is a materially different API implementation that performs ordering in memory AFTER the authorized workspace-item selection, with explicit comparison matching the public SQLite NOCASE and timestamp/id tie rules, and not merely SQL ORDER BY for the new modes. The r2 alternative performs no API ordering at all: it removed the baseline ORDER BY and re-sorts in the BROWSER (src/main.tsx load()). The author's own evidence concedes this: REVIEW_RESPONSE.md 'Implemented in-memory sorting in src/main.tsx after fetching items from the server', CHECKS.md 'Sorting is performed in-memory on the client side'. A client-side sort cannot satisfy the C2 API contract (R2-D1) and is not the appointed API strategy; the revision is therefore not an acceptable materially-different API alternative in its current form.",
+      "evidence": "server/app.ts line 64 (no ordering); src/main.tsx lines 60-71 (client sort); REVIEW_RESPONSE.md; CHECKS.md line 2",
+      "rule": "role-prompts/original-preappointed-alternative.txt paragraph 2; role-prompts/clean-alternative-author.txt paragraph 2 (frozen before either original construction)",
+      "fix": "bounded (same change resolves R2-D1 and R2-D2): in server/app.ts items GET, after the authorized workspace() membership check, fetch rows WITHOUT ORDER BY and sort the resulting array in memory with explicit comparators: updated_desc = updatedAt DESC (ISO-UTC strings compare chronologically lexicographically), tie id BINARY ASC; updated_asc = updatedAt ASC, tie id BINARY DESC (the delivered client comparator gets this tie wrong — id ASC, see R2-O1); title_asc = SQLite NOCASE semantics, i.e. fold ONLY ASCII A-Z/a-z (0x20) then BINARY compare, tie id BINARY ASC (toLowerCase() is not NOCASE — see R2-O2). Keep the invalid-sort 400 and 401/404 precedence as delivered. In src/main.tsx remove the client-side re-sort so the UI renders API order; keep the sort selector, [sort]-triggered refetch and lifetime gates as delivered."
+    },
+    {
+      "id": "R2-D3",
+      "class": "frozen-file mutation / integrity gate",
+      "severity": "blocking",
+      "statement": "package-lock.json was modified relative to baseline: one line 'hasInstallScript: true' added to the node_modules/better-sqlite3 entry (baseline 52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90 vs delivered 6b815275f564f7de8739631e0d887c30166928ce6c1bac0b838f82c1756796ca). PRESERVATION.md freezes 'package/lock' files; C2 authorizes no dependency/lockfile change. A faithful replication of the public finite source gate rejects the delivered tree with 'protected or unsupported path: package-lock.json'. The mutation is undisclosed: PROVENANCE.json, CHECKS.md and REVIEW_RESPONSE.md do not mention it (likely an npm re-normalization side effect of running npm ci/install with a different npm, but delivery remains a gate failure).",
+      "evidence": "diff package-lock.json 1743a1744; tree-gate.mjs exit 1; SOURCE_INVENTORY.json frozen hash",
+      "rule": "PRESERVATION.md 'Other existing files are frozen: package/lock...'; FAQ 9/13",
+      "fix": "bounded: restore baseline package-lock.json byte-identical and re-run npm ci in a clean writable copy; disclose the restoration in PROVENANCE.json"
+    }
+  ],
+  "optional_findings": [
+    {
+      "id": "R2-O1",
+      "severity": "optional (must be fixed as part of R2-D1/D2 work)",
+      "statement": "Client updated_asc comparator ties on id ASCENDING (binary(b.id,a.id)*-1); the contract pins id DESCENDING for updated_asc. Empirically confirmed on synthetic tie data: got wi_z,wi_a,wi_b,wi_c; contract expects wi_c,wi_b,wi_a,wi_z. Invisible on the seed (no shared updatedAt) but a genuine contract divergence.",
+      "rule": "contract bullet 1: 'updated_asc sorts updatedAt ascending, id descending'"
+    },
+    {
+      "id": "R2-O2",
+      "severity": "optional (must be fixed as part of R2-D1/D2 work)",
+      "statement": "title comparator uses String.toLowerCase() + binary compare, which is NOT SQLite NOCASE for non-ASCII titles. Runtime counterexample (synthetic SQLite, supplied better-sqlite3): NOCASE orders [ss, Ä, ß]; the delivered comparator orders [ss, ß, Ä]. NOCASE folds only ASCII A-Z; a compliant explicit comparator must fold exactly those bytes.",
+      "rule": "contract bullet 1: 'title_asc sorts title using SQLite NOCASE semantics'; appointment: 'explicit comparison matching the public SQLite NOCASE ... rules'"
+    },
+    {
+      "id": "R2-O3",
+      "severity": "optional / interpretation recorded for uniform ruling",
+      "statement": "The 'Sort items' caption is a <div> text node, not programmatically associated with the <select> (no label element, aria-label or aria-labelledby), unlike the baseline 'Workspace' label pattern. The contract requires 'an accessible Sort items selector'. Whether adjacent div text satisfies 'accessible' is an interpretation not pinned by the public rules; recorded as disputed for a uniform pre-collection ruling, with a one-line hardening recommended (label/aria-label) if the ruling requires programmatic association.",
+      "rule": "contract bullet 2; baseline-spec UI section label pattern",
+      "disposition": "unresolved interpretation, not tailored to this candidate"
+    },
+    {
+      "id": "R2-O4",
+      "severity": "informational (permitted choice)",
+      "statement": "Top-level invalid-sort message 'Invalid sort parameter.' differs from the fields.sort message; the contract pins only status, code and fields.sort. No requirement added; no change needed.",
+      "rule": "own-source review B-O2; contract bullet 1"
+    },
+    {
+      "id": "R2-O5",
+      "severity": "informational (scope hygiene)",
+      "statement": "refresh() contains a zero-delta cosmetic brace edit (select(...) -> { select(...); }). Revert for a minimal-diff source; zero behavior impact.",
+      "rule": "scope hygiene analogy to B-O1"
+    },
+    {
+      "id": "R2-O6",
+      "severity": "informational (no requirement added)",
+      "statement": "Duplicate sort query parameters (?sort=updated_desc&sort=title_asc) take the first value and return 200. Duplicate-query semantics are unpinned; no defect claimed (an initial over-strict probe expectation was retracted)."
+    },
+    {
+      "id": "R2-O7",
+      "severity": "authoring-evidence gap (remediate in next revision)",
+      "statement": "SHA256SUMS and alternative.patch are whole-tree artifacts including node_modules, dist, test-results, .vite and data/*.sqlite; SOURCE_INVENTORY.json requires a source-only inventory excluding generated roots. Two data/*.sqlite entries reference files not present in the delivered fixture. PROVENANCE.json is thin (no difference list, commands/exits, or hashes) and references /workspace/inputs/first-alternative, which is deliberately withheld. Recorded 19/19 source-file hashes match delivered bytes; coordinator binding of source vs manifest is therefore possible, but the manifest itself is not the required source-only form."
+    }
+  ],
+  "verified_passes": [
+    "input hashes: baseline 21/21 vs SOURCE_INVENTORY.json; spec/FAQ/contract/preservation/predicate/gate/inventory match BASELINE_BINDINGS.json; docs/package manifests match approval.json",
+    "B-B1 dotfiles restored; B-B2 signOut reverted; B-B3 invalid/empty sort -> 400 exact fields.sort (runtime)",
+    "401 precedes sort validation; membership 404 (non-member Cleo on Apollo) precedes sort validation (runtime)",
+    "item shape preserved (full rows, seed values unchanged); auth/schema/seed/reset/db.ts byte-identical to baseline",
+    "PATCH/DELETE/POST handlers byte-identical to baseline; no cross-workspace leakage at runtime",
+    "UI selector offers exactly Newest activity / Oldest activity / Title A–Z; refetch on change via [sort] effect; no reload; sort resets on workspace remount (no persistence)",
+    "unchanged original tests: exact supplied predicate preserve-tests.mjs (TS 5.9.3) reports zero admitted transformations on all four files",
+    "native checks on delivered source (fresh npm ci, scratch): typecheck exit 0, lint exit 0, vitest 7/7 exit 0, vite build exit 0"
+  ],
+  "unverified_mandatory_stages": [
+    "browser e2e suite on the corrected source (author reported partial failures/timeouts in additional.spec.ts/refetch.spec.ts; not re-run here — browser host unqualified)",
+    "external/sealed acceptance and trusted evaluator binding",
+    "negative controls (e.g. actual negative patches)",
+    "three clean replays in the qualified environment",
+    "comparison against the withheld first-alternative snapshot and against the implementing target (reference) once supplied",
+    "runtime/image/lockfile qualification and registration reconciliation"
+  ],
+  "disposition": "changes_required",
+  "next_work_bound": "Restore package-lock.json; implement the three orderings as in-memory API sorting per R2-D2 (with id DESC ties for updated_asc and ASCII-only NOCASE fold); remove client re-sort; optional hygiene (refresh() revert, selector labeling pending ruling); regenerate source-only SHA256SUMS/patch and update PROVENANCE/CHECKS honestly. No replacement implementation is authorized or needed.",
+  "self_authored_passes_note": "All local passes above are reviewer-run faithful local checks on supplied source; they do not establish external acceptance, negative-control coverage or dispatch readiness."
+}

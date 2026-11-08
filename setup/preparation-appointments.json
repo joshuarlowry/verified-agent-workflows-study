@@ -1014,7 +1014,7 @@
       "phase": "fixture_source_cross_review_only",
       "run_id": "clean-20261107T122746Z-c2-clean-alternative-r2-source-review-glm-20261108T185010Z",
       "prompt_sha256": "26f1b24c9df911dd0762e05cbe1be70101fb199d11de4a557234716018a76ec8",
-      "status": "running",
+      "status": "returned_changes_required",
       "fresh_session": true,
       "reference_or_evaluator_inputs": false,
       "requires_clean_source_binding": true,
@@ -1031,15 +1031,44 @@
       "phase": "explicit_fresh_native_fixture_construction",
       "run_id": "clean-20261107T122746Z-c2-native-evaluator-r3-terra-20261108T192247Z",
       "prompt_sha256": "6a27e6c280f2f20c856d8bbfa403358589ebec41574bd8222a3648bc3c1277d3",
-      "status": "staged_not_dispatched",
+      "status": "running",
       "fresh_session": true,
       "candidate_inputs_supplied": false,
       "previous_feature_evaluator_source_supplied": false,
       "qualification": "Existing common native runner and baseline DB support reused; no new primary treatment or public scope change. Different-model review and full positive/negative/three-clean/runtime gates required.",
       "authorization": "Existing three-model fixture construction/cross-review waiver."
+    },
+    {
+      "launch_id": "c2-native-evaluator-r3-review-appointment-20261108T193108Z",
+      "role": "glm-C2-native-evaluator-revision3-cross-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "phase": "native_fixture_revision3_source_cross_review_only",
+      "run_id": null,
+      "prompt_sha256": "0927ffe8d194b1aacb77b593ec36af6e74c8f776b2967a7edb8500b2b3e1aece",
+      "status": "appointed_not_staged_no_source_bound",
+      "fresh_session": true,
+      "candidate_inputs_supplied": false,
+      "self_approval": false,
+      "requires_frozen_r3_source_binding": true,
+      "qualification": "Source/prompt review only; unchanged baseline support separately prequalified; new target/negative/three-clean/helper/runtime gates remain required.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver."
+    },
+    {
+      "launch_id": "c2-independent-alternative-r3-construction-20261108T193658Z",
+      "role": "glm-C2-independent-alternative-version3-constructor",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "phase": "independent_fixture_alternative_construction_only",
+      "run_id": "clean-20261107T122746Z-c2-independent-alternative-r3-glm-20261108T193658Z",
+      "prompt_sha256": "7bb0b5a5c9af69c43e7ec5fdb8ed9af54e242f4a851a3da570c4660abc681ea9",
+      "status": "staged_not_dispatched",
+      "fresh_session": true,
+      "only_original_public_inputs": true,
+      "reference_previous_alternative_evaluator_reviews_or_outcomes": false,
+      "qualification": "Original material-difference requirement unchanged; different-model review and every actual task qualification gate required. Earlier candidates retained as failed/unqualified preparation, not primary scores.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T19:27:02.712790+00:00"
+  "updated_at_utc": "2026-11-08T19:43:32.053896+00:00"
 }
