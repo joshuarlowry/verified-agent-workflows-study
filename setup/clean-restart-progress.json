@@ -105,7 +105,8 @@
     "active_launch": "c1-checker-second-repair-20261108T010445Z",
     "queued_in_order": [
       "native-coordinator-integration-review-20261108T011542Z",
-      "approved-context-package-20261108T011542Z"
+      "approved-context-package-20261108T011542Z",
+      "c1-alternative-delta-review-20261108T011921Z"
     ],
     "scoring_enabled": false
   },

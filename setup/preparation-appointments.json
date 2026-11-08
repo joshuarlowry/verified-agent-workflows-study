@@ -785,9 +785,22 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized preparation construction/cross-review; no extra model or treatment",
       "qualification": "Original endpoints retained; source/package return does not qualify scored dispatch."
+    },
+    {
+      "launch_id": "c1-alternative-delta-review-20261108T011921Z",
+      "role": "glm-c1-alternative-delta-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-c1-alternative-delta-review-glm-20261108T011921Z",
+      "manifest_created_at_utc": "2026-11-08T01:19:21.279230+00:00",
+      "prompt_sha256": "71132825f04e39b9a88bf14fc588abd55c9409903adc61cb67307dcef6f5b5a9",
+      "controller_sha256": "d06cb045385277f06d0799b1009c9a43d2bc5908f0c437e7fc6af17ff9e6fa54",
+      "phase": "preparation_source_delta_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized three-model preparation cross-review",
+      "qualification": "No reference or evaluator code/results; corrected fresh-request scope. No approval implied."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T01:17:20.196591+00:00"
+  "updated_at_utc": "2026-11-08T01:19:55.274301+00:00"
 }
