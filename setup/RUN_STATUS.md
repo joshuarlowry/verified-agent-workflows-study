@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 07, 2026 at 11:11:32 PM EST (UTC-0500)
+**Status checked/published:** Nov 07, 2026 at 11:11:33 PM EST (UTC-0500)
 
 **Latest workflow or disposition event:** Nov 07, 2026 at 11:11:32 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-c1-standard-checker-repair-review | openai/gpt-6.1-terra | returned requires cross review | Nov 07, 2026 at 11:05:01 PM EST (UTC-0500) | Nov 07, 2026 at 11:11:32 PM EST (UTC-0500) |
+| gemma-c1-scope-binding | google/gemma-4-31b-it | running | Nov 07, 2026 at 11:11:32 PM EST (UTC-0500) | — |
 
 Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
 
