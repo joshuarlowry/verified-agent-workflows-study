@@ -1,15 +1,15 @@
 {
-  "status": "frozen_acceptance_grading_running",
-  "snapshot_at_utc": "2026-11-08T13:37:25.975581+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 08:37:25 AM EST",
-  "nominal_endpoints": 10,
+  "status": "complete_instrument_gap_before_further_collection",
+  "snapshot_at_utc": "2026-11-08T13:59:21.395074+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 08:59:21 AM EST",
+  "nominal_runs": 10,
   "native_final_returns": 8,
   "infrastructure_failures": 2,
-  "acceptance_results": "pending",
+  "frozen_gate_passes": 5,
+  "exploratory_nonpolicy_gate_passes": 7,
   "scored_runs": 0,
-  "model_calls_for_grading": 0,
-  "service": "study2-c1-first-endpoint-grading-20261108t133609z",
-  "pid": 2388083,
   "primary_collection_active": false,
-  "all_endpoint_backups_published": true
+  "grading_active": false,
+  "report": "C1_RESULTS.md",
+  "audit": "c1-protocol-audit.json"
 }

@@ -1,0 +1,124 @@
+{
+  "kind": "clean_container_public_regression_replay_not_task_acceptance_or_full_qualification",
+  "model_calls": 0,
+  "source_snapshot_sha256": "8514705542ea0c2510e3d09bfdb6c377adf15c0cfd5a0b900ecf959e20e18ee2",
+  "source_files": 21,
+  "application_lock_sha256": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "resource_limits": {
+    "cpu_mask": "0,1",
+    "memory_bytes": 8589934592,
+    "pids": 256,
+    "network": "none",
+    "rootfs": "read_only",
+    "apparmor_profile": "study2-agent-a5ccdae8-stack1"
+  },
+  "independent_dependencies": "Separate writable copies of dependencies, source, SQLite files, browser profiles, build and TypeScript caches; no writable node_modules symlinks. npm ci ran during image build before copying dependencies.",
+  "instances": [
+    {
+      "instance": 1,
+      "dispatch_utc": "2026-11-08T13:43:36.413307+00:00",
+      "commands": [
+        {
+          "argv": [
+            "node",
+            "-e",
+            "console.log(JSON.stringify({node:process.version,cpus:require('node:os').availableParallelism(),sqlite:require('better-sqlite3')(':memory:').prepare('select sqlite_version() as version').get().version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}))"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.14128904597600922,
+          "stdout_sha256": "d719ecadb485335b51ecfd504f6d28dd870eabf77ba9c347c0210d12bcb7cf6c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.2037797539960593,
+          "stdout_sha256": "b4a3dfddc038552a4141075dfdf5c44d0bff0b0e8b44d2329a232768a1dcbb50",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.599626416049432,
+          "stdout_sha256": "8b190df6a4076d500adf75323c4f050b3e40646f2c87fcbb74bcdec854c4436c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.612794902001042,
+          "stdout_sha256": "359d4447519603b6508d38c8953f4e3d5bf4ac965a223eb13aabf92250c484ff",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "lint"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.7008587730233558,
+          "stdout_sha256": "be49adeceb032c4cc44609f19c15756c40f1d1bbd00435c5120408e3dd216f57",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "test"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.1738047859980725,
+          "stdout_sha256": "1942986f98c0c74ec73cc68c07b07f202af483acfe5c0236a7f431369ac257c8",
+          "stderr_sha256": "5f97d847889f6d8b5af68f02cfcdc5905899287f9762ead053e5831519d35221"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "e2e"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 12.52526217000559,
+          "stdout_sha256": "52325eba467271670aedf975642c4fce44f140ad264a7af30eff4bbd14e736e9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "npm",
+            "run",
+            "reset"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.2103012090083212,
+          "stdout_sha256": "44c56d0e79a9152de58e59bdbaecfa15a0c0ee5f949425f149b82ae8b6510750",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "error": null,
+      "preparation_seconds": 0.7607809330220334,
+      "source_unchanged": true,
+      "cleanup_exit_code": 0,
+      "total_elapsed_seconds_including_cleanup": 24.211146697984077,
+      "passed": true
+    }
+  ],
+  "all_public_checks_passed": true,
+  "qualification_limits": [
+    "Native API unit tests remain test-mode conditional; trusted evaluator non-test auth probes are separate.",
+    "No sealed task acceptance, reference/alternate implementations or negative controls.",
+    "No concurrent lanes, live models, Context or worker broker qualification.",
+    "Study-local signal profile and dependency image still need current different-model final-runtime review."
+  ]
+}

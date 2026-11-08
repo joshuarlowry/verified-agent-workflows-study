@@ -1,23 +1,11 @@
-# Current run status
+# Current study status
 
-**Status published:** Nov 08, 2026 at 08:37:25 AM EST
+**Status published:** Nov 08, 2026 at 08:59:21 AM EST
 
-**Latest ledger event:** Nov 08, 2026 at 08:30:06 AM EST
+All ten first-task calibration runs have ended and been graded against the unchanged frozen checks. **Five passed every gate.** Both direct Terra runs passed all non-policy gates but were rejected by the source/test-preservation grammar. That grammar was stricter than the public instructions disclosed: this instrument gap prevents a fair model-quality ranking.
 
-C1 calibration: **10/10 endpoints recorded** across the initial schedule. Current block: **7/7 dispatched; 7/7 endpoints recorded.** Scored: **0**.
+[Results, runtimes and known charges](C1_RESULTS.md) · [Protocol audit](c1-protocol-audit.json) · [Machine-readable results](c1-first-results.json).
 
-| Workflow | Repetition | State | Endpoint |
-|---|---|---|---|
-| Gemma alone | 1 | final | final |
-| Terra supervising Gemma | 1 | infrastructure_failure | infrastructure_failure |
-| Terra alone | 2 | final | final |
-| Terra supervising Gemma | 2 | infrastructure_failure | infrastructure_failure |
-| GLM alone | 2 | final | final |
-| GLM supervising Gemma | 2 | final | final |
-| Gemma alone | 2 | final | final |
+No subject or grader is running. Further collection waits on a uniformly disclosed, qualified preservation policy and the next task packets. No C1 outcome will be silently repaired or upgraded. **Scored runs: 0.** Remaining registered scope:30calibration slots and165scored generations.
 
-Block version: **3**. Earlier ordinary endpoints carried forward: **3**. Prior interrupted attempts retained: **2**. [First interruption](c1-v1-technical-interruption.json) · [DNS interruption](c1-v2-dns-interruption.json).
-
-Endpoints remain ungraded. A final return or deadline may leave incomplete work. Backups run between workflows. All displayed times use America/New_York. [Frozen admission](c1-calibration-admission.json).
-
-**Frozen acceptance grading is running.** All ten nominal endpoints and backups are preserved: eight final returns and two infrastructure failures. No verified completion count yet. [Grading status](c1-grading-status.json).
+Human merge review remains optional and unmeasured. Provider failures, capture repairs, operator access limitations and missing primary pricing are disclosed in the results. All original endpoint backups remain preserved.

@@ -1,0 +1,685 @@
+{
+  "kind": "descriptive_C1_calibration_first_endpoint_results",
+  "generated_at_utc": "2026-11-08T13:56:45.764777+00:00",
+  "scope": "One calibration task, two repetitions per workflow; not scored study results or independent tasks.",
+  "nominal_endpoints": 10,
+  "accepted_by_all_frozen_gates": 5,
+  "exploratory_timely_all_nonpolicy_gates_pass": 7,
+  "scored_runs": 0,
+  "rows": [
+    {
+      "run_id": "cal-c1-v2-01",
+      "workflow": "GLM supervising Gemma",
+      "repetition": 1,
+      "position": 1,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": true,
+      "display_result": "Pass: all frozen gates",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {},
+      "runtime_seconds": 236.94508818,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.052904851,
+      "recorded_cost_complete": false,
+      "roles": [
+        {
+          "role": "supervisor",
+          "native_session_ids": [
+            "ses_e45d1d7c5ffeTnWZI062zu6LXJ"
+          ],
+          "provider_successful_generations": 24,
+          "native_unique_steps": 24,
+          "known_input_inclusive_total": 811044,
+          "known_billable_output_total": 12707,
+          "cached_input_subset_total": 761024,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 11097,
+          "known_reported_cost_usd_subtotal": 0.025561071,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        },
+        {
+          "role": "worker",
+          "native_session_ids": [
+            "ses_e45ceb384ffe4sW16JDg11U80Y"
+          ],
+          "provider_successful_generations": 15,
+          "native_unique_steps": 14,
+          "known_input_inclusive_total": 192167,
+          "known_billable_output_total": 1101,
+          "cached_input_subset_total": 167170,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 0,
+          "known_reported_cost_usd_subtotal": 0.027343779999999998,
+          "cost_complete": false,
+          "all_successes_have_native_step_count_match": false,
+          "unknown_attempt_or_view_count": 4,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 1,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "9fbdc556f2fb93e2721ce942022fd6d95520ecf20f948c5d33633b7b41a85a62"
+    },
+    {
+      "run_id": "cal-c1-v2-02",
+      "workflow": "GLM alone",
+      "repetition": 1,
+      "position": 2,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": true,
+      "display_result": "Pass: all frozen gates",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {},
+      "runtime_seconds": 271.911932319,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.0537557835,
+      "recorded_cost_complete": true,
+      "roles": [
+        {
+          "role": "complete_agent",
+          "native_session_ids": [
+            "ses_e45ca0db0ffeN1IVyrPCwpcL3j"
+          ],
+          "provider_successful_generations": 43,
+          "native_unique_steps": 43,
+          "known_input_inclusive_total": 1752903,
+          "known_billable_output_total": 11727,
+          "cached_input_subset_total": 1697088,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 8475,
+          "known_reported_cost_usd_subtotal": 0.0537557835,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 0,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "2e1382022ccb975438e760d9508b6a63a9881005e49581a9df7b7a6dd9edf537"
+    },
+    {
+      "run_id": "cal-c1-v2-03",
+      "workflow": "Terra alone",
+      "repetition": 1,
+      "position": 3,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": false,
+      "display_result": "Reject: test-preservation policy only",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "fail",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {
+        "finite_source_preservation": "fail"
+      },
+      "runtime_seconds": 164.908529641,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.1393256,
+      "recorded_cost_complete": true,
+      "roles": [
+        {
+          "role": "complete_agent",
+          "native_session_ids": [
+            "ses_e45c1c71effeZyRrRDEUo5dBRm"
+          ],
+          "provider_successful_generations": 30,
+          "native_unique_steps": 30,
+          "known_input_inclusive_total": 1067582,
+          "known_billable_output_total": 6113,
+          "cached_input_subset_total": 1021412,
+          "cache_write_subset_total": 46080,
+          "diagnostic_reasoning_total": 1650,
+          "known_reported_cost_usd_subtotal": 0.1393256,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 0,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "a90e918a6d1fe122c6b7e0885f41f37414d201982049d20fd57ec3b21b15ae62"
+    },
+    {
+      "run_id": "cal-c1-v3-04",
+      "workflow": "Gemma alone",
+      "repetition": 1,
+      "position": 4,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": false,
+      "display_result": "Fail: feature acceptance",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "fail",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {
+        "feature_public_and_sealed": "fail"
+      },
+      "runtime_seconds": 583.406334559,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.11568911999999999,
+      "recorded_cost_complete": false,
+      "roles": [
+        {
+          "role": "complete_agent",
+          "native_session_ids": [
+            "ses_e459ad49bffeIcspLqp06B4Q6e"
+          ],
+          "provider_successful_generations": 25,
+          "native_unique_steps": 25,
+          "known_input_inclusive_total": 816748,
+          "known_billable_output_total": 3361,
+          "cached_input_subset_total": 694102,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 0,
+          "known_reported_cost_usd_subtotal": 0.11568911999999999,
+          "cost_complete": false,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 48,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 0,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "a31dc3072dde94e4cbf5a903a166a35db09327786b0f25ef15bfd02d6dc91374"
+    },
+    {
+      "run_id": "cal-c1-v3-05",
+      "workflow": "Terra supervising Gemma",
+      "repetition": 1,
+      "position": 5,
+      "endpoint_reason": "infrastructure_failure",
+      "frozen_gate_accepted": false,
+      "display_result": "No delivery: infrastructure interruption",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "fail",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "fail",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {
+        "timely_final": "fail",
+        "full_app_checks": "fail"
+      },
+      "runtime_seconds": 2943.621320844,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.9535994999999999,
+      "recorded_cost_complete": false,
+      "roles": [
+        {
+          "role": "supervisor",
+          "native_session_ids": [
+            "ses_e458d6045ffe3ytGtcezPDc2Ru"
+          ],
+          "provider_successful_generations": 12,
+          "native_unique_steps": 11,
+          "known_input_inclusive_total": 367060,
+          "known_billable_output_total": 2822,
+          "cached_input_subset_total": 311104,
+          "cache_write_subset_total": 55920,
+          "diagnostic_reasoning_total": 670,
+          "known_reported_cost_usd_subtotal": 0.0996012,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": false,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        },
+        {
+          "role": "worker",
+          "native_session_ids": [
+            "ses_e458cf82affe9ZpzS0m2qpQ9Rk"
+          ],
+          "provider_successful_generations": 102,
+          "native_unique_steps": 102,
+          "known_input_inclusive_total": 6016625,
+          "known_billable_output_total": 29177,
+          "cached_input_subset_total": 5850935,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 0,
+          "known_reported_cost_usd_subtotal": 0.8539983,
+          "cost_complete": false,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 252,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 3,
+      "durable_worker_responses": 3,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "018e564dd8950fd8171b4f6256c5104a9dd8fe560c095dbb723d731b73990e40"
+    },
+    {
+      "run_id": "cal-c1-v3-06",
+      "workflow": "Terra alone",
+      "repetition": 2,
+      "position": 6,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": false,
+      "display_result": "Reject: test-preservation policy only",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "fail",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {
+        "finite_source_preservation": "fail"
+      },
+      "runtime_seconds": 219.538655736,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.1888295,
+      "recorded_cost_complete": true,
+      "roles": [
+        {
+          "role": "complete_agent",
+          "native_session_ids": [
+            "ses_e454a9d78ffe1D2JrtQMsE2DtH"
+          ],
+          "provider_successful_generations": 39,
+          "native_unique_steps": 39,
+          "known_input_inclusive_total": 1747215,
+          "known_billable_output_total": 7318,
+          "cached_input_subset_total": 1693125,
+          "cache_write_subset_total": 53973,
+          "diagnostic_reasoning_total": 2080,
+          "known_reported_cost_usd_subtotal": 0.1888295,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 0,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "24338f0342cc9f0d1937e38a56568877ad2e24943ca72e0cf356c1da793eb78d"
+    },
+    {
+      "run_id": "cal-c1-v3-07",
+      "workflow": "Terra supervising Gemma",
+      "repetition": 2,
+      "position": 7,
+      "endpoint_reason": "infrastructure_failure",
+      "frozen_gate_accepted": false,
+      "display_result": "No delivery: infrastructure interruption",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "fail",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "fail",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {
+        "timely_final": "fail",
+        "full_app_checks": "fail"
+      },
+      "runtime_seconds": 6167.063555386,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 3.86063394,
+      "recorded_cost_complete": false,
+      "roles": [
+        {
+          "role": "supervisor",
+          "native_session_ids": [
+            "ses_e4542a2f9ffe2mG3wjcAFFO02L"
+          ],
+          "provider_successful_generations": 10,
+          "native_unique_steps": 9,
+          "known_input_inclusive_total": 287130,
+          "known_billable_output_total": 2563,
+          "cached_input_subset_total": 208330,
+          "cache_write_subset_total": 78770,
+          "diagnostic_reasoning_total": 546,
+          "known_reported_cost_usd_subtotal": 0.121724,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": false,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        },
+        {
+          "role": "worker",
+          "native_session_ids": [
+            "ses_e4542644affegoLcKguMeqsIJY"
+          ],
+          "provider_successful_generations": 279,
+          "native_unique_steps": 278,
+          "known_input_inclusive_total": 26593391,
+          "known_billable_output_total": 39588,
+          "cached_input_subset_total": 26236856,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 0,
+          "known_reported_cost_usd_subtotal": 3.73890994,
+          "cost_complete": false,
+          "all_successes_have_native_step_count_match": false,
+          "unknown_attempt_or_view_count": 496,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 3,
+      "durable_worker_responses": 2,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "original_export_capture",
+      "endpoint_receipt_sha256": "2ad81b9a808102fcad604f7fb414734cc5c495b06aea2f38869762c5ffc25d33"
+    },
+    {
+      "run_id": "cal-c1-v3-08",
+      "workflow": "GLM alone",
+      "repetition": 2,
+      "position": 8,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": true,
+      "display_result": "Pass: all frozen gates",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {},
+      "runtime_seconds": 289.628138326,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.0671788765,
+      "recorded_cost_complete": true,
+      "roles": [
+        {
+          "role": "complete_agent",
+          "native_session_ids": [
+            "ses_e44cc6df3ffePztMAeVxYMc20Z"
+          ],
+          "provider_successful_generations": 49,
+          "native_unique_steps": 49,
+          "known_input_inclusive_total": 2196127,
+          "known_billable_output_total": 13146,
+          "cached_input_subset_total": 2137856,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 8580,
+          "known_reported_cost_usd_subtotal": 0.0671788765,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 0,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "qualified_regular_file_export",
+      "endpoint_receipt_sha256": "af73f000c88d4184413bda302a4d944d4d97a4f94e7f1d6b33bed925d50ee2e6"
+    },
+    {
+      "run_id": "cal-c1-v3-09",
+      "workflow": "GLM supervising Gemma",
+      "repetition": 2,
+      "position": 9,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": true,
+      "display_result": "Pass: all frozen gates",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {},
+      "runtime_seconds": 891.67589667,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.159979918,
+      "recorded_cost_complete": false,
+      "roles": [
+        {
+          "role": "supervisor",
+          "native_session_ids": [
+            "ses_e44c2ee66ffe869grG27SNDK4C"
+          ],
+          "provider_successful_generations": 53,
+          "native_unique_steps": 53,
+          "known_input_inclusive_total": 2727074,
+          "known_billable_output_total": 29057,
+          "cached_input_subset_total": 2663872,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 23112,
+          "known_reported_cost_usd_subtotal": 0.084445158,
+          "cost_complete": true,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 0,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        },
+        {
+          "role": "worker",
+          "native_session_ids": [
+            "ses_e44be2317ffeqtryROwwiTztey"
+          ],
+          "provider_successful_generations": 27,
+          "native_unique_steps": 27,
+          "known_input_inclusive_total": 524814,
+          "known_billable_output_total": 5152,
+          "cached_input_subset_total": 462982,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 0,
+          "known_reported_cost_usd_subtotal": 0.07553475999999999,
+          "cost_complete": false,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 18,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 3,
+      "durable_worker_responses": 2,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "qualified_regular_file_export",
+      "endpoint_receipt_sha256": "96331facccf52c83e52397368457c2863ce557a8bc18bb5252cbf7f6b582d930"
+    },
+    {
+      "run_id": "cal-c1-v3-10",
+      "workflow": "Gemma alone",
+      "repetition": 2,
+      "position": 10,
+      "endpoint_reason": "final",
+      "frozen_gate_accepted": true,
+      "display_result": "Pass: all frozen gates",
+      "gates": {
+        "endpoint_integrity": "pass",
+        "timely_final": "pass",
+        "finite_source_preservation": "pass",
+        "feature_public_and_sealed": "pass",
+        "all_initial_db": "pass",
+        "all_post_schema": "pass",
+        "protected_baseline_regression": "pass",
+        "regression_initial_db": "pass",
+        "regression_post_schema": "pass",
+        "full_app_checks": "pass",
+        "native_auth_preservation": "pass",
+        "post_grading_source_integrity": "pass",
+        "post_grading_checker_integrity": "pass"
+      },
+      "nonpassing_gates": {},
+      "runtime_seconds": 685.778114111,
+      "runtime_definition": "Native dispatch to process exit; includes tools and waiting, excludes setup and backups.",
+      "recorded_provider_cost_usd_subtotal": 0.21903342,
+      "recorded_cost_complete": false,
+      "roles": [
+        {
+          "role": "complete_agent",
+          "native_session_ids": [
+            "ses_e44b05e98ffe2kc2EPm4NsX2aJ"
+          ],
+          "provider_successful_generations": 48,
+          "native_unique_steps": 48,
+          "known_input_inclusive_total": 1549313,
+          "known_billable_output_total": 5324,
+          "cached_input_subset_total": 1440152,
+          "cache_write_subset_total": 0,
+          "diagnostic_reasoning_total": 0,
+          "known_reported_cost_usd_subtotal": 0.21903342,
+          "cost_complete": false,
+          "all_successes_have_native_step_count_match": true,
+          "unknown_attempt_or_view_count": 76,
+          "unknown_count_unit": "capture views; not necessarily distinct billable calls"
+        }
+      ],
+      "unique_worker_requests": 0,
+      "durable_worker_responses": 0,
+      "active_human_effort_seconds": null,
+      "operator_feedback_turns": null,
+      "native_export_capture_revision": "qualified_regular_file_export",
+      "endpoint_receipt_sha256": "98114bfe9002aa95e47b225fa440ac7c206f81daa74341dd51ed22d93b906f38"
+    }
+  ],
+  "model_calls_for_this_report": 0,
+  "selection_sha256": "799a9120859861bdad33c03d250320ca253122241a6bc94c7313cbe8c1107f0c",
+  "source_reports": {
+    "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710": {
+      "grading_report_sha256": "677d488fb149f190c9d6e7c7035d9f24ac94b0e64235e4fa3ba3408389d82e66",
+      "measurement_report_sha256": "75213ac67f26af476a8cf5e322ceae6585e3839344dfab3dec2f9367facccffd"
+    },
+    "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z": {
+      "grading_report_sha256": "57b9db2535f897b75569387c9c57252e79858b9d83d75d751a820476e2ffc196",
+      "measurement_report_sha256": "ae51b50a97b1d728fb534d3caf08151ba074dc0a4dfc3c63814d0e95de7af267"
+    }
+  },
+  "billing_rule": "Provider-reported known charges once by role; cached input is a subset of input. Reasoning is not added to billed output. Failed-call billing can be unknown.",
+  "primary_standardized_pricing": "Unresolved: registered uncached list-price rate card has not been frozen. These are observed charge subtotals, not the registered primary economic comparison.",
+  "technical_extra_attempts": [
+    {
+      "run_id": "cal-c1-01",
+      "block": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550",
+      "evidence": "setup/c1-v1-technical-interruption.json"
+    },
+    {
+      "run_id": "cal-c1-v2-04",
+      "block": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710",
+      "evidence": "setup/c1-v2-dns-interruption.json"
+    }
+  ],
+  "limits": [
+    "Acceptance is finite machine verification, not semantic completeness or human merge approval.",
+    "Both direct Terra patches passed feature/regression/auth/full-app gates; the frozen source rule rejected extra assertions inside an original test. Original grading remains unchanged.",
+    "The detailed finite test-edit grammar was not included in the subject public-check bundle or initial prompt. The public FAQ required preserved coverage but did not disclose these structural exclusions. This instrument/contract mismatch limits the validity of all-gate comparisons and must be resolved explicitly before later collection.",
+    "One Gemma patch failed the first-workspace zero-count UI requirement; max-failure stopping leaves later feature cases unexecuted.",
+    "Both Terra-supervised workflows were interrupted. Their snapshots also fail lint; the full-app command sequence stops at lint, so later app checks were not executed.",
+    "Calibration spans disclosed harness repairs. Do not infer a model-only or uniform-harness ranking from this task.",
+    "GLM supervisor prompts supplied detailed solution-level SQL and UI directions; Gemma made the edits. The boundary against complete replacement implementations needs explicit reporting, not a hidden new exclusion rule.",
+    "One post-endpoint diagnostic exposed terminal worker/supervisor text to the operator; no live feedback followed. A private access disclosure is preserved.",
+    "Mechanical operator/harness work and model preparation overhead are outside row charges. Human review effort was not measured; it is not zero.",
+    "Earlier acknowledgement and DNS technical attempts remain additional physical attempts and overhead, outside the fixed ten nominal slots.",
+    "Only one task is represented. No confidence intervals, cost-per-acceptance ranking or purchasing recommendation are justified here.",
+    "The study is AI-managed. The evaluated model families also constructed and cross-reviewed benchmark materials under an explicit independence waiver; this is not an independently authored benchmark."
+  ]
+}

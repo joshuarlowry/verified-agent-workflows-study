@@ -1,0 +1,38 @@
+{
+  "kind": "C1_instrument_contract_disclosure_gap",
+  "finding_id": "C1-M1",
+  "classification": "methodological_limitation_not_subject_repair",
+  "frozen_all_gate_passes": 5,
+  "exploratory_all_nonpolicy_gate_passes": 7,
+  "primary_results_changed": false,
+  "new_oracles_or_regrading": false,
+  "description": "Detailed finite source/test-edit grammar was outside subject public-check bundle and absent from initial prompt; FAQ required preserved equivalent regression coverage without those structural restrictions. Both direct Terra patches add assertions inside an original test outside the hidden finite rule, retaining original statements. Both pass all other frozen gates.",
+  "evidence": [
+    {
+      "run_id": "cal-c1-v2-03",
+      "prompt_sha256": "1caf7aa9c7f44e112dbf6bd35a6f407c3f22f347b0bf2e90800c22b0cf976f01",
+      "faq_sha256": "d909c56495db20335279aa4be333a003c61850490b9987afd9a0371f142d5b66",
+      "original_test_sha256": "c2543e6bf5bdb3303ce279a1710f09d590565d390211e6e10ed2b8aa7d87f0b5",
+      "submitted_test_sha256": "6f3e2f3df76f0ef36494410704e38d636583d852cc3a7cf3a15b26817b7d9ac2",
+      "original_test_lines_deleted": 0,
+      "grading_result_sha256": "7d0d9aeafe921ce1eb87c4ddff479adccec5d8d84ecc70a903473777ff4ed680"
+    },
+    {
+      "run_id": "cal-c1-v3-06",
+      "prompt_sha256": "1caf7aa9c7f44e112dbf6bd35a6f407c3f22f347b0bf2e90800c22b0cf976f01",
+      "faq_sha256": "d909c56495db20335279aa4be333a003c61850490b9987afd9a0371f142d5b66",
+      "original_test_sha256": "c2543e6bf5bdb3303ce279a1710f09d590565d390211e6e10ed2b8aa7d87f0b5",
+      "submitted_test_sha256": "637488fe379440bb4a37fa3635088bf0125eeb8bd4c3121b793cfcf9577c03ce",
+      "original_test_lines_deleted": 0,
+      "grading_result_sha256": "381e8637ca8cd5eb02d49b1767bcd5d9422e2d807c5b6640ed7f2c170ea62094"
+    }
+  ],
+  "future_action": "Before any later subject dispatch, explicitly freeze and disclose the exact source/test preservation constraints uniformly. Qualify contract/evaluator agreement. Preserve C1 as instrument calibration with unchanged first grading; no retrospective acceptance upgrades.",
+  "other_limitations": [
+    "GLM supervisor prompts give solution-level SQL/UI instructions; disclose supervisory contribution and ambiguous complete-replacement boundary without inventing a posthoc exclusion.",
+    "07 diagnostic exposed terminal handoff text to operator after its endpoint; no live feedback or future prompt changes followed.",
+    "Exact uncached primary economic rate card still unset; observed provider-charge subtotals are secondary and incomplete for failed attempts.",
+    "One calibration task and disclosed harness repairs cannot support purchasing or model-only ranking."
+  ],
+  "model_calls_for_audit": 0
+}

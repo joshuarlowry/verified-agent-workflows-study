@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 18,
-  "status": "C1_export_capture_repair_admitted_only_unrun_slots_scored_not_admitted",
+  "protocol_revision": 19,
+  "status": "C1_first_grading_complete_disclosure_gap_before_further_collection",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -922,7 +922,7 @@
       "Seven remaining positions preserve original task/arm/repetition/order; complete initial sample remains10.",
       "Different-model source review, DNS/admin serving recheck, exact prompts and all seven manifests verified before dispatch."
     ],
-    "remaining_preparation": "Continue the five untouched C1 slots; preserve the four ordinary final returns and the provider-disrupted failed workflow as recorded outcomes. Then qualify C2-C4 before their30calibration slots and all scored packets before165scored runs. No failed supervisor retry or sample reduction.",
+    "remaining_preparation": "Resolve and qualify uniform public preservation-policy disclosure before later subjects; qualify C2-C4 packets for30remaining calibration slots, then all15scored packets before165scored generations. No failed C1 trial retry or posthoc acceptance change.",
     "admitted_at_utc": "2026-11-08T08:59:10.765425+00:00",
     "frozen_manifests": [
       {
@@ -1207,7 +1207,8 @@
       "preserved_failed_run": "cal-c1-v3-05",
       "previous_rows_and_ledger_not_reset": true,
       "no_additional_subject_attempts_for_this_continuation": true
-    }
+    },
+    "collection_state": "complete_first_grading_preserved"
   },
   "convergence_amendment": {
     "recorded_at_utc": "2026-11-08T02:21:49.735221+00:00",
@@ -1298,5 +1299,16 @@
       "cal-c1-v3-05",
       "cal-c1-v3-07"
     ]
+  },
+  "calibration_first_results": {
+    "nominal_endpoints": 10,
+    "frozen_machine_acceptances": 5,
+    "exploratory_nonpolicy_gate_passes": 7,
+    "scored_runs": 0,
+    "report": "setup/C1_RESULTS.md",
+    "machine_data": "setup/c1-first-results.json",
+    "protocol_audit": "setup/c1-protocol-audit.json",
+    "readiness_gap": "C1-M1: exact preservation constraints not publicly disclosed; resolve uniformly before further collection. Original C1 outcomes unchanged.",
+    "economic_readiness_gap": "Primary uncached API-equivalent rate card remains unset."
   }
 }
