@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type MutableRefObject } fr
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-type Workspace = { id:string; name:string; role:'owner'|'member'; createdAt:string };
+type Workspace = { id:string; name:string; role:'owner'|'member'; createdAt:string; openItemCount:number };
 type Item = { id:string; workspaceId:string; title:string; notes:string; status:'open'|'in_progress'|'done'; dueDate:string|null; version:number; createdBy:string; createdAt:string; updatedAt:string };
 type Me = { user:{id:string;email:string;name:string}; workspaces:Workspace[] };
 type Form = { id?:string; title:string; notes:string; status:Item['status']; dueDate:string };
@@ -14,7 +14,7 @@ async function api<T>(path:string, options:RequestInit = {}):Promise<T> {
   return response.json();
 }
 // SQLite BINARY compares UTF-8 bytes, unlike JavaScript's UTF-16 ordering.
-function binary(a:string,b:string) { const x = new TextEncoder().encode(a), y = new TextEncoder().encode(b); for (let i=0;i<Math.min(x.length,y.length);i++) if (x[i] !== y[i]) return x[i]-y[i]; return x.length-y.length; }
+// function binary(a:string,b:string) { const x = new TextEncoder().encode(a), y = new TextEncoder().encode(b); for (let i=0;i<Math.min(x.length,y.length);i++) if (x[i] !== y[i]) return x[i]-y[i]; return x.length-y.length; }
 const msg = (e:unknown) => e instanceof Error ? e.message : 'Request failed.';
 const json = (method:string, body?:unknown):RequestInit => ({ method, ...(body === undefined ? {} : {body:JSON.stringify(body)}) });
 
@@ -32,11 +32,11 @@ function Auth({onLogin}:{onLogin:()=>Promise<void>}) {
     <button disabled={pending}>{signup ? 'Create account':'Sign in'}</button>
   </form><button className="link" onClick={()=>{setSignup(!signup);setError('');}}>{signup ? 'Already have an account? Sign in':'Need an account? Create one'}</button></section>;
 }
-function WorkspaceCreator({first,onCreate,selectionGate}:{first:boolean;onCreate:(w:Workspace)=>void;selectionGate:MutableRefObject<number>}) {
+function WorkspaceCreator({first,selectionGate,refresh,setNotice}:{first:boolean;selectionGate:MutableRefObject<number>;refresh:()=>Promise<boolean>;setNotice:(n:string)=>void}) {
   const [name,setName] = useState(''), [error,setError] = useState(''), [pending,setPending] = useState(false);
   const lifetime = useRef(0);
   useEffect(() => () => { lifetime.current++; }, []);
-  async function submit(e:FormEvent) { e.preventDefault(); const selection = selectionGate.current, generation = lifetime.current; const alive = () => selectionGate.current === selection && lifetime.current === generation; setPending(true); setError(''); try { const w = await api<Workspace>('/api/workspaces',json('POST',{name})); if (alive()) { setName(''); onCreate(w); } } catch(e) { if (alive()) setError(msg(e)); } finally { if (alive()) setPending(false); } }
+  async function submit(e:FormEvent) { e.preventDefault(); const selection = selectionGate.current, generation = lifetime.current; const alive = () => selectionGate.current === selection && lifetime.current === generation; setPending(true); setError(''); try { await api<Workspace>('/api/workspaces',json('POST',{name})); if (alive()) { setName(''); await refresh(); setNotice('Workspace created.'); } } catch(e) { if (alive()) setError(msg(e)); } finally { if (alive()) setPending(false); } }
   return <section className="panel"><h2>{first ? 'Create your first workspace':'Create a workspace'}</h2>{error && <p role="alert">{error}</p>}<form onSubmit={submit}><label>Workspace name<input value={name} onChange={e=>setName(e.target.value)} /></label><button disabled={pending}>Create workspace</button></form></section>;
 }
 function Board({ws,epoch,selectionGate,onMembershipRefresh}:{ws:Workspace;epoch:number;selectionGate:MutableRefObject<number>;onMembershipRefresh:()=>Promise<boolean>}) {
@@ -109,9 +109,9 @@ function App() {
   return <main><header><h1>Workboard Lab</h1>{me && <div>{me.user.email} <button onClick={()=>void signOut()}>Sign out</button></div>}</header>
     {error && <p role="alert">{error}</p>}
     {checking ? <p>Checking session…</p> : !me ? <Auth onLogin={async()=>{await refresh();}} /> : <>
-      {me.workspaces.length > 0 && <label>Workspace<select value={selected} onChange={e=>select(e.target.value)}>{me.workspaces.map(w=><option value={w.id} key={w.id}>{w.name}</option>)}</select></label>}
+      {me.workspaces.length > 0 && <label>Workspace<select value={selected} onChange={e=>select(e.target.value)}>{me.workspaces.map(w=><option value={w.id} key={w.id}>{w.name} ({w.openItemCount})</option>)}</select></label>}
       {ws && <Board key={`board-${epoch}`} ws={ws} epoch={epoch} selectionGate={selectionGate} onMembershipRefresh={refresh} />}
-      <p role="status">{notice}</p><WorkspaceCreator key={`creator-${epoch}`} selectionGate={selectionGate} first={!me.workspaces.length} onCreate={w=>{setMe({...me,workspaces:[...me.workspaces,w].sort((a,b)=>binary(a.name,b.name) || binary(a.createdAt,b.createdAt) || binary(a.id,b.id))}); select(w.id); setNotice('Workspace created.');}} />
+      <p role="status">{notice}</p><WorkspaceCreator key={`creator-${epoch}`} selectionGate={selectionGate} first={!me.workspaces.length} refresh={refresh} setNotice={setNotice} />
     </>}
   </main>;
 }
