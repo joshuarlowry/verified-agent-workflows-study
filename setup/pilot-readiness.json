@@ -1,0 +1,41 @@
+{
+  "recorded_at_utc": "2026-11-08T02:25:10.271245+00:00",
+  "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
+  "admitted": false,
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "protocol_revision": 12,
+  "primary_scheduling": "sequential",
+  "critical_path": [
+    {
+      "gate": "C1 valid acceptance packet",
+      "state": "Gemma zero-label repair running; independent compact standard Playwright checker queued, then different-model review",
+      "existing_evidence": "Reference37/37; repaired alternative36/37 with the real first-workspace zero-label bug. Six existing negative controls rejected; membership/role controls also invalidate dependent prerequisites (17unverified each), not all37checks complete.",
+      "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted."
+    },
+    {
+      "gate": "Common actual model/capture/endpoint workflow",
+      "state": "Focused prepilot source review queued; real-provider/approved-corpus role probes and minimal raw/native accounting reconciliation still required",
+      "existing_evidence": "33 generic controller tests; actual parent-final/restore-cancel and checkpoint-fault cleanup passed. All five systems passed actual pinned LiteLLM with13local fake replies and0actual model calls. Generic Context retrieval passed across supervisor/worker restoration.",
+      "limits": "Synthetic mechanical success is not model evaluation or study admission."
+    },
+    {
+      "gate": "Approved documentation package runtime",
+      "state": "Focused package review queued",
+      "existing_evidence": "17DBs,119technical files represented;22get_docs scenarios ran (19positive,3negative).",
+      "remaining": "Applicability warnings absent from get_docs replies,195SVG diagrams omitted by native parser, some transformed-chunk attribution incomplete. Reviewer will identify minimum necessary repairs; no content re-curation."
+    }
+  ],
+  "deferred": [
+    "Concurrent-lane qualification",
+    "General-purpose evaluator/reporting frameworks",
+    "Optional adversarial hardening outside disclosed acceptance",
+    "Remaining reference/evaluator packets until initial C1 technical block"
+  ],
+  "latest_backup": {
+    "checkpoint": "checkpoints/preparation-20261108T012635569831Z.tar.gz",
+    "sha256": "ca43c1cf78f675c11cbd091eb4c10a889acc4b5d167eba3313552e5ffb5ed499",
+    "published_private": true
+  },
+  "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits."
+}

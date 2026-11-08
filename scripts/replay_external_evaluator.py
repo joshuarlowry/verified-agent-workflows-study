@@ -96,10 +96,11 @@ def main():
         # Only the evaluator's trusted, pinned Playwright dependencies are needed.
         app_lock = json.loads((target/'package-lock.json').read_text())['packages']
         eval_lock = json.loads((checker/'package-lock.json').read_text())['packages']
-        expected = {'node_modules/playwright', 'node_modules/playwright-core'}
+        base_packages = {'node_modules/playwright', 'node_modules/playwright-core'}
         required = {k for k, v in eval_lock.items() if k and not v.get('optional')}
-        if required != expected:
+        if required not in (base_packages, base_packages | {'node_modules/@playwright/test'}):
             raise ValueError('Evaluator dependencies need a separately qualified offline image')
+        expected = required
         for key in expected:
             for field in ['version', 'integrity']:
                 if not eval_lock[key].get(field) or eval_lock[key][field] != app_lock[key].get(field):
@@ -133,8 +134,12 @@ def main():
                   '-v', f'{checker}:/evaluator:ro', '-v', f'{checker / "node_modules"}:/evaluator/node_modules:rw',
                   '-v', f'{eval_state}:/state:rw', '-v', f'{results}:/results:rw', '--workdir', '/evaluator', IMAGE,
                   'node', '-e', 'setInterval(()=>{},10000)'])
-        for package in ['playwright', 'playwright-core']:
+        for key in sorted(expected):
+            package = key.removeprefix('node_modules/')
+            if '/' in package:
+                exec_in(eval_name, 'mkdir', '-p', '/evaluator/node_modules/'+package.rsplit('/', 1)[0])
             exec_in(eval_name, 'cp', '-R', '/opt/application-deps/node_modules/'+package, '/evaluator/node_modules/'+package)
+        report['trusted_evaluator_packages'] = sorted(expected)
         probe = "const fs=require('fs');console.log(JSON.stringify({targetVisible:fs.existsSync('/target/server'),node:process.version,playwright:require('playwright/package.json').version,nodeEnv:process.env.NODE_ENV??null,testEnv:process.env.TEST??null}));if(fs.existsSync('/target/server'))process.exit(1)"
         _, visibility = exec_in(eval_name, 'node', '-e', probe)
         report['evaluator_visibility_probe'] = json.loads(visibility)

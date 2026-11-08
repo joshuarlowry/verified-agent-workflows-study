@@ -101,13 +101,12 @@
   "C1_implementation_source_review": "setup/c1-implementation-review.json",
   "coordinator_pod_mechanical_probe": "setup/coordinator-pod-mechanical-probe.json",
   "latest_activity": {
-    "checked_at_utc": "2026-11-08T01:17:38.207512+00:00",
-    "active_launch": "c1-checker-second-repair-20261108T010445Z",
+    "checked_at_utc": "2026-11-08T02:25:10.271245+00:00",
+    "active_launch": "c1-zero-label-repair-20261108T021819Z",
     "queued_in_order": [
-      "native-coordinator-integration-review-20261108T011542Z",
-      "approved-context-package-20261108T011542Z",
-      "c1-alternative-delta-review-20261108T011921Z",
-      "c1-checker-second-repair-review-20261108T012107Z"
+      "c1-standard-checker-20261108T021821Z",
+      "prepilot-integration-review-20261108T021821Z",
+      "c1-standard-checker-review-20261108T022353Z"
     ],
     "scoring_enabled": false
   },
@@ -115,5 +114,6 @@
   "native_two_handoff_controller_probe": "setup/coordinator-native-workflow-probe.json",
   "C1_checker_second_review": "setup/c1-checker-second-review.json",
   "C1_alternative_repair_endpoint": "setup/c1-alternative-repair-endpoint.json",
-  "C1_repaired_alternative_public_replays": "setup/c1-repaired-alternative-public-replays-20261108T011825Z.json"
+  "C1_repaired_alternative_public_replays": "setup/c1-repaired-alternative-public-replays-20261108T011825Z.json",
+  "pilot_readiness": "setup/pilot-readiness.json"
 }

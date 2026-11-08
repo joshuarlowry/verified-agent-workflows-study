@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 11,
+  "protocol_revision": 12,
   "status": "draft_not_launchable",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -625,10 +625,11 @@
     },
     {
       "id": "resource_lanes",
-      "phase": "before_calibration",
+      "phase": "before_any_concurrent_extension",
       "detail": "qualify two equal isolated lanes and rate-limit behavior, or explicitly amend to sequential",
-      "resolved": false,
-      "evidence": "setup/resource-preliminary.json; generic enforcement/contention passed, app/inference/full isolation pending"
+      "resolved": true,
+      "evidence": "registration.json#/execution_schedule",
+      "resolution_scope": "Revision12 selects one primary lane to converge on collection. Concurrent qualification deferred; per-workflow resource/isolation and actual role probes remain mandatory under common_adapter."
     },
     {
       "id": "clean_transport",
@@ -734,8 +735,8 @@
     }
   },
   "execution_schedule": {
-    "mode": "two_equal_isolated_lanes_after_resource_qualification",
-    "max_parallel_workflows": 2,
+    "mode": "sequential_collection",
+    "max_parallel_workflows": 1,
     "lane_resources": {
       "memory_gib": 8,
       "node_test_workers": 1,
@@ -751,13 +752,14 @@
       "measured_at_utc": "2026-11-07T02:57:07.607915+00:00"
     },
     "reserve": "remaining CPU/memory for controller and separately limited evaluator; no competing interactive build jobs",
-    "qualification": "replay same generic/public mechanical commands alone and with both lanes loaded; median duration inflation <=10%, no OOM/throttling/unaccounted swap or transport rate-limit drift; same limits in sequential qualification",
+    "qualification": "Verify one-workflow resource/isolation enforcement and actual role path before the initial C1 block. Concurrent-lane qualification is deferred.",
     "qualification_sha256": null,
-    "if_qualification_fails": "amend to sequential before calibration; preserve failed qualification; no silent mixed scheduling",
-    "assignment": "seeded balanced lane and time-block assignment across arms/tasks; preserve paired blocks; do not run all of one model first",
-    "portfolio": "physical collection may overlap; report registered sequential retry-policy opportunity as sum of candidate durations, not minimum parallel latency",
+    "if_qualification_fails": "Repair the common single-workflow path before dispatch; preserve failed qualification.",
+    "assignment": "Seeded balanced task/time blocks across arms, sequential; do not run all of one model first.",
+    "portfolio": "Sequential registered retry-policy opportunity is the sum of candidate durations; charge all candidates once.",
     "provider_drift_checks": "verify catalog revision/tag/quantization before each dispatch and generation resolution after each call; stop new dispatch on drift and record affected runs; resume as separately registered cohort, never pool silently",
-    "opaque_provider_drift_limit": "unchanged public IDs cannot prove immutable hidden serving weights/settings"
+    "opaque_provider_drift_limit": "unchanged public IDs cannot prove immutable hidden serving weights/settings",
+    "concurrency_extension": "Requires an explicit later scheduling amendment and equal-lane qualification before concurrent dispatch; no silent scheduling change."
   },
   "collection_forecast": {
     "kind": "planning_assumptions_not_measured",
@@ -821,7 +823,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "Docs source package accepted by GLM; Context package build queued. Native local synthetic two-handoff controller passed, source review queued; real provider/Context/accounting qualification pending. C1 checker second repair active; repaired alternative unqualified. No calibration/scored runs.",
+    "status": "Converging on C1 initial ten-workflow calibration block. Gemma zero-label repair, compact independent Playwright checker and focused prepilot review queued/running. Corpus package constructed but qualification gaps remain. Existing custom checker versions and all earlier failures retained. No calibration/scored runs.",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,
@@ -839,5 +841,98 @@
     "transport_bundle_sha256": "0e102e93bdf2540891f71e55185f9d1966ecf9178dbbc5608e3526dc9d9bff8c",
     "transport_preflight": "setup/clean-transport-preflight.json",
     "usage_preflight": "setup/clean-usage-preflight.json"
+  },
+  "calibration_initial_block": {
+    "task": "C1",
+    "workflows": 10,
+    "included_in_registered_40": true,
+    "order_seed": 3711577821265472498,
+    "order": [
+      {
+        "position": 1,
+        "task": "C1",
+        "arm": "GLM supervising Gemma",
+        "repetition": 1
+      },
+      {
+        "position": 2,
+        "task": "C1",
+        "arm": "GLM alone",
+        "repetition": 1
+      },
+      {
+        "position": 3,
+        "task": "C1",
+        "arm": "Terra alone",
+        "repetition": 1
+      },
+      {
+        "position": 4,
+        "task": "C1",
+        "arm": "Gemma alone",
+        "repetition": 1
+      },
+      {
+        "position": 5,
+        "task": "C1",
+        "arm": "Terra supervising Gemma",
+        "repetition": 1
+      },
+      {
+        "position": 6,
+        "task": "C1",
+        "arm": "Terra alone",
+        "repetition": 2
+      },
+      {
+        "position": 7,
+        "task": "C1",
+        "arm": "Terra supervising Gemma",
+        "repetition": 2
+      },
+      {
+        "position": 8,
+        "task": "C1",
+        "arm": "GLM alone",
+        "repetition": 2
+      },
+      {
+        "position": 9,
+        "task": "C1",
+        "arm": "GLM supervising Gemma",
+        "repetition": 2
+      },
+      {
+        "position": 10,
+        "task": "C1",
+        "arm": "Gemma alone",
+        "repetition": 2
+      }
+    ],
+    "admitted": false,
+    "admission_evidence_sha256": null,
+    "before_dispatch": [
+      "C1 standard acceptance suite independently reviewed, frozen and qualified against baseline/reference/valid alternate/negative controls",
+      "Single-workflow common native harness, real model roles, approved documentation, capture/accounting and endpoint integrity qualified",
+      "Source/lock/image/prompt/provider/tool manifests frozen for this block"
+    ],
+    "remaining_preparation": "Qualify C2-C4 before their calibration slots and the first five scored packets before scoring; remaining builders remain blind to comparative outcomes. Full planned sample and all registered systems/endpoints remain unchanged."
+  },
+  "convergence_amendment": {
+    "recorded_at_utc": "2026-11-08T02:21:49.735221+00:00",
+    "basis": "User requests convergence on the study itself; no calibration/scored data exist.",
+    "changes": [
+      "Primary sequential collection; optional concurrency work deferred",
+      "Qualify C1 and common path, then collect the already registered initial ten-workflow calibration block before constructing remaining reference/evaluator packets",
+      "Replace repeatedly failing custom C1 evaluator framework with independently authored standard Playwright tests and native reporter; same public requirements and completion gate"
+    ],
+    "unchanged": [
+      "three exact models and five systems",
+      "40 calibration and165scored workflows",
+      "120minute deadline, no dollar/token cap",
+      "independent acceptance, positive/alternate/negative qualification and cross-review",
+      "all incomplete/failed preparation endpoints preserved"
+    ],
+    "not_authorized": "Bypassing a known acceptance or integrity defect or treating synthetic smoke tests as actual model collection."
   }
 }

@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "GLM checker repair active -> GLM harness source review -> Terra Context package build -> GLM repaired alternative source review -> Terra checker re-review, sequential. Direct and supervised local synthetic native workflows passed. Repaired alternative passed three clean public regression replays. Real-provider/Context/accounting/task qualification still pending; zero calibration/scored runs.",
+  "next_dependency": "Converge on first ten C1 calibration workflows: Gemma zero-label fixture repair -> GLM compact standard Playwright checker -> focused native/docs/control review -> Terra checker review -> only required fixes and real role qualification. Primary sequential collection; optional refinements deferred. Zero calibration/scored runs.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
@@ -51,5 +51,6 @@
   "contamination_audit": "setup/contamination-audit.json",
   "updated_at_eastern": "Nov 07, 2026 at 09:21:19 PM EST (UTC-0500)",
   "last_workflow_event_eastern": "Nov 07, 2026 at 09:21:19 PM EST (UTC-0500)",
-  "dependency_image_recovery": "setup/dependency-image-preservation.json"
+  "dependency_image_recovery": "setup/dependency-image-preservation.json",
+  "pilot_readiness": "setup/pilot-readiness.json"
 }

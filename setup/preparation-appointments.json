@@ -811,9 +811,61 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized three-model preparation cross-review",
       "qualification": "Deferred candidate capture only after author final return and audit; no positive solution access, no approval implied."
+    },
+    {
+      "launch_id": "c1-zero-label-repair-20261108T021819Z",
+      "role": "gemma-c1-zero-label-repair",
+      "requested_model": "google/gemma-4-31b-it",
+      "run_id": "clean-20261107T122746Z-c1-zero-label-repair-gemma-20261108T021819Z",
+      "manifest_created_at_utc": "2026-11-08T02:18:21.305849+00:00",
+      "prompt_sha256": "ef77b66ced085767a217db38c939c4b459cc59fa559fe663e7d3f4b59a4cba29",
+      "controller_sha256": "83f84a4cc8936d4bab79dd619499ff9314a092763593a36442f8cb83573744cb",
+      "phase": "convergent_prepilot_preparation",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User directs convergence on actual study; three-model preparation authorization persists",
+      "qualification": "No scored dispatch. Same features/systems; known broken artifacts retained; review/qualification still required."
+    },
+    {
+      "launch_id": "c1-standard-checker-20261108T021821Z",
+      "role": "glm-c1-standard-checker",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-c1-standard-checker-glm-20261108T021821Z",
+      "manifest_created_at_utc": "2026-11-08T02:18:21.778161+00:00",
+      "prompt_sha256": "f2f8b297bf8db5951d8db26c430673bcf262ecafb0857e2091eab9228c097abe",
+      "controller_sha256": "2f2df9ecafa5ea1350472fde1b16ee896100e22031f7bdbea3eb23613a8f168c",
+      "phase": "convergent_prepilot_preparation",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User directs convergence on actual study; three-model preparation authorization persists",
+      "qualification": "No scored dispatch. Same features/systems; known broken artifacts retained; review/qualification still required."
+    },
+    {
+      "launch_id": "prepilot-integration-review-20261108T021821Z",
+      "role": "glm-prepilot-integration-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-prepilot-integration-review-glm-20261108T021821Z",
+      "manifest_created_at_utc": "2026-11-08T02:18:21.945585+00:00",
+      "prompt_sha256": "f758c47f8bce6cf8d2cac57005913defdc136244526be5d933897ef95e7d86c6",
+      "controller_sha256": "49ce21e17a810e06699ba757a1ff981469e3268f2120abd4b3c5e6abf78230ff",
+      "phase": "convergent_prepilot_preparation",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User directs convergence on actual study; three-model preparation authorization persists",
+      "qualification": "No scored dispatch. Same features/systems; known broken artifacts retained; review/qualification still required."
+    },
+    {
+      "launch_id": "c1-standard-checker-review-20261108T022353Z",
+      "role": "terra-c1-standard-checker-review",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-c1-standard-checker-review-terra-20261108T022353Z",
+      "manifest_created_at_utc": "2026-11-08T02:23:53.891511+00:00",
+      "prompt_sha256": "cca3cf9d7d57d01fdb4bdf8bb6b0385e67004857120c5f29094eb874ba16364a",
+      "controller_sha256": "292927257547a460feee391ffe07e3ac49bee2a58384ed0ae46c215636b6c3b4",
+      "phase": "convergent_prepilot_preparation",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User directs convergence on actual study; three-model preparation authorization persists",
+      "qualification": "No scored dispatch. Same features/systems; known broken artifacts retained; review/qualification still required."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T01:21:35.595891+00:00"
+  "updated_at_utc": "2026-11-08T02:25:10.271245+00:00"
 }
