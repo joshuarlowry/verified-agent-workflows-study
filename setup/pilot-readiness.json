@@ -1,10 +1,10 @@
 {
-  "recorded_at_utc": "2026-11-08T06:35:30.448028+00:00",
+  "recorded_at_utc": "2026-11-08T06:58:45.693719+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
-  "admitted": true,
-  "calibration_runs": 0,
+  "admitted": false,
+  "calibration_runs": 1,
   "scored_runs": 0,
-  "protocol_revision": 13,
+  "protocol_revision": 14,
   "primary_scheduling": "sequential",
   "critical_path": [
     {
@@ -28,7 +28,7 @@
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
-      "state": "Common adapter qualified: actual5workflows/7roles/30generations pass mechanical source/context/broker/history/capture checks; exact dated model/provider and billing cross-checks pass.",
+      "state": "First actual workflow interrupted by a reproduced broker acknowledgement cancellation bug after a waiting shell client timed out. Original endpoint preserved; new common transport fix passes40checks, fresh review pending.",
       "existing_evidence": "Common adapter proof complete. Public-only feature/regression files are staged separately from sealed cases, reference/control sources, logs and previous reviews. Final manifest binding/install remain pending.",
       "limits": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted.",
       "evidence": "setup/actual-native-role-qualification.json"
@@ -47,11 +47,11 @@
     "Remaining reference/evaluator packets until initial C1 technical block"
   ],
   "latest_backup": {
-    "checkpoint": "checkpoints/preparation-20261108T054224127185Z.tar.gz",
-    "sha256": "ccc6a63fede4e64e6fa34fa0cdeed6561298b76c351da7e8ab0a096f500afb3c",
+    "checkpoint": "checkpoints/preparation-20261108T064422263529Z.tar.gz",
+    "sha256": "48bc910617f5adf420f0c7e2aed1818ead2c7559ccbe8c379e0e5b6ea1e94e8d",
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 08, 2026 at 01:35:30 AM EST",
-  "next_collection": "Launch existing randomized10-slot C1 block; first GLM supervising Gemma. Endpoint backups occur between workflows; passive Eastern status publication observes metadata only."
+  "recorded_at_eastern": "Nov 08, 2026 at 01:58:45 AM EST",
+  "next_collection": "Qualify and freeze transport-only repair, then a fresh10-slot C1 block in unchanged workflow order. Retain interrupted v1 attempt separately; no agent continuation or quality rescue."
 }

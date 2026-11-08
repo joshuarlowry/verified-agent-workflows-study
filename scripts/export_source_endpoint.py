@@ -39,6 +39,9 @@ def main():
     parser.add_argument('--source', required=True, type=Path)
     parser.add_argument('--baseline', required=True, type=Path)
     parser.add_argument('--destination', required=True, type=Path)
+    parser.add_argument('--branch', default='fixture/c1-gemma-alternative-repair')
+    parser.add_argument('--application-author', default='google/gemma-4-31b-it')
+    parser.add_argument('--commit-message', default='Package Gemma C1 repair first-return source unchanged')
     args = parser.parse_args()
     if os.geteuid() != 0:
         raise ValueError('Use the root preparation controller')
@@ -59,10 +62,11 @@ def main():
                               env=env, capture_output=True, check=True).stdout
     if git(baseline, 'rev-parse', 'HEAD').decode().strip() != BASELINE:
         raise ValueError('Wrong baseline commit')
+    git(baseline, 'check-ref-format', '--branch', args.branch)
     destination.mkdir(mode=0o700)
     repo = destination/'source'
     git(destination, 'clone', '--no-local', '--no-hardlinks', str(baseline), str(repo))
-    git(repo, 'checkout', '-b', 'fixture/c1-gemma-alternative-repair')
+    git(repo, 'checkout', '-b', args.branch)
     for p in repo.iterdir():
         if p.name == '.git':
             continue
@@ -77,21 +81,23 @@ def main():
     if inventory(repo) != before:
         raise ValueError('Source copy mismatch')
     git(repo, 'add', '--all')
-    git(repo, 'commit', '-m', 'Package Gemma C1 repair first-return source unchanged')
+    git(repo, 'commit', '--allow-empty', '-m', args.commit_message)
     commit = git(repo, 'rev-parse', 'HEAD').decode().strip()
     patch = destination/'baseline.patch'
     patch.write_bytes(git(repo, 'diff', '--binary', BASELINE, commit, '--', '.'))
     replay = destination/'roundtrip'
     git(destination, 'clone', '--no-local', '--no-hardlinks', str(baseline), str(replay))
-    git(replay, 'apply', '--check', str(patch))
-    git(replay, 'apply', str(patch))
+    if patch.stat().st_size:
+        git(replay, 'apply', '--check', str(patch))
+        git(replay, 'apply', str(patch))
     if inventory(replay) != before or inventory(source) != before:
         raise ValueError('Patch roundtrip or untouched-source verification failed')
     bundle = destination/'endpoint.bundle'
     git(repo, 'bundle', 'create', str(bundle), '--all')
     record = {'kind': 'mechanical_source_endpoint_packaging_not_implementation_or_acceptance',
               'recorded_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-              'application_author': 'google/gemma-4-31b-it',
+              'application_author': args.application_author,
+              'branch': args.branch,
               'commit_author': 'Study mechanical controller', 'original_model_source_unchanged': True,
               'baseline_commit': BASELINE, 'packaged_commit': commit,
               'application_tree': git(repo, 'rev-parse', 'HEAD^{tree}').decode().strip(),

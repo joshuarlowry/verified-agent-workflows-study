@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 13,
-  "status": "C1_calibration_admitted_scored_not_admitted",
+  "protocol_revision": 14,
+  "status": "C1_calibration_interrupted_transport_requalification",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -612,9 +612,9 @@
       "id": "common_adapter",
       "phase": "before_calibration",
       "detail": "qualify full study Context/broker path and persistent raw provider usage capture; apply and qualify all registered provider pins including Gemma BF16",
-      "resolved": true,
+      "resolved": false,
       "evidence": "setup/actual-native-role-qualification.json",
-      "resolution_scope": "Common native OpenCode/LiteLLM/OpenRouter/Context/broker/usage adapter only. No C1 feature quality, evaluator, final task-material install/freeze or calibration admission granted."
+      "resolution_scope": "Prior model/provider/Context/capture qualification remains evidence for unchanged components. Handoff acknowledgement repair must pass fresh source review and transport qualification before clean replay."
     },
     {
       "id": "fixture_and_corpus",
@@ -817,7 +817,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "C1 ten-slot calibration admitted after frozen machine qualification. Remaining30calibration and165scored slots retain all existing preparation gates; no run result inferred from readiness.",
+  "setup_progress": "1C1calibration attempt dispatched and interrupted by a reproduced handoff acknowledgement bug;0scored. Endpoint and raw logs privately backed up. Remaining dispatch stopped. Mechanical fix passes40checks; fresh GLM review pending before a new frozen clean block.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -928,8 +928,8 @@
         "run_id": "cal-c1-10"
       }
     ],
-    "admitted": true,
-    "admission_evidence_sha256": "e6521775af10b7892e566cb89f84a4c0d20c907b27a2fc22fcf69aad32f3d103",
+    "admitted": false,
+    "admission_evidence_sha256": null,
     "before_dispatch": [
       "C1 standard acceptance suite independently reviewed, frozen and qualified against baseline/reference/valid alternate/negative controls",
       "Single-workflow common native harness, real model roles, approved documentation, capture/accounting and endpoint integrity qualified",
@@ -973,7 +973,8 @@
         "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-block-staging-20261108T0550/frozen-manifests/model_roles.json",
         "sha256": "088575f64b0db41980232f91be02fb11fbcdd025a2d74813db041317860c4907"
       }
-    ]
+    ],
+    "prior_frozen_registration": "Preserved privately with its7manifests; v1 first dispatch retained as infrastructure interruption, no successful completion claim."
   },
   "convergence_amendment": {
     "recorded_at_utc": "2026-11-08T02:21:49.735221+00:00",
@@ -1008,5 +1009,18 @@
     "semantic_patch_review": "Optional extension; no unregistered per-submission LLM judge, no implicit production/merge approval, no manufactured review_bound record. Any retained review_required source-gate output refers to that separate unperformed semantic review, never a completed core check.",
     "test_preservation": "Protected original coverage and its assertion/barrier trace must remain; source/test deletions or unverified migrations are recorded honestly and cannot be silently treated as preservation.",
     "qualified_before_calibration": false
+  },
+  "handoff_transport_amendment": {
+    "revision": 14,
+    "recorded_at_utc": "2026-11-08T06:58:45.693719+00:00",
+    "reason": "A completed worker response was durable, but acknowledgement to a timed-out shell client failed; the broker cancelled the whole workflow. Reproduced without inference.",
+    "fix_scope": "A lost acknowledgement after a durable result is recorded for idempotent request-ID retry and does not globally abort the workflow. Genuine worker/controller failures and evidence-write failures still cancel.",
+    "changed_agent_prompts": false,
+    "changed_application_or_acceptance": false,
+    "models_settings_deadlines_unchanged": true,
+    "fresh_cross_review_required": true,
+    "status": "mechanical_fix_passes40controller_checks_review_pending",
+    "clean_replay_policy": "Preserve the interrupted first attempt in results and total study cost. Before any further collection, qualify/freeze the common transport repair and register a fresh10-slot clean C1 block with the same workflow order and fresh sessions/source. No continuation or rescue of the first attempt.",
+    "actual_attempt_accounting": "Target remains40clean calibration+165scored; at least1additional interrupted technical attempt is retained and reported, not silently excluded from study-wide feasibility/cost."
   }
 }
