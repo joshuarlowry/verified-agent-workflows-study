@@ -1006,9 +1006,24 @@
       "reference_or_evaluator_inputs": false,
       "qualification": "Original contaminated setup attempt retained separately; fresh clean namespace; all model/cross-review/qualification gates remain required. No primary rerun or rescue.",
       "authorization": "Existing three-model fixture construction/cross-review waiver and user requirement to redo contaminated preparation."
+    },
+    {
+      "launch_id": "c2-clean-alternative-r2-review-appointment-20261108T185010Z",
+      "role": "glm-C2-clean-alternative-revision2-source-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "phase": "fixture_source_cross_review_only",
+      "run_id": null,
+      "prompt_sha256": "26f1b24c9df911dd0762e05cbe1be70101fb199d11de4a557234716018a76ec8",
+      "status": "appointed_not_staged_no_source_bound",
+      "fresh_session": true,
+      "reference_or_evaluator_inputs": false,
+      "requires_clean_source_binding": true,
+      "self_approval": false,
+      "qualification": "Source/prompt review only; full external/negative/three-clean/runtime gates remain required. Contaminated attempt cannot be used.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T18:39:17.251904+00:00"
+  "updated_at_utc": "2026-11-08T18:50:10.808352+00:00"
 }
