@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "protocol_revision": 20,
+  "protocol_revision": 21,
   "status": "prospective_preservation_disclosed_C2_C4_packets_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
@@ -193,17 +193,18 @@
   },
   "pricing_rule": {
     "primary": "frozen uncached API-equivalent input/output list prices",
-    "rate_card": null,
-    "rate_card_sha256": null,
+    "rate_card": "setup/economic-rate-card.json",
+    "rate_card_sha256": "66f1bffcf9a7a5df43b2ebacd997d29b60cc532e63ddd07a01fab1db44c749df",
     "formula": "sum(inclusive_input/1e6 * list_input_price + billable_output/1e6 * list_output_price) across all components and paid retries",
     "cache_discounts_in_primary": false,
-    "billable_output_mapping_sha256": null,
+    "billable_output_mapping_sha256": "efb1fb19fa0d07f66095e8405a6c90ba566ebb3dc9066954981b8771b2ac058f",
     "secondary": [
       "observed OpenRouter invoices",
       "cache-aware API pricing with explicit write uncertainty",
       "hosting and labor scenarios"
     ],
-    "missing_usage_policy": "unresolved unless decision-valid bounds are available"
+    "missing_usage_policy": "unresolved unless decision-valid bounds are available",
+    "freeze_scope": "Prospective from revision21; C1 standardized repricing, if shown, is explicitly post-hoc."
   },
   "construction_provenance": {
     "subject_models_may_author_fixture": true,

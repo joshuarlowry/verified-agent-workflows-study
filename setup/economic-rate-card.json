@@ -1,0 +1,77 @@
+{
+  "kind": "frozen_prospective_uncached_API_equivalent_primary_rate_card",
+  "frozen_at_utc": "2026-11-08T16:29:05.054466+00:00",
+  "currency": "USD",
+  "price_basis": "Selected pinned provider endpoint public list prices, not global cheapest-model pricing or subscription allocation. Frozen consistently for subsequent standardized comparisons.",
+  "models": [
+    {
+      "model": "Gemma 4",
+      "requested_id": "google/gemma-4-31b-it",
+      "resolved_id": "google/gemma-4-31b-it-20260402",
+      "provider": "Crusoe",
+      "provider_tag": "crusoe/bf16",
+      "input_usd_per_million": "0.14000000",
+      "output_usd_per_million": "0.4000000",
+      "cache_read_usd_per_million_secondary": "0.14000000",
+      "cache_write_usd_per_million_secondary": null,
+      "provider_price_overrides_usd_per_token": []
+    },
+    {
+      "model": "GLM",
+      "requested_id": "z-ai/glm-5.3-flash",
+      "resolved_id": "z-ai/glm-5.3-flash-20260826",
+      "provider": "Relace",
+      "provider_tag": "relace/fp4",
+      "input_usd_per_million": "0.0335000000",
+      "output_usd_per_million": "0.083000000",
+      "cache_read_usd_per_million_secondary": "0.03000000",
+      "cache_write_usd_per_million_secondary": null,
+      "provider_price_overrides_usd_per_token": []
+    },
+    {
+      "model": "Terra",
+      "requested_id": "openai/gpt-6.1-terra",
+      "resolved_id": "openai/gpt-6.1-terra-20261026",
+      "provider": "Azure",
+      "provider_tag": "azure",
+      "input_usd_per_million": "1.000000",
+      "output_usd_per_million": "5.000000",
+      "cache_read_usd_per_million_secondary": "0.05000000",
+      "cache_write_usd_per_million_secondary": "1.25000000",
+      "provider_price_overrides_usd_per_token": [
+        {
+          "min_prompt_tokens": 272000,
+          "prompt": "0.000002",
+          "completion": "0.0000075",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025"
+        }
+      ]
+    }
+  ],
+  "formula": "sum(inclusive_input/1e6 * list_input_price + billable_output/1e6 * list_output_price) across all components and paid retries",
+  "cache_discounts_in_primary": false,
+  "input_accounting": "Inclusive provider prompt tokens, including cached subsets, priced once at the uncached input rate.",
+  "output_accounting": "Provider completion tokens once; reasoning is diagnostic and is never added again. Deduplicate stable response IDs; native/gateway/admin views cross-check rather than add.",
+  "billable_output_mapping_evidence": "setup/clean-usage-preflight.json",
+  "billable_output_mapping_sha256": "efb1fb19fa0d07f66095e8405a6c90ba566ebb3dc9066954981b8771b2ac058f",
+  "source": "setup/economic-rate-card-source.json",
+  "source_sha256": "ccd1bbe2faeab9c1c5f8475481c29151c703c8b005471020e326203a810cf5d9",
+  "model_calls": 0,
+  "applicability": "Prospective freeze after C1 pilot results and before C2/C3/C4 primary or scored collection. C1 charges remain observed secondary subtotals. Any C1 standardized repricing is post-hoc, not preregistered economics.",
+  "tier_policy": "Apply any captured prompt-token threshold override when applicable. Current common 200000-token context metadata is below Terra 272000-token tier boundary; do not silently omit tiers if limits change.",
+  "missing_usage_policy": "Unresolved unless defensible bounds exist; missing failed-call usage is not zero. Known priced usage can only be labeled a subtotal/lower bound.",
+  "secondary_only": [
+    "Provider-reported actual charges",
+    "Cache-aware pricing including explicit missing write counters",
+    "Hosting, subscription/access allocation and human labor scenarios"
+  ],
+  "does_not_change": [
+    "model route",
+    "model sampling/reasoning",
+    "token or dollar budgets",
+    "workflow deadline",
+    "completion gates",
+    "existing C1 outcomes"
+  ]
+}
