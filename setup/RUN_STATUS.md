@@ -1,15 +1,15 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 02:23:56 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 02:25:56 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 02:23:56 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 02:25:56 AM EST (UTC-0500)
 
 **running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| 0-supervisor | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 02:23:56 AM EST (UTC-0500) | — |
-| 0-worker | google/gemma-4-31b-it | running | Nov 08, 2026 at 02:23:56 AM EST (UTC-0500) | — |
+| 0-supervisor | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 02:23:56 AM EST (UTC-0500) | Nov 08, 2026 at 02:25:56 AM EST (UTC-0500) |
+| 0-worker | google/gemma-4-31b-it | returned requires cross review | Nov 08, 2026 at 02:23:56 AM EST (UTC-0500) | Nov 08, 2026 at 02:25:56 AM EST (UTC-0500) |
 | 1-supervisor | openai/gpt-6.1-terra | queued | — | — |
 | 1-worker | google/gemma-4-31b-it | queued | — | — |
 
