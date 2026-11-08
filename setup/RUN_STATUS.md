@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:11:17 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:20:31 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 12:39:43 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:20:30 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-C2-external-checks-revision-2 | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 12:39:43 PM EST (UTC-0500) | — |
+| glm-C2-external-checks-revision-2 | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 12:39:43 PM EST (UTC-0500) | Nov 08, 2026 at 01:20:30 PM EST (UTC-0500) |
 
 Staged explicit fixture revision after preserved different-model review. No candidate source/outcomes supplied. Wait current candidate review and backup before sequential launch; revision2 requires fresh different-model review and actual qualification.
 
