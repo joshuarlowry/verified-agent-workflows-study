@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 15,
-  "status": "C1_v2_calibration_admitted_scored_not_admitted",
+  "protocol_revision": 16,
+  "status": "C1_v3_outage_recovery_admitted_scored_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -324,8 +324,8 @@
     "historical_evaluator_records_notice": "Earlier independent evaluator/checker evidence fields refer to retained historical preparation revisions, not the current acceptance suite. Current status and evidence above control; acceptance_suite_sha256 remains null.",
     "protected_baseline_regression_status": "All17protected regression cases pass baseline and3fresh replays each of two valid implementations. Documented assertion migrations remain finite bounds; subject tests are supplementary."
   },
-  "prompt_bundle_sha256": "4deb03a168940fe73a7b8c6d33f91da128b1fd2b2401c7c44abb984c0aea9579",
-  "harness_manifest_sha256": "6fdfedcc252355ae1be1407fff11d2be48622c3578887845a2fcd094ec029cdb",
+  "prompt_bundle_sha256": "22d066cf26f2fae41fdf1ae18ca9579013d532f16ac79c15732793e2a3a8b148",
+  "harness_manifest_sha256": "ab6a6f3458d17f3b5062ca25ba769b195f1a91a15f168f0d26699fd26f4d4747",
   "usage_capture_smoke_results_sha256": "b124909e0f4f5db55e4fb311e6833ee57015d4d886add9927fbc14a49e56491b",
   "worker_broker_preflight_sha256": "67f4cf1d8fed3bd24c1c9f0ca8e0cd158fcfb13d43edb5e4e6799ad085ee435e",
   "randomization_seed": null,
@@ -817,7 +817,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "Fresh C1v2 ten-slot calibration admitted. Interrupted C1v1 remains in feasibility/cost, separate from clean collection. Remaining30calibration and165scored slots retain existing preparation gates; no implementation result inferred from readiness.",
+  "setup_progress": "C1 recovery after transient host DNS failure: three earlier ordinary first endpoints retained, interrupted Gemma recorded as additional technical overhead, seven fresh remaining slots admitted with identical original relative order and unchanged subject treatment. No endpoint graded.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -853,125 +853,111 @@
   },
   "calibration_initial_block": {
     "task": "C1",
-    "workflows": 10,
+    "workflows": 7,
     "included_in_registered_40": true,
     "order_seed": 3711577821265472498,
     "order": [
-      {
-        "position": 1,
-        "task": "C1",
-        "arm": "GLM supervising Gemma",
-        "repetition": 1,
-        "run_id": "cal-c1-v2-01"
-      },
-      {
-        "position": 2,
-        "task": "C1",
-        "arm": "GLM alone",
-        "repetition": 1,
-        "run_id": "cal-c1-v2-02"
-      },
-      {
-        "position": 3,
-        "task": "C1",
-        "arm": "Terra alone",
-        "repetition": 1,
-        "run_id": "cal-c1-v2-03"
-      },
       {
         "position": 4,
         "task": "C1",
         "arm": "Gemma alone",
         "repetition": 1,
-        "run_id": "cal-c1-v2-04"
+        "run_id": "cal-c1-v3-04",
+        "prior_run_id": "cal-c1-v2-04"
       },
       {
         "position": 5,
         "task": "C1",
         "arm": "Terra supervising Gemma",
         "repetition": 1,
-        "run_id": "cal-c1-v2-05"
+        "run_id": "cal-c1-v3-05",
+        "prior_run_id": "cal-c1-v2-05"
       },
       {
         "position": 6,
         "task": "C1",
         "arm": "Terra alone",
         "repetition": 2,
-        "run_id": "cal-c1-v2-06"
+        "run_id": "cal-c1-v3-06",
+        "prior_run_id": "cal-c1-v2-06"
       },
       {
         "position": 7,
         "task": "C1",
         "arm": "Terra supervising Gemma",
         "repetition": 2,
-        "run_id": "cal-c1-v2-07"
+        "run_id": "cal-c1-v3-07",
+        "prior_run_id": "cal-c1-v2-07"
       },
       {
         "position": 8,
         "task": "C1",
         "arm": "GLM alone",
         "repetition": 2,
-        "run_id": "cal-c1-v2-08"
+        "run_id": "cal-c1-v3-08",
+        "prior_run_id": "cal-c1-v2-08"
       },
       {
         "position": 9,
         "task": "C1",
         "arm": "GLM supervising Gemma",
         "repetition": 2,
-        "run_id": "cal-c1-v2-09"
+        "run_id": "cal-c1-v3-09",
+        "prior_run_id": "cal-c1-v2-09"
       },
       {
         "position": 10,
         "task": "C1",
         "arm": "Gemma alone",
         "repetition": 2,
-        "run_id": "cal-c1-v2-10"
+        "run_id": "cal-c1-v3-10",
+        "prior_run_id": "cal-c1-v2-10"
       }
     ],
     "admitted": true,
-    "admission_evidence_sha256": "47e3e396b3863d00374b3deb74fa0d3939f3a79b119435f04d23f23d9f21befb",
+    "admission_evidence_sha256": "511cc112c1838cee2fcd55b05ee093caec5c71dadfee335825fd45aa37e20cf4",
     "before_dispatch": [
-      "C1 standard acceptance suite independently reviewed, frozen and qualified against baseline/reference/valid alternate/negative controls",
-      "Single-workflow common native harness, real model roles, approved documentation, capture/accounting and endpoint integrity qualified",
-      "Source/lock/image/prompt/provider/tool manifests frozen for this block",
-      "Transport acknowledgement fix cross-reviewed and qualified; fresh v2 identities/source/sessions frozen. Preserve interrupted v1 and its9unrun slots as execution history."
+      "All original C1 subject/native-adapter/acceptance/model/docs qualifications remain unchanged and hash-bound.",
+      "Three earlier ordinary endpoints retained; only the documented infrastructure interruption is replaced in a fresh session/workspace.",
+      "Seven remaining positions preserve original task/arm/repetition/order; complete initial sample remains10.",
+      "Different-model source review, DNS/admin serving recheck, exact prompts and all seven manifests verified before dispatch."
     ],
-    "remaining_preparation": "Qualify C2-C4 before their calibration slots and the first five scored packets before scoring; remaining builders remain blind to comparative outcomes. Full planned sample and all registered systems/endpoints remain unchanged.",
-    "admitted_at_utc": "2026-11-08T07:56:28.061772+00:00",
+    "remaining_preparation": "Retain three original C1 ordinary endpoints and collect seven remaining fresh slots. Qualify C2-C4 before their30calibration slots and all scored packets before165scored runs; no sample reduction or quality rescue.",
+    "admitted_at_utc": "2026-11-08T08:59:10.765425+00:00",
     "frozen_manifests": [
       {
         "category": "baseline",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/baseline.json",
-        "sha256": "5ecd80ebf092c1064ae681fc6c1e9e1e05be89c49063ff0e4f04e088d4a11fb4"
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/baseline.json",
+        "sha256": "c10eacaa8115d069ba9eb7704021940f47a55ebc32eb2d6e7a5eec99431f70a1"
       },
       {
         "category": "image",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/image.json",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/image.json",
         "sha256": "75fbc541180663e7fe1ef664057e52ce1ed27b83add4be4651400240b667cf60"
       },
       {
         "category": "harness",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/harness.json",
-        "sha256": "6fdfedcc252355ae1be1407fff11d2be48622c3578887845a2fcd094ec029cdb"
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/harness.json",
+        "sha256": "ab6a6f3458d17f3b5062ca25ba769b195f1a91a15f168f0d26699fd26f4d4747"
       },
       {
         "category": "docs",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/docs.json",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/docs.json",
         "sha256": "9662e1c3af13c284cc9776e1b0e39a8a7627cf9e5c143015cb51a22a0cac17fa"
       },
       {
         "category": "acceptance",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/acceptance.json",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/acceptance.json",
         "sha256": "c7c579c4482474eb180fec71785d52e217bf12067d128039c4d59b3509a7b2c6"
       },
       {
         "category": "prompts",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/prompts.json",
-        "sha256": "4deb03a168940fe73a7b8c6d33f91da128b1fd2b2401c7c44abb984c0aea9579"
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/prompts.json",
+        "sha256": "22d066cf26f2fae41fdf1ae18ca9579013d532f16ac79c15732793e2a3a8b148"
       },
       {
         "category": "model_roles",
-        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/model_roles.json",
+        "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/model_roles.json",
         "sha256": "96c3d351b64f5aa29e6aff4e564b718eb608a2de362c257b0dd819bbd464b233"
       }
     ],
@@ -1071,7 +1057,140 @@
       "first_endpoint_preserved": true,
       "clean_replay_is_separate": true
     },
-    "version": 2
+    "version": 3,
+    "original_initial_slot_count": 10,
+    "outage_recovery": {
+      "prior_collection": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/collection.json",
+      "prior_collection_sha256": "e28dbd52943ced366d42e98840c722ccec1ad832576b883156a7aa2f91d76248",
+      "retained_run_ids": [
+        "cal-c1-v2-01",
+        "cal-c1-v2-02",
+        "cal-c1-v2-03"
+      ],
+      "replaced_technical_attempt": "cal-c1-v2-04",
+      "reason": "Captured transient host DNS failure; no quality feedback or resumed conversation.",
+      "earlier_block": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710",
+      "identical_subject_inputs": true,
+      "parent_prompt_changes": false,
+      "adapter_changes": false,
+      "machine_acceptance_changes": false
+    },
+    "prior_interrupted_attempt_count": 2,
+    "history_v2": {
+      "frozen_registration_sha256": "5ec720325644e7f7d7e560f7c0e71d3213971da9825d8c3bfcfe38a3138d5188",
+      "collection": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/collection.json",
+      "collection_sha256": "e28dbd52943ced366d42e98840c722ccec1ad832576b883156a7aa2f91d76248",
+      "order": [
+        {
+          "position": 1,
+          "task": "C1",
+          "arm": "GLM supervising Gemma",
+          "repetition": 1,
+          "run_id": "cal-c1-v2-01"
+        },
+        {
+          "position": 2,
+          "task": "C1",
+          "arm": "GLM alone",
+          "repetition": 1,
+          "run_id": "cal-c1-v2-02"
+        },
+        {
+          "position": 3,
+          "task": "C1",
+          "arm": "Terra alone",
+          "repetition": 1,
+          "run_id": "cal-c1-v2-03"
+        },
+        {
+          "position": 4,
+          "task": "C1",
+          "arm": "Gemma alone",
+          "repetition": 1,
+          "run_id": "cal-c1-v2-04"
+        },
+        {
+          "position": 5,
+          "task": "C1",
+          "arm": "Terra supervising Gemma",
+          "repetition": 1,
+          "run_id": "cal-c1-v2-05"
+        },
+        {
+          "position": 6,
+          "task": "C1",
+          "arm": "Terra alone",
+          "repetition": 2,
+          "run_id": "cal-c1-v2-06"
+        },
+        {
+          "position": 7,
+          "task": "C1",
+          "arm": "Terra supervising Gemma",
+          "repetition": 2,
+          "run_id": "cal-c1-v2-07"
+        },
+        {
+          "position": 8,
+          "task": "C1",
+          "arm": "GLM alone",
+          "repetition": 2,
+          "run_id": "cal-c1-v2-08"
+        },
+        {
+          "position": 9,
+          "task": "C1",
+          "arm": "GLM supervising Gemma",
+          "repetition": 2,
+          "run_id": "cal-c1-v2-09"
+        },
+        {
+          "position": 10,
+          "task": "C1",
+          "arm": "Gemma alone",
+          "repetition": 2,
+          "run_id": "cal-c1-v2-10"
+        }
+      ],
+      "dispatched": [
+        {
+          "run_id": "cal-c1-v2-01",
+          "arm": "GLM supervising Gemma",
+          "repetition": 1,
+          "status": "first_endpoint_frozen_ungraded",
+          "endpoint_reason": "final"
+        },
+        {
+          "run_id": "cal-c1-v2-02",
+          "arm": "GLM alone",
+          "repetition": 1,
+          "status": "first_endpoint_frozen_ungraded",
+          "endpoint_reason": "final"
+        },
+        {
+          "run_id": "cal-c1-v2-03",
+          "arm": "Terra alone",
+          "repetition": 1,
+          "status": "first_endpoint_frozen_ungraded",
+          "endpoint_reason": "final"
+        },
+        {
+          "run_id": "cal-c1-v2-04",
+          "arm": "Gemma alone",
+          "repetition": 1,
+          "status": "first_endpoint_frozen_ungraded",
+          "endpoint_reason": "infrastructure_failure"
+        }
+      ],
+      "unrun": [
+        "cal-c1-v2-05",
+        "cal-c1-v2-06",
+        "cal-c1-v2-07",
+        "cal-c1-v2-08",
+        "cal-c1-v2-09",
+        "cal-c1-v2-10"
+      ]
+    }
   },
   "convergence_amendment": {
     "recorded_at_utc": "2026-11-08T02:21:49.735221+00:00",
@@ -1133,5 +1252,14 @@
     "qualification": "Actual native in-flight outage replay passes; expiry fault replay and fresh GLM source review required before freeze.",
     "new_clean_block_dispatch_allowed": true,
     "status": "source_review_accepted_native_stop_controls_passed"
+  },
+  "outage_recovery_amendment": {
+    "registered_at_utc": "2026-11-08T08:59:10.765425+00:00",
+    "evidence": "setup/c1-v2-dns-interruption.json",
+    "schedule_review_sha256": "61647071c2d9409d2862f4b8e1c1b81fdf882951d9f951beb9dc7a884c5a864b",
+    "scope": "Deterministic schedule lineage/count and passive display only; native adapter, role prompts, model/settings, feature/source/acceptance/docs/deadlines unchanged.",
+    "source_review": "Fresh GLM actual4source review; verdict changes_required preserved; conditional F1 resolved for exact supported DNS record by host proof, no source edit or generic recovery claim.",
+    "technical_attempts_included_in_overhead": true,
+    "fresh_replacement_not_agent_continuation": true
   }
 }

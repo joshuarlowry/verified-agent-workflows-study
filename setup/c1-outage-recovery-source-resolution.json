@@ -1,0 +1,27 @@
+{
+  "kind": "host_applicability_resolution_for_exact_C1_DNS_recovery",
+  "recorded_at_utc": "2026-11-08T08:58:46.850535+00:00",
+  "review": {
+    "run": "outage-schedule-source-review-20261108T084856Z",
+    "sha256": "61647071c2d9409d2862f4b8e1c1b81fdf882951d9f951beb9dc7a884c5a864b",
+    "verdict_preserved": "changes_required",
+    "actual_controller_source_hashes_verified": true,
+    "actual_import_verified": true
+  },
+  "finding": "F1",
+  "finding_remains_valid_for": "Caller exception-path records with status infrastructure_failure_preserved and no endpoint_reason; not supported by this validator. No claim of generic exception recovery.",
+  "current_registered_case": {
+    "run_id": "cal-c1-v2-04",
+    "status": "first_endpoint_frozen_ungraded",
+    "endpoint_reason": "infrastructure_failure",
+    "native_exit_code": -9,
+    "path": "Workflow-reported transport interruption, not caller exception path.",
+    "prior_collection_sha256": "e28dbd52943ced366d42e98840c722ccec1ad832576b883156a7aa2f91d76248"
+  },
+  "actual_schedule_validation": "pass using imported actual source and protected real prior collection; three ordinary endpoints retained, seven fresh identities preserve slots4..10",
+  "resolved_for_registered_recovery": true,
+  "source_edits_after_review": false,
+  "scope": "This exact SHA-bound DNS recovery only. Broader exception-record recovery remains unsupported; no reviewer acceptance or generic fix is invented. Reviewer explicitly marked this finding nonblocking for a workflow-reported prior reason; applicability is a host-only fact. F2 caller SHA defense present, F3 presentation fixed10matches frozen initial count, F4 endpoints means recorded attempts not verified completion and interruptions remain separate, F5 empty record rejects; no further blocking finding.",
+  "subject_model_quality_accessed": false,
+  "model_calls": 0
+}

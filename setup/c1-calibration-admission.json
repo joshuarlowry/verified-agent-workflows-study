@@ -1,75 +1,72 @@
 {
-  "admitted_at_utc": "2026-11-08T07:56:28.061772+00:00",
-  "scope": "Only the existing randomized C1 ten-slot calibration block;0scored admitted. Remaining tasks/sample unchanged.",
+  "kind": "C1_registered_outage_recovery_admission",
+  "admitted_at_utc": "2026-11-08T08:59:10.765425+00:00",
+  "scope": "Seven remaining slots plus three preserved ordinary endpoints complete original10slot C1 calibration block; no scored admission.",
   "manifest_records": [
     {
       "category": "baseline",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/baseline.json",
-      "sha256": "5ecd80ebf092c1064ae681fc6c1e9e1e05be89c49063ff0e4f04e088d4a11fb4"
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/baseline.json",
+      "sha256": "c10eacaa8115d069ba9eb7704021940f47a55ebc32eb2d6e7a5eec99431f70a1"
     },
     {
       "category": "image",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/image.json",
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/image.json",
       "sha256": "75fbc541180663e7fe1ef664057e52ce1ed27b83add4be4651400240b667cf60"
     },
     {
       "category": "harness",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/harness.json",
-      "sha256": "6fdfedcc252355ae1be1407fff11d2be48622c3578887845a2fcd094ec029cdb"
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/harness.json",
+      "sha256": "ab6a6f3458d17f3b5062ca25ba769b195f1a91a15f168f0d26699fd26f4d4747"
     },
     {
       "category": "docs",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/docs.json",
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/docs.json",
       "sha256": "9662e1c3af13c284cc9776e1b0e39a8a7627cf9e5c143015cb51a22a0cac17fa"
     },
     {
       "category": "acceptance",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/acceptance.json",
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/acceptance.json",
       "sha256": "c7c579c4482474eb180fec71785d52e217bf12067d128039c4d59b3509a7b2c6"
     },
     {
       "category": "prompts",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/prompts.json",
-      "sha256": "4deb03a168940fe73a7b8c6d33f91da128b1fd2b2401c7c44abb984c0aea9579"
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/prompts.json",
+      "sha256": "22d066cf26f2fae41fdf1ae18ca9579013d532f16ac79c15732793e2a3a8b148"
     },
     {
       "category": "model_roles",
-      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/frozen-manifests/model_roles.json",
+      "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-outage-recovery-v3-20261108T083957Z/frozen-manifests/model_roles.json",
       "sha256": "96c3d351b64f5aa29e6aff4e564b718eb608a2de362c257b0dd819bbd464b233"
     }
   ],
-  "transport_review_sha256": "2d643e7efa04ab4b2deb9c1f9e2a3b1ba5ac0b78e50638f755831c141a1475b0",
-  "stop_classification_review_sha256": "87628e6b3d87a2539c1febfebbb9b77e78123a3282784a2fbd9c3ad9ff13e472",
-  "transport_qualification_sha256": "67f4cf1d8fed3bd24c1c9f0ca8e0cd158fcfb13d43edb5e4e6799ad085ee435e",
-  "prior_interrupted_attempts_retained": 1,
-  "source_review": {
-    "path": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-additive-rule-review-20261108T055751Z/workspace/output/c1-rule-review/REVIEW.json",
-    "sha256": "08c72af68fbbf406e788c01d5f74ac478ba830be25a9df1e7d5be61b54d616e8",
-    "finding_R1": "Exact cited artifacts restored as separate controller resolution, no source edit or new model approval claim."
+  "schedule_review_sha256": "61647071c2d9409d2862f4b8e1c1b81fdf882951d9f951beb9dc7a884c5a864b",
+  "source_review_verdict": "changes_required_conditional",
+  "host_resolution_sha256": "71ba21f7589f1018bbbe0143b26b372a98b04679f90bbc792224fcc50035c070",
+  "prior_interrupted_attempts_retained": 2,
+  "ordinary_endpoints_carried_forward": [
+    "cal-c1-v2-01",
+    "cal-c1-v2-02",
+    "cal-c1-v2-03"
+  ],
+  "outage_recovery": {
+    "prior_collection": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710/collection.json",
+    "prior_collection_sha256": "e28dbd52943ced366d42e98840c722ccec1ad832576b883156a7aa2f91d76248",
+    "retained_run_ids": [
+      "cal-c1-v2-01",
+      "cal-c1-v2-02",
+      "cal-c1-v2-03"
+    ],
+    "replaced_technical_attempt": "cal-c1-v2-04",
+    "reason": "Captured transient host DNS failure; no quality feedback or resumed conversation.",
+    "earlier_block": "/home/josh/.local/state/study2-setup/clean-20261107T122746Z/c1-clean-block-v2-20261108T0710",
+    "identical_subject_inputs": true,
+    "parent_prompt_changes": false,
+    "adapter_changes": false,
+    "machine_acceptance_changes": false
   },
-  "proofs": {
-    "runtime20": "4bc162d4b29c3c4937f1a5584832d1cb7d763471a2120d31552208fbbc775261",
-    "source_and_role": "1b799144865f30e770e5dcc7c06eca2fcc296976e62615c7439d2e76096f5b82"
-  },
-  "independent_family_claim": false,
-  "cross_review": "Three authorized study families; fresh different-model review, not external-family/human independence.",
-  "frozen_registration_sha256": "5ec720325644e7f7d7e560f7c0e71d3213971da9825d8c3bfcfe38a3138d5188",
-  "calibration_runs": 0,
-  "scored_runs": 0,
-  "status": "C1_admitted_not_yet_dispatched",
-  "calibration_block_version": 2,
-  "prior_interrupted_calibration_attempts": 1,
-  "total_calibration_dispatched_including_prior": 1,
-  "passive_status_observer": {
-    "source": "scripts/observe_c1_calibration.py",
-    "sha256": "009fbf7c6c9f425ede0679b420e78f62ea36d17cedea1e993b019012e2fa571a",
-    "model_calls": 0,
-    "subject_harness_change": false
-  },
-  "metadata_reconciliation_before_dispatch": {
-    "recorded_at_utc": "2026-11-08T08:01:43.930866+00:00",
-    "field": "checks.C1_alternative_runtime_status",
-    "effect": "Remove stale historical status text only; all execution and acceptance parameters identical.",
-    "prior_snapshot_preserved": true
-  }
+  "subject_treatment_changed": false,
+  "model_calls_by_this_freeze": 0,
+  "no_quality_inspection_or_feedback": true,
+  "frozen_registration_sha256": "8732266ecaff9624d804e1c39ca40c870fd13a11302087e91357afdbf36061cf",
+  "status": "C1_recovery_admitted_not_dispatched"
 }

@@ -11,7 +11,7 @@ def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--block',type=Path,default=BLOCK);args=parser.parse_args();BLOCK=args.block.resolve(strict=True)
  if os.geteuid()!=0:raise SystemExit('Root passive observer required')
  if not BLOCK.is_relative_to(Path('/home/josh/.local/state/study2-setup')) or BLOCK.stat().st_uid!=0 or BLOCK.stat().st_mode&0o022:raise ValueError('Protected study block required')
- registration=json.loads((BLOCK/'frozen-registration.json').read_text());block_version=registration['calibration_initial_block'].get('version',1);prior=len(registration['calibration_initial_block'].get('history_v1',{}).get('dispatched',[]))
+ registration=json.loads((BLOCK/'frozen-registration.json').read_text());admission=registration['calibration_initial_block'];block_version=admission.get('version',1);prior=admission.get('prior_interrupted_attempt_count',len(admission.get('history_v1',{}).get('dispatched',[])));block_size=admission['workflows'];retained=len(admission.get('outage_recovery',{}).get('retained_run_ids',[]))
  previous=None
  while True:
   if not (BLOCK/'collection.json').exists():time.sleep(5);continue
@@ -29,11 +29,11 @@ def main():
   signature=json.dumps({'status':state['status'],'rows':rows,'dispatched':dispatched},sort_keys=True)
   if signature!=previous:
    now=datetime.datetime.now(datetime.timezone.utc).isoformat();ended=sum(x not in ['active','running'] for x in dispatched.values())
-   data={'kind':'registered_C1_calibration_metadata','status':state['status'],'snapshot_at_utc':now,'snapshot_at_eastern':east(now),'event_at_utc':event or state['started']['utc'],'event_at_eastern':east(event or state['started']['utc']),'cohort_id':BLOCK.parent.name,'calibration_block_size':10,'calibration_dispatched':len(dispatched),'calibration_endpoints':ended,'scored_runs':0,'rows':rows,'quality':'Not graded; an endpoint is not verified completion.','scope':'First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.'}
-   data.update(calibration_block_version=block_version,prior_interrupted_calibration_attempts=prior,total_calibration_dispatched_including_prior=len(dispatched)+prior)
-   lines=['# Current run status','','**Status published:** '+data['snapshot_at_eastern'],'','**Latest ledger event:** '+data['event_at_eastern'],'',f"C1 calibration: **{len(dispatched)}/10 dispatched; {ended}/10 endpoints recorded.** Scored: **0**.",'','| Workflow | Repetition | State | Endpoint |','|---|---|---|---|']
+   data={'kind':'registered_C1_calibration_metadata','status':state['status'],'snapshot_at_utc':now,'snapshot_at_eastern':east(now),'event_at_utc':event or state['started']['utc'],'event_at_eastern':east(event or state['started']['utc']),'cohort_id':BLOCK.parent.name,'calibration_block_size':block_size,'calibration_dispatched':len(dispatched),'calibration_endpoints':ended,'scored_runs':0,'rows':rows,'quality':'Not graded; an endpoint is not verified completion.','scope':'Initial C1 calibration within40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.'}
+   data.update(calibration_block_version=block_version,prior_interrupted_calibration_attempts=prior,total_calibration_dispatched_including_prior=len(dispatched)+retained+prior,carried_forward_endpoints=retained,initial_C1_endpoints=ended+retained)
+   lines=['# Current run status','','**Status published:** '+data['snapshot_at_eastern'],'','**Latest ledger event:** '+data['event_at_eastern'],'',f"C1 calibration: **{ended+retained}/10 endpoints recorded** across the initial schedule. Current block: **{len(dispatched)}/{block_size} dispatched; {ended}/{block_size} endpoints recorded.** Scored: **0**.",'','| Workflow | Repetition | State | Endpoint |','|---|---|---|---|']
    lines += [f"| {x['arm']} | {x['repetition']} | {dispatched.get(x['run_id'],x['status'])} | {x.get('endpoint_reason','—')} |" for x in rows]
-   lines += ['',f'Block version: **{block_version}**. Prior interrupted attempts retained: **{prior}**. [Interruption record](c1-v1-technical-interruption.json).']
+   lines += ['',f'Block version: **{block_version}**. Earlier ordinary endpoints carried forward: **{retained}**. Prior interrupted attempts retained: **{prior}**. [First interruption](c1-v1-technical-interruption.json) · [DNS interruption](c1-v2-dns-interruption.json).']
    lines += ['','Endpoints remain ungraded. A final return or deadline may leave incomplete work. Backups run between workflows. All displayed times use America/New_York. [Frozen admission](c1-calibration-admission.json).','']
    with (REPO/'.git/study-status.lock').open('a') as lock:
     fcntl.flock(lock,fcntl.LOCK_EX)

@@ -1,4 +1,4 @@
-"""Deterministic caller for the registered, separately admitted ten-slot C1 block.
+"""Deterministic caller for the registered, separately admitted C1 calibration schedule.
 
 No task selection, model feedback, quality inspection, repair or retry.  The
 qualified native bootstrap owns clocks, first-return endpoints and cancellation.
@@ -41,6 +41,37 @@ def stamp():
             'monotonic_ns': time.monotonic_ns()}
 
 
+
+def validate_schedule(admission, prior=None):
+    order = admission.get('order', [])
+    if admission.get('admitted') is not True or admission.get('workflows') != len(order) or not 1 <= len(order) <= 10:
+        raise ValueError('Registered C1 schedule has not been admitted')
+    if len({x['run_id'] for x in order}) != len(order):
+        raise ValueError('Repeated execution identity')
+    recovery = admission.get('outage_recovery')
+    if recovery is None:
+        if len(order) != 10:
+            raise ValueError('A shortened schedule needs complete outage provenance')
+        return
+    if not prior or prior['status'] != 'stopped_preserving_state':
+        raise ValueError('Recovery requires a preserved terminal collection')
+    retained = [x for x in prior['runs'] if x.get('endpoint_reason') in ('final', 'deadline')]
+    if recovery['retained_run_ids'] != [x['run_id'] for x in retained]:
+        raise ValueError('Every earlier ordinary endpoint must be retained')
+    retained_ids = {x['run_id'] for x in retained}
+    interrupted = [x for x in prior['runs'] if x['run_id'] not in retained_ids]
+    if not interrupted or any(x.get('endpoint_reason') != 'infrastructure_failure' for x in interrupted):
+        raise ValueError('Only documented infrastructure interruptions may be replaced')
+    remaining = [x for x in prior['order'] if x['run_id'] not in retained_ids]
+    if len(retained) + len(order) != 10 or len(order) != len(remaining):
+        raise ValueError('Recovery changes the complete ten-slot sample')
+    for actual, original in zip(order, remaining):
+        if actual.get('prior_run_id') != original['run_id'] or any(actual[k] != original[k] for k in ('position', 'task', 'arm', 'repetition')):
+            raise ValueError('Recovery changes arm, task, repetition or relative order')
+        if actual['run_id'] in {x['run_id'] for x in prior['order']}:
+            raise ValueError('Recovery must use fresh execution identities')
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--registration', required=True, type=Path)
@@ -54,8 +85,14 @@ def main():
         registration_path = protected(a.registration)
         reg = json.loads(registration_path.read_text())
         admission = reg['calibration_initial_block']
-        if admission.get('admitted') is not True or len(admission['order']) != 10:
-            raise ValueError('The full registered C1 block has not been admitted')
+        prior = None
+        if admission.get('outage_recovery'):
+            lineage = admission['outage_recovery']
+            prior_path = protected(lineage['prior_collection'])
+            if sha(prior_path) != lineage['prior_collection_sha256']:
+                raise ValueError('Recovery lineage changed')
+            prior = json.loads(prior_path.read_text())
+        validate_schedule(admission, prior)
         if (block/'collection.json').exists():
             raise ValueError('An existing collection endpoint/state must not be restarted')
         manifests = {}
@@ -214,7 +251,7 @@ def main():
                     state.update(status='stopped_preserving_state',ended=stamp());save();backup_failed=True
             if backup_failed:
                 return
-        state.update(status='ten_first_endpoints_frozen_ungraded',ended=stamp());save()
+        state.update(status='registered_first_endpoints_frozen_ungraded',ended=stamp());save()
 
 
 if __name__ == '__main__':
