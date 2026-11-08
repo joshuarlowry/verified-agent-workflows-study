@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T17:41:13.168536+00:00",
+  "snapshot_at_utc": "2026-11-08T18:11:15.875414+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -108,7 +108,7 @@
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 12:41:13 PM EST",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:11:15 PM EST",
   "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc.",
   "cross_reviews": {
     "checks": {
@@ -175,7 +175,16 @@
     ],
     "allow_fallbacks": false,
     "zdr": true,
-    "actual_generation_metadata_audit": "pending first endpoint"
+    "actual_generation_metadata_audit": "pending first endpoint",
+    "passive_checkpoint": {
+      "status": "Actual service active; native capture growing; first endpoint absent",
+      "checkpoint": "30-minute passive observation preserved",
+      "native_requests_observed": 129,
+      "usage_rows_observed": 128,
+      "unresolved_calls_not_assumed_failed_or_free": true,
+      "quality_inspected": false,
+      "feedback_or_restart": false
+    }
   },
   "review_triage_limits": {
     "raw_review_disposition_preserved": true,
@@ -191,6 +200,7 @@
     "feedback": "Exact candidate-B-only finding entries extracted from preserved review with original report hash; candidate-A/comparative/source/evaluator material omitted.",
     "original_in_memory_strategy_requirement_unchanged": true,
     "first_endpoint_preserved": true,
-    "qualification_required": "Different-model review, materially different ordering and all external/negative/clean/runtime gates."
+    "qualification_required": "Different-model review, materially different ordering and all external/negative/clean/runtime gates.",
+    "provider_metadata_preflight": "Exact dated Gemma model and Crusoe BF16 metadata matched; not an inference-availability guarantee."
   }
 }
