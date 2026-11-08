@@ -1,0 +1,868 @@
+{
+  "kind": "C1_v2_transient_DNS_technical_interruption_not_software_quality",
+  "recorded_at_utc": "2026-11-08T08:37:06.779097+00:00",
+  "run_id": "cal-c1-v2-04",
+  "workflow": "Gemma alone",
+  "dispatch": {
+    "monotonic_ns": 275546076283849,
+    "utc": "2026-11-08T08:27:14.865001+00:00"
+  },
+  "process_exit": {
+    "monotonic_ns": 275775307882050,
+    "utc": "2026-11-08T08:31:04.096595+00:00"
+  },
+  "elapsed_dispatch_to_exit_seconds": 229.231598201,
+  "primary_endpoint": "infrastructure_failure",
+  "native_exit_code": -9,
+  "final_return": false,
+  "api_budget_exhausted": false,
+  "first_transport_failure": {
+    "capture": "complete_agent-transport/provider/f2c09d643eee4bf6a504b3ebc79e1e37/events.jsonl",
+    "event": {
+      "classification": "infrastructure_failure",
+      "error_type": "gaierror",
+      "kind": "failure",
+      "monotonic_ns": 275775275635666,
+      "utc": "2026-11-08T08:31:04.064349+00:00"
+    },
+    "capture_sha256": "83c6518dd8fdf776ddfc448bae66b3be07042cef79aadc5023d3be0e9c747810"
+  },
+  "failure_chain": [
+    {
+      "capture": "complete_agent-transport/gateway-calls/9cc91cb9bb5b41328b5f9e5997b5a072/events.jsonl",
+      "event": {
+        "classification": "infrastructure_failure",
+        "error_type": "RemoteDisconnected",
+        "kind": "failure",
+        "monotonic_ns": 275775283755090,
+        "stopped": true,
+        "utc": "2026-11-08T08:31:04.072475+00:00"
+      },
+      "capture_sha256": "4951ac2cad26f5ee94db535d70f6a90e3bab4167ec8526768c8c0ff47cea9173"
+    },
+    {
+      "capture": "complete_agent-transport/provider/f2c09d643eee4bf6a504b3ebc79e1e37/events.jsonl",
+      "event": {
+        "classification": "infrastructure_failure",
+        "error_type": "gaierror",
+        "kind": "failure",
+        "monotonic_ns": 275775275635666,
+        "utc": "2026-11-08T08:31:04.064349+00:00"
+      },
+      "capture_sha256": "83c6518dd8fdf776ddfc448bae66b3be07042cef79aadc5023d3be0e9c747810"
+    }
+  ],
+  "corroboration": "systemd-resolved logged degraded feature set at03:30:59EST for configured resolver; host lookups for openrouter.ai and github.com succeeded at08:35:54UTC. No DNS configuration or budget changed.",
+  "retained_clean_first_returns": [
+    "cal-c1-v2-01",
+    "cal-c1-v2-02",
+    "cal-c1-v2-03"
+  ],
+  "unrun_v2_slots": [
+    "cal-c1-v2-05",
+    "cal-c1-v2-06",
+    "cal-c1-v2-07",
+    "cal-c1-v2-08",
+    "cal-c1-v2-09",
+    "cal-c1-v2-10"
+  ],
+  "endpoint_remote_backup": {
+    "checkpoint": "checkpoints/preparation-20261108T083139839680Z.tar.gz",
+    "sha256": "e67b72a47bd0e5fc1da40a5babd899d57db222ca7a91717d73bc46ee0db98b7d",
+    "bytes": 6811125,
+    "published_private": true
+  },
+  "usage_roles": [
+    {
+      "role": "complete_agent",
+      "provider_successful_generations": 25,
+      "native_unique_steps": 25,
+      "known_input_inclusive_total": 391284,
+      "known_billable_output_total": 1482,
+      "known_reported_cost_usd_subtotal": 0.05537256,
+      "cost_complete": false
+    }
+  ],
+  "provider_verification": {
+    "checked_at_utc": "2026-11-08T08:36:10.017963+00:00",
+    "model_calls": 0,
+    "status": "verified",
+    "rows": [
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126599-giTI0WuZAcIkptWMKOmg",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126454-BD9fVqOUfhs6a5HvEpGq",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126603-vC3Gqq211otm72nPRq78",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126516-EZATb7bzE5FOT08mI2wH",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126613-xI0528ca7cTd6Hd6aJNq",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126442-41RSuL9CDon5NldTI0fZ",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126488-G1qEzHXvKkZ8DUmkJW1J",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126557-TlNuYoAOIi1637u9dB54",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126441-TUfmyF2mv130kUPL5LO4",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126556-rGN9QfSB5mLRXplDYRna",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126440-qX2rdM8vgDbzoIyzcSKC",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126438-n2mcyftAZFylGkJZWvQj",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126518-ZQUJqNAsPSXonSlfDnCH",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126438-iDWcVwENvWmFzH8XkcJh",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126443-FIvr4Vq31nqqj8LBXhas",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126441-h7wFDQ4mN7tjSS3ameUy",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126435-GixcWz6wKGjEBtnhpNLz",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126453-IbLVbBzXWQ0W2yTul7FK",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126439-HUXpjWVXw3kDZgUPiv7J",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126604-YtvILms0XM92lrXP08iX",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126436-MvTgJbPmv4mmZ9r43pGd",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126449-6afdJamYY3kj7nY0gpav",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126517-gwbjvgNiSGEaKLmfrR3M",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126476-K0eknuHVobl5Zx3pax84",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      },
+      {
+        "role": "complete_agent",
+        "response_id": "gen-1794126456-HOhtQGJat0ctGIqDw0eD",
+        "resolved_model": "google/gemma-4-31b-it-20260402",
+        "provider": "Crusoe",
+        "expected_model": "google/gemma-4-31b-it-20260402",
+        "expected_provider": "Crusoe",
+        "matches": true
+      }
+    ],
+    "errors": [],
+    "measurement_gaps": [
+      {
+        "role": "complete_agent",
+        "kind": "failed_or_unknown_usage_views",
+        "views": [
+          {
+            "path": "complete_agent-transport/provider/06c1d1ab62bd489b86180f0ee08117a6",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275576277657012,
+                "status": 429,
+                "utc": "2026-11-08T08:27:45.066377+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/13428b99451945c69fef53be1e88afa7",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275580935263671,
+                "status": 429,
+                "utc": "2026-11-08T08:27:49.723981+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/7648c8d2f5724c33b515b0d8e0389ec9",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275594752795056,
+                "status": 429,
+                "utc": "2026-11-08T08:28:03.541513+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/7704e6f80c1d4c188da723340bdf3586",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275656726862947,
+                "status": 429,
+                "utc": "2026-11-08T08:29:05.515580+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/7c95d8f7588b4defad005e39d19056f6",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275612586588255,
+                "status": 429,
+                "utc": "2026-11-08T08:28:21.375307+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/89dfe5cb6e234d7695b75a4bb984d64b",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275573961975352,
+                "status": 429,
+                "utc": "2026-11-08T08:27:42.750694+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/ca8386a175eb4a23994ecb656164479f",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275721932599413,
+                "status": 429,
+                "utc": "2026-11-08T08:30:10.721316+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/caf8fdf34f00402ebecba2f64cc46af4",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275644517667683,
+                "status": 429,
+                "utc": "2026-11-08T08:28:53.306385+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/d26ee3e490284309ad20f0b94121320c",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275592197449126,
+                "status": 429,
+                "utc": "2026-11-08T08:28:00.986169+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/d564601ce3674a15b04bad9eb19249c2",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275615184628260,
+                "status": 429,
+                "utc": "2026-11-08T08:28:23.973345+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/e2ae91a220604163a6ed7f1a35459096",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275637408742035,
+                "status": 429,
+                "utc": "2026-11-08T08:28:46.197464+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/e4d2da47f930404498648e8187c81736",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275631717256928,
+                "status": 429,
+                "utc": "2026-11-08T08:28:40.505974+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/e5e19ee95ee943d4a23b094e173efb62",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275633917290649,
+                "status": 429,
+                "utc": "2026-11-08T08:28:42.706007+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/f2c09d643eee4bf6a504b3ebc79e1e37",
+            "http_status": null,
+            "terminal": [
+              {
+                "classification": "infrastructure_failure",
+                "error_type": "gaierror",
+                "kind": "failure",
+                "monotonic_ns": 275775275635666,
+                "utc": "2026-11-08T08:31:04.064349+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/provider/fff156be57fc49678e87da2e82afdaff",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "kind": "end",
+                "monotonic_ns": 275619913441147,
+                "status": 429,
+                "utc": "2026-11-08T08:28:28.702161+00:00"
+              }
+            ],
+            "view": "provider",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/0cde25bfbc924e068e5a42983e9bdd19",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275576326816845,
+                "status": 429,
+                "utc": "2026-11-08T08:27:45.115540+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/1c481894d11b434ca1c6c6de539cb383",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275580989881140,
+                "status": 429,
+                "utc": "2026-11-08T08:27:49.778603+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/4418a0baf2764730a0bac884b8361bd4",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275633967864790,
+                "status": 429,
+                "utc": "2026-11-08T08:28:42.756587+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/5eb7e9c733e4432593f0dac32535b8a1",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275721988122199,
+                "status": 429,
+                "utc": "2026-11-08T08:30:10.776844+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/6d44ecd908f34a63b919efe98ba5bc06",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275644567185205,
+                "status": 429,
+                "utc": "2026-11-08T08:28:53.355908+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/7a90cc095f92418fa5f2edf84d373985",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275656775996629,
+                "status": 429,
+                "utc": "2026-11-08T08:29:05.564719+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/86499f375cc44bee92c64e539469329b",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275619962219213,
+                "status": 429,
+                "utc": "2026-11-08T08:28:28.750941+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/93531a630caf413ea029d2706d938c90",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275612637655573,
+                "status": 429,
+                "utc": "2026-11-08T08:28:21.426378+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/9bd624b1500c48259729119c7fda251a",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275631765908513,
+                "status": 429,
+                "utc": "2026-11-08T08:28:40.554631+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/9cc91cb9bb5b41328b5f9e5997b5a072",
+            "http_status": null,
+            "terminal": [
+              {
+                "classification": "infrastructure_failure",
+                "error_type": "RemoteDisconnected",
+                "kind": "failure",
+                "monotonic_ns": 275775283755090,
+                "stopped": true,
+                "utc": "2026-11-08T08:31:04.072475+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/a32a2ad84dd94bb9bd95c4bb777e5d37",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275615234022212,
+                "status": 429,
+                "utc": "2026-11-08T08:28:24.022745+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/a3bd6a30a063478bab54f980e30b73cd",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275592245985668,
+                "status": 429,
+                "utc": "2026-11-08T08:28:01.034699+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/b767a0ffb2f24565982141f3532d08ac",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275574019766118,
+                "status": 429,
+                "utc": "2026-11-08T08:27:42.808487+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/c841b6da646f42e3a109e903341dc319",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275637457639134,
+                "status": 429,
+                "utc": "2026-11-08T08:28:46.246361+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          },
+          {
+            "path": "complete_agent-transport/gateway-calls/dd43b0bfc7624b0b93fef3f2b9613eb6",
+            "http_status": 429,
+            "terminal": [
+              {
+                "classification": "provider_429",
+                "comments": 0,
+                "frames": 0,
+                "kind": "end",
+                "monotonic_ns": 275594801607798,
+                "status": 429,
+                "utc": "2026-11-08T08:28:03.590330+00:00"
+              }
+            ],
+            "view": "gateway-calls",
+            "usage": null,
+            "reported_cost_usd": null,
+            "reason": "failed or missing response"
+          }
+        ]
+      }
+    ],
+    "scope": "Administrative metadata cross-checks only; costs/tokens are not added to raw provider usage and no implementation quality is inspected."
+  },
+  "scope": "No application quality inspected, app/test edits, feedback, model substitution or agent continuation. Successful earlier first returns remain eligible for unchanged calibration gates; interruption/unknown failed-call usage remains additional overhead. Resume requires a separately frozen schedule with fresh replacement session/workspace, then remaining unrun slots. Full40calibration+165scored target unchanged."
+}
