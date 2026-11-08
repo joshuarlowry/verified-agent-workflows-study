@@ -1,26 +1,29 @@
 {
-  "kind": "registered_C1_calibration_metadata",
-  "status": "stopped_preserving_state",
-  "snapshot_at_utc": "2026-11-08T06:44:24.966487+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 01:44:24 AM EST",
-  "event_at_utc": "2026-11-08T06:43:46.272215+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 01:43:46 AM EST",
+  "status_note": "Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.",
   "cohort_id": "clean-20261107T122746Z",
-  "calibration_block_size": 10,
-  "calibration_dispatched": 1,
-  "calibration_endpoints": 1,
-  "scored_runs": 0,
-  "rows": [
+  "launch_id": "handoff-ack-review-20261108T065923Z",
+  "kind": "preparation_construction_not_calibration_or_scoring",
+  "snapshot_at_utc": "2026-11-08T06:59:24.207077+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 01:59:24 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T06:59:24.153450+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 01:59:24 AM EST (UTC-0500)",
+  "display_timezone": "America/New_York",
+  "status": "running",
+  "background_service": "study2-handoff-ack-review-20261108t065923z",
+  "automatic_restart": false,
+  "roles": [
     {
-      "position": 1,
-      "arm": "GLM supervising Gemma",
-      "repetition": 1,
-      "run_id": "cal-c1-01",
-      "status": "first_endpoint_frozen_ungraded",
-      "endpoint_reason": "infrastructure_failure",
-      "native_exit_code": -9
+      "role": "glm-handoff-ack-review",
+      "run_id": "clean-20261107T122746Z-handoff-ack-review-glm-20261108T065923Z",
+      "model": "z-ai/glm-5.3-flash",
+      "status": "running",
+      "dispatch_utc": "2026-11-08T06:59:24.153450+00:00",
+      "prompt_sha256": "3febb83ebd55ea629239103745510b042ee736d76d7b6a91d0927743e2290807",
+      "controller_sha256": "e75add70cd13f210b9217896f3e9cc4c167272e71ec647f8e697b5159ebfb908",
+      "dispatch_eastern": "Nov 08, 2026 at 01:59:24 AM EST (UTC-0500)"
     }
   ],
-  "quality": "Not graded; an endpoint is not verified completion.",
-  "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions."
+  "qualification_status": "not_qualified",
+  "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
+  "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
 }

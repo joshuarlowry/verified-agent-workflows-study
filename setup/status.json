@@ -1,6 +1,6 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "stopped_preserving_state",
+  "status": "preparation_running",
   "snapshot_at_utc": "2026-11-08T06:44:24.966487+00:00",
   "snapshot_at_eastern": "Nov 08, 2026 at 01:44:24 AM EST",
   "event_at_utc": "2026-11-08T06:43:46.272215+00:00",
@@ -22,5 +22,10 @@
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
-  "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions."
+  "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
+  "updated_at_utc": "2026-11-08T06:59:24.207077+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 01:59:24 AM EST (UTC-0500)",
+  "last_workflow_event_eastern": "Nov 08, 2026 at 01:59:24 AM EST (UTC-0500)",
+  "active_launch": "setup/launch.json",
+  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
 }
