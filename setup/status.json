@@ -23,9 +23,9 @@
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
   "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
-  "updated_at_utc": "2026-11-08T07:25:57.775140+00:00",
-  "updated_at_eastern": "Nov 08, 2026 at 02:25:57 AM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 08, 2026 at 02:25:57 AM EST (UTC-0500)",
+  "updated_at_utc": "2026-11-08T07:27:24.834852+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 02:27:24 AM EST (UTC-0500)",
+  "last_workflow_event_eastern": "Nov 08, 2026 at 02:27:24 AM EST (UTC-0500)",
   "active_launch": "setup/launch.json",
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
 }
