@@ -926,7 +926,7 @@
       "phase": "fixture_cross_review_only",
       "prompt_sha256": "b7e5539bcb5f53576ff963d3c37af01d7d7bcddb0f31e27b3131f3e607ad97da",
       "run_id": "clean-20261107T122746Z-c2-checks-review-terra-20261108T170635Z",
-      "status": "running",
+      "status": "returned_changes_required",
       "fresh_session": true,
       "self_approval": false,
       "qualification": "Appointment only. Different-model fresh review of immutable artifacts; no model-family independence or task admission.",
@@ -940,15 +940,28 @@
       "phase": "fixture_cross_review_only",
       "prompt_sha256": "d37227d1b4286301824df01ae9f90af8079c7575ffd6259994476a971c20f73c",
       "run_id": "clean-20261107T122746Z-c2-candidate-review-glm-20261108T161644Z",
-      "status": "staged_not_dispatched",
+      "status": "running",
       "fresh_session": true,
       "self_approval": false,
       "qualification": "Appointment only. Different-model fresh review of immutable artifacts; no model-family independence or task admission.",
       "authorization": "Existing three-model fixture construction/cross-review waiver.",
       "actual_launch_id": "c2-candidate-cross-review-20261108T161644Z"
+    },
+    {
+      "launch_id": "c2-external-checks-revision2-20261108T172211Z",
+      "role": "glm-C2-external-checks-revision-2",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "phase": "explicit_fixture_revision_only",
+      "run_id": "clean-20261107T122746Z-c2-checks-revision2-glm-20261108T172211Z",
+      "prompt_sha256": "9c93fa68d12971470f4aa0af634654e0df56eb27cb7f6c95702c4348fb034981",
+      "status": "staged_not_dispatched",
+      "fresh_session": true,
+      "candidate_source_or_outcomes_supplied": false,
+      "qualification": "Preserved first suite is not overwritten; revision2 requires different-model review and all runtime/negative/clean gates. No self-approval.",
+      "authorization": "Existing three-model fixture construction/cross-review waiver."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T17:13:28.419968+00:00"
+  "updated_at_utc": "2026-11-08T17:23:09.939493+00:00"
 }

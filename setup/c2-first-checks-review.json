@@ -1,0 +1,42 @@
+{
+  "kind": "c2_external_fixture_cross_review",
+  "disposition": "changes_required",
+  "scope": "Frozen first C2 external acceptance suite against supplied public C2 rules and original baseline; not an application assessment or launch approval.",
+  "reviewer": {
+    "model": "Terra Azure High",
+    "provider_id": "study2-terra-fixture-review",
+    "model_id": "terra",
+    "role": "appointed fresh-session C2 fixture cross-reviewer",
+    "independence": "Different model from the claimed GLM constructor; no family independence claimed. No models or subagents invoked."
+  },
+  "blocking_findings": [
+    {"id":"B1","category":"incorrect oracle","summary":"UI tie test requires the newest timestamp pair to lead both ascending and descending orders, contradicting the disclosed comparator.","evidence":["inputs/frozen-checks/sealed/80-ui-probe-tie-and-case.spec.ts:25-36,67-80","CHECKS.md synthetic comparator counterexample"]},
+    {"id":"B2","category":"incorrect oracle","summary":"CRUD checks assume sequential create and edit times strictly increase; valid equal timestamps must use ID tie directions.","evidence":["inputs/frozen-checks/public/40-api-crud-preservation.spec.ts:38-62","inputs/frozen-checks/sealed/60-api-crud-under-sort.spec.ts:28-48"]},
+    {"id":"B3","category":"fixture reliability","summary":"Bounded same-millisecond burst ties are not guaranteed by the public API; setup failure is reported as a candidate failure.","evidence":["inputs/frozen-checks/support/tie.ts:19-52","inputs/frozen-checks/OPEN_QUESTIONS.md:39-46"]},
+    {"id":"B4","category":"unsupported assumption","summary":"Tests require native select/option markup and a region role although rules specify an accessible selector and named list.","evidence":["inputs/frozen-checks/public/50-ui-sort-control.spec.ts:13-16","inputs/frozen-checks/public/60-ui-refetch-reorder.spec.ts:35,52,72","inputs/frozen-checks/support/ui.ts:15,28-40","inputs/context/docs/staged-files/%40playwright%2Ftest%401.65.0/docs/src/api/class-locator.md:2460-2470"]},
+    {"id":"B5","category":"unsupported assumption / replay plumbing","summary":"Auth tests assert pending native error code/status and an undocumented 127.0.0.1 HTTP origin pattern.","evidence":["inputs/frozen-checks/public/30-api-shape-scope-auth.spec.ts:54-59","inputs/frozen-checks/sealed/20-api-precedence-and-auth.spec.ts:49-62","inputs/public-scope/baseline-spec.md:17","inputs/public-scope/BASELINE_BINDINGS.json:183-194"]},
+    {"id":"B6","category":"inventory and reporting","summary":"Report validator accepts one-case and failed-case reports, checks neither exact identities/projects nor freshness, and zero test skips does not establish all assertions ran.","evidence":["inputs/frozen-checks/runner/inventory.mjs:128-169","inputs/frozen-checks/validation/validate-run5-freshdb.log:521-541","CHECKS.md synthetic report probes"]},
+    {"id":"B7","category":"coverage","summary":"UI request counts are not attributed to each selection and do not verify request sort or response use; incidental GET plus client-only reorder can pass.","evidence":["inputs/frozen-checks/support/ui.ts:67-74","inputs/frozen-checks/public/60-ui-refetch-reorder.spec.ts:29-37,46-54,64-74"]},
+    {"id":"B8","category":"negative-control specification","summary":"Several claimed required failing case IDs do not follow from their stated patch variants, notably BINARY on all-uppercase-initial seed titles and optional ownership/precedence/persistence variants.","evidence":["inputs/frozen-checks/NEGATIVE_CONTROL_REQUIREMENTS.md:16-25,35-48","inputs/frozen-checks/support/seed.ts:11-25","inputs/frozen-checks/public/30-api-shape-scope-auth.spec.ts:25-42","inputs/frozen-checks/sealed/20-api-precedence-and-auth.spec.ts:11-26"]},
+    {"id":"B9","category":"harness and trust","summary":"Registered external replay interface and project names not supplied; direct script mode is 0400 in delivered inputs; regex scanning and npx alone do not establish trusted dependency/import or hash binding.","evidence":["inputs/frozen-checks/runner/README.md:26-43","inputs/frozen-checks/runner/inventory.mjs:94-122","inputs/frozen-checks/runner/run-checks.sh:41-55","CHECKS.md direct invocation"]},
+    {"id":"B10","category":"unverified qualification","summary":"No supplied evidence of conforming reference/alternative pass, actual bad-patch qualification, three clean replays, or registered external-replay qualification.","evidence":["inputs/frozen-checks/PROVENANCE.json:85-92","inputs/public-scope/baseline-spec.md:66-68","inputs/public-scope/FAQ.md:15-16"]}
+  ],
+  "optional_findings": [
+    {"id":"O1","summary":"Non-ASCII NOCASE and digit-bearing natural-order distinctions are not covered."},
+    {"id":"O2","summary":"URL and storage absence is checked only with literal sort= and reload outcome."},
+    {"id":"O3","summary":"Earlier freeze timing, constructor prompt, independently executed baseline regressions and per-run 3/4 report identity are not established by supplied records."},
+    {"id":"O4","summary":"Probe cleanup reuses and purges named disposable workspaces and is best effort; isolation and serial execution are operational prerequisites."},
+    {"id":"O5","summary":"Empty sort, duplicate parameters and initial selector state need uniform public interpretation where applicable, not target-dependent oracle repair."}
+  ],
+  "verified": {
+    "baseline_source_inventory": "21 files match public SOURCE_INVENTORY.json",
+    "suite_checksum": "45 listed files match supplied inputs/frozen-checks/SHA256SUMS",
+    "report_counts": {"public":{"total":16,"expected":9,"unexpected":7,"skipped":0},"sealed":{"total":20,"expected":7,"unexpected":13,"skipped":0}},
+    "report_project": "one unnamed default project per report; browserName chromium set in configs",
+    "baseline_run": "constructor-supplied run-5 baseline report and log corroborate expected failure counts; not independently rerun",
+    "input_hash_manifest": "output/c2-review/SHA256SUMS; input file paths are relative to /workspace"
+  },
+  "not_verified": ["candidate success", "actual negative-patch qualification", "conforming reference or alternative", "three clean replays", "registered external replay compatibility", "independent baseline regression execution", "constructor prompt or earlier freeze snapshots", "full dependency and runtime isolation"],
+  "no_modifications_to_inputs": true,
+  "details": "REVIEW.md, CHECKS.md and PROVENANCE.json"
+}
