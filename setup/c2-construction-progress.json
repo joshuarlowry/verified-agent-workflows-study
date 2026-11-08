@@ -1,5 +1,5 @@
 {
-  "snapshot_at_utc": "2026-11-08T16:14:20.392322+00:00",
+  "snapshot_at_utc": "2026-11-08T16:35:36.557703+00:00",
   "phase": "C2_fixture_construction_not_subject_collection",
   "task_name": "Item-list sort toggle",
   "reference": {
@@ -13,7 +13,8 @@
     "successful_generations_verified": 67,
     "raw_capture_requests_verified": 67,
     "source_git_packaged": true,
-    "source_patch_roundtrip_exact": true
+    "source_patch_roundtrip_exact": true,
+    "existing_full_app_and_native_auth_replays": "Queued: three separate clean environments for each helper, start only after active GLM first endpoint and supported backup. Not C2 independent feature acceptance."
   },
   "alternative": {
     "model": "google/gemma-4-31b-it",
@@ -77,11 +78,20 @@
       "require_parameters": true,
       "zdr": true
     },
-    "actual_generation_identity_audit": "pending first endpoint"
+    "actual_generation_identity_audit": "pending first endpoint",
+    "passive_observation": {
+      "native_requests": 66,
+      "successful_usage_rows": 66,
+      "native_error_events": 0,
+      "upstream_idle_timeout_message_mentions": 0,
+      "first_suite_returned": false,
+      "quality_inspected": false
+    }
   },
   "C2_primary_attempts": 0,
   "scored_attempts": 0,
   "task_qualified": false,
   "next_gates": "Independent external evaluator, cross-reviews, materially different alternative, actual negative patches and clean runtime replays, plus task-specific normalization/layout/role binding.",
-  "snapshot_at_eastern": "Nov 08, 2026 at 11:14:20 AM EST"
+  "snapshot_at_eastern": "Nov 08, 2026 at 11:35:36 AM EST",
+  "prospective_primary_prices": "Frozen in registration revision21; setup/economic-rate-card.json. C1 standardized repricing remains post-hoc."
 }
