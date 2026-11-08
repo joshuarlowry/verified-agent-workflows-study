@@ -1,14 +1,14 @@
 # Current run status
 
-**Status published:** Nov 08, 2026 at 04:02:15 AM EST
+**Status published:** Nov 08, 2026 at 04:02:36 AM EST
 
-**Latest ledger event:** Nov 08, 2026 at 04:02:10 AM EST
+**Latest ledger event:** Nov 08, 2026 at 04:02:34 AM EST
 
-C1 calibration: **3/10 endpoints recorded** across the initial schedule. Current block: **0/7 dispatched; 0/7 endpoints recorded.** Scored: **0**.
+C1 calibration: **3/10 endpoints recorded** across the initial schedule. Current block: **1/7 dispatched; 0/7 endpoints recorded.** Scored: **0**.
 
 | Workflow | Repetition | State | Endpoint |
 |---|---|---|---|
-| Gemma alone | 1 | setting_up | — |
+| Gemma alone | 1 | active | — |
 
 Block version: **3**. Earlier ordinary endpoints carried forward: **3**. Prior interrupted attempts retained: **2**. [First interruption](c1-v1-technical-interruption.json) · [DNS interruption](c1-v2-dns-interruption.json).
 
