@@ -1,0 +1,18 @@
+{
+  "kind": "passive_registered_30minute_checkpoint",
+  "workflow": "Terra supervising Gemma",
+  "run_id": "cal-c1-v3-05",
+  "observed_at_utc": "2026-11-08T09:47:18.068260+00:00",
+  "observed_at_eastern": "Nov 08, 2026 at 04:47:18 AM EST",
+  "published_at_utc": "2026-11-08T09:48:45.431559+00:00",
+  "published_at_eastern": "Nov 08, 2026 at 04:48:45 AM EST",
+  "elapsed_seconds": 1801.676844177,
+  "controller_process_confirmed_active": true,
+  "ledger_state": "active",
+  "worker_requests": 3,
+  "durable_worker_responses": 2,
+  "source_checkpoint_sha256": "8da2ee953a3150e52ebf77885aef54e0bb7ef330bde14356db991e9b3a5e58e1",
+  "model_calls_for_publication": 0,
+  "subject_feedback_or_changes": false,
+  "quality": "Ungraded; liveness and handoff counters are not delivery evidence."
+}
