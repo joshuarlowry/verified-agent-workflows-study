@@ -1,0 +1,63 @@
+{
+  "kind": "failed_C1_calibration_workflow_preserved_not_retried",
+  "recorded_at_utc": "2026-11-08T10:16:27.999593+00:00",
+  "run_id": "cal-c1-v3-05",
+  "workflow": "Terra supervising Gemma",
+  "primary_endpoint": "infrastructure_failure",
+  "first_supervisor_final_return": false,
+  "dispatch": {
+    "monotonic_ns": 278547610390823,
+    "utc": "2026-11-08T09:17:16.399113+00:00"
+  },
+  "process_exit": {
+    "monotonic_ns": 281491223992027,
+    "utc": "2026-11-08T10:06:20.012706+00:00"
+  },
+  "elapsed_dispatch_to_exit_seconds": 2943.613601204,
+  "native_exit_code": -9,
+  "api_budget_exhausted": false,
+  "global_admission_stopped": false,
+  "backup": {
+    "checkpoint": "checkpoints/preparation-20261108T100655369909Z.tar.gz",
+    "sha256": "c9dd8f30450a3e9dacc538c8342725ce1404ce273408db35a76eb3d7fab36e91",
+    "bytes": 29378387,
+    "published_private": true
+  },
+  "actual_provider_resolution": "verified",
+  "native_worker_handoffs": 3,
+  "durable_worker_responses": 3,
+  "transport_evidence": {
+    "http429s_observed": true,
+    "streamed_error_code": 504,
+    "source": "Raw worker provider event/response captures; private transport-status-observation.json records a partial observation, not totals."
+  },
+  "roles": [
+    {
+      "role": "supervisor",
+      "provider_successful_generations": 12,
+      "native_unique_steps": 11,
+      "known_input_inclusive_total": 367060,
+      "known_billable_output_total": 2822,
+      "known_reported_cost_usd_subtotal": 0.0996012,
+      "cost_complete": true
+    },
+    {
+      "role": "worker",
+      "provider_successful_generations": 102,
+      "native_unique_steps": 102,
+      "known_input_inclusive_total": 6016625,
+      "known_billable_output_total": 29177,
+      "known_reported_cost_usd_subtotal": 0.8539983,
+      "cost_complete": false
+    }
+  ],
+  "remaining_frozen_run_ids": [
+    "cal-c1-v3-06",
+    "cal-c1-v3-07",
+    "cal-c1-v3-08",
+    "cal-c1-v3-09",
+    "cal-c1-v3-10"
+  ],
+  "policy": "Retain this primary failed calibration outcome and all costs/waits. Do not replay or rescue the failed supervisor. Continue only the five unrun frozen slots in their existing order after separately admitted deterministic controller continuation. Native roles/models/provider routes/prompts/source/image/docs/checks/deadline unchanged. Machine quality ungraded; this interruption is not proof of software incorrectness. Failed-call usage remains unknown, not zero.",
+  "model_calls_by_this_record": 0
+}
