@@ -1,8 +1,8 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "preparation_construction_returned_not_qualified",
-  "snapshot_at_utc": "2026-11-08T12:22:00.406035+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 07:22:00 AM EST",
+  "status": "stopped_preserving_state",
+  "snapshot_at_utc": "2026-11-08T12:47:37.148102+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 07:47:37 AM EST",
   "event_at_utc": "2026-11-08T12:21:41.592367+00:00",
   "event_at_eastern": "Nov 08, 2026 at 07:21:41 AM EST",
   "cohort_id": "clean-20261107T122746Z",
@@ -56,10 +56,5 @@
   "prior_interrupted_calibration_attempts": 2,
   "total_calibration_dispatched_including_prior": 9,
   "carried_forward_endpoints": 3,
-  "initial_C1_endpoints": 7,
-  "updated_at_utc": "2026-11-08T12:38:15.855736+00:00",
-  "updated_at_eastern": "Nov 08, 2026 at 07:38:15 AM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 08, 2026 at 07:38:15 AM EST (UTC-0500)",
-  "active_launch": "setup/launch.json",
-  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
+  "initial_C1_endpoints": 7
 }
