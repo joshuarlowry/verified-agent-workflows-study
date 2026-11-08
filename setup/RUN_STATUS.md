@@ -1,15 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 10:00:15 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 10:00:17 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 10:00:15 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 10:00:17 AM EST (UTC-0500)
 
-**running**
+**stopped preserving state**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
+| terra-C2-reference-constructor | openai/gpt-6.1-terra | queued | — | — |
 
-Repeat the accepted model-authored non-test auth probe in three fresh offline containers before C1 constructor dispatch. No app/test/probe assertions changed; no model calls.
+Reference construction only. C2 primary workflows remain unqualified/unadmitted; no C1 outcome changed.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
