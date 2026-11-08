@@ -63,6 +63,34 @@ describe('real HTTP, native sessions and SQLite',()=>{
     expect(rows).toContainEqual({id:'wi_103',workspaceId:'ws_apollo',title:'Prepare demo script',notes:'',status:'open',dueDate:null,version:1,createdBy:me.user.id,createdAt:'2026-11-01T11:00:00.000Z',updatedAt:'2026-11-04T10:15:00.000Z',email:'bruno@workboard.test'});
     expect(other.prepare('SELECT workspaceId,role,joinedAt FROM membership WHERE userId=? ORDER BY workspaceId').all(me.user.id)).toEqual([{workspaceId:'ws_apollo',role:'member',joinedAt:'2026-10-21T09:00:00.000Z'},{workspaceId:'ws_borealis',role:'owner',joinedAt:'2026-10-25T09:00:00.000Z'}]);
   });
+  test('workspace summaries derive open counts from current workspace items',async()=>{
+    async function summaries(cookie:string) {
+      const me=await (await req('/api/me','GET',undefined,cookie)).json();
+      const listed=await (await req('/api/workspaces','GET',undefined,cookie)).json();
+      expect(listed).toEqual(me.workspaces); return listed;
+    }
+    const initial=await summaries(bruno);
+    expect(initial).toEqual([
+      {id:'ws_apollo',name:'Apollo Launch',role:'member',createdAt:'2026-10-20T09:00:00.000Z',openItemCount:4},
+      {id:'ws_borealis',name:'Borealis Ops',role:'owner',createdAt:'2026-10-25T09:00:00.000Z',openItemCount:3},
+    ]);
+    expect((await summaries(ada))[0].openItemCount).toBe(4);
+    expect((await summaries(cleo)).map((w:{id:string})=>w.id)).toEqual(['ws_borealis']);
+    expect(await (await req('/api/workspaces/ws_apollo','GET',undefined,ada)).json()).toEqual({id:'ws_apollo',name:'Apollo Launch',createdAt:'2026-10-20T09:00:00.000Z',updatedAt:'2026-10-20T09:00:00.000Z',role:'owner'});
+    const created=await req('/api/workspaces/ws_apollo/items','POST',{title:'Count test'},bruno); expect(created.status).toBe(201);
+    const i=await created.json();
+    try {
+      expect((await summaries(bruno)).map((w:{openItemCount:number})=>w.openItemCount)).toEqual([5,3]);
+      expect((await summaries(ada))[0].openItemCount).toBe(5);
+      expect((await req(`/api/items/${i.id}`,'PATCH',{status:'done'},bruno)).status).toBe(200);
+      expect((await summaries(bruno))[0].openItemCount).toBe(4);
+      expect((await req(`/api/items/${i.id}`,'PATCH',{status:'in_progress'},bruno)).status).toBe(200);
+      expect((await summaries(bruno))[0].openItemCount).toBe(4);
+      expect((await req(`/api/items/${i.id}`,'PATCH',{status:'open'},bruno)).status).toBe(200);
+      expect((await summaries(bruno))[0].openItemCount).toBe(5);
+    } finally { expect((await req(`/api/items/${i.id}`,'DELETE',undefined,bruno)).status).toBe(204); }
+    expect(await summaries(bruno)).toEqual(initial);
+  });
   test('malformed, non-object, exact errors and membership before validation',async()=>{
     for (const body of ['{', '[]','null']) { const r=await req('/api/workspaces/ws_apollo/items','POST',body,ada); expect(r.status).toBe(400); expect(await r.json()).toEqual({error:{code:'validation_failed',message:'request body must be valid JSON.'}}); }
     const r=await req('/api/workspaces/ws_apollo/items','POST',{},ada); expect(await r.json()).toEqual({error:{code:'validation_failed',message:'Invalid work item input.',fields:{title:'title is required.'}}});
@@ -84,6 +112,9 @@ describe('real HTTP, native sessions and SQLite',()=>{
     const before=await (await req('/api/me','GET',undefined,cookie)).json(); expect(before.workspaces).toEqual([]);
     const a=await (await req('/api/workspaces','POST',{name:'Same'},cookie)).json(); const b=await (await req('/api/workspaces','POST',{name:'Same'},cookie)).json();
     expect(a.id).toMatch(/^ws_[0-9a-f]{20}$/); expect(a.id).not.toBe(b.id); expect(a.role).toBe('owner');
+    const after=await (await req('/api/workspaces','GET',undefined,cookie)).json();
+    expect(after.map((w:{id:string})=>w.id).sort()).toEqual([a.id,b.id].sort());
+    expect(after.map((w:{openItemCount:number})=>w.openItemCount)).toEqual([0,0]);
     expect(other.prepare('SELECT count(*) n FROM membership WHERE userId=?').get(before.user.id)).toEqual({n:2});
     const out=await req('/api/auth/sign-out','POST',{},cookie); expect(out.status).toBe(200); expect(out.headers.getSetCookie()[0]).toContain('Max-Age=0'); expect((await req('/api/me','GET',undefined,cookie)).status).toBe(401);
   });

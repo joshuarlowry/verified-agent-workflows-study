@@ -13,6 +13,7 @@ test('real signup, first workspace, CRUD and sign out',async({page})=>{
   await expect(page.getByRole('heading',{name:'Create your first workspace'})).toBeVisible();
   await page.getByLabel('Workspace name').fill('UI workspace'); await page.getByRole('button',{name:'Create workspace'}).click();
   await expect(page.getByText('Your role: Owner')).toBeVisible(); await expect(page.getByText('Workspace created.')).toBeVisible();
+  await expect(page.getByRole('combobox',{name:'Workspace',exact:true}).locator('option')).toHaveText(['UI workspace (0)']);
   await page.getByRole('button',{name:'New work item'}).click(); await page.getByLabel('Title').fill('UI entry'); await page.getByLabel('Notes').fill('A note\nsecond line'); await page.getByRole('button',{name:'Create work item'}).click();
   await expect(page.getByText('Work item created.')).toBeVisible(); await expect(page.getByRole('heading',{name:'UI entry'})).toBeVisible();
   await page.getByRole('button',{name:'Edit UI entry'}).click(); await page.getByLabel('Title').fill('Updated UI entry'); await page.getByLabel('Status').selectOption('done'); await page.getByRole('button',{name:'Save changes'}).click();
@@ -20,6 +21,22 @@ test('real signup, first workspace, CRUD and sign out',async({page})=>{
   await page.getByRole('button',{name:'Delete Updated UI entry'}).click(); await page.getByRole('button',{name:'Confirm delete Updated UI entry'}).click(); await expect(page.getByText('Work item deleted.')).toBeVisible();
   await page.getByRole('button',{name:'Sign out'}).click(); await expect(page.getByRole('button',{name:'Sign in',exact:true})).toBeVisible();
   await page.getByLabel('Email').fill('ui-new@workboard.test'); await page.getByLabel('Password').fill('password-123'); await page.getByRole('button',{name:'Sign in',exact:true}).click(); await expect(page.getByText('Your role: Owner')).toBeVisible();
+});
+
+test('fresh page loads show current workspace open counts',async({page})=>{
+  await login(page);
+  const options=page.getByRole('combobox',{name:'Workspace',exact:true}).locator('option');
+  const me=await (await page.request.get('/api/me')).json();
+  const apollo=me.workspaces.find((w:{id:string})=>w.id==='ws_apollo').openItemCount as number;
+  const borealis=me.workspaces.find((w:{id:string})=>w.id==='ws_borealis').openItemCount as number;
+  const labels=(count:number)=>[`Apollo Launch (${count})`,`Borealis Ops (${borealis})`];
+  await expect(options).toHaveText(labels(apollo));
+  const created=await page.request.post('/api/workspaces/ws_apollo/items',{data:{title:'Count reload'}}); expect(created.status()).toBe(201); const item=await created.json();
+  try {
+    await page.reload(); await expect(options).toHaveText(labels(apollo+1));
+    expect((await page.request.patch(`/api/items/${item.id}`,{data:{status:'done'}})).status()).toBe(200);
+    await page.reload(); await expect(options).toHaveText(labels(apollo));
+  } finally { expect((await page.request.delete(`/api/items/${item.id}`)).status()).toBe(204); }
 });
 
 test('failed validation preserves values and accessible field error',async({page})=>{
