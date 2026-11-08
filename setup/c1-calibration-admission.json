@@ -53,7 +53,7 @@
   },
   "independent_family_claim": false,
   "cross_review": "Three authorized study families; fresh different-model review, not external-family/human independence.",
-  "frozen_registration_sha256": "afb0cd06a98d2c9bfb3c69e7926ed0d6f0895ac593e84d684b55244bd61683e4",
+  "frozen_registration_sha256": "5ec720325644e7f7d7e560f7c0e71d3213971da9825d8c3bfcfe38a3138d5188",
   "calibration_runs": 0,
   "scored_runs": 0,
   "status": "C1_admitted_not_yet_dispatched",
@@ -65,5 +65,11 @@
     "sha256": "009fbf7c6c9f425ede0679b420e78f62ea36d17cedea1e993b019012e2fa571a",
     "model_calls": 0,
     "subject_harness_change": false
+  },
+  "metadata_reconciliation_before_dispatch": {
+    "recorded_at_utc": "2026-11-08T08:01:43.930866+00:00",
+    "field": "checks.C1_alternative_runtime_status",
+    "effect": "Remove stale historical status text only; all execution and acceptance parameters identical.",
+    "prior_snapshot_preserved": true
   }
 }
