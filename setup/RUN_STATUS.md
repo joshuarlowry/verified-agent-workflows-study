@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 12:05:17 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 12:11:58 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 12:05:17 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 12:11:58 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-C2-independent-external-checks | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 11:13:06 AM EST (UTC-0500) | Nov 08, 2026 at 12:05:17 PM EST (UTC-0500) |
+| terra-C2-frozen-checks-cross-review | openai/gpt-6.1-terra | running | Nov 08, 2026 at 12:11:58 PM EST (UTC-0500) | — |
 
-Staged, not launched. Wait for actual Gemma alternative first return and backup; no reference/alternative/outcomes included. Checks prompt frozen before reference construction.
+Staged only. Frozen first suite plus original baseline/public scope/policy/docs; no candidate implementations, builder conversations or comparative outcomes. Different-model fresh cross-review, no self-approval. Wait prior backup and offline clean replays before sequential launch.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
