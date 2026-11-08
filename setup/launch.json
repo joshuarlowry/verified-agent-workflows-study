@@ -1,15 +1,15 @@
 {
-  "status_note": "Staged explicit fresh native-Playwright evaluator construction. No previous feature-evaluator source or candidate implementations/results. Same C2 public scope and existing runner/gates, minimal update-only fixture proposal, no duplicate custom framework. Old versions remain preserved; different-model review and all actual qualification required. Wait current source-review endpoint/backup before sequential launch.",
+  "status_note": "API key total limit exhausted; further model dispatch globally stopped. Provider403 key_limit is adjudicated budget exhaustion despite old raw controller flag false. Partial source, all captures and overhead preserved; no account/provider/budget setting changed. C2 remains unqualified; no scored runs.",
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "c2-native-evaluator-r3-construction-20261108T192247Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T19:43:54.130807+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 02:43:54 PM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-08T19:57:58.384675+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST (UTC-0500)",
   "event_at_utc": "2026-11-08T19:43:54.077053+00:00",
   "event_at_eastern": "Nov 08, 2026 at 02:43:54 PM EST (UTC-0500)",
   "display_timezone": "America/New_York",
   "status": "stopped_preserving_state",
-  "background_service": "study2-c2-native-evaluator-r3-construction-20261108t192247z",
+  "background_service": "study2-c2-native-evaluator-r3-construction-20261108t192247z.service",
   "automatic_restart": false,
   "roles": [
     {
@@ -21,7 +21,7 @@
       "ended_at_utc": "2026-11-08T19:43:54.077040+00:00",
       "agent_exit_code": 1,
       "controller_exit_code": 0,
-      "api_budget_exhausted": false,
+      "api_budget_exhausted": true,
       "prompt_sha256": "6a27e6c280f2f20c856d8bbfa403358589ebec41574bd8222a3648bc3c1277d3",
       "controller_sha256": "676e13c303982999b3b270d3050edd042064ba73ff893f24e60b7cba57710678",
       "dispatch_eastern": "Nov 08, 2026 at 02:38:28 PM EST (UTC-0500)",

@@ -652,6 +652,13 @@
         "setup/clean-usage-preflight.json"
       ],
       "resolution_scope": "Source-free native payload/startup and observed-call billing qualification for all three models; full role/corpus/broker/resource controller qualification remains gated."
+    },
+    {
+      "id": "actual_api_key_limit",
+      "phase": "before_any_further_model_dispatch",
+      "detail": "OpenRouter reported the existing $50 key total limit exhausted. All model dispatch is stopped. Access restoration and explicit resume are required; qualify structured403 detection before future inference. No limit, credential, route or provider was changed.",
+      "resolved": false,
+      "evidence": "setup/actual-api-budget-endpoint.json"
     }
   ],
   "pre_recruitment_work": {
@@ -1325,5 +1332,14 @@
     "cross_reviewer": "GLM fresh session; family independence waived",
     "primary_dispatch_admitted": false,
     "C1_results_unchanged": true
+  },
+  "dispatch_hold": {
+    "active": true,
+    "reason": "actual_api_key_total_limit_exhaustion",
+    "recorded_at_utc": "2026-11-08T19:57:58.313590+00:00",
+    "recorded_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST",
+    "evidence": "setup/actual-api-budget-endpoint.json",
+    "settings_changed": false,
+    "scope": "All model dispatch, including unscored construction. Historical C1 admission does not override this hold."
   }
 }

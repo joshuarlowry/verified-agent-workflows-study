@@ -1070,5 +1070,15 @@
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T19:43:32.053896+00:00"
+  "updated_at_utc": "2026-11-08T19:57:58.313590+00:00",
+  "dispatch_hold": {
+    "active": true,
+    "reason": "actual_api_key_total_limit_exhaustion",
+    "recorded_at_utc": "2026-11-08T19:57:58.313590+00:00",
+    "recorded_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST",
+    "evidence": "setup/actual-api-budget-endpoint.json",
+    "settings_changed": false,
+    "scope": "All model dispatch, including unscored construction. Historical C1 admission does not override this hold."
+  },
+  "updated_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST"
 }

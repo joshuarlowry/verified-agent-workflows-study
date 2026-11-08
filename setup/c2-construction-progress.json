@@ -299,7 +299,7 @@
   "native_evaluator_revision_3": {
     "model": "openai/gpt-6.1-terra",
     "reasoning": "high",
-    "status": "running",
+    "status": "budget_exhausted_partial_endpoint_preserved",
     "source_construction": "Fresh native Playwright cases/config/helpers from original public scope; no previous feature-evaluator source or candidate source/results supplied.",
     "simplification": "Reuse existing mechanical native runner/report mechanisms and unchanged qualified baseline-only DB guard. No second custom validator/scanner/framework.",
     "fixture_helper_limit": "Proposal restricted to exact updatedAt updates on freshly API-created owned item IDs; no direct insert/delete/purge, schema/auth/seed changes. Still requires independent qualification.",
@@ -315,7 +315,8 @@
     ],
     "allow_fallbacks": false,
     "zdr": true,
-    "actual_generation_metadata_audit": "pending first endpoint"
+    "actual_generation_metadata_audit": "pending first endpoint",
+    "evidence": "setup/actual-api-budget-endpoint.json"
   },
   "native_evaluator_revision3_source_review": {
     "model": "z-ai/glm-5.3-flash",
@@ -332,5 +333,16 @@
     "original_server_API_in_memory_strategy_unchanged": true,
     "qualification": "Different-model review and all actual task qualification gates required."
   },
-  "construction_role_change_limit": "Builder appointments changed during unscored fixture qualification after preserved failures. This is not a new primary treatment or a comparative model-performance result. Primary five workflows and public C2 scope remain unchanged."
+  "construction_role_change_limit": "Builder appointments changed during unscored fixture qualification after preserved failures. This is not a new primary treatment or a comparative model-performance result. Primary five workflows and public C2 scope remain unchanged.",
+  "dispatch_hold": {
+    "active": true,
+    "reason": "actual_api_key_total_limit_exhaustion",
+    "recorded_at_utc": "2026-11-08T19:57:58.313590+00:00",
+    "recorded_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST",
+    "evidence": "setup/actual-api-budget-endpoint.json",
+    "settings_changed": false,
+    "scope": "All model dispatch, including unscored construction. Historical C1 admission does not override this hold."
+  },
+  "updated_at_utc": "2026-11-08T19:57:58.313590+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST"
 }
