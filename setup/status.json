@@ -1,6 +1,6 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "preparation_construction_returned_not_qualified",
+  "status": "preparation_running",
   "snapshot_at_utc": "2026-11-08T13:59:21.395074+00:00",
   "snapshot_at_eastern": "Nov 08, 2026 at 08:59:21 AM EST",
   "event_at_utc": "2026-11-08T13:30:06.075793+00:00",
@@ -94,9 +94,9 @@
     "exploratory_nonpolicy_gate_passes": 7,
     "report": "C1_RESULTS.md"
   },
-  "updated_at_utc": "2026-11-08T15:12:29.179719+00:00",
-  "updated_at_eastern": "Nov 08, 2026 at 10:12:29 AM EST (UTC-0500)",
-  "last_workflow_event_eastern": "Nov 08, 2026 at 10:12:29 AM EST (UTC-0500)",
+  "updated_at_utc": "2026-11-08T15:30:46.956161+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 10:30:46 AM EST (UTC-0500)",
+  "last_workflow_event_eastern": "Nov 08, 2026 at 10:30:46 AM EST (UTC-0500)",
   "active_launch": "setup/launch.json",
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
 }

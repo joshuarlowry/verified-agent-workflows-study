@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 10:12:29 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 10:30:46 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 10:12:29 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 10:30:46 AM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-reference-constructor | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 10:06:23 AM EST (UTC-0500) | Nov 08, 2026 at 10:12:29 AM EST (UTC-0500) |
+| gemma-C2-independent-alternative | google/gemma-4-31b-it | running | Nov 08, 2026 at 10:30:46 AM EST (UTC-0500) | — |
 
-One operator launcher failure before any model call is preserved; prior auth metadata restored exactly. Unstarted C2 reference role is queued with unchanged prompt/input/controller; corrected queue reads existing auth proof instead of replaying an old one-time controller.
+Original baseline/public inputs only. No reference/evaluator/previous outcomes or conversations supplied; prompt frozen before reference dispatch. Source difference must later qualify.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
