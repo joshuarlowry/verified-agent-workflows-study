@@ -1,0 +1,26 @@
+{
+  "recorded_at_utc": "2026-11-08T00:22:56.832814+00:00",
+  "launch_id": "docs-final-extraction-review-20261107T223442Z",
+  "run_id": "clean-20261107T122746Z-docs-final-extraction-review-glm-20261107T223442Z",
+  "model": "z-ai/glm-5.3-flash",
+  "dispatch_utc": "2026-11-07T23:33:20.448317+00:00",
+  "elapsed_seconds": 1259.245361614012,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "physical_requests": 139,
+  "scoped_capture_audit_passed": true,
+  "first_return_frozen": true,
+  "prompt_sha256": "fe15767a3e9ba310b7ff4c156b46c3b8d57eba0c7680b1ea70d50297e826a351",
+  "controller_sha256": "adff42360916a12360d50ee3fdef4d6fcb2ff413738d167cfdcc0c2e1f6a306a",
+  "disposition": "changes_required; six bounded metadata/annotation/process repairs; staged technical content accepted as retained, not indexed or retrieval-qualified",
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "finding_ids": [
+    "R-01",
+    "R-02",
+    "R-03",
+    "R-04",
+    "R-05",
+    "R-06"
+  ]
+}

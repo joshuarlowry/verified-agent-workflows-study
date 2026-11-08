@@ -681,9 +681,48 @@
           "scope": "Actual repaired checker against unimplemented baseline only. No positive implementation/outcome or candidate edit. Source review and task qualification remain separate."
         }
       ]
+    },
+    {
+      "launch_id": "docs-metadata-repair-20261107T235927Z",
+      "role": "terra-docs-metadata-repair",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-docs-metadata-repair-terra-20261107T235927Z",
+      "manifest_created_at_utc": "2026-11-07T23:59:27.795051+00:00",
+      "prompt_sha256": "fabc763e17dc1db06f2241e49d7a04b0b1a563f9e2c71cb5dfef06a58c2d3727",
+      "controller_sha256": "fb33a2c7983a967845b040005f92d23526e831434850d3b85a2514aef86c4d8b",
+      "phase": "separate_preparation_revision_or_delta_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized three-model construction/cross-review and explicit preparation repairs, original first returns retained",
+      "qualification": "Metadata or alternative-only author revision; no new treatment, source approval or task acceptance. Reference/evaluator/conversation access prohibited for alternative repair."
+    },
+    {
+      "launch_id": "docs-metadata-delta-review-20261107T235927Z",
+      "role": "glm-docs-metadata-delta-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-docs-metadata-delta-review-glm-20261107T235927Z",
+      "manifest_created_at_utc": "2026-11-07T23:59:27.923762+00:00",
+      "prompt_sha256": "bd3252a1ea938d0e45ddf53d335cf28ba7e275e3c8ba4ed83a31284d27424c79",
+      "controller_sha256": "c7aa4e5eef12e4f47b998b622ef91a8b30e8fb440b05b034c6051a99ea17a2b0",
+      "phase": "separate_preparation_revision_or_delta_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized three-model construction/cross-review and explicit preparation repairs, original first returns retained",
+      "qualification": "Metadata or alternative-only author revision; no new treatment, source approval or task acceptance. Reference/evaluator/conversation access prohibited for alternative repair."
+    },
+    {
+      "launch_id": "c1-alternative-repair-20261108T001713Z",
+      "role": "terra-c1-alternative-repair",
+      "requested_model": "google/gemma-4-31b-it",
+      "run_id": "clean-20261107T122746Z-c1-alternative-repair-terra-20261108T001713Z",
+      "manifest_created_at_utc": "2026-11-08T00:17:13.812954+00:00",
+      "prompt_sha256": "cbce8f5892b1ea17944b3b57351c8a084988553d7f034c8e573f59ac97870e17",
+      "controller_sha256": "ef05d06c6eb0ef58d12988c45129f6237ef1665e5452f87f84d399fffe649dc6",
+      "phase": "separate_preparation_revision_or_delta_review",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized three-model construction/cross-review and explicit preparation repairs, original first returns retained",
+      "qualification": "Metadata or alternative-only author revision; no new treatment, source approval or task acceptance. Reference/evaluator/conversation access prohibited for alternative repair."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-07T22:55:47.496576+00:00"
+  "updated_at_utc": "2026-11-08T00:22:56.832814+00:00"
 }

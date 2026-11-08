@@ -1,0 +1,20 @@
+{
+  "recorded_at_utc": "2026-11-08T00:20:58.351934+00:00",
+  "kind": "exact_dependency_image_in_memory_SQLite_metadata_probe",
+  "exit_code": 0,
+  "elapsed_seconds": 0.2815824630088173,
+  "model_calls": 0,
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "database": ":memory:",
+  "prior_probe_failures_retained": "Two zero-model-call probes failed on assumptions about native module path/naming. This probe enumerates actual loaded package modules and leaves unknown hash null.",
+  "observed": {
+    "sqlite": "3.53.4",
+    "initial_foreign_keys": 1,
+    "compile_default_foreign_keys": true,
+    "module_path": "/opt/application-deps/node_modules/better-sqlite3/prebuilds/linux-x64.node",
+    "module_sha256": "6fd4292c6c5f352436cd85c9e1cb286978efa43c20ae350973f83414ced9991d",
+    "matching_modules": [
+      "/opt/application-deps/node_modules/better-sqlite3/prebuilds/linux-x64.node"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-11-08T00:22:56.832814+00:00",
+  "launch_id": "native-controller-integration-20261107T223522Z",
+  "run_id": "clean-20261107T122746Z-native-controller-integration-terra-20261107T223522Z",
+  "model": "openai/gpt-6.1-terra",
+  "dispatch_utc": "2026-11-07T23:54:47.063084+00:00",
+  "elapsed_seconds": 263.09038610899006,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "physical_requests": 70,
+  "scoped_capture_audit_passed": true,
+  "first_return_frozen": true,
+  "prompt_sha256": "c71535381607a678696c3976705af5ee1648eac292531dce138f40c07efe3885",
+  "controller_sha256": "fa2da7b7ec19a731712104468874540b0304a050c520d59446bfd549dabb1026",
+  "disposition": "third partial implementation; 25 reported local tests including real CLI/local fake gateway. End-to-end orchestration still missing. Coordinator taking mechanical integration; no dispatch approval.",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

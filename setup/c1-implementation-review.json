@@ -1,0 +1,32 @@
+{
+  "recorded_at_utc": "2026-11-08T00:22:56.832814+00:00",
+  "launch_id": "c1-implementation-review-20261107T223656Z",
+  "run_id": "clean-20261107T122746Z-c1-implementation-review-glm-20261107T223656Z",
+  "model": "z-ai/glm-5.3-flash",
+  "dispatch_utc": "2026-11-07T23:59:36.595455+00:00",
+  "elapsed_seconds": 795.1464455189998,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "physical_requests": 81,
+  "scoped_capture_audit_passed": true,
+  "first_return_frozen": true,
+  "prompt_sha256": "cdf679dce6bf3008f9af9b15c6db6f9a24da2b030c630e0b01f8083e2d899130",
+  "controller_sha256": "5da0a2bd113ca4a65db016ccf36b7b49ba1a663cfbafe0173aad336449a65bb3",
+  "disposition": "reference accepted in source review; alternative changes_required for two UI behaviors plus metadata/EOF issues. No task acceptance or scoring.",
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "alternative_findings": [
+    {
+      "id": "ALT-F1",
+      "behavior": "Empty workspace label omits zero."
+    },
+    {
+      "id": "ALT-F2",
+      "behavior": "Selector count stays stale after writes while API counts are fresh."
+    },
+    {
+      "id": "metadata",
+      "behavior": "One generated lockfile flag and EOF newlines; original preserved."
+    }
+  ]
+}

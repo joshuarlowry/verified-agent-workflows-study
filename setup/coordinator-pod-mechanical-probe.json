@@ -1,0 +1,37 @@
+{
+  "recorded_at_utc": "2026-11-08T00:22:56.832814+00:00",
+  "kind": "real_host_supervisor_worker_pod_and_seal_mechanical_probe",
+  "image_id": "3005436d2c76060957f7944203f2edb281a1ffb33f16e8a85cc68444dfb5ef38",
+  "external_model_calls": 0,
+  "interactive_coordinator_usage": "unavailable, not zero",
+  "app_source_or_tests_used": false,
+  "all_scoped_checks_passed": true,
+  "checks": {
+    "supervisor_readonly": true,
+    "worker_writable": true,
+    "docs_readonly": true,
+    "host_home_absent": true,
+    "two_cpus_each": true,
+    "no_external_interface": true,
+    "separate_network_namespaces": true,
+    "backend_never_connected": true,
+    "whole_cgroup_empty": true,
+    "late_writer_stopped": true,
+    "frozen_copy_verified": true
+  },
+  "aggregate_limits": {
+    "memory.max": "8589934592",
+    "memory.swap.max": "0",
+    "cpuset.cpus.effective": "2-3",
+    "pids.max": "512"
+  },
+  "elapsed_seconds": 1.1612418240110856,
+  "cleanup_exit_code": 0,
+  "first_attempt_preserved": {
+    "run": "pod-probe-20261108T001151Z",
+    "cause": "Copied framework bridge file retained 0600 and became root-owned. Node UID1000 failed to read /tools/bridge.mjs; journald preserved.",
+    "repair": "Working-copy runtime modes made readable/executable; bytes unchanged; original model returns untouched."
+  },
+  "source_work_copy": "coordinator-harness-integration-20261108T0001",
+  "remaining": "No native model/broker/approved Context/full escape/whole-controller qualification. This validates only actual pod resources, role mounts and cgroup freeze/copy/kill with a detached writer."
+}
