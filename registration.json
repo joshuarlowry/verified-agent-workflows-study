@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 14,
-  "status": "C1_calibration_interrupted_transport_requalification",
+  "protocol_revision": 15,
+  "status": "C1_clean_replay_transport_and_stop_classification_qualification",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -817,7 +817,7 @@
     "Fixture/contracts/FAQ/prompts/checks/corpus may be authored or reviewed by the evaluated model families; cross-review does not establish independent authorship or remove model-family bias",
     "Fresh sessions prevent direct conversation carryover but do not establish independence of model priors or shared training data"
   ],
-  "setup_progress": "1C1calibration attempt dispatched and interrupted by a reproduced handoff acknowledgement bug;0scored. Endpoint and raw logs privately backed up. Remaining dispatch stopped. Mechanical fix passes40checks; fresh GLM review pending before a new frozen clean block.",
+  "setup_progress": "1interrupted C1v1attempt retained;0scored. Ack fix source accepted and live GLM/Terra-to-Gemma fault recovery qualified.42controller checks pass after separate endpoint-cause classification fix; its native stop controls/review precede clean v2 admission.",
   "baseline_source_prefix": "fixtures/baseline",
   "baseline_application_git_tree": null,
   "baseline_export_policy": "copy only frozen application source plus declared public task/FAQ/docs/harness overlays into fresh isolated workspace; do not expose this repository history or sibling fixture revisions",
@@ -1080,9 +1080,21 @@
     "changed_application_or_acceptance": false,
     "models_settings_deadlines_unchanged": true,
     "fresh_cross_review_required": true,
-    "status": "mechanical_fix_passes40controller_checks_review_pending",
+    "status": "ack_source_review_accepted_and_both_real_supervisor_fault_probes_passed",
     "clean_replay_policy": "Preserve the interrupted first attempt in results and total study cost. Before any further collection, qualify/freeze the common transport repair and register a fresh10-slot clean C1 block with the same workflow order and fresh sessions/source. No continuation or rescue of the first attempt.",
     "actual_attempt_accounting": "Target remains40clean calibration+165scored; at least1additional interrupted technical attempt is retained and reported, not silently excluded from study-wide feasibility/cost.",
-    "clean_block_order": "Same frozen seed/arm/repetition order; new cal-c1-v2-01..10 IDs, no rerandomization."
+    "clean_block_order": "Same frozen seed/arm/repetition order; new cal-c1-v2-01..10 IDs, no rerandomization.",
+    "source_review": "handoff-ack-review-20261108T065923Z",
+    "real_role_fault_probe": "actual-handoff-ack-qualification-20261108T072355Z"
+  },
+  "stop_classification_amendment": {
+    "revision": 15,
+    "recorded_at_utc": "2026-11-08T07:39:00.589589+00:00",
+    "reason": "A native in-flight stop-control test cancelled and cleaned up correctly but mislabeled account_outage as infrastructure_failure because the last ordinary native event was incorrectly treated as a completed final return.",
+    "fix": "Only compare native-final/global-stop event ordering when native return is a proven timely successful final. Earlier nonfinal output cannot override a later account/user/budget stop.",
+    "scope": "Endpoint-cause classification only; cancellation/deadline thresholds, actor prompts, model settings, app/acceptance unchanged.",
+    "before_regression_checks": "2new controller cases fail before fix; all42controller checks pass after.",
+    "qualification": "Actual native in-flight outage replay passes; expiry fault replay and fresh GLM source review required before freeze.",
+    "new_clean_block_dispatch_allowed": false
   }
 }
