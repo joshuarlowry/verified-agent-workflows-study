@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 10:00:17 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 10:06:23 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 10:00:17 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 10:06:23 AM EST (UTC-0500)
 
-**stopped preserving state**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-reference-constructor | openai/gpt-6.1-terra | queued | — | — |
+| terra-C2-reference-constructor | openai/gpt-6.1-terra | running | Nov 08, 2026 at 10:06:23 AM EST (UTC-0500) | — |
 
-Reference construction only. C2 primary workflows remain unqualified/unadmitted; no C1 outcome changed.
+One operator launcher failure before any model call is preserved; prior auth metadata restored exactly. Unstarted C2 reference role is queued with unchanged prompt/input/controller; corrected queue reads existing auth proof instead of replaying an old one-time controller.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 

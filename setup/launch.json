@@ -1,24 +1,26 @@
 {
-  "status_note": "Reference construction only. C2 primary workflows remain unqualified/unadmitted; no C1 outcome changed.",
+  "status_note": "One operator launcher failure before any model call is preserved; prior auth metadata restored exactly. Unstarted C2 reference role is queued with unchanged prompt/input/controller; corrected queue reads existing auth proof instead of replaying an old one-time controller.",
   "cohort_id": "clean-20261107T122746Z",
   "launch_id": "c2-reference-construction-20261108T145449Z",
   "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T15:00:17.231357+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 10:00:17 AM EST (UTC-0500)",
-  "event_at_utc": "2026-11-08T15:00:17.179723+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 10:00:17 AM EST (UTC-0500)",
+  "snapshot_at_utc": "2026-11-08T15:06:23.456100+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 10:06:23 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T15:06:23.403324+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 10:06:23 AM EST (UTC-0500)",
   "display_timezone": "America/New_York",
-  "status": "stopped_preserving_state",
-  "background_service": "study2-c2-reference-construction-20261108t145449z",
+  "status": "running",
+  "background_service": "study2-c2-reference-construction-20261108t145449z-launch2",
   "automatic_restart": false,
   "roles": [
     {
       "role": "terra-C2-reference-constructor",
       "run_id": "clean-20261107T122746Z-c2-reference-terra-20261108T145449Z",
       "model": "openai/gpt-6.1-terra",
-      "status": "queued",
+      "status": "running",
+      "dispatch_utc": "2026-11-08T15:06:23.403324+00:00",
       "prompt_sha256": "192e6d8cbe44dabaeca94f01e709741e0c47e35c995c533f900c0897266ee4fe",
-      "controller_sha256": "55635d466019726e27b7941fac321c63770f2f631a2c079d188230d91c8cd82e"
+      "controller_sha256": "55635d466019726e27b7941fac321c63770f2f631a2c079d188230d91c8cd82e",
+      "dispatch_eastern": "Nov 08, 2026 at 10:06:23 AM EST (UTC-0500)"
     }
   ],
   "qualification_status": "not_qualified",
