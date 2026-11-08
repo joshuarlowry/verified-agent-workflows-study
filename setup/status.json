@@ -1,6 +1,6 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "running",
+  "status": "preparation_running",
   "snapshot_at_utc": "2026-11-08T08:31:04.496087+00:00",
   "snapshot_at_eastern": "Nov 08, 2026 at 03:31:04 AM EST",
   "event_at_utc": "2026-11-08T08:31:04.100340+00:00",
@@ -53,5 +53,10 @@
   "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
   "calibration_block_version": 2,
   "prior_interrupted_calibration_attempts": 1,
-  "total_calibration_dispatched_including_prior": 5
+  "total_calibration_dispatched_including_prior": 5,
+  "updated_at_utc": "2026-11-08T08:40:30.565104+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 03:40:30 AM EST (UTC-0500)",
+  "last_workflow_event_eastern": "Nov 08, 2026 at 03:40:30 AM EST (UTC-0500)",
+  "active_launch": "setup/launch.json",
+  "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified."
 }

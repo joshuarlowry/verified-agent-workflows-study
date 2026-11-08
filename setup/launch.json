@@ -1,57 +1,29 @@
 {
-  "kind": "registered_C1_calibration_metadata",
-  "status": "running",
-  "snapshot_at_utc": "2026-11-08T08:31:04.496087+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 03:31:04 AM EST",
-  "event_at_utc": "2026-11-08T08:31:04.100340+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 03:31:04 AM EST",
+  "status_note": "Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.",
   "cohort_id": "clean-20261107T122746Z",
-  "calibration_block_size": 10,
-  "calibration_dispatched": 4,
-  "calibration_endpoints": 4,
-  "scored_runs": 0,
-  "rows": [
+  "launch_id": "outage-schedule-review-20261108T084030Z",
+  "kind": "preparation_construction_not_calibration_or_scoring",
+  "snapshot_at_utc": "2026-11-08T08:40:30.565104+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 03:40:30 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T08:40:30.492270+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 03:40:30 AM EST (UTC-0500)",
+  "display_timezone": "America/New_York",
+  "status": "running",
+  "background_service": "study2-outage-schedule-review-20261108t084030z",
+  "automatic_restart": false,
+  "roles": [
     {
-      "position": 1,
-      "arm": "GLM supervising Gemma",
-      "repetition": 1,
-      "run_id": "cal-c1-v2-01",
-      "status": "final",
-      "endpoint_reason": "final",
-      "native_exit_code": 0,
-      "actual_provider_resolution": "verified"
-    },
-    {
-      "position": 2,
-      "arm": "GLM alone",
-      "repetition": 1,
-      "run_id": "cal-c1-v2-02",
-      "status": "final",
-      "endpoint_reason": "final",
-      "native_exit_code": 0,
-      "actual_provider_resolution": "verified"
-    },
-    {
-      "position": 3,
-      "arm": "Terra alone",
-      "repetition": 1,
-      "run_id": "cal-c1-v2-03",
-      "status": "final",
-      "endpoint_reason": "final",
-      "native_exit_code": 0,
-      "actual_provider_resolution": "verified"
-    },
-    {
-      "position": 4,
-      "arm": "Gemma alone",
-      "repetition": 1,
-      "run_id": "cal-c1-v2-04",
-      "status": "infrastructure_failure"
+      "role": "glm-outage-schedule-review",
+      "run_id": "clean-20261107T122746Z-outage-schedule-review-glm-20261108T084030Z",
+      "model": "z-ai/glm-5.3-flash",
+      "status": "running",
+      "dispatch_utc": "2026-11-08T08:40:30.492270+00:00",
+      "prompt_sha256": "c53ec0335275bbd99f79a0fd121653562581b82e18204e27d80ae0e281c945c1",
+      "controller_sha256": "9554ca9ad921ccba918b294738a5af47549ceb2796845fa991dbd5de62a81f6a",
+      "dispatch_eastern": "Nov 08, 2026 at 03:40:30 AM EST (UTC-0500)"
     }
   ],
-  "quality": "Not graded; an endpoint is not verified completion.",
-  "scope": "First10of40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
-  "calibration_block_version": 2,
-  "prior_interrupted_calibration_attempts": 1,
-  "total_calibration_dispatched_including_prior": 5
+  "qualification_status": "not_qualified",
+  "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
+  "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
 }
