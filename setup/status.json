@@ -1,10 +1,10 @@
 {
   "kind": "registered_C1_calibration_metadata",
   "status": "stopped_preserving_state",
-  "snapshot_at_utc": "2026-11-08T10:29:47.663178+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 05:29:47 AM EST",
-  "event_at_utc": "2026-11-08T10:06:20.016538+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 05:06:20 AM EST",
+  "snapshot_at_utc": "2026-11-08T11:10:32.713904+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 06:10:32 AM EST",
+  "event_at_utc": "2026-11-08T10:44:30.240561+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 05:44:30 AM EST",
   "cohort_id": "clean-20261107T122746Z",
   "calibration_block_size": 7,
   "calibration_dispatched": 2,
@@ -37,5 +37,24 @@
   "prior_interrupted_calibration_attempts": 2,
   "total_calibration_dispatched_including_prior": 7,
   "carried_forward_endpoints": 3,
-  "initial_C1_endpoints": 5
+  "initial_C1_endpoints": 5,
+  "passive_checkpoint": {
+    "kind": "passive_registered_30minute_checkpoint",
+    "workflow": "Terra supervising Gemma",
+    "repetition": 2,
+    "run_id": "cal-c1-v3-07",
+    "observed_at_utc": "2026-11-08T11:08:57.023445+00:00",
+    "observed_at_eastern": "Nov 08, 2026 at 06:08:57 AM EST",
+    "published_at_utc": "2026-11-08T11:10:32.713904+00:00",
+    "published_at_eastern": "Nov 08, 2026 at 06:10:32 AM EST",
+    "elapsed_seconds": 1802.499055543,
+    "controller_process_confirmed_active": true,
+    "ledger_state": "active",
+    "worker_requests": 2,
+    "durable_worker_responses": 1,
+    "source_checkpoint_sha256": "3eddff2ae7893f4d37e6cb496791f3e7e17409b7ca9e2c66ea44bf763c87250c",
+    "model_calls_for_publication": 0,
+    "subject_feedback_or_changes": false,
+    "quality": "Ungraded; liveness and handoff counters are not delivery evidence."
+  }
 }
