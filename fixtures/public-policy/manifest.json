@@ -1,0 +1,12 @@
+{
+  "kind": "prospective_public_source_policy_not_task_admission",
+  "files_sha256": {
+    "PRESERVATION.md": "18f4df53bfe3f7fca18d6e0e41d9f3347bbcc0473b2b32e12f97ffcee6c48bec",
+    "preservation/preserve-tests.mjs": "92c92faf9df4eed4f85ddb8cf323f83ab20e07c44c551e4810cfe024ea8a31e8",
+    "path-gate-source.mjs": "4223200b913eb6cc4dcdbef6d21e63587da4ea1bde32f9eb51875f2b4ae91890",
+    "SOURCE_INVENTORY.json": "13fbfdd6345e6f947180052fe2e1cf38d0399382742a3540f6fdc151b25b5354"
+  },
+  "primary_subject_dispatch_admitted": false,
+  "required_before_dispatch": "Task evaluator layout, source normalization, overlay hashes and public role mounts must be qualified; reference/alternative/negative-control/runtime gates remain.",
+  "C1_outcomes_unchanged": true
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "protocol_revision": 19,
-  "status": "C1_first_grading_complete_disclosure_gap_before_further_collection",
+  "protocol_revision": 20,
+  "status": "prospective_preservation_disclosed_C2_C4_packets_not_admitted",
   "study_id": null,
   "proposal": "Verified delivery of small software changes",
   "repository_choice": "new small application with real UI, HTTP API and local test database",
@@ -1308,7 +1308,21 @@
     "report": "setup/C1_RESULTS.md",
     "machine_data": "setup/c1-first-results.json",
     "protocol_audit": "setup/c1-protocol-audit.json",
-    "readiness_gap": "C1-M1: exact preservation constraints not publicly disclosed; resolve uniformly before further collection. Original C1 outcomes unchanged.",
+    "readiness_gap": "Prospective policy now published and accuracy-reviewed. Each task needs actual evaluator layout, normalization, overlay integrity and role-mount qualification before dispatch.",
     "economic_readiness_gap": "Primary uncached API-equivalent rate card remains unset."
+  },
+  "prospective_public_preservation": {
+    "policy": "fixtures/public-policy/PRESERVATION.md",
+    "policy_sha256": "18f4df53bfe3f7fca18d6e0e41d9f3347bbcc0473b2b32e12f97ffcee6c48bec",
+    "predicate": "fixtures/public-policy/preservation/preserve-tests.mjs",
+    "predicate_sha256": "92c92faf9df4eed4f85ddb8cf323f83ab20e07c44c551e4810cfe024ea8a31e8",
+    "record": "setup/public-preservation-disclosure.json",
+    "rules_changed": false,
+    "accuracy_checks_passed": 55,
+    "review_returned_verdict": "changes_required; provenance stamps corrected mechanically; per-task runtime/layout/mount bindings still required",
+    "author": "AI coordinator",
+    "cross_reviewer": "GLM fresh session; family independence waived",
+    "primary_dispatch_admitted": false,
+    "C1_results_unchanged": true
   }
 }

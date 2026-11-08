@@ -1,0 +1,322 @@
+{
+  "review_id": "public-preservation-review",
+  "generated_utc": "2026-11-08T14:30:21Z",
+  "verdict": "changes_required",
+  "verdict_scope": "Provenance/binding defects only. The mechanical disclosure itself (PRESERVATION.md rules 1-5, path language, FAQ summaries, C2/C3/C4 contracts) was verified accurate against the frozen predicate and path-gate source by direct execution probes; no rule, prose, or contract text change is required. The two required changes are provenance re-stamping and gate path binding, which the packet's own freeze conditions already mandate.",
+  "reviewer": {
+    "model": "GLM Relace FP4 (glm)",
+    "role": "fresh different-model reviewer of prospective PUBLIC benchmark constraints",
+    "session": "fresh session; no other runs, sessions, subagents, or hidden/protected tests accessed or available",
+    "family_independence": "This is fresh-session cross-review within the authorized model families. It is NOT family-independent evidence; the packet itself makes the same reservation (baseline-spec.md line 68, FAQ.md item 12)."
+  },
+  "scope": {
+    "what_was_reviewed": [
+      "PRESERVATION.md public policy prose vs the frozen predicate preservation/preserve-tests.mjs and path-gate-source.mjs",
+      "Updated C2/C3/C4 FAQ.md, baseline-spec.md, task contracts, and BASELINE_BINDINGS.json",
+      "Original public baseline tests under inputs/baseline-tests (read-only)"
+    ],
+    "what_was_NOT_reviewed_or_certified": [
+      "Reference/alternative task packets: not supplied, still unqualified; cannot be certified here",
+      "Runtime feature success of C2/C3/C4 or any baseline: no baseline app, evaluator, snapshot, or protected bundle supplied; no clean replay performed",
+      "Sealed/hidden tests: none available; no claim about them is made",
+      "The full evaluator: path-gate-source.mjs was read for path policy only; it did not run as an evaluator (see findings F2)"
+    ],
+    "non_goals_respected": [
+      "No application feature implemented; no input files modified; no rule expanded or improved; no alternative implementation written; no app tasks chosen",
+      "No optional services/tools, benchmarks, model comparisons, purchasing claims, or semantic human-review gates added",
+      "Scratch work confined to /tmp/opencode/preserve-review; outputs only under /workspace/output/public-preservation-review"
+    ]
+  },
+  "inputs": [
+    {
+      "path": "inputs/PRESERVATION.md",
+      "sha256": "18f4df53bfe3f7fca18d6e0e41d9f3347bbcc0473b2b32e12f97ffcee6c48bec",
+      "role": "public source/test preservation policy (28 lines)"
+    },
+    {
+      "path": "inputs/preservation/preserve-tests.mjs",
+      "sha256": "92c92faf9df4eed4f85ddb8cf323f83ab20e07c44c551e4810cfe024ea8a31e8",
+      "role": "frozen original-test predicate (161 lines); imports only typescript"
+    },
+    {
+      "path": "inputs/path-gate-source.mjs",
+      "sha256": "4223200b913eb6cc4dcdbef6d21e63587da4ea1bde32f9eb51875f2b4ae91890",
+      "role": "core source-inventory gate source (51 lines); READ ONLY, not executed as evaluator"
+    },
+    {
+      "path": "inputs/C2/FAQ.md",
+      "sha256": "e41d289aef0a2a87c3a4967121eaaf47bb1485bb618869f17155f0e9067c4e12",
+      "role": "FAQ (byte-identical in C2/C3/C4)"
+    },
+    {
+      "path": "inputs/C3/FAQ.md",
+      "sha256": "e41d289aef0a2a87c3a4967121eaaf47bb1485bb618869f17155f0e9067c4e12"
+    },
+    {
+      "path": "inputs/C4/FAQ.md",
+      "sha256": "e41d289aef0a2a87c3a4967121eaaf47bb1485bb618869f17155f0e9067c4e12"
+    },
+    {
+      "path": "inputs/C2/baseline-spec.md",
+      "sha256": "0bae422742a3eedb3cf4599d938fd9479fbadc82761058172801641d85d9624d",
+      "role": "baseline spec (byte-identical in C2/C3/C4)"
+    },
+    {
+      "path": "inputs/C3/baseline-spec.md",
+      "sha256": "0bae422742a3eedb3cf4599d938fd9479fbadc82761058172801641d85d9624d"
+    },
+    {
+      "path": "inputs/C4/baseline-spec.md",
+      "sha256": "0bae422742a3eedb3cf4599d938fd9479fbadc82761058172801641d85d9624d"
+    },
+    {
+      "path": "inputs/C2/contracts/C2-item-list-sort-toggle.md",
+      "sha256": "51fa20665d9081a3a94af152c1ddeba56cb681b4ec80087380250e99a63d4055"
+    },
+    {
+      "path": "inputs/C3/contracts/C3-item-share-link.md",
+      "sha256": "d223a9c9232d052922cda8667682ec22a0414baad8f7f3f63cecac1edcf1950c"
+    },
+    {
+      "path": "inputs/C4/contracts/C4-remember-last-workspace.md",
+      "sha256": "00144aac3148df30cffef3e3dd33859f104aa736d6d3cd4d213f1e9264bbb9e8"
+    },
+    {
+      "path": "inputs/C2/BASELINE_BINDINGS.json",
+      "sha256": "d7f7ee657f823f231367d41ee9cbeceb2cbabffde232ba0eeb59c87f638b3f87",
+      "role": "bindings manifest (byte-identical in C2/C3/C4); status proposed_amended_not_frozen_or_qualified"
+    },
+    {
+      "path": "inputs/C3/BASELINE_BINDINGS.json",
+      "sha256": "d7f7ee657f823f231367d41ee9cbeceb2cbabffde232ba0eeb59c87f638b3f87"
+    },
+    {
+      "path": "inputs/C4/BASELINE_BINDINGS.json",
+      "sha256": "d7f7ee657f823f231367d41ee9cbeceb2cbabffde232ba0eeb59c87f638b3f87"
+    },
+    {
+      "path": "inputs/baseline-tests/api.test.ts",
+      "sha256": "c2543e6bf5bdb3303ce279a1710f09d590565d390211e6e10ed2b8aa7d87f0b5"
+    },
+    {
+      "path": "inputs/baseline-tests/e2e/board.spec.ts",
+      "sha256": "6a3877f11baa8b8b5b6e65822ea0bf6f6367d559d69c5e50f39b468a268402a7"
+    },
+    {
+      "path": "inputs/baseline-tests/e2e/additional.spec.ts",
+      "sha256": "59de67844a6bf517d6aaf369f9a419feb49e45c5ba39d1662ec2ac29f732ef43"
+    },
+    {
+      "path": "inputs/baseline-tests/e2e/refetch.spec.ts",
+      "sha256": "57bbc43a9bed560877404a201bb9fe7b7174d129a758f490549c92ada622a3ee"
+    },
+    {
+      "path": "inputs/node_modules/typescript/package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "role": "typescript 5.9.3, read-only"
+    },
+    {
+      "path": "inputs/node_modules/typescript/lib/typescript.js",
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    }
+  ],
+  "predicate_module": {
+    "imported_directly": true,
+    "imported_from": "/workspace/inputs/preservation/preserve-tests.mjs",
+    "imported_path_as_supplied": "preservation/preserve-tests.mjs",
+    "typescript_version": "5.9.3 (module guard at preserve-tests.mjs:4 held; TS 5.9.3 resolved from /workspace/inputs/node_modules/typescript)",
+    "module_imports": [
+      "typescript (only; line 2) \u2014 confirms 'No subject module is imported' (line 1)"
+    ],
+    "export_used": "preserveOriginalTest(name, baseline, target)"
+  },
+  "probe_summary": {
+    "harness": "/tmp/opencode/preserve-review/probe.mjs (scratch only)",
+    "total": 55,
+    "passed": 55,
+    "failed": 0,
+    "accepted_cases": 13,
+    "rejected_cases": 42,
+    "full_log": "CHECKS.md and PROVENANCE.json (results-final snapshot in scratch)",
+    "key_confirmations": [
+      "A-ALL-LIMITS-16-16-16: one api.test.ts target carrying 16 group cases + 16 seed assertions + the seed migration + 16 top-level newCases is accepted with {migration:true,assertions:16,cases:16,group_cases:16} \u2014 the top-level, seed-assertion and group-case limits are independent, exactly as PRESERVATION.md rules 2/3/4 state",
+      "Every representative excluded transformation is rejected: in-case additions at nonlegacy sites, comment/trivia changes (boundary, gap-split, top-level, even one extra trailing newline), removed/reordered/renamed/whitespace-mutated originals, test.only/describe.only/type-arguments/optional-call, duplicate titles (added-vs-added, added-vs-original, top-level), empty titles, nested-group insertion, top-level arbitrary bodies/describe/import/helper additions, newCase title charset violations, bad syntax, count limits (17 of each), migration anomalies (OLD+MIGRATED both, duplicate MIGRATED, wrong-site, mutated MIGRATED)",
+      "Accepted additions have arbitrary case bodies (parsed only, never semantically certified) \u2014 matches PRESERVATION.md line 19",
+      "Group additions work in any original test file that has eligible ordinary describe groups; the supplied e2e specs have none, so any byte change to them is rejected (R-E2E-BODY-EDIT, R-E2E-ANY-BLANKLINE) \u2014 matches rule 1's structural requirement",
+      "Synthetic mechanic probes (hook-adjacent boundary, empty group, ambiguous title paths, deep nested groups) match the prose; all 7 baseline test calls use arrow callbacks, so the one theoretical lenience edge (F3) cannot occur with the frozen baseline"
+    ]
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocking_pre_freeze",
+      "kind": "provenance_mismatch",
+      "file": "inputs/C2/BASELINE_BINDINGS.json (byte-identical in C3/C4)",
+      "lines": "8 (inputs.faq entry)",
+      "evidence": "Recorded faq sha256 d909c56495db20335279aa4be333a003c61850490b9987afd9a0371f142d5b66 does not match the delivered FAQ.md bytes, which hash e41d289aef0a2a87c3a4967121eaaf47bb1485bb618869f17155f0e9067c4e12 in C2, C3 and C4. The recorded baseline_spec hash (0bae4227...) DOES match, so only the FAQ stamp is stale. No supplied material contains any hash for PRESERVATION.md, preservation/preserve-tests.mjs, or path-gate-source.mjs.",
+      "impact": "PRESERVATION.md line 28 guarantees 'Every role receives identical policy bytes and the policy hash is in the manifest'; with the supplied bytes that guarantee cannot be demonstrated, and an agent reconciling against the manifest gets a hash contradiction on the FAQ. This is exactly the defect a pre-freeze cross-review must catch; the bindings file itself (lines 2-3, 46) already requires reconciliation before freeze.",
+      "required_action": "Re-stamp inputs.faq to the delivered hash and add manifest entries binding PRESERVATION.md, preservation/preserve-tests.mjs, path-gate-source.mjs (and ideally contracts/tests) before freeze or dispatch. No prose change required.",
+      "fix_changes_rule_text": false
+    },
+    {
+      "id": "F2",
+      "severity": "blocking_pre_freeze",
+      "kind": "gate_layout_binding",
+      "file": "inputs/path-gate-source.mjs",
+      "lines": "7 (import './preserve-tests.mjs'), 11-12 (baseline-snapshot.json / protected-bundle.json reads)",
+      "evidence": "As delivered, the gate cannot execute: running it reproduced 'Error [ERR_MODULE_NOT_FOUND]: Cannot find module /workspace/inputs/preserve-tests.mjs imported from /workspace/inputs/path-gate-source.mjs' \u2014 the predicate module actually lives at preservation/preserve-tests.mjs. baseline-snapshot.json and protected-bundle.json are absent (intentionally not supplied per the review brief), so checkProtected/snapshot comparison could not run either.",
+      "impact": "The gate was used strictly as read-only path-policy evidence; it did NOT run as an evaluator and no result is attributed to it. Before dispatch the gate's sibling layout must be bound so './preserve-tests.mjs', baseline-snapshot.json and protected-bundle.json resolve exactly as frozen.",
+      "required_action": "Bind the actual deployment layout (gate beside the preservation module and the two JSON bundles) at freeze and re-verify with a real BASE/TARGET pair. Mechanical, no semantic change.",
+      "fix_changes_rule_text": false
+    },
+    {
+      "id": "F3",
+      "severity": "minor_nonblocking",
+      "kind": "prose_stricter_than_code_edge",
+      "file": "inputs/preservation/preserve-tests.mjs vs inputs/PRESERVATION.md",
+      "lines": "module lines 19 (testCall requires an arrow callback) and 133 (collectTitles) vs PRESERVATION.md lines 19 and 22",
+      "evidence": "The top-level duplicate-title universe for tests/api.test.ts is collected with testCall, which accepts only arrow callbacks; an ORIGINAL top-level or group test written with a function-expression body would be missed, so a newCase duplicating its title is accepted (probe S-LENIENCE-DUP-FNEXPR-TOP: accepted with cases:1). PRESERVATION.md lines 19/22 state duplicate titles are always outside the finite relation.",
+      "impact": "None with the frozen baseline: all 7 original test calls use arrow callbacks (verified programmatically), so the edge is unreachable. The mismatch direction is conservative (prose rejects more than code would), so it discloses no hidden lenience that could pass an undisclosed transformation; it is the only prose-vs-code divergence found.",
+      "required_action": "Optional: note the arrow-only title universe in prose at next revision. Not required for freeze.",
+      "fix_changes_rule_text": false
+    },
+    {
+      "id": "F4",
+      "severity": "residual_limit_nonblocking",
+      "kind": "unverifiable_claim_against_supplied_core",
+      "file": "inputs/PRESERVATION.md vs inputs/path-gate-source.mjs",
+      "lines": "PRESERVATION.md line 12 vs path-gate-source.mjs lines 13-23, 34",
+      "evidence": "Line 12 states host-generated overlays and regenerable dependencies/caches/build output/disposable databases 'are removed from source-only inventory according to the assigned public inventory manifest'. The supplied core gate contains no manifest input and no exclusion mechanism: tree() walks the whole tree and same(b,snapshot) plus the changes diff are fail-closed on every extra path.",
+      "impact": "The claim is plausibly implemented by a full evaluator wrapping this core with the manifest, but that is not supplied; it must be verified against the real evaluator + public inventory manifest before freeze. Until then, treat the core gate as rejecting any host-generated path present in TARGET but absent from the frozen baseline tree.",
+      "required_action": "Verify the overlay/manifest mechanism in the full evaluator before freeze; do not rely on it in this packet.",
+      "fix_changes_rule_text": false
+    },
+    {
+      "id": "F5",
+      "severity": "binding_pending_nonblocking",
+      "kind": "prospective_path_reference",
+      "file": "inputs/C2/FAQ.md (byte-identical C3/C4)",
+      "lines": "13 (item 9)",
+      "evidence": "Item 9 references '/public-checks/PRESERVATION.md'; the supplied copy sits at inputs/PRESERVATION.md with the module at preservation/preserve-tests.mjs beside it.",
+      "impact": "Install-path binding only; the referenced document content is present and accurate. Consistent with baseline-spec.md line 64 ('Fresh allowed paths, actual sites and commands must be bound and reviewed before dispatch').",
+      "required_action": "Confirm the /public-checks/ binding at freeze.",
+      "fix_changes_rule_text": false
+    },
+    {
+      "id": "F6",
+      "severity": "cosmetic_nonblocking",
+      "kind": "typography",
+      "file": "inputs/PRESERVATION.md",
+      "lines": "19, 20",
+      "evidence": "'Up to16' / 'up to16' lack a space before the numeral.",
+      "impact": "None; meaning unambiguous ('up to 16').",
+      "required_action": "Optional cosmetic fix.",
+      "fix_changes_rule_text": false
+    }
+  ],
+  "prose_to_source_verification": [
+    {
+      "prose": "PRESERVATION.md line 9 (four existing mutable source files)",
+      "source": "path-gate-source.mjs line 46 (exact same four paths; everything else existing is frozen)",
+      "status": "exact match"
+    },
+    {
+      "prose": "line 10 (new src/server .ts/.tsx/.css; new tests/ .ts/.tsx/.js/.jsx/.css; ASCII letter/digit/underscore/dot/slash/hyphen alphabet)",
+      "source": "path-gate-source.mjs line 47 regexes",
+      "status": "exact match; deletion/symlink/nonregular rejection verified at lines 18-19, 40, 45"
+    },
+    {
+      "prose": "line 11 (package/lock, config, HTML, README, reset/seed frozen; dependencies need pre-frozen task authorization + evaluator amendment)",
+      "source": "gate default-reject at line 48; no dependency-change path exists in supplied gate",
+      "status": "accurate"
+    },
+    {
+      "prose": "line 12 (overlay/manifest removal)",
+      "source": "not present in supplied core gate",
+      "status": "unverifiable \u2014 finding F4"
+    },
+    {
+      "prose": "line 18 rule 1 (bare describe/test identifiers, exactly two args, string-literal title, arrow or non-generator function with block body, no modifiers/optional calls/type args; direct top-level or directly nested groups; unambiguous title paths; nothing inside original test bodies)",
+      "source": "groupCall (lines 32-39), plainTest (lines 40-47), groups ambiguity throw (lines 53-54); probes A-GROUP-*, S-AMBIGUOUS-GROUPS, S-DEEP-NESTED-GROUP, R-DESCRIBE-ONLY, R-TYPEARGS, R-OPTCHAIN",
+      "status": "exact match"
+    },
+    {
+      "prose": "line 19 rule 2 (up to 16 group cases per file; titles differ from all original plain titles and other added titles; at least one adjacent original plain test, other neighbor plain test or group edge; no hook/non-test adjacency; boundary trivia whitespace surviving as exact prefix or suffix; new trivia whitespace; multiple adjacent cases; bodies parsed only)",
+      "source": "cases>16 (line 80), boundary check (line 92), trivia checks (lines 97-104), run handling (lines 74-105); probes A-GROUP-END-VAL/START/ADJACENT-PAIR/ADJ-SEED/SPLIT-GAP, R-GROUP-17, R-COMMENT-BOUNDARY, R-GAP-SPLIT-FAIL, S-NAPI-HOOK-NEIGHBOR, S-EMPTY-GROUP, duplicate-title probes",
+      "status": "exact match"
+    },
+    {
+      "prose": "line 20 rule 3 (api.test.ts only; up to 16 top-level cases after all original top-level statements; exact newCase grammar: GET-only Bruno /api/me, numeric count/length assertions, exact names/formatting/sequence)",
+      "source": "name check (line 115), top slice + limit (lines 130-131), newCase regex (line 11) + testCall (line 19), trivia (lines 146-151); probes A-TOP-*, R-TOP-*",
+      "status": "exact match"
+    },
+    {
+      "prose": "line 21 rule 4 (narrow C1 legacy seed-site exception: one exact optional OLD->MIGRATED expectation migration; up to 16 exact numeric assertions at end of that seed case per 'assertion'; nothing elsewhere; not authorization to implement C1 in another task; any new task-specific migration must be public and evaluator-bound before dispatch)",
+      "source": "seedTitle/OLD/MIGRATED/assertion (lines 6-9), findSeed (lines 21-27), additions (lines 123-129), migration anchor checks (lines 156-158); probes A-MIGRATION-*, R-MIG-*, R-SEED-*; 'not authorization' is a policy statement consistent with FAQ item 9",
+      "status": "exact match"
+    },
+    {
+      "prose": "line 22 rule 5 (comments at boundaries, reformatting, other assertion APIs/positions, renamed originals, duplicate titles, extra imports/helpers/hooks, reordered/removed originals, altered timeouts, arbitrary original-body changes outside the finite relation; original syntax must parse)",
+      "source": "byte-equality backstop (line 159) plus per-group checks (lines 88-104) and parse guard (lines 13-17); probes R-INCASE-NONLEGACY, R-COMMENT-*, R-EOF-NEWLINE, R-REMOVE-CASE, R-REORDER-CASES, R-RENAME-ORIG, R-WS-INTERNAL, R-TEST-ONLY, R-BAD-SYNTAX (one edge nuance: F3)",
+      "status": "accurate (rejections confirmed; error path may be byte-equality rather than the per-group check)"
+    },
+    {
+      "prose": "line 24 (new test files do not replace original/trusted tests; gate proves no semantic equivalence; independent regression/feature/auth/DB/artifact checks remain mandatory; honest reporting of unsupported transformations; operator will not silently waive)",
+      "source": "gate deletion guard (line 40) and limitations list (line 50); predicate returns metadata only; prose statement, no code conflict",
+      "status": "accurate"
+    },
+    {
+      "prose": "line 3 + 24 + 28 (behavioral success alone insufficient; source-policy rejection can occur despite behavioral success; no semantic human-review override in core acceptance; no undisclosed source-edit requirement in sealed cases; no posthoc waiver)",
+      "source": "policy statements consistent with gate limitations (line 50); all present in the prose",
+      "status": "present and accurate"
+    },
+    {
+      "prose": "FAQ item 9 (all three tasks): exact public constraints pointer, in-body additions rejected except disclosed legacy seed-site grammar, structural/path limits for new cases/files, only explicitly listed pre-frozen task-specific migrations, no implicit semantic waiver, schema/dependency/auth/seed need express authorization + frozen public evaluator rule, do not modify trusted checks/supplied material",
+      "source": "PRESERVATION.md lines 7-24; predicate probes; no C2/C3/C4 task-specific migration is listed anywhere (correct: none is needed, see contract_review)",
+      "status": "accurate summary, normative detail delegated to PRESERVATION.md as stated"
+    }
+  ],
+  "contract_review": {
+    "C2_item_list_sort_toggle": {
+      "file": "inputs/C2/contracts/C2-item-list-sort-toggle.md",
+      "api_surface": "GET /api/workspaces/:id/items?sort=... with updated_desc default (== baseline-spec items order 'updatedAt descending, ID ascending', line 13), updated_asc (updatedAt asc, id DESC), title_asc (SQLite NOCASE, id ASC); explicit invalid value 400 validation_failed fields.sort \u2014 consistent with baseline-spec line 17 query-precedence (session 401 / membership-resource 404 precede query validation)",
+      "desk_checks": "Default equals baseline order (no migration needed for api.test.ts line 58). Seed Apollo title order wi_108,wi_105,wi_101,wi_106,wi_103,wi_102,wi_104,wi_107 is ASCII NOCASE ascending (Archive < Audit < Draft < Fix < Prepare < Review < Ship < Write) \u2014 consistent. Updated-ascending wi_108,wi_101,wi_105,wi_107,wi_102,wi_104,wi_106,wi_103 matches the seed table (2026-11-01T09:30, 11-01T14:20, 11-02T10:00, 11-02T15:05, 11-03T11:30, 11-03T16:40, 11-04T09:00, 11-04T10:15). No updated_desc ties in seed, so id tie-breaks are untested by seed \u2014 acceptable, disclosed orders are the binding ones.",
+      "scope": "No persistence/URL state/filters/pagination/title-descending/case-sensitive sort; preserve item shape, auth, seed, delete/edit. Needs only server/app.ts, server/db.ts (both allowed paths) and src/main.tsx/src/style.css. FAQ item 14 keeps implementation freedom (NOCASE ordering is interoperability behavior, not a query demand) \u2014 C2 is neither narrowed nor expanded by disclosure.",
+      "migration_needed": "none (default order unchanged); none is disclosed \u2014 consistent",
+      "status": "not_narrowed_not_expanded"
+    },
+    "C3_item_share_link": {
+      "file": "inputs/C3/contracts/C3-item-share-link.md",
+      "surface": "UI-only (src/main.tsx, style.css): Copy link <title>, exact URL shape, Link copied. / Could not copy the link. / Linked item is not available. alerts, once-per-load application, URL cleanup, experimental load-failure clause",
+      "scope": "Contract states 'No change to auth/API/schema or CRUD. No routing library, token, short link, share dialog or persisted highlight.' Allowed-path permission (server/*.ts) does not authorize unrelated behavior (PRESERVATION.md line 7); baseline e2e locators are qualified ({name:'Workspace',exact:true}, named buttons), so added controls do not collide with frozen board.spec.ts/additional.spec.ts assertions (desk check).",
+      "migration_needed": "none",
+      "status": "not_narrowed_not_expanded"
+    },
+    "C4_remember_last_workspace": {
+      "file": "inputs/C4/contracts/C4-remember-last-workspace.md",
+      "surface": "UI-only localStorage slot workboard.last-workspace, JSON {userId,workspaceId}, restore rules, experimental throw-safety; 'no API, schema, auth or seed changes'",
+      "scope": "FAQ item 8 matches the contract exactly (one last-user slot, failed restore falls back to first, failed write never resets selection, storage exceptions cannot crash, not baseline, not combined with S07). Supplied baseline e2e specs never call page.reload() after a selection and Playwright gives each test a fresh context, so no conflict with the frozen baseline tests is evidenced. Interplay of C4 restore with future sealed regression replays (e.g., reload-after-selection) is not certifiable here \u2014 it is already covered by the packet's own pending three-clean-replays gate; flagged as residual limit R4, not as a new requirement.",
+      "migration_needed": "none",
+      "status": "not_narrowed_not_expanded"
+    }
+  },
+  "required_changes": [
+    "F1: Re-stamp BASELINE_BINDINGS.json inputs.faq to sha256 e41d289aef0a2a87c3a4967121eaaf47bb1485bb618869f17155f0e9067c4e12 and add manifest hash bindings for PRESERVATION.md, preservation/preserve-tests.mjs, and path-gate-source.mjs (plus contracts/tests as applicable) so the line-28 'policy hash is in the manifest' guarantee is demonstrable; reconcile the historical registration snapshot note as the file itself requires.",
+    "F2: Bind and verify the gate deployment layout (path-gate-source.mjs beside preservation/preserve-tests.mjs, baseline-snapshot.json, protected-bundle.json) and re-run the gate on a real BASE/TARGET pair in the qualified environment before freeze."
+  ],
+  "residual_limits": [
+    "R1: This review cannot certify reference/alternative task packets or runtime feature success \u2014 those packets are unqualified and none was supplied; independent construction, negative controls, and three clean replays remain pending (packet states the same).",
+    "R2: The full evaluator, baseline snapshot, and protected bundle were not supplied; path-gate-source.mjs was used as read-only path-policy evidence only and never as a run evaluator (F2 records the observed import failure).",
+    "R3: This is fresh-session cross-review within the authorized model families \u2014 not family-independent evidence; fixture authorship is not independent of subject model families (bindings limitations line 46).",
+    "R4: C4 (and any UI task) interplay with future sealed regression replays cannot be certified from supplied material; it requires actual clean replays in the qualified environment. No conflict with the supplied baseline e2e tests was found (desk check).",
+    "R5: Overlay/inventory-manifest removal (PRESERVATION.md line 12) is not verifiable against the supplied core gate (F4).",
+    "R6: The theoretical duplicate-title lenience edge F3 cannot arise with the frozen baseline (all original test callbacks are arrows) but is recorded for the next prose revision."
+  ],
+  "acceptance_rejection_disclosure_check": {
+    "rejection_despite_behavioral_success_stated": true,
+    "evidence": "PRESERVATION.md line 3 'Passing behavioral tests alone is insufficient' and line 24 'If an unsupported transformation is needed, report the constraint honestly; an operator will not silently waive it after observing your result.'",
+    "no_semantic_human_review_override": "PRESERVATION.md line 3; FAQ items 9/11 consistent",
+    "no_undisclosed_source_edit_in_sealed_cases": "PRESERVATION.md line 28",
+    "no_posthoc_waiver": "PRESERVATION.md lines 24 and 28"
+  }
+}

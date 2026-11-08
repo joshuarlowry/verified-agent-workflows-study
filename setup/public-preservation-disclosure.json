@@ -1,0 +1,72 @@
+{
+  "published_at_utc": "2026-11-08T14:40:23.689317+00:00",
+  "kind": "prospective_source_policy_disclosure_with_pending_task_bindings",
+  "public_policy": "fixtures/public-policy/PRESERVATION.md",
+  "review_as_returned": "changes_required",
+  "accuracy_checks": {
+    "harness": "/tmp/opencode/preserve-review/probe.mjs (scratch only)",
+    "total": 55,
+    "passed": 55,
+    "failed": 0,
+    "accepted_cases": 13,
+    "rejected_cases": 42,
+    "full_log": "CHECKS.md and PROVENANCE.json (results-final snapshot in scratch)",
+    "key_confirmations": [
+      "A-ALL-LIMITS-16-16-16: one api.test.ts target carrying 16 group cases + 16 seed assertions + the seed migration + 16 top-level newCases is accepted with {migration:true,assertions:16,cases:16,group_cases:16} \u2014 the top-level, seed-assertion and group-case limits are independent, exactly as PRESERVATION.md rules 2/3/4 state",
+      "Every representative excluded transformation is rejected: in-case additions at nonlegacy sites, comment/trivia changes (boundary, gap-split, top-level, even one extra trailing newline), removed/reordered/renamed/whitespace-mutated originals, test.only/describe.only/type-arguments/optional-call, duplicate titles (added-vs-added, added-vs-original, top-level), empty titles, nested-group insertion, top-level arbitrary bodies/describe/import/helper additions, newCase title charset violations, bad syntax, count limits (17 of each), migration anomalies (OLD+MIGRATED both, duplicate MIGRATED, wrong-site, mutated MIGRATED)",
+      "Accepted additions have arbitrary case bodies (parsed only, never semantically certified) \u2014 matches PRESERVATION.md line 19",
+      "Group additions work in any original test file that has eligible ordinary describe groups; the supplied e2e specs have none, so any byte change to them is rejected (R-E2E-BODY-EDIT, R-E2E-ANY-BLANKLINE) \u2014 matches rule 1's structural requirement",
+      "Synthetic mechanic probes (hook-adjacent boundary, empty group, ambiguous title paths, deep nested groups) match the prose; all 7 baseline test calls use arrow callbacks, so the one theoretical lenience edge (F3) cannot occur with the frozen baseline"
+    ]
+  },
+  "source_review_sha256": "7cc0fe062c1c269260e4ea175618918577de0db50075f0ecea1316c4e45330b7",
+  "mechanical_host_resolution": {
+    "kind": "mechanical_source_review_resolution_with_task_admission_still_pending",
+    "review_sha256": "7cc0fe062c1c269260e4ea175618918577de0db50075f0ecea1316c4e45330b7",
+    "returned_verdict_unchanged": "changes_required",
+    "F1": {
+      "status": "restamped",
+      "faq_hashes_verified": 3,
+      "policy_predicate_reference_inventory_contract_hashes_verified": true,
+      "bound_manifest_sha256": "5866e337b5fd8c773ef07caa5a2c17bb835720c9e3752d44389d24ca1c1ca21c",
+      "semantic_bytes_changed": false
+    },
+    "F2": {
+      "status": "shared_layout_actual_host_verified_task_deployments_pending",
+      "actual_common_core_selftest_sha256": "6e3e30c3a3d3ed2eee052ac5516950f49506543645005190079dcd64943b0813",
+      "actual_container_exit_code": 0,
+      "read_only_reference_not_executable_deployment": true,
+      "task_specific_runtime_and_layout_admission": false
+    },
+    "F4_F5": {
+      "status": "public_descriptor_supplied_per_task_normalization_and_mount_binding_pending",
+      "descriptor_sha256": "13fbfdd6345e6f947180052fe2e1cf38d0399382742a3540f6fdc151b25b5354",
+      "required_before_any_primary_task_dispatch": true
+    },
+    "limits": "No review verdict is rewritten. Only metadata stamps/layout-reference bindings resolved here; C2-C4 feature packets still need full runtime qualification. No C1 outcome changed."
+  },
+  "host_common_policy_regression": {
+    "kind": "unchanged_policy_actual_container_regression",
+    "observed_utc": "2026-11-08T14:32:33.872056+00:00",
+    "exit_code": 0,
+    "model_calls": 0,
+    "predicate_sha256": "92c92faf9df4eed4f85ddb8cf323f83ab20e07c44c551e4810cfe024ea8a31e8",
+    "predicate_byte_identical_to_public_candidate": true,
+    "predicate_unchanged_after": true,
+    "stdout_sha256": "c0a228a60e490b8ed6fce4d31a6a68ed22fa76fc7bb6109fcd069225c635dcff",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scope": "Existing finite source-predicate tests only; no C2-C4 feature or subject admission."
+  },
+  "future_faq9": "9. **Can tests, schema or dependencies change?** Preserve unrelated behavior and regression coverage, AND follow the exact public source/test constraints in `/public-checks/PRESERVATION.md` and its readable preservation module. Adding assertions inside an original test body is rejected except the disclosed legacy seed-site grammar; new test cases/files have the disclosed structural/path limits. Only explicitly listed, pre-frozen task-specific expectation/selector/flow migrations are allowed; no implicit semantic waiver. Schema/dependency/auth/seed changes require express task authorization AND a matching public evaluator rule frozen before dispatch. Do not modify trusted checks or supplied task material.",
+  "future_faq_sha256": "e41d289aef0a2a87c3a4967121eaaf47bb1485bb618869f17155f0e9067c4e12",
+  "file_hashes": {
+    "PRESERVATION.md": "18f4df53bfe3f7fca18d6e0e41d9f3347bbcc0473b2b32e12f97ffcee6c48bec",
+    "preservation/preserve-tests.mjs": "92c92faf9df4eed4f85ddb8cf323f83ab20e07c44c551e4810cfe024ea8a31e8",
+    "path-gate-source.mjs": "4223200b913eb6cc4dcdbef6d21e63587da4ea1bde32f9eb51875f2b4ae91890",
+    "SOURCE_INVENTORY.json": "13fbfdd6345e6f947180052fe2e1cf38d0399382742a3540f6fdc151b25b5354"
+  },
+  "primary_collection_admitted": false,
+  "criteria_changed": false,
+  "C1_acceptances_unchanged": 5,
+  "scope": "Public disclosure for future packets only; no C1 regrading or failed actor retry. This does not qualify C2-C4 implementations/evaluators."
+}

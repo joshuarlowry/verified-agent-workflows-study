@@ -1,0 +1,50 @@
+{
+  "kind": "public_source_inventory_contract",
+  "baseline_commit": "ac96364336be35f0d8d7dadb2717b951cd3c9ac4",
+  "baseline_files_sha256": {
+    "vitest.config.ts": "ccc24fb43fff762bed17bd748ab8e26cf97ccf27ba85474378a3dfed1a6d8a5e",
+    "eslint.config.js": "d44fa697d8ccb04dc02cfebe833478fa58094fdf333e159b6166de8401a7ad5e",
+    "tsconfig.json": "a84acc48a863379962a8a4108a60e4430f2e9031741b6fcc6e97e18fe6b94ee5",
+    "playwright.config.ts": "8b5e66046e90091092d9d32044e2f560d701b057bb8c58aaa6b62af598869d74",
+    "index.html": "b77e049f110dd3b90f8b92b62be23bd7b58e1559d1827577712e07f268a87437",
+    ".gitignore": "8c70f989d47737d4e2ba403034fe4ae385b697d0e94824201b4ca6ae0905fd79",
+    ".npmrc": "be85cc462e740587626bbcbb1c3ed1c40b26e62ec072e8cbd2768f23915c28e6",
+    "package-lock.json": "52dde0b0566f4a17a31a47e8693f924e36a776f1ad28dcb6353b3549404f5f90",
+    "README.md": "f40aacf529d551494434d37c2a5a4ccbd2580b999074807b284ddc3e210704eb",
+    "package.json": "99afb71520e26ccff405680025f77a847238ad761a33a5a80ffed576a9ab5451",
+    "vite.config.ts": "2e2cc607f8183e9d4617eda8a03d527fcf773d5c0c630657a3dcdbf9845c71d0",
+    "tests/api.test.ts": "c2543e6bf5bdb3303ce279a1710f09d590565d390211e6e10ed2b8aa7d87f0b5",
+    "tests/e2e/refetch.spec.ts": "57bbc43a9bed560877404a201bb9fe7b7174d129a758f490549c92ada622a3ee",
+    "tests/e2e/board.spec.ts": "6a3877f11baa8b8b5b6e65822ea0bf6f6367d559d69c5e50f39b468a268402a7",
+    "tests/e2e/additional.spec.ts": "59de67844a6bf517d6aaf369f9a419feb49e45c5ba39d1662ec2ac29f732ef43",
+    "server/app.ts": "79c7a2622babfdd4d2068d80f2119547a8748820ba5da8e69c8a48cab5b44be2",
+    "server/reset.ts": "fc198e874bd16bf21d325b717519f98a18b4cce304be54e51c3bface3fae02cd",
+    "server/index.ts": "0e45f5aad6e1f7aa81b596c344796fbc02312dd4e1fb58a5e10189268ea56886",
+    "server/db.ts": "f92c0605f2ed91e6df12ad092db175a180674a30cddbf58d6807966255549238",
+    "src/style.css": "889a773e7d7e868ecaed541f165d060d7ef09307265df8ed782aded98f355673",
+    "src/main.tsx": "eb8521a842644af73011e854c8116a8790212f073e629c2a3d75b90f4bc70694"
+  },
+  "generated_root_exclusions": [
+    ".git",
+    "node_modules",
+    "data",
+    "dist",
+    ".npm-cache",
+    ".cache",
+    "test-results",
+    "playwright-report",
+    ".vite"
+  ],
+  "controller_overlay_paths": [
+    "STUDY_TASK.md",
+    "STUDY_FAQ.md",
+    "baseline-spec.md",
+    "BASELINE_BINDINGS.json"
+  ],
+  "overlay_policy": "Each task admission must bind the expected overlay bytes, verify them unchanged and omit only those exact controller files from clean source inventory. This descriptor does not by itself implement normalization or grant task admission.",
+  "public_policy_read_path": "/public-checks/PRESERVATION.md",
+  "predicate_read_path": "/public-checks/preservation/preserve-tests.mjs",
+  "reference_source_read_path": "/public-checks/path-gate-source.mjs",
+  "reference_is_executable_deployment": false,
+  "task_deployment_required": "The trusted task evaluator must contain source-scope/core.mjs beside preserve-tests.mjs, baseline-snapshot.json and protected-bundle.json, resolve trusted TypeScript5.9.3, and pass actual clean-pair checks. Public metadata is not a runtime qualification."
+}
