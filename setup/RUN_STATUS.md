@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 01:20:31 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 01:27:32 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 01:20:30 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 01:27:32 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-C2-external-checks-revision-2 | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 12:39:43 PM EST (UTC-0500) | Nov 08, 2026 at 01:20:30 PM EST (UTC-0500) |
+| gemma-C2-alternative-revision-2 | google/gemma-4-31b-it | running | Nov 08, 2026 at 01:27:32 PM EST (UTC-0500) | — |
 
-Staged explicit fixture revision after preserved different-model review. No candidate source/outcomes supplied. Wait current candidate review and backup before sequential launch; revision2 requires fresh different-model review and actual qualification.
+Staged explicit fixture revision, not a primary rescue. Original pre-appointed in-memory alternative requirement plus exact own-source-only review findings. No reference/evaluator/other-candidate source or outcomes supplied. Independent fresh review and full qualification remain required.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
