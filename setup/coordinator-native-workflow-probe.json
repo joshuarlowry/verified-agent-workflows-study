@@ -1,0 +1,69 @@
+{
+  "recorded_at_utc": "2026-11-08T01:14:56.062244+00:00",
+  "kind": "actual_opencode_two_handoff_complete_controller_local_synthetic_gateway",
+  "external_model_calls": 0,
+  "application_or_acceptance_edits": false,
+  "lease_checks": {
+    "same_native_identity": true,
+    "all_ten_messages": true,
+    "old_worker_absent": true,
+    "old_background_writer_stopped": true,
+    "supervisor_still_alive": true,
+    "no_config_plugin_copied": true,
+    "no_inference_connection": true,
+    "no_workspace_files_executed_or_copied": true
+  },
+  "workflow_checks": {
+    "primary_supervisor_final": true,
+    "two_worker_handoffs": true,
+    "one_native_worker_identity": true,
+    "two_worker_requests": true,
+    "three_supervisor_requests": true,
+    "frozen_endpoint": true,
+    "literal_DONE_survived": true,
+    "all_cgroup_processes_stopped": true,
+    "no_external_provider": true
+  },
+  "workflow_elapsed_seconds": 11.920979121990968,
+  "parent_final": "final",
+  "inference_requests": [
+    {
+      "alias": "glm-review",
+      "ordinal": 1
+    },
+    {
+      "alias": "gemma-review",
+      "ordinal": 1
+    },
+    {
+      "alias": "glm-review",
+      "ordinal": 2
+    },
+    {
+      "alias": "gemma-review",
+      "ordinal": 2
+    },
+    {
+      "alias": "glm-review",
+      "ordinal": 3
+    }
+  ],
+  "source_inventory_sha256": "3e3f8c7e07398d58f568a4d613305a6a9a7df0aa9af873e4fc276a9b655e5eae",
+  "original_model_returns_preserved": true,
+  "coordinator_changes": [
+    "protected native session checkpoint/export/import",
+    "fresh worker container and home between handoffs",
+    "same aggregate resource cgroup for offline inspectors",
+    "common broker callback integrated with parent controller",
+    "allow observed native max_completion_tokens field",
+    "portable registration path for retained harness tests"
+  ],
+  "harness_unit_tests": {
+    "passed": 25,
+    "skipped": 0,
+    "scope": "retained model-authored harness tests including actual CLI/local synthetic gateway; initial wrong-environment failure retained in tool log"
+  },
+  "qualification": "scoped mechanical success only; no real provider/Context/full-accounting/crash/recovery qualification or scored admission",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

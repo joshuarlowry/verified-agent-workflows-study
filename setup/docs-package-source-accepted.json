@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-11-08T01:14:56.058494+00:00",
+  "cohort": "clean-20261107T122746Z",
+  "verdict": "accepted_exact_source_package_only",
+  "curator": "openai/gpt-6.1-terra",
+  "reviewer": "z-ai/glm-5.3-flash",
+  "closure_calls": 47,
+  "review_calls": 55,
+  "both_capture_audits_passed": true,
+  "first_returns_frozen": true,
+  "technical_bodies": 119,
+  "prior_notices": 16,
+  "approved_notice_installed": true,
+  "review_sha256": "815e54e7bf6947131663b484d0564dddad3140c871208fd0e36ff09e786951d5",
+  "remaining": "Context package build, 22 retrieval scenarios, read-only runtime and all role inheritance; no corpus runtime qualification yet.",
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-08T01:04:45.789919+00:00",
+  "updated_at_utc": "2026-11-08T01:17:38.307239+00:00",
   "status": "preparation_running",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "Terra docs metadata repair -> GLM delta review -> Terra checker re-review -> Gemma alternative UI repair, sequential. Coordinator completing missing native orchestration; actual pod/mount/cgroup sealing mechanics passed. Reference source review accepted; no task/full-harness/corpus qualification or calibration/scoring yet.",
+  "next_dependency": "GLM checker second repair active -> GLM native integration source review -> Terra approved Context package build, sequential. Native two-handoff local synthetic workflow passed; real provider/Context/accounting qualifications remain. C1 repaired alternative requires delta review and clean replays. No calibration/scoring.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
@@ -49,7 +49,7 @@
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "cohort_id": "clean-20261107T122746Z",
   "contamination_audit": "setup/contamination-audit.json",
-  "updated_at_eastern": "Nov 07, 2026 at 08:04:45 PM EST (UTC-0500)",
+  "updated_at_eastern": "Nov 07, 2026 at 08:17:38 PM EST (UTC-0500)",
   "last_workflow_event_eastern": "Nov 07, 2026 at 08:04:45 PM EST (UTC-0500)",
   "dependency_image_recovery": "setup/dependency-image-preservation.json"
 }

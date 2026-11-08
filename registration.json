@@ -812,7 +812,7 @@
   "execution_plan": "STUDY_PLAN.md",
   "clean_restart": {
     "cohort_id": "clean-20261107T122746Z",
-    "status": "Reference source review accepted and three clean public replays passed; alternative UI repair queued; checker repair frozen pending re-review. Docs metadata repair active. Native controller still incomplete; coordinator pod/seal mechanics passed, full adapter unqualified.",
+    "status": "Docs source package accepted by GLM; Context package build queued. Native local synthetic two-handoff controller passed, source review queued; real provider/Context/accounting qualification pending. C1 checker second repair active; repaired alternative unqualified. No calibration/scored runs.",
     "audit": "setup/contamination-audit.json",
     "predecessor_snapshot": "https://github.com/joshuarlowry/verified-agent-workflows-study/tree/bfdd76b8c640f56c84e997f4a60debf371a7fdfd",
     "scored_runs_discarded": 0,

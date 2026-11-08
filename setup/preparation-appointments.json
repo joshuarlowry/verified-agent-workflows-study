@@ -746,9 +746,48 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User-authorized artifact construction/cross-review; all previously approved content annotations and technical source remain byte-identical",
       "qualification": "Only N01/N02 verifier portability/accurate evidence and exact approved NOTICE installation. No new sources, topics, index, models or treatment."
+    },
+    {
+      "launch_id": "c1-checker-second-repair-20261108T010445Z",
+      "role": "glm-c1-checker-second-repair",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-c1-checker-second-repair-glm-20261108T010445Z",
+      "manifest_created_at_utc": "2026-11-08T01:04:45.470817+00:00",
+      "prompt_sha256": "85af42a7d5410853e132dd2a0120da1d17600e4cb332e5ce7ebac6f1c09c0129",
+      "controller_sha256": "72c6788358c863afd6d68ff592ea6013be85c515603f693a7d42972459d4421c",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized preparation construction/cross-review; no extra model or treatment",
+      "qualification": "Original endpoints retained; source/package return does not qualify scored dispatch."
+    },
+    {
+      "launch_id": "native-coordinator-integration-review-20261108T011542Z",
+      "role": "glm-native-coordinator-integration-review",
+      "requested_model": "z-ai/glm-5.3-flash",
+      "run_id": "clean-20261107T122746Z-native-coordinator-integration-review-glm-20261108T011542Z",
+      "manifest_created_at_utc": "2026-11-08T01:15:42.696663+00:00",
+      "prompt_sha256": "d45326577dc3273389417098c53f96625100b3e95056eb3e53c5f5f7898f69a4",
+      "controller_sha256": "ca308a54975b51f4aa2a0e4795f0b7d1a9b2e1a9c1d15e9bb55d55354e000723",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized preparation construction/cross-review; no extra model or treatment",
+      "qualification": "Original endpoints retained; source/package return does not qualify scored dispatch."
+    },
+    {
+      "launch_id": "approved-context-package-20261108T011542Z",
+      "role": "terra-approved-context-package",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-approved-context-package-terra-20261108T011542Z",
+      "manifest_created_at_utc": "2026-11-08T01:15:44.923523+00:00",
+      "prompt_sha256": "fcb798f023f285edce67961267bfea4728dbe0dfee8390a3bbb34249b35065ed",
+      "controller_sha256": "afbdac3fe0a9ac8cc50d5df22e3547a0fd8b10655a33e619b9abc6435c575d34",
+      "phase": "preparation_only",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User-authorized preparation construction/cross-review; no extra model or treatment",
+      "qualification": "Original endpoints retained; source/package return does not qualify scored dispatch."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T00:41:44.195681+00:00"
+  "updated_at_utc": "2026-11-08T01:17:20.196591+00:00"
 }

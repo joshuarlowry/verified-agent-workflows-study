@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-11-08T01:17:20.196591+00:00",
+  "review_model": "openai/gpt-6.1-terra",
+  "review_requests": 32,
+  "capture_audit_passed": true,
+  "verdict": "changes_required",
+  "high_level_findings": [
+    "Report completeness/assertion/status/exit integrity",
+    "ARIA popup activation",
+    "Visible semantic selector checks and fresh-request contract scope",
+    "Authenticated-state verification and cookie redaction",
+    "Persisted non-open transitions",
+    "Cleanup failure isolation",
+    "Unsafe host PID helper must be retired or repaired"
+  ],
+  "repair_launch": "c1-checker-second-repair-20261108T010445Z",
+  "frozen_reference_diagnostic": {
+    "checks": 37,
+    "passed": 37,
+    "assertions": 709,
+    "unverified": 0,
+    "evaluator_exit": 0,
+    "qualification": false,
+    "reason": "Positive fixture success does not establish oracle validity; source review rejected, alternative/negative controls/clean replays pending."
+  },
+  "calibration_runs": 0,
+  "scored_runs": 0
+}

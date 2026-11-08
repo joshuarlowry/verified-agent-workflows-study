@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-11-08T01:17:20.196591+00:00",
+  "actual_model": "google/gemma-4-31b-it",
+  "launch_id": "c1-alternative-repair-20261108T001713Z",
+  "historical_run_id": "clean-20261107T122746Z-c1-alternative-repair-terra-20261108T001713Z",
+  "historical_label_error": "Run/role label says terra; actual controller requested Gemma, native alias gemma-review. Original labels preserved; model not substituted.",
+  "physical_requests": 68,
+  "successful_stream_pairs": 40,
+  "failed_attempts": 28,
+  "capture_audit_passed": true,
+  "dependency_files_exact_baseline": true,
+  "new_or_changed_test_files": 0,
+  "git_endpoint_present": false,
+  "artifact_layout": "Source returned directly in c1-alternate, no nested source or .git; original first return preserved.",
+  "disposition": "Author claims UI repairs; CHECKS.md lacks exact commands/exits and targeted tests unchanged. Needs delta source review, clean replays and independent checker; no qualification.",
+  "contract_scope_note": "Automatic live refresh without a fresh count request is not an additional C1 requirement. Reviewer requests for that stronger behavior are not a new acceptance gate.",
+  "scored_runs": 0,
+  "calibration_runs": 0
+}
