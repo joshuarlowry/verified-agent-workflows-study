@@ -1,34 +1,29 @@
 {
-  "status_note": "Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.",
+  "kind": "registered_C1_calibration_metadata",
+  "status": "running",
+  "snapshot_at_utc": "2026-11-08T09:02:15.346909+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 04:02:15 AM EST",
+  "event_at_utc": "2026-11-08T09:02:10.377915+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 04:02:10 AM EST",
   "cohort_id": "clean-20261107T122746Z",
-  "launch_id": "outage-schedule-source-review-20261108T084856Z",
-  "kind": "preparation_construction_not_calibration_or_scoring",
-  "snapshot_at_utc": "2026-11-08T08:57:57.827491+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 03:57:57 AM EST (UTC-0500)",
-  "event_at_utc": "2026-11-08T08:57:57.773476+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 03:57:57 AM EST (UTC-0500)",
-  "display_timezone": "America/New_York",
-  "status": "construction_returned_not_qualified",
-  "background_service": "study2-outage-schedule-source-review-20261108t084856z",
-  "automatic_restart": false,
-  "roles": [
+  "calibration_block_size": 7,
+  "calibration_dispatched": 0,
+  "calibration_endpoints": 0,
+  "scored_runs": 0,
+  "rows": [
     {
-      "role": "glm-outage-schedule-source-review",
-      "run_id": "clean-20261107T122746Z-outage-schedule-source-review-glm-20261108T084856Z",
-      "model": "z-ai/glm-5.3-flash",
-      "status": "returned_requires_cross_review",
-      "dispatch_utc": "2026-11-08T08:48:56.447568+00:00",
-      "ended_at_utc": "2026-11-08T08:57:57.773465+00:00",
-      "agent_exit_code": 0,
-      "controller_exit_code": 0,
-      "api_budget_exhausted": false,
-      "prompt_sha256": "50441d8ab906de175df98757deb93c5a01d22cbb151422441f33a4ce2456f041",
-      "controller_sha256": "d5eab9576d3e2e1d906060afc99fd013147d6f8b9136dfea439b8c86a93b5e0c",
-      "dispatch_eastern": "Nov 08, 2026 at 03:48:56 AM EST (UTC-0500)",
-      "ended_at_eastern": "Nov 08, 2026 at 03:57:57 AM EST (UTC-0500)"
+      "position": 4,
+      "arm": "Gemma alone",
+      "repetition": 1,
+      "run_id": "cal-c1-v3-04",
+      "status": "setting_up"
     }
   ],
-  "qualification_status": "not_qualified",
-  "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
-  "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
+  "quality": "Not graded; an endpoint is not verified completion.",
+  "scope": "Initial C1 calibration within40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
+  "calibration_block_version": 3,
+  "prior_interrupted_calibration_attempts": 2,
+  "total_calibration_dispatched_including_prior": 5,
+  "carried_forward_endpoints": 3,
+  "initial_C1_endpoints": 3
 }
