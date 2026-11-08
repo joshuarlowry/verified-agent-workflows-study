@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 12:34:11 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 12:39:43 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 12:34:11 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 12:39:43 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-C2-reference-and-alternative-cross-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 12:20:44 PM EST (UTC-0500) | Nov 08, 2026 at 12:34:11 PM EST (UTC-0500) |
+| glm-C2-external-checks-revision-2 | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 12:39:43 PM EST (UTC-0500) | — |
 
-Staged only. Fresh review of original baseline/public scope and unmodified anonymized source snapshots; no builder conversations, evaluator or outcome logs. Wait prior constructor first endpoint and supported backup before sequential launch.
+Staged explicit fixture revision after preserved different-model review. No candidate source/outcomes supplied. Wait current candidate review and backup before sequential launch; revision2 requires fresh different-model review and actual qualification.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
