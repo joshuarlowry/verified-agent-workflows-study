@@ -1,13 +1,13 @@
 {
   "kind": "registered_C1_calibration_metadata",
-  "status": "stopped_preserving_state",
-  "snapshot_at_utc": "2026-11-08T12:47:37.148102+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 07:47:37 AM EST",
-  "event_at_utc": "2026-11-08T12:21:41.592367+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 07:21:41 AM EST",
+  "status": "running",
+  "snapshot_at_utc": "2026-11-08T12:48:45.959391+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 07:48:45 AM EST",
+  "event_at_utc": "2026-11-08T12:48:01.339057+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 07:48:01 AM EST",
   "cohort_id": "clean-20261107T122746Z",
   "calibration_block_size": 7,
-  "calibration_dispatched": 4,
+  "calibration_dispatched": 5,
   "calibration_endpoints": 4,
   "scored_runs": 0,
   "rows": [
@@ -48,13 +48,20 @@
       "status": "infrastructure_failure",
       "endpoint_reason": "infrastructure_failure",
       "native_exit_code": -9
+    },
+    {
+      "position": 8,
+      "arm": "GLM alone",
+      "repetition": 2,
+      "run_id": "cal-c1-v3-08",
+      "status": "active"
     }
   ],
   "quality": "Not graded; an endpoint is not verified completion.",
   "scope": "Initial C1 calibration within40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
   "calibration_block_version": 3,
   "prior_interrupted_calibration_attempts": 2,
-  "total_calibration_dispatched_including_prior": 9,
+  "total_calibration_dispatched_including_prior": 10,
   "carried_forward_endpoints": 3,
   "initial_C1_endpoints": 7
 }
