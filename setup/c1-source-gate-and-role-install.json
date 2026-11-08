@@ -1,0 +1,39 @@
+{
+  "recorded_at_utc": "2026-11-08T06:18:11.860364+00:00",
+  "recorded_at_eastern": "Nov 08, 2026 at 01:18:11 AM EST",
+  "kind": "source_gate_fixture_execution_and_role_install_not_admission",
+  "model_calls": 0,
+  "source_gate_fixtures": [
+    {
+      "label": "baseline",
+      "exit_code": 0,
+      "status": "verified_finite_source_inventory"
+    },
+    {
+      "label": "reference",
+      "exit_code": 0,
+      "status": "verified_finite_source_inventory"
+    },
+    {
+      "label": "alternative",
+      "exit_code": 0,
+      "status": "verified_finite_source_inventory"
+    }
+  ],
+  "source_gate_receipt_sha256": "cd0eb2205af3bbde8c3256e7490d3a8572723b3c2e6b9cb054aa257b924896f4",
+  "scope": "Finite source/original-test preservation only. Baseline passing here is expected: separate feature suite rejects baseline. Both materially different valid fixtures now pass the source gate, including the legitimate additive test.",
+  "role_prompts": "Exact reviewed role text installed, no instruction change during copy. Public DB binding reviewed by GLM.",
+  "role_install_receipt_sha256": "98c99fc8ab5a4fed643c3251559f67a863a76056b709701eb212b93247e7cf5a",
+  "native_harness_checks_after_install": {
+    "passed": 38,
+    "skipped": 0,
+    "exit_code": 0,
+    "stderr_sha256": "089502c15a6db9a1c6ea75abcec4a659f646661294d8784e9bcbf334e232e32a"
+  },
+  "mechanical_first_test_invocation": "Initial invocation omitted required registration env and host OpenCode PATH; imports failed, not an application or native regression. Retained separately; corrected invocation passed38.",
+  "serving_check": "Current public catalog matches all3dated models/provider tags/precision. Deterministic postflight helper cross-checked all30existing smoke generations,0additional inference calls.",
+  "remaining": "Fresh GLM review of additive-group closure is active; final seven manifests/admission remain pending.",
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "independent_family_review": false
+}

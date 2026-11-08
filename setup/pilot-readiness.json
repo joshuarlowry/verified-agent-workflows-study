@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T05:58:33.963080+00:00",
+  "recorded_at_utc": "2026-11-08T06:18:11.860364+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -9,7 +9,7 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "Final20-run clean-container feature/regression/DB qualification matrix passed: both valid fixtures pass feature21/21 in3fresh runs each; baseline/6negative controls reject for intended defects; protected17-case regressions pass baseline plus3runs each valid fixture. Source-preservation rule still falsely rejects a legitimate additive in-file test; bounded structural repair and fresh review queued.",
+      "state": "Feature/regression/DB20-run matrix passed. Additive-test source-rule closure now passes baseline and both valid fixtures; fresh GLM source review remains active. Exact reviewed role texts installed and38native checks passed. Final seven-manifest freeze/admission pending.",
       "existing_evidence": "Current single-worker/first-failure matrix completed13cases: reference21/21\u00d73; alternative21/21\u00d73; baseline and6negative controls reject for intended reasons. Skipped dependent cases are unverified. Full non-aborting diagnostics are also retained.",
       "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
       "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
@@ -23,7 +23,8 @@
       ],
       "checker_evidence": "setup/c1-standard-checker-validation.json",
       "scope_binding": "Only remaining source-policy repair is additive ordinary test declarations inside existing test groups, preserving every original assertion/order/barrier. No extra feature, universal semantic review, model or tool treatment. All10clean baseline/overlay workspaces have independent writable dependencies and local one-commit Git history; none dispatched.",
-      "final_runtime_matrix": "setup/c1-final-runtime-matrix.json"
+      "final_runtime_matrix": "setup/c1-final-runtime-matrix.json",
+      "source_rule_evidence": "setup/c1-source-gate-and-role-install.json"
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",
@@ -51,6 +52,6 @@
     "published_private": true
   },
   "historical_capture_gap": "Latest retired custom-checker review audit stopped at normalized/provider usage mismatch. Raw first return retained; not treated as a passed capture or reused approval. Other recent74/47/94call endpoints passed their capture audits.",
-  "recorded_at_eastern": "Nov 08, 2026 at 12:58:33 AM EST",
+  "recorded_at_eastern": "Nov 08, 2026 at 01:18:11 AM EST",
   "next_collection": "Registered ten-slot C1 calibration order, starting GLM supervising Gemma; no new treatment or task scope. Dispatch remains blocked until current qualification and frozen manifests pass."
 }
