@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 02:04:46 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 02:16:50 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 02:04:46 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 02:16:50 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-checks-revision-2-cross-review | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 02:00:52 PM EST (UTC-0500) | Nov 08, 2026 at 02:04:46 PM EST (UTC-0500) |
+| glm-C2-clean-alternative-revision2-source-review | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 02:16:50 PM EST (UTC-0500) | — |
 
-Staged source/prompt/oracle/helper review only. No candidate implementations or implementing-target outcomes. Staged runtime/positive/negative/three-clean gates stay mandatory and unverified; no circular source self-approval.
+Staged fresh source/prompt review of clean alternative only. No reference/evaluator/other-candidate outcomes or contaminated source/conversation. Source-level acceptance never replaces actual external/negative/three-clean/runtime gates. Wait preappointed Terra evaluator-R2 review endpoint and backup before sequential launch.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
