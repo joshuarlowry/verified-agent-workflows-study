@@ -33,9 +33,9 @@ Gemma trial 1 failed the first-created-workspace zero-count selector check. Both
 
 ## Provider-error attribution
 
-A subsequent role-by-role audit of all ten fixed C1 endpoints found 440 captured response bodies identifying **Crusoe rate limits on Gemma requests**, plus seven worker-route timeout error bodies without provider metadata. No provider error body was captured on the direct GLM, direct Terra or supervisor routes. This is capture evidence, not a guarantee of platform uptime.
+A subsequent role-by-role audit of all ten fixed C1 endpoints found 440 captured response bodies identifying **Crusoe rate limits on Gemma requests**, plus 7 worker-route timeout error bodies without provider metadata. No provider error body was captured on the direct GLM, direct Terra or supervisor routes. This is capture evidence, not a guarantee of platform uptime.
 
-The first failed Terra-supervised run contains **119 Gemma/Crusoe rate-limit errors and seven worker-route timeouts**. The second contains **248 Gemma/Crusoe rate-limit errors**, in addition to the separately documented session-export endpoint failure. Those interruptions and retry delays must not be attributed solely to Terra’s coding or supervision capability. Direct Gemma and GLM-supervised runs also encountered rate limits. Workloads and retry bursts differ, so these counts are not independent reliability trials or a causal supervisor comparison. Failed-call billing remains unknown; original timings, endpoints, source and acceptance results are unchanged. [Full fixed-run/role audit and evidence hashes](c1-provider-failure-attribution.json).
+The first failed Terra-supervised run contains **119 Gemma/Crusoe rate-limit errors and 7 worker-route timeouts**. The second contains **248 Gemma/Crusoe rate-limit errors**, in addition to the separately documented session-export endpoint failure. Those interruptions and retry delays must not be attributed solely to Terra’s coding or supervision capability. Direct Gemma and GLM-supervised runs also encountered rate limits. Workloads and retry bursts differ, so these counts are not independent reliability trials or a causal supervisor comparison. Failed-call billing remains unknown; original timings, endpoints, source and acceptance results are unchanged. [Full fixed-run/role audit and evidence hashes](c1-provider-failure-attribution.json).
 
 ## Interpretation and remaining gaps
 
@@ -52,5 +52,6 @@ The first failed Terra-supervised run contains **119 Gemma/Crusoe rate-limit err
 There are 30 remaining calibration slots before the planned 165 scored generations; their task packets still require qualification. Advancement depends on the registered integrity/readiness gates, not which workflow looks favorable here.
 
 [Machine-readable results, role usage and evidence hashes](c1-first-results.json) · [Export-capture repair](c1-export-capture-repair-qualification.json) · [Session-export failure](c1-session-export-failure.json) · [Provider failure](c1-terra-supervised-provider-failure.json)
+
 
 [Preserved application source branches and endpoint hashes](c1-source-endpoints.json). All ten nominal snapshots and the additional DNS-interrupted snapshot are published as separate branches; the study main branch is unchanged by those application commits.

@@ -102,7 +102,7 @@ def build(selection_path):
     }
 
 
-def markdown(report):
+def markdown(report, provider_audit=None):
     eastern = datetime.datetime.fromisoformat(report['generated_at_utc']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y at %I:%M %p %Z')
     lines = ['# C1 calibration: first verified results', '', f'Published {eastern}. AI-managed study; all original endpoints remain preserved.', '',
              f"**{report['accepted_by_all_frozen_gates']} of 10 runs passed every frozen machine gate.** This is one calibration task, with two repetitions per workflow. No scored study runs have started.", '',
@@ -118,10 +118,24 @@ def markdown(report):
               'Both direct Terra runs passed the behavioral, regression, authentication and full-app checks. Their only rejection was the finite original-test rule: new assertions were inserted inside an existing test outside the permitted locations. The original test statements were retained. This is a policy rejection, not an observed functional defect; neither primary result was upgraded after inspection. As an explicitly exploratory diagnostic, seven runs passed every gate except this source policy. That is not a replacement completion definition.', '',
               '**Instrument gap:** the detailed finite test-edit grammar was absent from the public-check bundle and initial subject prompt. The public FAQ required preserved coverage without disclosing these structural exclusions. The five all-gate passes therefore cannot support a fair model-quality ranking. The mismatch must be documented and resolved prospectively, without rewriting C1 results.', '',
               'Gemma trial 1 failed the first-created-workspace zero-count selector check. Both Terra-supervised attempts ended before a supervisor final: provider errors interrupted trial 1; truncated session export interrupted trial 2. Their preserved snapshots also fail lint, so later full-app checks were not executed. The capture repair was separately qualified before the last three unrun slots; no failed actor was retried.', '',
-              '## Interpretation and remaining gaps', '']
+              ]
+    if provider_audit is not None:
+        assert provider_audit['selection_sha256'] == report['selection_sha256'], 'Provider audit must bind the same fixed selection'
+        assert {x['run_id'] for x in provider_audit['rows']} == {x['run_id'] for x in report['rows']}
+        def errors(run_id=None, code='429', provider='Crusoe'):
+            return sum(group['unique_call_count'] for row in provider_audit['rows'] if run_id is None or row['run_id'] == run_id
+                       for role in row['roles'] for group in role['error_groups']
+                       if group['body_error_code'] == code and group['body_identified_provider'] == provider)
+        assert all(role['failed_call_bodies'] == 0 for row in provider_audit['rows'] for role in row['roles']
+                   if not any('google/gemma-4-31b-it' == model for model in role['requested_models']))
+        lines += ['## Provider-error attribution', '',
+                  f"A subsequent role-by-role audit of all ten fixed C1 endpoints found {errors()} captured response bodies identifying **Crusoe rate limits on Gemma requests**, plus {errors(code='504', provider=None)} worker-route timeout error bodies without provider metadata. No provider error body was captured on the direct GLM, direct Terra or supervisor routes. This is capture evidence, not a guarantee of platform uptime.", '',
+                  f"The first failed Terra-supervised run contains **{errors('cal-c1-v3-05')} Gemma/Crusoe rate-limit errors and {errors('cal-c1-v3-05', '504', None)} worker-route timeouts**. The second contains **{errors('cal-c1-v3-07')} Gemma/Crusoe rate-limit errors**, in addition to the separately documented session-export endpoint failure. Those interruptions and retry delays must not be attributed solely to Terra’s coding or supervision capability. Direct Gemma and GLM-supervised runs also encountered rate limits. Workloads and retry bursts differ, so these counts are not independent reliability trials or a causal supervisor comparison. Failed-call billing remains unknown; original timings, endpoints, source and acceptance results are unchanged. [Full fixed-run/role audit and evidence hashes](c1-provider-failure-attribution.json).", '']
+    lines += ['## Interpretation and remaining gaps', '']
     lines += ['- ' + text for text in report['limits'] if not text.startswith(('Both direct Terra', 'One Gemma', 'Both Terra-supervised'))]
     lines += ['', 'There are 30 remaining calibration slots before the planned 165 scored generations; their task packets still require qualification. Advancement depends on the registered integrity/readiness gates, not which workflow looks favorable here.', '',
               '[Machine-readable results, role usage and evidence hashes](c1-first-results.json) · [Export-capture repair](c1-export-capture-repair-qualification.json) · [Session-export failure](c1-session-export-failure.json) · [Provider failure](c1-terra-supervised-provider-failure.json)', '']
+    lines += ['', '[Preserved application source branches and endpoint hashes](c1-source-endpoints.json). All ten nominal snapshots and the additional DNS-interrupted snapshot are published as separate branches; the study main branch is unchanged by those application commits.', '']
     return '\n'.join(lines)
 
 
@@ -129,10 +143,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--selection', required=True, type=Path)
     parser.add_argument('--output-dir', required=True, type=Path)
+    parser.add_argument('--provider-attribution', type=Path, help='Optional follow-up raw-provider audit bound to the same fixed selection')
     args = parser.parse_args()
     report = build(args.selection)
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    for name, content in [('c1-first-results.json', json.dumps(report, indent=2, allow_nan=False) + '\n'), ('C1_RESULTS.md', markdown(report))]:
+    for name, content in [('c1-first-results.json', json.dumps(report, indent=2, allow_nan=False) + '\n'), ('C1_RESULTS.md', markdown(report, load(args.provider_attribution) if args.provider_attribution else None))]:
         with (args.output_dir / name).open('x') as stream:
             stream.write(content)
     print(json.dumps({'nominal': len(report['rows']), 'accepted': report['accepted_by_all_frozen_gates'], 'model_calls': 0}))
