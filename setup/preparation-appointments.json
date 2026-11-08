@@ -863,9 +863,22 @@
       "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
       "authorization": "User directs convergence on actual study; three-model preparation authorization persists",
       "qualification": "No scored dispatch. Same features/systems; known broken artifacts retained; review/qualification still required."
+    },
+    {
+      "launch_id": "c1-zero-client-repair-20261108T022946Z",
+      "role": "terra-c1-zero-client-repair",
+      "requested_model": "openai/gpt-6.1-terra",
+      "run_id": "clean-20261107T122746Z-c1-zero-client-repair-terra-20261108T022946Z",
+      "manifest_created_at_utc": "2026-11-08T02:29:48.671191+00:00",
+      "prompt_sha256": "90e5bf7cd61cc63c1bf5cc083db23e8dbc6f9fe8ccb80ed9eb436c47e98e60fa",
+      "controller_sha256": "8b4424b83be38708fbcdd6e6c00203917b2bfe831fe31b38761ec87c246d3b16",
+      "phase": "bounded_client_fixture_repair",
+      "harness": "OpenCode -> private LiteLLM -> pinned ZDR OpenRouter provider",
+      "authorization": "User directs convergence; allowed-model fixture construction/cross-review",
+      "qualification": "Preserve rejected Gemma attempts; joint source provenance, not a Gemma study rescue. No new treatment."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T02:25:10.271245+00:00"
+  "updated_at_utc": "2026-11-08T02:36:15.430856+00:00"
 }

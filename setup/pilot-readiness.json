@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-11-08T02:25:10.271245+00:00",
+  "recorded_at_utc": "2026-11-08T02:36:15.430856+00:00",
   "objective": "First C1 calibration block: all five registered workflows twice, ten attempts included in the40.",
   "admitted": false,
   "calibration_runs": 0,
@@ -9,9 +9,11 @@
   "critical_path": [
     {
       "gate": "C1 valid acceptance packet",
-      "state": "Gemma zero-label repair running; independent compact standard Playwright checker queued, then different-model review",
+      "state": "Compact standard checker running, focused source/package review and checker review queued. Client-only zero fix queued with Terra from last compatible Gemma source.",
       "existing_evidence": "Reference37/37; repaired alternative36/37 with the real first-workspace zero-label bug. Six existing negative controls rejected; membership/role controls also invalidate dependent prerequisites (17unverified each), not all37checks complete.",
-      "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted."
+      "retired": "Three custom evaluator revisions and all reviews/results remain preserved; latest had seven remaining findings. No broken evaluator promoted.",
+      "latest_rejected_preparation": "Gemma zero-label repair returned after36requests/151.7seconds but changed POST wire shape contrary to the explicit frozen contract. Preserved as rejected preparation; no study run or accepted fixture claim.",
+      "authorship_note": "Alternative retains Gemma two-query server design; any subsequent Terra client repair will have joint provenance and different-model review. No relabeling of Gemma result."
     },
     {
       "gate": "Common actual model/capture/endpoint workflow",

@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-08T02:21:19.994764+00:00",
+  "updated_at_utc": "2026-11-08T02:36:16.024193+00:00",
   "status": "preparation_running",
   "model_scope": "Gemma 4, GLM and Terra only",
   "external_builder_work_launched": true,
@@ -18,7 +18,7 @@
     "native_synthetic_transport": "setup/opencode-transport-preliminary.json",
     "native_delegation_denial": "setup/opencode-delegation-preliminary.json"
   },
-  "next_dependency": "Converge on first ten C1 calibration workflows: Gemma zero-label fixture repair -> GLM compact standard Playwright checker -> focused native/docs/control review -> Terra checker review -> only required fixes and real role qualification. Primary sequential collection; optional refinements deferred. Zero calibration/scored runs.",
+  "next_dependency": "First ten C1 calibration workflows remain the milestone. Standard checker running -> focused native/docs/control review -> checker review -> bounded client-only fixture repair. Qualify these components and the real model path, then dispatch the frozen ten-slot order. Optional concurrency/framework work deferred; no calibration/scored runs yet.",
   "dependency_image": {
     "candidate_build": "setup/image-build-preliminary.json",
     "package_versions": "setup/image-package-versions.txt",
@@ -49,7 +49,7 @@
   "launch_snapshot_note": "See automatically updated setup/RUN_STATUS.md; successful construction returns are unqualified.",
   "cohort_id": "clean-20261107T122746Z",
   "contamination_audit": "setup/contamination-audit.json",
-  "updated_at_eastern": "Nov 07, 2026 at 09:21:19 PM EST (UTC-0500)",
+  "updated_at_eastern": "Nov 07, 2026 at 09:36:16 PM EST (UTC-0500)",
   "last_workflow_event_eastern": "Nov 07, 2026 at 09:21:19 PM EST (UTC-0500)",
   "dependency_image_recovery": "setup/dependency-image-preservation.json",
   "pilot_readiness": "setup/pilot-readiness.json"
