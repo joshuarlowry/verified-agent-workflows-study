@@ -1,60 +1,29 @@
 {
-  "kind": "registered_C1_calibration_metadata",
-  "status": "stopped_preserving_state",
-  "snapshot_at_utc": "2026-11-08T12:22:00.406035+00:00",
-  "snapshot_at_eastern": "Nov 08, 2026 at 07:22:00 AM EST",
-  "event_at_utc": "2026-11-08T12:21:41.592367+00:00",
-  "event_at_eastern": "Nov 08, 2026 at 07:21:41 AM EST",
+  "status_note": "C1 collection stopped with7nominal endpoints;3unrun. Source repair qualification only; no failed primary retry.",
   "cohort_id": "clean-20261107T122746Z",
-  "calibration_block_size": 7,
-  "calibration_dispatched": 4,
-  "calibration_endpoints": 4,
-  "scored_runs": 0,
-  "rows": [
+  "launch_id": "native-export-source-review-20261108T123022Z",
+  "kind": "preparation_construction_not_calibration_or_scoring",
+  "snapshot_at_utc": "2026-11-08T12:30:28.171844+00:00",
+  "snapshot_at_eastern": "Nov 08, 2026 at 07:30:28 AM EST (UTC-0500)",
+  "event_at_utc": "2026-11-08T12:30:28.120850+00:00",
+  "event_at_eastern": "Nov 08, 2026 at 07:30:28 AM EST (UTC-0500)",
+  "display_timezone": "America/New_York",
+  "status": "running",
+  "background_service": "study2-native-export-source-review-20261108t123022z",
+  "automatic_restart": false,
+  "roles": [
     {
-      "position": 4,
-      "arm": "Gemma alone",
-      "repetition": 1,
-      "run_id": "cal-c1-v3-04",
-      "status": "final",
-      "endpoint_reason": "final",
-      "native_exit_code": 0,
-      "actual_provider_resolution": "verified"
-    },
-    {
-      "position": 5,
-      "arm": "Terra supervising Gemma",
-      "repetition": 1,
-      "run_id": "cal-c1-v3-05",
-      "status": "infrastructure_failure",
-      "endpoint_reason": "infrastructure_failure",
-      "native_exit_code": -9
-    },
-    {
-      "position": 6,
-      "arm": "Terra alone",
-      "repetition": 2,
-      "run_id": "cal-c1-v3-06",
-      "status": "final",
-      "endpoint_reason": "final",
-      "native_exit_code": 0,
-      "actual_provider_resolution": "verified"
-    },
-    {
-      "position": 7,
-      "arm": "Terra supervising Gemma",
-      "repetition": 2,
-      "run_id": "cal-c1-v3-07",
-      "status": "infrastructure_failure",
-      "endpoint_reason": "infrastructure_failure",
-      "native_exit_code": -9
+      "role": "glm-native-export-source-review",
+      "run_id": "clean-20261107T122746Z-native-export-source-review-glm-20261108T123022Z",
+      "model": "z-ai/glm-5.3-flash",
+      "status": "running",
+      "dispatch_utc": "2026-11-08T12:30:28.120850+00:00",
+      "prompt_sha256": "4dcc8a189c6ca2ee672b9998db989629eaabb16ea33d383de03e76c1c12b4069",
+      "controller_sha256": "09291b141cb9d957ef6908bea84df6e0ea0bf9cbdff2a5539cdcf67e340947b9",
+      "dispatch_eastern": "Nov 08, 2026 at 07:30:28 AM EST (UTC-0500)"
     }
   ],
-  "quality": "Not graded; an endpoint is not verified completion.",
-  "scope": "Initial C1 calibration within40registered calibration attempts;165scored slots remain. Passive status observer makes no model calls or quality interventions.",
-  "calibration_block_version": 3,
-  "prior_interrupted_calibration_attempts": 2,
-  "total_calibration_dispatched_including_prior": 9,
-  "carried_forward_endpoints": 3,
-  "initial_C1_endpoints": 7
+  "qualification_status": "not_qualified",
+  "notification": "This repository status is updated automatically at dispatch and endpoints. No chat/push/email notification is configured.",
+  "scope": "Current construction jobs only; successful return still requires cross-review and qualification. No calibration or scored dispatch authorized by this queue."
 }
