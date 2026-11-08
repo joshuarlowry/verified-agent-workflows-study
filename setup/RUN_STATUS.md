@@ -1,16 +1,19 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 02:15:24 AM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 02:23:56 AM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 02:15:24 AM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 02:23:56 AM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-handoff-ack-review | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 01:59:24 AM EST (UTC-0500) | Nov 08, 2026 at 02:15:24 AM EST (UTC-0500) |
+| 0-supervisor | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 02:23:56 AM EST (UTC-0500) | — |
+| 0-worker | google/gemma-4-31b-it | running | Nov 08, 2026 at 02:23:56 AM EST (UTC-0500) | — |
+| 1-supervisor | openai/gpt-6.1-terra | queued | — | — |
+| 1-worker | google/gemma-4-31b-it | queued | — | — |
 
-Explicit new preparation revision/review. Original first returns preserved; scored admission remains blocked.
+Real registered GLM/Terra supervisors and Gemma worker. Intentional waiting-client disconnect once per disposable workflow; no application code, task outcomes or corrective primary-run feedback.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
