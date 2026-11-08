@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type MutableRefObject } fr
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-type Workspace = { id:string; name:string; role:'owner'|'member'; createdAt:string };
+type Workspace = { id:string; name:string; role:'owner'|'member'; createdAt:string; openItemCount?:number };
 type Item = { id:string; workspaceId:string; title:string; notes:string; status:'open'|'in_progress'|'done'; dueDate:string|null; version:number; createdBy:string; createdAt:string; updatedAt:string };
 type Me = { user:{id:string;email:string;name:string}; workspaces:Workspace[] };
 type Form = { id?:string; title:string; notes:string; status:Item['status']; dueDate:string };
@@ -36,7 +36,7 @@ function WorkspaceCreator({first,onCreate,selectionGate}:{first:boolean;onCreate
   const [name,setName] = useState(''), [error,setError] = useState(''), [pending,setPending] = useState(false);
   const lifetime = useRef(0);
   useEffect(() => () => { lifetime.current++; }, []);
-  async function submit(e:FormEvent) { e.preventDefault(); const selection = selectionGate.current, generation = lifetime.current; const alive = () => selectionGate.current === selection && lifetime.current === generation; setPending(true); setError(''); try { const w = await api<Workspace>('/api/workspaces',json('POST',{name})); if (alive()) { setName(''); onCreate(w); } } catch(e) { if (alive()) setError(msg(e)); } finally { if (alive()) setPending(false); } }
+  async function submit(e:FormEvent) { e.preventDefault(); const selection = selectionGate.current, generation = lifetime.current; const alive = () => selectionGate.current === selection && lifetime.current === generation; setPending(true); setError(''); try { const w = await api<Workspace>('/api/workspaces',json('POST',{name})); if (alive()) { setName(''); onCreate({...w, openItemCount: 0}); } } catch(e) { if (alive()) setError(msg(e)); } finally { if (alive()) setPending(false); } }
   return <section className="panel"><h2>{first ? 'Create your first workspace':'Create a workspace'}</h2>{error && <p role="alert">{error}</p>}<form onSubmit={submit}><label>Workspace name<input value={name} onChange={e=>setName(e.target.value)} /></label><button disabled={pending}>Create workspace</button></form></section>;
 }
 function Board({ws,epoch,selectionGate,onMembershipRefresh}:{ws:Workspace;epoch:number;selectionGate:MutableRefObject<number>;onMembershipRefresh:()=>Promise<boolean>}) {
@@ -66,14 +66,14 @@ function Board({ws,epoch,selectionGate,onMembershipRefresh}:{ws:Workspace;epoch:
     try {
       await api(snapshot.id ? `/api/items/${encodeURIComponent(snapshot.id)}` : `/api/workspaces/${encodeURIComponent(ws.id)}/items`, json(snapshot.id ? 'PATCH':'POST',{ title:snapshot.title,notes:snapshot.notes,status:snapshot.status,dueDate:snapshot.dueDate || null }));
       if (!alive()) return;
-      closeForm(); const next = formGate.current; setNotice(snapshot.id ? 'Work item updated.':'Work item created.'); await load(() => formGate.current === next);
+      closeForm(); const next = formGate.current; setNotice(snapshot.id ? 'Work item updated.':'Work item created.'); await onMembershipRefresh(); await load(() => formGate.current === next);
     } catch(e) { if (alive()) { setFormError(msg(e)); if (e instanceof ApiError) setFields(e.fields); } }
     finally { if (alive()) setSaving(false); }
   }
   async function remove() {
     if (!confirm || deleting) return; const generation = confirmGate.current, snapshot = confirm; setDeleting(true); setActionError('');
     const alive = () => active() && confirmGate.current === generation;
-    try { await api(`/api/items/${encodeURIComponent(snapshot.id)}`,json('DELETE')); if (!alive()) return; closeConfirm(); const next = confirmGate.current; setNotice('Work item deleted.'); await load(() => confirmGate.current === next); }
+    try { await api(`/api/items/${encodeURIComponent(snapshot.id)}`,json('DELETE')); if (!alive()) return; closeConfirm(); const next = confirmGate.current; setNotice('Work item deleted.'); await onMembershipRefresh(); await load(() => confirmGate.current === next); }
     catch(e) { if (alive()) setActionError(msg(e)); } finally { if (alive()) setDeleting(false); }
   }
   function field(name:string) { return { 'aria-invalid': !!fields[name], 'aria-describedby': fields[name] ? `error-${name}` : undefined }; }
@@ -109,7 +109,7 @@ function App() {
   return <main><header><h1>Workboard Lab</h1>{me && <div>{me.user.email} <button onClick={()=>void signOut()}>Sign out</button></div>}</header>
     {error && <p role="alert">{error}</p>}
     {checking ? <p>Checking session…</p> : !me ? <Auth onLogin={async()=>{await refresh();}} /> : <>
-      {me.workspaces.length > 0 && <label>Workspace<select value={selected} onChange={e=>select(e.target.value)}>{me.workspaces.map(w=><option value={w.id} key={w.id}>{w.name}</option>)}</select></label>}
+      {me.workspaces.length > 0 && <label>Workspace<select value={selected} onChange={e=>select(e.target.value)}>{me.workspaces.map(w=><option value={w.id} key={w.id}>{w.name} ({w.openItemCount ?? 0})</option>)}</select></label>}
       {ws && <Board key={`board-${epoch}`} ws={ws} epoch={epoch} selectionGate={selectionGate} onMembershipRefresh={refresh} />}
       <p role="status">{notice}</p><WorkspaceCreator key={`creator-${epoch}`} selectionGate={selectionGate} first={!me.workspaces.length} onCreate={w=>{setMe({...me,workspaces:[...me.workspaces,w].sort((a,b)=>binary(a.name,b.name) || binary(a.createdAt,b.createdAt) || binary(a.id,b.id))}); select(w.id); setNotice('Workspace created.');}} />
     </>}
