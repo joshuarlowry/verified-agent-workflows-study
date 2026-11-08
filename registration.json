@@ -386,9 +386,9 @@
     "retrieval_usage_recorded_as": "local lexical retrieval latency and preparation overhead; no extra model",
     "generative_answers_or_unregistered_delegation_allowed": false,
     "coverage_gaps": [
-      "Content review verified retained files; R01-R06 metadata/annotation/exclusion/NOTICE proposal repairs remain before indexing.",
-      "Exact Context packages, all22queries, offline seven-role parity and final source/package freeze pending.",
-      "Raw upstream bodies remain private; missing NOTICE body is not claimed retained."
+      "GLM independently resolved R01-R06; remaining N01/N02 concern portable verification/evidence and exact approved NOTICE installation. Separate closure and delta review queued.",
+      "Context packages/index, all22queries, offline seven-role parity and final freeze remain pending.",
+      "Raw upstream bodies remain private; no legal-certification claim."
     ],
     "preparation_plan": "STUDY_PLAN.md",
     "candidate_corpus_plan": "registration.json#/application_preparation",
@@ -405,7 +405,7 @@
       "session": "ses_e484a21b7ffeTsJZ56wk8qJJgr",
       "provider_tag": "azure",
       "reasoning_effort": "high",
-      "status": "six_bounded_metadata_repairs_after_final_content_review",
+      "status": "all_six_content_metadata_findings_closed_final_portable_verifier_and_notice_packaging_pending",
       "independence_claim": false,
       "source_selection_run": "clean-20261107T122746Z-docs-selection-terra-20261107T180550Z",
       "source_amendment_run": "clean-20261107T122746Z-docs-source-repair-terra-20261107T193704Z",

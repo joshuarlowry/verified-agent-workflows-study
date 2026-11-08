@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-11-08T00:48:27.874846+00:00",
+  "launch_id": "docs-metadata-delta-review-20261107T235927Z",
+  "run_id": "clean-20261107T122746Z-docs-metadata-delta-review-glm-20261107T235927Z",
+  "model": "z-ai/glm-5.3-flash",
+  "physical_requests": 50,
+  "dispatch_utc": "2026-11-08T00:17:21.896006+00:00",
+  "elapsed_seconds": 462.1960914299998,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "scoped_capture_audit_passed": true,
+  "prompt_sha256": "bd3252a1ea938d0e45ddf53d335cf28ba7e275e3c8ba4ed83a31284d27424c79",
+  "controller_sha256": "c7aa4e5eef12e4f47b998b622ef91a8b30e8fb440b05b034c6051a99ea17a2b0",
+  "technical_bodies_unchanged": 119,
+  "previous_notices_unchanged": 16,
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "verdict": "changes_required",
+  "content_findings_R01_R06": "all independently verified resolved",
+  "remaining": {
+    "N-01": "Verification helper hard-codes caller baseline path; portable distinct-baseline invocation/evidence must be repaired.",
+    "N-02": "Recorded inventory count is stale."
+  },
+  "source_extension_002": "approved exact 254-byte Playwright root NOTICE; body verified against pinned Git-blob hash; installation pending",
+  "source_extension_installation_scope": "Byte-exact approved body only, non-indexed notices plus mechanical attribution/inventory/checksum updates. No new source or prose.",
+  "closure_jobs": [
+    "docs-packaging-closure-20261108T003023Z",
+    "docs-packaging-closure-review-20261108T003023Z"
+  ]
+}

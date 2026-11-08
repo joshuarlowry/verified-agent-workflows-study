@@ -1,0 +1,20 @@
+{
+  "recorded_at_utc": "2026-11-08T00:48:27.874846+00:00",
+  "launch_id": "docs-metadata-repair-20261107T235927Z",
+  "run_id": "clean-20261107T122746Z-docs-metadata-repair-terra-20261107T235927Z",
+  "model": "openai/gpt-6.1-terra",
+  "physical_requests": 45,
+  "dispatch_utc": "2026-11-08T00:13:20.387092+00:00",
+  "elapsed_seconds": 213.13074877602048,
+  "exit_code": 0,
+  "api_budget_exhausted": false,
+  "scoped_capture_audit_passed": true,
+  "prompt_sha256": "fabc763e17dc1db06f2241e49d7a04b0b1a563f9e2c71cb5dfef06a58c2d3727",
+  "controller_sha256": "fb33a2c7983a967845b040005f92d23526e831434850d3b85a2514aef86c4d8b",
+  "technical_bodies_unchanged": 119,
+  "previous_notices_unchanged": 16,
+  "calibration_runs": 0,
+  "scored_runs": 0,
+  "status": "delivered; metadata delta review preserved separately; not indexed",
+  "scope": "All six bounded repairs addressed with unchanged retained technical bodies; notice proposal only at this endpoint."
+}
