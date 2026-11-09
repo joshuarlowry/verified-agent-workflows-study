@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-11-09T02:17:14.677847+00:00",
+  "recorded_at_eastern": "Nov 08, 2026 at 09:17:14 PM EST",
+  "user_authorized_resume": true,
+  "user_message": "Upped the limit",
+  "verified_remaining_usd": 9.990116569999998,
+  "observed_limit_usd": 60,
+  "observed_key_wide_usage_usd": 50.00988343,
+  "account_settings_changed_by_agent": false,
+  "detector_qualification_sha256": "7ae43b599432447fad7ac43e7cdf65eff44afbcdcf0e967b610740ca458ba619",
+  "scope": "Acknowledge only these exact historical endpoint bytes. Any new or changed exhaustion evidence blocks admission. Old endpoints remain unchanged."
+}

@@ -1066,19 +1066,34 @@
       "reference_previous_alternative_evaluator_reviews_or_outcomes": false,
       "qualification": "Original material-difference requirement unchanged; different-model review and every actual task qualification gate required. Earlier candidates retained as failed/unqualified preparation, not primary scores.",
       "authorization": "Existing three-model fixture construction/cross-review waiver."
+    },
+    {
+      "launch_id": "c2-native-evaluator-r3-budget-extension-20261109T021609Z",
+      "role": "terra-C2-native-evaluator-revision3-budget-extension",
+      "run_id": "clean-20261107T122746Z-c2-native-evaluator-r3-extension-terra-20261109T021609Z",
+      "requested_model": "openai/gpt-6.1-terra",
+      "reasoning": "high",
+      "phase": "unscored_post_budget_fixture_extension",
+      "prompt_sha256": "753aefcbcecfb38e413cba7ed36040ecf5e82dce8a67592a3ec603e27320cf52",
+      "controller_sha256": "8f5679aa8739bd9356a0362e2615ad0bca08e5530db206ec2d0f56c13989db50",
+      "fresh_session": true,
+      "candidate_inputs_supplied": false,
+      "qualification": "No primary/scored admission; source review and all task gates remain required."
     }
   ],
   "supplemental_coordinator_review": "setup/scope-review.json; user-directed coordinator-context review, not a registered fresh-session model signoff",
   "independent_model_family_claim": false,
-  "updated_at_utc": "2026-11-08T19:57:58.313590+00:00",
+  "updated_at_utc": "2026-11-09T02:17:14.677847+00:00",
   "dispatch_hold": {
-    "active": true,
+    "active": false,
     "reason": "actual_api_key_total_limit_exhaustion",
     "recorded_at_utc": "2026-11-08T19:57:58.313590+00:00",
     "recorded_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST",
     "evidence": "setup/actual-api-budget-endpoint.json",
     "settings_changed": false,
-    "scope": "All model dispatch, including unscored construction. Historical C1 admission does not override this hold."
+    "scope": "Historical budget hold resolved after user restored access; all task-specific qualification gates still apply.",
+    "resolved_at_utc": "2026-11-09T02:17:14.677847+00:00",
+    "resumption_evidence": "setup/api-access-resumption.json"
   },
-  "updated_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST"
+  "updated_at_eastern": "Nov 08, 2026 at 09:17:14 PM EST"
 }

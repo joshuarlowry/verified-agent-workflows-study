@@ -335,14 +335,22 @@
   },
   "construction_role_change_limit": "Builder appointments changed during unscored fixture qualification after preserved failures. This is not a new primary treatment or a comparative model-performance result. Primary five workflows and public C2 scope remain unchanged.",
   "dispatch_hold": {
-    "active": true,
+    "active": false,
     "reason": "actual_api_key_total_limit_exhaustion",
     "recorded_at_utc": "2026-11-08T19:57:58.313590+00:00",
     "recorded_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST",
     "evidence": "setup/actual-api-budget-endpoint.json",
     "settings_changed": false,
-    "scope": "All model dispatch, including unscored construction. Historical C1 admission does not override this hold."
+    "scope": "Historical budget hold resolved after user restored access; all task-specific qualification gates still apply.",
+    "resolved_at_utc": "2026-11-09T02:17:14.677847+00:00",
+    "resumption_evidence": "setup/api-access-resumption.json"
   },
-  "updated_at_utc": "2026-11-08T19:57:58.313590+00:00",
-  "updated_at_eastern": "Nov 08, 2026 at 02:57:58 PM EST"
+  "updated_at_utc": "2026-11-09T02:17:14.677847+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 09:17:14 PM EST",
+  "native_evaluator_revision3_budget_extension": {
+    "run_id": "clean-20261107T122746Z-c2-native-evaluator-r3-extension-terra-20261109T021609Z",
+    "status": "staged",
+    "extension_of": "c2-native-evaluator-r3-construction-20261108T192247Z",
+    "qualification": "unqualified; separate time/usage; historical endpoint unchanged"
+  }
 }

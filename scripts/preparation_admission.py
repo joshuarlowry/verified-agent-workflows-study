@@ -6,6 +6,7 @@ exhaustion evidence across otherwise independent preparation branches.
 import argparse
 import datetime
 import json
+import hashlib
 from pathlib import Path
 
 def check_admission(base, cohort_id):
@@ -16,14 +17,24 @@ def check_admission(base, cohort_id):
     if not cohort.is_dir():raise ValueError('Cohort directory missing')
     if (base/'STOP_ADMISSION.json').exists():
         return {'allowed':False,'reason':'existing_global_stop','evidence':'STOP_ADMISSION.json'}
+    acknowledgments = {}
+    resume = cohort/'budget-resumptions.json'
+    if resume.exists():
+        records = json.loads(resume.read_text())['resumptions']
+        for record in records:
+            if record.get('user_authorized_resume') is not True or record.get('verified_remaining_usd', 0) <= 0:
+                raise ValueError('Invalid budget resumption acknowledgment')
+            acknowledgments.update(record['acknowledged_evidence_sha256'])
+    def acknowledged(path):
+        return acknowledgments.get(str(path.relative_to(base))) == hashlib.sha256(path.read_bytes()).hexdigest()
     evidence=None
     for path in sorted(base.glob(cohort_id+'-*/budget-exhaustion.json')):
-        if json.loads(path.read_text()).get('observed') is True:
+        if json.loads(path.read_text()).get('observed') is True and not acknowledged(path):
             evidence=str(path.relative_to(base));break
     if evidence is None:
         for path in sorted(cohort.glob('*/manifest.json')):
             d=json.loads(path.read_text())
-            if any(r.get('api_budget_exhausted') is True for r in d.get('roles',[])):
+            if any(r.get('api_budget_exhausted') is True for r in d.get('roles',[])) and not acknowledged(path):
                 evidence=str(path.relative_to(base));break
     if evidence is not None:
         report={'allowed':False,'reason':'actual_api_budget_exhaustion','evidence':evidence,'observed_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'setting_changed':False}

@@ -1,0 +1,25 @@
+{
+  "recorded_at_utc": "2026-11-09T02:16:34.025039+00:00",
+  "scope": "Offline qualification only; actual constructor handler extracted by AST; HTTP/SSE raw historical403 replayed with mocked provider; zero paid calls.",
+  "controller_sha256": "8f5679aa8739bd9356a0362e2615ad0bca08e5530db206ec2d0f56c13989db50",
+  "classifier_sha256": "384450a5bcc229b9a0fdb388001b6079c86513da7d99122397dec2f8162061c1",
+  "historical_error_sha256": "d47e46647f64989087c6c8659f7312a1427778dca8dc699839604d26d049f4a2",
+  "cases": [
+    {
+      "transport": "HTTP",
+      "real_controller_handler": true,
+      "mock_external_calls": 1,
+      "second_request_blocked_before_external_call": true,
+      "budget_signal": true
+    },
+    {
+      "transport": "SSE",
+      "real_controller_handler": true,
+      "mock_external_calls": 1,
+      "second_request_blocked_before_external_call": true,
+      "budget_signal": true
+    }
+  ],
+  "all_passed": true,
+  "limits": "Does not prove future provider capacity, application behavior, or full primary-controller parity."
+}
