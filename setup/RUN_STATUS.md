@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 09:45:41 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 10:13:05 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 09:45:41 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 10:13:05 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| glm-C2-independent-alternative-version3-constructor | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 09:45:41 PM EST (UTC-0500) | — |
+| glm-C2-independent-alternative-version3-constructor | z-ai/glm-5.3-flash | returned requires cross review | Nov 08, 2026 at 09:45:41 PM EST (UTC-0500) | Nov 08, 2026 at 10:13:05 PM EST (UTC-0500) |
 
 Staged fresh independent material alternative from original public inputs only; no previous candidate, evaluator, review or outcomes. Builder appointment changed during unscored fixture qualification; primary workflow models/treatments and C2 public scope unchanged. Original failed versions/overhead retained. Wait evaluatorR3 constructor endpoint/audit/backup before sequential launch.
 
