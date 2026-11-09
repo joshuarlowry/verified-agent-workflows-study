@@ -327,7 +327,7 @@
   },
   "independent_alternative_version_3": {
     "model": "z-ai/glm-5.3-flash",
-    "status": "staged_not_dispatched",
+    "status": "dispatched",
     "fresh_session": true,
     "inputs": "Only original baseline/public contract/FAQ/policy/docs; no previous candidate, evaluator, review, results or conversation.",
     "original_server_API_in_memory_strategy_unchanged": true,
@@ -345,12 +345,17 @@
     "resolved_at_utc": "2026-11-09T02:17:14.677847+00:00",
     "resumption_evidence": "setup/api-access-resumption.json"
   },
-  "updated_at_utc": "2026-11-09T02:17:14.677847+00:00",
-  "updated_at_eastern": "Nov 08, 2026 at 09:17:14 PM EST",
+  "updated_at_utc": "2026-11-09T02:45:57.322684+00:00",
+  "updated_at_eastern": "Nov 08, 2026 at 09:45:57 PM EST",
   "native_evaluator_revision3_budget_extension": {
     "run_id": "clean-20261107T122746Z-c2-native-evaluator-r3-extension-terra-20261109T021609Z",
-    "status": "staged",
+    "status": "returned_frozen_requires_cross_review_and_runtime_qualification",
     "extension_of": "c2-native-evaluator-r3-construction-20261108T192247Z",
-    "qualification": "unqualified; separate time/usage; historical endpoint unchanged"
+    "qualification": "unqualified; separate time/usage; historical endpoint unchanged",
+    "elapsed_seconds": 392.16381799499504,
+    "frozen_artifact_files": 33,
+    "capture_audit_all_passed": true,
+    "endpoint": "setup/c2-native-evaluator-r3-extension-endpoint.json",
+    "runtime_limits": "Constructor reports dependencies/controller unavailable in preparation sandbox; no native listing or baseline suite execution. Source/syntax/hash/finite SQLite diagnostics only; candidate/negative/three-clean/helper gates unverified."
   }
 }
