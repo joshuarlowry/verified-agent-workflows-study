@@ -1,16 +1,16 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 09:24:19 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 09:45:41 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 09:24:19 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 09:45:41 PM EST (UTC-0500)
 
-**construction returned not qualified**
+**running**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-native-evaluator-revision3-budget-extension | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 09:17:24 PM EST (UTC-0500) | Nov 08, 2026 at 09:24:19 PM EST (UTC-0500) |
+| glm-C2-independent-alternative-version3-constructor | z-ai/glm-5.3-flash | running | Nov 08, 2026 at 09:45:41 PM EST (UTC-0500) | — |
 
-Explicit fresh-session unscored fixture extension after user restored API access. Old budget endpoint and partial source remain frozen. No completion or qualification claim. Independent GLM alternative/review remain sequential and gated.
+Staged fresh independent material alternative from original public inputs only; no previous candidate, evaluator, review or outcomes. Builder appointment changed during unscored fixture qualification; primary workflow models/treatments and C2 public scope unchanged. Original failed versions/overhead retained. Wait evaluatorR3 constructor endpoint/audit/backup before sequential launch.
 
 A returned job is not yet reviewed or qualified. A blocked job needs diagnosis; its original endpoint is preserved. This queue cannot start calibration or scored runs.
 
