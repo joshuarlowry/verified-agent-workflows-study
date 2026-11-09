@@ -1,14 +1,14 @@
 # Current run status
 
-**Status checked/published:** Nov 08, 2026 at 09:17:24 PM EST (UTC-0500)
+**Status checked/published:** Nov 08, 2026 at 09:24:19 PM EST (UTC-0500)
 
-**Latest workflow or disposition event:** Nov 08, 2026 at 09:17:24 PM EST (UTC-0500)
+**Latest workflow or disposition event:** Nov 08, 2026 at 09:24:19 PM EST (UTC-0500)
 
-**running**
+**construction returned not qualified**
 
 | Job | Model | State | Started (Eastern) | Ended (Eastern) |
 |---|---|---|---|---|
-| terra-C2-native-evaluator-revision3-budget-extension | openai/gpt-6.1-terra | running | Nov 08, 2026 at 09:17:24 PM EST (UTC-0500) | — |
+| terra-C2-native-evaluator-revision3-budget-extension | openai/gpt-6.1-terra | returned requires cross review | Nov 08, 2026 at 09:17:24 PM EST (UTC-0500) | Nov 08, 2026 at 09:24:19 PM EST (UTC-0500) |
 
 Explicit fresh-session unscored fixture extension after user restored API access. Old budget endpoint and partial source remain frozen. No completion or qualification claim. Independent GLM alternative/review remain sequential and gated.
 
